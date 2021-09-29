@@ -5,36 +5,36 @@
 
 Computation times
 =================
-**00:45.978** total execution time for **auto_examples_svm** files:
+**01:19.410** total execution time for **auto_examples_svm** files:
 
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_svm_scale_c.py` (``plot_svm_scale_c.py``)                                           | 00:25.119 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_svm_scale_c.py` (``plot_svm_scale_c.py``)                                           | 00:47.305 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_rbf_parameters.py` (``plot_rbf_parameters.py``)                                     | 00:07.671 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_rbf_parameters.py` (``plot_rbf_parameters.py``)                                     | 00:12.012 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_svm_regression.py` (``plot_svm_regression.py``)                                     | 00:04.513 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_svm_regression.py` (``plot_svm_regression.py``)                                     | 00:07.142 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_svm_nonlinear.py` (``plot_svm_nonlinear.py``)                                       | 00:02.929 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_svm_nonlinear.py` (``plot_svm_nonlinear.py``)                                       | 00:04.166 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_svm_tie_breaking.py` (``plot_svm_tie_breaking.py``)                                 | 00:01.690 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_svm_tie_breaking.py` (``plot_svm_tie_breaking.py``)                                 | 00:02.488 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_iris_svc.py` (``plot_iris_svc.py``)                                                 | 00:01.015 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_iris_svc.py` (``plot_iris_svc.py``)                                                 | 00:01.639 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_weighted_samples.py` (``plot_weighted_samples.py``)                                 | 00:00.926 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_weighted_samples.py` (``plot_weighted_samples.py``)                                 | 00:01.293 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_oneclass.py` (``plot_oneclass.py``)                                                 | 00:00.624 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_oneclass.py` (``plot_oneclass.py``)                                                 | 00:00.975 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_svm_anova.py` (``plot_svm_anova.py``)                                               | 00:00.403 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_svm_anova.py` (``plot_svm_anova.py``)                                               | 00:00.752 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_svm_kernels.py` (``plot_svm_kernels.py``)                                           | 00:00.299 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_svm_kernels.py` (``plot_svm_kernels.py``)                                           | 00:00.418 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_linearsvc_support_vectors.py` (``plot_linearsvc_support_vectors.py``)               | 00:00.215 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_linearsvc_support_vectors.py` (``plot_linearsvc_support_vectors.py``)               | 00:00.324 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_custom_kernel.py` (``plot_custom_kernel.py``)                                       | 00:00.203 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_custom_kernel.py` (``plot_custom_kernel.py``)                                       | 00:00.311 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_separating_hyperplane_unbalanced.py` (``plot_separating_hyperplane_unbalanced.py``) | 00:00.177 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_separating_hyperplane_unbalanced.py` (``plot_separating_hyperplane_unbalanced.py``) | 00:00.264 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_svm_margin.py` (``plot_svm_margin.py``)                                             | 00:00.105 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_svm_margin.py` (``plot_svm_margin.py``)                                             | 00:00.189 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_svm_plot_separating_hyperplane.py` (``plot_separating_hyperplane.py``)                       | 00:00.089 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_svm_plot_separating_hyperplane.py` (``plot_separating_hyperplane.py``)                       | 00:00.133 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
