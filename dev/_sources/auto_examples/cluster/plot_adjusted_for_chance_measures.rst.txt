@@ -68,21 +68,21 @@ value of k on various overlapping sub-samples of the dataset.
 
 
     Computing adjusted_rand_score for 10 values of n_clusters and n_samples=100
-    done in 0.058s
+    done in 0.076s
     Computing v_measure_score for 10 values of n_clusters and n_samples=100
-    done in 0.087s
+    done in 0.096s
     Computing ami_score for 10 values of n_clusters and n_samples=100
-    done in 0.658s
+    done in 0.628s
     Computing mutual_info_score for 10 values of n_clusters and n_samples=100
-    done in 0.087s
+    done in 0.091s
     Computing adjusted_rand_score for 10 values of n_clusters and n_samples=1000
-    done in 0.075s
+    done in 0.080s
     Computing v_measure_score for 10 values of n_clusters and n_samples=1000
-    done in 0.123s
+    done in 0.135s
     Computing ami_score for 10 values of n_clusters and n_samples=1000
-    done in 0.392s
+    done in 0.413s
     Computing mutual_info_score for 10 values of n_clusters and n_samples=1000
-    done in 0.103s
+    done in 0.117s
 
 
 
@@ -202,7 +202,7 @@ value of k on various overlapping sub-samples of the dataset.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.950 seconds)
+   **Total running time of the script:** ( 0 minutes  2.012 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_adjusted_for_chance_measures.py:
