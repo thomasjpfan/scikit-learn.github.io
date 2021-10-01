@@ -7,18 +7,18 @@
   <meta charset="utf-8">
   <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="Version 1.0.0" />
+  <meta property="og:title" content="Version 1.0.1" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scikit-learn/stable/whats_new/v1.0.html" />
   <meta property="og:site_name" content="scikit-learn" />
-  <meta property="og:description" content="September 2021 For a short description of the main highlights of the release, please refer to Release Highlights for scikit-learn 1.0. Legend for changelogs:: something big that you couldn’t do bef..." />
+  <meta property="og:description" content="In Development Changelog: sklearn.calibration: Fixed calibration.CalibratedClassifierCV to take into account sample_weight when computing the base estimator prediction when ensemble=False.#20638 by..." />
   <meta property="og:image" content="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" />
   <meta property="og:image:alt" content="scikit-learn" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Version 1.0.0 &mdash; scikit-learn 1.1.dev0 documentation</title>
+  <title>Version 1.0.1 &mdash; scikit-learn 1.1.dev0 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/whats_new/v1.0.html" />
 
@@ -169,14 +169,21 @@
         </div>
             <div class="sk-sidebar-toc">
               <ul>
-<li><a class="reference internal" href="#">Version 1.0.0</a><ul>
+<li><a class="reference internal" href="#">Version 1.0.1</a><ul>
+<li><a class="reference internal" href="#changelog">Changelog</a><ul>
+<li><a class="reference internal" href="#sklearn-calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#version-1-0-0">Version 1.0.0</a><ul>
 <li><a class="reference internal" href="#legend-for-changelogs">Legend for changelogs</a></li>
 <li><a class="reference internal" href="#minimal-dependencies">Minimal dependencies</a></li>
 <li><a class="reference internal" href="#enforcing-keyword-only-arguments">Enforcing keyword-only arguments</a></li>
 <li><a class="reference internal" href="#changed-models">Changed models</a></li>
-<li><a class="reference internal" href="#changelog">Changelog</a><ul>
+<li><a class="reference internal" href="#id1">Changelog</a><ul>
 <li><a class="reference internal" href="#sklearn-base"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.base</span></code></a></li>
-<li><a class="reference internal" href="#sklearn-calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-compose"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.compose</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-covariance"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.covariance</span></code></a></li>
@@ -214,7 +221,27 @@
     <div id="sk-page-content-wrapper">
       <div class="sk-page-content container-fluid body px-md-3" role="main">
         
-  <section id="version-1-0-0">
+  <section id="version-1-0-1">
+<span id="changes-1-0-1"></span><h1>Version 1.0.1<a class="headerlink" href="#version-1-0-1" title="Permalink to this headline">¶</a></h1>
+<p><strong>In Development</strong></p>
+<section id="changelog">
+<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
+<section id="sklearn-calibration">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.calibration" title="sklearn.calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a><a class="headerlink" href="#sklearn-calibration" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed <a class="reference internal" href="../modules/generated/sklearn.calibration.CalibratedClassifierCV.html#sklearn.calibration.CalibratedClassifierCV" title="sklearn.calibration.CalibratedClassifierCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">calibration.CalibratedClassifierCV</span></code></a> to take into account
+<code class="docutils literal notranslate"><span class="pre">sample_weight</span></code> when computing the base estimator prediction when
+<code class="docutils literal notranslate"><span class="pre">ensemble=False</span></code>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20638">#20638</a> by <a class="reference external" href="https://github.com/JulienB-78">Julien Bohné</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed a bug in <a class="reference internal" href="../modules/generated/sklearn.calibration.CalibratedClassifierCV.html#sklearn.calibration.CalibratedClassifierCV" title="sklearn.calibration.CalibratedClassifierCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">calibration.CalibratedClassifierCV</span></code></a> with
+<code class="docutils literal notranslate"><span class="pre">method=&quot;sigmoid&quot;</span></code> that was ignoring the <code class="docutils literal notranslate"><span class="pre">sample_weight</span></code> when computing the
+the Bayesian priors.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21179">#21179</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>.</p></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="version-1-0-0">
 <span id="changes-1-0"></span><h1>Version 1.0.0<a class="headerlink" href="#version-1-0-0" title="Permalink to this headline">¶</a></h1>
 <p><strong>September 2021</strong></p>
 <p>For a short description of the main highlights of the release, please
@@ -269,8 +296,8 @@ of rounding errors. Previously some extra spurious splits could occur.</p></li>
 <p>(While we are trying to better inform users by providing this information, we
 cannot assure that this list is complete.)</p>
 </section>
-<section id="changelog">
-<h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
+<section id="id1">
+<h2>Changelog<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  The option for using the squared error via <code class="docutils literal notranslate"><span class="pre">loss</span></code> and
 <code class="docutils literal notranslate"><span class="pre">criterion</span></code> parameters was made more consistent. The preferred way is by
@@ -338,8 +365,8 @@ These <code class="docutils literal notranslate"><span class="pre">FutureWarning
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.config_context.html#sklearn.config_context" title="sklearn.config_context"><code class="xref py py-func docutils literal notranslate"><span class="pre">config_context</span></code></a> is now threadsafe. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/18736">#18736</a> by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
 </ul>
 </section>
-<section id="sklearn-calibration">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.calibration" title="sklearn.calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a><a class="headerlink" href="#sklearn-calibration" title="Permalink to this headline">¶</a></h3>
+<section id="id2">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.calibration" title="sklearn.calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  <a class="reference internal" href="../modules/generated/sklearn.calibration.CalibrationDisplay.html#sklearn.calibration.CalibrationDisplay" title="sklearn.calibration.CalibrationDisplay"><code class="xref py py-func docutils literal notranslate"><span class="pre">calibration.CalibrationDisplay</span></code></a> added to plot
 calibration curves. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/17443">#17443</a> by <a class="reference external" href="https://github.com/lucyleeow">Lucy Liu</a>.</p></li>
