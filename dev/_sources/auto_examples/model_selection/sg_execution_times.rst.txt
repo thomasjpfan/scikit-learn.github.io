@@ -5,48 +5,48 @@
 
 Computation times
 =================
-**09:14.186** total execution time for **auto_examples_model_selection** files:
+**09:17.456** total execution time for **auto_examples_model_selection** files:
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_randomized_search.py` (``plot_randomized_search.py``)                                       | 05:49.663 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_randomized_search.py` (``plot_randomized_search.py``)                                       | 06:00.464 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_permutation_tests_for_classification.py` (``plot_permutation_tests_for_classification.py``) | 00:49.554 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_permutation_tests_for_classification.py` (``plot_permutation_tests_for_classification.py``) | 00:45.940 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_multi_metric_evaluation.py` (``plot_multi_metric_evaluation.py``)                           | 00:41.343 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_multi_metric_evaluation.py` (``plot_multi_metric_evaluation.py``)                           | 00:40.043 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_validation_curve.py` (``plot_validation_curve.py``)                                         | 00:22.057 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_validation_curve.py` (``plot_validation_curve.py``)                                         | 00:21.395 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_successive_halving_heatmap.py` (``plot_successive_halving_heatmap.py``)                     | 00:19.045 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_successive_halving_iterations.py` (``plot_successive_halving_iterations.py``)               | 00:18.593 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_successive_halving_iterations.py` (``plot_successive_halving_iterations.py``)               | 00:17.508 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_successive_halving_heatmap.py` (``plot_successive_halving_heatmap.py``)                     | 00:17.929 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_learning_curve.py` (``plot_learning_curve.py``)                                             | 00:12.666 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_nested_cross_validation_iris.py` (``plot_nested_cross_validation_iris.py``)                 | 00:12.069 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_nested_cross_validation_iris.py` (``plot_nested_cross_validation_iris.py``)                 | 00:12.147 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_learning_curve.py` (``plot_learning_curve.py``)                                             | 00:11.668 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_grid_search_refit_callable.py` (``plot_grid_search_refit_callable.py``)                     | 00:09.767 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_grid_search_refit_callable.py` (``plot_grid_search_refit_callable.py``)                     | 00:09.573 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_grid_search_digits.py` (``plot_grid_search_digits.py``)                                     | 00:07.451 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_grid_search_digits.py` (``plot_grid_search_digits.py``)                                     | 00:06.873 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_train_error_vs_test_error.py` (``plot_train_error_vs_test_error.py``)                       | 00:04.340 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_train_error_vs_test_error.py` (``plot_train_error_vs_test_error.py``)                       | 00:04.246 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_grid_search_stats.py` (``plot_grid_search_stats.py``)                                       | 00:02.961 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_grid_search_stats.py` (``plot_grid_search_stats.py``)                                       | 00:03.038 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py` (``plot_cv_indices.py``)                                                     | 00:02.563 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_cv_indices.py` (``plot_cv_indices.py``)                                                     | 00:02.231 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_precision_recall.py` (``plot_precision_recall.py``)                                         | 00:00.805 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_precision_recall.py` (``plot_precision_recall.py``)                                         | 00:01.187 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_confusion_matrix.py` (``plot_confusion_matrix.py``)                                         | 00:00.479 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_roc.py` (``plot_roc.py``)                                                                   | 00:00.430 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_underfitting_overfitting.py` (``plot_underfitting_overfitting.py``)                         | 00:00.470 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_underfitting_overfitting.py` (``plot_underfitting_overfitting.py``)                         | 00:00.407 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_roc.py` (``plot_roc.py``)                                                                   | 00:00.418 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_confusion_matrix.py` (``plot_confusion_matrix.py``)                                         | 00:00.406 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_det.py` (``plot_det.py``)                                                                   | 00:00.380 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_det.py` (``plot_det.py``)                                                                   | 00:00.405 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_roc_crossval.py` (``plot_roc_crossval.py``)                                                 | 00:00.357 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_roc_crossval.py` (``plot_roc_crossval.py``)                                                 | 00:00.349 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_model_selection_plot_cv_predict.py` (``plot_cv_predict.py``)                                                     | 00:00.212 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_model_selection_plot_cv_predict.py` (``plot_cv_predict.py``)                                                     | 00:00.211 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_examples_model_selection_grid_search_text_feature_extraction.py` (``grid_search_text_feature_extraction.py``)             | 00:00.000 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
