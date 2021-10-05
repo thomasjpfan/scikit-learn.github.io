@@ -51,7 +51,7 @@ matrix decomposition (dimension reduction) methods from the module
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_003.png
-         :alt: Non-negative components - NMF - Train time 0.3s
+         :alt: Non-negative components - NMF - Train time 0.2s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_003.png
          :class: sphx-glr-multi-img
 
@@ -93,7 +93,7 @@ matrix decomposition (dimension reduction) methods from the module
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_009.png
-         :alt: Factor Analysis components - FA - Train time 0.4s
+         :alt: Factor Analysis components - FA - Train time 0.3s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_009.png
          :class: sphx-glr-multi-img
 
@@ -142,27 +142,27 @@ matrix decomposition (dimension reduction) methods from the module
 
     Dataset consists of 400 faces
     Extracting the top 6 Eigenfaces - PCA using randomized SVD...
-    done in 0.086s
+    done in 0.063s
     Extracting the top 6 Non-negative components - NMF...
-    done in 0.271s
+    done in 0.240s
     Extracting the top 6 Independent components - FastICA...
-    done in 0.222s
+    done in 0.223s
     Extracting the top 6 Sparse comp. - MiniBatchSparsePCA...
-    done in 1.164s
+    done in 1.160s
     Extracting the top 6 MiniBatchDictionaryLearning...
-    done in 0.904s
+    done in 0.898s
     Extracting the top 6 Cluster centers - MiniBatchKMeans...
-    done in 0.181s
+    done in 0.157s
     Extracting the top 6 Factor Analysis components - FA...
-    done in 0.370s
+    done in 0.343s
     Extracting the top 6 Dictionary learning...
-    done in 0.873s
+    done in 0.879s
     Extracting the top 6 Dictionary learning - positive dictionary...
-    done in 0.937s
+    done in 0.924s
     Extracting the top 6 Dictionary learning - positive code...
-    done in 0.390s
+    done in 0.359s
     Extracting the top 6 Dictionary learning - positive dictionary & code...
-    done in 0.640s
+    done in 0.471s
 
 
 
@@ -360,7 +360,7 @@ matrix decomposition (dimension reduction) methods from the module
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.255 seconds)
+   **Total running time of the script:** ( 0 minutes  9.924 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_faces_decomposition.py:
