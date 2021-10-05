@@ -176,8 +176,9 @@
 <li><a class="reference internal" href="#changelog">Changelog</a><ul>
 <li><a class="reference internal" href="#sklearn-calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-linear-model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a></li>
-<li><a class="reference internal" href="#sklearn-utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-model-selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-pipeline"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#code-and-documentation-contributors">Code and Documentation Contributors</a></li>
@@ -235,6 +236,22 @@ message when the solver does not support sparse matrices with int64 indices.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21093">#21093</a> by <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la Tour</a>.</p></li>
 </ul>
 </section>
+<section id="sklearn-model-selection">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.model_selection" title="sklearn.model_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a><a class="headerlink" href="#sklearn-model-selection" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  raise an error during cross-validation when the fits for all the
+splits failed. Similarly raise an error during grid-search when the fits for
+all the models and all the splits failed. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21026">#21026</a> by <a class="reference external" href="https://github.com/lesteve">Loïc Estève</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-pipeline">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.pipeline" title="sklearn.pipeline"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a><a class="headerlink" href="#sklearn-pipeline" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Added support for “passthrough” in <code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureUnion</span></code>.
+Setting a transformer to “passthrough” will pass the features unchanged.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20860">#20860</a> by <a class="reference external" href="https://github.com/shubhraneel">Shubhraneel Pal</a>.</p></li>
+</ul>
+</section>
 <section id="sklearn-utils">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.utils" title="sklearn.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a><a class="headerlink" href="#sklearn-utils" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -249,14 +266,6 @@ error message was misleading),
 <a class="reference internal" href="../modules/generated/sklearn.neighbors.KernelDensity.html#sklearn.neighbors.KernelDensity" title="sklearn.neighbors.KernelDensity"><code class="xref py py-func docutils literal notranslate"><span class="pre">neighbors.KernelDensity</span></code></a>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20880">#20880</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>
 and <a class="reference external" href="https://github.com/simonandras">András Simon</a>.</p></li>
-</ul>
-</section>
-<section id="sklearn-pipeline">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.pipeline" title="sklearn.pipeline"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a><a class="headerlink" href="#sklearn-pipeline" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Added support for “passthrough” in <code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureUnion</span></code>.
-Setting a transformer to “passthrough” will pass the features unchanged.
-<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20860">#20860</a> by <a class="reference external" href="https://github.com/shubhraneel">Shubhraneel Pal</a>.</p></li>
 </ul>
 </section>
 </section>
