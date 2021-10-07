@@ -47,14 +47,14 @@ the clusters form a nice parcellation of the swiss roll.
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_ward_structured_vs_unstructured_001.png
-         :alt: Without connectivity constraints (time 0.07s)
+         :alt: Without connectivity constraints (time 0.08s)
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_ward_structured_vs_unstructured_001.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_ward_structured_vs_unstructured_002.png
-         :alt: With connectivity constraints (time 0.11s)
+         :alt: With connectivity constraints (time 0.13s)
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_ward_structured_vs_unstructured_002.png
          :class: sphx-glr-multi-img
 
@@ -67,12 +67,12 @@ the clusters form a nice parcellation of the swiss roll.
 
 
     Compute unstructured hierarchical clustering...
-    Elapsed time: 0.07s
+    Elapsed time: 0.08s
     Number of points: 1500
     /home/circleci/project/examples/cluster/plot_ward_structured_vs_unstructured.py:57: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
       ax = p3.Axes3D(fig)
     Compute structured hierarchical clustering...
-    Elapsed time: 0.11s
+    Elapsed time: 0.13s
     Number of points: 1500
     /home/circleci/project/examples/cluster/plot_ward_structured_vs_unstructured.py:92: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
       ax = p3.Axes3D(fig)
@@ -175,7 +175,7 @@ the clusters form a nice parcellation of the swiss roll.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.581 seconds)
+   **Total running time of the script:** ( 0 minutes  0.647 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_ward_structured_vs_unstructured.py:
