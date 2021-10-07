@@ -86,13 +86,11 @@ target `y` while keeping the same expected value:
 - in the first case, a heteroscedastic Normal noise is added;
 - in the second case, an asymmetric Pareto noise is added.
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-50
+.. GENERATED FROM PYTHON SOURCE LINES 44-48
 
 .. code-block:: default
 
-    y_normal = y_true_mean + rng.normal(
-        loc=0, scale=0.5 + 0.5 * x, size=x.shape[0]
-    )
+    y_normal = y_true_mean + rng.normal(loc=0, scale=0.5 + 0.5 * x, size=x.shape[0])
     a = 5
     y_pareto = y_true_mean + 10 * (rng.pareto(a, size=x.shape[0]) - 1 / (a - 1))
 
@@ -103,32 +101,26 @@ target `y` while keeping the same expected value:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-53
+.. GENERATED FROM PYTHON SOURCE LINES 49-51
 
 Let's first visualize the datasets as well as the distribution of the
 residuals `y - mean(y)`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-89
+.. GENERATED FROM PYTHON SOURCE LINES 51-79
 
 .. code-block:: default
 
     import matplotlib.pyplot as plt
 
-    _, axs = plt.subplots(
-        nrows=2, ncols=2, figsize=(15, 11), sharex="row", sharey="row"
-    )
+    _, axs = plt.subplots(nrows=2, ncols=2, figsize=(15, 11), sharex="row", sharey="row")
 
     axs[0, 0].plot(x, y_true_mean, label="True mean")
-    axs[0, 0].scatter(
-        x, y_normal, color="black", alpha=0.5, label="Observations"
-    )
+    axs[0, 0].scatter(x, y_normal, color="black", alpha=0.5, label="Observations")
     axs[1, 0].hist(y_true_mean - y_normal, edgecolor="black")
 
 
     axs[0, 1].plot(x, y_true_mean, label="True mean")
-    axs[0, 1].scatter(
-        x, y_pareto, color="black", alpha=0.5, label="Observations"
-    )
+    axs[0, 1].scatter(x, y_pareto, color="black", alpha=0.5, label="Observations")
     axs[1, 1].hist(y_true_mean - y_pareto, edgecolor="black")
 
     axs[0, 0].set_title("Dataset with heteroscedastic Normal distributed targets")
@@ -136,9 +128,7 @@ residuals `y - mean(y)`.
     axs[1, 0].set_title(
         "Residuals distribution for heteroscedastic Normal distributed targets"
     )
-    axs[1, 1].set_title(
-        "Residuals distribution for asymmetric Pareto distributed target"
-    )
+    axs[1, 1].set_title("Residuals distribution for asymmetric Pareto distributed target")
     axs[0, 0].legend()
     axs[0, 1].legend()
     axs[0, 0].set_ylabel("y")
@@ -160,7 +150,7 @@ residuals `y - mean(y)`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-125
+.. GENERATED FROM PYTHON SOURCE LINES 80-115
 
 With the heteroscedastic Normal distributed target, we observe that the
 variance of the noise is increasing when the value of the feature `x` is
@@ -198,7 +188,7 @@ three linear models, one for each quantile.
 We will use the quantiles at 5% and 95% to find the outliers in the training
 sample beyond the central 90% interval.
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-144
+.. GENERATED FROM PYTHON SOURCE LINES 115-134
 
 .. code-block:: default
 
@@ -228,13 +218,13 @@ sample beyond the central 90% interval.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-148
+.. GENERATED FROM PYTHON SOURCE LINES 135-138
 
 Now, we can plot the three linear models and the distinguished samples that
 are within the central 90% interval from samples that are outside this
 interval.
 
-.. GENERATED FROM PYTHON SOURCE LINES 148-174
+.. GENERATED FROM PYTHON SOURCE LINES 138-164
 
 .. code-block:: default
 
@@ -276,7 +266,7 @@ interval.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 175-189
+.. GENERATED FROM PYTHON SOURCE LINES 165-179
 
 Since the noise is still Normally distributed, in particular is symmetric,
 the true conditional mean and the true conditional median coincide. Indeed,
@@ -293,7 +283,7 @@ that we have a total of 100 samples.
 We can repeat the same experiment using the asymmetric Pareto distributed
 target.
 
-.. GENERATED FROM PYTHON SOURCE LINES 189-206
+.. GENERATED FROM PYTHON SOURCE LINES 179-196
 
 .. code-block:: default
 
@@ -321,7 +311,7 @@ target.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 207-234
+.. GENERATED FROM PYTHON SOURCE LINES 197-224
 
 .. code-block:: default
 
@@ -364,7 +354,7 @@ target.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 235-259
+.. GENERATED FROM PYTHON SOURCE LINES 225-249
 
 Due to the asymmetry of the distribution of the noise, we observe that the
 true mean and estimated conditional median are different. We also observe
@@ -391,7 +381,7 @@ squared error and mean absolute error. We will use the asymmetric Pareto
 distributed target to make it more interesting as mean and median are not
 equal.
 
-.. GENERATED FROM PYTHON SOURCE LINES 259-280
+.. GENERATED FROM PYTHON SOURCE LINES 249-270
 
 .. code-block:: default
 
@@ -438,7 +428,7 @@ equal.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 281-292
+.. GENERATED FROM PYTHON SOURCE LINES 271-282
 
 On the training set, we see that MAE is lower for
 :class:`~sklearn.linear_model.QuantileRegressor` than
@@ -452,7 +442,7 @@ while MSE is the loss minimized
 We can make a similar evaluation but looking a the test error obtained by
 cross-validation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 292-319
+.. GENERATED FROM PYTHON SOURCE LINES 282-309
 
 .. code-block:: default
 
@@ -505,14 +495,14 @@ cross-validation.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 320-321
+.. GENERATED FROM PYTHON SOURCE LINES 310-311
 
 We reach similar conclusions on the out-of-sample evaluation.
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.314 seconds)
+   **Total running time of the script:** ( 0 minutes  1.667 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_quantile_regression.py:

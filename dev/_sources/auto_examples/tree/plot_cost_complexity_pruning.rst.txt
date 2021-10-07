@@ -94,7 +94,7 @@ it is the trivial tree with only one node.
 .. code-block:: default
 
     fig, ax = plt.subplots()
-    ax.plot(ccp_alphas[:-1], impurities[:-1], marker='o', drawstyle="steps-post")
+    ax.plot(ccp_alphas[:-1], impurities[:-1], marker="o", drawstyle="steps-post")
     ax.set_xlabel("effective alpha")
     ax.set_ylabel("total impurity of leaves")
     ax.set_title("Total Impurity vs effective alpha for training set")
@@ -125,7 +125,7 @@ Next, we train a decision tree using the effective alphas. The last value
 in ``ccp_alphas`` is the alpha value that prunes the whole tree,
 leaving the tree, ``clfs[-1]``, with one node.
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-65
+.. GENERATED FROM PYTHON SOURCE LINES 57-68
 
 .. code-block:: default
 
@@ -134,8 +134,11 @@ leaving the tree, ``clfs[-1]``, with one node.
         clf = DecisionTreeClassifier(random_state=0, ccp_alpha=ccp_alpha)
         clf.fit(X_train, y_train)
         clfs.append(clf)
-    print("Number of nodes in the last tree is: {} with ccp_alpha: {}".format(
-          clfs[-1].tree_.node_count, ccp_alphas[-1]))
+    print(
+        "Number of nodes in the last tree is: {} with ccp_alpha: {}".format(
+            clfs[-1].tree_.node_count, ccp_alphas[-1]
+        )
+    )
 
 
 
@@ -152,14 +155,14 @@ leaving the tree, ``clfs[-1]``, with one node.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-70
+.. GENERATED FROM PYTHON SOURCE LINES 69-73
 
 For the remainder of this example, we remove the last element in
 ``clfs`` and ``ccp_alphas``, because it is the trivial tree with only one
 node. Here we show that the number of nodes and tree depth decreases as alpha
 increases.
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-86
+.. GENERATED FROM PYTHON SOURCE LINES 73-89
 
 .. code-block:: default
 
@@ -169,11 +172,11 @@ increases.
     node_counts = [clf.tree_.node_count for clf in clfs]
     depth = [clf.tree_.max_depth for clf in clfs]
     fig, ax = plt.subplots(2, 1)
-    ax[0].plot(ccp_alphas, node_counts, marker='o', drawstyle="steps-post")
+    ax[0].plot(ccp_alphas, node_counts, marker="o", drawstyle="steps-post")
     ax[0].set_xlabel("alpha")
     ax[0].set_ylabel("number of nodes")
     ax[0].set_title("Number of nodes vs alpha")
-    ax[1].plot(ccp_alphas, depth, marker='o', drawstyle="steps-post")
+    ax[1].plot(ccp_alphas, depth, marker="o", drawstyle="steps-post")
     ax[1].set_xlabel("alpha")
     ax[1].set_ylabel("depth of tree")
     ax[1].set_title("Depth vs alpha")
@@ -191,7 +194,7 @@ increases.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-94
+.. GENERATED FROM PYTHON SOURCE LINES 90-97
 
 Accuracy vs alpha for training and testing sets
 ----------------------------------------------------
@@ -201,7 +204,7 @@ a 100% training accuracy and 88% testing accuracy. As alpha increases, more
 of the tree is pruned, thus creating a decision tree that generalizes better.
 In this example, setting ``ccp_alpha=0.015`` maximizes the testing accuracy.
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-107
+.. GENERATED FROM PYTHON SOURCE LINES 97-108
 
 .. code-block:: default
 
@@ -212,10 +215,8 @@ In this example, setting ``ccp_alpha=0.015`` maximizes the testing accuracy.
     ax.set_xlabel("alpha")
     ax.set_ylabel("accuracy")
     ax.set_title("Accuracy vs alpha for training and testing sets")
-    ax.plot(ccp_alphas, train_scores, marker='o', label="train",
-            drawstyle="steps-post")
-    ax.plot(ccp_alphas, test_scores, marker='o', label="test",
-            drawstyle="steps-post")
+    ax.plot(ccp_alphas, train_scores, marker="o", label="train", drawstyle="steps-post")
+    ax.plot(ccp_alphas, test_scores, marker="o", label="test", drawstyle="steps-post")
     ax.legend()
     plt.show()
 
@@ -233,7 +234,7 @@ In this example, setting ``ccp_alpha=0.015`` maximizes the testing accuracy.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.568 seconds)
+   **Total running time of the script:** ( 0 minutes  0.531 seconds)
 
 
 .. _sphx_glr_download_auto_examples_tree_plot_cost_complexity_pruning.py:

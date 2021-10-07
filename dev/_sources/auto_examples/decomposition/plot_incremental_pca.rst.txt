@@ -35,7 +35,7 @@ few samples at a time. This can be considered a "toy example", as IPCA is
 intended for large datasets which do not fit in main memory, requiring
 incremental approaches.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-61
+.. GENERATED FROM PYTHON SOURCE LINES 21-65
 
 
 
@@ -84,18 +84,22 @@ incremental approaches.
     pca = PCA(n_components=n_components)
     X_pca = pca.fit_transform(X)
 
-    colors = ['navy', 'turquoise', 'darkorange']
+    colors = ["navy", "turquoise", "darkorange"]
 
     for X_transformed, title in [(X_ipca, "Incremental PCA"), (X_pca, "PCA")]:
         plt.figure(figsize=(8, 8))
         for color, i, target_name in zip(colors, [0, 1, 2], iris.target_names):
-            plt.scatter(X_transformed[y == i, 0], X_transformed[y == i, 1],
-                        color=color, lw=2, label=target_name)
+            plt.scatter(
+                X_transformed[y == i, 0],
+                X_transformed[y == i, 1],
+                color=color,
+                lw=2,
+                label=target_name,
+            )
 
         if "Incremental" in title:
             err = np.abs(np.abs(X_pca) - np.abs(X_ipca)).mean()
-            plt.title(title + " of iris dataset\nMean absolute unsigned error "
-                      "%.6f" % err)
+            plt.title(title + " of iris dataset\nMean absolute unsigned error %.6f" % err)
         else:
             plt.title(title + " of iris dataset")
         plt.legend(loc="best", shadow=False, scatterpoints=1)
@@ -106,7 +110,7 @@ incremental approaches.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.413 seconds)
+   **Total running time of the script:** ( 0 minutes  0.376 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_incremental_pca.py:

@@ -42,12 +42,12 @@ the low-dimensional space. Here the manifold problem matches fairly
 that of representing a flat map of the Earth, as with
 `map projection <https://en.wikipedia.org/wiki/Map_projection>`_
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-152
+.. GENERATED FROM PYTHON SOURCE LINES 29-161
 
 
 
 .. image-sg:: /auto_examples/manifold/images/sphx_glr_plot_manifold_sphere_001.png
-   :alt: Manifold Learning with 1000 points, 10 neighbors, LLE (0.1 sec), LTSA (0.15 sec), Hessian LLE (0.27 sec), Modified LLE (0.21 sec), Isomap (0.4 sec), MDS (1.1 sec), Spectral Embedding (0.097 sec), t-SNE (7 sec)
+   :alt: Manifold Learning with 1000 points, 10 neighbors, LLE (0.08 sec), LTSA (0.13 sec), Hessian LLE (0.22 sec), Modified LLE (0.17 sec), Isomap (0.36 sec), MDS (0.85 sec), Spectral Embedding (0.077 sec), t-SNE (6.5 sec)
    :srcset: /auto_examples/manifold/images/sphx_glr_plot_manifold_sphere_001.png
    :class: sphx-glr-single-img
 
@@ -59,18 +59,18 @@ that of representing a flat map of the Earth, as with
  .. code-block:: none
 
 
-    standard: 0.1 sec
-    ltsa: 0.15 sec
-    hessian: 0.27 sec
-    modified: 0.21 sec
-    ISO: 0.4 sec
-    MDS: 1.1 sec
-    Spectral Embedding: 0.097 sec
+    standard: 0.08 sec
+    ltsa: 0.13 sec
+    hessian: 0.22 sec
+    modified: 0.17 sec
+    ISO: 0.36 sec
+    MDS: 0.85 sec
+    Spectral Embedding: 0.077 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
     /home/circleci/project/sklearn/manifold/_t_sne.py:982: FutureWarning: The PCA initialization in TSNE will change to have the standard deviation of PC1 equal to 1e-4 in 1.2. This will ensure better convergence.
       warnings.warn(
-    t-SNE: 7 sec
+    t-SNE: 6.5 sec
 
 
 
@@ -110,32 +110,39 @@ that of representing a flat map of the Earth, as with
     t = random_state.rand(n_samples) * np.pi
 
     # Sever the poles from the sphere.
-    indices = ((t < (np.pi - (np.pi / 8))) & (t > ((np.pi / 8))))
+    indices = (t < (np.pi - (np.pi / 8))) & (t > ((np.pi / 8)))
     colors = p[indices]
-    x, y, z = np.sin(t[indices]) * np.cos(p[indices]), \
-        np.sin(t[indices]) * np.sin(p[indices]), \
-        np.cos(t[indices])
+    x, y, z = (
+        np.sin(t[indices]) * np.cos(p[indices]),
+        np.sin(t[indices]) * np.sin(p[indices]),
+        np.cos(t[indices]),
+    )
 
     # Plot our dataset.
     fig = plt.figure(figsize=(15, 8))
-    plt.suptitle("Manifold Learning with %i points, %i neighbors"
-                 % (1000, n_neighbors), fontsize=14)
+    plt.suptitle(
+        "Manifold Learning with %i points, %i neighbors" % (1000, n_neighbors), fontsize=14
+    )
 
-    ax = fig.add_subplot(251, projection='3d')
+    ax = fig.add_subplot(251, projection="3d")
     ax.scatter(x, y, z, c=p[indices], cmap=plt.cm.rainbow)
     ax.view_init(40, -10)
 
     sphere_data = np.array([x, y, z]).T
 
     # Perform Locally Linear Embedding Manifold learning
-    methods = ['standard', 'ltsa', 'hessian', 'modified']
-    labels = ['LLE', 'LTSA', 'Hessian LLE', 'Modified LLE']
+    methods = ["standard", "ltsa", "hessian", "modified"]
+    labels = ["LLE", "LTSA", "Hessian LLE", "Modified LLE"]
 
     for i, method in enumerate(methods):
         t0 = time()
-        trans_data = manifold.LocallyLinearEmbedding(
-            n_neighbors=n_neighbors, n_components=2,
-            method=method).fit_transform(sphere_data).T
+        trans_data = (
+            manifold.LocallyLinearEmbedding(
+                n_neighbors=n_neighbors, n_components=2, method=method
+            )
+            .fit_transform(sphere_data)
+            .T
+        )
         t1 = time()
         print("%s: %.2g sec" % (methods[i], t1 - t0))
 
@@ -144,21 +151,24 @@ that of representing a flat map of the Earth, as with
         plt.title("%s (%.2g sec)" % (labels[i], t1 - t0))
         ax.xaxis.set_major_formatter(NullFormatter())
         ax.yaxis.set_major_formatter(NullFormatter())
-        plt.axis('tight')
+        plt.axis("tight")
 
     # Perform Isomap Manifold learning.
     t0 = time()
-    trans_data = manifold.Isomap(n_neighbors=n_neighbors,
-                                 n_components=2).fit_transform(sphere_data).T
+    trans_data = (
+        manifold.Isomap(n_neighbors=n_neighbors, n_components=2)
+        .fit_transform(sphere_data)
+        .T
+    )
     t1 = time()
-    print("%s: %.2g sec" % ('ISO', t1 - t0))
+    print("%s: %.2g sec" % ("ISO", t1 - t0))
 
     ax = fig.add_subplot(257)
     plt.scatter(trans_data[0], trans_data[1], c=colors, cmap=plt.cm.rainbow)
-    plt.title("%s (%.2g sec)" % ('Isomap', t1 - t0))
+    plt.title("%s (%.2g sec)" % ("Isomap", t1 - t0))
     ax.xaxis.set_major_formatter(NullFormatter())
     ax.yaxis.set_major_formatter(NullFormatter())
-    plt.axis('tight')
+    plt.axis("tight")
 
     # Perform Multi-dimensional scaling.
     t0 = time()
@@ -172,12 +182,11 @@ that of representing a flat map of the Earth, as with
     plt.title("MDS (%.2g sec)" % (t1 - t0))
     ax.xaxis.set_major_formatter(NullFormatter())
     ax.yaxis.set_major_formatter(NullFormatter())
-    plt.axis('tight')
+    plt.axis("tight")
 
     # Perform Spectral Embedding.
     t0 = time()
-    se = manifold.SpectralEmbedding(n_components=2,
-                                    n_neighbors=n_neighbors)
+    se = manifold.SpectralEmbedding(n_components=2, n_neighbors=n_neighbors)
     trans_data = se.fit_transform(sphere_data).T
     t1 = time()
     print("Spectral Embedding: %.2g sec" % (t1 - t0))
@@ -187,11 +196,11 @@ that of representing a flat map of the Earth, as with
     plt.title("Spectral Embedding (%.2g sec)" % (t1 - t0))
     ax.xaxis.set_major_formatter(NullFormatter())
     ax.yaxis.set_major_formatter(NullFormatter())
-    plt.axis('tight')
+    plt.axis("tight")
 
     # Perform t-distributed stochastic neighbor embedding.
     t0 = time()
-    tsne = manifold.TSNE(n_components=2, init='pca', random_state=0)
+    tsne = manifold.TSNE(n_components=2, init="pca", random_state=0)
     trans_data = tsne.fit_transform(sphere_data).T
     t1 = time()
     print("t-SNE: %.2g sec" % (t1 - t0))
@@ -201,14 +210,14 @@ that of representing a flat map of the Earth, as with
     plt.title("t-SNE (%.2g sec)" % (t1 - t0))
     ax.xaxis.set_major_formatter(NullFormatter())
     ax.yaxis.set_major_formatter(NullFormatter())
-    plt.axis('tight')
+    plt.axis("tight")
 
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.333 seconds)
+   **Total running time of the script:** ( 0 minutes  9.206 seconds)
 
 
 .. _sphx_glr_download_auto_examples_manifold_plot_manifold_sphere.py:

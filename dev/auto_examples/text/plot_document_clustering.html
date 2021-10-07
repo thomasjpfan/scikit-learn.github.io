@@ -243,12 +243,12 @@ Loading 20 newsgroups dataset for categories:
 4 categories
 
 Extracting features from the training dataset using a sparse vectorizer
-done in 1.348947s
+done in 1.254760s
 n_samples: 3387, n_features: 10000
 
 Clustering sparse data with MiniBatchKMeans(batch_size=1000, init_size=1000, n_clusters=4, n_init=1,
                 verbose=False)
-done in 0.101s
+done in 0.095s
 
 Homogeneity: 0.228
 Completeness: 0.391
@@ -289,36 +289,56 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 
 
 <span class="c1"># Display progress logs on stdout</span>
-<a href="https://docs.python.org/3/library/logging.html#logging.basicConfig" title="logging.basicConfig" class="sphx-glr-backref-module-logging sphx-glr-backref-type-py-function"><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span></a><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span>
-                    <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> </span><span class="si">%(levelname)s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+<a href="https://docs.python.org/3/library/logging.html#logging.basicConfig" title="logging.basicConfig" class="sphx-glr-backref-module-logging sphx-glr-backref-type-py-function"><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span></a><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> </span><span class="si">%(levelname)s</span><span class="s2"> </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">)</span>
 
 <span class="c1"># parse commandline arguments</span>
 <span class="n">op</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/optparse.html#optparse.OptionParser" title="optparse.OptionParser" class="sphx-glr-backref-module-optparse sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">OptionParser</span></a><span class="p">()</span>
-<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--lsa&quot;</span><span class="p">,</span>
-              <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;n_components&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Preprocess documents with latent semantic analysis.&quot;</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--no-minibatch&quot;</span><span class="p">,</span>
-              <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_false&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;minibatch&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Use ordinary k-means algorithm (in batch mode).&quot;</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--no-idf&quot;</span><span class="p">,</span>
-              <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_false&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;use_idf&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Disable Inverse Document Frequency feature weighting.&quot;</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--use-hashing&quot;</span><span class="p">,</span>
-              <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Use a hashing feature vectorizer&quot;</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--n-features&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Maximum number of features (dimensions)&quot;</span>
-                   <span class="s2">&quot; to extract from text.&quot;</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s2">&quot;--verbose&quot;</span><span class="p">,</span>
-              <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;verbose&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-              <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Print progress reports inside k-means algorithm.&quot;</span><span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span>
+    <span class="s2">&quot;--lsa&quot;</span><span class="p">,</span>
+    <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;n_components&quot;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;int&quot;</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Preprocess documents with latent semantic analysis.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span>
+    <span class="s2">&quot;--no-minibatch&quot;</span><span class="p">,</span>
+    <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_false&quot;</span><span class="p">,</span>
+    <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;minibatch&quot;</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Use ordinary k-means algorithm (in batch mode).&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span>
+    <span class="s2">&quot;--no-idf&quot;</span><span class="p">,</span>
+    <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_false&quot;</span><span class="p">,</span>
+    <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;use_idf&quot;</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Disable Inverse Document Frequency feature weighting.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span>
+    <span class="s2">&quot;--use-hashing&quot;</span><span class="p">,</span>
+    <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Use a hashing feature vectorizer&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span>
+    <span class="s2">&quot;--n-features&quot;</span><span class="p">,</span>
+    <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Maximum number of features (dimensions) to extract from text.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span>
+    <span class="s2">&quot;--verbose&quot;</span><span class="p">,</span>
+    <span class="n">action</span><span class="o">=</span><span class="s2">&quot;store_true&quot;</span><span class="p">,</span>
+    <span class="n">dest</span><span class="o">=</span><span class="s2">&quot;verbose&quot;</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Print progress reports inside k-means algorithm.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 <span class="n">op</span><span class="o">.</span><span class="n">print_help</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">is_interactive</span><span class="p">():</span>
-    <span class="k">return</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><a href="https://docs.python.org/3/library/sys.html#sys.modules" title="sys.modules" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-data"><span class="n">sys</span><span class="o">.</span><span class="n">modules</span></a><span class="p">[</span><span class="s1">&#39;__main__&#39;</span><span class="p">],</span> <span class="s1">&#39;__file__&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><a href="https://docs.python.org/3/library/sys.html#sys.modules" title="sys.modules" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-data"><span class="n">sys</span><span class="o">.</span><span class="n">modules</span></a><span class="p">[</span><span class="s2">&quot;__main__&quot;</span><span class="p">],</span> <span class="s2">&quot;__file__&quot;</span><span class="p">)</span>
 
 
 <span class="c1"># work-around for Jupyter notebook and IPython console</span>
@@ -332,10 +352,10 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <span class="c1"># #############################################################################</span>
 <span class="c1"># Load some categories from the training set</span>
 <span class="n">categories</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;alt.atheism&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;talk.religion.misc&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;comp.graphics&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;sci.space&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;alt.atheism&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;talk.religion.misc&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;comp.graphics&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sci.space&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="c1"># Uncomment the following to do the analysis on all the categories</span>
 <span class="c1"># categories = None</span>
@@ -343,8 +363,9 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading 20 newsgroups dataset for categories:&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">categories</span><span class="p">)</span>
 
-<span class="n">dataset</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="sklearn.datasets.fetch_20newsgroups" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_20newsgroups</span></a><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span>
-                             <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">dataset</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="sklearn.datasets.fetch_20newsgroups" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_20newsgroups</span></a><span class="p">(</span>
+    <span class="n">subset</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> documents&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> categories&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">target_names</span><span class="p">))</span>
@@ -353,24 +374,33 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <span class="n">labels</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target</span>
 <span class="n">true_k</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.unique.html#numpy.unique" title="numpy.unique" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">unique</span></a><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracting features from the training dataset &quot;</span>
-      <span class="s2">&quot;using a sparse vectorizer&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracting features from the training dataset using a sparse vectorizer&quot;</span><span class="p">)</span>
 <span class="n">t0</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span></a><span class="p">()</span>
 <span class="k">if</span> <span class="n">opts</span><span class="o">.</span><span class="n">use_hashing</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">opts</span><span class="o">.</span><span class="n">use_idf</span><span class="p">:</span>
         <span class="c1"># Perform an IDF normalization on the output of HashingVectorizer</span>
-        <span class="n">hasher</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="sklearn.feature_extraction.text.HashingVectorizer" class="sphx-glr-backref-module-sklearn-feature_extraction-text sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">HashingVectorizer</span></a><span class="p">(</span><span class="n">n_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
-                                   <span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span> <span class="n">alternate_sign</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-                                   <span class="n">norm</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+        <span class="n">hasher</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="sklearn.feature_extraction.text.HashingVectorizer" class="sphx-glr-backref-module-sklearn-feature_extraction-text sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">HashingVectorizer</span></a><span class="p">(</span>
+            <span class="n">n_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
+            <span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">,</span>
+            <span class="n">alternate_sign</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">norm</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="sklearn.pipeline.make_pipeline" class="sphx-glr-backref-module-sklearn-pipeline sphx-glr-backref-type-py-function"><span class="n">make_pipeline</span></a><span class="p">(</span><span class="n">hasher</span><span class="p">,</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="sklearn.feature_extraction.text.TfidfTransformer" class="sphx-glr-backref-module-sklearn-feature_extraction-text sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TfidfTransformer</span></a><span class="p">())</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="sklearn.feature_extraction.text.HashingVectorizer" class="sphx-glr-backref-module-sklearn-feature_extraction-text sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">HashingVectorizer</span></a><span class="p">(</span><span class="n">n_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
-                                       <span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
-                                       <span class="n">alternate_sign</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">norm</span><span class="o">=</span><span class="s1">&#39;l2&#39;</span><span class="p">)</span>
+        <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.HashingVectorizer.html#sklearn.feature_extraction.text.HashingVectorizer" title="sklearn.feature_extraction.text.HashingVectorizer" class="sphx-glr-backref-module-sklearn-feature_extraction-text sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">HashingVectorizer</span></a><span class="p">(</span>
+            <span class="n">n_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
+            <span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">,</span>
+            <span class="n">alternate_sign</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+            <span class="n">norm</span><span class="o">=</span><span class="s2">&quot;l2&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="sklearn.feature_extraction.text.TfidfVectorizer" class="sphx-glr-backref-module-sklearn-feature_extraction-text sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TfidfVectorizer</span></a><span class="p">(</span><span class="n">max_df</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
-                                 <span class="n">min_df</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stop_words</span><span class="o">=</span><span class="s1">&#39;english&#39;</span><span class="p">,</span>
-                                 <span class="n">use_idf</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">use_idf</span><span class="p">)</span>
+    <span class="n">vectorizer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="sklearn.feature_extraction.text.TfidfVectorizer" class="sphx-glr-backref-module-sklearn-feature_extraction-text sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TfidfVectorizer</span></a><span class="p">(</span>
+        <span class="n">max_df</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span>
+        <span class="n">max_features</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">n_features</span><span class="p">,</span>
+        <span class="n">min_df</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+        <span class="n">stop_words</span><span class="o">=</span><span class="s2">&quot;english&quot;</span><span class="p">,</span>
+        <span class="n">use_idf</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">use_idf</span><span class="p">,</span>
+    <span class="p">)</span>
 <span class="n">X</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done in </span><span class="si">%f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
@@ -392,8 +422,9 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done in </span><span class="si">%f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 
     <span class="n">explained_variance</span> <span class="o">=</span> <span class="n">svd</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Explained variance of the SVD step: </span><span class="si">{}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-        <span class="nb">int</span><span class="p">(</span><span class="n">explained_variance</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)))</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;Explained variance of the SVD step: </span><span class="si">{}</span><span class="s2">%&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">explained_variance</span> <span class="o">*</span> <span class="mi">100</span><span class="p">))</span>
+    <span class="p">)</span>
 
     <span class="nb">print</span><span class="p">()</span>
 
@@ -402,11 +433,22 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <span class="c1"># Do the actual clustering</span>
 
 <span class="k">if</span> <span class="n">opts</span><span class="o">.</span><span class="n">minibatch</span><span class="p">:</span>
-    <span class="n">km</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="sklearn.cluster.MiniBatchKMeans" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">MiniBatchKMeans</span></a><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">true_k</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                         <span class="n">init_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">verbose</span><span class="p">)</span>
+    <span class="n">km</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="sklearn.cluster.MiniBatchKMeans" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">MiniBatchKMeans</span></a><span class="p">(</span>
+        <span class="n">n_clusters</span><span class="o">=</span><span class="n">true_k</span><span class="p">,</span>
+        <span class="n">init</span><span class="o">=</span><span class="s2">&quot;k-means++&quot;</span><span class="p">,</span>
+        <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">init_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">batch_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
+    <span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">km</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="sklearn.cluster.KMeans" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">KMeans</span></a><span class="p">(</span><span class="n">n_clusters</span><span class="o">=</span><span class="n">true_k</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;k-means++&#39;</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-                <span class="n">verbose</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">verbose</span><span class="p">)</span>
+    <span class="n">km</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="sklearn.cluster.KMeans" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">KMeans</span></a><span class="p">(</span>
+        <span class="n">n_clusters</span><span class="o">=</span><span class="n">true_k</span><span class="p">,</span>
+        <span class="n">init</span><span class="o">=</span><span class="s2">&quot;k-means++&quot;</span><span class="p">,</span>
+        <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+        <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+        <span class="n">verbose</span><span class="o">=</span><span class="n">opts</span><span class="o">.</span><span class="n">verbose</span><span class="p">,</span>
+    <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Clustering sparse data with </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">km</span><span class="p">)</span>
 <span class="n">t0</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span></a><span class="p">()</span>
@@ -417,10 +459,11 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Homogeneity: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" title="sklearn.metrics.homogeneity_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">homogeneity_score</span></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Completeness: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.completeness_score.html#sklearn.metrics.completeness_score" title="sklearn.metrics.completeness_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">completeness_score</span></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V-measure: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.v_measure_score.html#sklearn.metrics.v_measure_score" title="sklearn.metrics.v_measure_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">v_measure_score</span></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adjusted Rand-Index: </span><span class="si">%.3f</span><span class="s2">&quot;</span>
-      <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score" title="sklearn.metrics.adjusted_rand_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">adjusted_rand_score</span></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Silhouette Coefficient: </span><span class="si">%0.3f</span><span class="s2">&quot;</span>
-      <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score" title="sklearn.metrics.silhouette_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adjusted Rand-Index: </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score" title="sklearn.metrics.adjusted_rand_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">adjusted_rand_score</span></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;Silhouette Coefficient: </span><span class="si">%0.3f</span><span class="s2">&quot;</span>
+    <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score" title="sklearn.metrics.silhouette_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="p">)</span>
 
 <span class="nb">print</span><span class="p">()</span>
 
@@ -436,13 +479,13 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 
     <span class="n">terms</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">true_k</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cluster </span><span class="si">%d</span><span class="s2">:&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cluster </span><span class="si">%d</span><span class="s2">:&quot;</span> <span class="o">%</span> <span class="n">i</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="n">order_centroids</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:</span><span class="mi">10</span><span class="p">]:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">terms</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">terms</span><span class="p">[</span><span class="n">ind</span><span class="p">],</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.899 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.804 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-document-clustering-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_document_clustering.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo29.svg" width="150px" /></a>

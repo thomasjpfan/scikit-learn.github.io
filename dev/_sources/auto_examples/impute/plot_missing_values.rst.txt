@@ -73,7 +73,7 @@ Download the data and make missing values sets
  up the calculations but feel free to use the whole dataset.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-86
+.. GENERATED FROM PYTHON SOURCE LINES 45-84
 
 .. code-block:: default
 
@@ -100,7 +100,7 @@ Download the data and make missing values sets
         n_missing_samples = int(n_samples * missing_rate)
 
         missing_samples = np.zeros(n_samples, dtype=bool)
-        missing_samples[: n_missing_samples] = True
+        missing_samples[:n_missing_samples] = True
 
         rng.shuffle(missing_samples)
         missing_features = rng.randint(0, n_features, n_missing_samples)
@@ -111,11 +111,9 @@ Download the data and make missing values sets
         return X_missing, y_missing
 
 
-    X_miss_california, y_miss_california = add_missing_values(
-        X_california, y_california)
+    X_miss_california, y_miss_california = add_missing_values(X_california, y_california)
 
-    X_miss_diabetes, y_miss_diabetes = add_missing_values(
-        X_diabetes, y_diabetes)
+    X_miss_diabetes, y_miss_diabetes = add_missing_values(X_diabetes, y_diabetes)
 
 
 
@@ -125,7 +123,7 @@ Download the data and make missing values sets
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-92
+.. GENERATED FROM PYTHON SOURCE LINES 85-90
 
 Impute the missing data and score
 #################################
@@ -133,7 +131,7 @@ Now we will write a function which will score the results on the differently
 imputed data. Let's look at each imputer separately:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-107
+.. GENERATED FROM PYTHON SOURCE LINES 90-105
 
 .. code-block:: default
 
@@ -159,7 +157,7 @@ imputed data. Let's look at each imputer separately:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 108-114
+.. GENERATED FROM PYTHON SOURCE LINES 106-112
 
 Missing information
 -------------------
@@ -168,7 +166,7 @@ In addition to imputing the missing values, the imputers have an
 might carry some information.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-131
+.. GENERATED FROM PYTHON SOURCE LINES 112-129
 
 .. code-block:: default
 
@@ -176,9 +174,9 @@ might carry some information.
 
     def get_scores_for_imputer(imputer, X_missing, y_missing):
         estimator = make_pipeline(imputer, regressor)
-        impute_scores = cross_val_score(estimator, X_missing, y_missing,
-                                        scoring='neg_mean_squared_error',
-                                        cv=N_SPLITS)
+        impute_scores = cross_val_score(
+            estimator, X_missing, y_missing, scoring="neg_mean_squared_error", cv=N_SPLITS
+        )
         return impute_scores
 
 
@@ -196,30 +194,29 @@ might carry some information.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-136
+.. GENERATED FROM PYTHON SOURCE LINES 130-134
 
 Estimate the score
 ------------------
 First, we want to estimate the score on the original data:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-151
+.. GENERATED FROM PYTHON SOURCE LINES 134-148
 
 .. code-block:: default
 
 
 
     def get_full_score(X_full, y_full):
-        full_scores = cross_val_score(regressor, X_full, y_full,
-                                      scoring='neg_mean_squared_error',
-                                      cv=N_SPLITS)
+        full_scores = cross_val_score(
+            regressor, X_full, y_full, scoring="neg_mean_squared_error", cv=N_SPLITS
+        )
         return full_scores.mean(), full_scores.std()
 
 
-    mses_california[0], stds_california[0] = get_full_score(X_california,
-                                                            y_california)
+    mses_california[0], stds_california[0] = get_full_score(X_california, y_california)
     mses_diabetes[0], stds_diabetes[0] = get_full_score(X_diabetes, y_diabetes)
-    x_labels.append('Full data')
+    x_labels.append("Full data")
 
 
 
@@ -229,7 +226,7 @@ First, we want to estimate the score on the original data:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 152-158
+.. GENERATED FROM PYTHON SOURCE LINES 149-155
 
 Replace missing values by 0
 ---------------------------
@@ -238,7 +235,7 @@ Now we will estimate the score on the data where the missing values are
 replaced by 0:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-175
+.. GENERATED FROM PYTHON SOURCE LINES 155-175
 
 .. code-block:: default
 
@@ -246,17 +243,20 @@ replaced by 0:
 
     def get_impute_zero_score(X_missing, y_missing):
 
-        imputer = SimpleImputer(missing_values=np.nan, add_indicator=True,
-                                strategy='constant', fill_value=0)
+        imputer = SimpleImputer(
+            missing_values=np.nan, add_indicator=True, strategy="constant", fill_value=0
+        )
         zero_impute_scores = get_scores_for_imputer(imputer, X_missing, y_missing)
         return zero_impute_scores.mean(), zero_impute_scores.std()
 
 
     mses_california[1], stds_california[1] = get_impute_zero_score(
-        X_miss_california, y_miss_california)
-    mses_diabetes[1], stds_diabetes[1] = get_impute_zero_score(X_miss_diabetes,
-                                                               y_miss_diabetes)
-    x_labels.append('Zero imputation')
+        X_miss_california, y_miss_california
+    )
+    mses_diabetes[1], stds_diabetes[1] = get_impute_zero_score(
+        X_miss_diabetes, y_miss_diabetes
+    )
+    x_labels.append("Zero imputation")
 
 
 
@@ -274,9 +274,10 @@ kNN-imputation of the missing values
 :class:`~sklearn.impute.KNNImputer` imputes missing values using the weighted
 or unweighted mean of the desired number of nearest neighbors.
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-195
+.. GENERATED FROM PYTHON SOURCE LINES 181-198
 
 .. code-block:: default
+
 
 
     def get_impute_knn_score(X_missing, y_missing):
@@ -286,10 +287,12 @@ or unweighted mean of the desired number of nearest neighbors.
 
 
     mses_california[2], stds_california[2] = get_impute_knn_score(
-        X_miss_california, y_miss_california)
-    mses_diabetes[2], stds_diabetes[2] = get_impute_knn_score(X_miss_diabetes,
-                                                              y_miss_diabetes)
-    x_labels.append('KNN Imputation')
+        X_miss_california, y_miss_california
+    )
+    mses_diabetes[2], stds_diabetes[2] = get_impute_knn_score(
+        X_miss_diabetes, y_miss_diabetes
+    )
+    x_labels.append("KNN Imputation")
 
 
 
@@ -299,29 +302,29 @@ or unweighted mean of the desired number of nearest neighbors.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 196-199
+.. GENERATED FROM PYTHON SOURCE LINES 199-202
 
 Impute missing values with mean
 -------------------------------
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 199-214
+.. GENERATED FROM PYTHON SOURCE LINES 202-217
 
 .. code-block:: default
 
 
+
     def get_impute_mean(X_missing, y_missing):
-        imputer = SimpleImputer(missing_values=np.nan, strategy="mean",
-                                add_indicator=True)
+        imputer = SimpleImputer(missing_values=np.nan, strategy="mean", add_indicator=True)
         mean_impute_scores = get_scores_for_imputer(imputer, X_missing, y_missing)
         return mean_impute_scores.mean(), mean_impute_scores.std()
 
 
-    mses_california[3], stds_california[3] = get_impute_mean(X_miss_california,
-                                                             y_miss_california)
-    mses_diabetes[3], stds_diabetes[3] = get_impute_mean(X_miss_diabetes,
-                                                         y_miss_diabetes)
-    x_labels.append('Mean Imputation')
+    mses_california[3], stds_california[3] = get_impute_mean(
+        X_miss_california, y_miss_california
+    )
+    mses_diabetes[3], stds_diabetes[3] = get_impute_mean(X_miss_diabetes, y_miss_diabetes)
+    x_labels.append("Mean Imputation")
 
 
 
@@ -331,7 +334,7 @@ Impute missing values with mean
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 215-225
+.. GENERATED FROM PYTHON SOURCE LINES 218-228
 
 Iterative imputation of the missing values
 ------------------------------------------
@@ -344,26 +347,31 @@ are obviously non-normal, consider transforming them to look more normal
 to potentially improve performance.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 225-245
+.. GENERATED FROM PYTHON SOURCE LINES 228-253
 
 .. code-block:: default
 
 
+
     def get_impute_iterative(X_missing, y_missing):
-        imputer = IterativeImputer(missing_values=np.nan, add_indicator=True,
-                                   random_state=0, n_nearest_features=5,
-                                   sample_posterior=True)
-        iterative_impute_scores = get_scores_for_imputer(imputer,
-                                                         X_missing,
-                                                         y_missing)
+        imputer = IterativeImputer(
+            missing_values=np.nan,
+            add_indicator=True,
+            random_state=0,
+            n_nearest_features=5,
+            sample_posterior=True,
+        )
+        iterative_impute_scores = get_scores_for_imputer(imputer, X_missing, y_missing)
         return iterative_impute_scores.mean(), iterative_impute_scores.std()
 
 
     mses_california[4], stds_california[4] = get_impute_iterative(
-        X_miss_california, y_miss_california)
-    mses_diabetes[4], stds_diabetes[4] = get_impute_iterative(X_miss_diabetes,
-                                                              y_miss_diabetes)
-    x_labels.append('Iterative Imputation')
+        X_miss_california, y_miss_california
+    )
+    mses_diabetes[4], stds_diabetes[4] = get_impute_iterative(
+        X_miss_diabetes, y_miss_diabetes
+    )
+    x_labels.append("Iterative Imputation")
 
     mses_diabetes = mses_diabetes * -1
     mses_california = mses_california * -1
@@ -375,7 +383,7 @@ to potentially improve performance.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 246-251
+.. GENERATED FROM PYTHON SOURCE LINES 254-259
 
 Plot the results
 ################
@@ -383,7 +391,7 @@ Plot the results
 Finally we are going to visualize the score:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 251-292
+.. GENERATED FROM PYTHON SOURCE LINES 259-311
 
 .. code-block:: default
 
@@ -394,34 +402,45 @@ Finally we are going to visualize the score:
     n_bars = len(mses_diabetes)
     xval = np.arange(n_bars)
 
-    colors = ['r', 'g', 'b', 'orange', 'black']
+    colors = ["r", "g", "b", "orange", "black"]
 
     # plot diabetes results
     plt.figure(figsize=(12, 6))
     ax1 = plt.subplot(121)
     for j in xval:
-        ax1.barh(j, mses_diabetes[j], xerr=stds_diabetes[j],
-                 color=colors[j], alpha=0.6, align='center')
+        ax1.barh(
+            j,
+            mses_diabetes[j],
+            xerr=stds_diabetes[j],
+            color=colors[j],
+            alpha=0.6,
+            align="center",
+        )
 
-    ax1.set_title('Imputation Techniques with Diabetes Data')
-    ax1.set_xlim(left=np.min(mses_diabetes) * 0.9,
-                 right=np.max(mses_diabetes) * 1.1)
+    ax1.set_title("Imputation Techniques with Diabetes Data")
+    ax1.set_xlim(left=np.min(mses_diabetes) * 0.9, right=np.max(mses_diabetes) * 1.1)
     ax1.set_yticks(xval)
-    ax1.set_xlabel('MSE')
+    ax1.set_xlabel("MSE")
     ax1.invert_yaxis()
     ax1.set_yticklabels(x_labels)
 
     # plot california dataset results
     ax2 = plt.subplot(122)
     for j in xval:
-        ax2.barh(j, mses_california[j], xerr=stds_california[j],
-                 color=colors[j], alpha=0.6, align='center')
+        ax2.barh(
+            j,
+            mses_california[j],
+            xerr=stds_california[j],
+            color=colors[j],
+            alpha=0.6,
+            align="center",
+        )
 
-    ax2.set_title('Imputation Techniques with California Data')
+    ax2.set_title("Imputation Techniques with California Data")
     ax2.set_yticks(xval)
-    ax2.set_xlabel('MSE')
+    ax2.set_xlabel("MSE")
     ax2.invert_yaxis()
-    ax2.set_yticklabels([''] * n_bars)
+    ax2.set_yticklabels([""] * n_bars)
 
     plt.show()
 
@@ -443,7 +462,7 @@ Finally we are going to visualize the score:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  27.424 seconds)
+   **Total running time of the script:** ( 0 minutes  24.726 seconds)
 
 
 .. _sphx_glr_download_auto_examples_impute_plot_missing_values.py:

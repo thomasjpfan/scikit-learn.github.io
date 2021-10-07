@@ -64,7 +64,7 @@ We will start by loading the `digits` dataset. This dataset contains
 handwritten digits from 0 to 9. In the context of clustering, one would like
 to group images such that the handwritten digits on the image are the same.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-46
+.. GENERATED FROM PYTHON SOURCE LINES 35-44
 
 .. code-block:: default
 
@@ -75,9 +75,7 @@ to group images such that the handwritten digits on the image are the same.
     data, labels = load_digits(return_X_y=True)
     (n_samples, n_features), n_digits = data.shape, np.unique(labels).size
 
-    print(
-        f"# digits: {n_digits}; # samples: {n_samples}; # features {n_features}"
-    )
+    print(f"# digits: {n_digits}; # samples: {n_samples}; # features {n_features}")
 
 
 
@@ -94,7 +92,7 @@ to group images such that the handwritten digits on the image are the same.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-57
+.. GENERATED FROM PYTHON SOURCE LINES 45-55
 
 Define our evaluation benchmark
 -------------------------------
@@ -107,7 +105,7 @@ compare different initialization methods for KMeans. Our benchmark will:
 * train and time the pipeline fitting;
 * measure the performance of the clustering obtained via different metrics.
 
-.. GENERATED FROM PYTHON SOURCE LINES 57-108
+.. GENERATED FROM PYTHON SOURCE LINES 55-111
 
 .. code-block:: default
 
@@ -152,13 +150,18 @@ compare different initialization methods for KMeans. Our benchmark will:
 
         # The silhouette score requires the full dataset
         results += [
-            metrics.silhouette_score(data, estimator[-1].labels_,
-                                     metric="euclidean", sample_size=300,)
+            metrics.silhouette_score(
+                data,
+                estimator[-1].labels_,
+                metric="euclidean",
+                sample_size=300,
+            )
         ]
 
         # Show the results
-        formatter_result = ("{:9s}\t{:.3f}s\t{:.0f}\t{:.3f}\t{:.3f}"
-                            "\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}")
+        formatter_result = (
+            "{:9s}\t{:.3f}s\t{:.0f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}\t{:.3f}"
+        )
         print(formatter_result.format(*results))
 
 
@@ -169,7 +172,7 @@ compare different initialization methods for KMeans. Our benchmark will:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-122
+.. GENERATED FROM PYTHON SOURCE LINES 112-125
 
 Run the benchmark
 -----------------
@@ -185,18 +188,17 @@ We will compare three approaches:
   :class:`~sklearn.decomposition.PCA` to initialize KMeans. This method is
   deterministic and a single initialization suffice.
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-141
+.. GENERATED FROM PYTHON SOURCE LINES 125-143
 
 .. code-block:: default
 
     from sklearn.cluster import KMeans
     from sklearn.decomposition import PCA
 
-    print(82 * '_')
-    print('init\t\ttime\tinertia\thomo\tcompl\tv-meas\tARI\tAMI\tsilhouette')
+    print(82 * "_")
+    print("init\t\ttime\tinertia\thomo\tcompl\tv-meas\tARI\tAMI\tsilhouette")
 
-    kmeans = KMeans(init="k-means++", n_clusters=n_digits, n_init=4,
-                    random_state=0)
+    kmeans = KMeans(init="k-means++", n_clusters=n_digits, n_init=4, random_state=0)
     bench_k_means(kmeans=kmeans, name="k-means++", data=data, labels=labels)
 
     kmeans = KMeans(init="random", n_clusters=n_digits, n_init=4, random_state=0)
@@ -206,7 +208,7 @@ We will compare three approaches:
     kmeans = KMeans(init=pca.components_, n_clusters=n_digits, n_init=1)
     bench_k_means(kmeans=kmeans, name="PCA-based", data=data, labels=labels)
 
-    print(82 * '_')
+    print(82 * "_")
 
 
 
@@ -220,15 +222,15 @@ We will compare three approaches:
 
     __________________________________________________________________________________
     init            time    inertia homo    compl   v-meas  ARI     AMI     silhouette
-    k-means++       0.118s  69662   0.680   0.719   0.699   0.570   0.695   0.173
-    random          0.086s  69707   0.675   0.716   0.694   0.560   0.691   0.188
-    PCA-based       0.029s  72686   0.636   0.658   0.647   0.521   0.643   0.144
+    k-means++       0.097s  69662   0.680   0.719   0.699   0.570   0.695   0.159
+    random          0.107s  69707   0.675   0.716   0.694   0.560   0.691   0.181
+    PCA-based       0.027s  72686   0.636   0.658   0.647   0.521   0.643   0.143
     __________________________________________________________________________________
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-149
+.. GENERATED FROM PYTHON SOURCE LINES 144-151
 
 Visualize the results on PCA-reduced data
 -----------------------------------------
@@ -238,7 +240,7 @@ original 64-dimensional space into a lower dimensional space. Subsequently,
 we can use :class:`~sklearn.decomposition.PCA` to project into a
 2-dimensional space and plot the data and the clusters in this new space.
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-186
+.. GENERATED FROM PYTHON SOURCE LINES 151-202
 
 .. code-block:: default
 
@@ -249,7 +251,7 @@ we can use :class:`~sklearn.decomposition.PCA` to project into a
     kmeans.fit(reduced_data)
 
     # Step size of the mesh. Decrease to increase the quality of the VQ.
-    h = .02     # point in the mesh [x_min, x_max]x[y_min, y_max].
+    h = 0.02  # point in the mesh [x_min, x_max]x[y_min, y_max].
 
     # Plot the decision boundary. For that, we will assign a color to each
     x_min, x_max = reduced_data[:, 0].min() - 1, reduced_data[:, 0].max() + 1
@@ -263,17 +265,31 @@ we can use :class:`~sklearn.decomposition.PCA` to project into a
     Z = Z.reshape(xx.shape)
     plt.figure(1)
     plt.clf()
-    plt.imshow(Z, interpolation="nearest",
-               extent=(xx.min(), xx.max(), yy.min(), yy.max()),
-               cmap=plt.cm.Paired, aspect="auto", origin="lower")
+    plt.imshow(
+        Z,
+        interpolation="nearest",
+        extent=(xx.min(), xx.max(), yy.min(), yy.max()),
+        cmap=plt.cm.Paired,
+        aspect="auto",
+        origin="lower",
+    )
 
-    plt.plot(reduced_data[:, 0], reduced_data[:, 1], 'k.', markersize=2)
+    plt.plot(reduced_data[:, 0], reduced_data[:, 1], "k.", markersize=2)
     # Plot the centroids as a white X
     centroids = kmeans.cluster_centers_
-    plt.scatter(centroids[:, 0], centroids[:, 1], marker="x", s=169, linewidths=3,
-                color="w", zorder=10)
-    plt.title("K-means clustering on the digits dataset (PCA-reduced data)\n"
-              "Centroids are marked with white cross")
+    plt.scatter(
+        centroids[:, 0],
+        centroids[:, 1],
+        marker="x",
+        s=169,
+        linewidths=3,
+        color="w",
+        zorder=10,
+    )
+    plt.title(
+        "K-means clustering on the digits dataset (PCA-reduced data)\n"
+        "Centroids are marked with white cross"
+    )
     plt.xlim(x_min, x_max)
     plt.ylim(y_min, y_max)
     plt.xticks(())
@@ -294,7 +310,7 @@ we can use :class:`~sklearn.decomposition.PCA` to project into a
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.684 seconds)
+   **Total running time of the script:** ( 0 minutes  1.516 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_kmeans_digits.py:

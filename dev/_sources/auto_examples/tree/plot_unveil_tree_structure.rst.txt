@@ -80,7 +80,7 @@ First, we fit a :class:`~sklearn.tree.DecisionTreeClassifier` using the
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc {color: black;background-color: white;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc pre{padding: 0;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-toggleable {background-color: white;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-estimator:hover {background-color: #d4ebff;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-item {z-index: 1;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-parallel-item:only-child::after {width: 0;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc div.sk-container {display: inline-block;position: relative;}</style><div id="sk-01b1dacd-1c28-48a0-a520-5eb52b7e72fc" class"sk-top-container"><div class="sk-container"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="263d6a5b-4041-425a-896e-1a68b4f761f9" type="checkbox" checked><label class="sk-toggleable__label" for="263d6a5b-4041-425a-896e-1a68b4f761f9">DecisionTreeClassifier</label><div class="sk-toggleable__content"><pre>DecisionTreeClassifier(max_leaf_nodes=3, random_state=0)</pre></div></div></div></div></div>
+    <style>#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 {color: black;background-color: white;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 pre{padding: 0;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-toggleable {background-color: white;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-estimator:hover {background-color: #d4ebff;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-item {z-index: 1;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-parallel-item:only-child::after {width: 0;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-48199c88-330b-4f8e-8890-ffc16a30fd40 div.sk-container {display: inline-block;position: relative;}</style><div id="sk-48199c88-330b-4f8e-8890-ffc16a30fd40" class"sk-top-container"><div class="sk-container"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="7714e7d7-54e5-432c-967e-9e758e8b0255" type="checkbox" checked><label class="sk-toggleable__label" for="7714e7d7-54e5-432c-967e-9e758e8b0255">DecisionTreeClassifier</label><div class="sk-toggleable__content"><pre>DecisionTreeClassifier(max_leaf_nodes=3, random_state=0)</pre></div></div></div></div></div>
     </div>
     <br />
     <br />
@@ -116,7 +116,7 @@ Using the arrays, we can traverse the tree structure to compute various
 properties. Below, we will compute the depth of each node and whether or not
 it is a leaf.
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-112
+.. GENERATED FROM PYTHON SOURCE LINES 69-120
 
 .. code-block:: default
 
@@ -146,22 +146,30 @@ it is a leaf.
         else:
             is_leaves[node_id] = True
 
-    print("The binary tree structure has {n} nodes and has "
-          "the following tree structure:\n".format(n=n_nodes))
+    print(
+        "The binary tree structure has {n} nodes and has "
+        "the following tree structure:\n".format(n=n_nodes)
+    )
     for i in range(n_nodes):
         if is_leaves[i]:
-            print("{space}node={node} is a leaf node.".format(
-                space=node_depth[i] * "\t", node=i))
+            print(
+                "{space}node={node} is a leaf node.".format(
+                    space=node_depth[i] * "\t", node=i
+                )
+            )
         else:
-            print("{space}node={node} is a split node: "
-                  "go to node {left} if X[:, {feature}] <= {threshold} "
-                  "else to node {right}.".format(
-                      space=node_depth[i] * "\t",
-                      node=i,
-                      left=children_left[i],
-                      feature=feature[i],
-                      threshold=threshold[i],
-                      right=children_right[i]))
+            print(
+                "{space}node={node} is a split node: "
+                "go to node {left} if X[:, {feature}] <= {threshold} "
+                "else to node {right}.".format(
+                    space=node_depth[i] * "\t",
+                    node=i,
+                    left=children_left[i],
+                    feature=feature[i],
+                    threshold=threshold[i],
+                    right=children_right[i],
+                )
+            )
 
 
 
@@ -184,11 +192,11 @@ it is a leaf.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-114
+.. GENERATED FROM PYTHON SOURCE LINES 121-122
 
 We can compare the above output to the plot of the decision tree.
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-118
+.. GENERATED FROM PYTHON SOURCE LINES 122-126
 
 .. code-block:: default
 
@@ -208,7 +216,7 @@ We can compare the above output to the plot of the decision tree.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 119-136
+.. GENERATED FROM PYTHON SOURCE LINES 127-144
 
 Decision path
 -------------
@@ -228,7 +236,7 @@ reached by each sample of interest. Using the leaf ids and the
 predict a sample or a group of samples. First, let's do it for one sample.
 Note that ``node_index`` is a sparse matrix.
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-166
+.. GENERATED FROM PYTHON SOURCE LINES 144-178
 
 .. code-block:: default
 
@@ -238,29 +246,33 @@ Note that ``node_index`` is a sparse matrix.
 
     sample_id = 0
     # obtain ids of the nodes `sample_id` goes through, i.e., row `sample_id`
-    node_index = node_indicator.indices[node_indicator.indptr[sample_id]:
-                                        node_indicator.indptr[sample_id + 1]]
+    node_index = node_indicator.indices[
+        node_indicator.indptr[sample_id] : node_indicator.indptr[sample_id + 1]
+    ]
 
-    print('Rules used to predict sample {id}:\n'.format(id=sample_id))
+    print("Rules used to predict sample {id}:\n".format(id=sample_id))
     for node_id in node_index:
         # continue to the next node if it is a leaf node
         if leaf_id[sample_id] == node_id:
             continue
 
         # check if value of the split feature for sample 0 is below threshold
-        if (X_test[sample_id, feature[node_id]] <= threshold[node_id]):
+        if X_test[sample_id, feature[node_id]] <= threshold[node_id]:
             threshold_sign = "<="
         else:
             threshold_sign = ">"
 
-        print("decision node {node} : (X_test[{sample}, {feature}] = {value}) "
-              "{inequality} {threshold})".format(
-                  node=node_id,
-                  sample=sample_id,
-                  feature=feature[node_id],
-                  value=X_test[sample_id, feature[node_id]],
-                  inequality=threshold_sign,
-                  threshold=threshold[node_id]))
+        print(
+            "decision node {node} : (X_test[{sample}, {feature}] = {value}) "
+            "{inequality} {threshold})".format(
+                node=node_id,
+                sample=sample_id,
+                feature=feature[node_id],
+                value=X_test[sample_id, feature[node_id]],
+                inequality=threshold_sign,
+                threshold=threshold[node_id],
+            )
+        )
 
 
 
@@ -280,27 +292,28 @@ Note that ``node_index`` is a sparse matrix.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-169
+.. GENERATED FROM PYTHON SOURCE LINES 179-181
 
 For a group of samples, we can determine the common nodes the samples go
 through.
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-181
+.. GENERATED FROM PYTHON SOURCE LINES 181-194
 
 .. code-block:: default
 
 
     sample_ids = [0, 1]
     # boolean array indicating the nodes both samples go through
-    common_nodes = (node_indicator.toarray()[sample_ids].sum(axis=0) ==
-                    len(sample_ids))
+    common_nodes = node_indicator.toarray()[sample_ids].sum(axis=0) == len(sample_ids)
     # obtain node ids using position in array
     common_node_id = np.arange(n_nodes)[common_nodes]
 
-    print("\nThe following samples {samples} share the node(s) {nodes} in the "
-          "tree.".format(samples=sample_ids, nodes=common_node_id))
-    print("This is {prop}% of all nodes.".format(
-        prop=100 * len(common_node_id) / n_nodes))
+    print(
+        "\nThe following samples {samples} share the node(s) {nodes} in the tree.".format(
+            samples=sample_ids, nodes=common_node_id
+        )
+    )
+    print("This is {prop}% of all nodes.".format(prop=100 * len(common_node_id) / n_nodes))
 
 
 
@@ -321,7 +334,7 @@ through.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.176 seconds)
+   **Total running time of the script:** ( 0 minutes  0.157 seconds)
 
 
 .. _sphx_glr_download_auto_examples_tree_plot_unveil_tree_structure.py:

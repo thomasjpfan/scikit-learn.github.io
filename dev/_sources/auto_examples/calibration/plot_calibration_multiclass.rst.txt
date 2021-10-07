@@ -45,7 +45,7 @@ Note that we also create `X_train_valid` and `y_train_valid`, which consists
 of both the train and valid subsets. This is used when we only want to train
 the classifier but not calibrate the predicted probabilities.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-44
+.. GENERATED FROM PYTHON SOURCE LINES 28-45
 
 .. code-block:: default
 
@@ -58,8 +58,9 @@ the classifier but not calibrate the predicted probabilities.
 
     np.random.seed(0)
 
-    X, y = make_blobs(n_samples=2000, n_features=2, centers=3, random_state=42,
-                      cluster_std=5.0)
+    X, y = make_blobs(
+        n_samples=2000, n_features=2, centers=3, random_state=42, cluster_std=5.0
+    )
     X_train, y_train = X[:600], y[:600]
     X_valid, y_valid = X[600:1000], y[600:1000]
     X_train_valid, y_train_valid = X[:1000], y[:1000]
@@ -72,7 +73,7 @@ the classifier but not calibrate the predicted probabilities.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-51
+.. GENERATED FROM PYTHON SOURCE LINES 46-52
 
 Fitting and calibration
 -----------------------
@@ -81,7 +82,7 @@ First, we will train a :class:`~sklearn.ensemble.RandomForestClassifier`
 with 25 base estimators (trees) on the concatenated train and validation
 data (1000 samples). This is the uncalibrated classifier.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-57
+.. GENERATED FROM PYTHON SOURCE LINES 52-58
 
 .. code-block:: default
 
@@ -99,19 +100,19 @@ data (1000 samples). This is the uncalibrated classifier.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 {color: black;background-color: white;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 pre{padding: 0;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-toggleable {background-color: white;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-estimator:hover {background-color: #d4ebff;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-item {z-index: 1;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-parallel-item:only-child::after {width: 0;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-2c93f71c-255b-42be-b2f1-be07ec8265f2 div.sk-container {display: inline-block;position: relative;}</style><div id="sk-2c93f71c-255b-42be-b2f1-be07ec8265f2" class"sk-top-container"><div class="sk-container"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c41c5e47-245f-41a1-9d8f-c9aa1d1b5ac0" type="checkbox" checked><label class="sk-toggleable__label" for="c41c5e47-245f-41a1-9d8f-c9aa1d1b5ac0">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(n_estimators=25)</pre></div></div></div></div></div>
+    <style>#sk-bae93682-6e95-42ac-a46f-e02e9f119caa {color: black;background-color: white;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa pre{padding: 0;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-toggleable {background-color: white;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-estimator:hover {background-color: #d4ebff;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-item {z-index: 1;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-parallel-item:only-child::after {width: 0;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-bae93682-6e95-42ac-a46f-e02e9f119caa div.sk-container {display: inline-block;position: relative;}</style><div id="sk-bae93682-6e95-42ac-a46f-e02e9f119caa" class"sk-top-container"><div class="sk-container"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="b9fb7fd5-1f53-466f-854d-e6e3fd809aca" type="checkbox" checked><label class="sk-toggleable__label" for="b9fb7fd5-1f53-466f-854d-e6e3fd809aca">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(n_estimators=25)</pre></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-62
+.. GENERATED FROM PYTHON SOURCE LINES 59-63
 
 To train the calibrated classifier, we start with the same
 :class:`~sklearn.ensemble.RandomForestClassifier` but train it using only
 the train data subset (600 samples) then calibrate, with `method='sigmoid'`,
 using the valid data subset (400 samples) in a 2-stage process.
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-70
+.. GENERATED FROM PYTHON SOURCE LINES 63-71
 
 .. code-block:: default
 
@@ -131,20 +132,20 @@ using the valid data subset (400 samples) in a 2-stage process.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e {color: black;background-color: white;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e pre{padding: 0;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-toggleable {background-color: white;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-estimator:hover {background-color: #d4ebff;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-item {z-index: 1;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-parallel-item:only-child::after {width: 0;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-c6fc04f1-7805-4b72-b3cf-403fc308490e div.sk-container {display: inline-block;position: relative;}</style><div id="sk-c6fc04f1-7805-4b72-b3cf-403fc308490e" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="a1a6be17-a27a-418f-b9c8-fd36c0b779e6" type="checkbox" ><label class="sk-toggleable__label" for="a1a6be17-a27a-418f-b9c8-fd36c0b779e6">CalibratedClassifierCV</label><div class="sk-toggleable__content"><pre>CalibratedClassifierCV(base_estimator=RandomForestClassifier(n_estimators=25),
-                           cv='prefit')</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="3b2876d5-a197-401a-90fc-f284b2a10903" type="checkbox" ><label class="sk-toggleable__label" for="3b2876d5-a197-401a-90fc-f284b2a10903">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(n_estimators=25)</pre></div></div></div></div></div></div></div></div></div></div>
+    <style>#sk-049994bd-aba4-41fc-8b94-91d1b8594acc {color: black;background-color: white;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc pre{padding: 0;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-toggleable {background-color: white;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-estimator:hover {background-color: #d4ebff;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-item {z-index: 1;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-parallel-item:only-child::after {width: 0;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-049994bd-aba4-41fc-8b94-91d1b8594acc div.sk-container {display: inline-block;position: relative;}</style><div id="sk-049994bd-aba4-41fc-8b94-91d1b8594acc" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="730d79c3-43f2-4c9a-9280-d3b8dc8d4843" type="checkbox" ><label class="sk-toggleable__label" for="730d79c3-43f2-4c9a-9280-d3b8dc8d4843">CalibratedClassifierCV</label><div class="sk-toggleable__content"><pre>CalibratedClassifierCV(base_estimator=RandomForestClassifier(n_estimators=25),
+                           cv='prefit')</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="9c3e3760-c56f-4cc0-a9b1-0965eb41ffdd" type="checkbox" ><label class="sk-toggleable__label" for="9c3e3760-c56f-4cc0-a9b1-0965eb41ffdd">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(n_estimators=25)</pre></div></div></div></div></div></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 71-75
+.. GENERATED FROM PYTHON SOURCE LINES 72-76
 
 Compare probabilities
 ---------------------
 Below we plot a 2-simplex with arrows showing the change in predicted
 probabilities of the test samples.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-143
+.. GENERATED FROM PYTHON SOURCE LINES 76-182
 
 .. code-block:: default
 
@@ -158,58 +159,96 @@ probabilities of the test samples.
     cal_clf_probs = cal_clf.predict_proba(X_test)
     # Plot arrows
     for i in range(clf_probs.shape[0]):
-        plt.arrow(clf_probs[i, 0], clf_probs[i, 1],
-                  cal_clf_probs[i, 0] - clf_probs[i, 0],
-                  cal_clf_probs[i, 1] - clf_probs[i, 1],
-                  color=colors[y_test[i]], head_width=1e-2)
+        plt.arrow(
+            clf_probs[i, 0],
+            clf_probs[i, 1],
+            cal_clf_probs[i, 0] - clf_probs[i, 0],
+            cal_clf_probs[i, 1] - clf_probs[i, 1],
+            color=colors[y_test[i]],
+            head_width=1e-2,
+        )
 
     # Plot perfect predictions, at each vertex
-    plt.plot([1.0], [0.0], 'ro', ms=20, label="Class 1")
-    plt.plot([0.0], [1.0], 'go', ms=20, label="Class 2")
-    plt.plot([0.0], [0.0], 'bo', ms=20, label="Class 3")
+    plt.plot([1.0], [0.0], "ro", ms=20, label="Class 1")
+    plt.plot([0.0], [1.0], "go", ms=20, label="Class 2")
+    plt.plot([0.0], [0.0], "bo", ms=20, label="Class 3")
 
     # Plot boundaries of unit simplex
-    plt.plot([0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], 'k', label="Simplex")
+    plt.plot([0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], "k", label="Simplex")
 
     # Annotate points 6 points around the simplex, and mid point inside simplex
-    plt.annotate(r'($\frac{1}{3}$, $\frac{1}{3}$, $\frac{1}{3}$)',
-                 xy=(1.0/3, 1.0/3), xytext=(1.0/3, .23), xycoords='data',
-                 arrowprops=dict(facecolor='black', shrink=0.05),
-                 horizontalalignment='center', verticalalignment='center')
-    plt.plot([1.0/3], [1.0/3], 'ko', ms=5)
-    plt.annotate(r'($\frac{1}{2}$, $0$, $\frac{1}{2}$)',
-                 xy=(.5, .0), xytext=(.5, .1), xycoords='data',
-                 arrowprops=dict(facecolor='black', shrink=0.05),
-                 horizontalalignment='center', verticalalignment='center')
-    plt.annotate(r'($0$, $\frac{1}{2}$, $\frac{1}{2}$)',
-                 xy=(.0, .5), xytext=(.1, .5), xycoords='data',
-                 arrowprops=dict(facecolor='black', shrink=0.05),
-                 horizontalalignment='center', verticalalignment='center')
-    plt.annotate(r'($\frac{1}{2}$, $\frac{1}{2}$, $0$)',
-                 xy=(.5, .5), xytext=(.6, .6), xycoords='data',
-                 arrowprops=dict(facecolor='black', shrink=0.05),
-                 horizontalalignment='center', verticalalignment='center')
-    plt.annotate(r'($0$, $0$, $1$)',
-                 xy=(0, 0), xytext=(.1, .1), xycoords='data',
-                 arrowprops=dict(facecolor='black', shrink=0.05),
-                 horizontalalignment='center', verticalalignment='center')
-    plt.annotate(r'($1$, $0$, $0$)',
-                 xy=(1, 0), xytext=(1, .1), xycoords='data',
-                 arrowprops=dict(facecolor='black', shrink=0.05),
-                 horizontalalignment='center', verticalalignment='center')
-    plt.annotate(r'($0$, $1$, $0$)',
-                 xy=(0, 1), xytext=(.1, 1), xycoords='data',
-                 arrowprops=dict(facecolor='black', shrink=0.05),
-                 horizontalalignment='center', verticalalignment='center')
+    plt.annotate(
+        r"($\frac{1}{3}$, $\frac{1}{3}$, $\frac{1}{3}$)",
+        xy=(1.0 / 3, 1.0 / 3),
+        xytext=(1.0 / 3, 0.23),
+        xycoords="data",
+        arrowprops=dict(facecolor="black", shrink=0.05),
+        horizontalalignment="center",
+        verticalalignment="center",
+    )
+    plt.plot([1.0 / 3], [1.0 / 3], "ko", ms=5)
+    plt.annotate(
+        r"($\frac{1}{2}$, $0$, $\frac{1}{2}$)",
+        xy=(0.5, 0.0),
+        xytext=(0.5, 0.1),
+        xycoords="data",
+        arrowprops=dict(facecolor="black", shrink=0.05),
+        horizontalalignment="center",
+        verticalalignment="center",
+    )
+    plt.annotate(
+        r"($0$, $\frac{1}{2}$, $\frac{1}{2}$)",
+        xy=(0.0, 0.5),
+        xytext=(0.1, 0.5),
+        xycoords="data",
+        arrowprops=dict(facecolor="black", shrink=0.05),
+        horizontalalignment="center",
+        verticalalignment="center",
+    )
+    plt.annotate(
+        r"($\frac{1}{2}$, $\frac{1}{2}$, $0$)",
+        xy=(0.5, 0.5),
+        xytext=(0.6, 0.6),
+        xycoords="data",
+        arrowprops=dict(facecolor="black", shrink=0.05),
+        horizontalalignment="center",
+        verticalalignment="center",
+    )
+    plt.annotate(
+        r"($0$, $0$, $1$)",
+        xy=(0, 0),
+        xytext=(0.1, 0.1),
+        xycoords="data",
+        arrowprops=dict(facecolor="black", shrink=0.05),
+        horizontalalignment="center",
+        verticalalignment="center",
+    )
+    plt.annotate(
+        r"($1$, $0$, $0$)",
+        xy=(1, 0),
+        xytext=(1, 0.1),
+        xycoords="data",
+        arrowprops=dict(facecolor="black", shrink=0.05),
+        horizontalalignment="center",
+        verticalalignment="center",
+    )
+    plt.annotate(
+        r"($0$, $1$, $0$)",
+        xy=(0, 1),
+        xytext=(0.1, 1),
+        xycoords="data",
+        arrowprops=dict(facecolor="black", shrink=0.05),
+        horizontalalignment="center",
+        verticalalignment="center",
+    )
     # Add grid
     plt.grid(False)
     for x in [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]:
-        plt.plot([0, x], [x, 0], 'k', alpha=0.2)
-        plt.plot([0, 0 + (1-x)/2], [x, x + (1-x)/2], 'k', alpha=0.2)
-        plt.plot([x, x + (1-x)/2], [0, 0 + (1-x)/2], 'k', alpha=0.2)
+        plt.plot([0, x], [x, 0], "k", alpha=0.2)
+        plt.plot([0, 0 + (1 - x) / 2], [x, x + (1 - x) / 2], "k", alpha=0.2)
+        plt.plot([x, x + (1 - x) / 2], [0, 0 + (1 - x) / 2], "k", alpha=0.2)
 
-    plt.title("Change of predicted probabilities on test samples "
-              "after sigmoid calibration")
+    plt.title("Change of predicted probabilities on test samples after sigmoid calibration")
     plt.xlabel("Probability class 1")
     plt.ylabel("Probability class 2")
     plt.xlim(-0.05, 1.05)
@@ -228,7 +267,7 @@ probabilities of the test samples.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-170
+.. GENERATED FROM PYTHON SOURCE LINES 183-209
 
 In the figure above, each vertex of the simplex represents
 a perfectly predicted class (e.g., 1, 0, 0). The mid point
@@ -257,7 +296,7 @@ of base estimators (trees) of the
 :class:`~sklearn.ensemble.RandomForestClassifier` which would have resulted
 in a similar decrease in :ref:`log loss <log_loss>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 170-180
+.. GENERATED FROM PYTHON SOURCE LINES 209-219
 
 .. code-block:: default
 
@@ -288,14 +327,14 @@ in a similar decrease in :ref:`log loss <log_loss>`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-185
+.. GENERATED FROM PYTHON SOURCE LINES 220-224
 
 Finally we generate a grid of possible uncalibrated probabilities over
 the 2-simplex, compute the corresponding calibrated probabilities and
 plot arrows for each. The arrows are colored according the highest
 uncalibrated probability. This illustrates the learned calibration map:
 
-.. GENERATED FROM PYTHON SOURCE LINES 185-227
+.. GENERATED FROM PYTHON SOURCE LINES 224-274
 
 .. code-block:: default
 
@@ -310,9 +349,12 @@ uncalibrated probability. This illustrates the learned calibration map:
 
     # Use the three class-wise calibrators to compute calibrated probabilities
     calibrated_classifier = cal_clf.calibrated_classifiers_[0]
-    prediction = np.vstack([calibrator.predict(this_p)
-                            for calibrator, this_p in
-                            zip(calibrated_classifier.calibrators, p.T)]).T
+    prediction = np.vstack(
+        [
+            calibrator.predict(this_p)
+            for calibrator, this_p in zip(calibrated_classifier.calibrators, p.T)
+        ]
+    ).T
 
     # Re-normalize the calibrated predictions to make sure they stay inside the
     # simplex. This same renormalization step is performed internally by the
@@ -321,18 +363,23 @@ uncalibrated probability. This illustrates the learned calibration map:
 
     # Plot changes in predicted probabilities induced by the calibrators
     for i in range(prediction.shape[0]):
-        plt.arrow(p[i, 0], p[i, 1],
-                  prediction[i, 0] - p[i, 0], prediction[i, 1] - p[i, 1],
-                  head_width=1e-2, color=colors[np.argmax(p[i])])
+        plt.arrow(
+            p[i, 0],
+            p[i, 1],
+            prediction[i, 0] - p[i, 0],
+            prediction[i, 1] - p[i, 1],
+            head_width=1e-2,
+            color=colors[np.argmax(p[i])],
+        )
 
     # Plot the boundaries of the unit simplex
-    plt.plot([0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], 'k', label="Simplex")
+    plt.plot([0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 0.0], "k", label="Simplex")
 
     plt.grid(False)
     for x in [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]:
-        plt.plot([0, x], [x, 0], 'k', alpha=0.2)
-        plt.plot([0, 0 + (1-x)/2], [x, x + (1-x)/2], 'k', alpha=0.2)
-        plt.plot([x, x + (1-x)/2], [0, 0 + (1-x)/2], 'k', alpha=0.2)
+        plt.plot([0, x], [x, 0], "k", alpha=0.2)
+        plt.plot([0, 0 + (1 - x) / 2], [x, x + (1 - x) / 2], "k", alpha=0.2)
+        plt.plot([x, x + (1 - x) / 2], [0, 0 + (1 - x) / 2], "k", alpha=0.2)
 
     plt.title("Learned sigmoid calibration map")
     plt.xlabel("Probability class 1")
@@ -356,7 +403,7 @@ uncalibrated probability. This illustrates the learned calibration map:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.496 seconds)
+   **Total running time of the script:** ( 0 minutes  2.139 seconds)
 
 
 .. _sphx_glr_download_auto_examples_calibration_plot_calibration_multiclass.py:

@@ -32,7 +32,7 @@ between classes is non-linear), adding to it a moderate degree of noise.
 Datapoints will belong to one of two possible classes to be predicted by two
 features. We will simulate 50 samples for each class:
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-29
+.. GENERATED FROM PYTHON SOURCE LINES 15-28
 
 .. code-block:: default
 
@@ -45,8 +45,7 @@ features. We will simulate 50 samples for each class:
     X, y = make_moons(noise=0.352, random_state=1, n_samples=100)
 
     sns.scatterplot(
-        x=X[:, 0], y=X[:, 1], hue=y,
-        marker='o', s=25, edgecolor='k', legend=False
+        x=X[:, 0], y=X[:, 1], hue=y, marker="o", s=25, edgecolor="k", legend=False
     ).set_title("Data")
     plt.show()
 
@@ -94,7 +93,7 @@ features. We will simulate 50 samples for each class:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-38
+.. GENERATED FROM PYTHON SOURCE LINES 29-37
 
 We will compare the performance of :class:`~sklearn.svm.SVC` estimators that
 vary on their `kernel` parameter, to decide which choice of this
@@ -105,7 +104,7 @@ a 10-fold stratified cross validation using a different randomization of the
 data in each repetition. The performance will be evaluated using
 :class:`~sklearn.metrics.roc_auc_score`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-60
+.. GENERATED FROM PYTHON SOURCE LINES 37-54
 
 .. code-block:: default
 
@@ -114,21 +113,16 @@ data in each repetition. The performance will be evaluated using
     from sklearn.svm import SVC
 
     param_grid = [
-        {'kernel': ['linear']},
-        {'kernel': ['poly'], 'degree': [2, 3]},
-        {'kernel': ['rbf']}
+        {"kernel": ["linear"]},
+        {"kernel": ["poly"], "degree": [2, 3]},
+        {"kernel": ["rbf"]},
     ]
 
     svc = SVC(random_state=0)
 
-    cv = RepeatedStratifiedKFold(
-        n_splits=10, n_repeats=10, random_state=0
-    )
+    cv = RepeatedStratifiedKFold(n_splits=10, n_repeats=10, random_state=0)
 
-    search = GridSearchCV(
-        estimator=svc, param_grid=param_grid,
-        scoring='roc_auc', cv=cv
-    )
+    search = GridSearchCV(estimator=svc, param_grid=param_grid, scoring="roc_auc", cv=cv)
     search.fit(X, y)
 
 
@@ -139,22 +133,22 @@ data in each repetition. The performance will be evaluated using
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 {color: black;background-color: white;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 pre{padding: 0;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-toggleable {background-color: white;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-estimator:hover {background-color: #d4ebff;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-item {z-index: 1;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-parallel-item:only-child::after {width: 0;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854 div.sk-container {display: inline-block;position: relative;}</style><div id="sk-aa2877de-f9d2-4dee-9a3e-ce8cab18f854" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="a162621f-bc38-4cab-bb1f-7d56e5a286c6" type="checkbox" ><label class="sk-toggleable__label" for="a162621f-bc38-4cab-bb1f-7d56e5a286c6">GridSearchCV</label><div class="sk-toggleable__content"><pre>GridSearchCV(cv=RepeatedStratifiedKFold(n_repeats=10, n_splits=10, random_state=0),
+    <style>#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c {color: black;background-color: white;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c pre{padding: 0;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-toggleable {background-color: white;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-estimator:hover {background-color: #d4ebff;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-item {z-index: 1;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-parallel-item:only-child::after {width: 0;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-ad4ba52a-4068-4f14-93cc-b30206d1286c div.sk-container {display: inline-block;position: relative;}</style><div id="sk-ad4ba52a-4068-4f14-93cc-b30206d1286c" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="a23cdca2-809f-41b5-bece-d248f43bcf70" type="checkbox" ><label class="sk-toggleable__label" for="a23cdca2-809f-41b5-bece-d248f43bcf70">GridSearchCV</label><div class="sk-toggleable__content"><pre>GridSearchCV(cv=RepeatedStratifiedKFold(n_repeats=10, n_splits=10, random_state=0),
                  estimator=SVC(random_state=0),
                  param_grid=[{'kernel': ['linear']},
                              {'degree': [2, 3], 'kernel': ['poly']},
                              {'kernel': ['rbf']}],
-                 scoring='roc_auc')</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="959ab6dc-5e1a-4f29-98d6-1d8423109131" type="checkbox" ><label class="sk-toggleable__label" for="959ab6dc-5e1a-4f29-98d6-1d8423109131">SVC</label><div class="sk-toggleable__content"><pre>SVC(random_state=0)</pre></div></div></div></div></div></div></div></div></div></div>
+                 scoring='roc_auc')</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="11531119-3849-460d-bfc7-ee79915a0bd6" type="checkbox" ><label class="sk-toggleable__label" for="11531119-3849-460d-bfc7-ee79915a0bd6">SVC</label><div class="sk-toggleable__content"><pre>SVC(random_state=0)</pre></div></div></div></div></div></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-63
+.. GENERATED FROM PYTHON SOURCE LINES 55-57
 
 We can now inspect the results of our search, sorted by their
 `mean_test_score`:
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-79
+.. GENERATED FROM PYTHON SOURCE LINES 57-67
 
 .. code-block:: default
 
@@ -162,17 +156,11 @@ We can now inspect the results of our search, sorted by their
     import pandas as pd
 
     results_df = pd.DataFrame(search.cv_results_)
-    results_df = results_df.sort_values(by=['rank_test_score'])
-    results_df = (
-        results_df
-        .set_index(results_df["params"].apply(
-            lambda x: "_".join(str(val) for val in x.values()))
-        )
-        .rename_axis('kernel')
-    )
-    results_df[
-        ['params', 'rank_test_score', 'mean_test_score', 'std_test_score']
-    ]
+    results_df = results_df.sort_values(by=["rank_test_score"])
+    results_df = results_df.set_index(
+        results_df["params"].apply(lambda x: "_".join(str(val) for val in x.values()))
+    ).rename_axis("kernel")
+    results_df[["params", "rank_test_score", "mean_test_score", "std_test_score"]]
 
 
 
@@ -249,7 +237,7 @@ We can now inspect the results of our search, sorted by their
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-103
+.. GENERATED FROM PYTHON SOURCE LINES 68-91
 
 We can see that the estimator using the `'rbf'` kernel performed best,
 closely followed by `'linear'`. Both estimators with a `'poly'` kernel
@@ -275,19 +263,23 @@ co-vary.
 Let's inspect this partition effect by plotting the performance of all models
 in each fold, and calculating the correlation between models across folds:
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-121
+.. GENERATED FROM PYTHON SOURCE LINES 91-113
 
 .. code-block:: default
 
 
     # create df of model scores ordered by performance
-    model_scores = results_df.filter(regex=r'split\d*_test_score')
+    model_scores = results_df.filter(regex=r"split\d*_test_score")
 
     # plot 30 examples of dependency between cv fold and AUC scores
     fig, ax = plt.subplots()
     sns.lineplot(
         data=model_scores.transpose().iloc[:30],
-        dashes=False, palette='Set1', marker='o', alpha=.5, ax=ax
+        dashes=False,
+        palette="Set1",
+        marker="o",
+        alpha=0.5,
+        ax=ax,
     )
     ax.set_xlabel("CV test fold", size=12, labelpad=10)
     ax.set_ylabel("Model AUC", size=12)
@@ -323,7 +315,7 @@ in each fold, and calculating the correlation between models across folds:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-133
+.. GENERATED FROM PYTHON SOURCE LINES 114-125
 
 We can observe that the performance of the models highly depends on the fold.
 
@@ -337,7 +329,7 @@ cases. In this example we will show how to implement one of them (the so
 called Nadeau and Bengio's corrected t-test) under two different statistical
 frameworks: frequentist and Bayesian.
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-171
+.. GENERATED FROM PYTHON SOURCE LINES 127-163
 
 Comparing two models: frequentist approach
 ------------------------------------------
@@ -376,7 +368,7 @@ performance of the first model is significantly better than that of the
 second model. Our null hypothesis is that the second model performs at least
 as good as the first model.
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-231
+.. GENERATED FROM PYTHON SOURCE LINES 163-221
 
 .. code-block:: default
 
@@ -405,9 +397,7 @@ as good as the first model.
         # kr = k times r, r times repeated k-fold crossvalidation,
         # kr equals the number of times the model was evaluated
         kr = len(differences)
-        corrected_var = (
-            np.var(differences, ddof=1) * (1 / kr + n_test / n_train)
-        )
+        corrected_var = np.var(differences, ddof=1) * (1 / kr + n_test / n_train)
         corrected_std = np.sqrt(corrected_var)
         return corrected_std
 
@@ -447,7 +437,7 @@ as good as the first model.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 232-246
+.. GENERATED FROM PYTHON SOURCE LINES 222-235
 
 .. code-block:: default
 
@@ -462,8 +452,7 @@ as good as the first model.
     n_test = len(list(cv.split(X, y))[0][1])
 
     t_stat, p_val = compute_corrected_ttest(differences, df, n_train, n_test)
-    print(f"Corrected t-value: {t_stat:.3f}\n"
-          f"Corrected p-value: {p_val:.3f}")
+    print(f"Corrected t-value: {t_stat:.3f}\nCorrected p-value: {p_val:.3f}")
 
 
 
@@ -481,22 +470,22 @@ as good as the first model.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 247-248
+.. GENERATED FROM PYTHON SOURCE LINES 236-237
 
 We can compare the corrected t- and p-values with the uncorrected ones:
 
-.. GENERATED FROM PYTHON SOURCE LINES 248-257
+.. GENERATED FROM PYTHON SOURCE LINES 237-246
 
 .. code-block:: default
 
 
-    t_stat_uncorrected = (
-        np.mean(differences) / np.sqrt(np.var(differences, ddof=1) / n)
-    )
+    t_stat_uncorrected = np.mean(differences) / np.sqrt(np.var(differences, ddof=1) / n)
     p_val_uncorrected = t.sf(np.abs(t_stat_uncorrected), df)
 
-    print(f"Uncorrected t-value: {t_stat_uncorrected:.3f}\n"
-          f"Uncorrected p-value: {p_val_uncorrected:.3f}")
+    print(
+        f"Uncorrected t-value: {t_stat_uncorrected:.3f}\n"
+        f"Uncorrected p-value: {p_val_uncorrected:.3f}"
+    )
 
 
 
@@ -514,7 +503,7 @@ We can compare the corrected t- and p-values with the uncorrected ones:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 258-267
+.. GENERATED FROM PYTHON SOURCE LINES 247-256
 
 Using the conventional significance alpha level at `p=0.05`, we observe that
 the uncorrected t-test concludes that the first model is significantly better
@@ -526,7 +515,7 @@ In the latter case, however, the frequentist approach does not let us
 conclude that the first and second model have an equivalent performance. If
 we wanted to make this assertion we need to use a Bayesian approach.
 
-.. GENERATED FROM PYTHON SOURCE LINES 269-310
+.. GENERATED FROM PYTHON SOURCE LINES 258-299
 
 Comparing two models: Bayesian approach
 ---------------------------------------
@@ -570,15 +559,14 @@ Bayesian approach as well.
 
 Let's compute and plot the posterior:
 
-.. GENERATED FROM PYTHON SOURCE LINES 310-317
+.. GENERATED FROM PYTHON SOURCE LINES 299-305
 
 .. code-block:: default
 
 
     # initialize random variable
     t_post = t(
-        df, loc=np.mean(differences),
-        scale=corrected_std(differences, n_train, n_test)
+        df, loc=np.mean(differences), scale=corrected_std(differences, n_train, n_test)
     )
 
 
@@ -588,11 +576,11 @@ Let's compute and plot the posterior:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 318-319
+.. GENERATED FROM PYTHON SOURCE LINES 306-307
 
 Let's plot the posterior distribution:
 
-.. GENERATED FROM PYTHON SOURCE LINES 319-330
+.. GENERATED FROM PYTHON SOURCE LINES 307-318
 
 .. code-block:: default
 
@@ -601,7 +589,7 @@ Let's plot the posterior distribution:
 
     plt.plot(x, t_post.pdf(x))
     plt.xticks(np.arange(-0.04, 0.06, 0.01))
-    plt.fill_between(x, t_post.pdf(x), 0, facecolor='blue', alpha=.2)
+    plt.fill_between(x, t_post.pdf(x), 0, facecolor="blue", alpha=0.2)
     plt.ylabel("Probability density")
     plt.xlabel(r"Mean difference ($\mu$)")
     plt.title("Posterior distribution")
@@ -619,7 +607,7 @@ Let's plot the posterior distribution:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 331-336
+.. GENERATED FROM PYTHON SOURCE LINES 319-324
 
 We can calculate the probability that the first model is better than the
 second by computing the area under the curve of the posterior distribution
@@ -627,17 +615,21 @@ from zero to infinity. And also the reverse: we can calculate the probability
 that the second model is better than the first by computing the area under
 the curve from minus infinity to zero.
 
-.. GENERATED FROM PYTHON SOURCE LINES 336-344
+.. GENERATED FROM PYTHON SOURCE LINES 324-336
 
 .. code-block:: default
 
 
     better_prob = 1 - t_post.cdf(0)
 
-    print(f"Probability of {model_scores.index[0]} being more accurate than "
-          f"{model_scores.index[1]}: {better_prob:.3f}")
-    print(f"Probability of {model_scores.index[1]} being more accurate than "
-          f"{model_scores.index[0]}: {1 - better_prob:.3f}")
+    print(
+        f"Probability of {model_scores.index[0]} being more accurate than "
+        f"{model_scores.index[1]}: {better_prob:.3f}"
+    )
+    print(
+        f"Probability of {model_scores.index[1]} being more accurate than "
+        f"{model_scores.index[0]}: {1 - better_prob:.3f}"
+    )
 
 
 
@@ -655,7 +647,7 @@ the curve from minus infinity to zero.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 345-351
+.. GENERATED FROM PYTHON SOURCE LINES 337-343
 
 In contrast with the frequentist approach, we can compute the probability
 that one model is better than the other.
@@ -664,7 +656,7 @@ Note that we obtained similar results as those in the frequentist approach.
 Given our choice of priors, we are essentially performing the same
 computations, but we are allowed to make different assertions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 353-372
+.. GENERATED FROM PYTHON SOURCE LINES 345-364
 
 Region of Practical Equivalence
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -686,7 +678,7 @@ To compute the probabilities of the classifiers being practically equivalent,
 we calculate the area under the curve of the posterior over the ROPE
 interval:
 
-.. GENERATED FROM PYTHON SOURCE LINES 372-379
+.. GENERATED FROM PYTHON SOURCE LINES 364-373
 
 .. code-block:: default
 
@@ -694,8 +686,10 @@ interval:
     rope_interval = [-0.01, 0.01]
     rope_prob = t_post.cdf(rope_interval[1]) - t_post.cdf(rope_interval[0])
 
-    print(f"Probability of {model_scores.index[0]} and {model_scores.index[1]} "
-          f"being practically equivalent: {rope_prob:.3f}")
+    print(
+        f"Probability of {model_scores.index[0]} and {model_scores.index[1]} "
+        f"being practically equivalent: {rope_prob:.3f}"
+    )
 
 
 
@@ -712,11 +706,11 @@ interval:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 380-381
+.. GENERATED FROM PYTHON SOURCE LINES 374-375
 
 We can plot how the posterior is distributed over the ROPE interval:
 
-.. GENERATED FROM PYTHON SOURCE LINES 381-393
+.. GENERATED FROM PYTHON SOURCE LINES 375-387
 
 .. code-block:: default
 
@@ -726,7 +720,7 @@ We can plot how the posterior is distributed over the ROPE interval:
     plt.plot(x, t_post.pdf(x))
     plt.xticks(np.arange(-0.04, 0.06, 0.01))
     plt.vlines([-0.01, 0.01], ymin=0, ymax=(np.max(t_post.pdf(x)) + 1))
-    plt.fill_between(x_rope, t_post.pdf(x_rope), 0, facecolor='blue', alpha=.2)
+    plt.fill_between(x_rope, t_post.pdf(x_rope), 0, facecolor="blue", alpha=0.2)
     plt.ylabel("Probability density")
     plt.xlabel(r"Mean difference ($\mu$)")
     plt.title("Posterior distribution under the ROPE")
@@ -744,14 +738,14 @@ We can plot how the posterior is distributed over the ROPE interval:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 394-398
+.. GENERATED FROM PYTHON SOURCE LINES 388-392
 
 As suggested in [4]_, we can further interpret these probabilities using the
 same criteria as the frequentist approach: is the probability of falling
 inside the ROPE bigger than 95% (alpha value of 5%)?  In that case we can
 conclude that both models are practically equivalent.
 
-.. GENERATED FROM PYTHON SOURCE LINES 400-410
+.. GENERATED FROM PYTHON SOURCE LINES 394-404
 
 The Bayesian estimation approach also allows us to compute how uncertain we
 are about our estimation of the difference. This can be calculated using
@@ -764,7 +758,7 @@ between x and y.
 
 Let's determine the credible intervals of our data using 50%, 75% and 95%:
 
-.. GENERATED FROM PYTHON SOURCE LINES 410-424
+.. GENERATED FROM PYTHON SOURCE LINES 404-417
 
 .. code-block:: default
 
@@ -777,9 +771,8 @@ Let's determine the credible intervals of our data using 50%, 75% and 95%:
         cred_intervals.append([interval, cred_interval[0], cred_interval[1]])
 
     cred_int_df = pd.DataFrame(
-        cred_intervals,
-        columns=['interval', 'lower value', 'upper value']
-    ).set_index('interval')
+        cred_intervals, columns=["interval", "lower value", "upper value"]
+    ).set_index("interval")
     cred_int_df
 
 
@@ -840,14 +833,14 @@ Let's determine the credible intervals of our data using 50%, 75% and 95%:
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 425-429
+.. GENERATED FROM PYTHON SOURCE LINES 418-422
 
 As shown in the table, there is a 50% probability that the true mean
 difference between models will be between 0.000977 and 0.019023, 70%
 probability that it will be between -0.005422 and 0.025422, and 95%
 probability that it will be between -0.016445	and 0.036445.
 
-.. GENERATED FROM PYTHON SOURCE LINES 431-447
+.. GENERATED FROM PYTHON SOURCE LINES 424-440
 
 Pairwise comparison of all models: frequentist approach
 -------------------------------------------------------
@@ -866,7 +859,7 @@ testing.
 
 Let's compare the performance of the models using the corrected t-test:
 
-.. GENERATED FROM PYTHON SOURCE LINES 447-478
+.. GENERATED FROM PYTHON SOURCE LINES 440-466
 
 .. code-block:: default
 
@@ -874,9 +867,8 @@ Let's compare the performance of the models using the corrected t-test:
     from itertools import combinations
     from math import factorial
 
-    n_comparisons = (
-        factorial(len(model_scores))
-        / (factorial(2) * factorial(len(model_scores) - 2))
+    n_comparisons = factorial(len(model_scores)) / (
+        factorial(2) * factorial(len(model_scores) - 2)
     )
     pairwise_t_test = []
 
@@ -884,20 +876,16 @@ Let's compare the performance of the models using the corrected t-test:
         model_i_scores = model_scores.iloc[model_i].values
         model_k_scores = model_scores.iloc[model_k].values
         differences = model_i_scores - model_k_scores
-        t_stat, p_val = compute_corrected_ttest(
-            differences, df, n_train, n_test
-        )
+        t_stat, p_val = compute_corrected_ttest(differences, df, n_train, n_test)
         p_val *= n_comparisons  # implement Bonferroni correction
         # Bonferroni can output p-values higher than 1
         p_val = 1 if p_val > 1 else p_val
         pairwise_t_test.append(
-            [model_scores.index[model_i], model_scores.index[model_k],
-             t_stat, p_val]
+            [model_scores.index[model_i], model_scores.index[model_k], t_stat, p_val]
         )
 
     pairwise_comp_df = pd.DataFrame(
-        pairwise_t_test,
-        columns=['model_1', 'model_2', 't_stat', 'p_val']
+        pairwise_t_test, columns=["model_1", "model_2", "t_stat", "p_val"]
     ).round(3)
     pairwise_comp_df
 
@@ -983,7 +971,7 @@ Let's compare the performance of the models using the corrected t-test:
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 479-484
+.. GENERATED FROM PYTHON SOURCE LINES 467-472
 
 We observe that after correcting for multiple comparisons, the only model
 that significantly differs from the others is `'2_poly'`.
@@ -991,7 +979,7 @@ that significantly differs from the others is `'2_poly'`.
 :class:`~sklearn.model_selection.GridSearchCV`, does not significantly
 differ from `'linear'` or `'3_poly'`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 486-494
+.. GENERATED FROM PYTHON SOURCE LINES 474-482
 
 Pairwise comparison of all models: Bayesian approach
 ----------------------------------------------------
@@ -1002,7 +990,7 @@ correct for multiple comparisons (for reasons why see [4]_).
 We can carry out our pairwise comparisons the same way as in the first
 section:
 
-.. GENERATED FROM PYTHON SOURCE LINES 494-519
+.. GENERATED FROM PYTHON SOURCE LINES 482-505
 
 .. code-block:: default
 
@@ -1014,8 +1002,7 @@ section:
         model_k_scores = model_scores.iloc[model_k].values
         differences = model_i_scores - model_k_scores
         t_post = t(
-            df, loc=np.mean(differences),
-            scale=corrected_std(differences, n_train, n_test)
+            df, loc=np.mean(differences), scale=corrected_std(differences, n_train, n_test)
         )
         worse_prob = t_post.cdf(rope_interval[0])
         better_prob = 1 - t_post.cdf(rope_interval[1])
@@ -1023,10 +1010,9 @@ section:
 
         pairwise_bayesian.append([worse_prob, better_prob, rope_prob])
 
-    pairwise_bayesian_df = (pd.DataFrame(
-        pairwise_bayesian,
-        columns=['worse_prob', 'better_prob', 'rope_prob']
-    ).round(3))
+    pairwise_bayesian_df = pd.DataFrame(
+        pairwise_bayesian, columns=["worse_prob", "better_prob", "rope_prob"]
+    ).round(3)
 
     pairwise_comp_df = pairwise_comp_df.join(pairwise_bayesian_df)
     pairwise_comp_df
@@ -1134,7 +1120,7 @@ section:
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 520-533
+.. GENERATED FROM PYTHON SOURCE LINES 506-519
 
 Using the Bayesian approach we can compute the probability that a model
 performs better, worse or practically equivalent to another.
@@ -1150,7 +1136,7 @@ Similarly to the conclusions obtained using the frequentist approach, all
 models have a 100% probability of being better than `'2_poly'`, and none have
 a practically equivalent performance with the latter.
 
-.. GENERATED FROM PYTHON SOURCE LINES 535-554
+.. GENERATED FROM PYTHON SOURCE LINES 521-540
 
 Take-home messages
 ------------------
@@ -1172,7 +1158,7 @@ Take-home messages
 - If multiple models are statistically compared, a multiple comparisons
   correction is needed when using the frequentist approach.
 
-.. GENERATED FROM PYTHON SOURCE LINES 556-580
+.. GENERATED FROM PYTHON SOURCE LINES 542-566
 
 .. topic:: References
 
@@ -1202,7 +1188,7 @@ Take-home messages
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.659 seconds)
+   **Total running time of the script:** ( 0 minutes  2.041 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_grid_search_stats.py:

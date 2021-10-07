@@ -85,9 +85,10 @@ infinite) dimensional feature spaces.
 We start by defining a function that we intent to approximate and prepare
 plotting it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-65
+.. GENERATED FROM PYTHON SOURCE LINES 56-66
 
 .. code-block:: default
+
 
 
     def f(x):
@@ -105,11 +106,11 @@ plotting it.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-67
+.. GENERATED FROM PYTHON SOURCE LINES 67-68
 
 To make it interesting, we only give a small subset of points to train on.
 
-.. GENERATED FROM PYTHON SOURCE LINES 67-77
+.. GENERATED FROM PYTHON SOURCE LINES 68-78
 
 .. code-block:: default
 
@@ -130,12 +131,12 @@ To make it interesting, we only give a small subset of points to train on.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-80
+.. GENERATED FROM PYTHON SOURCE LINES 79-81
 
 Now we are ready to create polynomial features and splines, fit on the
 training points and show how well they interpolate.
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-110
+.. GENERATED FROM PYTHON SOURCE LINES 81-110
 
 .. code-block:: default
 
@@ -143,9 +144,9 @@ training points and show how well they interpolate.
     # plot function
     lw = 2
     fig, ax = plt.subplots()
-    ax.set_prop_cycle(color=[
-        "black", "teal", "yellowgreen", "gold", "darkorange", "tomato"
-    ])
+    ax.set_prop_cycle(
+        color=["black", "teal", "yellowgreen", "gold", "darkorange", "tomato"]
+    )
     ax.plot(x_plot, f(x_plot), linewidth=lw, label="ground truth")
 
     # plot training points
@@ -159,13 +160,12 @@ training points and show how well they interpolate.
         ax.plot(x_plot, y_plot, label=f"degree {degree}")
 
     # B-spline with 4 + 3 - 1 = 6 basis functions
-    model = make_pipeline(SplineTransformer(n_knots=4, degree=3),
-                          Ridge(alpha=1e-3))
+    model = make_pipeline(SplineTransformer(n_knots=4, degree=3), Ridge(alpha=1e-3))
     model.fit(X_train, y_train)
 
     y_plot = model.predict(X_plot)
     ax.plot(x_plot, y_plot, label="B-spline")
-    ax.legend(loc='lower center')
+    ax.legend(loc="lower center")
     ax.set_ylim(-20, 10)
     plt.show()
 
@@ -213,7 +213,7 @@ columns of both transformers separately.
 
     # plot knots of spline
     knots = splt.bsplines_[0].t
-    axes[1].vlines(knots[3:-3], ymin=0, ymax=0.8, linestyles='dashed')
+    axes[1].vlines(knots[3:-3], ymin=0, ymax=0.8, linestyles="dashed")
     plt.show()
 
 
@@ -261,7 +261,7 @@ periodic features or more generally features where the period is known, it is
 advised to explicitly pass this information to the `SplineTransformer` by
 setting the knots manually.
 
-.. GENERATED FROM PYTHON SOURCE LINES 172-205
+.. GENERATED FROM PYTHON SOURCE LINES 172-208
 
 .. code-block:: default
 
@@ -283,12 +283,15 @@ setting the knots manually.
     ax.scatter(x_train, y_train, label="training points")
 
     for transformer, label in [
-      (SplineTransformer(degree=3, n_knots=10), "spline"),
-      (SplineTransformer(
-          degree=3,
-          knots=np.linspace(0, 2 * np.pi, 10)[:, None],
-          extrapolation="periodic"
-      ), "periodic spline")
+        (SplineTransformer(degree=3, n_knots=10), "spline"),
+        (
+            SplineTransformer(
+                degree=3,
+                knots=np.linspace(0, 2 * np.pi, 10)[:, None],
+                extrapolation="periodic",
+            ),
+            "periodic spline",
+        ),
     ]:
         model = make_pipeline(transformer, Ridge(alpha=1e-3))
         model.fit(X_train, y_train)
@@ -310,17 +313,15 @@ setting the knots manually.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 206-216
+.. GENERATED FROM PYTHON SOURCE LINES 209-217
 
 .. code-block:: default
 
     fig, ax = plt.subplots()
     knots = np.linspace(0, 2 * np.pi, 4)
-    splt = SplineTransformer(
-      knots=knots[:, None],
-      degree=3,
-      extrapolation="periodic"
-    ).fit(X_train)
+    splt = SplineTransformer(knots=knots[:, None], degree=3, extrapolation="periodic").fit(
+        X_train
+    )
     ax.plot(x_plot_ext, splt.transform(X_plot_ext))
     ax.legend(ax.lines, [f"spline {n}" for n in range(3)])
     plt.show()
@@ -339,7 +340,7 @@ setting the knots manually.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.797 seconds)
+   **Total running time of the script:** ( 0 minutes  0.668 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_polynomial_interpolation.py:

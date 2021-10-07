@@ -255,15 +255,15 @@ Third-Party Liability Claims (November 8, 2018). <a class="reference external" h
 <span class="sd">      678013 samples.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># freMTPL2freq dataset from https://www.openml.org/d/41214</span>
-    <span class="n">df_freq</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="mi">41214</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
-    <span class="n">df_freq</span><span class="p">[</span><span class="s1">&#39;IDpol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_freq</span><span class="p">[</span><span class="s1">&#39;IDpol&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-    <span class="n">df_freq</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;IDpol&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">df_freq</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="mi">41214</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
+    <span class="n">df_freq</span><span class="p">[</span><span class="s2">&quot;IDpol&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_freq</span><span class="p">[</span><span class="s2">&quot;IDpol&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">df_freq</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;IDpol&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="c1"># freMTPL2sev dataset from https://www.openml.org/d/41215</span>
-    <span class="n">df_sev</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="mi">41215</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+    <span class="n">df_sev</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="mi">41215</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s2">&quot;data&quot;</span><span class="p">]</span>
 
     <span class="c1"># sum ClaimAmount over identical IDs</span>
-    <span class="n">df_sev</span> <span class="o">=</span> <span class="n">df_sev</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;IDpol&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    <span class="n">df_sev</span> <span class="o">=</span> <span class="n">df_sev</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;IDpol&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 
     <span class="n">df</span> <span class="o">=</span> <span class="n">df_freq</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_sev</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;left&quot;</span><span class="p">)</span>
     <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ClaimAmount&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -274,8 +274,17 @@ Third-Party Liability Claims (November 8, 2018). <a class="reference external" h
     <span class="k">return</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:</span><span class="n">n_samples</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">plot_obs_pred</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">feature</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">observed</span><span class="p">,</span> <span class="n">predicted</span><span class="p">,</span> <span class="n">y_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                  <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fill_legend</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">plot_obs_pred</span><span class="p">(</span>
+    <span class="n">df</span><span class="p">,</span>
+    <span class="n">feature</span><span class="p">,</span>
+    <span class="n">weight</span><span class="p">,</span>
+    <span class="n">observed</span><span class="p">,</span>
+    <span class="n">predicted</span><span class="p">,</span>
+    <span class="n">y_label</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">title</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">fill_legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Plot observed and predicted - aggregated per feature level.</span>
 
 <span class="sd">    Parameters</span>
@@ -322,21 +331,30 @@ Third-Party Liability Claims (November 8, 2018). <a class="reference external" h
 
 
 <span class="k">def</span> <span class="nf">score_estimator</span><span class="p">(</span>
-    <span class="n">estimator</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">df_train</span><span class="p">,</span> <span class="n">df_test</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span>
+    <span class="n">estimator</span><span class="p">,</span>
+    <span class="n">X_train</span><span class="p">,</span>
+    <span class="n">X_test</span><span class="p">,</span>
+    <span class="n">df_train</span><span class="p">,</span>
+    <span class="n">df_test</span><span class="p">,</span>
+    <span class="n">target</span><span class="p">,</span>
+    <span class="n">weights</span><span class="p">,</span>
     <span class="n">tweedie_powers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
 <span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Evaluate an estimator on train and test sets with different metrics&quot;&quot;&quot;</span>
 
     <span class="n">metrics</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">(</span><span class="s2">&quot;D² explained&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>   <span class="c1"># Use default scorer if it exists</span>
+        <span class="p">(</span><span class="s2">&quot;D² explained&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>  <span class="c1"># Use default scorer if it exists</span>
         <span class="p">(</span><span class="s2">&quot;mean abs. error&quot;</span><span class="p">,</span> <a href="../../modules/generated/sklearn.metrics.mean_absolute_error.html#sklearn.metrics.mean_absolute_error" title="sklearn.metrics.mean_absolute_error" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">mean_absolute_error</span></a><span class="p">),</span>
         <span class="p">(</span><span class="s2">&quot;mean squared error&quot;</span><span class="p">,</span> <a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="sklearn.metrics.mean_squared_error" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">mean_squared_error</span></a><span class="p">),</span>
     <span class="p">]</span>
     <span class="k">if</span> <span class="n">tweedie_powers</span><span class="p">:</span>
-        <span class="n">metrics</span> <span class="o">+=</span> <span class="p">[(</span>
-            <span class="s2">&quot;mean Tweedie dev p=</span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">power</span><span class="p">),</span>
-            <a href="https://docs.python.org/3/library/functools.html#functools.partial" title="functools.partial" class="sphx-glr-backref-module-functools sphx-glr-backref-type-py-function"><span class="n">partial</span></a><span class="p">(</span><a href="../../modules/generated/sklearn.metrics.mean_tweedie_deviance.html#sklearn.metrics.mean_tweedie_deviance" title="sklearn.metrics.mean_tweedie_deviance" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">mean_tweedie_deviance</span></a><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="n">power</span><span class="p">)</span>
-        <span class="p">)</span> <span class="k">for</span> <span class="n">power</span> <span class="ow">in</span> <span class="n">tweedie_powers</span><span class="p">]</span>
+        <span class="n">metrics</span> <span class="o">+=</span> <span class="p">[</span>
+            <span class="p">(</span>
+                <span class="s2">&quot;mean Tweedie dev p=</span><span class="si">{:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">power</span><span class="p">),</span>
+                <a href="https://docs.python.org/3/library/functools.html#functools.partial" title="functools.partial" class="sphx-glr-backref-module-functools sphx-glr-backref-type-py-function"><span class="n">partial</span></a><span class="p">(</span><a href="../../modules/generated/sklearn.metrics.mean_tweedie_deviance.html#sklearn.metrics.mean_tweedie_deviance" title="sklearn.metrics.mean_tweedie_deviance" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">mean_tweedie_deviance</span></a><span class="p">,</span> <span class="n">power</span><span class="o">=</span><span class="n">power</span><span class="p">),</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">power</span> <span class="ow">in</span> <span class="n">tweedie_powers</span>
+        <span class="p">]</span>
 
     <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">subset_label</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">df</span> <span class="ow">in</span> <span class="p">[</span>
@@ -360,16 +378,14 @@ Third-Party Liability Claims (November 8, 2018). <a class="reference external" h
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">score</span> <span class="o">=</span> <span class="n">metric</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">_weights</span><span class="p">)</span>
 
-            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="p">{</span><span class="s2">&quot;subset&quot;</span><span class="p">:</span> <span class="n">subset_label</span><span class="p">,</span> <span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="n">score_label</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="n">score</span><span class="p">}</span>
-            <span class="p">)</span>
+            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;subset&quot;</span><span class="p">:</span> <span class="n">subset_label</span><span class="p">,</span> <span class="s2">&quot;metric&quot;</span><span class="p">:</span> <span class="n">score_label</span><span class="p">,</span> <span class="s2">&quot;score&quot;</span><span class="p">:</span> <span class="n">score</span><span class="p">})</span>
 
     <span class="n">res</span> <span class="o">=</span> <span class="p">(</span>
         <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></a><span class="p">(</span><span class="n">res</span><span class="p">)</span>
         <span class="o">.</span><span class="n">set_index</span><span class="p">([</span><span class="s2">&quot;metric&quot;</span><span class="p">,</span> <span class="s2">&quot;subset&quot;</span><span class="p">])</span>
         <span class="o">.</span><span class="n">score</span><span class="o">.</span><span class="n">unstack</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
         <span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-        <span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">]]</span>
+        <span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="s2">&quot;test&quot;</span><span class="p">]]</span>
     <span class="p">)</span>
     <span class="k">return</span> <span class="n">res</span>
 </pre></div>
@@ -393,20 +409,19 @@ containing the claim amount (<code class="docutils literal notranslate"><span cl
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ClaimAmount&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;ClaimAmount&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">upper</span><span class="o">=</span><span class="mi">200000</span><span class="p">)</span>
 
 <span class="n">log_scale_transformer</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="sklearn.pipeline.make_pipeline" class="sphx-glr-backref-module-sklearn-pipeline sphx-glr-backref-type-py-function"><span class="n">make_pipeline</span></a><span class="p">(</span>
-    <a href="../../modules/generated/sklearn.preprocessing.FunctionTransformer.html#sklearn.preprocessing.FunctionTransformer" title="sklearn.preprocessing.FunctionTransformer" class="sphx-glr-backref-module-sklearn-preprocessing sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">FunctionTransformer</span></a><span class="p">(</span><span class="n">func</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">),</span>
-    <a href="../../modules/generated/sklearn.preprocessing.StandardScaler.html#sklearn.preprocessing.StandardScaler" title="sklearn.preprocessing.StandardScaler" class="sphx-glr-backref-module-sklearn-preprocessing sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">StandardScaler</span></a><span class="p">()</span>
+    <a href="../../modules/generated/sklearn.preprocessing.FunctionTransformer.html#sklearn.preprocessing.FunctionTransformer" title="sklearn.preprocessing.FunctionTransformer" class="sphx-glr-backref-module-sklearn-preprocessing sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">FunctionTransformer</span></a><span class="p">(</span><span class="n">func</span><span class="o">=</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.log.html#numpy.log" title="numpy.log" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">log</span></a><span class="p">),</span> <a href="../../modules/generated/sklearn.preprocessing.StandardScaler.html#sklearn.preprocessing.StandardScaler" title="sklearn.preprocessing.StandardScaler" class="sphx-glr-backref-module-sklearn-preprocessing sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">StandardScaler</span></a><span class="p">()</span>
 <span class="p">)</span>
 
 <span class="n">column_trans</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.compose.ColumnTransformer.html#sklearn.compose.ColumnTransformer" title="sklearn.compose.ColumnTransformer" class="sphx-glr-backref-module-sklearn-compose sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ColumnTransformer</span></a><span class="p">(</span>
     <span class="p">[</span>
-        <span class="p">(</span><span class="s2">&quot;binned_numeric&quot;</span><span class="p">,</span> <a href="../../modules/generated/sklearn.preprocessing.KBinsDiscretizer.html#sklearn.preprocessing.KBinsDiscretizer" title="sklearn.preprocessing.KBinsDiscretizer" class="sphx-glr-backref-module-sklearn-preprocessing sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">KBinsDiscretizer</span></a><span class="p">(</span><span class="n">n_bins</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span>
-            <span class="p">[</span><span class="s2">&quot;VehAge&quot;</span><span class="p">,</span> <span class="s2">&quot;DrivAge&quot;</span><span class="p">]),</span>
-        <span class="p">(</span><span class="s2">&quot;onehot_categorical&quot;</span><span class="p">,</span> <a href="../../modules/generated/sklearn.preprocessing.OneHotEncoder.html#sklearn.preprocessing.OneHotEncoder" title="sklearn.preprocessing.OneHotEncoder" class="sphx-glr-backref-module-sklearn-preprocessing sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">OneHotEncoder</span></a><span class="p">(),</span>
-            <span class="p">[</span><span class="s2">&quot;VehBrand&quot;</span><span class="p">,</span> <span class="s2">&quot;VehPower&quot;</span><span class="p">,</span> <span class="s2">&quot;VehGas&quot;</span><span class="p">,</span> <span class="s2">&quot;Region&quot;</span><span class="p">,</span> <span class="s2">&quot;Area&quot;</span><span class="p">]),</span>
-        <span class="p">(</span><span class="s2">&quot;passthrough_numeric&quot;</span><span class="p">,</span> <span class="s2">&quot;passthrough&quot;</span><span class="p">,</span>
-            <span class="p">[</span><span class="s2">&quot;BonusMalus&quot;</span><span class="p">]),</span>
-        <span class="p">(</span><span class="s2">&quot;log_scaled_numeric&quot;</span><span class="p">,</span> <span class="n">log_scale_transformer</span><span class="p">,</span>
-            <span class="p">[</span><span class="s2">&quot;Density&quot;</span><span class="p">]),</span>
+        <span class="p">(</span><span class="s2">&quot;binned_numeric&quot;</span><span class="p">,</span> <a href="../../modules/generated/sklearn.preprocessing.KBinsDiscretizer.html#sklearn.preprocessing.KBinsDiscretizer" title="sklearn.preprocessing.KBinsDiscretizer" class="sphx-glr-backref-module-sklearn-preprocessing sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">KBinsDiscretizer</span></a><span class="p">(</span><span class="n">n_bins</span><span class="o">=</span><span class="mi">10</span><span class="p">),</span> <span class="p">[</span><span class="s2">&quot;VehAge&quot;</span><span class="p">,</span> <span class="s2">&quot;DrivAge&quot;</span><span class="p">]),</span>
+        <span class="p">(</span>
+            <span class="s2">&quot;onehot_categorical&quot;</span><span class="p">,</span>
+            <a href="../../modules/generated/sklearn.preprocessing.OneHotEncoder.html#sklearn.preprocessing.OneHotEncoder" title="sklearn.preprocessing.OneHotEncoder" class="sphx-glr-backref-module-sklearn-preprocessing sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">OneHotEncoder</span></a><span class="p">(),</span>
+            <span class="p">[</span><span class="s2">&quot;VehBrand&quot;</span><span class="p">,</span> <span class="s2">&quot;VehPower&quot;</span><span class="p">,</span> <span class="s2">&quot;VehGas&quot;</span><span class="p">,</span> <span class="s2">&quot;Region&quot;</span><span class="p">,</span> <span class="s2">&quot;Area&quot;</span><span class="p">],</span>
+        <span class="p">),</span>
+        <span class="p">(</span><span class="s2">&quot;passthrough_numeric&quot;</span><span class="p">,</span> <span class="s2">&quot;passthrough&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;BonusMalus&quot;</span><span class="p">]),</span>
+        <span class="p">(</span><span class="s2">&quot;log_scaled_numeric&quot;</span><span class="p">,</span> <span class="n">log_scale_transformer</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;Density&quot;</span><span class="p">]),</span>
     <span class="p">],</span>
     <span class="n">remainder</span><span class="o">=</span><span class="s2">&quot;drop&quot;</span><span class="p">,</span>
 <span class="p">)</span>
@@ -469,8 +484,7 @@ Here we model the frequency <code class="docutils literal notranslate"><span cla
 <span class="c1"># on the training set via a quasi-Newton solver: l-BFGS. Some of the features</span>
 <span class="c1"># are collinear, we use a weak penalization to avoid numerical issues.</span>
 <span class="n">glm_freq</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.PoissonRegressor.html#sklearn.linear_model.PoissonRegressor" title="sklearn.linear_model.PoissonRegressor" class="sphx-glr-backref-module-sklearn-linear_model sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">PoissonRegressor</span></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
-<span class="n">glm_freq</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">],</span>
-             <span class="n">sample_weight</span><span class="o">=</span><span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;Exposure&quot;</span><span class="p">])</span>
+<span class="n">glm_freq</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">],</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;Exposure&quot;</span><span class="p">])</span>
 
 <span class="n">scores</span> <span class="o">=</span> <span class="n">score_estimator</span><span class="p">(</span>
     <span class="n">glm_freq</span><span class="p">,</span>
@@ -520,7 +534,7 @@ bonus/malus (<code class="docutils literal notranslate"><span class="pre">BonusM
     <span class="n">y_label</span><span class="o">=</span><span class="s2">&quot;Claim Frequency&quot;</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;test data&quot;</span><span class="p">,</span>
     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-    <span class="n">fill_legend</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">fill_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">plot_obs_pred</span><span class="p">(</span>
@@ -532,7 +546,7 @@ bonus/malus (<code class="docutils literal notranslate"><span class="pre">BonusM
     <span class="n">y_label</span><span class="o">=</span><span class="s2">&quot;Claim Frequency&quot;</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;test data&quot;</span><span class="p">,</span>
     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-    <span class="n">fill_legend</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">fill_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">plot_obs_pred</span><span class="p">(</span>
@@ -544,7 +558,7 @@ bonus/malus (<code class="docutils literal notranslate"><span class="pre">BonusM
     <span class="n">y_label</span><span class="o">=</span><span class="s2">&quot;Claim Frequency&quot;</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;test data&quot;</span><span class="p">,</span>
     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-    <span class="n">fill_legend</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">fill_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -568,7 +582,7 @@ more than one claim.</p></li>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mask_train</span> <span class="o">=</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;ClaimAmount&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
 <span class="n">mask_test</span> <span class="o">=</span> <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;ClaimAmount&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span>
 
-<span class="n">glm_sev</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.GammaRegressor.html#sklearn.linear_model.GammaRegressor" title="sklearn.linear_model.GammaRegressor" class="sphx-glr-backref-module-sklearn-linear_model sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">GammaRegressor</span></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">10.</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">glm_sev</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.GammaRegressor.html#sklearn.linear_model.GammaRegressor" title="sklearn.linear_model.GammaRegressor" class="sphx-glr-backref-module-sklearn-linear_model sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">GammaRegressor</span></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
 
 <span class="n">glm_sev</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
     <span class="n">X_train</span><span class="p">[</span><span class="n">mask_train</span><span class="o">.</span><span class="n">values</span><span class="p">],</span>
@@ -604,12 +618,18 @@ the strong regularization.</p>
 <p>Note that the resulting model is the average claim amount per claim. As
 such, it is conditional on having at least one claim, and cannot be used to
 predict the average claim amount per policy in general.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean AvgClaim Amount per policy:              </span><span class="si">%.2f</span><span class="s2"> &quot;</span>
-      <span class="o">%</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;AvgClaimAmount&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mean AvgClaim Amount | NbClaim &gt; 0:           </span><span class="si">%.2f</span><span class="s2">&quot;</span>
-      <span class="o">%</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;AvgClaimAmount&quot;</span><span class="p">][</span><span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;AvgClaimAmount&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Predicted Mean AvgClaim Amount | NbClaim &gt; 0: </span><span class="si">%.2f</span><span class="s2">&quot;</span>
-      <span class="o">%</span> <span class="n">glm_sev</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;Mean AvgClaim Amount per policy:              </span><span class="si">%.2f</span><span class="s2"> &quot;</span>
+    <span class="o">%</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;AvgClaimAmount&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;Mean AvgClaim Amount | NbClaim &gt; 0:           </span><span class="si">%.2f</span><span class="s2">&quot;</span>
+    <span class="o">%</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;AvgClaimAmount&quot;</span><span class="p">][</span><span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;AvgClaimAmount&quot;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;Predicted Mean AvgClaim Amount | NbClaim &gt; 0: </span><span class="si">%.2f</span><span class="s2">&quot;</span>
+    <span class="o">%</span> <span class="n">glm_sev</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -642,7 +662,7 @@ the drivers age (<code class="docutils literal notranslate"><span class="pre">Dr
     <span class="n">y_label</span><span class="o">=</span><span class="s2">&quot;Average Claim Severity&quot;</span><span class="p">,</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;test data&quot;</span><span class="p">,</span>
     <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-    <span class="n">fill_legend</span><span class="o">=</span><span class="kc">True</span>
+    <span class="n">fill_legend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
 </pre></div>
@@ -674,9 +694,10 @@ compute the mean deviances for a grid of possible values, and compare the
 models side by side, i.e. we compare them at identical values of <code class="docutils literal notranslate"><span class="pre">power</span></code>.
 Ideally, we hope that one model will be consistently better than the other,
 regardless of <code class="docutils literal notranslate"><span class="pre">power</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">glm_pure_premium</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.TweedieRegressor.html#sklearn.linear_model.TweedieRegressor" title="sklearn.linear_model.TweedieRegressor" class="sphx-glr-backref-module-sklearn-linear_model sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TweedieRegressor</span></a><span class="p">(</span><span class="n">power</span><span class="o">=</span><span class="mf">1.9</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">.1</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">glm_pure_premium</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;PurePremium&quot;</span><span class="p">],</span>
-                     <span class="n">sample_weight</span><span class="o">=</span><span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;Exposure&quot;</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">glm_pure_premium</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.linear_model.TweedieRegressor.html#sklearn.linear_model.TweedieRegressor" title="sklearn.linear_model.TweedieRegressor" class="sphx-glr-backref-module-sklearn-linear_model sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TweedieRegressor</span></a><span class="p">(</span><span class="n">power</span><span class="o">=</span><span class="mf">1.9</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">glm_pure_premium</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;PurePremium&quot;</span><span class="p">],</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;Exposure&quot;</span><span class="p">]</span>
+<span class="p">)</span>
 
 <span class="n">tweedie_powers</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.7</span><span class="p">,</span> <span class="mf">1.8</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="mf">1.99</span><span class="p">,</span> <span class="mf">1.999</span><span class="p">,</span> <span class="mf">1.9999</span><span class="p">]</span>
 
@@ -699,15 +720,17 @@ regardless of <code class="docutils literal notranslate"><span class="pre">power
     <span class="n">df_test</span><span class="p">,</span>
     <span class="n">target</span><span class="o">=</span><span class="s2">&quot;PurePremium&quot;</span><span class="p">,</span>
     <span class="n">weights</span><span class="o">=</span><span class="s2">&quot;Exposure&quot;</span><span class="p">,</span>
-    <span class="n">tweedie_powers</span><span class="o">=</span><span class="n">tweedie_powers</span>
+    <span class="n">tweedie_powers</span><span class="o">=</span><span class="n">tweedie_powers</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="n">scores</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html#pandas.concat" title="pandas.concat" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-function"><span class="n">pd</span><span class="o">.</span><span class="n">concat</span></a><span class="p">([</span><span class="n">scores_product_model</span><span class="p">,</span> <span class="n">scores_glm_pure_premium</span><span class="p">],</span>
-                   <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                   <span class="n">keys</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Product Model&#39;</span><span class="p">,</span> <span class="s1">&#39;TweedieRegressor&#39;</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Evaluation of the Product Model and the Tweedie Regressor &quot;</span>
-      <span class="s2">&quot;on target PurePremium&quot;</span><span class="p">)</span>
-<span class="k">with</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.option_context.html#pandas.option_context" title="pandas.option_context" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">option_context</span></a><span class="p">(</span><span class="s1">&#39;display.expand_frame_repr&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+<span class="n">scores</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html#pandas.concat" title="pandas.concat" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-function"><span class="n">pd</span><span class="o">.</span><span class="n">concat</span></a><span class="p">(</span>
+    <span class="p">[</span><span class="n">scores_product_model</span><span class="p">,</span> <span class="n">scores_glm_pure_premium</span><span class="p">],</span>
+    <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">sort</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">keys</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;Product Model&quot;</span><span class="p">,</span> <span class="s2">&quot;TweedieRegressor&quot;</span><span class="p">),</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Evaluation of the Product Model and the Tweedie Regressor on target PurePremium&quot;</span><span class="p">)</span>
+<span class="k">with</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.option_context.html#pandas.option_context" title="pandas.option_context" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">option_context</span></a><span class="p">(</span><span class="s2">&quot;display.expand_frame_repr&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">scores</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -749,8 +772,7 @@ behavior depends on the amount of regularization).</p>
                 <span class="n">exposure</span> <span class="o">*</span> <span class="n">glm_freq</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">*</span> <span class="n">glm_sev</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
             <span class="p">),</span>
             <span class="s2">&quot;predicted, tweedie, power=</span><span class="si">%.2f</span><span class="s2">&quot;</span>
-            <span class="o">%</span> <span class="n">glm_pure_premium</span><span class="o">.</span><span class="n">power</span><span class="p">:</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html#numpy.sum" title="numpy.sum" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">sum</span></a><span class="p">(</span>
-                <span class="n">exposure</span> <span class="o">*</span> <span class="n">glm_pure_premium</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)),</span>
+            <span class="o">%</span> <span class="n">glm_pure_premium</span><span class="o">.</span><span class="n">power</span><span class="p">:</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.sum.html#numpy.sum" title="numpy.sum" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">sum</span></a><span class="p">(</span><span class="n">exposure</span> <span class="o">*</span> <span class="n">glm_pure_premium</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">)),</span>
         <span class="p">}</span>
     <span class="p">)</span>
 
@@ -802,30 +824,31 @@ pair of models, each with its own set of hyperparameters.</p>
 <span class="n">y_pred_product</span> <span class="o">=</span> <span class="n">glm_freq</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span> <span class="o">*</span> <span class="n">glm_sev</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 <span class="n">y_pred_total</span> <span class="o">=</span> <span class="n">glm_pure_premium</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">y_pred</span> <span class="ow">in</span> <span class="p">[(</span><span class="s2">&quot;Frequency * Severity model&quot;</span><span class="p">,</span> <span class="n">y_pred_product</span><span class="p">),</span>
-                      <span class="p">(</span><span class="s2">&quot;Compound Poisson Gamma&quot;</span><span class="p">,</span> <span class="n">y_pred_total</span><span class="p">)]:</span>
+<span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">y_pred</span> <span class="ow">in</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Frequency * Severity model&quot;</span><span class="p">,</span> <span class="n">y_pred_product</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Compound Poisson Gamma&quot;</span><span class="p">,</span> <span class="n">y_pred_total</span><span class="p">),</span>
+<span class="p">]:</span>
     <span class="n">ordered_samples</span><span class="p">,</span> <span class="n">cum_claims</span> <span class="o">=</span> <span class="n">lorenz_curve</span><span class="p">(</span>
-        <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;PurePremium&quot;</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;Exposure&quot;</span><span class="p">])</span>
+        <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;PurePremium&quot;</span><span class="p">],</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;Exposure&quot;</span><span class="p">]</span>
+    <span class="p">)</span>
     <span class="n">gini</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.metrics.auc.html#sklearn.metrics.auc" title="sklearn.metrics.auc" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">auc</span></a><span class="p">(</span><span class="n">ordered_samples</span><span class="p">,</span> <span class="n">cum_claims</span><span class="p">)</span>
     <span class="n">label</span> <span class="o">+=</span> <span class="s2">&quot; (Gini index: </span><span class="si">{:.3f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gini</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ordered_samples</span><span class="p">,</span> <span class="n">cum_claims</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
 
 <span class="c1"># Oracle model: y_pred == y_test</span>
 <span class="n">ordered_samples</span><span class="p">,</span> <span class="n">cum_claims</span> <span class="o">=</span> <span class="n">lorenz_curve</span><span class="p">(</span>
-    <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;PurePremium&quot;</span><span class="p">],</span> <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;PurePremium&quot;</span><span class="p">],</span> <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;Exposure&quot;</span><span class="p">])</span>
+    <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;PurePremium&quot;</span><span class="p">],</span> <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;PurePremium&quot;</span><span class="p">],</span> <span class="n">df_test</span><span class="p">[</span><span class="s2">&quot;Exposure&quot;</span><span class="p">]</span>
+<span class="p">)</span>
 <span class="n">gini</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.metrics.auc.html#sklearn.metrics.auc" title="sklearn.metrics.auc" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">auc</span></a><span class="p">(</span><span class="n">ordered_samples</span><span class="p">,</span> <span class="n">cum_claims</span><span class="p">)</span>
 <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;Oracle (Gini index: </span><span class="si">{:.3f}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">gini</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ordered_samples</span><span class="p">,</span> <span class="n">cum_claims</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span>
-        <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ordered_samples</span><span class="p">,</span> <span class="n">cum_claims</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;-.&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">label</span><span class="p">)</span>
 
 <span class="c1"># Random baseline</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span>
-        <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Random baseline&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Random baseline&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
     <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Lorenz Curves&quot;</span><span class="p">,</span>
-    <span class="n">xlabel</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;Fraction of policyholders</span><span class="se">\n</span><span class="s1">&#39;</span>
-            <span class="s1">&#39;(ordered by model from safest to riskiest)&#39;</span><span class="p">),</span>
-    <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;Fraction of total claim amount&#39;</span>
+    <span class="n">xlabel</span><span class="o">=</span><span class="s2">&quot;Fraction of policyholders</span><span class="se">\n</span><span class="s2">(ordered by model from safest to riskiest)&quot;</span><span class="p">,</span>
+    <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;Fraction of total claim amount&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">()</span>
@@ -835,7 +858,7 @@ pair of models, each with its own set of hyperparameters.</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>[]
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  33.896 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  31.606 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-tweedie-regression-insurance-claims-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_tweedie_regression_insurance_claims.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo17.svg" width="150px" /></a>

@@ -45,7 +45,7 @@ Gerhard Schroeder       0.76      0.76      0.76        25
       avg / total       0.80      0.80      0.80       322
 ================== ============ ======= ========== =======
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-164
+.. GENERATED FROM PYTHON SOURCE LINES 30-168
 
 
 
@@ -79,15 +79,15 @@ Gerhard Schroeder       0.76      0.76      0.76        25
     n_features: 1850
     n_classes: 7
     Extracting the top 150 eigenfaces from 966 faces
-    done in 0.156s
+    done in 0.150s
     Projecting the input data on the eigenfaces orthonormal basis
-    done in 0.024s
+    done in 0.011s
     Fitting the classifier to the training set
-    done in 31.140s
+    done in 30.598s
     Best estimator found by grid search:
     SVC(C=1000.0, class_weight='balanced', gamma=0.005)
     Predicting people's names on the test set
-    done in 0.104s
+    done in 0.106s
                        precision    recall  f1-score   support
 
          Ariel Sharon       0.75      0.46      0.57        13
@@ -135,7 +135,7 @@ Gerhard Schroeder       0.76      0.76      0.76        25
     print(__doc__)
 
     # Display progress logs on stdout
-    logging.basicConfig(level=logging.INFO, format='%(asctime)s %(message)s')
+    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
 
 
     # #############################################################################
@@ -167,7 +167,8 @@ Gerhard Schroeder       0.76      0.76      0.76        25
 
     # split into a training and testing set
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.25, random_state=42)
+        X, y, test_size=0.25, random_state=42
+    )
 
 
     # #############################################################################
@@ -175,11 +176,11 @@ Gerhard Schroeder       0.76      0.76      0.76        25
     # dataset): unsupervised feature extraction / dimensionality reduction
     n_components = 150
 
-    print("Extracting the top %d eigenfaces from %d faces"
-          % (n_components, X_train.shape[0]))
+    print(
+        "Extracting the top %d eigenfaces from %d faces" % (n_components, X_train.shape[0])
+    )
     t0 = time()
-    pca = PCA(n_components=n_components, svd_solver='randomized',
-              whiten=True).fit(X_train)
+    pca = PCA(n_components=n_components, svd_solver="randomized", whiten=True).fit(X_train)
     print("done in %0.3fs" % (time() - t0))
 
     eigenfaces = pca.components_.reshape((n_components, h, w))
@@ -196,11 +197,11 @@ Gerhard Schroeder       0.76      0.76      0.76        25
 
     print("Fitting the classifier to the training set")
     t0 = time()
-    param_grid = {'C': [1e3, 5e3, 1e4, 5e4, 1e5],
-                  'gamma': [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1], }
-    clf = GridSearchCV(
-        SVC(kernel='rbf', class_weight='balanced'), param_grid
-    )
+    param_grid = {
+        "C": [1e3, 5e3, 1e4, 5e4, 1e5],
+        "gamma": [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.1],
+    }
+    clf = GridSearchCV(SVC(kernel="rbf", class_weight="balanced"), param_grid)
     clf = clf.fit(X_train_pca, y_train)
     print("done in %0.3fs" % (time() - t0))
     print("Best estimator found by grid search:")
@@ -222,10 +223,11 @@ Gerhard Schroeder       0.76      0.76      0.76        25
     # #############################################################################
     # Qualitative evaluation of the predictions using matplotlib
 
+
     def plot_gallery(images, titles, h, w, n_row=3, n_col=4):
         """Helper function to plot a gallery of portraits"""
         plt.figure(figsize=(1.8 * n_col, 2.4 * n_row))
-        plt.subplots_adjust(bottom=0, left=.01, right=.99, top=.90, hspace=.35)
+        plt.subplots_adjust(bottom=0, left=0.01, right=0.99, top=0.90, hspace=0.35)
         for i in range(n_row * n_col):
             plt.subplot(n_row, n_col, i + 1)
             plt.imshow(images[i].reshape((h, w)), cmap=plt.cm.gray)
@@ -236,14 +238,16 @@ Gerhard Schroeder       0.76      0.76      0.76        25
 
     # plot the result of the prediction on a portion of the test set
 
+
     def title(y_pred, y_test, target_names, i):
-        pred_name = target_names[y_pred[i]].rsplit(' ', 1)[-1]
-        true_name = target_names[y_test[i]].rsplit(' ', 1)[-1]
-        return 'predicted: %s\ntrue:      %s' % (pred_name, true_name)
+        pred_name = target_names[y_pred[i]].rsplit(" ", 1)[-1]
+        true_name = target_names[y_test[i]].rsplit(" ", 1)[-1]
+        return "predicted: %s\ntrue:      %s" % (pred_name, true_name)
 
 
-    prediction_titles = [title(y_pred, y_test, target_names, i)
-                         for i in range(y_pred.shape[0])]
+    prediction_titles = [
+        title(y_pred, y_test, target_names, i) for i in range(y_pred.shape[0])
+    ]
 
     plot_gallery(X_test, prediction_titles, h, w)
 
@@ -257,7 +261,7 @@ Gerhard Schroeder       0.76      0.76      0.76        25
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  32.355 seconds)
+   **Total running time of the script:** ( 0 minutes  31.694 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_face_recognition.py:

@@ -33,7 +33,7 @@ biclusters found by the algorithm.
 The outer product of the row and column label vectors shows a
 representation of the checkerboard structure.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-68
+.. GENERATED FROM PYTHON SOURCE LINES 18-67
 
 
 
@@ -102,8 +102,8 @@ representation of the checkerboard structure.
 
     n_clusters = (4, 3)
     data, rows, columns = make_checkerboard(
-        shape=(300, 300), n_clusters=n_clusters, noise=10,
-        shuffle=False, random_state=0)
+        shape=(300, 300), n_clusters=n_clusters, noise=10, shuffle=False, random_state=0
+    )
 
     plt.matshow(data, cmap=plt.cm.Blues)
     plt.title("Original dataset")
@@ -117,11 +117,9 @@ representation of the checkerboard structure.
     plt.matshow(data, cmap=plt.cm.Blues)
     plt.title("Shuffled dataset")
 
-    model = SpectralBiclustering(n_clusters=n_clusters, method='log',
-                                 random_state=0)
+    model = SpectralBiclustering(n_clusters=n_clusters, method="log", random_state=0)
     model.fit(data)
-    score = consensus_score(model.biclusters_,
-                            (rows[:, row_idx], columns[:, col_idx]))
+    score = consensus_score(model.biclusters_, (rows[:, row_idx], columns[:, col_idx]))
 
     print("consensus score: {:.1f}".format(score))
 
@@ -131,9 +129,10 @@ representation of the checkerboard structure.
     plt.matshow(fit_data, cmap=plt.cm.Blues)
     plt.title("After biclustering; rearranged to show biclusters")
 
-    plt.matshow(np.outer(np.sort(model.row_labels_) + 1,
-                         np.sort(model.column_labels_) + 1),
-                cmap=plt.cm.Blues)
+    plt.matshow(
+        np.outer(np.sort(model.row_labels_) + 1, np.sort(model.column_labels_) + 1),
+        cmap=plt.cm.Blues,
+    )
     plt.title("Checkerboard structure of rearranged data")
 
     plt.show()
@@ -141,7 +140,7 @@ representation of the checkerboard structure.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.007 seconds)
+   **Total running time of the script:** ( 0 minutes  0.882 seconds)
 
 
 .. _sphx_glr_download_auto_examples_bicluster_plot_spectral_biclustering.py:

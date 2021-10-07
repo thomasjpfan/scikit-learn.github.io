@@ -25,7 +25,7 @@ SVM with custom kernel
 Simple usage of Support Vector Machines to classify a sample. It will
 plot the decision surface and the support vectors.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-58
+.. GENERATED FROM PYTHON SOURCE LINES 10-57
 
 
 
@@ -79,7 +79,7 @@ plot the decision surface and the support vectors.
         return np.dot(np.dot(X, M), Y.T)
 
 
-    h = .02  # step size in the mesh
+    h = 0.02  # step size in the mesh
 
     # we create an instance of SVM and fit out data.
     clf = svm.SVC(kernel=my_kernel)
@@ -97,16 +97,15 @@ plot the decision surface and the support vectors.
     plt.pcolormesh(xx, yy, Z, cmap=plt.cm.Paired)
 
     # Plot also the training points
-    plt.scatter(X[:, 0], X[:, 1], c=Y, cmap=plt.cm.Paired, edgecolors='k')
-    plt.title('3-Class classification using Support Vector Machine with custom'
-              ' kernel')
-    plt.axis('tight')
+    plt.scatter(X[:, 0], X[:, 1], c=Y, cmap=plt.cm.Paired, edgecolors="k")
+    plt.title("3-Class classification using Support Vector Machine with custom kernel")
+    plt.axis("tight")
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.289 seconds)
+   **Total running time of the script:** ( 0 minutes  0.270 seconds)
 
 
 .. _sphx_glr_download_auto_examples_svm_plot_custom_kernel.py:

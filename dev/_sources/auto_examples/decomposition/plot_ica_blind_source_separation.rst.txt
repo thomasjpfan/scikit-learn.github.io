@@ -31,7 +31,7 @@ ie. what is played by each instrument. Importantly, PCA fails
 at recovering our `instruments` since the related signals reflect
 non-Gaussian processes.
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-74
+.. GENERATED FROM PYTHON SOURCE LINES 16-76
 
 
 
@@ -90,11 +90,13 @@ non-Gaussian processes.
     plt.figure()
 
     models = [X, S, S_, H]
-    names = ['Observations (mixed signal)',
-             'True Sources',
-             'ICA recovered signals',
-             'PCA recovered signals']
-    colors = ['red', 'steelblue', 'orange']
+    names = [
+        "Observations (mixed signal)",
+        "True Sources",
+        "ICA recovered signals",
+        "PCA recovered signals",
+    ]
+    colors = ["red", "steelblue", "orange"]
 
     for ii, (model, name) in enumerate(zip(models, names), 1):
         plt.subplot(4, 1, ii)
@@ -108,7 +110,7 @@ non-Gaussian processes.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.427 seconds)
+   **Total running time of the script:** ( 0 minutes  0.380 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_ica_blind_source_separation.py:

@@ -301,32 +301,69 @@ Training set loss: 0.170087
 <span class="kn">from</span> <span class="nn">sklearn.exceptions</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.exceptions.ConvergenceWarning.html#sklearn.exceptions.ConvergenceWarning" title="sklearn.exceptions.ConvergenceWarning" class="sphx-glr-backref-module-sklearn-exceptions sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ConvergenceWarning</span></a>
 
 <span class="c1"># different learning rate schedules and momentum parameters</span>
-<span class="n">params</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;solver&#39;</span><span class="p">:</span> <span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="s1">&#39;momentum&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-           <span class="s1">&#39;learning_rate_init&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
-          <span class="p">{</span><span class="s1">&#39;solver&#39;</span><span class="p">:</span> <span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="s1">&#39;momentum&#39;</span><span class="p">:</span> <span class="mf">.9</span><span class="p">,</span>
-           <span class="s1">&#39;nesterovs_momentum&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;learning_rate_init&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
-          <span class="p">{</span><span class="s1">&#39;solver&#39;</span><span class="p">:</span> <span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="s1">&#39;constant&#39;</span><span class="p">,</span> <span class="s1">&#39;momentum&#39;</span><span class="p">:</span> <span class="mf">.9</span><span class="p">,</span>
-           <span class="s1">&#39;nesterovs_momentum&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;learning_rate_init&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
-          <span class="p">{</span><span class="s1">&#39;solver&#39;</span><span class="p">:</span> <span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="s1">&#39;invscaling&#39;</span><span class="p">,</span> <span class="s1">&#39;momentum&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-           <span class="s1">&#39;learning_rate_init&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
-          <span class="p">{</span><span class="s1">&#39;solver&#39;</span><span class="p">:</span> <span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="s1">&#39;invscaling&#39;</span><span class="p">,</span> <span class="s1">&#39;momentum&#39;</span><span class="p">:</span> <span class="mf">.9</span><span class="p">,</span>
-           <span class="s1">&#39;nesterovs_momentum&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;learning_rate_init&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
-          <span class="p">{</span><span class="s1">&#39;solver&#39;</span><span class="p">:</span> <span class="s1">&#39;sgd&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="s1">&#39;invscaling&#39;</span><span class="p">,</span> <span class="s1">&#39;momentum&#39;</span><span class="p">:</span> <span class="mf">.9</span><span class="p">,</span>
-           <span class="s1">&#39;nesterovs_momentum&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;learning_rate_init&#39;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">},</span>
-          <span class="p">{</span><span class="s1">&#39;solver&#39;</span><span class="p">:</span> <span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="s1">&#39;learning_rate_init&#39;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">}]</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;solver&quot;</span><span class="p">:</span> <span class="s2">&quot;sgd&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="s2">&quot;constant&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;momentum&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate_init&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;solver&quot;</span><span class="p">:</span> <span class="s2">&quot;sgd&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="s2">&quot;constant&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;momentum&quot;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+        <span class="s2">&quot;nesterovs_momentum&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate_init&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;solver&quot;</span><span class="p">:</span> <span class="s2">&quot;sgd&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="s2">&quot;constant&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;momentum&quot;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+        <span class="s2">&quot;nesterovs_momentum&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate_init&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;solver&quot;</span><span class="p">:</span> <span class="s2">&quot;sgd&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="s2">&quot;invscaling&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;momentum&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate_init&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;solver&quot;</span><span class="p">:</span> <span class="s2">&quot;sgd&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="s2">&quot;invscaling&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;momentum&quot;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+        <span class="s2">&quot;nesterovs_momentum&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate_init&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;solver&quot;</span><span class="p">:</span> <span class="s2">&quot;sgd&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate&quot;</span><span class="p">:</span> <span class="s2">&quot;invscaling&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;momentum&quot;</span><span class="p">:</span> <span class="mf">0.9</span><span class="p">,</span>
+        <span class="s2">&quot;nesterovs_momentum&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;learning_rate_init&quot;</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;solver&quot;</span><span class="p">:</span> <span class="s2">&quot;adam&quot;</span><span class="p">,</span> <span class="s2">&quot;learning_rate_init&quot;</span><span class="p">:</span> <span class="mf">0.01</span><span class="p">},</span>
+<span class="p">]</span>
 
-<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;constant learning-rate&quot;</span><span class="p">,</span> <span class="s2">&quot;constant with momentum&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;constant with Nesterov&#39;s momentum&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;inv-scaling learning-rate&quot;</span><span class="p">,</span> <span class="s2">&quot;inv-scaling with momentum&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;inv-scaling with Nesterov&#39;s momentum&quot;</span><span class="p">,</span> <span class="s2">&quot;adam&quot;</span><span class="p">]</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;constant learning-rate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;constant with momentum&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;constant with Nesterov&#39;s momentum&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inv-scaling learning-rate&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inv-scaling with momentum&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;inv-scaling with Nesterov&#39;s momentum&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;adam&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
-<span class="n">plot_args</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">},</span>
-             <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">},</span>
-             <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">},</span>
-             <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;--&#39;</span><span class="p">},</span>
-             <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;--&#39;</span><span class="p">},</span>
-             <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;--&#39;</span><span class="p">},</span>
-             <span class="p">{</span><span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="s1">&#39;linestyle&#39;</span><span class="p">:</span> <span class="s1">&#39;-&#39;</span><span class="p">}]</span>
+<span class="n">plot_args</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;--&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;--&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;--&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;c&quot;</span><span class="p">:</span> <span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="s2">&quot;linestyle&quot;</span><span class="p">:</span> <span class="s2">&quot;-&quot;</span><span class="p">},</span>
+<span class="p">]</span>
 
 
 <span class="k">def</span> <span class="nf">plot_on_dataset</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
@@ -344,14 +381,14 @@ Training set loss: 0.170087
 
     <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">param</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">params</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;training: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">label</span><span class="p">)</span>
-        <span class="n">mlp</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier" title="sklearn.neural_network.MLPClassifier" class="sphx-glr-backref-module-sklearn-neural_network sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">MLPClassifier</span></a><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-                            <span class="n">max_iter</span><span class="o">=</span><span class="n">max_iter</span><span class="p">,</span> <span class="o">**</span><span class="n">param</span><span class="p">)</span>
+        <span class="n">mlp</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier" title="sklearn.neural_network.MLPClassifier" class="sphx-glr-backref-module-sklearn-neural_network sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">MLPClassifier</span></a><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="n">max_iter</span><span class="p">,</span> <span class="o">**</span><span class="n">param</span><span class="p">)</span>
 
         <span class="c1"># some parameter combinations will not converge as can be seen on the</span>
         <span class="c1"># plots so they are ignored here</span>
         <span class="k">with</span> <a href="https://docs.python.org/3/library/warnings.html#warnings.catch_warnings" title="warnings.catch_warnings" class="sphx-glr-backref-module-warnings sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">warnings</span><span class="o">.</span><span class="n">catch_warnings</span></a><span class="p">():</span>
-            <a href="https://docs.python.org/3/library/warnings.html#warnings.filterwarnings" title="warnings.filterwarnings" class="sphx-glr-backref-module-warnings sphx-glr-backref-type-py-function"><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span></a><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><a href="../../modules/generated/sklearn.exceptions.ConvergenceWarning.html#sklearn.exceptions.ConvergenceWarning" title="sklearn.exceptions.ConvergenceWarning" class="sphx-glr-backref-module-sklearn-exceptions sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ConvergenceWarning</span></a><span class="p">,</span>
-                                    <span class="n">module</span><span class="o">=</span><span class="s2">&quot;sklearn&quot;</span><span class="p">)</span>
+            <a href="https://docs.python.org/3/library/warnings.html#warnings.filterwarnings" title="warnings.filterwarnings" class="sphx-glr-backref-module-warnings sphx-glr-backref-type-py-function"><span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span></a><span class="p">(</span>
+                <span class="s2">&quot;ignore&quot;</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><a href="../../modules/generated/sklearn.exceptions.ConvergenceWarning.html#sklearn.exceptions.ConvergenceWarning" title="sklearn.exceptions.ConvergenceWarning" class="sphx-glr-backref-module-sklearn-exceptions sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ConvergenceWarning</span></a><span class="p">,</span> <span class="n">module</span><span class="o">=</span><span class="s2">&quot;sklearn&quot;</span>
+            <span class="p">)</span>
             <span class="n">mlp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 
         <span class="n">mlps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mlp</span><span class="p">)</span>
@@ -365,20 +402,23 @@ Training set loss: 0.170087
 <span class="c1"># load / generate some toy datasets</span>
 <span class="n">iris</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris" title="sklearn.datasets.load_iris" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span></a><span class="p">()</span>
 <span class="n">X_digits</span><span class="p">,</span> <span class="n">y_digits</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits" title="sklearn.datasets.load_digits" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">load_digits</span></a><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data_sets</span> <span class="o">=</span> <span class="p">[(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">),</span>
-             <span class="p">(</span><span class="n">X_digits</span><span class="p">,</span> <span class="n">y_digits</span><span class="p">),</span>
-             <a href="../../modules/generated/sklearn.datasets.make_circles.html#sklearn.datasets.make_circles" title="sklearn.datasets.make_circles" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">make_circles</span></a><span class="p">(</span><span class="n">noise</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
-             <a href="../../modules/generated/sklearn.datasets.make_moons.html#sklearn.datasets.make_moons" title="sklearn.datasets.make_moons" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">make_moons</span></a><span class="p">(</span><span class="n">noise</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)]</span>
+<span class="n">data_sets</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">),</span>
+    <span class="p">(</span><span class="n">X_digits</span><span class="p">,</span> <span class="n">y_digits</span><span class="p">),</span>
+    <a href="../../modules/generated/sklearn.datasets.make_circles.html#sklearn.datasets.make_circles" title="sklearn.datasets.make_circles" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">make_circles</span></a><span class="p">(</span><span class="n">noise</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">factor</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+    <a href="../../modules/generated/sklearn.datasets.make_moons.html#sklearn.datasets.make_moons" title="sklearn.datasets.make_moons" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">datasets</span><span class="o">.</span><span class="n">make_moons</span></a><span class="p">(</span><span class="n">noise</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="p">]</span>
 
-<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">data_sets</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;iris&#39;</span><span class="p">,</span> <span class="s1">&#39;digits&#39;</span><span class="p">,</span>
-                                                    <span class="s1">&#39;circles&#39;</span><span class="p">,</span> <span class="s1">&#39;moons&#39;</span><span class="p">]):</span>
+<span class="k">for</span> <span class="n">ax</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
+    <span class="n">axes</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">data_sets</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;iris&quot;</span><span class="p">,</span> <span class="s2">&quot;digits&quot;</span><span class="p">,</span> <span class="s2">&quot;circles&quot;</span><span class="p">,</span> <span class="s2">&quot;moons&quot;</span><span class="p">]</span>
+<span class="p">):</span>
     <span class="n">plot_on_dataset</span><span class="p">(</span><span class="o">*</span><span class="n">data</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="n">name</span><span class="p">)</span>
 
 <span class="n">fig</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_lines</span><span class="p">(),</span> <span class="n">labels</span><span class="p">,</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper center&quot;</span><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.414 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.348 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-neural-networks-plot-mlp-training-curves-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/neural_networks/plot_mlp_training_curves.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo24.svg" width="150px" /></a>

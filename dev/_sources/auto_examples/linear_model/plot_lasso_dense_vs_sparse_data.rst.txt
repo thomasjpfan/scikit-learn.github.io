@@ -25,7 +25,7 @@ Lasso on dense and sparse data
 We show that linear_model.Lasso provides the same results for dense and sparse
 data and that in the case of sparse data the speed is improved.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-67
+.. GENERATED FROM PYTHON SOURCE LINES 10-71
 
 
 
@@ -38,13 +38,13 @@ data and that in the case of sparse data the speed is improved.
 
 
     --- Dense matrices
-    Sparse Lasso done in 0.172655s
-    Dense Lasso done in 0.063489s
+    Sparse Lasso done in 0.136252s
+    Dense Lasso done in 0.054173s
     Distance between coefficients : 8.680552612979835e-14
     --- Sparse matrices
     Matrix density : 0.6263000000000001 %
-    Sparse Lasso done in 0.266470s
-    Dense Lasso done in 1.290411s
+    Sparse Lasso done in 0.259993s
+    Dense Lasso done in 1.062253s
     Distance between coefficients : 7.768625813853113e-12
 
 
@@ -85,8 +85,10 @@ data and that in the case of sparse data the speed is improved.
     dense_lasso.fit(X, y)
     print("Dense Lasso done in %fs" % (time() - t0))
 
-    print("Distance between coefficients : %s"
-          % linalg.norm(sparse_lasso.coef_ - dense_lasso.coef_))
+    print(
+        "Distance between coefficients : %s"
+        % linalg.norm(sparse_lasso.coef_ - dense_lasso.coef_)
+    )
 
     # #############################################################################
     # The two Lasso implementations on Sparse data
@@ -111,13 +113,15 @@ data and that in the case of sparse data the speed is improved.
     dense_lasso.fit(Xs.toarray(), y)
     print("Dense Lasso done in %fs" % (time() - t0))
 
-    print("Distance between coefficients : %s"
-          % linalg.norm(sparse_lasso.coef_ - dense_lasso.coef_))
+    print(
+        "Distance between coefficients : %s"
+        % linalg.norm(sparse_lasso.coef_ - dense_lasso.coef_)
+    )
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.927 seconds)
+   **Total running time of the script:** ( 0 minutes  1.634 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_lasso_dense_vs_sparse_data.py:

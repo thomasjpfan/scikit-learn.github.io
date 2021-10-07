@@ -162,9 +162,9 @@ images. We will check the test set in this regard.
 .. code-block:: default
 
     plot_digits(X_test, "Uncorrupted test images")
-    plot_digits(X_test_noisy,
-                f"Noisy test images\n"
-                f"MSE: {np.mean((X_test - X_test_noisy) ** 2):.2f}")
+    plot_digits(
+        X_test_noisy, f"Noisy test images\nMSE: {np.mean((X_test - X_test_noisy) ** 2):.2f}"
+    )
 
 
 
@@ -198,15 +198,16 @@ Learn the `PCA` basis
 We can now learn our PCA basis using both a linear PCA and a kernel PCA that
 uses a radial basis function (RBF) kernel.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-109
+.. GENERATED FROM PYTHON SOURCE LINES 100-110
 
 .. code-block:: default
 
     from sklearn.decomposition import PCA, KernelPCA
 
     pca = PCA(n_components=32)
-    kernel_pca = KernelPCA(n_components=400, kernel="rbf", gamma=1e-3,
-                           fit_inverse_transform=True, alpha=5e-3)
+    kernel_pca = KernelPCA(
+        n_components=400, kernel="rbf", gamma=1e-3, fit_inverse_transform=True, alpha=5e-3
+    )
 
     pca.fit(X_train_noisy)
     _ = kernel_pca.fit(X_train_noisy)
@@ -218,7 +219,7 @@ uses a radial basis function (RBF) kernel.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-120
+.. GENERATED FROM PYTHON SOURCE LINES 111-121
 
 Reconstruct and denoise test images
 -----------------------------------
@@ -231,12 +232,13 @@ PCA; however, we expect a better reconstruction because we use a non-linear
 kernel to learn the PCA basis and a kernel ridge to learn the mapping
 function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-124
+.. GENERATED FROM PYTHON SOURCE LINES 121-126
 
 .. code-block:: default
 
     X_reconstructed_kernel_pca = kernel_pca.inverse_transform(
-        kernel_pca.transform(X_test_noisy))
+        kernel_pca.transform(X_test_noisy)
+    )
     X_reconstructed_pca = pca.inverse_transform(pca.transform(X_test_noisy))
 
 
@@ -246,17 +248,20 @@ function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-133
+.. GENERATED FROM PYTHON SOURCE LINES 127-138
 
 .. code-block:: default
 
     plot_digits(X_test, "Uncorrupted test images")
-    plot_digits(X_reconstructed_pca,
-                f"PCA reconstruction\n"
-                f"MSE: {np.mean((X_test - X_reconstructed_pca) ** 2):.2f}")
-    plot_digits(X_reconstructed_kernel_pca,
-                f"Kernel PCA reconstruction\n"
-                f"MSE: {np.mean((X_test - X_reconstructed_kernel_pca) ** 2):.2f}")
+    plot_digits(
+        X_reconstructed_pca,
+        f"PCA reconstruction\nMSE: {np.mean((X_test - X_reconstructed_pca) ** 2):.2f}",
+    )
+    plot_digits(
+        X_reconstructed_kernel_pca,
+        "Kernel PCA reconstruction\n"
+        f"MSE: {np.mean((X_test - X_reconstructed_kernel_pca) ** 2):.2f}",
+    )
 
 
 
@@ -289,7 +294,7 @@ function.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-140
+.. GENERATED FROM PYTHON SOURCE LINES 139-145
 
 PCA has a lower MSE than kernel PCA. However, the qualitative analysis might
 not favor PCA instead of kernel PCA. We observe that kernel PCA is able to
@@ -301,7 +306,7 @@ will depend of the parameters `n_components`, `gamma`, and `alpha`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.224 seconds)
+   **Total running time of the script:** ( 0 minutes  15.903 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_digits_denoising.py:

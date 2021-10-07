@@ -31,7 +31,7 @@ subtle.
 To emphasize the effect here, we particularly weight outliers, making the
 deformation of the decision boundary very visible.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-64
+.. GENERATED FROM PYTHON SOURCE LINES 15-71
 
 
 
@@ -62,10 +62,17 @@ deformation of the decision boundary very visible.
 
         # plot the line, the points, and the nearest vectors to the plane
         axis.contourf(xx, yy, Z, alpha=0.75, cmap=plt.cm.bone)
-        axis.scatter(X[:, 0], X[:, 1], c=y, s=100 * sample_weight, alpha=0.9,
-                     cmap=plt.cm.bone, edgecolors='black')
+        axis.scatter(
+            X[:, 0],
+            X[:, 1],
+            c=y,
+            s=100 * sample_weight,
+            alpha=0.9,
+            cmap=plt.cm.bone,
+            edgecolors="black",
+        )
 
-        axis.axis('off')
+        axis.axis("off")
         axis.set_title(title)
 
 
@@ -89,17 +96,17 @@ deformation of the decision boundary very visible.
     clf_no_weights.fit(X, y)
 
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-    plot_decision_function(clf_no_weights, sample_weight_constant, axes[0],
-                           "Constant weights")
-    plot_decision_function(clf_weights, sample_weight_last_ten, axes[1],
-                           "Modified weights")
+    plot_decision_function(
+        clf_no_weights, sample_weight_constant, axes[0], "Constant weights"
+    )
+    plot_decision_function(clf_weights, sample_weight_last_ten, axes[1], "Modified weights")
 
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.306 seconds)
+   **Total running time of the script:** ( 0 minutes  1.229 seconds)
 
 
 .. _sphx_glr_download_auto_examples_svm_plot_weighted_samples.py:

@@ -27,14 +27,15 @@ a machine learning pipeline.
 
 We also show that you can easily introspect part of the pipeline.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-16
+.. GENERATED FROM PYTHON SOURCE LINES 11-17
 
 .. code-block:: default
 
 
     print(__doc__)
     from sklearn import set_config
-    set_config(display='diagram')
+
+    set_config(display="diagram")
 
 
 
@@ -43,12 +44,12 @@ We also show that you can easily introspect part of the pipeline.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-19
+.. GENERATED FROM PYTHON SOURCE LINES 18-20
 
 We will start by generating a binary classification dataset. Subsequently, we
 will divide the dataset into two subsets.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-28
+.. GENERATED FROM PYTHON SOURCE LINES 20-34
 
 .. code-block:: default
 
@@ -57,8 +58,13 @@ will divide the dataset into two subsets.
     from sklearn.model_selection import train_test_split
 
     X, y = make_classification(
-        n_features=20, n_informative=3, n_redundant=0, n_classes=2,
-        n_clusters_per_class=2, random_state=42)
+        n_features=20,
+        n_informative=3,
+        n_redundant=0,
+        n_classes=2,
+        n_clusters_per_class=2,
+        random_state=42,
+    )
     X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
 
 
@@ -68,7 +74,7 @@ will divide the dataset into two subsets.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-41
+.. GENERATED FROM PYTHON SOURCE LINES 35-47
 
 A common mistake done with feature selection is to search a subset of
 discriminative features on the full dataset instead of only using the
@@ -83,7 +89,7 @@ and the index of these selected features will be stored. The feature selector
 will subsequently reduce the number of feature and pass this subset to the
 classifier which will be trained.
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-51
+.. GENERATED FROM PYTHON SOURCE LINES 47-57
 
 .. code-block:: default
 
@@ -105,12 +111,12 @@ classifier which will be trained.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-aba60762-3331-472c-8ea3-183989f6fe1a {color: black;background-color: white;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a pre{padding: 0;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-toggleable {background-color: white;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-estimator:hover {background-color: #d4ebff;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-item {z-index: 1;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-parallel-item:only-child::after {width: 0;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-aba60762-3331-472c-8ea3-183989f6fe1a div.sk-container {display: inline-block;position: relative;}</style><div id="sk-aba60762-3331-472c-8ea3-183989f6fe1a" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="7cfa91a4-a1fe-44e2-9a14-d8de0bc8d08f" type="checkbox" ><label class="sk-toggleable__label" for="7cfa91a4-a1fe-44e2-9a14-d8de0bc8d08f">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('selectkbest', SelectKBest(k=3)), ('linearsvc', LinearSVC())])</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="ad70d99c-419a-442e-8509-a147fe6e44bd" type="checkbox" ><label class="sk-toggleable__label" for="ad70d99c-419a-442e-8509-a147fe6e44bd">SelectKBest</label><div class="sk-toggleable__content"><pre>SelectKBest(k=3)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="54183a9e-0934-404d-baf3-9f07e555d9b7" type="checkbox" ><label class="sk-toggleable__label" for="54183a9e-0934-404d-baf3-9f07e555d9b7">LinearSVC</label><div class="sk-toggleable__content"><pre>LinearSVC()</pre></div></div></div></div></div></div></div>
+    <style>#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c {color: black;background-color: white;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c pre{padding: 0;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-toggleable {background-color: white;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-estimator:hover {background-color: #d4ebff;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-item {z-index: 1;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-parallel-item:only-child::after {width: 0;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c div.sk-container {display: inline-block;position: relative;}</style><div id="sk-05b4fb04-db95-45a4-818d-1f11ecd9ed5c" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c428c2d2-e0c7-4180-ae97-e98ada51e085" type="checkbox" ><label class="sk-toggleable__label" for="c428c2d2-e0c7-4180-ae97-e98ada51e085">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('selectkbest', SelectKBest(k=3)), ('linearsvc', LinearSVC())])</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c33b7dfa-cd24-477a-94dc-9b9b91d35160" type="checkbox" ><label class="sk-toggleable__label" for="c33b7dfa-cd24-477a-94dc-9b9b91d35160">SelectKBest</label><div class="sk-toggleable__content"><pre>SelectKBest(k=3)</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e6b9997c-d460-494c-aab0-96e539b6cd5f" type="checkbox" ><label class="sk-toggleable__label" for="e6b9997c-d460-494c-aab0-96e539b6cd5f">LinearSVC</label><div class="sk-toggleable__content"><pre>LinearSVC()</pre></div></div></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-58
+.. GENERATED FROM PYTHON SOURCE LINES 58-64
 
 Once the training accomplished, we can predict on new unseen samples. In this
 case, the feature selector will only select the most discriminative features
@@ -119,7 +125,7 @@ passed to the classifier which will make the prediction.
 
 Here, we report the final metrics via a classification report.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-64
+.. GENERATED FROM PYTHON SOURCE LINES 64-70
 
 .. code-block:: default
 
@@ -152,13 +158,13 @@ Here, we report the final metrics via a classification report.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-68
+.. GENERATED FROM PYTHON SOURCE LINES 71-74
 
 Be aware that you can inspect a step in the pipeline. For instance, we might
 be interested about the parameters of the classifier. Since we selected
 three features, we expect to have three coefficients.
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-71
+.. GENERATED FROM PYTHON SOURCE LINES 74-77
 
 .. code-block:: default
 
@@ -180,14 +186,14 @@ three features, we expect to have three coefficients.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-76
+.. GENERATED FROM PYTHON SOURCE LINES 78-82
 
 However, we do not know which features where selected from the original
 dataset. We could proceed by several manner. Here, we will inverse the
 transformation of these coefficients to get information about the original
 space.
 
-.. GENERATED FROM PYTHON SOURCE LINES 76-79
+.. GENERATED FROM PYTHON SOURCE LINES 82-85
 
 .. code-block:: default
 
@@ -212,7 +218,7 @@ space.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-82
+.. GENERATED FROM PYTHON SOURCE LINES 86-88
 
 We can see that the first three features where the selected features by
 the first step.
@@ -220,7 +226,7 @@ the first step.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.022 seconds)
+   **Total running time of the script:** ( 0 minutes  0.013 seconds)
 
 
 .. _sphx_glr_download_auto_examples_feature_selection_plot_feature_selection_pipeline.py:

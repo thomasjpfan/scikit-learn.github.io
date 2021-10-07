@@ -33,7 +33,7 @@ class will be very good.
 
 At the end, the top 10 most uncertain predictions will be shown.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-93
+.. GENERATED FROM PYTHON SOURCE LINES 17-96
 
 
 
@@ -127,15 +127,17 @@ At the end, the top 10 most uncertain predictions will be shown.
 
     # #############################################################################
     # Learn with LabelSpreading
-    lp_model = LabelSpreading(gamma=.25, max_iter=20)
+    lp_model = LabelSpreading(gamma=0.25, max_iter=20)
     lp_model.fit(X, y_train)
     predicted_labels = lp_model.transduction_[unlabeled_set]
     true_labels = y[unlabeled_set]
 
     cm = confusion_matrix(true_labels, predicted_labels, labels=lp_model.classes_)
 
-    print("Label Spreading model: %d labeled & %d unlabeled points (%d total)" %
-          (n_labeled_points, n_total_samples - n_labeled_points, n_total_samples))
+    print(
+        "Label Spreading model: %d labeled & %d unlabeled points (%d total)"
+        % (n_labeled_points, n_total_samples - n_labeled_points, n_total_samples)
+    )
 
     print(classification_report(true_labels, predicted_labels))
 
@@ -160,16 +162,17 @@ At the end, the top 10 most uncertain predictions will be shown.
         sub.imshow(image, cmap=plt.cm.gray_r)
         plt.xticks([])
         plt.yticks([])
-        sub.set_title('predict: %i\ntrue: %i' % (
-            lp_model.transduction_[image_index], y[image_index]))
+        sub.set_title(
+            "predict: %i\ntrue: %i" % (lp_model.transduction_[image_index], y[image_index])
+        )
 
-    f.suptitle('Learning with small amount of labeled data')
+    f.suptitle("Learning with small amount of labeled data")
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.456 seconds)
+   **Total running time of the script:** ( 0 minutes  0.422 seconds)
 
 
 .. _sphx_glr_download_auto_examples_semi_supervised_plot_label_propagation_digits.py:

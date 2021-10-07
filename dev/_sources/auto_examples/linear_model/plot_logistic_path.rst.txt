@@ -42,7 +42,7 @@ We also use warm_start=True which means that the coefficients of the models are
 reused to initialize the next model fit to speed-up the computation of the
 full-path.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-77
+.. GENERATED FROM PYTHON SOURCE LINES 28-81
 
 
 
@@ -60,7 +60,7 @@ full-path.
 
 
     Computing regularization path ...
-    This took 0.085s
+    This took 0.059s
 
 
 
@@ -96,15 +96,19 @@ full-path.
     # #############################################################################
     # Demo path functions
 
-    cs = l1_min_c(X, y, loss='log') * np.logspace(0, 7, 16)
+    cs = l1_min_c(X, y, loss="log") * np.logspace(0, 7, 16)
 
 
     print("Computing regularization path ...")
     start = time()
-    clf = linear_model.LogisticRegression(penalty='l1', solver='liblinear',
-                                          tol=1e-6, max_iter=int(1e6),
-                                          warm_start=True,
-                                          intercept_scaling=10000.)
+    clf = linear_model.LogisticRegression(
+        penalty="l1",
+        solver="liblinear",
+        tol=1e-6,
+        max_iter=int(1e6),
+        warm_start=True,
+        intercept_scaling=10000.0,
+    )
     coefs_ = []
     for c in cs:
         clf.set_params(C=c)
@@ -113,18 +117,18 @@ full-path.
     print("This took %0.3fs" % (time() - start))
 
     coefs_ = np.array(coefs_)
-    plt.plot(np.log10(cs), coefs_, marker='o')
+    plt.plot(np.log10(cs), coefs_, marker="o")
     ymin, ymax = plt.ylim()
-    plt.xlabel('log(C)')
-    plt.ylabel('Coefficients')
-    plt.title('Logistic Regression Path')
-    plt.axis('tight')
+    plt.xlabel("log(C)")
+    plt.ylabel("Coefficients")
+    plt.title("Logistic Regression Path")
+    plt.axis("tight")
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.228 seconds)
+   **Total running time of the script:** ( 0 minutes  0.182 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_logistic_path.py:

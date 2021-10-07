@@ -62,7 +62,7 @@ Train models on the diabetes dataset
 First, we train a decision tree and a multi-layer perceptron on the diabetes
 dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-46
+.. GENERATED FROM PYTHON SOURCE LINES 34-47
 
 .. code-block:: default
 
@@ -72,9 +72,10 @@ dataset.
     y = diabetes.target
 
     tree = DecisionTreeRegressor()
-    mlp = make_pipeline(StandardScaler(),
-                        MLPRegressor(hidden_layer_sizes=(100, 100),
-                                     tol=1e-2, max_iter=500, random_state=0))
+    mlp = make_pipeline(
+        StandardScaler(),
+        MLPRegressor(hidden_layer_sizes=(100, 100), tol=1e-2, max_iter=500, random_state=0),
+    )
     tree.fit(X, y)
     mlp.fit(X, y)
 
@@ -86,16 +87,16 @@ dataset.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 {color: black;background-color: white;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 pre{padding: 0;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-toggleable {background-color: white;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-estimator:hover {background-color: #d4ebff;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-item {z-index: 1;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-parallel-item:only-child::after {width: 0;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-15831307-b72c-4a07-a514-d7b5d5a53a05 div.sk-container {display: inline-block;position: relative;}</style><div id="sk-15831307-b72c-4a07-a514-d7b5d5a53a05" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2a4cfe97-2290-40b8-a30d-fa01ae0698da" type="checkbox" ><label class="sk-toggleable__label" for="2a4cfe97-2290-40b8-a30d-fa01ae0698da">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
+    <style>#sk-794e8961-f8cd-4605-8148-feeacce11de9 {color: black;background-color: white;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 pre{padding: 0;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-toggleable {background-color: white;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-estimator:hover {background-color: #d4ebff;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-item {z-index: 1;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-parallel-item:only-child::after {width: 0;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-794e8961-f8cd-4605-8148-feeacce11de9 div.sk-container {display: inline-block;position: relative;}</style><div id="sk-794e8961-f8cd-4605-8148-feeacce11de9" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="44f3d53d-2f42-4bb1-a4ac-0510559b6480" type="checkbox" ><label class="sk-toggleable__label" for="44f3d53d-2f42-4bb1-a4ac-0510559b6480">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('standardscaler', StandardScaler()),
                     ('mlpregressor',
                      MLPRegressor(hidden_layer_sizes=(100, 100), max_iter=500,
-                                  random_state=0, tol=0.01))])</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="6117a90e-bdc7-4c4e-86fc-f9d9dc377deb" type="checkbox" ><label class="sk-toggleable__label" for="6117a90e-bdc7-4c4e-86fc-f9d9dc377deb">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="62ac897f-d385-4746-8351-df83913fa9ec" type="checkbox" ><label class="sk-toggleable__label" for="62ac897f-d385-4746-8351-df83913fa9ec">MLPRegressor</label><div class="sk-toggleable__content"><pre>MLPRegressor(hidden_layer_sizes=(100, 100), max_iter=500, random_state=0,
+                                  random_state=0, tol=0.01))])</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="a9f519d1-903b-41ec-9b0e-17ca8627b75c" type="checkbox" ><label class="sk-toggleable__label" for="a9f519d1-903b-41ec-9b0e-17ca8627b75c">StandardScaler</label><div class="sk-toggleable__content"><pre>StandardScaler()</pre></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="cef786d5-2bdf-4832-a97d-11eee25e68b9" type="checkbox" ><label class="sk-toggleable__label" for="cef786d5-2bdf-4832-a97d-11eee25e68b9">MLPRegressor</label><div class="sk-toggleable__content"><pre>MLPRegressor(hidden_layer_sizes=(100, 100), max_iter=500, random_state=0,
                  tol=0.01)</pre></div></div></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-55
+.. GENERATED FROM PYTHON SOURCE LINES 48-56
 
 Plotting partial dependence for two features
 ============================================
@@ -106,7 +107,7 @@ index) for the decision tree. With two features,
 two curves. Here the plot function place a grid of two plots using the space
 defined by `ax` .
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-59
+.. GENERATED FROM PYTHON SOURCE LINES 56-60
 
 .. code-block:: default
 
@@ -126,21 +127,22 @@ defined by `ax` .
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-64
+.. GENERATED FROM PYTHON SOURCE LINES 61-65
 
 The partial dependence curves can be plotted for the multi-layer perceptron.
 In this case, `line_kw` is passed to
 :func:`~sklearn.inspection.PartialDependenceDisplay.from_estimator` to change the
 color of the curve.
 
-.. GENERATED FROM PYTHON SOURCE LINES 64-69
+.. GENERATED FROM PYTHON SOURCE LINES 65-71
 
 .. code-block:: default
 
     fig, ax = plt.subplots(figsize=(12, 6))
     ax.set_title("Multi-layer Perceptron")
-    mlp_disp = PartialDependenceDisplay.from_estimator(mlp, X, ["age", "bmi"], ax=ax,
-                                                       line_kw={"color": "red"})
+    mlp_disp = PartialDependenceDisplay.from_estimator(
+        mlp, X, ["age", "bmi"], ax=ax, line_kw={"color": "red"}
+    )
 
 
 
@@ -154,7 +156,7 @@ color of the curve.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 70-87
+.. GENERATED FROM PYTHON SOURCE LINES 72-89
 
 Plotting partial dependence of the two models together
 ======================================================
@@ -174,7 +176,7 @@ function to draw the partial dependence. The resulting plot places the
 decision tree partial dependence curves in the first row of the
 multi-layer perceptron in the second row.
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-94
+.. GENERATED FROM PYTHON SOURCE LINES 89-96
 
 .. code-block:: default
 
@@ -205,7 +207,7 @@ multi-layer perceptron in the second row.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-100
+.. GENERATED FROM PYTHON SOURCE LINES 97-102
 
 Another way to compare the curves is to plot them on top of each other. Here,
 we create a figure with one row and two columns. The axes are passed into the
@@ -213,15 +215,16 @@ we create a figure with one row and two columns. The axes are passed into the
 which will plot the partial dependence curves of each model on the same axes.
 The length of the axes list must be equal to the number of plots drawn.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-108
+.. GENERATED FROM PYTHON SOURCE LINES 102-111
 
 .. code-block:: default
 
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 6))
     tree_disp.plot(ax=[ax1, ax2], line_kw={"label": "Decision Tree"})
-    mlp_disp.plot(ax=[ax1, ax2], line_kw={"label": "Multi-layer Perceptron",
-                                          "color": "red"})
+    mlp_disp.plot(
+        ax=[ax1, ax2], line_kw={"label": "Multi-layer Perceptron", "color": "red"}
+    )
     ax1.legend()
     ax2.legend()
 
@@ -241,11 +244,11 @@ The length of the axes list must be equal to the number of plots drawn.
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f21ce89a7f0>
+    <matplotlib.legend.Legend object at 0x7fb782b60610>
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-116
+.. GENERATED FROM PYTHON SOURCE LINES 113-119
 
 `tree_disp.axes_` is a numpy array container the axes used to draw the
 partial dependence plots. This can be passed to `mlp_disp` to have the same
@@ -254,14 +257,15 @@ affect of drawing the plots on top of each other. Furthermore, the
 after calling `plot`. In this case `tree_disp.axes_` has two dimensions, thus
 `plot` will only show the y label and y ticks on the left most plot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-125
+.. GENERATED FROM PYTHON SOURCE LINES 119-129
 
 .. code-block:: default
 
 
     tree_disp.plot(line_kw={"label": "Decision Tree"})
-    mlp_disp.plot(line_kw={"label": "Multi-layer Perceptron", "color": "red"},
-                  ax=tree_disp.axes_)
+    mlp_disp.plot(
+        line_kw={"label": "Multi-layer Perceptron", "color": "red"}, ax=tree_disp.axes_
+    )
     tree_disp.figure_.set_size_inches(10, 6)
     tree_disp.axes_[0, 0].legend()
     tree_disp.axes_[0, 1].legend()
@@ -279,7 +283,7 @@ after calling `plot`. In this case `tree_disp.axes_` has two dimensions, thus
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-132
+.. GENERATED FROM PYTHON SOURCE LINES 130-136
 
 Plotting partial dependence for one feature
 ===========================================
@@ -288,13 +292,14 @@ Here, we plot the partial dependence curves for a single feature, "age", on
 the same axes. In this case, `tree_disp.axes_` is passed into the second
 plot function.
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-135
+.. GENERATED FROM PYTHON SOURCE LINES 136-140
 
 .. code-block:: default
 
     tree_disp = PartialDependenceDisplay.from_estimator(tree, X, ["age"])
     mlp_disp = PartialDependenceDisplay.from_estimator(
-        mlp, X, ["age"], ax=tree_disp.axes_, line_kw={"color": "red"})
+        mlp, X, ["age"], ax=tree_disp.axes_, line_kw={"color": "red"}
+    )
 
 
 
@@ -310,7 +315,7 @@ plot function.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.544 seconds)
+   **Total running time of the script:** ( 0 minutes  4.915 seconds)
 
 
 .. _sphx_glr_download_auto_examples_miscellaneous_plot_partial_dependence_visualization_api.py:

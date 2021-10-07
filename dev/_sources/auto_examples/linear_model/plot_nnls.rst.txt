@@ -60,7 +60,7 @@ Generate some random data
     y = np.dot(X, true_coef)
 
     # Add some noise
-    y += 5 * np.random.normal(size=(n_samples, ))
+    y += 5 * np.random.normal(size=(n_samples,))
 
 
 
@@ -166,7 +166,7 @@ The Non-Negative Least squares inherently yield sparse results.
     low_y, high_y = ax.get_ylim()
     low = max(low_x, low_y)
     high = min(high_x, high_y)
-    ax.plot([low, high], [low, high], ls="--", c=".3", alpha=.5)
+    ax.plot([low, high], [low, high], ls="--", c=".3", alpha=0.5)
     ax.set_xlabel("OLS regression coefficients", fontweight="bold")
     ax.set_ylabel("NNLS regression coefficients", fontweight="bold")
 
@@ -192,7 +192,7 @@ The Non-Negative Least squares inherently yield sparse results.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.126 seconds)
+   **Total running time of the script:** ( 0 minutes  0.123 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_nnls.py:

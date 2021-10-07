@@ -201,15 +201,15 @@ Loading 20 newsgroups training data
 3803 documents - 6.245MB
 
 DictVectorizer
-done in 2.116477s at 2.951MB/s
+done in 1.872346s at 3.335MB/s
 Found 47928 unique terms
 
 FeatureHasher on frequency dicts
-done in 1.111316s at 5.619MB/s
+done in 1.127458s at 5.539MB/s
 Found 43873 unique terms
 
 FeatureHasher on raw tokens
-done in 1.051264s at 5.940MB/s
+done in 1.063795s at 5.870MB/s
 Found 43873 unique terms
 </pre></div>
 </div>
@@ -252,13 +252,13 @@ Found 43873 unique terms
 
 
 <span class="n">categories</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;alt.atheism&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;comp.graphics&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;comp.sys.ibm.pc.hardware&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;misc.forsale&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;rec.autos&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;sci.space&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;talk.religion.misc&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;alt.atheism&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;comp.graphics&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;comp.sys.ibm.pc.hardware&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;misc.forsale&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rec.autos&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sci.space&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;talk.religion.misc&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="c1"># Uncomment the following line to use a larger set (11k+ documents)</span>
 <span class="c1"># categories = None</span>
@@ -278,9 +278,8 @@ Found 43873 unique terms
 
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading 20 newsgroups training data&quot;</span><span class="p">)</span>
-<span class="n">raw_data</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="sklearn.datasets.fetch_20newsgroups" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_20newsgroups</span></a><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span>
-                                 <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data_size_mb</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">raw_data</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span>
+<span class="n">raw_data</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="sklearn.datasets.fetch_20newsgroups" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_20newsgroups</span></a><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span> <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_size_mb</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">raw_data</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> documents - </span><span class="si">%0.3f</span><span class="s2">MB&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">raw_data</span><span class="p">),</span> <span class="n">data_size_mb</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">()</span>
 
@@ -311,7 +310,7 @@ Found 43873 unique terms
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found </span><span class="si">%d</span><span class="s2"> unique terms&quot;</span> <span class="o">%</span> <span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.734 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.464 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-hashing-vs-dict-vectorizer-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_hashing_vs_dict_vectorizer.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo29.svg" width="150px" /></a>
