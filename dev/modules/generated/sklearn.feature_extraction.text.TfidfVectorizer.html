@@ -305,7 +305,7 @@ been applied.</p></li>
 See <code class="xref py py-func docutils literal notranslate"><span class="pre">preprocessing.normalize</span></code>.</p></li>
 </ul>
 </dd>
-<dt><strong>use_idf</strong><span class="classifier">bool, default=True</span></dt><dd><p>Enable inverse-document-frequency reweighting.</p>
+<dt><strong>use_idf</strong><span class="classifier">bool, default=True</span></dt><dd><p>Enable inverse-document-frequency reweighting. If False, idf(t) = 1.</p>
 </dd>
 <dt><strong>smooth_idf</strong><span class="classifier">bool, default=True</span></dt><dd><p>Smooth idf weights by adding one to document frequencies, as if an
 extra document was seen containing every term in the collection
