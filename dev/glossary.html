@@ -719,9 +719,8 @@ matrices that are symmetric and hence store data redundantly.</p>
 <p>See also <a class="reference internal" href="#term-precomputed"><span class="xref std std-term">precomputed</span></a> and <a class="reference internal" href="#term-metric"><span class="xref std std-term">metric</span></a>.</p>
 <p>Note that for most distance metrics, we rely on implementations from
 <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/reference/spatial.distance.html#module-scipy.spatial.distance" title="(in SciPy v1.7.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.spatial.distance</span></code></a>, but may reimplement for efficiency in
-our context.  The <code class="xref py py-mod docutils literal notranslate"><span class="pre">neighbors</span></code> module also duplicates some metric
-implementations for integration with efficient binary tree search data
-structures.</p>
+our context. The <a class="reference internal" href="modules/generated/sklearn.metrics.DistanceMetric.html#sklearn.metrics.DistanceMetric" title="sklearn.metrics.DistanceMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">metrics.DistanceMetric</span></code></a> interface is used to implement
+distance metrics for integration with efficient neighbors search.</p>
 </dd>
 <dt id="term-pd">pd<a class="headerlink" href="#term-pd" title="Permalink to this term">¶</a></dt><dd><p>A shorthand for <a class="reference external" href="https://pandas.pydata.org">Pandas</a> due to the
 conventional import statement:</p>
@@ -1024,7 +1023,7 @@ See <a class="reference internal" href="modules/model_evaluation.html#scoring-pa
 </dl>
 <p>Further examples:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="modules/generated/sklearn.neighbors.DistanceMetric.html#sklearn.neighbors.DistanceMetric" title="sklearn.neighbors.DistanceMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.DistanceMetric</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/generated/sklearn.metrics.DistanceMetric.html#sklearn.metrics.DistanceMetric" title="sklearn.metrics.DistanceMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">metrics.DistanceMetric</span></code></a></p></li>
 <li><p><a class="reference internal" href="modules/generated/sklearn.gaussian_process.kernels.Kernel.html#sklearn.gaussian_process.kernels.Kernel" title="sklearn.gaussian_process.kernels.Kernel"><code class="xref py py-class docutils literal notranslate"><span class="pre">gaussian_process.kernels.Kernel</span></code></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tree.Criterion</span></code></p></li>
 </ul>
