@@ -185,10 +185,10 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.metrics" title="sklearn.metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a>.mutual_info_score<a class="headerlink" href="#sklearn-metrics-mutual-info-score" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.metrics.mutual_info_score">
-<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">mutual_info_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_pred</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contingency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a246a2e26/sklearn/metrics/cluster/_supervised.py#L724"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.mutual_info_score" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">mutual_info_score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">labels_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">labels_pred</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">contingency</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3bfb03385/sklearn/metrics/cluster/_supervised.py#L724"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.mutual_info_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mutual Information between two clusterings.</p>
-<p>The Mutual Information is a measure of the similarity between two labels of
-the same data. Where <span class="math notranslate nohighlight">\(|U_i|\)</span> is the number of the samples
+<p>The Mutual Information is a measure of the similarity between two labels
+of the same data. Where <span class="math notranslate nohighlight">\(|U_i|\)</span> is the number of the samples
 in cluster <span class="math notranslate nohighlight">\(U_i\)</span> and <span class="math notranslate nohighlight">\(|V_j|\)</span> is the number of the
 samples in cluster <span class="math notranslate nohighlight">\(V_j\)</span>, the Mutual Information
 between clusterings <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V\)</span> is given as:</p>
@@ -198,17 +198,20 @@ between clusterings <span class="math notranslate nohighlight">\(U\)</span> and 
 <p>This metric is independent of the absolute values of the labels:
 a permutation of the class or cluster label values won’t change the
 score value in any way.</p>
-<p>This metric is furthermore symmetric: switching <code class="docutils literal notranslate"><span class="pre">label_true</span></code> with
-<code class="docutils literal notranslate"><span class="pre">label_pred</span></code> will return the same score value. This can be useful to
-measure the agreement of two independent label assignments strategies
-on the same dataset when the real ground truth is not known.</p>
+<p>This metric is furthermore symmetric: switching <span class="math notranslate nohighlight">\(U\)</span> (i.e
+<code class="docutils literal notranslate"><span class="pre">label_true</span></code>) with <span class="math notranslate nohighlight">\(V\)</span> (i.e. <code class="docutils literal notranslate"><span class="pre">label_pred</span></code>) will return the
+same score value. This can be useful to measure the agreement of two
+independent label assignments strategies on the same dataset when the
+real ground truth is not known.</p>
 <p>Read more in the <a class="reference internal" href="../clustering.html#mutual-info-score"><span class="std std-ref">User Guide</span></a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>labels_true</strong><span class="classifier">int array, shape = [n_samples]</span></dt><dd><p>A clustering of the data into disjoint subsets.</p>
+<dt><strong>labels_true</strong><span class="classifier">int array, shape = [n_samples]</span></dt><dd><p>A clustering of the data into disjoint subsets, called <span class="math notranslate nohighlight">\(U\)</span> in
+the above formula.</p>
 </dd>
-<dt><strong>labels_pred</strong><span class="classifier">int array-like of shape (n_samples,)</span></dt><dd><p>A clustering of the data into disjoint subsets.</p>
+<dt><strong>labels_pred</strong><span class="classifier">int array-like of shape (n_samples,)</span></dt><dd><p>A clustering of the data into disjoint subsets, called <span class="math notranslate nohighlight">\(V\)</span> in
+the above formula.</p>
 </dd>
 <dt><strong>contingency</strong><span class="classifier">{ndarray, sparse matrix} of shape             (n_classes_true, n_classes_pred), default=None</span></dt><dd><p>A contingency matrix given by the <code class="xref py py-func docutils literal notranslate"><span class="pre">contingency_matrix</span></code> function.
 If value is <code class="docutils literal notranslate"><span class="pre">None</span></code>, it will be computed, otherwise the given value is
@@ -218,7 +221,8 @@ used, with <code class="docutils literal notranslate"><span class="pre">labels_t
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>mi</strong><span class="classifier">float</span></dt><dd><p>Mutual information, a non-negative value</p>
+<dt><strong>mi</strong><span class="classifier">float</span></dt><dd><p>Mutual information, a non-negative value, measured in nats using the
+natural logarithm.</p>
 </dd>
 </dl>
 </dd>
