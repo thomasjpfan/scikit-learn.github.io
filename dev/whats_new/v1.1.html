@@ -176,6 +176,7 @@
 <li><a class="reference internal" href="#changelog">Changelog</a><ul>
 <li><a class="reference internal" href="#sklearn-calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-ensemble"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-feature-extraction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-linear-model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-model-selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a></li>
@@ -237,6 +238,15 @@ scipy 1.1.0+. Optional minimal dependency is matplotlib 2.2.2+.</p>
 <a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html#sklearn.ensemble.HistGradientBoostingClassifier" title="sklearn.ensemble.HistGradientBoostingClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingClassifier</span></code></a> and
 <a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html#sklearn.ensemble.HistGradientBoostingRegressor" title="sklearn.ensemble.HistGradientBoostingRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingRegressor</span></code></a>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21130">#21130</a> <a class="reference external" href="https://github.com/lorentzenchr">Christian Lorentzen</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-feature-extraction">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.feature_extraction" title="sklearn.feature_extraction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a><a class="headerlink" href="#sklearn-feature-extraction" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed a bug in <code class="xref py py-class docutils literal notranslate"><span class="pre">feature_extraction.CountVectorizer</span></code> and
+<code class="xref py py-class docutils literal notranslate"><span class="pre">feature_extraction.TfidfVectorizer</span></code> by raising an
+error when ‘min_idf’ or ‘max_idf’ are floating-point numbers greater than 1.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20752">#20752</a> by <a class="reference external" href="https://github.com/AlekLefebvre">Alek Lefebvre</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-linear-model">
