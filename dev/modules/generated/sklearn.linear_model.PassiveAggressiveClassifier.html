@@ -186,7 +186,7 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.linear_model.PassiveAggressiveClassifier">
 <em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.linear_model.</span></span><span class="sig-name descname"><span class="pre">PassiveAggressiveClassifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">C</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">early_stopping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_fraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter_no_change</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hinge'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warm_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">average</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/682bd050b/sklearn/linear_model/_passive_aggressive.py#L9"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.PassiveAggressiveClassifier" title="Permalink to this definition">¶</a></dt>
-<dd><p>Passive Aggressive Classifier</p>
+<dd><p>Passive Aggressive Classifier.</p>
 <p>Read more in the <a class="reference internal" href="../linear_model.html#passive-aggressive"><span class="std std-ref">User Guide</span></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -232,9 +232,9 @@ Only used if early_stopping is True.</p>
 </dd>
 <dt><strong>shuffle</strong><span class="classifier">bool, default=True</span></dt><dd><p>Whether or not the training data should be shuffled after each epoch.</p>
 </dd>
-<dt><strong>verbose</strong><span class="classifier">integer, default=0</span></dt><dd><p>The verbosity level</p>
+<dt><strong>verbose</strong><span class="classifier">int, default=0</span></dt><dd><p>The verbosity level.</p>
 </dd>
-<dt><strong>loss</strong><span class="classifier">string, default=”hinge”</span></dt><dd><p>The loss function to be used:
+<dt><strong>loss</strong><span class="classifier">str, default=”hinge”</span></dt><dd><p>The loss function to be used:
 hinge: equivalent to PA-I in the reference paper.
 squared_hinge: equivalent to PA-II in the reference paper.</p>
 </dd>
@@ -261,7 +261,7 @@ because of the way the data is shuffled.</p>
 are supposed to have weight one.</p>
 <p>The “balanced” mode uses the values of y to automatically adjust
 weights inversely proportional to class frequencies in the input data
-as <code class="docutils literal notranslate"><span class="pre">n_samples</span> <span class="pre">/</span> <span class="pre">(n_classes</span> <span class="pre">*</span> <span class="pre">np.bincount(y))</span></code></p>
+as <code class="docutils literal notranslate"><span class="pre">n_samples</span> <span class="pre">/</span> <span class="pre">(n_classes</span> <span class="pre">*</span> <span class="pre">np.bincount(y))</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.17: </span>parameter <em>class_weight</em> to automatically weight samples.</p>
 </div>
@@ -271,16 +271,16 @@ result in the <code class="docutils literal notranslate"><span class="pre">coef_
 averaging will begin once the total number of samples seen reaches
 average. So average=10 will begin averaging after seeing 10 samples.</p>
 <div class="versionadded">
-<p><span class="versionmodified added">New in version 0.19: </span>parameter <em>average</em> to use weights averaging in SGD</p>
+<p><span class="versionmodified added">New in version 0.19: </span>parameter <em>average</em> to use weights averaging in SGD.</p>
 </div>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Attributes</dt>
 <dd class="field-even"><dl>
-<dt><strong>coef_</strong><span class="classifier">array, shape = [1, n_features] if n_classes == 2 else [n_classes,            n_features]</span></dt><dd><p>Weights assigned to the features.</p>
+<dt><strong>coef_</strong><span class="classifier">ndarray of shape (1, n_features) if n_classes == 2 else             (n_classes, n_features)</span></dt><dd><p>Weights assigned to the features.</p>
 </dd>
-<dt><strong>intercept_</strong><span class="classifier">array, shape = [1] if n_classes == 2 else [n_classes]</span></dt><dd><p>Constants in decision function.</p>
+<dt><strong>intercept_</strong><span class="classifier">ndarray of shape (1,) if n_classes == 2 else (n_classes,)</span></dt><dd><p>Constants in decision function.</p>
 </dd>
 <dt><strong>n_features_in_</strong><span class="classifier">int</span></dt><dd><p>Number of features seen during <a class="reference internal" href="../../glossary.html#term-fit"><span class="xref std std-term">fit</span></a>.</p>
 <div class="versionadded">
@@ -296,7 +296,7 @@ has feature names that are all strings.</p>
 <dt><strong>n_iter_</strong><span class="classifier">int</span></dt><dd><p>The actual number of iterations to reach the stopping criterion.
 For multiclass fits, it is the maximum over every binary fit.</p>
 </dd>
-<dt><strong>classes_</strong><span class="classifier">array of shape (n_classes,)</span></dt><dd><p>The unique classes labels.</p>
+<dt><strong>classes_</strong><span class="classifier">ndarray of shape (n_classes,)</span></dt><dd><p>The unique classes labels.</p>
 </dd>
 <dt><strong>t_</strong><span class="classifier">int</span></dt><dd><p>Number of weight updates performed during training.
 Same as <code class="docutils literal notranslate"><span class="pre">(n_iter_</span> <span class="pre">*</span> <span class="pre">n_samples)</span></code>.</p>
@@ -309,8 +309,10 @@ Same as <code class="docutils literal notranslate"><span class="pre">(n_iter_</s
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="sklearn.linear_model.SGDClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SGDClassifier</span></code></a></dt><dd></dd>
-<dt><a class="reference internal" href="sklearn.linear_model.Perceptron.html#sklearn.linear_model.Perceptron" title="sklearn.linear_model.Perceptron"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Perceptron</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="sklearn.linear_model.SGDClassifier.html#sklearn.linear_model.SGDClassifier" title="sklearn.linear_model.SGDClassifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SGDClassifier</span></code></a></dt><dd><p>Incrementally trained logistic regression.</p>
+</dd>
+<dt><a class="reference internal" href="sklearn.linear_model.Perceptron.html#sklearn.linear_model.Perceptron" title="sklearn.linear_model.Perceptron"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Perceptron</span></code></a></dt><dd><p>Linear perceptron classifier.</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">References</p>
@@ -320,9 +322,7 @@ K. Crammer, O. Dekel, J. Keshat, S. Shalev-Shwartz, Y. Singer - JMLR (2006)</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">PassiveAggressiveClassifier</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span>
-</pre></div>
-</div>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_features</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">make_classification</span><span class="p">(</span><span class="n">n_features</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span> <span class="o">=</span> <span class="n">PassiveAggressiveClassifier</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
 <span class="gp">... </span><span class="n">tol</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -415,24 +415,25 @@ sparsified; otherwise, it is a no-op.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.PassiveAggressiveClassifier.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coef_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intercept_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/682bd050b/sklearn/linear_model/_passive_aggressive.py#L269"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.PassiveAggressiveClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coef_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intercept_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/682bd050b/sklearn/linear_model/_passive_aggressive.py#L267"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.PassiveAggressiveClassifier.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit linear model with Passive Aggressive algorithm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples, n_features)</span></dt><dd><p>Training data</p>
+<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples, n_features)</span></dt><dd><p>Training data.</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">numpy array of shape [n_samples]</span></dt><dd><p>Target values</p>
+<dt><strong>y</strong><span class="classifier">array-like of shape (n_samples,)</span></dt><dd><p>Target values.</p>
 </dd>
-<dt><strong>coef_init</strong><span class="classifier">array, shape = [n_classes,n_features]</span></dt><dd><p>The initial coefficients to warm-start the optimization.</p>
+<dt><strong>coef_init</strong><span class="classifier">ndarray of shape (n_classes, n_features)</span></dt><dd><p>The initial coefficients to warm-start the optimization.</p>
 </dd>
-<dt><strong>intercept_init</strong><span class="classifier">array, shape = [n_classes]</span></dt><dd><p>The initial intercept to warm-start the optimization.</p>
+<dt><strong>intercept_init</strong><span class="classifier">ndarray of shape (n_classes,)</span></dt><dd><p>The initial intercept to warm-start the optimization.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>self</strong><span class="classifier">returns an instance of self.</span></dt><dd></dd>
+<dt><strong>self</strong><span class="classifier">object</span></dt><dd><p>Fitted estimator.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -461,16 +462,16 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.PassiveAggressiveClassifier.partial_fit">
-<span class="sig-name descname"><span class="pre">partial_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/682bd050b/sklearn/linear_model/_passive_aggressive.py#L218"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.PassiveAggressiveClassifier.partial_fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">partial_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/682bd050b/sklearn/linear_model/_passive_aggressive.py#L215"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.PassiveAggressiveClassifier.partial_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit linear model with Passive Aggressive algorithm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples, n_features)</span></dt><dd><p>Subset of the training data</p>
+<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples, n_features)</span></dt><dd><p>Subset of the training data.</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">numpy array of shape [n_samples]</span></dt><dd><p>Subset of the target values</p>
+<dt><strong>y</strong><span class="classifier">array-like of shape (n_samples,)</span></dt><dd><p>Subset of the target values.</p>
 </dd>
-<dt><strong>classes</strong><span class="classifier">array, shape = [n_classes]</span></dt><dd><p>Classes across all calls to partial_fit.
+<dt><strong>classes</strong><span class="classifier">ndarray of shape (n_classes,)</span></dt><dd><p>Classes across all calls to partial_fit.
 Can be obtained by via <code class="docutils literal notranslate"><span class="pre">np.unique(y_all)</span></code>, where y_all is the
 target vector of the entire dataset.
 This argument is required for the first call to partial_fit
@@ -481,7 +482,8 @@ Note that y doesn’t need to contain all labels in <code class="docutils litera
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>self</strong><span class="classifier">returns an instance of self.</span></dt><dd></dd>
+<dt><strong>self</strong><span class="classifier">object</span></dt><dd><p>Fitted estimator.</p>
+</dd>
 </dl>
 </dd>
 </dl>
