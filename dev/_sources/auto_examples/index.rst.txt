@@ -4351,6 +4351,27 @@ Miscellaneous and introductory examples for scikit-learn.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="The default configuration for displaying a pipeline is &#x27;text&#x27; where set_config(display=&#x27;text&#x27;)....">
+
+.. only:: html
+
+ .. figure:: /auto_examples/miscellaneous/images/thumb/sphx_glr_plot_pipeline_display_thumb.png
+     :alt: Displaying Pipelines
+
+     :ref:`sphx_glr_auto_examples_miscellaneous_plot_pipeline_display.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/miscellaneous/plot_pipeline_display
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example shows characteristics of different anomaly detection algorithms on 2D datasets. Da...">
 
 .. only:: html
