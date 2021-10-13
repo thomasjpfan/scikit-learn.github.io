@@ -267,6 +267,8 @@ Rational Quadradtic kernel
 
  .. code-block:: none
 
+    /home/circleci/project/sklearn/gaussian_process/_gpr.py:420: UserWarning: Predicted variances smaller than 0. Setting those variances to 0.
+      warnings.warn(
     /home/circleci/project/sklearn/gaussian_process/_gpr.py:461: RuntimeWarning: covariance is not positive-semidefinite.
       y_samples = rng.multivariate_normal(y_mean, y_cov, n_samples).T
 
@@ -296,8 +298,8 @@ Rational Quadradtic kernel
     Kernel parameters before fit:
     1**2 * RationalQuadratic(alpha=0.1, length_scale=1))
     Kernel parameters after fit: 
-    0.594**2 * RationalQuadratic(alpha=5.97e+07, length_scale=0.279) 
-    Log-likelihood: -0.067
+    0.594**2 * RationalQuadratic(alpha=5.3e+10, length_scale=0.279) 
+    Log-likelihood: 0.008
 
 
 
@@ -419,19 +421,6 @@ Dot product kernel
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/circleci/project/sklearn/gaussian_process/_gpr.py:596: ConvergenceWarning: lbfgs failed to converge (status=2):
-    ABNORMAL_TERMINATION_IN_LNSRCH.
-
-    Increase the number of iterations (max_iter) or scale the data as shown in:
-        https://scikit-learn.org/stable/modules/preprocessing.html
-      _check_optimize_result("lbfgs", opt_res)
-
 
 
 
@@ -458,8 +447,8 @@ Dot product kernel
     Kernel parameters before fit:
     0.316**2 * DotProduct(sigma_0=1) ** 2)
     Kernel parameters after fit: 
-    0.857**2 * DotProduct(sigma_0=2.71) ** 2 
-    Log-likelihood: -7958235635.078
+    0.316**2 * DotProduct(sigma_0=0.998) ** 2 
+    Log-likelihood: -7960503293.911
 
 
 
@@ -537,7 +526,7 @@ Mattern kernel
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.052 seconds)
+   **Total running time of the script:** ( 0 minutes  1.610 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_gpr_prior_posterior.py:

@@ -350,7 +350,9 @@ Log-likelihood: -0.067
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_gpr_prior_posterior_002.png" srcset="../../_images/sphx_glr_plot_gpr_prior_posterior_002.png" alt="Rational Quadratic kernel, Samples from prior distribution, Samples from posterior distribution" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/project/sklearn/gaussian_process/_gpr.py:461: RuntimeWarning: covariance is not positive-semidefinite.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/project/sklearn/gaussian_process/_gpr.py:420: UserWarning: Predicted variances smaller than 0. Setting those variances to 0.
+  warnings.warn(
+/home/circleci/project/sklearn/gaussian_process/_gpr.py:461: RuntimeWarning: covariance is not positive-semidefinite.
   y_samples = rng.multivariate_normal(y_mean, y_cov, n_samples).T
 </pre></div>
 </div>
@@ -365,8 +367,8 @@ Log-likelihood: -0.067
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Kernel parameters before fit:
 1**2 * RationalQuadratic(alpha=0.1, length_scale=1))
 Kernel parameters after fit:
-0.594**2 * RationalQuadratic(alpha=5.97e+07, length_scale=0.279)
-Log-likelihood: -0.067
+0.594**2 * RationalQuadratic(alpha=5.3e+10, length_scale=0.279)
+Log-likelihood: 0.008
 </pre></div>
 </div>
 </section>
@@ -441,16 +443,7 @@ Log-likelihood: 3.394
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_gpr_prior_posterior_004.png" srcset="../../_images/sphx_glr_plot_gpr_prior_posterior_004.png" alt="Dot product kernel, Samples from prior distribution, Samples from posterior distribution" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/project/sklearn/gaussian_process/_gpr.py:596: ConvergenceWarning: lbfgs failed to converge (status=2):
-ABNORMAL_TERMINATION_IN_LNSRCH.
-
-Increase the number of iterations (max_iter) or scale the data as shown in:
-    https://scikit-learn.org/stable/modules/preprocessing.html
-  _check_optimize_result(&quot;lbfgs&quot;, opt_res)
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kernel parameters before fit:</span><span class="se">\n</span><span class="si">{</span><span class="n">kernel</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+<img src="../../_images/sphx_glr_plot_gpr_prior_posterior_004.png" srcset="../../_images/sphx_glr_plot_gpr_prior_posterior_004.png" alt="Dot product kernel, Samples from prior distribution, Samples from posterior distribution" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Kernel parameters before fit:</span><span class="se">\n</span><span class="si">{</span><span class="n">kernel</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span>
     <span class="sa">f</span><span class="s2">&quot;Kernel parameters after fit: </span><span class="se">\n</span><span class="si">{</span><span class="n">gpr</span><span class="o">.</span><span class="n">kernel_</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">&quot;</span>
     <span class="sa">f</span><span class="s2">&quot;Log-likelihood: </span><span class="si">{</span><span class="n">gpr</span><span class="o">.</span><span class="n">log_marginal_likelihood</span><span class="p">(</span><span class="n">gpr</span><span class="o">.</span><span class="n">kernel_</span><span class="o">.</span><span class="n">theta</span><span class="p">)</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span>
@@ -461,8 +454,8 @@ Increase the number of iterations (max_iter) or scale the data as shown in:
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Kernel parameters before fit:
 0.316**2 * DotProduct(sigma_0=1) ** 2)
 Kernel parameters after fit:
-0.857**2 * DotProduct(sigma_0=2.71) ** 2
-Log-likelihood: -7958235635.078
+0.316**2 * DotProduct(sigma_0=0.998) ** 2
+Log-likelihood: -7960503293.911
 </pre></div>
 </div>
 </section>
@@ -505,7 +498,7 @@ Kernel parameters after fit:
 Log-likelihood: -1.185
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.052 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.610 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-gaussian-process-plot-gpr-prior-posterior-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/gaussian_process/plot_gpr_prior_posterior.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo13.svg" width="150px" /></a>
