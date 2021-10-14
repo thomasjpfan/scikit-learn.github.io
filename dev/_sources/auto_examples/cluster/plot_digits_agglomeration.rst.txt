@@ -25,7 +25,7 @@ Feature agglomeration
 These images how similar features are merged together using
 feature agglomeration.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-63
+.. GENERATED FROM PYTHON SOURCE LINES 10-61
 
 
 
@@ -95,7 +95,7 @@ feature agglomeration.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.461 seconds)
+   **Total running time of the script:** ( 0 minutes  0.420 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_digits_agglomeration.py:

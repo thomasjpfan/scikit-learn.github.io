@@ -36,7 +36,7 @@ The plots show training points in solid colors and testing points
 semi-transparent. The lower right shows the classification accuracy on the test
 set.
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-169
+.. GENERATED FROM PYTHON SOURCE LINES 21-167
 
 
 
@@ -201,7 +201,7 @@ set.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.398 seconds)
+   **Total running time of the script:** ( 0 minutes  8.061 seconds)
 
 
 .. _sphx_glr_download_auto_examples_classification_plot_classifier_comparison.py:

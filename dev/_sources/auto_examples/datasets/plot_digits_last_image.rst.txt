@@ -31,7 +31,7 @@ See `here
 <https://archive.ics.uci.edu/ml/datasets/Pen-Based+Recognition+of+Handwritten+Digits>`_
 for more information about this dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-36
+.. GENERATED FROM PYTHON SOURCE LINES 16-34
 
 
 
@@ -68,7 +68,7 @@ for more information about this dataset.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.208 seconds)
+   **Total running time of the script:** ( 0 minutes  0.195 seconds)
 
 
 .. _sphx_glr_download_auto_examples_datasets_plot_digits_last_image.py:

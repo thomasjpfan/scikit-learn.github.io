@@ -26,7 +26,7 @@ Shown in the plot is how the logistic regression would, in this
 synthetic dataset, classify values as either 0 or 1,
 i.e. class one or two, using the logistic curve.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-69
+.. GENERATED FROM PYTHON SOURCE LINES 12-66
 
 
 
@@ -99,7 +99,7 @@ i.e. class one or two, using the logistic curve.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.179 seconds)
+   **Total running time of the script:** ( 0 minutes  0.146 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_logistic.py:

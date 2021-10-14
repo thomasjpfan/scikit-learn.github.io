@@ -28,7 +28,7 @@ to illustrate the benefit of transforming the targets before learning a linear
 regression model. The first example uses synthetic data while the second
 example is based on the Ames housing data set.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-30
+.. GENERATED FROM PYTHON SOURCE LINES 13-28
 
 .. code-block:: default
 
@@ -54,12 +54,12 @@ example is based on the Ames housing data set.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-33
+.. GENERATED FROM PYTHON SOURCE LINES 29-31
 
 Synthetic example
 #############################################################################
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-40
+.. GENERATED FROM PYTHON SOURCE LINES 31-38
 
 .. code-block:: default
 
@@ -77,7 +77,7 @@ Synthetic example
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-52
+.. GENERATED FROM PYTHON SOURCE LINES 39-50
 
 A synthetic random regression dataset is generated. The targets ``y`` are
 modified by:
@@ -91,7 +91,7 @@ Therefore, a logarithmic (`np.log1p`) and an exponential function
 (`np.expm1`) will be used to transform the targets before training a linear
 regression model and using it for prediction.
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-57
+.. GENERATED FROM PYTHON SOURCE LINES 50-55
 
 .. code-block:: default
 
@@ -107,12 +107,12 @@ regression model and using it for prediction.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-60
+.. GENERATED FROM PYTHON SOURCE LINES 56-58
 
 Below we plot the probability density functions of the target
 before and after applying the logarithmic functions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 60-79
+.. GENERATED FROM PYTHON SOURCE LINES 58-77
 
 .. code-block:: default
 
@@ -147,7 +147,7 @@ before and after applying the logarithmic functions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-85
+.. GENERATED FROM PYTHON SOURCE LINES 78-83
 
 At first, a linear model will be applied on the original targets. Due to the
 non-linearity, the model trained will not be precise during
@@ -155,7 +155,7 @@ prediction. Subsequently, a logarithmic function is used to linearize the
 targets, allowing better prediction even with a similar linear model as
 reported by the median absolute error (MAE).
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-129
+.. GENERATED FROM PYTHON SOURCE LINES 83-127
 
 .. code-block:: default
 
@@ -215,7 +215,7 @@ reported by the median absolute error (MAE).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 130-136
+.. GENERATED FROM PYTHON SOURCE LINES 128-134
 
 Real-world data set
 ##############################################################################
@@ -224,7 +224,7 @@ Real-world data set
  of transforming the targets before learning a model. In this example, the
  target to be predicted is the selling price of each house.
 
-.. GENERATED FROM PYTHON SOURCE LINES 136-149
+.. GENERATED FROM PYTHON SOURCE LINES 134-147
 
 .. code-block:: default
 
@@ -248,13 +248,13 @@ Real-world data set
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-153
+.. GENERATED FROM PYTHON SOURCE LINES 148-151
 
 A :class:`~sklearn.preprocessing.QuantileTransformer` is used to normalize
 the target distribution before applying a
 :class:`~sklearn.linear_model.RidgeCV` model.
 
-.. GENERATED FROM PYTHON SOURCE LINES 153-172
+.. GENERATED FROM PYTHON SOURCE LINES 151-170
 
 .. code-block:: default
 
@@ -289,7 +289,7 @@ the target distribution before applying a
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 173-180
+.. GENERATED FROM PYTHON SOURCE LINES 171-178
 
 The effect of the transformer is weaker than on the synthetic data. However,
 the transformation results in an increase in :math:`R^2` and large decrease
@@ -299,7 +299,7 @@ shape due to residual values that vary depending on the value of predicted
 target. With target transformation, the shape is more linear indicating
 better model fit.
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-249
+.. GENERATED FROM PYTHON SOURCE LINES 178-247
 
 .. code-block:: default
 
@@ -387,7 +387,7 @@ better model fit.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.593 seconds)
+   **Total running time of the script:** ( 0 minutes  2.730 seconds)
 
 
 .. _sphx_glr_download_auto_examples_compose_plot_transformed_target.py:

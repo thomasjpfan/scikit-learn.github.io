@@ -31,7 +31,7 @@ seeds is reduced.
 The next plot displays what using eight clusters would deliver
 and finally the ground truth.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-95
+.. GENERATED FROM PYTHON SOURCE LINES 17-93
 
 
 
@@ -74,13 +74,13 @@ and finally the ground truth.
  .. code-block:: none
 
 
-    /home/circleci/project/examples/cluster/plot_cluster_iris.py:52: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+    /home/circleci/project/examples/cluster/plot_cluster_iris.py:50: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
       ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=48, azim=134)
-    /home/circleci/project/examples/cluster/plot_cluster_iris.py:52: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+    /home/circleci/project/examples/cluster/plot_cluster_iris.py:50: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
       ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=48, azim=134)
-    /home/circleci/project/examples/cluster/plot_cluster_iris.py:52: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+    /home/circleci/project/examples/cluster/plot_cluster_iris.py:50: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
       ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=48, azim=134)
-    /home/circleci/project/examples/cluster/plot_cluster_iris.py:70: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+    /home/circleci/project/examples/cluster/plot_cluster_iris.py:68: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
       ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=48, azim=134)
 
 
@@ -172,7 +172,7 @@ and finally the ground truth.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.704 seconds)
+   **Total running time of the script:** ( 0 minutes  0.630 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_cluster_iris.py:

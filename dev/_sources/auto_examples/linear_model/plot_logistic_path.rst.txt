@@ -42,7 +42,7 @@ We also use warm_start=True which means that the coefficients of the models are
 reused to initialize the next model fit to speed-up the computation of the
 full-path.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-81
+.. GENERATED FROM PYTHON SOURCE LINES 27-80
 
 
 
@@ -60,7 +60,7 @@ full-path.
 
 
     Computing regularization path ...
-    This took 0.066s
+    This took 0.079s
 
 
 

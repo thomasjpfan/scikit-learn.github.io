@@ -57,7 +57,7 @@ transformation instead of a per feature transformation.
 The following code is a bit verbose, feel free to jump directly to the analysis
 of the results_.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-204
+.. GENERATED FROM PYTHON SOURCE LINES 43-202
 
 .. code-block:: default
 
@@ -227,7 +227,7 @@ of the results_.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 205-210
+.. GENERATED FROM PYTHON SOURCE LINES 203-208
 
 Two plots will be shown for each scaler/normalizer/transformer. The left
 figure will show a scatter plot of the full data set while the right figure
@@ -235,7 +235,7 @@ will exclude the extreme values considering only 99 % of the data set,
 excluding marginal outliers. In addition, the marginal distributions for each
 feature will be shown on the sides of the scatter plot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 210-254
+.. GENERATED FROM PYTHON SOURCE LINES 208-252
 
 .. code-block:: default
 
@@ -290,7 +290,7 @@ feature will be shown on the sides of the scatter plot.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 255-269
+.. GENERATED FROM PYTHON SOURCE LINES 253-267
 
 .. _results:
 
@@ -307,7 +307,7 @@ pre-processing can be very beneficial depending of the application. In the
 following, we present some insights and behaviors of those pre-processing
 methods in the presence of marginal outliers.
 
-.. GENERATED FROM PYTHON SOURCE LINES 269-272
+.. GENERATED FROM PYTHON SOURCE LINES 267-270
 
 .. code-block:: default
 
@@ -326,7 +326,7 @@ methods in the presence of marginal outliers.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 273-289
+.. GENERATED FROM PYTHON SOURCE LINES 271-287
 
 StandardScaler
 --------------
@@ -345,7 +345,7 @@ smaller [-0.2, 0.2] range for the transformed average house occupancy.
 balanced feature scales in the
 presence of outliers.
 
-.. GENERATED FROM PYTHON SOURCE LINES 289-292
+.. GENERATED FROM PYTHON SOURCE LINES 287-290
 
 .. code-block:: default
 
@@ -364,7 +364,7 @@ presence of outliers.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 293-305
+.. GENERATED FROM PYTHON SOURCE LINES 291-303
 
 MinMaxScaler
 ------------
@@ -379,7 +379,7 @@ Both :class:`~sklearn.preprocessing.StandardScaler` and
 :class:`~sklearn.preprocessing.MinMaxScaler` are very sensitive to the
 presence of outliers.
 
-.. GENERATED FROM PYTHON SOURCE LINES 305-308
+.. GENERATED FROM PYTHON SOURCE LINES 303-306
 
 .. code-block:: default
 
@@ -398,7 +398,7 @@ presence of outliers.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 309-318
+.. GENERATED FROM PYTHON SOURCE LINES 307-316
 
 MaxAbsScaler
 ------------
@@ -410,7 +410,7 @@ behave similarly.
 :class:`~sklearn.preprocessing.MaxAbsScaler` therefore also suffers from
 the presence of large outliers.
 
-.. GENERATED FROM PYTHON SOURCE LINES 318-321
+.. GENERATED FROM PYTHON SOURCE LINES 316-319
 
 .. code-block:: default
 
@@ -429,7 +429,7 @@ the presence of large outliers.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 322-335
+.. GENERATED FROM PYTHON SOURCE LINES 320-333
 
 RobustScaler
 ------------
@@ -445,7 +445,7 @@ Note that the outliers themselves are still present in the transformed data.
 If a separate outlier clipping is desirable, a non-linear transformation is
 required (see below).
 
-.. GENERATED FROM PYTHON SOURCE LINES 335-338
+.. GENERATED FROM PYTHON SOURCE LINES 333-336
 
 .. code-block:: default
 
@@ -464,7 +464,7 @@ required (see below).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 339-352
+.. GENERATED FROM PYTHON SOURCE LINES 337-350
 
 PowerTransformer
 ----------------
@@ -480,7 +480,7 @@ Box-Cox can only be applied to strictly positive data. Income and average
 house occupancy happen to be strictly positive, but if negative values are
 present the Yeo-Johnson transformed is preferred.
 
-.. GENERATED FROM PYTHON SOURCE LINES 352-356
+.. GENERATED FROM PYTHON SOURCE LINES 350-354
 
 .. code-block:: default
 
@@ -512,7 +512,7 @@ present the Yeo-Johnson transformed is preferred.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 357-375
+.. GENERATED FROM PYTHON SOURCE LINES 355-373
 
 QuantileTransformer (uniform output)
 ------------------------------------
@@ -533,7 +533,7 @@ approximately the same transformation. But contrary to
 collapse any outlier by setting them to the a priori defined range boundaries
 (0 and 1). This can result in saturation artifacts for extreme values.
 
-.. GENERATED FROM PYTHON SOURCE LINES 375-378
+.. GENERATED FROM PYTHON SOURCE LINES 373-376
 
 .. code-block:: default
 
@@ -552,7 +552,7 @@ collapse any outlier by setting them to the a priori defined range boundaries
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 379-384
+.. GENERATED FROM PYTHON SOURCE LINES 377-382
 
 QuantileTransformer (Gaussian output)
 -------------------------------------
@@ -560,7 +560,7 @@ QuantileTransformer (Gaussian output)
 To map to a Gaussian distribution, set the parameter
 ``output_distribution='normal'``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 384-387
+.. GENERATED FROM PYTHON SOURCE LINES 382-385
 
 .. code-block:: default
 
@@ -579,7 +579,7 @@ To map to a Gaussian distribution, set the parameter
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 388-398
+.. GENERATED FROM PYTHON SOURCE LINES 386-396
 
 Normalizer
 ----------
@@ -592,7 +592,7 @@ example the two selected features have only positive values; therefore the
 transformed data only lie in the positive quadrant. This would not be the
 case if some original features had a mix of positive and negative values.
 
-.. GENERATED FROM PYTHON SOURCE LINES 398-402
+.. GENERATED FROM PYTHON SOURCE LINES 396-400
 
 .. code-block:: default
 
@@ -615,7 +615,7 @@ case if some original features had a mix of positive and negative values.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.861 seconds)
+   **Total running time of the script:** ( 0 minutes  17.682 seconds)
 
 
 .. _sphx_glr_download_auto_examples_preprocessing_plot_all_scaling.py:

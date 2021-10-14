@@ -26,7 +26,7 @@ Face, a 1024 x 768 size image of a raccoon face,
 is used here to illustrate how `k`-means is
 used for vector quantization.
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-83
+.. GENERATED FROM PYTHON SOURCE LINES 12-81
 
 
 
@@ -140,7 +140,7 @@ used for vector quantization.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.922 seconds)
+   **Total running time of the script:** ( 0 minutes  3.541 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_face_compress.py:

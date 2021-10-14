@@ -37,12 +37,12 @@ again the same transformers over and over.
 Note that the use of ``memory`` to enable caching becomes interesting when the
 fitting of a transformer is costly.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-27
+.. GENERATED FROM PYTHON SOURCE LINES 24-26
 
 Illustration of ``Pipeline`` and ``GridSearchCV``
 ##############################################################################
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-90
+.. GENERATED FROM PYTHON SOURCE LINES 26-89
 
 .. code-block:: default
 
@@ -249,7 +249,7 @@ Illustration of ``Pipeline`` and ``GridSearchCV``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-102
+.. GENERATED FROM PYTHON SOURCE LINES 90-101
 
 Caching transformers within a ``Pipeline``
 ##############################################################################
@@ -263,7 +263,7 @@ Caching transformers within a ``Pipeline``
      cache. Hence, use the ``memory`` constructor parameter when the fitting
      of a transformer is costly.
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-121
+.. GENERATED FROM PYTHON SOURCE LINES 101-120
 
 .. code-block:: default
 
@@ -293,7 +293,7 @@ Caching transformers within a ``Pipeline``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-128
+.. GENERATED FROM PYTHON SOURCE LINES 121-127
 
 The ``PCA`` fitting is only computed at the evaluation of the first
 configuration of the ``C`` parameter of the ``LinearSVC`` classifier. The
@@ -305,7 +305,7 @@ a transformer is costly.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.501 seconds)
+   **Total running time of the script:** ( 0 minutes  10.236 seconds)
 
 
 .. _sphx_glr_download_auto_examples_compose_plot_compare_reduction.py:
