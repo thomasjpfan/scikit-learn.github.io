@@ -152,7 +152,7 @@ Plot of a ROC curve for a specific class
 
 .. GENERATED FROM PYTHON SOURCE LINES 107-110
 
-Plot ROC curves for the multilabel problem
+Plot ROC curves for the multiclass problem
 ..........................................
 Compute macro-average ROC curve and ROC area
 
@@ -211,7 +211,7 @@ Compute macro-average ROC curve and ROC area
     plt.ylim([0.0, 1.05])
     plt.xlabel("False Positive Rate")
     plt.ylabel("True Positive Rate")
-    plt.title("Some extension of Receiver operating characteristic to multi-class")
+    plt.title("Some extension of Receiver operating characteristic to multiclass")
     plt.legend(loc="lower right")
     plt.show()
 
@@ -220,7 +220,7 @@ Compute macro-average ROC curve and ROC area
 
 
 .. image-sg:: /auto_examples/model_selection/images/sphx_glr_plot_roc_002.png
-   :alt: Some extension of Receiver operating characteristic to multi-class
+   :alt: Some extension of Receiver operating characteristic to multiclass
    :srcset: /auto_examples/model_selection/images/sphx_glr_plot_roc_002.png
    :class: sphx-glr-single-img
 
@@ -292,7 +292,7 @@ prevalence-weighted average.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.371 seconds)
+   **Total running time of the script:** ( 0 minutes  0.369 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_roc.py:
