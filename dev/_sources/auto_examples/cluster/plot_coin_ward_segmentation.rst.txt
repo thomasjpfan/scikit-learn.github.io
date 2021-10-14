@@ -44,7 +44,7 @@ for each segmented region to be in one piece.
 
 
     Compute structured hierarchical clustering...
-    Elapsed time:  0.32061243057250977
+    Elapsed time:  0.5219826698303223
     Number of pixels:  4697
     Number of clusters:  27
 
@@ -133,7 +133,7 @@ for each segmented region to be in one piece.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.703 seconds)
+   **Total running time of the script:** ( 0 minutes  1.099 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_coin_ward_segmentation.py:
