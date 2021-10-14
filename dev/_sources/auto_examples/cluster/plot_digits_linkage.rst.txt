@@ -81,9 +81,9 @@ being drawn from noise points around the fringes.
 
     Computing embedding
     Done.
-    ward :  0.69s
-    average :       0.63s
-    complete :      0.61s
+    ward :  0.78s
+    average :       0.74s
+    complete :      0.88s
     single :        0.14s
 
 
@@ -176,7 +176,7 @@ being drawn from noise points around the fringes.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  49.423 seconds)
+   **Total running time of the script:** ( 0 minutes  57.382 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_digits_linkage.py:
