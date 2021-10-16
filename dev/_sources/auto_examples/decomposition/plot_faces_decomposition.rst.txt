@@ -44,35 +44,35 @@ matrix decomposition (dimension reduction) methods from the module
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_002.png
-         :alt: Eigenfaces - PCA using randomized SVD - Train time 0.1s
+         :alt: Eigenfaces - PCA using randomized SVD - Train time 0.0s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_002.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_003.png
-         :alt: Non-negative components - NMF - Train time 0.3s
+         :alt: Non-negative components - NMF - Train time 0.1s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_003.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_004.png
-         :alt: Independent components - FastICA - Train time 0.2s
+         :alt: Independent components - FastICA - Train time 0.1s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_004.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_005.png
-         :alt: Sparse comp. - MiniBatchSparsePCA - Train time 1.2s
+         :alt: Sparse comp. - MiniBatchSparsePCA - Train time 0.6s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_005.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_006.png
-         :alt: MiniBatchDictionaryLearning - Train time 0.9s
+         :alt: MiniBatchDictionaryLearning - Train time 0.4s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_006.png
          :class: sphx-glr-multi-img
 
@@ -93,7 +93,7 @@ matrix decomposition (dimension reduction) methods from the module
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_009.png
-         :alt: Factor Analysis components - FA - Train time 0.4s
+         :alt: Factor Analysis components - FA - Train time 0.2s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_009.png
          :class: sphx-glr-multi-img
 
@@ -142,27 +142,27 @@ matrix decomposition (dimension reduction) methods from the module
 
     Dataset consists of 400 faces
     Extracting the top 6 Eigenfaces - PCA using randomized SVD...
-    done in 0.061s
+    done in 0.018s
     Extracting the top 6 Non-negative components - NMF...
-    done in 0.263s
+    done in 0.090s
     Extracting the top 6 Independent components - FastICA...
-    done in 0.226s
+    done in 0.096s
     Extracting the top 6 Sparse comp. - MiniBatchSparsePCA...
-    done in 1.177s
+    done in 0.634s
     Extracting the top 6 MiniBatchDictionaryLearning...
-    done in 0.881s
+    done in 0.435s
     Extracting the top 6 Cluster centers - MiniBatchKMeans...
-    done in 0.148s
+    done in 0.070s
     Extracting the top 6 Factor Analysis components - FA...
-    done in 0.416s
+    done in 0.179s
     Extracting the top 6 Dictionary learning...
-    done in 0.911s
+    done in 0.459s
     Extracting the top 6 Dictionary learning - positive dictionary...
-    done in 0.902s
+    done in 0.430s
     Extracting the top 6 Dictionary learning - positive code...
-    done in 0.338s
+    done in 0.161s
     Extracting the top 6 Dictionary learning - positive dictionary & code...
-    done in 0.562s
+    done in 0.192s
 
 
 
@@ -406,7 +406,7 @@ matrix decomposition (dimension reduction) methods from the module
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.368 seconds)
+   **Total running time of the script:** ( 0 minutes  4.871 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_faces_decomposition.py:
