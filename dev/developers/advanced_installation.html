@@ -246,15 +246,28 @@ Github.:</p>
 </pre></div></div><p>If you plan on submitting a pull-request, you should clone from your fork
 instead.</p>
 </li>
+<li><p>Install a recent version of Python (3.9 is recommended at the time of writing)
+for instance using <a class="reference external" href="https://github.com/conda-forge/miniforge#miniforge3">Miniforge3</a>. Miniforge provides a conda-based distribution
+of Python and the most popular scientific libraries.</p>
+<p>If you installed Python with conda, we recommend to create a dedicated
+<a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda environment</a> with all the build dependencies of scikit-learn
+(namely <a class="reference external" href="https://numpy.org">NumPy</a>, <a class="reference external" href="https://www.scipy.org">SciPy</a>, and <a class="reference external" href="https://cython.org">Cython</a>):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">conda create -n sklearn-env -c conda-forge <span class="nv">python</span><span class="o">=</span><span class="m">3</span>.9 numpy scipy cython</span>
+<span class="prompt1">conda activate sklearn-env</span>
+</pre></div></div></li>
+<li><p><strong>Alternative to conda:</strong> If you run Linux or similar, you can instead use
+your system’s Python provided it is recent enough (3.7 or higher
+at the time of writing). In this case, we recommend to create a dedicated
+<a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">virtualenv</a> and install the scikit-learn build dependencies with pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">python3 -m venv sklearn-env</span>
+<span class="prompt1"><span class="nb">source</span> sklearn-env/bin/activate</span>
+<span class="prompt1">pip install wheel numpy scipy cython</span>
+</pre></div></div></li>
 <li><p>Install a compiler with <a class="reference external" href="https://en.wikipedia.org/wiki/OpenMP">OpenMP</a> support for your platform. See instructions
 for <a class="reference internal" href="#compiler-windows"><span class="std std-ref">Windows</span></a>, <a class="reference internal" href="#compiler-macos"><span class="std std-ref">macOS</span></a>, <a class="reference internal" href="#compiler-linux"><span class="std std-ref">Linux</span></a>
 and <a class="reference internal" href="#compiler-freebsd"><span class="std std-ref">FreeBSD</span></a>.</p></li>
-<li><p>Optional (but recommended): create and activate a dedicated <a class="reference external" href="https://docs.python.org/3/tutorial/venv.html">virtualenv</a>
-or <a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda environment</a>.</p></li>
-<li><p>Install <a class="reference external" href="https://numpy.org">NumPy</a>, <a class="reference external" href="https://www.scipy.org">SciPy</a>, and <a class="reference external" href="https://cython.org">Cython</a> and build the project with pip in
-<a class="reference internal" href="#editable-mode"><span class="std std-ref">Editable mode</span></a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip install numpy scipy cython</span>
-<span class="prompt1">pip install --verbose --no-build-isolation --editable .</span>
+<li><p>Build the project with pip in <a class="reference internal" href="#editable-mode"><span class="std std-ref">Editable mode</span></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip install --verbose --no-build-isolation --editable .</span>
 </pre></div></div></li>
 <li><p>Check that the installed scikit-learn has a version number ending with
 <code class="docutils literal notranslate"><span class="pre">.dev0</span></code>:</p>
