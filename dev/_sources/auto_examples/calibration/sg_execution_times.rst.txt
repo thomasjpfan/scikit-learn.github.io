@@ -5,14 +5,14 @@
 
 Computation times
 =================
-**00:07.543** total execution time for **auto_examples_calibration** files:
+**00:07.190** total execution time for **auto_examples_calibration** files:
 
 +---------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_calibration_plot_calibration_curve.py` (``plot_calibration_curve.py``)           | 00:03.681 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_calibration_plot_calibration_curve.py` (``plot_calibration_curve.py``)           | 00:03.711 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_calibration_plot_calibration_multiclass.py` (``plot_calibration_multiclass.py``) | 00:01.973 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_calibration_plot_calibration_multiclass.py` (``plot_calibration_multiclass.py``) | 00:01.640 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_calibration_plot_compare_calibration.py` (``plot_compare_calibration.py``)       | 00:01.440 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_calibration_plot_compare_calibration.py` (``plot_compare_calibration.py``)       | 00:01.409 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_calibration_plot_calibration.py` (``plot_calibration.py``)                       | 00:00.448 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_calibration_plot_calibration.py` (``plot_calibration.py``)                       | 00:00.431 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------+-----------+--------+
