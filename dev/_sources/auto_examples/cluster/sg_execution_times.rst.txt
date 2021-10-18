@@ -5,64 +5,64 @@
 
 Computation times
 =================
-**02:26.517** total execution time for **auto_examples_cluster** files:
+**02:25.293** total execution time for **auto_examples_cluster** files:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_cluster_comparison.py` (``plot_cluster_comparison.py``)                                                       | 00:46.143 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_cluster_comparison.py` (``plot_cluster_comparison.py``)                                                       | 00:45.856 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_digits_linkage.py` (``plot_digits_linkage.py``)                                                               | 00:40.304 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_digits_linkage.py` (``plot_digits_linkage.py``)                                                               | 00:43.055 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_birch_vs_minibatchkmeans.py` (``plot_birch_vs_minibatchkmeans.py``)                                           | 00:13.608 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_birch_vs_minibatchkmeans.py` (``plot_birch_vs_minibatchkmeans.py``)                                           | 00:13.198 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_coin_segmentation.py` (``plot_coin_segmentation.py``)                                                         | 00:07.369 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_coin_segmentation.py` (``plot_coin_segmentation.py``)                                                         | 00:07.407 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_dict_face_patches.py` (``plot_dict_face_patches.py``)                                                         | 00:04.193 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_dict_face_patches.py` (``plot_dict_face_patches.py``)                                                         | 00:04.253 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_inductive_clustering.py` (``plot_inductive_clustering.py``)                                                   | 00:03.842 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_inductive_clustering.py` (``plot_inductive_clustering.py``)                                                   | 00:03.572 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_linkage_comparison.py` (``plot_linkage_comparison.py``)                                                       | 00:03.482 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_linkage_comparison.py` (``plot_linkage_comparison.py``)                                                       | 00:03.422 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_agglomerative_clustering.py` (``plot_agglomerative_clustering.py``)                                           | 00:03.379 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_agglomerative_clustering.py` (``plot_agglomerative_clustering.py``)                                           | 00:03.368 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_face_compress.py` (``plot_face_compress.py``)                                                                 | 00:03.366 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_face_compress.py` (``plot_face_compress.py``)                                                                 | 00:03.263 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_stability_low_dim_dense.py` (``plot_kmeans_stability_low_dim_dense.py``)                               | 00:02.645 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_stability_low_dim_dense.py` (``plot_kmeans_stability_low_dim_dense.py``)                               | 00:02.218 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_color_quantization.py` (``plot_color_quantization.py``)                                                       | 00:02.559 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_silhouette_analysis.py` (``plot_kmeans_silhouette_analysis.py``)                                       | 00:01.727 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_optics.py` (``plot_optics.py``)                                                                               | 00:01.978 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_optics.py` (``plot_optics.py``)                                                                               | 00:01.710 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_silhouette_analysis.py` (``plot_kmeans_silhouette_analysis.py``)                                       | 00:01.813 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_agglomerative_clustering_metrics.py` (``plot_agglomerative_clustering_metrics.py``)                           | 00:01.579 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_agglomerative_clustering_metrics.py` (``plot_agglomerative_clustering_metrics.py``)                           | 00:01.747 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_digits.py` (``plot_kmeans_digits.py``)                                                                 | 00:01.526 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_digits.py` (``plot_kmeans_digits.py``)                                                                 | 00:01.623 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_adjusted_for_chance_measures.py` (``plot_adjusted_for_chance_measures.py``)                                   | 00:01.503 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_adjusted_for_chance_measures.py` (``plot_adjusted_for_chance_measures.py``)                                   | 00:01.605 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_color_quantization.py` (``plot_color_quantization.py``)                                                       | 00:01.010 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_segmentation_toy.py` (``plot_segmentation_toy.py``)                                                           | 00:00.997 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_feature_agglomeration_vs_univariate_selection.py` (``plot_feature_agglomeration_vs_univariate_selection.py``) | 00:00.844 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_feature_agglomeration_vs_univariate_selection.py` (``plot_feature_agglomeration_vs_univariate_selection.py``) | 00:00.845 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_segmentation_toy.py` (``plot_segmentation_toy.py``)                                                           | 00:00.833 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_mean_shift.py` (``plot_mean_shift.py``)                                                                       | 00:00.755 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_mean_shift.py` (``plot_mean_shift.py``)                                                                       | 00:00.753 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_assumptions.py` (``plot_kmeans_assumptions.py``)                                                       | 00:00.741 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_assumptions.py` (``plot_kmeans_assumptions.py``)                                                       | 00:00.743 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_ward_structured_vs_unstructured.py` (``plot_ward_structured_vs_unstructured.py``)                             | 00:00.684 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_coin_ward_segmentation.py` (``plot_coin_ward_segmentation.py``)                                               | 00:00.617 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_coin_ward_segmentation.py` (``plot_coin_ward_segmentation.py``)                                               | 00:00.659 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_cluster_iris.py` (``plot_cluster_iris.py``)                                                                   | 00:00.610 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_cluster_iris.py` (``plot_cluster_iris.py``)                                                                   | 00:00.577 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_affinity_propagation.py` (``plot_affinity_propagation.py``)                                                   | 00:00.591 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_affinity_propagation.py` (``plot_affinity_propagation.py``)                                                   | 00:00.473 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_ward_structured_vs_unstructured.py` (``plot_ward_structured_vs_unstructured.py``)                             | 00:00.554 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_digits_agglomeration.py` (``plot_digits_agglomeration.py``)                                                   | 00:00.394 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_digits_agglomeration.py` (``plot_digits_agglomeration.py``)                                                   | 00:00.331 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_mini_batch_kmeans.py` (``plot_mini_batch_kmeans.py``)                                                         | 00:00.315 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_mini_batch_kmeans.py` (``plot_mini_batch_kmeans.py``)                                                         | 00:00.329 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_dbscan.py` (``plot_dbscan.py``)                                                                               | 00:00.157 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_dbscan.py` (``plot_dbscan.py``)                                                                               | 00:00.158 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_agglomerative_dendrogram.py` (``plot_agglomerative_dendrogram.py``)                                           | 00:00.154 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_agglomerative_dendrogram.py` (``plot_agglomerative_dendrogram.py``)                                           | 00:00.144 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_plusplus.py` (``plot_kmeans_plusplus.py``)                                                             | 00:00.111 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_cluster_plot_kmeans_plusplus.py` (``plot_kmeans_plusplus.py``)                                                             | 00:00.120 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
