@@ -148,7 +148,7 @@ single-variable partial dependence plots.
  .. code-block:: none
 
     Training MLPRegressor...
-    done in 32.407s
+    done in 7.597s
     Test R2 score: 0.81
 
 
@@ -223,7 +223,7 @@ We will plot the partial dependence, both individual (ICE) and averaged one
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 9.393s
+    done in 4.471s
 
 
 
@@ -261,7 +261,7 @@ compute the partial dependence on the same features.
  .. code-block:: none
 
     Training HistGradientBoostingRegressor...
-    done in 1.080s
+    done in 0.676s
     Test R2 score: 0.85
 
 
@@ -323,7 +323,7 @@ We will plot the partial dependence, both individual (ICE) and averaged one
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 17.454s
+    done in 8.563s
 
 
 
@@ -411,7 +411,7 @@ on an efficient way using the `'recursion'` method.
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 0.399s
+    done in 0.315s
 
 
 
@@ -486,7 +486,7 @@ this time in 3 dimensions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  2.947 seconds)
+   **Total running time of the script:** ( 0 minutes  22.951 seconds)
 
 
 .. _sphx_glr_download_auto_examples_inspection_plot_partial_dependence.py:

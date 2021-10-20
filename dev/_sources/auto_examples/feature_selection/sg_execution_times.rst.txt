@@ -5,18 +5,18 @@
 
 Computation times
 =================
-**01:05.713** total execution time for **auto_examples_feature_selection** files:
+**00:37.116** total execution time for **auto_examples_feature_selection** files:
 
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_feature_selection_plot_select_from_model_diabetes.py` (``plot_select_from_model_diabetes.py``) | 00:46.794 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_feature_selection_plot_select_from_model_diabetes.py` (``plot_select_from_model_diabetes.py``) | 00:24.959 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_feature_selection_plot_rfe_digits.py` (``plot_rfe_digits.py``)                                 | 00:11.750 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_feature_selection_plot_rfe_digits.py` (``plot_rfe_digits.py``)                                 | 00:07.414 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_feature_selection_plot_rfe_with_cross_validation.py` (``plot_rfe_with_cross_validation.py``)   | 00:06.177 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_feature_selection_plot_rfe_with_cross_validation.py` (``plot_rfe_with_cross_validation.py``)   | 00:04.053 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_feature_selection_plot_f_test_vs_mi.py` (``plot_f_test_vs_mi.py``)                             | 00:00.648 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_feature_selection_plot_f_test_vs_mi.py` (``plot_f_test_vs_mi.py``)                             | 00:00.441 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_feature_selection_plot_feature_selection.py` (``plot_feature_selection.py``)                   | 00:00.317 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_feature_selection_plot_feature_selection.py` (``plot_feature_selection.py``)                   | 00:00.231 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_feature_selection_plot_feature_selection_pipeline.py` (``plot_feature_selection_pipeline.py``) | 00:00.026 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_feature_selection_plot_feature_selection_pipeline.py` (``plot_feature_selection_pipeline.py``) | 00:00.019 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
