@@ -350,9 +350,9 @@ Log-likelihood: -0.067
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_gpr_prior_posterior_002.png" srcset="../../_images/sphx_glr_plot_gpr_prior_posterior_002.png" alt="Rational Quadratic kernel, Samples from prior distribution, Samples from posterior distribution" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/project/sklearn/gaussian_process/_gpr.py:420: UserWarning: Predicted variances smaller than 0. Setting those variances to 0.
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/project/sklearn/gaussian_process/_gpr.py:428: UserWarning: Predicted variances smaller than 0. Setting those variances to 0.
   warnings.warn(
-/home/circleci/project/sklearn/gaussian_process/_gpr.py:461: RuntimeWarning: covariance is not positive-semidefinite.
+/home/circleci/project/sklearn/gaussian_process/_gpr.py:475: RuntimeWarning: covariance is not positive-semidefinite.
   y_samples = rng.multivariate_normal(y_mean, y_cov, n_samples).T
 </pre></div>
 </div>
@@ -498,7 +498,7 @@ Kernel parameters after fit:
 Log-likelihood: -1.185
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.239 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.866 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-gaussian-process-plot-gpr-prior-posterior-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/gaussian_process/plot_gpr_prior_posterior.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo13.svg" width="150px" /></a>

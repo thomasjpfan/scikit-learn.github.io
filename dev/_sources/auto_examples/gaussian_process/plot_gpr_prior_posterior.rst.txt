@@ -267,9 +267,9 @@ Rational Quadradtic kernel
 
  .. code-block:: none
 
-    /home/circleci/project/sklearn/gaussian_process/_gpr.py:420: UserWarning: Predicted variances smaller than 0. Setting those variances to 0.
+    /home/circleci/project/sklearn/gaussian_process/_gpr.py:428: UserWarning: Predicted variances smaller than 0. Setting those variances to 0.
       warnings.warn(
-    /home/circleci/project/sklearn/gaussian_process/_gpr.py:461: RuntimeWarning: covariance is not positive-semidefinite.
+    /home/circleci/project/sklearn/gaussian_process/_gpr.py:475: RuntimeWarning: covariance is not positive-semidefinite.
       y_samples = rng.multivariate_normal(y_mean, y_cov, n_samples).T
 
 
@@ -526,7 +526,7 @@ Mattern kernel
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.239 seconds)
+   **Total running time of the script:** ( 0 minutes  2.866 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_gpr_prior_posterior.py:

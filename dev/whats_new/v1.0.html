@@ -174,6 +174,7 @@
 <li><a class="reference internal" href="#fixed-models">Fixed models</a><ul>
 <li><a class="reference internal" href="#sklearn-calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-gaussian-process"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.gaussian_process</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-feature-extraction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-linear-model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a></li>
@@ -265,6 +266,15 @@ the Bayesian priors.
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed a bug in <a class="reference internal" href="../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="sklearn.cluster.KMeans"><code class="xref py py-class docutils literal notranslate"><span class="pre">cluster.KMeans</span></code></a>, ensuring reproducibility and equivalence
 between sparse and dense input. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21195">#21195</a>
 by <a class="reference external" href="https://github.com/jeremiedbb">Jérémie du Boisberranger</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-gaussian-process">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.gaussian_process" title="sklearn.gaussian_process"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.gaussian_process</span></code></a><a class="headerlink" href="#sklearn-gaussian-process" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Compute <code class="docutils literal notranslate"><span class="pre">y_std</span></code> properly with multi-target in
+<a class="reference internal" href="../modules/generated/sklearn.gaussian_process.GaussianProcessRegressor.html#sklearn.gaussian_process.GaussianProcessRegressor" title="sklearn.gaussian_process.GaussianProcessRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.gaussian_process.GaussianProcessRegressor</span></code></a> allowing
+proper normalization in multi-target scene.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20761">#20761</a> by <a class="reference external" href="https://github.com/patrickctrf">Patrick de C. T. R. Ferreira</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-feature-extraction">
