@@ -177,6 +177,7 @@
 <li><a class="reference internal" href="#sklearn-linear-model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-pipeline"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -210,7 +211,7 @@
 <li><a class="reference internal" href="#sklearn-neural-network"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neural_network</span></code></a></li>
 <li><a class="reference internal" href="#id6"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a></li>
-<li><a class="reference internal" href="#sklearn-svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a></li>
+<li><a class="reference internal" href="#id7"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-tree"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.tree</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
 </ul>
@@ -289,6 +290,16 @@ and <code class="docutils literal notranslate"><span class="pre">radius_neighbor
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline.get_feature_names_out" title="sklearn.pipeline.Pipeline.get_feature_names_out"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pipeline.Pipeline.get_feature_names_out</span></code></a> correctly passes feature
 names out from one step of a pipeline to the next. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21351">#21351</a> by
 <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-svm">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.svm" title="sklearn.svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a><a class="headerlink" href="#sklearn-svm" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="sklearn.svm.SVC"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.SVC</span></code></a> and <a class="reference internal" href="../modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR" title="sklearn.svm.SVR"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.SVR</span></code></a> check for an inconsistency
+in its internal representation and raise an error instead of segfaulting.
+This fix also resolves
+<a class="reference external" href="https://nvd.nist.gov/vuln/detail/CVE-2020-28975">CVE-2020-28975</a>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21336">#21336</a> by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
 </ul>
 </section>
 </section>
@@ -1021,8 +1032,8 @@ based on the input to <code class="docutils literal notranslate"><span class="pr
 <a class="reference external" href="https://github.com/jeremiedbb">Jérémie du Boisberranger</a>.</p></li>
 </ul>
 </section>
-<section id="sklearn-svm">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.svm" title="sklearn.svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a><a class="headerlink" href="#sklearn-svm" title="Permalink to this headline">¶</a></h3>
+<section id="id7">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.svm" title="sklearn.svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  The parameter <code class="docutils literal notranslate"><span class="pre">**params</span></code> of <a class="reference internal" href="../modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM.fit" title="sklearn.svm.OneClassSVM.fit"><code class="xref py py-func docutils literal notranslate"><span class="pre">svm.OneClassSVM.fit</span></code></a> is
 deprecated and will be removed in 1.2.
