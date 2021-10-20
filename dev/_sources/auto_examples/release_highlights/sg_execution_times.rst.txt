@@ -5,14 +5,14 @@
 
 Computation times
 =================
-**00:16.676** total execution time for **auto_examples_release_highlights** files:
+**00:27.525** total execution time for **auto_examples_release_highlights** files:
 
 +----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_release_highlights_plot_release_highlights_0_24_0.py` (``plot_release_highlights_0_24_0.py``) | 00:14.321 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_release_highlights_plot_release_highlights_0_24_0.py` (``plot_release_highlights_0_24_0.py``) | 00:23.159 | 0.0 MB |
 +----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_release_highlights_plot_release_highlights_0_22_0.py` (``plot_release_highlights_0_22_0.py``) | 00:01.244 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_release_highlights_plot_release_highlights_0_22_0.py` (``plot_release_highlights_0_22_0.py``) | 00:02.705 | 0.0 MB |
 +----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_release_highlights_plot_release_highlights_0_23_0.py` (``plot_release_highlights_0_23_0.py``) | 00:00.909 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_release_highlights_plot_release_highlights_0_23_0.py` (``plot_release_highlights_0_23_0.py``) | 00:01.355 | 0.0 MB |
 +----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_release_highlights_plot_release_highlights_1_0_0.py` (``plot_release_highlights_1_0_0.py``)   | 00:00.202 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_release_highlights_plot_release_highlights_1_0_0.py` (``plot_release_highlights_1_0_0.py``)   | 00:00.305 | 0.0 MB |
 +----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
