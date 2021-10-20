@@ -59,7 +59,7 @@ necessarily related to visualisation.
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_001.png
-         :alt: Dictionary learned from face patches Train time 4.7s on 22692 patches
+         :alt: Dictionary learned from face patches Train time 3.0s on 22692 patches
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_001.png
          :class: sphx-glr-multi-img
 
@@ -73,28 +73,28 @@ necessarily related to visualisation.
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_003.png
-         :alt: Orthogonal Matching Pursuit 1 atom (time: 1.0s), Image, Difference (norm: 10.85)
+         :alt: Orthogonal Matching Pursuit 1 atom (time: 0.7s), Image, Difference (norm: 10.85)
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_003.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_004.png
-         :alt: Orthogonal Matching Pursuit 2 atoms (time: 2.0s), Image, Difference (norm: 9.22)
+         :alt: Orthogonal Matching Pursuit 2 atoms (time: 1.4s), Image, Difference (norm: 9.22)
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_004.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_005.png
-         :alt: Least-angle regression 5 atoms (time: 20.6s), Image, Difference (norm: 13.17)
+         :alt: Least-angle regression 5 atoms (time: 14.1s), Image, Difference (norm: 13.17)
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_005.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_006.png
-         :alt: Thresholding  alpha=0.1 (time: 0.2s), Image, Difference (norm: 14.63)
+         :alt: Thresholding  alpha=0.1 (time: 0.1s), Image, Difference (norm: 14.63)
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_006.png
          :class: sphx-glr-multi-img
 
@@ -110,21 +110,21 @@ necessarily related to visualisation.
     Extracting reference patches...
     done in 0.01s.
     Learning the dictionary...
-    done in 4.71s.
+    done in 2.97s.
     Extracting noisy patches... 
-    done in 0.01s.
+    done in 0.00s.
     Orthogonal Matching Pursuit
     1 atom...
-    done in 0.98s.
+    done in 0.67s.
     Orthogonal Matching Pursuit
     2 atoms...
-    done in 2.03s.
+    done in 1.40s.
     Least-angle regression
     5 atoms...
-    done in 20.63s.
+    done in 14.09s.
     Thresholding
      alpha=0.1...
-    done in 0.15s.
+    done in 0.11s.
 
 
 
@@ -274,7 +274,7 @@ necessarily related to visualisation.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  32.248 seconds)
+   **Total running time of the script:** ( 0 minutes  21.746 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_image_denoising.py:
