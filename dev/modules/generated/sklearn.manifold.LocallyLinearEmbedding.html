@@ -185,36 +185,40 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.manifold" title="sklearn.manifold"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.manifold</span></code></a>.LocallyLinearEmbedding<a class="headerlink" href="#sklearn-manifold-locallylinearembedding" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.manifold.LocallyLinearEmbedding">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.manifold.</span></span><span class="sig-name descname"><span class="pre">LocallyLinearEmbedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neighbors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigen_solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hessian_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modified_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbors_algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a17430cf2/sklearn/manifold/_locally_linear.py#L545"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding" title="Permalink to this definition">¶</a></dt>
-<dd><p>Locally Linear Embedding</p>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.manifold.</span></span><span class="sig-name descname"><span class="pre">LocallyLinearEmbedding</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neighbors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reg</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigen_solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-06</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'standard'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hessian_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modified_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbors_algorithm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/eb6e35ed0/sklearn/manifold/_locally_linear.py#L545"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding" title="Permalink to this definition">¶</a></dt>
+<dd><p>Locally Linear Embedding.</p>
 <p>Read more in the <a class="reference internal" href="../manifold.html#locally-linear-embedding"><span class="std std-ref">User Guide</span></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>n_neighbors</strong><span class="classifier">int, default=5</span></dt><dd><p>number of neighbors to consider for each point.</p>
+<dt><strong>n_neighbors</strong><span class="classifier">int, default=5</span></dt><dd><p>Number of neighbors to consider for each point.</p>
 </dd>
-<dt><strong>n_components</strong><span class="classifier">int, default=2</span></dt><dd><p>number of coordinates for the manifold</p>
+<dt><strong>n_components</strong><span class="classifier">int, default=2</span></dt><dd><p>Number of coordinates for the manifold.</p>
 </dd>
-<dt><strong>reg</strong><span class="classifier">float, default=1e-3</span></dt><dd><p>regularization constant, multiplies the trace of the local covariance
+<dt><strong>reg</strong><span class="classifier">float, default=1e-3</span></dt><dd><p>Regularization constant, multiplies the trace of the local covariance
 matrix of the distances.</p>
 </dd>
-<dt><strong>eigen_solver</strong><span class="classifier">{‘auto’, ‘arpack’, ‘dense’}, default=’auto’</span></dt><dd><p>auto : algorithm will attempt to choose the best method for input data</p>
-<dl class="simple">
-<dt>arpack<span class="classifier">use arnoldi iteration in shift-invert mode.</span></dt><dd><p>For this method, M may be a dense matrix, sparse matrix,
-or general linear operator.
-Warning: ARPACK can be unstable for some problems.  It is
-best to try several random seeds in order to check results.</p>
-</dd>
-<dt>dense<span class="classifier">use standard dense matrix operations for the eigenvalue</span></dt><dd><p>decomposition.  For this method, M must be an array
-or matrix type.  This method should be avoided for
-large problems.</p>
-</dd>
-</dl>
+<dt><strong>eigen_solver</strong><span class="classifier">{‘auto’, ‘arpack’, ‘dense’}, default=’auto’</span></dt><dd><p>The solver used to compute the eigenvectors. The available options are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'auto'</span></code> : algorithm will attempt to choose the best method for input
+data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'arpack'</span></code> : use arnoldi iteration in shift-invert mode. For this
+method, M may be a dense matrix, sparse matrix, or general linear
+operator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'dense'</span></code>  : use standard dense matrix operations for the eigenvalue
+decomposition. For this method, M must be an array or matrix type.
+This method should be avoided for large problems.</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ARPACK can be unstable for some problems.  It is best to try several
+random seeds in order to check results.</p>
+</div>
 </dd>
 <dt><strong>tol</strong><span class="classifier">float, default=1e-6</span></dt><dd><p>Tolerance for ‘arpack’ method
 Not used if eigen_solver==’dense’.</p>
 </dd>
-<dt><strong>max_iter</strong><span class="classifier">int, default=100</span></dt><dd><p>maximum number of iterations for the arpack solver.
+<dt><strong>max_iter</strong><span class="classifier">int, default=100</span></dt><dd><p>Maximum number of iterations for the arpack solver.
 Not used if eigen_solver==’dense’.</p>
 </dd>
 <dt><strong>method</strong><span class="classifier">{‘standard’, ‘hessian’, ‘modified’, ‘ltsa’}, default=’standard’</span></dt><dd><ul class="simple">
@@ -230,13 +234,13 @@ reference <a class="reference internal" href="#r62e36dd1b056-4" id="id4">[4]</a>
 </ul>
 </dd>
 <dt><strong>hessian_tol</strong><span class="classifier">float, default=1e-4</span></dt><dd><p>Tolerance for Hessian eigenmapping method.
-Only used if <code class="docutils literal notranslate"><span class="pre">method</span> <span class="pre">==</span> <span class="pre">'hessian'</span></code></p>
+Only used if <code class="docutils literal notranslate"><span class="pre">method</span> <span class="pre">==</span> <span class="pre">'hessian'</span></code>.</p>
 </dd>
 <dt><strong>modified_tol</strong><span class="classifier">float, default=1e-12</span></dt><dd><p>Tolerance for modified LLE method.
-Only used if <code class="docutils literal notranslate"><span class="pre">method</span> <span class="pre">==</span> <span class="pre">'modified'</span></code></p>
+Only used if <code class="docutils literal notranslate"><span class="pre">method</span> <span class="pre">==</span> <span class="pre">'modified'</span></code>.</p>
 </dd>
-<dt><strong>neighbors_algorithm</strong><span class="classifier">{‘auto’, ‘brute’, ‘kd_tree’, ‘ball_tree’},                           default=’auto’</span></dt><dd><p>algorithm to use for nearest neighbors search,
-passed to neighbors.NearestNeighbors instance</p>
+<dt><strong>neighbors_algorithm</strong><span class="classifier">{‘auto’, ‘brute’, ‘kd_tree’, ‘ball_tree’},                           default=’auto’</span></dt><dd><p>Algorithm to use for nearest neighbors search, passed to
+<a class="reference internal" href="sklearn.neighbors.NearestNeighbors.html#sklearn.neighbors.NearestNeighbors" title="sklearn.neighbors.NearestNeighbors"><code class="xref py py-class docutils literal notranslate"><span class="pre">NearestNeighbors</span></code></a> instance.</p>
 </dd>
 <dt><strong>random_state</strong><span class="classifier">int, RandomState instance, default=None</span></dt><dd><p>Determines the random number generator when
 <code class="docutils literal notranslate"><span class="pre">eigen_solver</span></code> == ‘arpack’. Pass an int for reproducible results
@@ -272,6 +276,15 @@ if applicable.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="sklearn.manifold.SpectralEmbedding.html#sklearn.manifold.SpectralEmbedding" title="sklearn.manifold.SpectralEmbedding"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SpectralEmbedding</span></code></a></dt><dd><p>Spectral embedding for non-linear dimensionality reduction.</p>
+</dd>
+<dt><a class="reference internal" href="sklearn.manifold.TSNE.html#sklearn.manifold.TSNE" title="sklearn.manifold.TSNE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">TSNE</span></code></a></dt><dd><p>Distributed Stochastic Neighbor Embedding.</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">References</p>
 <dl class="citation">
 <dt class="label" id="r62e36dd1b056-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -314,7 +327,7 @@ Journal of Shanghai Univ.  8:406 (2004)</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.manifold.LocallyLinearEmbedding.fit" title="sklearn.manifold.LocallyLinearEmbedding.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(X[, y])</p></td>
-<td><p>Compute the embedding vectors for data X</p></td>
+<td><p>Compute the embedding vectors for data X.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#sklearn.manifold.LocallyLinearEmbedding.fit_transform" title="sklearn.manifold.LocallyLinearEmbedding.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(X[, y])</p></td>
 <td><p>Compute the embedding vectors for data X and transform X.</p></td>
@@ -332,19 +345,21 @@ Journal of Shanghai Univ.  8:406 (2004)</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.manifold.LocallyLinearEmbedding.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a17430cf2/sklearn/manifold/_locally_linear.py#L724"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding.fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the embedding vectors for data X</p>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/eb6e35ed0/sklearn/manifold/_locally_linear.py#L732"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the embedding vectors for data X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">array-like of shape [n_samples, n_features]</span></dt><dd><p>training set.</p>
+<dt><strong>X</strong><span class="classifier">array-like of shape (n_samples, n_features)</span></dt><dd><p>Training set.</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">Ignored</span></dt><dd></dd>
+<dt><strong>y</strong><span class="classifier">Ignored</span></dt><dd><p>Not used, present here for API consistency by convention.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>self</strong><span class="classifier">returns an instance of self.</span></dt><dd></dd>
+<dt><strong>self</strong><span class="classifier">object</span></dt><dd><p>Fitted <code class="docutils literal notranslate"><span class="pre">LocallyLinearEmbedding</span></code> class instance.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -352,19 +367,21 @@ Journal of Shanghai Univ.  8:406 (2004)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.manifold.LocallyLinearEmbedding.fit_transform">
-<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a17430cf2/sklearn/manifold/_locally_linear.py#L741"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding.fit_transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/eb6e35ed0/sklearn/manifold/_locally_linear.py#L751"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the embedding vectors for data X and transform X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">array-like of shape [n_samples, n_features]</span></dt><dd><p>training set.</p>
+<dt><strong>X</strong><span class="classifier">array-like of shape (n_samples, n_features)</span></dt><dd><p>Training set.</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">Ignored</span></dt><dd></dd>
+<dt><strong>y</strong><span class="classifier">Ignored</span></dt><dd><p>Not used, present here for API consistency by convention.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>X_new</strong><span class="classifier">array-like, shape (n_samples, n_components)</span></dt><dd></dd>
+<dt><strong>X_new</strong><span class="classifier">array-like, shape (n_samples, n_components)</span></dt><dd><p>Returns the instance itself.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -372,7 +389,7 @@ Journal of Shanghai Univ.  8:406 (2004)</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.manifold.LocallyLinearEmbedding.get_params">
-<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a17430cf2/sklearn/base.py#L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding.get_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/eb6e35ed0/sklearn/base.py#L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -393,7 +410,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.manifold.LocallyLinearEmbedding.set_params">
-<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a17430cf2/sklearn/base.py#L212"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding.set_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/eb6e35ed0/sklearn/base.py#L212"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as <a class="reference internal" href="sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
@@ -417,23 +434,25 @@ possible to update each component of a nested object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.manifold.LocallyLinearEmbedding.transform">
-<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/a17430cf2/sklearn/manifold/_locally_linear.py#L758"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding.transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/eb6e35ed0/sklearn/manifold/_locally_linear.py#L770"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.LocallyLinearEmbedding.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform new points into embedding space.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">array-like of shape (n_samples, n_features)</span></dt><dd></dd>
+<dt><strong>X</strong><span class="classifier">array-like of shape (n_samples, n_features)</span></dt><dd><p>Training set.</p>
+</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>X_new</strong><span class="classifier">array, shape = [n_samples, n_components]</span></dt><dd></dd>
+<dt><strong>X_new</strong><span class="classifier">ndarray of shape (n_samples, n_components)</span></dt><dd><p>Returns the instance itself.</p>
+</dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Notes</p>
 <p>Because of scaling performed by this method, it is discouraged to use
-it together with methods that are not scale-invariant (like SVMs)</p>
+it together with methods that are not scale-invariant (like SVMs).</p>
 </dd></dl>
 
 </dd></dl>
