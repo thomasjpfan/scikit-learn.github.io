@@ -1012,7 +1012,7 @@ This plot is called a Lorenz curve and can be summarized by the Gini index:
  .. code-block:: none
 
 
-    <matplotlib.legend.Legend object at 0x7f3682c88be0>
+    <matplotlib.legend.Legend object at 0x7fa5bee64430>
 
 
 
@@ -1089,7 +1089,7 @@ Main takeaways
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  46.664 seconds)
+   **Total running time of the script:** ( 0 minutes  50.486 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_poisson_regression_non_normal_loss.py:
