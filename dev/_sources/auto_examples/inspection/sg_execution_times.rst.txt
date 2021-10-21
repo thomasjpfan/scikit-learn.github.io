@@ -5,14 +5,14 @@
 
 Computation times
 =================
-**00:53.404** total execution time for **auto_examples_inspection** files:
+**00:42.534** total execution time for **auto_examples_inspection** files:
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_inspection_plot_partial_dependence.py` (``plot_partial_dependence.py``)                                           | 00:23.555 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_inspection_plot_partial_dependence.py` (``plot_partial_dependence.py``)                                           | 00:18.998 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_inspection_plot_linear_model_coefficient_interpretation.py` (``plot_linear_model_coefficient_interpretation.py``) | 00:13.997 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_inspection_plot_linear_model_coefficient_interpretation.py` (``plot_linear_model_coefficient_interpretation.py``) | 00:11.415 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_inspection_plot_permutation_importance.py` (``plot_permutation_importance.py``)                                   | 00:08.999 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_inspection_plot_permutation_importance_multicollinear.py` (``plot_permutation_importance_multicollinear.py``)     | 00:06.318 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_inspection_plot_permutation_importance_multicollinear.py` (``plot_permutation_importance_multicollinear.py``)     | 00:06.853 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_inspection_plot_permutation_importance.py` (``plot_permutation_importance.py``)                                   | 00:05.804 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
