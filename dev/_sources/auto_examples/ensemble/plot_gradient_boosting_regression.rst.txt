@@ -89,19 +89,19 @@ Next, we will split our dataset to use 90% for training and leave the rest
 for testing. We will also set the regression model parameters. You can play
 with these parameters to see how the results change.
 
-n_estimators : the number of boosting stages that will be performed.
+`n_estimators` : the number of boosting stages that will be performed.
 Later, we will plot deviance against boosting iterations.
 
-max_depth : limits the number of nodes in the tree.
+`max_depth` : limits the number of nodes in the tree.
 The best value depends on the interaction of the input variables.
 
-min_samples_split : the minimum number of samples required to split an
+`min_samples_split` : the minimum number of samples required to split an
 internal node.
 
-learning_rate : how much the contribution of each tree will shrink.
+`learning_rate` : how much the contribution of each tree will shrink.
 
-loss : loss function to optimize. The least squares function is  used in this
-case however, there are many other options (see
+`loss` : loss function to optimize. The least squares function is  used in
+this case however, there are many other options (see
 :class:`~sklearn.ensemble.GradientBoostingRegressor` ).
 
 .. GENERATED FROM PYTHON SOURCE LINES 62-75
@@ -131,7 +131,7 @@ case however, there are many other options (see
 .. GENERATED FROM PYTHON SOURCE LINES 76-81
 
 Fit regression model
--------------------------------------
+--------------------
 
 Now we will initiate the gradient boosting regressors and fit it with our
 training data. Let's also look and the mean squared error on the test data.
@@ -165,7 +165,7 @@ training data. Let's also look and the mean squared error on the test data.
 .. GENERATED FROM PYTHON SOURCE LINES 89-94
 
 Plot training deviance
--------------------------------------
+----------------------
 
 Finally, we will visualize the results. To do that we will first compute the
 test set deviance and then plot it against boosting iterations.
@@ -209,15 +209,16 @@ test set deviance and then plot it against boosting iterations.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 118-131
+.. GENERATED FROM PYTHON SOURCE LINES 118-132
 
 Plot feature importance
--------------------------------------
+-----------------------
 
-Careful, impurity-based feature importances can be misleading for
-high cardinality features (many unique values). As an alternative,
-the permutation importances of ``reg`` can be computed on a
-held out test set. See :ref:`permutation_importance` for more details.
+.. warning::
+   Careful, impurity-based feature importances can be misleading for
+   **high cardinality** features (many unique values). As an alternative,
+   the permutation importances of ``reg`` can be computed on a
+   held out test set. See :ref:`permutation_importance` for more details.
 
 For this example, the impurity-based and permutation methods identify the
 same 2 strongly predictive features but not in the same order. The third most
@@ -225,7 +226,7 @@ predictive feature, "bp", is also the same for the 2 methods. The remaining
 features are less predictive and the error bars of the permutation plot
 show that they overlap with 0.
 
-.. GENERATED FROM PYTHON SOURCE LINES 131-154
+.. GENERATED FROM PYTHON SOURCE LINES 132-155
 
 .. code-block:: default
 
@@ -267,7 +268,7 @@ show that they overlap with 0.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.776 seconds)
+   **Total running time of the script:** ( 0 minutes  1.497 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_gradient_boosting_regression.py:

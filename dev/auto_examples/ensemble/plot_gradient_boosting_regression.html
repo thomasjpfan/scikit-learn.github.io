@@ -229,15 +229,15 @@ and 500 regression trees of depth 4.</p>
 <p>Next, we will split our dataset to use 90% for training and leave the rest
 for testing. We will also set the regression model parameters. You can play
 with these parameters to see how the results change.</p>
-<p>n_estimators : the number of boosting stages that will be performed.
+<p><code class="docutils literal notranslate"><span class="pre">n_estimators</span></code> : the number of boosting stages that will be performed.
 Later, we will plot deviance against boosting iterations.</p>
-<p>max_depth : limits the number of nodes in the tree.
+<p><code class="docutils literal notranslate"><span class="pre">max_depth</span></code> : limits the number of nodes in the tree.
 The best value depends on the interaction of the input variables.</p>
-<p>min_samples_split : the minimum number of samples required to split an
+<p><code class="docutils literal notranslate"><span class="pre">min_samples_split</span></code> : the minimum number of samples required to split an
 internal node.</p>
-<p>learning_rate : how much the contribution of each tree will shrink.</p>
-<p>loss : loss function to optimize. The least squares function is  used in this
-case however, there are many other options (see
+<p><code class="docutils literal notranslate"><span class="pre">learning_rate</span></code> : how much the contribution of each tree will shrink.</p>
+<p><code class="docutils literal notranslate"><span class="pre">loss</span></code> : loss function to optimize. The least squares function is  used in
+this case however, there are many other options (see
 <a class="reference internal" href="../../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="sklearn.ensemble.GradientBoostingRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">GradientBoostingRegressor</span></code></a> ).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split" title="sklearn.model_selection.train_test_split" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">train_test_split</span></a><span class="p">(</span>
     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">13</span>
@@ -299,10 +299,13 @@ test set deviance and then plot it against boosting iterations.</p>
 <img src="../../_images/sphx_glr_plot_gradient_boosting_regression_001.png" srcset="../../_images/sphx_glr_plot_gradient_boosting_regression_001.png" alt="Deviance" class = "sphx-glr-single-img"/></section>
 <section id="plot-feature-importance">
 <h2>Plot feature importance<a class="headerlink" href="#plot-feature-importance" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
 <p>Careful, impurity-based feature importances can be misleading for
-high cardinality features (many unique values). As an alternative,
+<strong>high cardinality</strong> features (many unique values). As an alternative,
 the permutation importances of <code class="docutils literal notranslate"><span class="pre">reg</span></code> can be computed on a
 held out test set. See <a class="reference internal" href="../../modules/permutation_importance.html#permutation-importance"><span class="std std-ref">Permutation feature importance</span></a> for more details.</p>
+</div>
 <p>For this example, the impurity-based and permutation methods identify the
 same 2 strongly predictive features but not in the same order. The third most
 predictive feature, “bp”, is also the same for the 2 methods. The remaining
@@ -332,7 +335,7 @@ show that they overlap with 0.</p>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_gradient_boosting_regression_002.png" srcset="../../_images/sphx_glr_plot_gradient_boosting_regression_002.png" alt="Feature Importance (MDI), Permutation Importance (test set)" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.776 seconds)</p>
+<img src="../../_images/sphx_glr_plot_gradient_boosting_regression_002.png" srcset="../../_images/sphx_glr_plot_gradient_boosting_regression_002.png" alt="Feature Importance (MDI), Permutation Importance (test set)" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.497 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-ensemble-plot-gradient-boosting-regression-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/ensemble/plot_gradient_boosting_regression.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo10.svg" width="150px" /></a>
