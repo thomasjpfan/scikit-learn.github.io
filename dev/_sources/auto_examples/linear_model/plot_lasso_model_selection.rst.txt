@@ -60,7 +60,7 @@ evaluate the performance of a method for which a parameter is chosen by
 cross-validation: this choice of parameter may not be optimal for unseen
 data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-172
+.. GENERATED FROM PYTHON SOURCE LINES 45-172
 
 
 
@@ -70,21 +70,21 @@ data.
     *
 
       .. image-sg:: /auto_examples/linear_model/images/sphx_glr_plot_lasso_model_selection_001.png
-         :alt: Information-criterion for model selection (training time 0.004s)
+         :alt: Information-criterion for model selection (training time 0.009s)
          :srcset: /auto_examples/linear_model/images/sphx_glr_plot_lasso_model_selection_001.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/linear_model/images/sphx_glr_plot_lasso_model_selection_002.png
-         :alt: Mean square error on each fold: coordinate descent (train time: 0.35s)
+         :alt: Mean square error on each fold: coordinate descent (train time: 0.54s)
          :srcset: /auto_examples/linear_model/images/sphx_glr_plot_lasso_model_selection_002.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/linear_model/images/sphx_glr_plot_lasso_model_selection_003.png
-         :alt: Mean square error on each fold: Lars (train time: 0.10s)
+         :alt: Mean square error on each fold: Lars (train time: 0.16s)
          :srcset: /auto_examples/linear_model/images/sphx_glr_plot_lasso_model_selection_003.png
          :class: sphx-glr-multi-img
 
@@ -94,7 +94,6 @@ data.
  Out:
 
  .. code-block:: none
-
 
     Computing regularization path using the coordinate descent lasso...
     Computing regularization path using the Lars lasso...
@@ -108,7 +107,6 @@ data.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Olivier Grisel, Gael Varoquaux, Alexandre Gramfort
     # License: BSD 3 clause
@@ -240,7 +238,7 @@ data.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.408 seconds)
+   **Total running time of the script:** ( 0 minutes  1.699 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_lasso_model_selection.py:

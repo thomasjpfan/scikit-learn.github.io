@@ -45,11 +45,10 @@ of
 is then compared the performance on the altered datasets with the artificially
 missing values imputed using different techniques.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-35
+.. GENERATED FROM PYTHON SOURCE LINES 30-34
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Maria Telenczuk  <https://github.com/maikia>
     # License: BSD 3 clause
@@ -61,7 +60,7 @@ missing values imputed using different techniques.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-45
+.. GENERATED FROM PYTHON SOURCE LINES 35-44
 
 Download the data and make missing values sets
 ###############################################
@@ -73,7 +72,7 @@ Download the data and make missing values sets
  up the calculations but feel free to use the whole dataset.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-84
+.. GENERATED FROM PYTHON SOURCE LINES 44-83
 
 .. code-block:: default
 
@@ -123,7 +122,7 @@ Download the data and make missing values sets
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-90
+.. GENERATED FROM PYTHON SOURCE LINES 84-89
 
 Impute the missing data and score
 #################################
@@ -131,7 +130,7 @@ Now we will write a function which will score the results on the differently
 imputed data. Let's look at each imputer separately:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 90-105
+.. GENERATED FROM PYTHON SOURCE LINES 89-104
 
 .. code-block:: default
 
@@ -157,7 +156,7 @@ imputed data. Let's look at each imputer separately:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-112
+.. GENERATED FROM PYTHON SOURCE LINES 105-111
 
 Missing information
 -------------------
@@ -166,7 +165,7 @@ In addition to imputing the missing values, the imputers have an
 might carry some information.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-129
+.. GENERATED FROM PYTHON SOURCE LINES 111-128
 
 .. code-block:: default
 
@@ -194,14 +193,14 @@ might carry some information.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 130-134
+.. GENERATED FROM PYTHON SOURCE LINES 129-133
 
 Estimate the score
 ------------------
 First, we want to estimate the score on the original data:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-148
+.. GENERATED FROM PYTHON SOURCE LINES 133-147
 
 .. code-block:: default
 
@@ -226,7 +225,7 @@ First, we want to estimate the score on the original data:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-155
+.. GENERATED FROM PYTHON SOURCE LINES 148-154
 
 Replace missing values by 0
 ---------------------------
@@ -235,7 +234,7 @@ Now we will estimate the score on the data where the missing values are
 replaced by 0:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-175
+.. GENERATED FROM PYTHON SOURCE LINES 154-174
 
 .. code-block:: default
 
@@ -266,7 +265,7 @@ replaced by 0:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 176-181
+.. GENERATED FROM PYTHON SOURCE LINES 175-180
 
 kNN-imputation of the missing values
 ------------------------------------
@@ -274,7 +273,7 @@ kNN-imputation of the missing values
 :class:`~sklearn.impute.KNNImputer` imputes missing values using the weighted
 or unweighted mean of the desired number of nearest neighbors.
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-198
+.. GENERATED FROM PYTHON SOURCE LINES 180-197
 
 .. code-block:: default
 
@@ -302,13 +301,13 @@ or unweighted mean of the desired number of nearest neighbors.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 199-202
+.. GENERATED FROM PYTHON SOURCE LINES 198-201
 
 Impute missing values with mean
 -------------------------------
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 202-217
+.. GENERATED FROM PYTHON SOURCE LINES 201-216
 
 .. code-block:: default
 
@@ -334,7 +333,7 @@ Impute missing values with mean
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 218-228
+.. GENERATED FROM PYTHON SOURCE LINES 217-227
 
 Iterative imputation of the missing values
 ------------------------------------------
@@ -347,7 +346,7 @@ are obviously non-normal, consider transforming them to look more normal
 to potentially improve performance.
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 228-253
+.. GENERATED FROM PYTHON SOURCE LINES 227-252
 
 .. code-block:: default
 
@@ -383,7 +382,7 @@ to potentially improve performance.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 254-259
+.. GENERATED FROM PYTHON SOURCE LINES 253-258
 
 Plot the results
 ################
@@ -391,7 +390,7 @@ Plot the results
 Finally we are going to visualize the score:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 259-311
+.. GENERATED FROM PYTHON SOURCE LINES 258-310
 
 .. code-block:: default
 
@@ -462,7 +461,7 @@ Finally we are going to visualize the score:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.574 seconds)
+   **Total running time of the script:** ( 0 minutes  21.930 seconds)
 
 
 .. _sphx_glr_download_auto_examples_impute_plot_missing_values.py:

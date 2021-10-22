@@ -37,7 +37,7 @@ or with conda::
 
     conda install -c conda-forge scikit-learn
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-50
+.. GENERATED FROM PYTHON SOURCE LINES 25-51
 
 Successive Halving estimators for tuning hyper-parameters
 ---------------------------------------------------------
@@ -66,7 +66,7 @@ the Successive Halving estimators are still :term:`experimental
   :target: ../model_selection/plot_successive_halving_iterations.html
   :align: center
 
-.. GENERATED FROM PYTHON SOURCE LINES 50-78
+.. GENERATED FROM PYTHON SOURCE LINES 51-79
 
 .. code-block:: default
 
@@ -113,7 +113,7 @@ the Successive Halving estimators are still :term:`experimental
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-98
+.. GENERATED FROM PYTHON SOURCE LINES 80-99
 
 Native support for categorical features in HistGradientBoosting estimators
 --------------------------------------------------------------------------
@@ -135,7 +135,7 @@ use the new `categorical_features` parameter, it is still required to
 preprocess the data within a pipeline as demonstrated in this :ref:`example
 <sphx_glr_auto_examples_ensemble_plot_gradient_boosting_categorical.py>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-108
+.. GENERATED FROM PYTHON SOURCE LINES 101-109
 
 Improved performances of HistGradientBoosting estimators
 --------------------------------------------------------
@@ -146,7 +146,7 @@ done in parallel which results in slight speed improvements.
 See more in the `Benchmark page
 <https://scikit-learn.org/scikit-learn-benchmarks/>`_.
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-118
+.. GENERATED FROM PYTHON SOURCE LINES 111-119
 
 New self-training meta-estimator
 --------------------------------
@@ -157,7 +157,7 @@ will behave as a
 semi-supervised classifier, allowing it to learn from unlabeled data.
 Read more in the :ref:`User guide <self_training>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 118-132
+.. GENERATED FROM PYTHON SOURCE LINES 119-133
 
 .. code-block:: default
 
@@ -183,12 +183,12 @@ Read more in the :ref:`User guide <self_training>`.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c {color: black;background-color: white;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c pre{padding: 0;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-toggleable {background-color: white;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-estimator:hover {background-color: #d4ebff;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-item {z-index: 1;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-parallel-item:only-child::after {width: 0;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-container {display: inline-block;position: relative;}#sk-4395fd70-0776-4a6a-9e78-b83e994bb27c div.sk-text-repr-fallback {display: none;}</style><div id="sk-4395fd70-0776-4a6a-9e78-b83e994bb27c" class"sk-top-container"><div class="sk-text-repr-fallback"><pre>SelfTrainingClassifier(base_estimator=SVC(gamma=&#x27;auto&#x27;, probability=True))</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="ddbe9db1-1b2b-4bab-9e9e-4336fa1578c9" type="checkbox" ><label class="sk-toggleable__label" for="ddbe9db1-1b2b-4bab-9e9e-4336fa1578c9">SelfTrainingClassifier</label><div class="sk-toggleable__content"><pre>SelfTrainingClassifier(base_estimator=SVC(gamma='auto', probability=True))</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="47800345-fd92-4da8-9a8c-98f6091a2278" type="checkbox" ><label class="sk-toggleable__label" for="47800345-fd92-4da8-9a8c-98f6091a2278">SVC</label><div class="sk-toggleable__content"><pre>SVC(gamma='auto', probability=True)</pre></div></div></div></div></div></div></div></div></div></div>
+    <style>#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be {color: black;background-color: white;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be pre{padding: 0;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-toggleable {background-color: white;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-estimator:hover {background-color: #d4ebff;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-item {z-index: 1;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-parallel-item:only-child::after {width: 0;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-container {display: inline-block;position: relative;}#sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be div.sk-text-repr-fallback {display: none;}</style><div id="sk-b2473e1a-d639-4eec-ae53-cbe56e5b83be" class"sk-top-container"><div class="sk-text-repr-fallback"><pre>SelfTrainingClassifier(base_estimator=SVC(gamma=&#x27;auto&#x27;, probability=True))</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="04951696-f4d2-4c58-b8c2-244c9d1d2d74" type="checkbox" ><label class="sk-toggleable__label" for="04951696-f4d2-4c58-b8c2-244c9d1d2d74">SelfTrainingClassifier</label><div class="sk-toggleable__content"><pre>SelfTrainingClassifier(base_estimator=SVC(gamma='auto', probability=True))</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="d6349e7c-f25f-4b64-aa26-5cf837817b4b" type="checkbox" ><label class="sk-toggleable__label" for="d6349e7c-f25f-4b64-aa26-5cf837817b4b">SVC</label><div class="sk-toggleable__content"><pre>SVC(gamma='auto', probability=True)</pre></div></div></div></div></div></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-141
+.. GENERATED FROM PYTHON SOURCE LINES 134-142
 
 New SequentialFeatureSelector transformer
 -----------------------------------------
@@ -199,7 +199,7 @@ selection) or remove features from the list of the available features
 (backward selection), based on a cross-validated score maximization.
 See the :ref:`User Guide <sequential_feature_selection>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-156
+.. GENERATED FROM PYTHON SOURCE LINES 142-157
 
 .. code-block:: default
 
@@ -233,7 +233,7 @@ See the :ref:`User Guide <sequential_feature_selection>`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-163
+.. GENERATED FROM PYTHON SOURCE LINES 158-164
 
 New PolynomialCountSketch kernel approximation function
 -------------------------------------------------------
@@ -242,7 +242,7 @@ approximates a polynomial expansion of a feature space when used with linear
 models, but uses much less memory than
 :class:`~sklearn.preprocessing.PolynomialFeatures`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-182
+.. GENERATED FROM PYTHON SOURCE LINES 164-183
 
 .. code-block:: default
 
@@ -276,15 +276,15 @@ models, but uses much less memory than
  .. code-block:: none
 
 
-    0.7357
+    0.7334
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-184
+.. GENERATED FROM PYTHON SOURCE LINES 184-185
 
 For comparison, here is the score of a linear baseline for the same data:
 
-.. GENERATED FROM PYTHON SOURCE LINES 184-188
+.. GENERATED FROM PYTHON SOURCE LINES 185-189
 
 .. code-block:: default
 
@@ -307,7 +307,7 @@ For comparison, here is the score of a linear baseline for the same data:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 189-195
+.. GENERATED FROM PYTHON SOURCE LINES 190-196
 
 Individual Conditional Expectation plots
 ----------------------------------------
@@ -316,7 +316,7 @@ Conditional Expectation (ICE) plot. ICE plots visualize the dependence of the
 prediction on a feature for each sample separately, with one line per sample.
 See the :ref:`User Guide <individual_conditional>`
 
-.. GENERATED FROM PYTHON SOURCE LINES 195-220
+.. GENERATED FROM PYTHON SOURCE LINES 196-221
 
 .. code-block:: default
 
@@ -366,7 +366,7 @@ See the :ref:`User Guide <individual_conditional>`
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 221-227
+.. GENERATED FROM PYTHON SOURCE LINES 222-228
 
 New Poisson splitting criterion for DecisionTreeRegressor
 ---------------------------------------------------------
@@ -375,7 +375,7 @@ The integration of Poisson regression estimation continues from version 0.23.
 splitting criterion. Setting `criterion="poisson"` might be a good choice
 if your target is a count or a frequency.
 
-.. GENERATED FROM PYTHON SOURCE LINES 227-241
+.. GENERATED FROM PYTHON SOURCE LINES 228-242
 
 .. code-block:: default
 
@@ -401,12 +401,12 @@ if your target is a count or a frequency.
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 {color: black;background-color: white;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 pre{padding: 0;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-toggleable {background-color: white;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-estimator:hover {background-color: #d4ebff;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-item {z-index: 1;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-parallel-item:only-child::after {width: 0;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-container {display: inline-block;position: relative;}#sk-52d9592c-65d3-4557-b8e0-99f8a93dd883 div.sk-text-repr-fallback {display: none;}</style><div id="sk-52d9592c-65d3-4557-b8e0-99f8a93dd883" class"sk-top-container"><div class="sk-text-repr-fallback"><pre>DecisionTreeRegressor(criterion=&#x27;poisson&#x27;, random_state=0)</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2b86ca5f-f64b-4a66-8c11-40177c983c2d" type="checkbox" checked><label class="sk-toggleable__label" for="2b86ca5f-f64b-4a66-8c11-40177c983c2d">DecisionTreeRegressor</label><div class="sk-toggleable__content"><pre>DecisionTreeRegressor(criterion='poisson', random_state=0)</pre></div></div></div></div></div>
+    <style>#sk-113ae961-69fd-4286-84d3-364592947202 {color: black;background-color: white;}#sk-113ae961-69fd-4286-84d3-364592947202 pre{padding: 0;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-toggleable {background-color: white;}#sk-113ae961-69fd-4286-84d3-364592947202 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-113ae961-69fd-4286-84d3-364592947202 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-113ae961-69fd-4286-84d3-364592947202 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-estimator:hover {background-color: #d4ebff;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-item {z-index: 1;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-parallel-item:only-child::after {width: 0;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-container {display: inline-block;position: relative;}#sk-113ae961-69fd-4286-84d3-364592947202 div.sk-text-repr-fallback {display: none;}</style><div id="sk-113ae961-69fd-4286-84d3-364592947202" class"sk-top-container"><div class="sk-text-repr-fallback"><pre>DecisionTreeRegressor(criterion=&#x27;poisson&#x27;, random_state=0)</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="0a769767-cab6-4cde-9c10-7b8a7d87b93d" type="checkbox" checked><label class="sk-toggleable__label" for="0a769767-cab6-4cde-9c10-7b8a7d87b93d">DecisionTreeRegressor</label><div class="sk-toggleable__content"><pre>DecisionTreeRegressor(criterion='poisson', random_state=0)</pre></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 242-258
+.. GENERATED FROM PYTHON SOURCE LINES 243-259
 
 New documentation improvements
 ------------------------------
@@ -428,7 +428,7 @@ to improve the understanding of machine learning practices:
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.245 seconds)
+   **Total running time of the script:** ( 0 minutes  24.727 seconds)
 
 
 .. _sphx_glr_download_auto_examples_release_highlights_plot_release_highlights_0_24_0.py:

@@ -38,7 +38,7 @@ result the predictions are biased towards the centre of the circle.
 Using a single underlying feature the model learns both the
 x and y coordinate as output.
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-99
+.. GENERATED FROM PYTHON SOURCE LINES 23-98
 
 
 
@@ -53,7 +53,6 @@ x and y coordinate as output.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Tim Head <betatim@gmail.com>
     #
@@ -133,7 +132,7 @@ x and y coordinate as output.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.719 seconds)
+   **Total running time of the script:** ( 0 minutes  0.766 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_random_forest_regression_multioutput.py:

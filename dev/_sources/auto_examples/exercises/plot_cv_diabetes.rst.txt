@@ -27,7 +27,7 @@ A tutorial exercise which uses cross-validation with linear models.
 This exercise is used in the :ref:`cv_estimators_tut` part of the
 :ref:`model_selection_tut` section of the :ref:`stat_learn_tut_index`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-82
+.. GENERATED FROM PYTHON SOURCE LINES 12-81
 
 
 
@@ -42,7 +42,6 @@ This exercise is used in the :ref:`cv_estimators_tut` part of the
  Out:
 
  .. code-block:: none
-
 
     Answer to the bonus question: how much can you trust the selection of alpha?
 
@@ -65,8 +64,6 @@ This exercise is used in the :ref:`cv_estimators_tut` part of the
 
 .. code-block:: default
 
-
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -140,7 +137,7 @@ This exercise is used in the :ref:`cv_estimators_tut` part of the
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.767 seconds)
+   **Total running time of the script:** ( 0 minutes  0.774 seconds)
 
 
 .. _sphx_glr_download_auto_examples_exercises_plot_cv_diabetes.py:

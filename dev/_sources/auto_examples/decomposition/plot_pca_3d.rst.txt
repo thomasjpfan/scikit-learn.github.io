@@ -26,7 +26,7 @@ These figures aid in illustrating how a point cloud
 can be very flat in one direction--which is where PCA
 comes in to choose a direction that is not flat.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-95
+.. GENERATED FROM PYTHON SOURCE LINES 12-94
 
 
 
@@ -54,10 +54,9 @@ comes in to choose a direction that is not flat.
 
  .. code-block:: none
 
-
-    /home/circleci/project/examples/decomposition/plot_pca_3d.py:61: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+    /home/circleci/project/examples/decomposition/plot_pca_3d.py:60: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
       ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=elev, azim=azim)
-    /home/circleci/project/examples/decomposition/plot_pca_3d.py:61: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+    /home/circleci/project/examples/decomposition/plot_pca_3d.py:60: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
       ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=elev, azim=azim)
 
 
@@ -69,7 +68,6 @@ comes in to choose a direction that is not flat.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Gael Varoquaux
     #          Jaques Grobler

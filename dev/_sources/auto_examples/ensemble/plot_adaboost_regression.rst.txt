@@ -30,7 +30,7 @@ detail.
 
 .. [1] H. Drucker, "Improving Regressors using Boosting Techniques", 1997.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-56
+.. GENERATED FROM PYTHON SOURCE LINES 15-55
 
 
 
@@ -45,7 +45,6 @@ detail.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Noel Dawe <noel.dawe@gmail.com>
     #
@@ -90,7 +89,7 @@ detail.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.498 seconds)
+   **Total running time of the script:** ( 0 minutes  0.547 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_adaboost_regression.py:

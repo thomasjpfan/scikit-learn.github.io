@@ -31,7 +31,7 @@ subtle.
 To emphasize the effect here, we particularly weight outliers, making the
 deformation of the decision boundary very visible.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-71
+.. GENERATED FROM PYTHON SOURCE LINES 16-71
 
 
 
@@ -46,7 +46,6 @@ deformation of the decision boundary very visible.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -106,7 +105,7 @@ deformation of the decision boundary very visible.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.058 seconds)
+   **Total running time of the script:** ( 0 minutes  1.113 seconds)
 
 
 .. _sphx_glr_download_auto_examples_svm_plot_weighted_samples.py:

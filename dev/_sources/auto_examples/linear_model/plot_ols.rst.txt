@@ -31,7 +31,7 @@ and the responses predicted by the linear approximation.
 The coefficients, residual sum of squares and the coefficient of
 determination are also calculated.
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-66
+.. GENERATED FROM PYTHON SOURCE LINES 17-64
 
 
 
@@ -47,7 +47,6 @@ determination are also calculated.
 
  .. code-block:: none
 
-
     Coefficients: 
      [938.23786125]
     Mean squared error: 2548.07
@@ -62,12 +61,9 @@ determination are also calculated.
 
 .. code-block:: default
 
-    print(__doc__)
-
 
     # Code source: Jaques Grobler
     # License: BSD 3 clause
-
 
     import matplotlib.pyplot as plt
     import numpy as np

@@ -51,7 +51,7 @@ kernel and its parameters.
    expressive power, be aware that those intuitions don't always generalize to
    more realistic high-dimensional problems.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-123
+.. GENERATED FROM PYTHON SOURCE LINES 36-122
 
 
 
@@ -66,7 +66,6 @@ kernel and its parameters.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -157,7 +156,7 @@ kernel and its parameters.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.315 seconds)
+   **Total running time of the script:** ( 0 minutes  1.306 seconds)
 
 
 .. _sphx_glr_download_auto_examples_svm_plot_iris_svc.py:

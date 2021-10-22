@@ -237,18 +237,19 @@ Options:
                         Maximum number of features (dimensions) to extract
                         from text.
   --verbose             Print progress reports inside k-means algorithm.
+
 Loading 20 newsgroups dataset for categories:
 [&#39;alt.atheism&#39;, &#39;talk.religion.misc&#39;, &#39;comp.graphics&#39;, &#39;sci.space&#39;]
 3387 documents
 4 categories
 
 Extracting features from the training dataset using a sparse vectorizer
-done in 1.108587s
+done in 1.101470s
 n_samples: 3387, n_features: 10000
 
 Clustering sparse data with MiniBatchKMeans(batch_size=1000, init_size=1000, n_clusters=4, n_init=1,
                 verbose=False)
-done in 0.070s
+done in 0.078s
 
 Homogeneity: 0.228
 Completeness: 0.391
@@ -269,6 +270,7 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Peter Prettenhofer &lt;peter.prettenhofer@gmail.com&gt;</span>
 <span class="c1">#         Lars Buitinck</span>
 <span class="c1"># License: BSD 3 clause</span>
+
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="sklearn.datasets.fetch_20newsgroups" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_20newsgroups</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="sklearn.decomposition.TruncatedSVD" class="sphx-glr-backref-module-sklearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TruncatedSVD</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="sklearn.feature_extraction.text.TfidfVectorizer" class="sphx-glr-backref-module-sklearn-feature_extraction-text sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TfidfVectorizer</span></a>
@@ -335,6 +337,7 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 
 <span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 <span class="n">op</span><span class="o">.</span><span class="n">print_help</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">is_interactive</span><span class="p">():</span>
@@ -485,7 +488,7 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
         <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.583 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.599 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-document-clustering-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_document_clustering.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo29.svg" width="150px" /></a>

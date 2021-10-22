@@ -25,7 +25,7 @@ SGD: convex loss functions
 A plot that compares the various convex loss functions supported by
 :class:`~sklearn.linear_model.SGDClassifier` .
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-50
+.. GENERATED FROM PYTHON SOURCE LINES 10-50
 
 
 
@@ -40,7 +40,6 @@ A plot that compares the various convex loss functions supported by
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -85,7 +84,7 @@ A plot that compares the various convex loss functions supported by
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.134 seconds)
+   **Total running time of the script:** ( 0 minutes  0.127 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_sgd_loss_functions.py:

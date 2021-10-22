@@ -41,7 +41,7 @@ choice for the regularization parameter C was not the best.
 In real life applications this parameter is usually chosen
 using :ref:`grid_search`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-71
+.. GENERATED FROM PYTHON SOURCE LINES 26-69
 
 
 
@@ -69,7 +69,6 @@ using :ref:`grid_search`.
 
  .. code-block:: none
 
-
     Confusion matrix, without normalization
     [[13  0  0]
      [ 0 10  6]
@@ -88,8 +87,6 @@ using :ref:`grid_search`.
 
 .. code-block:: default
 
-
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -137,7 +134,7 @@ using :ref:`grid_search`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.269 seconds)
+   **Total running time of the script:** ( 0 minutes  0.273 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_confusion_matrix.py:

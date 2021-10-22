@@ -28,7 +28,7 @@ labeled "red" and the inner circle "blue". Because both label groups
 lie inside their own distinct shape, we can see that the labels
 propagate correctly around the circle.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-96
+.. GENERATED FROM PYTHON SOURCE LINES 13-96
 
 
 
@@ -43,7 +43,6 @@ propagate correctly around the circle.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Clay Woolam <clay@woolam.org>
     #          Andreas Mueller <amueller@ais.uni-bonn.de>
@@ -131,7 +130,7 @@ propagate correctly around the circle.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.211 seconds)
+   **Total running time of the script:** ( 0 minutes  0.249 seconds)
 
 
 .. _sphx_glr_download_auto_examples_semi_supervised_plot_label_propagation_structure.py:

@@ -193,9 +193,7 @@ to download the full example code or to run this example in your browser via Bin
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/ Johnson%E2%80%93Lindenstrauss_lemma">Johnson-Lindenstrauss lemma</a> states that any high dimensional
 dataset can be randomly projected into a lower dimensional Euclidean
 space while controlling the distortion in the pairwise distances.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span></a>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib</span>
@@ -370,13 +368,13 @@ and projected spaces as x and y axis respectively.</p></li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Embedding 500 samples with dim 130107 using various random projections
-Projected 500 samples from 130107 to 300 in 0.417s
+Projected 500 samples from 130107 to 300 in 0.416s
 Random matrix with size: 1.297MB
 Mean distances rate: 1.06 (0.18)
-Projected 500 samples from 130107 to 1000 in 1.398s
+Projected 500 samples from 130107 to 1000 in 1.379s
 Random matrix with size: 4.329MB
 Mean distances rate: 1.03 (0.12)
-Projected 500 samples from 130107 to 10000 in 14.153s
+Projected 500 samples from 130107 to 10000 in 13.822s
 Random matrix with size: 43.268MB
 Mean distances rate: 1.00 (0.03)
 </pre></div>
@@ -398,7 +396,7 @@ for dimensionality reduction in this case.</p>
 <p>On the twenty newsgroups on the other hand the dimensionality can be
 decreased from 56436 down to 10000 while reasonably preserving
 pairwise distances.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  20.458 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  20.154 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-miscellaneous-plot-johnson-lindenstrauss-bound-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/miscellaneous/plot_johnson_lindenstrauss_bound.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo19.svg" width="150px" /></a>

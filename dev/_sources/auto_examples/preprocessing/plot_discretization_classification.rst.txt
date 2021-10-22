@@ -45,7 +45,7 @@ The plots show training points in solid colors and testing points
 semi-transparent. The lower right shows the classification accuracy on the test
 set.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-215
+.. GENERATED FROM PYTHON SOURCE LINES 31-215
 
 
 
@@ -60,7 +60,6 @@ set.
  Out:
 
  .. code-block:: none
-
 
 
     dataset 0
@@ -99,6 +98,7 @@ set.
 
 .. code-block:: default
 
+
     # Code source: Tom Dupré la Tour
     # Adapted from plot_classifier_comparison by Gaël Varoquaux and Andreas Müller
     #
@@ -118,8 +118,6 @@ set.
     from sklearn.ensemble import GradientBoostingClassifier
     from sklearn.utils._testing import ignore_warnings
     from sklearn.exceptions import ConvergenceWarning
-
-    print(__doc__)
 
     h = 0.02  # step size in the mesh
 
@@ -288,7 +286,7 @@ set.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  26.731 seconds)
+   **Total running time of the script:** ( 0 minutes  27.540 seconds)
 
 
 .. _sphx_glr_download_auto_examples_preprocessing_plot_discretization_classification.py:

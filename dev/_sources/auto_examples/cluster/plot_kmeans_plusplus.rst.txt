@@ -27,7 +27,7 @@ function for generating initial seeds for clustering.
 
 K-Means++ is used as the default initialization for :ref:`k_means`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-43
+.. GENERATED FROM PYTHON SOURCE LINES 12-42
 
 
 
@@ -42,7 +42,6 @@ K-Means++ is used as the default initialization for :ref:`k_means`.
 
 .. code-block:: default
 
-    print(__doc__)
 
     from sklearn.cluster import kmeans_plusplus
     from sklearn.datasets import make_blobs

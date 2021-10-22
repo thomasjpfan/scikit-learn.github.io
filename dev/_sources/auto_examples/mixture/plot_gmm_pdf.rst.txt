@@ -26,7 +26,7 @@ Plot the density estimation of a mixture of two Gaussians. Data is
 generated from two Gaussians with different centers and covariance
 matrices.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-52
+.. GENERATED FROM PYTHON SOURCE LINES 11-53
 
 
 
@@ -42,7 +42,7 @@ matrices.
 
  .. code-block:: none
 
-    /home/circleci/project/examples/mixture/plot_gmm_pdf.py:46: MatplotlibDeprecationWarning: The 'extend' parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
+    /home/circleci/project/examples/mixture/plot_gmm_pdf.py:47: MatplotlibDeprecationWarning: The 'extend' parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
       CB = plt.colorbar(CS, shrink=0.8, extend="both")
 
 
@@ -100,7 +100,7 @@ matrices.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.228 seconds)
+   **Total running time of the script:** ( 0 minutes  0.230 seconds)
 
 
 .. _sphx_glr_download_auto_examples_mixture_plot_gmm_pdf.py:

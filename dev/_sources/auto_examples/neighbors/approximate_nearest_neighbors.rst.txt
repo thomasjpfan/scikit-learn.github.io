@@ -54,9 +54,10 @@ Sample output::
     TSNE with KNeighborsTransformer:     64.845 sec
     TSNE with internal NearestNeighbors: 64.984 sec
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-306
+.. GENERATED FROM PYTHON SOURCE LINES 39-305
 
 .. code-block:: default
+
 
     # Author: Tom Dupre la Tour
     #
@@ -88,8 +89,6 @@ Sample output::
     from sklearn.pipeline import make_pipeline
     from sklearn.manifold import TSNE
     from sklearn.utils import shuffle
-
-    print(__doc__)
 
 
     class NMSlibTransformer(TransformerMixin, BaseEstimator):

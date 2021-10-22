@@ -63,7 +63,7 @@ hyperparameter space. The time for predicting is similar; however, generating
 the variance of the predictive distribution of GPR takes considerable longer
 than just predicting the mean.
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-123
+.. GENERATED FROM PYTHON SOURCE LINES 48-122
 
 
 
@@ -79,12 +79,11 @@ than just predicting the mean.
 
  .. code-block:: none
 
-
-    Time for KRR fitting: 3.613
-    Time for GPR fitting: 0.096
-    Time for KRR prediction: 0.020
+    Time for KRR fitting: 3.718
+    Time for GPR fitting: 0.100
+    Time for KRR prediction: 0.032
     Time for GPR prediction: 0.038
-    Time for GPR prediction with standard-deviation: 0.038
+    Time for GPR prediction with standard-deviation: 0.039
 
 
 
@@ -95,11 +94,9 @@ than just predicting the mean.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
     # License: BSD 3 clause
-
 
     import time
 
@@ -175,7 +172,7 @@ than just predicting the mean.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.981 seconds)
+   **Total running time of the script:** ( 0 minutes  4.126 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_compare_gpr_krr.py:

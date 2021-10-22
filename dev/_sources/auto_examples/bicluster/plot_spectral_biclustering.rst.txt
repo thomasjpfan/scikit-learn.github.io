@@ -33,7 +33,7 @@ biclusters found by the algorithm.
 The outer product of the row and column label vectors shows a
 representation of the checkerboard structure.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-67
+.. GENERATED FROM PYTHON SOURCE LINES 18-66
 
 
 
@@ -75,7 +75,6 @@ representation of the checkerboard structure.
 
  .. code-block:: none
 
-
     consensus score: 1.0
 
 
@@ -87,7 +86,6 @@ representation of the checkerboard structure.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Kemal Eren <kemal@kemaleren.com>
     # License: BSD 3 clause
@@ -140,7 +138,7 @@ representation of the checkerboard structure.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.732 seconds)
+   **Total running time of the script:** ( 0 minutes  0.858 seconds)
 
 
 .. _sphx_glr_download_auto_examples_bicluster_plot_spectral_biclustering.py:

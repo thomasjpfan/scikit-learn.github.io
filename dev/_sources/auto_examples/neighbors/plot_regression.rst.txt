@@ -26,7 +26,7 @@ Demonstrate the resolution of a regression problem
 using a k-Nearest Neighbor and the interpolation of the
 target using both barycenter and constant weights.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-50
+.. GENERATED FROM PYTHON SOURCE LINES 11-49
 
 
 
@@ -41,7 +41,6 @@ target using both barycenter and constant weights.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Alexandre Gramfort <alexandre.gramfort@inria.fr>
     #         Fabian Pedregosa <fabian.pedregosa@inria.fr>
@@ -84,7 +83,7 @@ target using both barycenter and constant weights.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.213 seconds)
+   **Total running time of the script:** ( 0 minutes  0.206 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neighbors_plot_regression.py:

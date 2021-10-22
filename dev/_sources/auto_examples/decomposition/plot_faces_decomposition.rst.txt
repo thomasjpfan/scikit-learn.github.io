@@ -27,7 +27,7 @@ matrix decomposition (dimension reduction) methods from the module
 :py:mod:`sklearn.decomposition` (see the documentation chapter
 :ref:`decompositions`) .
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-241
+.. GENERATED FROM PYTHON SOURCE LINES 12-240
 
 
 
@@ -58,7 +58,7 @@ matrix decomposition (dimension reduction) methods from the module
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_004.png
-         :alt: Independent components - FastICA - Train time 0.1s
+         :alt: Independent components - FastICA - Train time 0.2s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_004.png
          :class: sphx-glr-multi-img
 
@@ -139,30 +139,29 @@ matrix decomposition (dimension reduction) methods from the module
 
  .. code-block:: none
 
-
     Dataset consists of 400 faces
     Extracting the top 6 Eigenfaces - PCA using randomized SVD...
-    done in 0.028s
+    done in 0.048s
     Extracting the top 6 Non-negative components - NMF...
-    done in 0.141s
+    done in 0.142s
     Extracting the top 6 Independent components - FastICA...
-    done in 0.141s
+    done in 0.150s
     Extracting the top 6 Sparse comp. - MiniBatchSparsePCA...
-    done in 0.777s
+    done in 0.761s
     Extracting the top 6 MiniBatchDictionaryLearning...
-    done in 0.504s
+    done in 0.476s
     Extracting the top 6 Cluster centers - MiniBatchKMeans...
-    done in 0.068s
+    done in 0.064s
     Extracting the top 6 Factor Analysis components - FA...
-    done in 0.156s
+    done in 0.224s
     Extracting the top 6 Dictionary learning...
-    done in 0.521s
+    done in 0.484s
     Extracting the top 6 Dictionary learning - positive dictionary...
-    done in 0.525s
+    done in 0.452s
     Extracting the top 6 Dictionary learning - positive code...
-    done in 0.176s
+    done in 0.149s
     Extracting the top 6 Dictionary learning - positive dictionary & code...
-    done in 0.222s
+    done in 0.191s
 
 
 
@@ -173,7 +172,6 @@ matrix decomposition (dimension reduction) methods from the module
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Vlad Niculae, Alexandre Gramfort
     # License: BSD 3 clause
@@ -406,7 +404,7 @@ matrix decomposition (dimension reduction) methods from the module
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.634 seconds)
+   **Total running time of the script:** ( 0 minutes  5.455 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_faces_decomposition.py:

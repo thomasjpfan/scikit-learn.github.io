@@ -41,7 +41,7 @@ The automatic estimation from
 Automatic Choice of Dimensionality for PCA. NIPS 2000: 598-604
 by Thomas P. Minka is also compared.
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-144
+.. GENERATED FROM PYTHON SOURCE LINES 26-142
 
 
 
@@ -68,7 +68,6 @@ by Thomas P. Minka is also compared.
  Out:
 
  .. code-block:: none
-
 
     best n_components by PCA CV = 10
     best n_components by FactorAnalysis CV = 10
@@ -99,8 +98,6 @@ by Thomas P. Minka is also compared.
     from sklearn.covariance import ShrunkCovariance, LedoitWolf
     from sklearn.model_selection import cross_val_score
     from sklearn.model_selection import GridSearchCV
-
-    print(__doc__)
 
     # #############################################################################
     # Create the data
@@ -208,7 +205,7 @@ by Thomas P. Minka is also compared.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.379 seconds)
+   **Total running time of the script:** ( 0 minutes  11.696 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_pca_vs_fa_model_selection.py:

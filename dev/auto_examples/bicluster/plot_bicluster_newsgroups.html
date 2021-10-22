@@ -202,9 +202,9 @@ achieve a better V-measure than clusters found by MiniBatchKMeans.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Vectorizing...
 Coclustering...
-Done in 2.15s. V-measure: 0.4431
+Done in 2.35s. V-measure: 0.4431
 MiniBatchKMeans...
-Done in 4.99s. V-measure: 0.3177
+Done in 5.33s. V-measure: 0.3177
 
 Best biclusters:
 ----------------
@@ -243,8 +243,6 @@ words        : turkish, armenia, armenian, armenians, turks, petch, sera, zuma, 
 <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="sklearn.datasets.fetch_20newsgroups" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_20newsgroups</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="sklearn.feature_extraction.text.TfidfVectorizer" class="sphx-glr-backref-module-sklearn-feature_extraction-text sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">TfidfVectorizer</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.metrics.cluster</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.metrics.v_measure_score.html#sklearn.metrics.v_measure_score" title="sklearn.metrics.v_measure_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">v_measure_score</span></a>
-
-<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">number_normalizer</span><span class="p">(</span><span class="n">tokens</span><span class="p">):</span>
@@ -382,7 +380,7 @@ words        : turkish, armenia, armenian, armenians, turks, petch, sera, zuma, 
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;words        : </span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">important_words</span><span class="p">)))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.970 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.851 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-bicluster-plot-bicluster-newsgroups-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/bicluster/plot_bicluster_newsgroups.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo1.svg" width="150px" /></a>

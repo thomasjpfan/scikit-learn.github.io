@@ -79,7 +79,7 @@ Finally, note that parameters of the models have been here handpicked but
 that in practice they need to be adjusted. In the absence of labelled data,
 the problem is completely unsupervised so model selection can be a challenge.
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-189
+.. GENERATED FROM PYTHON SOURCE LINES 64-188
 
 
 
@@ -113,8 +113,6 @@ the problem is completely unsupervised so model selection can be a challenge.
     from sklearn.linear_model import SGDOneClassSVM
     from sklearn.kernel_approximation import Nystroem
     from sklearn.pipeline import make_pipeline
-
-    print(__doc__)
 
     matplotlib.rcParams["contour.negative_linestyle"] = "solid"
 
@@ -224,7 +222,7 @@ the problem is completely unsupervised so model selection can be a challenge.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.454 seconds)
+   **Total running time of the script:** ( 0 minutes  7.075 seconds)
 
 
 .. _sphx_glr_download_auto_examples_miscellaneous_plot_anomaly_comparison.py:

@@ -43,7 +43,7 @@ Also, by evaluating log marginal likelihood (L) of
 these models, we can determine which one is better.
 It can be concluded that the model with larger L is more likely.
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-89
+.. GENERATED FROM PYTHON SOURCE LINES 28-89
 
 
 
@@ -58,7 +58,6 @@ It can be concluded that the model with larger L is more likely.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Yoshihiro Uchida <nimbus1after2a1sun7shower@gmail.com>
 
@@ -124,7 +123,7 @@ It can be concluded that the model with larger L is more likely.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.319 seconds)
+   **Total running time of the script:** ( 0 minutes  0.291 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_bayesian_ridge_curvefit.py:

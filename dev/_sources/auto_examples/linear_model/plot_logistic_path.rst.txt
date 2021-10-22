@@ -42,7 +42,7 @@ We also use warm_start=True which means that the coefficients of the models are
 reused to initialize the next model fit to speed-up the computation of the
 full-path.
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-80
+.. GENERATED FROM PYTHON SOURCE LINES 27-79
 
 
 
@@ -58,9 +58,8 @@ full-path.
 
  .. code-block:: none
 
-
     Computing regularization path ...
-    This took 0.053s
+    This took 0.050s
 
 
 
@@ -71,7 +70,6 @@ full-path.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Alexandre Gramfort <alexandre.gramfort@inria.fr>
     # License: BSD 3 clause
@@ -128,7 +126,7 @@ full-path.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.156 seconds)
+   **Total running time of the script:** ( 0 minutes  0.159 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_logistic_path.py:

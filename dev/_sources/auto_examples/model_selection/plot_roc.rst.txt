@@ -50,11 +50,10 @@ label.
     See also :func:`sklearn.metrics.roc_auc_score`,
              :ref:`sphx_glr_auto_examples_model_selection_plot_roc_crossval.py`
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-85
+.. GENERATED FROM PYTHON SOURCE LINES 35-84
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -111,11 +110,11 @@ label.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-87
+.. GENERATED FROM PYTHON SOURCE LINES 85-86
 
 Plot of a ROC curve for a specific class
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-106
+.. GENERATED FROM PYTHON SOURCE LINES 86-105
 
 .. code-block:: default
 
@@ -150,13 +149,13 @@ Plot of a ROC curve for a specific class
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-110
+.. GENERATED FROM PYTHON SOURCE LINES 106-109
 
 Plot ROC curves for the multiclass problem
 ..........................................
 Compute macro-average ROC curve and ROC area
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-166
+.. GENERATED FROM PYTHON SOURCE LINES 109-165
 
 .. code-block:: default
 
@@ -231,13 +230,13 @@ Compute macro-average ROC curve and ROC area
 
  .. code-block:: none
 
-    /home/circleci/project/examples/model_selection/plot_roc.py:117: DeprecationWarning: scipy.interp is deprecated and will be removed in SciPy 2.0.0, use numpy.interp instead
+    /home/circleci/project/examples/model_selection/plot_roc.py:116: DeprecationWarning: scipy.interp is deprecated and will be removed in SciPy 2.0.0, use numpy.interp instead
       mean_tpr += interp(all_fpr, fpr[i], tpr[i])
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-174
+.. GENERATED FROM PYTHON SOURCE LINES 166-173
 
 Area under ROC for the multiclass problem
 .........................................
@@ -247,7 +246,7 @@ unique pairwise combination of classes. In this section, we calculate the AUC
 using the OvR and OvO schemes. We report a macro average, and a
 prevalence-weighted average.
 
-.. GENERATED FROM PYTHON SOURCE LINES 174-192
+.. GENERATED FROM PYTHON SOURCE LINES 173-191
 
 .. code-block:: default
 
@@ -292,7 +291,7 @@ prevalence-weighted average.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.289 seconds)
+   **Total running time of the script:** ( 0 minutes  0.323 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_roc.py:

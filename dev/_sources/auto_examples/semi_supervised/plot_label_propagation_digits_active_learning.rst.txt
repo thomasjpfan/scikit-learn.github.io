@@ -37,7 +37,7 @@ A plot will appear showing the top 5 most uncertain digits for each iteration
 of training. These may or may not contain mistakes, but we will train the next
 model with their true labels.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-124
+.. GENERATED FROM PYTHON SOURCE LINES 22-124
 
 
 
@@ -52,7 +52,6 @@ model with their true labels.
  Out:
 
  .. code-block:: none
-
 
     Iteration 0 ______________________________________________________________________
     Label Spreading model: 40 labeled & 290 unlabeled (330 total)
@@ -214,7 +213,6 @@ model with their true labels.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Clay Woolam <clay@woolam.org>
     # License: BSD
@@ -321,7 +319,7 @@ model with their true labels.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.743 seconds)
+   **Total running time of the script:** ( 0 minutes  0.801 seconds)
 
 
 .. _sphx_glr_download_auto_examples_semi_supervised_plot_label_propagation_digits_active_learning.py:

@@ -26,7 +26,7 @@ Plot the maximum margin separating hyperplane within a two-class
 separable dataset using a linear Support Vector Machines classifier
 trained using SGD.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-44
+.. GENERATED FROM PYTHON SOURCE LINES 11-44
 
 
 
@@ -41,7 +41,6 @@ trained using SGD.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -79,7 +78,7 @@ trained using SGD.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.102 seconds)
+   **Total running time of the script:** ( 0 minutes  0.111 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_sgd_separating_hyperplane.py:

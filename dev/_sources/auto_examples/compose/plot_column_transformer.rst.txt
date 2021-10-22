@@ -35,7 +35,7 @@ This example demonstrates how to use
 different types of features. The choice of features is not particularly
 helpful, but serves to illustrate the technique.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-36
+.. GENERATED FROM PYTHON SOURCE LINES 20-37
 
 .. code-block:: default
 
@@ -63,7 +63,7 @@ helpful, but serves to illustrate the technique.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-45
+.. GENERATED FROM PYTHON SOURCE LINES 38-46
 
 20 newsgroups dataset
 ---------------------
@@ -74,7 +74,7 @@ into train and test subsets based on messages posted before and after
 a specific date. We will only use posts from 2 categories to speed up running
 time.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-62
+.. GENERATED FROM PYTHON SOURCE LINES 46-63
 
 .. code-block:: default
 
@@ -102,12 +102,12 @@ time.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-65
+.. GENERATED FROM PYTHON SOURCE LINES 64-66
 
 Each feature comprises meta information about that post, such as the subject,
 and the body of the news post.
 
-.. GENERATED FROM PYTHON SOURCE LINES 65-68
+.. GENERATED FROM PYTHON SOURCE LINES 66-69
 
 .. code-block:: default
 
@@ -148,7 +148,7 @@ and the body of the news post.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-78
+.. GENERATED FROM PYTHON SOURCE LINES 70-79
 
 Creating transformers
 ---------------------
@@ -160,7 +160,7 @@ performs the data transformation then use
 :class:`~sklearn.preprocessing.FunctionTransformer` to create a scikit-learn
 transformer.
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-104
+.. GENERATED FROM PYTHON SOURCE LINES 79-105
 
 .. code-block:: default
 
@@ -197,12 +197,12 @@ transformer.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-107
+.. GENERATED FROM PYTHON SOURCE LINES 106-108
 
 We will also create a transformer that extracts the
 length of the text and the number of sentences.
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-115
+.. GENERATED FROM PYTHON SOURCE LINES 108-116
 
 .. code-block:: default
 
@@ -221,7 +221,7 @@ length of the text and the number of sentences.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-125
+.. GENERATED FROM PYTHON SOURCE LINES 117-126
 
 Classification pipeline
 -----------------------
@@ -233,7 +233,7 @@ as well as text length and number of sentences on the body, using
 ``ColumnTransformer``. We combine them, with weights, then train a
 classifier on the combined set of features.
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-180
+.. GENERATED FROM PYTHON SOURCE LINES 126-181
 
 .. code-block:: default
 
@@ -299,12 +299,12 @@ classifier on the combined set of features.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-183
+.. GENERATED FROM PYTHON SOURCE LINES 182-184
 
 Finally, we fit our pipeline on the training data and use it to predict
 topics for ``X_test``. Performance metrics of our pipeline are then printed.
 
-.. GENERATED FROM PYTHON SOURCE LINES 183-187
+.. GENERATED FROM PYTHON SOURCE LINES 184-188
 
 .. code-block:: default
 
@@ -323,8 +323,8 @@ topics for ``X_test``. Performance metrics of our pipeline are then printed.
  .. code-block:: none
 
     [Pipeline] ....... (step 1 of 3) Processing subjectbody, total=   0.0s
-    [Pipeline] ............. (step 2 of 3) Processing union, total=   0.8s
-    [Pipeline] ............... (step 3 of 3) Processing svc, total=   0.1s
+    [Pipeline] ............. (step 2 of 3) Processing union, total=   0.7s
+    [Pipeline] ............... (step 3 of 3) Processing svc, total=   0.0s
     Classification report:
 
                   precision    recall  f1-score   support
@@ -343,7 +343,7 @@ topics for ``X_test``. Performance metrics of our pipeline are then printed.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.438 seconds)
+   **Total running time of the script:** ( 0 minutes  4.373 seconds)
 
 
 .. _sphx_glr_download_auto_examples_compose_plot_column_transformer.py:

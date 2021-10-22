@@ -34,7 +34,7 @@ Note that this accuracy of this l1-penalized linear model is significantly
 below what can be reached by an l2-penalized linear model or a non-linear
 multi-layer perceptron model on this dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-84
+.. GENERATED FROM PYTHON SOURCE LINES 19-83
 
 
 
@@ -50,10 +50,9 @@ multi-layer perceptron model on this dataset.
 
  .. code-block:: none
 
-
     Sparsity with L1 penalty: 79.95%
     Test score with L1 penalty: 0.8322
-    Example run in 36.491 s
+    Example run in 33.952 s
 
 
 
@@ -64,6 +63,10 @@ multi-layer perceptron model on this dataset.
 
 .. code-block:: default
 
+
+    # Author: Arthur Mensch <arthur.mensch@m4x.org>
+    # License: BSD 3 clause
+
     import time
     import matplotlib.pyplot as plt
     import numpy as np
@@ -73,11 +76,6 @@ multi-layer perceptron model on this dataset.
     from sklearn.model_selection import train_test_split
     from sklearn.preprocessing import StandardScaler
     from sklearn.utils import check_random_state
-
-    print(__doc__)
-
-    # Author: Arthur Mensch <arthur.mensch@m4x.org>
-    # License: BSD 3 clause
 
     # Turn down for faster convergence
     t0 = time.time()
@@ -133,7 +131,7 @@ multi-layer perceptron model on this dataset.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  36.592 seconds)
+   **Total running time of the script:** ( 0 minutes  34.056 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_sparse_logistic_regression_mnist.py:

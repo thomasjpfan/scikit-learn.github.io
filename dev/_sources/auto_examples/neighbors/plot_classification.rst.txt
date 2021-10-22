@@ -25,7 +25,7 @@ Nearest Neighbors Classification
 Sample usage of Nearest Neighbors classification.
 It will plot the decision boundaries for each class.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-68
+.. GENERATED FROM PYTHON SOURCE LINES 10-68
 
 
 
@@ -52,7 +52,6 @@ It will plot the decision boundaries for each class.
  Out:
 
  .. code-block:: none
-
 
     /home/circleci/miniconda/envs/testenv/lib/python3.9/site-packages/seaborn/cm.py:1582: UserWarning: Trying to register the cmap 'rocket' which already exists.
       mpl_cm.register_cmap(_name, _cmap)
@@ -88,7 +87,6 @@ It will plot the decision boundaries for each class.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -151,7 +149,7 @@ It will plot the decision boundaries for each class.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.426 seconds)
+   **Total running time of the script:** ( 0 minutes  2.513 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neighbors_plot_classification.py:

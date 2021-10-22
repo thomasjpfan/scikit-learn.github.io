@@ -202,9 +202,6 @@ diabetes patients.</p>
 <p>Authors: <a class="reference external" href="mailto:mks542&#37;&#52;&#48;nyu&#46;edu">Manoj Kumar</a>,
 <a class="reference external" href="https://github.com/maikia">Maria Telenczuk</a>, Nicolas Hug.</p>
 <p>License: BSD 3 clause</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
-</pre></div>
-</div>
 <section id="loading-the-data">
 <h2>Loading the data<a class="headerlink" href="#loading-the-data" title="Permalink to this headline">¶</a></h2>
 <p>We first load the diabetes dataset which is available from within
@@ -305,7 +302,7 @@ above the coefficient of third most important feature.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Features selected by SelectFromModel: [&#39;s1&#39; &#39;s5&#39;]
-Done in 0.057s
+Done in 0.066s
 </pre></div>
 </div>
 </section>
@@ -349,9 +346,9 @@ both approaches here.</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Features selected by forward sequential selection: [&#39;bmi&#39; &#39;s5&#39;]
-Done in 4.219s
+Done in 4.553s
 Features selected by backward sequential selection: [&#39;bmi&#39; &#39;s5&#39;]
-Done in 12.906s
+Done in 13.997s
 </pre></div>
 </div>
 </section>
@@ -375,7 +372,7 @@ estimator to expose a <code class="docutils literal notranslate"><span class="pr
 attribute. The forward SFS is faster than the backward SFS because it only
 needs to perform <code class="docutils literal notranslate"><span class="pre">n_features_to_select</span> <span class="pre">=</span> <span class="pre">2</span></code> iterations, while the backward
 SFS needs to perform <code class="docutils literal notranslate"><span class="pre">n_features</span> <span class="pre">-</span> <span class="pre">n_features_to_select</span> <span class="pre">=</span> <span class="pre">8</span></code> iterations.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  17.372 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  18.806 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-feature-selection-plot-select-from-model-diabetes-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/feature_selection/plot_select_from_model_diabetes.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo12.svg" width="150px" /></a>

@@ -49,7 +49,7 @@ KRR for all sizes of the training set because of the learned sparse
 solution. Note that the degree of sparsity and thus the prediction time depends
 on the parameters epsilon and C of the SVR.
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-199
+.. GENERATED FROM PYTHON SOURCE LINES 34-199
 
 
 
@@ -84,11 +84,11 @@ on the parameters epsilon and C of the SVR.
 
  .. code-block:: none
 
-    SVR complexity and bandwidth selected and model fitted in 0.712 s
-    KRR complexity and bandwidth selected and model fitted in 0.210 s
+    SVR complexity and bandwidth selected and model fitted in 0.717 s
+    KRR complexity and bandwidth selected and model fitted in 0.191 s
     Support vector ratio: 0.320
-    SVR prediction for 100000 inputs in 0.303 s
-    KRR prediction for 100000 inputs in 0.140 s
+    SVR prediction for 100000 inputs in 0.318 s
+    KRR prediction for 100000 inputs in 0.141 s
 
 
 
@@ -102,7 +102,6 @@ on the parameters epsilon and C of the SVR.
 
     # Authors: Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
     # License: BSD 3 clause
-
 
     import time
 
@@ -269,7 +268,7 @@ on the parameters epsilon and C of the SVR.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  18.041 seconds)
+   **Total running time of the script:** ( 0 minutes  18.548 seconds)
 
 
 .. _sphx_glr_download_auto_examples_miscellaneous_plot_kernel_ridge_regression.py:

@@ -43,7 +43,7 @@ decision boundary obtained by BernoulliNB in the transformed
 space with an ExtraTreesClassifier forests learned on the
 original data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-107
+.. GENERATED FROM PYTHON SOURCE LINES 28-109
 
 
 
@@ -59,9 +59,9 @@ original data.
 
  .. code-block:: none
 
-    /home/circleci/project/examples/ensemble/plot_random_forest_embedding.py:86: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
+    /home/circleci/project/examples/ensemble/plot_random_forest_embedding.py:88: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
       ax.pcolormesh(xx, yy, y_grid_pred.reshape(xx.shape))
-    /home/circleci/project/examples/ensemble/plot_random_forest_embedding.py:98: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
+    /home/circleci/project/examples/ensemble/plot_random_forest_embedding.py:100: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
       ax.pcolormesh(xx, yy, y_grid_pred.reshape(xx.shape))
 
 
@@ -72,6 +72,7 @@ original data.
 |
 
 .. code-block:: default
+
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -157,7 +158,7 @@ original data.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.538 seconds)
+   **Total running time of the script:** ( 0 minutes  0.559 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_random_forest_embedding.py:

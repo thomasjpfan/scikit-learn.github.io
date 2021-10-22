@@ -32,7 +32,7 @@ Components Analysis. The latter aims to find a linear transformation that
 maximises the (stochastic) nearest neighbor classification accuracy on the
 training set.
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-102
+.. GENERATED FROM PYTHON SOURCE LINES 17-101
 
 
 
@@ -60,10 +60,9 @@ training set.
 
  .. code-block:: none
 
-
-    /home/circleci/project/examples/neighbors/plot_nca_classification.py:84: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
+    /home/circleci/project/examples/neighbors/plot_nca_classification.py:83: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
       plt.pcolormesh(xx, yy, Z, cmap=cmap_light, alpha=0.8)
-    /home/circleci/project/examples/neighbors/plot_nca_classification.py:84: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
+    /home/circleci/project/examples/neighbors/plot_nca_classification.py:83: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
       plt.pcolormesh(xx, yy, Z, cmap=cmap_light, alpha=0.8)
 
 
@@ -87,8 +86,6 @@ training set.
     from sklearn.neighbors import KNeighborsClassifier, NeighborhoodComponentsAnalysis
     from sklearn.pipeline import Pipeline
 
-
-    print(__doc__)
 
     n_neighbors = 1
 
@@ -165,7 +162,7 @@ training set.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  25.771 seconds)
+   **Total running time of the script:** ( 0 minutes  25.296 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neighbors_plot_nca_classification.py:

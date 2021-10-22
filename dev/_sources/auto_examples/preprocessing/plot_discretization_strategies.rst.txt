@@ -33,7 +33,7 @@ This example presents the different strategies implemented in KBinsDiscretizer:
 
 The plot shows the regions where the discretized encoding is constant.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-107
+.. GENERATED FROM PYTHON SOURCE LINES 19-106
 
 
 
@@ -57,8 +57,6 @@ The plot shows the regions where the discretized encoding is constant.
 
     from sklearn.preprocessing import KBinsDiscretizer
     from sklearn.datasets import make_blobs
-
-    print(__doc__)
 
     strategies = ["uniform", "quantile", "kmeans"]
 
@@ -141,7 +139,7 @@ The plot shows the regions where the discretized encoding is constant.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.077 seconds)
+   **Total running time of the script:** ( 0 minutes  1.067 seconds)
 
 
 .. _sphx_glr_download_auto_examples_preprocessing_plot_discretization_strategies.py:

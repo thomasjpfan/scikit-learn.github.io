@@ -42,7 +42,7 @@ The figure also shows the performance of 3-fold cross validation which
 usually gives a better estimate of the test loss
 but is computationally more demanding.
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-143
+.. GENERATED FROM PYTHON SOURCE LINES 27-143
 
 
 
@@ -58,7 +58,6 @@ but is computationally more demanding.
 
  .. code-block:: none
 
-
     Accuracy: 0.6840
 
 
@@ -70,7 +69,6 @@ but is computationally more demanding.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Peter Prettenhofer <peter.prettenhofer@gmail.com>
     #
@@ -191,7 +189,7 @@ but is computationally more demanding.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.372 seconds)
+   **Total running time of the script:** ( 0 minutes  4.655 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_gradient_boosting_oob.py:

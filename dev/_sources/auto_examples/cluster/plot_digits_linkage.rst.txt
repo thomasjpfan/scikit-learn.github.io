@@ -36,7 +36,7 @@ that ends up with a couple of singleton clusters, while in the case
 of single linkage we get a single central cluster with all other clusters
 being drawn from noise points around the fringes.
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-97
+.. GENERATED FROM PYTHON SOURCE LINES 21-97
 
 
 
@@ -78,13 +78,12 @@ being drawn from noise points around the fringes.
 
  .. code-block:: none
 
-
     Computing embedding
     Done.
-    ward :  0.42s
-    average :       0.41s
-    complete :      0.40s
-    single :        0.10s
+    ward :  0.49s
+    average :       0.51s
+    complete :      0.48s
+    single :        0.12s
 
 
 
@@ -99,7 +98,6 @@ being drawn from noise points around the fringes.
     # Authors: Gael Varoquaux
     # License: BSD 3 clause (C) INRIA 2014
 
-    print(__doc__)
     from time import time
 
     import numpy as np
@@ -176,7 +174,7 @@ being drawn from noise points around the fringes.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  31.028 seconds)
+   **Total running time of the script:** ( 0 minutes  36.956 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_digits_linkage.py:

@@ -46,7 +46,7 @@ On the contrary the classical finite mixture model with a Dirichlet
 distribution prior will favor more uniformly weighted components and therefore
 tends to divide natural clusters into unnecessary sub-components.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-165
+.. GENERATED FROM PYTHON SOURCE LINES 31-165
 
 
 
@@ -73,6 +73,7 @@ tends to divide natural clusters into unnecessary sub-components.
 
 .. code-block:: default
 
+
     # Author: Thierry Guillemot <thierry.guillemot.work@gmail.com>
     # License: BSD 3 clause
 
@@ -82,8 +83,6 @@ tends to divide natural clusters into unnecessary sub-components.
     import matplotlib.gridspec as gridspec
 
     from sklearn.mixture import BayesianGaussianMixture
-
-    print(__doc__)
 
 
     def plot_ellipses(ax, weights, means, covars):
@@ -212,7 +211,7 @@ tends to divide natural clusters into unnecessary sub-components.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.747 seconds)
+   **Total running time of the script:** ( 0 minutes  9.009 seconds)
 
 
 .. _sphx_glr_download_auto_examples_mixture_plot_concentration_prior.py:

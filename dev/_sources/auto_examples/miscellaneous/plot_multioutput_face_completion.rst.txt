@@ -29,7 +29,7 @@ The first column of images shows true faces. The next columns illustrate
 how extremely randomized trees, k nearest neighbors, linear
 regression and ridge regression complete the lower half of those faces.
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-99
+.. GENERATED FROM PYTHON SOURCE LINES 14-98
 
 
 
@@ -44,7 +44,6 @@ regression and ridge regression complete the lower half of those faces.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -133,7 +132,7 @@ regression and ridge regression complete the lower half of those faces.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.518 seconds)
+   **Total running time of the script:** ( 0 minutes  2.748 seconds)
 
 
 .. _sphx_glr_download_auto_examples_miscellaneous_plot_multioutput_face_completion.py:

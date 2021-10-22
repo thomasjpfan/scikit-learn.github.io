@@ -36,7 +36,7 @@ palette.
 For comparison, a quantized image using a random codebook (colors picked up
 randomly) is also shown.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-95
+.. GENERATED FROM PYTHON SOURCE LINES 22-96
 
 
 
@@ -71,13 +71,12 @@ randomly) is also shown.
 
  .. code-block:: none
 
-
     Fitting model on a small sub-sample of the data
-    done in 0.218s.
+    done in 0.266s.
     Predicting color indices on the full image (k-means)
     done in 0.057s.
     Predicting color indices on the full image (random)
-    done in 0.179s.
+    done in 0.172s.
 
 
 
@@ -88,13 +87,13 @@ randomly) is also shown.
 
 .. code-block:: default
 
+
     # Authors: Robert Layton <robertlayton@gmail.com>
     #          Olivier Grisel <olivier.grisel@ensta.org>
     #          Mathieu Blondel <mathieu@mblondel.org>
     #
     # License: BSD 3 clause
 
-    print(__doc__)
     import numpy as np
     import matplotlib.pyplot as plt
     from sklearn.cluster import KMeans
@@ -166,7 +165,7 @@ randomly) is also shown.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.937 seconds)
+   **Total running time of the script:** ( 0 minutes  1.007 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_color_quantization.py:

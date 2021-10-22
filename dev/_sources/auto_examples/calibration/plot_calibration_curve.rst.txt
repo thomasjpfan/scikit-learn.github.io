@@ -29,35 +29,25 @@ visualize how well calibrated the predicted probabilities are using calibration
 curves, also known as reliability diagrams. Calibration of an uncalibrated
 classifier will also be demonstrated.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-14
+.. GENERATED FROM PYTHON SOURCE LINES 16-28
+
+Author: Alexandre Gramfort <alexandre.gramfort@telecom-paristech.fr>
+        Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
+License: BSD 3 clause.
+
+Dataset
+-------
+
+We will use a synthetic binary classification dataset with 100,000 samples
+and 20 features. Of the 20 features, only 2 are informative, 10 are
+redundant (random combinations of the informative features) and the
+remaining 8 are uninformative (random numbers). Of the 100,000 samples, 1,000
+will be used for model fitting and the rest for testing.
+
+.. GENERATED FROM PYTHON SOURCE LINES 28-40
 
 .. code-block:: default
 
-    print(__doc__)
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 15-40
-
-.. code-block:: default
-
-
-    # Author: Alexandre Gramfort <alexandre.gramfort@telecom-paristech.fr>
-    #         Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
-    # License: BSD 3 clause.
-    #
-    # Dataset
-    # -------
-    #
-    # We will use a synthetic binary classification dataset with 100,000 samples
-    # and 20 features. Of the 20 features, only 2 are informative, 10 are
-    # redundant (random combinations of the informative features) and the
-    # remaining 8 are uninformative (random numbers). Of the 100,000 samples, 1,000
-    # will be used for model fitting and the rest for testing.
 
     from sklearn.datasets import make_classification
     from sklearn.model_selection import train_test_split
@@ -594,10 +584,10 @@ As before, we show the :ref:`brier_score_loss`, :ref:`log_loss`,
           <th>SVC + Sigmoid</th>
           <td>0.098760</td>
           <td>0.321306</td>
-          <td>0.873706</td>
-          <td>0.848743</td>
-          <td>0.861044</td>
-          <td>0.862967</td>
+          <td>0.873703</td>
+          <td>0.848723</td>
+          <td>0.861032</td>
+          <td>0.862957</td>
         </tr>
       </tbody>
     </table>
@@ -632,7 +622,7 @@ References
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.982 seconds)
+   **Total running time of the script:** ( 0 minutes  4.294 seconds)
 
 
 .. _sphx_glr_download_auto_examples_calibration_plot_calibration_curve.py:

@@ -28,7 +28,7 @@ dataset (which will be automatically downloaded).
 You can adjust the number of categories by giving their names to the dataset
 loader or setting them to `None` to get all 20 of them.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-103
+.. GENERATED FROM PYTHON SOURCE LINES 13-105
 
 
 
@@ -79,6 +79,7 @@ loader or setting them to `None` to get all 20 of them.
 |
 
 .. code-block:: default
+
 
     import os
 
@@ -175,7 +176,7 @@ loader or setting them to `None` to get all 20 of them.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  41.683 seconds)
+   **Total running time of the script:** ( 0 minutes  44.559 seconds)
 
 
 .. _sphx_glr_download_auto_examples_semi_supervised_plot_semi_supervised_newsgroups.py:

@@ -25,9 +25,10 @@ This example compares the parameter search performed by
 :class:`~sklearn.model_selection.HalvingGridSearchCV` and
 :class:`~sklearn.model_selection.GridSearchCV`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-25
+.. GENERATED FROM PYTHON SOURCE LINES 10-24
 
 .. code-block:: default
+
 
     from time import time
 
@@ -42,7 +43,6 @@ This example compares the parameter search performed by
     from sklearn.model_selection import HalvingGridSearchCV
 
 
-    print(__doc__)
 
 
 
@@ -50,15 +50,14 @@ This example compares the parameter search performed by
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 26-30
+.. GENERATED FROM PYTHON SOURCE LINES 25-29
 
 We first define the parameter space for an :class:`~sklearn.svm.SVC`
 estimator, and compute the time required to train a
 :class:`~sklearn.model_selection.HalvingGridSearchCV` instance, as well as a
 :class:`~sklearn.model_selection.GridSearchCV` instance.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-52
+.. GENERATED FROM PYTHON SOURCE LINES 29-51
 
 .. code-block:: default
 
@@ -91,11 +90,11 @@ estimator, and compute the time required to train a
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-54
+.. GENERATED FROM PYTHON SOURCE LINES 52-53
 
 We now plot heatmaps for both search estimators.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-120
+.. GENERATED FROM PYTHON SOURCE LINES 53-119
 
 .. code-block:: default
 
@@ -169,7 +168,7 @@ We now plot heatmaps for both search estimators.
 
 
 .. image-sg:: /auto_examples/model_selection/images/sphx_glr_plot_successive_halving_heatmap_001.png
-   :alt: Successive Halving time = 1.818s, GridSearch time = 11.908s
+   :alt: Successive Halving time = 1.822s, GridSearch time = 12.013s
    :srcset: /auto_examples/model_selection/images/sphx_glr_plot_successive_halving_heatmap_001.png
    :class: sphx-glr-single-img
 
@@ -177,7 +176,7 @@ We now plot heatmaps for both search estimators.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-131
+.. GENERATED FROM PYTHON SOURCE LINES 120-130
 
 The heatmaps show the mean test score of the parameter combinations for an
 :class:`~sklearn.svm.SVC` instance. The
@@ -193,7 +192,7 @@ class is able to find parameter combinations that are just as accurate as
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.019 seconds)
+   **Total running time of the script:** ( 0 minutes  14.098 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_successive_halving_heatmap.py:

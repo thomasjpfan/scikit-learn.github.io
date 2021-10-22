@@ -31,7 +31,7 @@ however.
 Note that those results can be highly dependent on the value of
 ``learning_rate_init``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-143
+.. GENERATED FROM PYTHON SOURCE LINES 16-142
 
 
 
@@ -46,7 +46,6 @@ Note that those results can be highly dependent on the value of
  Out:
 
  .. code-block:: none
-
 
 
     learning on dataset iris
@@ -150,8 +149,6 @@ Note that those results can be highly dependent on the value of
 
 .. code-block:: default
 
-
-    print(__doc__)
 
     import warnings
 
@@ -282,7 +279,7 @@ Note that those results can be highly dependent on the value of
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.437 seconds)
+   **Total running time of the script:** ( 0 minutes  6.463 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neural_networks_plot_mlp_training_curves.py:

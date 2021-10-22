@@ -40,7 +40,7 @@ initialize a soft-voting :class:`~ensemble.VotingClassifier` with weights `[2,
 as much as the weights of the :class:`~neighbors.KNeighborsClassifier`
 classifier when the averaged probability is calculated.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-79
+.. GENERATED FROM PYTHON SOURCE LINES 25-78
 
 
 
@@ -55,7 +55,6 @@ classifier when the averaged probability is calculated.
 
 .. code-block:: default
 
-    print(__doc__)
 
     from itertools import product
 
@@ -113,7 +112,7 @@ classifier when the averaged probability is calculated.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.573 seconds)
+   **Total running time of the script:** ( 0 minutes  0.524 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_voting_decision_regions.py:

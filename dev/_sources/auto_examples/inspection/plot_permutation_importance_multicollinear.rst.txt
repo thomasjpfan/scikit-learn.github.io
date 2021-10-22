@@ -35,11 +35,11 @@ picking a threshold, and keeping a single feature from each cluster.
     See also
     :ref:`sphx_glr_auto_examples_inspection_plot_permutation_importance.py`
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-33
+.. GENERATED FROM PYTHON SOURCE LINES 20-34
 
 .. code-block:: default
 
-    print(__doc__)
+
     from collections import defaultdict
 
     import matplotlib.pyplot as plt
@@ -60,14 +60,14 @@ picking a threshold, and keeping a single feature from each cluster.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-38
+.. GENERATED FROM PYTHON SOURCE LINES 35-39
 
 Random Forest Feature Importance on Breast Cancer Data
 ------------------------------------------------------
 First, we train a random forest on the breast cancer dataset and evaluate
 its accuracy on a test set:
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-46
+.. GENERATED FROM PYTHON SOURCE LINES 39-47
 
 .. code-block:: default
 
@@ -94,7 +94,7 @@ its accuracy on a test set:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-54
+.. GENERATED FROM PYTHON SOURCE LINES 48-55
 
 Next, we plot the tree based feature importance and the permutation
 importance. The permutation importance plot shows that permuting a feature
@@ -104,7 +104,7 @@ computed above: some feature must be important. The permutation importance
 is calculated on the training set to show how much the model relies on each
 feature during training.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-73
+.. GENERATED FROM PYTHON SOURCE LINES 55-74
 
 .. code-block:: default
 
@@ -139,7 +139,7 @@ feature during training.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-82
+.. GENERATED FROM PYTHON SOURCE LINES 75-83
 
 Handling Multicollinear Features
 --------------------------------
@@ -150,7 +150,7 @@ performing hierarchical clustering on the Spearman rank-order correlations,
 picking a threshold, and keeping a single feature from each cluster. First,
 we plot a heatmap of the correlated features:
 
-.. GENERATED FROM PYTHON SOURCE LINES 82-106
+.. GENERATED FROM PYTHON SOURCE LINES 83-107
 
 .. code-block:: default
 
@@ -190,7 +190,7 @@ we plot a heatmap of the correlated features:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-112
+.. GENERATED FROM PYTHON SOURCE LINES 108-113
 
 Next, we manually pick a threshold by visual inspection of the dendrogram
 to group our features into clusters and choose a feature from each cluster to
@@ -198,7 +198,7 @@ keep, select those features from our dataset, and train a new random forest.
 The test accuracy of the new random forest did not change much compared to
 the random forest trained on the complete dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 112-128
+.. GENERATED FROM PYTHON SOURCE LINES 113-129
 
 .. code-block:: default
 
@@ -236,7 +236,7 @@ the random forest trained on the complete dataset.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.007 seconds)
+   **Total running time of the script:** ( 0 minutes  6.160 seconds)
 
 
 .. _sphx_glr_download_auto_examples_inspection_plot_permutation_importance_multicollinear.py:

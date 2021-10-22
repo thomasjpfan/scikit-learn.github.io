@@ -58,7 +58,7 @@ Here is a sample output of a run on a quad-core machine::
       vect__max_df: 0.75
       vect__max_features: 50000
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-129
+.. GENERATED FROM PYTHON SOURCE LINES 43-127
 
 .. code-block:: default
 
@@ -77,8 +77,6 @@ Here is a sample output of a run on a quad-core machine::
     from sklearn.linear_model import SGDClassifier
     from sklearn.model_selection import GridSearchCV
     from sklearn.pipeline import Pipeline
-
-    print(__doc__)
 
     # Display progress logs on stdout
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")

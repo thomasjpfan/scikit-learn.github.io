@@ -39,9 +39,9 @@ brittle single linkage. This effect is more pronounced for very sparse graphs
 (try decreasing the number of neighbors in kneighbors_graph) and with
 complete linkage. In particular, having a very small number of neighbors in
 the graph, imposes a geometry that is close to that of single linkage,
-which is well known to have this percolation instability. 
+which is well known to have this percolation instability.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-81
+.. GENERATED FROM PYTHON SOURCE LINES 26-84
 
 
 
@@ -51,28 +51,28 @@ which is well known to have this percolation instability.
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_001.png
-         :alt: n_cluster=30, connectivity=False, linkage=average (time 0.05s), linkage=complete (time 0.04s), linkage=ward (time 0.06s), linkage=single (time 0.01s)
+         :alt: n_cluster=30, connectivity=False, linkage=average (time 0.06s), linkage=complete (time 0.06s), linkage=ward (time 0.07s), linkage=single (time 0.02s)
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_001.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_002.png
-         :alt: n_cluster=3, connectivity=False, linkage=average (time 0.06s), linkage=complete (time 0.05s), linkage=ward (time 0.04s), linkage=single (time 0.02s)
+         :alt: n_cluster=3, connectivity=False, linkage=average (time 0.06s), linkage=complete (time 0.07s), linkage=ward (time 0.07s), linkage=single (time 0.02s)
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_002.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_003.png
-         :alt: n_cluster=30, connectivity=True, linkage=average (time 0.13s), linkage=complete (time 0.15s), linkage=ward (time 0.20s), linkage=single (time 0.03s)
+         :alt: n_cluster=30, connectivity=True, linkage=average (time 0.17s), linkage=complete (time 0.18s), linkage=ward (time 0.25s), linkage=single (time 0.03s)
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_003.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_004.png
-         :alt: n_cluster=3, connectivity=True, linkage=average (time 0.14s), linkage=complete (time 0.14s), linkage=ward (time 0.28s), linkage=single (time 0.02s)
+         :alt: n_cluster=3, connectivity=True, linkage=average (time 0.17s), linkage=complete (time 0.17s), linkage=ward (time 0.34s), linkage=single (time 0.03s)
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_004.png
          :class: sphx-glr-multi-img
 
@@ -81,6 +81,7 @@ which is well known to have this percolation instability.
 
 
 .. code-block:: default
+
 
     # Authors: Gael Varoquaux, Nelle Varoquaux
     # License: BSD 3 clause
@@ -143,7 +144,7 @@ which is well known to have this percolation instability.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.496 seconds)
+   **Total running time of the script:** ( 0 minutes  3.032 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_agglomerative_clustering.py:

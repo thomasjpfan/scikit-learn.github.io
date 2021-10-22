@@ -25,12 +25,10 @@ Recognizing hand-written digits
 This example shows how scikit-learn can be used to recognize images of
 hand-written digits, from 0-9.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-22
+.. GENERATED FROM PYTHON SOURCE LINES 10-21
 
 .. code-block:: default
 
-
-    print(__doc__)
 
     # Author: Gael Varoquaux <gael dot varoquaux at normalesup dot org>
     # License: BSD 3 clause
@@ -49,7 +47,7 @@ hand-written digits, from 0-9.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-35
+.. GENERATED FROM PYTHON SOURCE LINES 22-34
 
 Digits dataset
 --------------
@@ -64,7 +62,7 @@ plots below.
 Note: if we were working from image files (e.g., 'png' files), we would load
 them using :func:`matplotlib.pyplot.imread`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-44
+.. GENERATED FROM PYTHON SOURCE LINES 34-43
 
 .. code-block:: default
 
@@ -89,7 +87,7 @@ them using :func:`matplotlib.pyplot.imread`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-58
+.. GENERATED FROM PYTHON SOURCE LINES 44-57
 
 Classification
 --------------
@@ -105,7 +103,7 @@ vector classifier on the train samples. The fitted classifier can
 subsequently be used to predict the value of the digit for the samples
 in the test subset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-77
+.. GENERATED FROM PYTHON SOURCE LINES 57-76
 
 .. code-block:: default
 
@@ -135,12 +133,12 @@ in the test subset.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 78-80
+.. GENERATED FROM PYTHON SOURCE LINES 77-79
 
 Below we visualize the first 4 test samples and show their predicted
 digit value in the title.
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-88
+.. GENERATED FROM PYTHON SOURCE LINES 79-87
 
 .. code-block:: default
 
@@ -164,12 +162,12 @@ digit value in the title.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-91
+.. GENERATED FROM PYTHON SOURCE LINES 88-90
 
 :func:`~sklearn.metrics.classification_report` builds a text report showing
 the main classification metrics.
 
-.. GENERATED FROM PYTHON SOURCE LINES 91-97
+.. GENERATED FROM PYTHON SOURCE LINES 90-96
 
 .. code-block:: default
 
@@ -212,12 +210,12 @@ the main classification metrics.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-100
+.. GENERATED FROM PYTHON SOURCE LINES 97-99
 
 We can also plot a :ref:`confusion matrix <confusion_matrix>` of the
 true digit values and the predicted digit values.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-106
+.. GENERATED FROM PYTHON SOURCE LINES 99-105
 
 .. code-block:: default
 
@@ -260,7 +258,7 @@ true digit values and the predicted digit values.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.698 seconds)
+   **Total running time of the script:** ( 0 minutes  0.712 seconds)
 
 
 .. _sphx_glr_download_auto_examples_classification_plot_digits_classification.py:

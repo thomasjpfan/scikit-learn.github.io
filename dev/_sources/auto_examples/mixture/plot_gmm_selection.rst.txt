@@ -33,7 +33,7 @@ Unlike Bayesian procedures, such inferences are prior-free.
 In that case, the model with 2 components and full covariance
 (which corresponds to the true generative model) is selected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-112
+.. GENERATED FROM PYTHON SOURCE LINES 18-111
 
 
 
@@ -57,8 +57,6 @@ In that case, the model with 2 components and full covariance
     import matplotlib as mpl
 
     from sklearn import mixture
-
-    print(__doc__)
 
     # Number of samples per component
     n_samples = 500
@@ -147,7 +145,7 @@ In that case, the model with 2 components and full covariance
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.365 seconds)
+   **Total running time of the script:** ( 0 minutes  0.377 seconds)
 
 
 .. _sphx_glr_download_auto_examples_mixture_plot_gmm_selection.py:

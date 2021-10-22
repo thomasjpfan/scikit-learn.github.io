@@ -38,7 +38,7 @@ Applying univariate feature selection before the SVM
 increases the SVM weight attributed to the significant features, and will
 thus improve classification.
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-106
+.. GENERATED FROM PYTHON SOURCE LINES 23-106
 
 
 
@@ -54,7 +54,6 @@ thus improve classification.
 
  .. code-block:: none
 
-
     Classification accuracy without selecting features: 0.789
     Classification accuracy after univariate feature selection: 0.868
 
@@ -67,7 +66,6 @@ thus improve classification.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -155,7 +153,7 @@ thus improve classification.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.140 seconds)
+   **Total running time of the script:** ( 0 minutes  0.152 seconds)
 
 
 .. _sphx_glr_download_auto_examples_feature_selection_plot_feature_selection.py:

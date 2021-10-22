@@ -55,7 +55,7 @@ models increase the error.
 Please note that in this example the data is non-noisy, hence
 it is possible to extract the exact coefficients.
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-91
+.. GENERATED FROM PYTHON SOURCE LINES 40-90
 
 
 
@@ -72,8 +72,6 @@ it is possible to extract the exact coefficients.
 
 
     # Author: Kornel Kielczewski -- <kornel.k@plusnet.pl>
-
-    print(__doc__)
 
     import matplotlib.pyplot as plt
     import numpy as np
@@ -126,7 +124,7 @@ it is possible to extract the exact coefficients.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.414 seconds)
+   **Total running time of the script:** ( 0 minutes  0.456 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_ridge_coeffs.py:

@@ -30,12 +30,10 @@ space while controlling the distortion in the pairwise distances.
 .. _`Johnson-Lindenstrauss lemma`: https://en.wikipedia.org/wiki/\
     Johnson%E2%80%93Lindenstrauss_lemma
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-35
+.. GENERATED FROM PYTHON SOURCE LINES 15-34
 
 .. code-block:: default
 
-
-    print(__doc__)
 
     import sys
     from time import time
@@ -62,7 +60,7 @@ space while controlling the distortion in the pairwise distances.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-59
+.. GENERATED FROM PYTHON SOURCE LINES 35-58
 
 Theoretical bounds
 ==================
@@ -88,7 +86,7 @@ The first plot shows that with an increasing number of samples ``n_samples``,
 the minimal number of dimensions ``n_components`` increased logarithmically
 in order to guarantee an ``eps``-embedding.
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-79
+.. GENERATED FROM PYTHON SOURCE LINES 58-78
 
 .. code-block:: default
 
@@ -124,13 +122,13 @@ in order to guarantee an ``eps``-embedding.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 80-83
+.. GENERATED FROM PYTHON SOURCE LINES 79-82
 
 The second plot shows that an increase of the admissible
 distortion ``eps`` allows to reduce drastically the minimal number of
 dimensions ``n_components`` for a given number of samples ``n_samples``
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-102
+.. GENERATED FROM PYTHON SOURCE LINES 82-101
 
 .. code-block:: default
 
@@ -165,7 +163,7 @@ dimensions ``n_components`` for a given number of samples ``n_samples``
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-121
+.. GENERATED FROM PYTHON SOURCE LINES 102-120
 
 Empirical validation
 ====================
@@ -186,7 +184,7 @@ The default dataset is the 20 newsgroups dataset. To run the example on the
 digits dataset, pass the ``--use-digits-dataset`` command line argument to
 this script.
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-127
+.. GENERATED FROM PYTHON SOURCE LINES 120-126
 
 .. code-block:: default
 
@@ -203,7 +201,7 @@ this script.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-134
+.. GENERATED FROM PYTHON SOURCE LINES 127-133
 
 For each value of ``n_components``, we plot:
 
@@ -212,7 +210,7 @@ For each value of ``n_components``, we plot:
 
 - 1D histogram of the ratio of those distances (projected / original).
 
-.. GENERATED FROM PYTHON SOURCE LINES 134-194
+.. GENERATED FROM PYTHON SOURCE LINES 133-193
 
 .. code-block:: default
 
@@ -332,20 +330,20 @@ For each value of ``n_components``, we plot:
  .. code-block:: none
 
     Embedding 500 samples with dim 130107 using various random projections
-    Projected 500 samples from 130107 to 300 in 0.417s
+    Projected 500 samples from 130107 to 300 in 0.416s
     Random matrix with size: 1.297MB
     Mean distances rate: 1.06 (0.18)
-    Projected 500 samples from 130107 to 1000 in 1.398s
+    Projected 500 samples from 130107 to 1000 in 1.379s
     Random matrix with size: 4.329MB
     Mean distances rate: 1.03 (0.12)
-    Projected 500 samples from 130107 to 10000 in 14.153s
+    Projected 500 samples from 130107 to 10000 in 13.822s
     Random matrix with size: 43.268MB
     Mean distances rate: 1.00 (0.03)
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 195-200
+.. GENERATED FROM PYTHON SOURCE LINES 194-199
 
 We can see that for low values of ``n_components`` the distribution is wide
 with many distorted pairs and a skewed distribution (due to the hard
@@ -353,7 +351,7 @@ limit of zero ratio on the left as distances are always positives)
 while for larger values of n_components the distortion is controlled
 and the distances are well preserved by the random projection.
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-217
+.. GENERATED FROM PYTHON SOURCE LINES 202-216
 
 Remarks
 =======
@@ -373,7 +371,7 @@ pairwise distances.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  20.458 seconds)
+   **Total running time of the script:** ( 0 minutes  20.154 seconds)
 
 
 .. _sphx_glr_download_auto_examples_miscellaneous_plot_johnson_lindenstrauss_bound.py:

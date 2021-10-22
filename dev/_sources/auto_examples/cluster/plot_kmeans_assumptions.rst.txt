@@ -28,7 +28,7 @@ input data does not conform to some implicit assumption that k-means makes and
 undesirable clusters are produced as a result. In the last plot, k-means
 returns intuitive clusters despite unevenly sized blobs.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-64
+.. GENERATED FROM PYTHON SOURCE LINES 13-64
 
 
 
@@ -43,7 +43,6 @@ returns intuitive clusters despite unevenly sized blobs.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Phil Roth <mr.phil.roth@gmail.com>
     # License: BSD 3 clause
@@ -99,7 +98,7 @@ returns intuitive clusters despite unevenly sized blobs.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.533 seconds)
+   **Total running time of the script:** ( 0 minutes  0.626 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_kmeans_assumptions.py:

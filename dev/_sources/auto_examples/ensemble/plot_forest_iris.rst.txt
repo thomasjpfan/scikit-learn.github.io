@@ -59,7 +59,7 @@ It is worth noting that RandomForests and ExtraTrees can be fitted in parallel
 on many cores as each tree is built independently of the others. AdaBoost's
 samples are built sequentially and so do not use multiple cores.
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-174
+.. GENERATED FROM PYTHON SOURCE LINES 44-174
 
 
 
@@ -74,7 +74,6 @@ samples are built sequentially and so do not use multiple cores.
  Out:
 
  .. code-block:: none
-
 
     DecisionTree with features [0, 1] has a score of 9.266666666666666e-01
     RandomForest with 30 estimators with features [0, 1] has a score of 0.9266666666666666
@@ -98,7 +97,6 @@ samples are built sequentially and so do not use multiple cores.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -233,7 +231,7 @@ samples are built sequentially and so do not use multiple cores.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.989 seconds)
+   **Total running time of the script:** ( 0 minutes  9.834 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_forest_iris.py:

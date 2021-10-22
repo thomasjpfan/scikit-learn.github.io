@@ -66,7 +66,7 @@ Note: as k-means is optimizing a non-convex objective function, it will likely
 end up in a local optimum. Several runs with independent random init might be
 necessary to get a good convergence.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-269
+.. GENERATED FROM PYTHON SOURCE LINES 51-271
 
 
 
@@ -90,18 +90,19 @@ necessary to get a good convergence.
                             Maximum number of features (dimensions) to extract
                             from text.
       --verbose             Print progress reports inside k-means algorithm.
+
     Loading 20 newsgroups dataset for categories:
     ['alt.atheism', 'talk.religion.misc', 'comp.graphics', 'sci.space']
     3387 documents
     4 categories
 
     Extracting features from the training dataset using a sparse vectorizer
-    done in 1.108587s
+    done in 1.101470s
     n_samples: 3387, n_features: 10000
 
     Clustering sparse data with MiniBatchKMeans(batch_size=1000, init_size=1000, n_clusters=4, n_init=1,
                     verbose=False)
-    done in 0.070s
+    done in 0.078s
 
     Homogeneity: 0.228
     Completeness: 0.391
@@ -128,6 +129,7 @@ necessary to get a good convergence.
     # Author: Peter Prettenhofer <peter.prettenhofer@gmail.com>
     #         Lars Buitinck
     # License: BSD 3 clause
+
     from sklearn.datasets import fetch_20newsgroups
     from sklearn.decomposition import TruncatedSVD
     from sklearn.feature_extraction.text import TfidfVectorizer
@@ -194,6 +196,7 @@ necessary to get a good convergence.
 
     print(__doc__)
     op.print_help()
+    print()
 
 
     def is_interactive():
@@ -346,7 +349,7 @@ necessary to get a good convergence.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.583 seconds)
+   **Total running time of the script:** ( 0 minutes  1.599 seconds)
 
 
 .. _sphx_glr_download_auto_examples_text_plot_document_clustering.py:

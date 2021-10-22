@@ -51,7 +51,7 @@ This is not easily possible for the case of the kernelized SVM.
 Python package and dataset imports, load dataset
 ---------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-57
+.. GENERATED FROM PYTHON SOURCE LINES 35-55
 
 .. code-block:: default
 
@@ -60,8 +60,6 @@ Python package and dataset imports, load dataset
     # Author: Gael Varoquaux <gael dot varoquaux at normalesup dot org>
     #         Andreas Mueller <amueller@ais.uni-bonn.de>
     # License: BSD 3 clause
-
-    print(__doc__)
 
     # Standard scientific Python imports
     import matplotlib.pyplot as plt
@@ -84,14 +82,14 @@ Python package and dataset imports, load dataset
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-62
+.. GENERATED FROM PYTHON SOURCE LINES 56-60
 
 Timing and accuracy plots
 --------------------------------------------------
 To apply an classifier on this data, we need to flatten the image, to
 turn the data in a (samples, feature) matrix:
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-179
+.. GENERATED FROM PYTHON SOURCE LINES 60-177
 
 .. code-block:: default
 
@@ -224,7 +222,7 @@ turn the data in a (samples, feature) matrix:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 180-193
+.. GENERATED FROM PYTHON SOURCE LINES 178-191
 
 Decision Surfaces of RBF Kernel SVM and Linear SVM
 --------------------------------------------------------
@@ -240,7 +238,7 @@ that the first two principal components span.
 The usage of :class:`RBFSampler` and :class:`Nystroem` is described in detail
 in :ref:`kernel_approximation`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 193-239
+.. GENERATED FROM PYTHON SOURCE LINES 191-237
 
 .. code-block:: default
 
@@ -305,7 +303,7 @@ in :ref:`kernel_approximation`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.768 seconds)
+   **Total running time of the script:** ( 0 minutes  2.193 seconds)
 
 
 .. _sphx_glr_download_auto_examples_miscellaneous_plot_kernel_approximation.py:

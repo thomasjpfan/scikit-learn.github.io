@@ -33,7 +33,7 @@ corresponds to :class:`~cluster.DBSCAN`. We can see that the different
 clusters of OPTICS's Xi method can be recovered with different choices of
 thresholds in DBSCAN.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-108
+.. GENERATED FROM PYTHON SOURCE LINES 18-108
 
 
 
@@ -52,7 +52,6 @@ thresholds in DBSCAN.
     # Authors: Shane Grigsby <refuge@rocktalus.com>
     #          Adrin Jalali <adrin.jalali@gmail.com>
     # License: BSD 3 clause
-
 
     from sklearn.cluster import OPTICS, cluster_optics_dbscan
     import matplotlib.gridspec as gridspec
@@ -143,7 +142,7 @@ thresholds in DBSCAN.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.445 seconds)
+   **Total running time of the script:** ( 0 minutes  1.516 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_optics.py:

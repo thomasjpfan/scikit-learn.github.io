@@ -33,7 +33,7 @@ the training samples.
 
 We also show the tree structure of a model built on all of the features.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-79
+.. GENERATED FROM PYTHON SOURCE LINES 17-78
 
 
 
@@ -60,7 +60,6 @@ We also show the tree structure of a model built on all of the features.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -126,7 +125,7 @@ We also show the tree structure of a model built on all of the features.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.017 seconds)
+   **Total running time of the script:** ( 0 minutes  1.249 seconds)
 
 
 .. _sphx_glr_download_auto_examples_tree_plot_iris_dtc.py:

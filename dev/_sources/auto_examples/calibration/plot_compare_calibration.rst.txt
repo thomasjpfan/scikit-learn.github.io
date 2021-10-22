@@ -33,7 +33,7 @@ models: :ref:`Logistic_regression`, :ref:`gaussian_naive_bayes`,
 :ref:`Random Forest Classifier <forest>` and :ref:`Linear SVM
 <svm_classification>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-30
+.. GENERATED FROM PYTHON SOURCE LINES 20-31
 
 Author: Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
 License: BSD 3 clause.
@@ -47,7 +47,7 @@ redundant (random combinations of the informative features) and the
 remaining 16 are uninformative (random numbers). Of the 100,000 samples,
 100 will be used for model fitting and the remaining for testing.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-46
+.. GENERATED FROM PYTHON SOURCE LINES 31-47
 
 .. code-block:: default
 
@@ -74,7 +74,7 @@ remaining 16 are uninformative (random numbers). Of the 100,000 samples,
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-58
+.. GENERATED FROM PYTHON SOURCE LINES 48-59
 
 Calibration curves
 ------------------
@@ -88,7 +88,7 @@ positives'). Below the calibration curve, we plot a histogram showing
 the distribution of the predicted probabilities or more specifically,
 the number of samples in each predicted probability bin.
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-84
+.. GENERATED FROM PYTHON SOURCE LINES 59-85
 
 .. code-block:: default
 
@@ -125,7 +125,7 @@ the number of samples in each predicted probability bin.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-104
+.. GENERATED FROM PYTHON SOURCE LINES 86-105
 
 .. code-block:: default
 
@@ -155,7 +155,7 @@ the number of samples in each predicted probability bin.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-149
+.. GENERATED FROM PYTHON SOURCE LINES 106-150
 
 .. code-block:: default
 
@@ -215,7 +215,7 @@ the number of samples in each predicted probability bin.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-208
+.. GENERATED FROM PYTHON SOURCE LINES 151-209
 
 :class:`~sklearn.linear_model.LogisticRegression` returns well calibrated
 predictions as it directly optimizes log-loss. In contrast, the other methods
@@ -279,7 +279,7 @@ References
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.373 seconds)
+   **Total running time of the script:** ( 0 minutes  1.729 seconds)
 
 
 .. _sphx_glr_download_auto_examples_calibration_plot_compare_calibration.py:

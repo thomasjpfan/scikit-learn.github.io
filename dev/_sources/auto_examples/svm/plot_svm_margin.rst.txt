@@ -30,7 +30,7 @@ of separation.
 A small value of `C` includes more/all the observations, allowing
 the margins to be calculated using all the data in the area.
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-97
+.. GENERATED FROM PYTHON SOURCE LINES 16-95
 
 
 
@@ -56,8 +56,6 @@ the margins to be calculated using all the data in the area.
 
 
 .. code-block:: default
-
-    print(__doc__)
 
 
     # Code source: Gaël Varoquaux

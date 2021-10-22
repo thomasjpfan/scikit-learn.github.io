@@ -45,7 +45,7 @@ Gerhard Schroeder       0.76      0.76      0.76        25
       avg / total       0.80      0.80      0.80       322
 ================== ============ ======= ========== =======
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-168
+.. GENERATED FROM PYTHON SOURCE LINES 30-167
 
 
 
@@ -73,21 +73,20 @@ Gerhard Schroeder       0.76      0.76      0.76        25
 
  .. code-block:: none
 
-
     Total dataset size:
     n_samples: 1288
     n_features: 1850
     n_classes: 7
     Extracting the top 150 eigenfaces from 966 faces
-    done in 0.165s
+    done in 0.137s
     Projecting the input data on the eigenfaces orthonormal basis
-    done in 0.033s
+    done in 0.012s
     Fitting the classifier to the training set
-    done in 25.402s
+    done in 27.733s
     Best estimator found by grid search:
     SVC(C=1000.0, class_weight='balanced', gamma=0.005)
     Predicting people's names on the test set
-    done in 0.080s
+    done in 0.095s
                        precision    recall  f1-score   support
 
          Ariel Sharon       0.75      0.46      0.57        13
@@ -119,6 +118,7 @@ Gerhard Schroeder       0.76      0.76      0.76        25
 
 .. code-block:: default
 
+
     from time import time
     import logging
     import matplotlib.pyplot as plt
@@ -131,8 +131,6 @@ Gerhard Schroeder       0.76      0.76      0.76        25
     from sklearn.decomposition import PCA
     from sklearn.svm import SVC
 
-
-    print(__doc__)
 
     # Display progress logs on stdout
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s")
@@ -261,7 +259,7 @@ Gerhard Schroeder       0.76      0.76      0.76        25
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  26.443 seconds)
+   **Total running time of the script:** ( 0 minutes  28.821 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_face_recognition.py:

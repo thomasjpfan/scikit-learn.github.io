@@ -153,8 +153,8 @@
           </a>
         </div>
         <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-            <a href="plot_calibration_multiclass.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Probability Calibration for 3-class classification">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
-            <a href="../classification/plot_digits_classification.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Recognizing hand-written digits">Next</a>
+            <a href="plot_calibration.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Probability calibration of classifiers">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+            <a href="plot_calibration_multiclass.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Probability Calibration for 3-class classification">Next</a>
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
@@ -170,6 +170,7 @@
             <div class="sk-sidebar-toc">
               <ul>
 <li><a class="reference internal" href="#">Probability Calibration curves</a><ul>
+<li><a class="reference internal" href="#dataset">Dataset</a></li>
 <li><a class="reference internal" href="#calibration-curves">Calibration curves</a><ul>
 <li><a class="reference internal" href="#gaussian-naive-bayes">Gaussian Naive Bayes</a></li>
 <li><a class="reference internal" href="#linear-support-vector-classifier">Linear support vector classifier</a></li>
@@ -200,23 +201,19 @@ kind of confidence on the prediction. This example demonstrates how to
 visualize how well calibrated the predicted probabilities are using calibration
 curves, also known as reliability diagrams. Calibration of an uncalibrated
 classifier will also be demonstrated.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Alexandre Gramfort &lt;alexandre.gramfort@telecom-paristech.fr&gt;</span>
-<span class="c1">#         Jan Hendrik Metzen &lt;jhm@informatik.uni-bremen.de&gt;</span>
-<span class="c1"># License: BSD 3 clause.</span>
-<span class="c1">#</span>
-<span class="c1"># Dataset</span>
-<span class="c1"># -------</span>
-<span class="c1">#</span>
-<span class="c1"># We will use a synthetic binary classification dataset with 100,000 samples</span>
-<span class="c1"># and 20 features. Of the 20 features, only 2 are informative, 10 are</span>
-<span class="c1"># redundant (random combinations of the informative features) and the</span>
-<span class="c1"># remaining 8 are uninformative (random numbers). Of the 100,000 samples, 1,000</span>
-<span class="c1"># will be used for model fitting and the rest for testing.</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.make_classification.html#sklearn.datasets.make_classification" title="sklearn.datasets.make_classification" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_classification</span></a>
+<dl class="simple">
+<dt>Author: Alexandre Gramfort &lt;<a class="reference external" href="mailto:alexandre&#46;gramfort&#37;&#52;&#48;telecom-paristech&#46;fr">alexandre<span>&#46;</span>gramfort<span>&#64;</span>telecom-paristech<span>&#46;</span>fr</a>&gt;</dt><dd><p>Jan Hendrik Metzen &lt;<a class="reference external" href="mailto:jhm&#37;&#52;&#48;informatik&#46;uni-bremen&#46;de">jhm<span>&#64;</span>informatik<span>&#46;</span>uni-bremen<span>&#46;</span>de</a>&gt;</p>
+</dd>
+</dl>
+<p>License: BSD 3 clause.</p>
+<section id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">¶</a></h2>
+<p>We will use a synthetic binary classification dataset with 100,000 samples
+and 20 features. Of the 20 features, only 2 are informative, 10 are
+redundant (random combinations of the informative features) and the
+remaining 8 are uninformative (random numbers). Of the 100,000 samples, 1,000
+will be used for model fitting and the rest for testing.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.make_classification.html#sklearn.datasets.make_classification" title="sklearn.datasets.make_classification" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_classification</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.model_selection.train_test_split.html#sklearn.model_selection.train_test_split" title="sklearn.model_selection.train_test_split" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">train_test_split</span></a>
 
 <span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.make_classification.html#sklearn.datasets.make_classification" title="sklearn.datasets.make_classification" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_classification</span></a><span class="p">(</span>
@@ -228,6 +225,7 @@ classifier will also be demonstrated.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
+</section>
 <section id="calibration-curves">
 <h2>Calibration curves<a class="headerlink" href="#calibration-curves" title="Permalink to this headline">¶</a></h2>
 <section id="gaussian-naive-bayes">
@@ -641,10 +639,10 @@ yield similar results.</p>
       <th>SVC + Sigmoid</th>
       <td>0.098760</td>
       <td>0.321306</td>
-      <td>0.873706</td>
-      <td>0.848743</td>
-      <td>0.861044</td>
-      <td>0.862967</td>
+      <td>0.873703</td>
+      <td>0.848723</td>
+      <td>0.861032</td>
+      <td>0.862957</td>
     </tr>
   </tbody>
 </table>
@@ -673,7 +671,7 @@ data to produce good results.</p>
 A. Niculescu-Mizil &amp; R. Caruana, ICML 2005</p>
 </dd>
 </dl>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.982 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.294 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-calibration-plot-calibration-curve-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/calibration/plot_calibration_curve.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo2.svg" width="150px" /></a>

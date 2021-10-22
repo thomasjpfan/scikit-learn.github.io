@@ -42,7 +42,7 @@ unbalanced classes.
 
         clf = SGDClassifier(n_iter=100, alpha=0.01)
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-87
+.. GENERATED FROM PYTHON SOURCE LINES 27-86
 
 
 
@@ -57,7 +57,6 @@ unbalanced classes.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -121,7 +120,7 @@ unbalanced classes.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.201 seconds)
+   **Total running time of the script:** ( 0 minutes  0.204 seconds)
 
 
 .. _sphx_glr_download_auto_examples_svm_plot_separating_hyperplane_unbalanced.py:

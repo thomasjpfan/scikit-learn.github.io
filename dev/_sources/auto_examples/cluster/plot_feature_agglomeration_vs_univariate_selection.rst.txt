@@ -31,7 +31,7 @@ This example compares 2 dimensionality reduction strategies:
 Both methods are compared in a regression problem using
 a BayesianRidge as supervised estimator.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-108
+.. GENERATED FROM PYTHON SOURCE LINES 16-107
 
 
 
@@ -46,7 +46,6 @@ a BayesianRidge as supervised estimator.
  Out:
 
  .. code-block:: none
-
 
     ________________________________________________________________________________
     [Memory] Calling sklearn.cluster._agglomerative.ward_tree...
@@ -103,8 +102,6 @@ a BayesianRidge as supervised estimator.
 
     # Author: Alexandre Gramfort <alexandre.gramfort@inria.fr>
     # License: BSD 3 clause
-
-    print(__doc__)
 
     import shutil
     import tempfile
@@ -197,7 +194,7 @@ a BayesianRidge as supervised estimator.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.671 seconds)
+   **Total running time of the script:** ( 0 minutes  0.724 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_feature_agglomeration_vs_univariate_selection.py:

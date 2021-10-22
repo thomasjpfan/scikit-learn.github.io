@@ -37,7 +37,7 @@ confidence interval.
 Note that the parameter ``alpha`` is applied as a Tikhonov
 regularization of the assumed covariance between the training points.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-122
+.. GENERATED FROM PYTHON SOURCE LINES 22-122
 
 
 
@@ -64,7 +64,6 @@ regularization of the assumed covariance between the training points.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Vincent Dubourg <vincent.dubourg@gmail.com>
     #         Jake Vanderplas <vanderplas@astro.washington.edu>
@@ -169,7 +168,7 @@ regularization of the assumed covariance between the training points.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.526 seconds)
+   **Total running time of the script:** ( 0 minutes  0.511 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_gpr_noisy_targets.py:

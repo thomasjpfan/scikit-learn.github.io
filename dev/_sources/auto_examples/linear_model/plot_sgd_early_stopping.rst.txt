@@ -54,7 +54,7 @@ significantly reduce training time. Note that scores differ between the
 stopping criteria even from early iterations because some of the training data
 is held out with the validation stopping criterion.
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-153
+.. GENERATED FROM PYTHON SOURCE LINES 39-154
 
 
 
@@ -69,7 +69,6 @@ is held out with the validation stopping criterion.
  Out:
 
  .. code-block:: none
-
 
     No stopping criterion: ../home/circleci/project/sklearn/base.py:441: UserWarning: X does not have valid feature names, but SGDClassifier was fitted with feature names
       warnings.warn(
@@ -372,9 +371,11 @@ is held out with the validation stopping criterion.
 
 .. code-block:: default
 
+
     # Authors: Tom Dupre la Tour
     #
     # License: BSD 3 clause
+
     import time
     import sys
 
@@ -388,8 +389,6 @@ is held out with the validation stopping criterion.
     from sklearn.utils._testing import ignore_warnings
     from sklearn.exceptions import ConvergenceWarning
     from sklearn.utils import shuffle
-
-    print(__doc__)
 
 
     def load_mnist(n_samples=None, class_0="0", class_1="8"):
@@ -491,7 +490,7 @@ is held out with the validation stopping criterion.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  34.053 seconds)
+   **Total running time of the script:** ( 1 minutes  28.301 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_sgd_early_stopping.py:

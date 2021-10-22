@@ -57,7 +57,7 @@ transformation instead of a per feature transformation.
 The following code is a bit verbose, feel free to jump directly to the analysis
 of the results_.
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-202
+.. GENERATED FROM PYTHON SOURCE LINES 43-200
 
 .. code-block:: default
 
@@ -83,8 +83,6 @@ of the results_.
     from sklearn.preprocessing import PowerTransformer
 
     from sklearn.datasets import fetch_california_housing
-
-    print(__doc__)
 
     dataset = fetch_california_housing()
     X_full, y_full = dataset.data, dataset.target
@@ -227,7 +225,7 @@ of the results_.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 203-208
+.. GENERATED FROM PYTHON SOURCE LINES 201-206
 
 Two plots will be shown for each scaler/normalizer/transformer. The left
 figure will show a scatter plot of the full data set while the right figure
@@ -235,7 +233,7 @@ will exclude the extreme values considering only 99 % of the data set,
 excluding marginal outliers. In addition, the marginal distributions for each
 feature will be shown on the sides of the scatter plot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 208-252
+.. GENERATED FROM PYTHON SOURCE LINES 206-250
 
 .. code-block:: default
 
@@ -290,7 +288,7 @@ feature will be shown on the sides of the scatter plot.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 253-267
+.. GENERATED FROM PYTHON SOURCE LINES 251-265
 
 .. _results:
 
@@ -307,7 +305,7 @@ pre-processing can be very beneficial depending of the application. In the
 following, we present some insights and behaviors of those pre-processing
 methods in the presence of marginal outliers.
 
-.. GENERATED FROM PYTHON SOURCE LINES 267-270
+.. GENERATED FROM PYTHON SOURCE LINES 265-268
 
 .. code-block:: default
 
@@ -326,7 +324,7 @@ methods in the presence of marginal outliers.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 271-287
+.. GENERATED FROM PYTHON SOURCE LINES 269-285
 
 StandardScaler
 --------------
@@ -345,7 +343,7 @@ smaller [-0.2, 0.2] range for the transformed average house occupancy.
 balanced feature scales in the
 presence of outliers.
 
-.. GENERATED FROM PYTHON SOURCE LINES 287-290
+.. GENERATED FROM PYTHON SOURCE LINES 285-288
 
 .. code-block:: default
 
@@ -364,7 +362,7 @@ presence of outliers.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 291-303
+.. GENERATED FROM PYTHON SOURCE LINES 289-301
 
 MinMaxScaler
 ------------
@@ -379,7 +377,7 @@ Both :class:`~sklearn.preprocessing.StandardScaler` and
 :class:`~sklearn.preprocessing.MinMaxScaler` are very sensitive to the
 presence of outliers.
 
-.. GENERATED FROM PYTHON SOURCE LINES 303-306
+.. GENERATED FROM PYTHON SOURCE LINES 301-304
 
 .. code-block:: default
 
@@ -398,7 +396,7 @@ presence of outliers.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 307-316
+.. GENERATED FROM PYTHON SOURCE LINES 305-314
 
 MaxAbsScaler
 ------------
@@ -410,7 +408,7 @@ behave similarly.
 :class:`~sklearn.preprocessing.MaxAbsScaler` therefore also suffers from
 the presence of large outliers.
 
-.. GENERATED FROM PYTHON SOURCE LINES 316-319
+.. GENERATED FROM PYTHON SOURCE LINES 314-317
 
 .. code-block:: default
 
@@ -429,7 +427,7 @@ the presence of large outliers.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 320-333
+.. GENERATED FROM PYTHON SOURCE LINES 318-331
 
 RobustScaler
 ------------
@@ -445,7 +443,7 @@ Note that the outliers themselves are still present in the transformed data.
 If a separate outlier clipping is desirable, a non-linear transformation is
 required (see below).
 
-.. GENERATED FROM PYTHON SOURCE LINES 333-336
+.. GENERATED FROM PYTHON SOURCE LINES 331-334
 
 .. code-block:: default
 
@@ -464,7 +462,7 @@ required (see below).
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 337-350
+.. GENERATED FROM PYTHON SOURCE LINES 335-348
 
 PowerTransformer
 ----------------
@@ -480,7 +478,7 @@ Box-Cox can only be applied to strictly positive data. Income and average
 house occupancy happen to be strictly positive, but if negative values are
 present the Yeo-Johnson transformed is preferred.
 
-.. GENERATED FROM PYTHON SOURCE LINES 350-354
+.. GENERATED FROM PYTHON SOURCE LINES 348-352
 
 .. code-block:: default
 
@@ -512,7 +510,7 @@ present the Yeo-Johnson transformed is preferred.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 355-373
+.. GENERATED FROM PYTHON SOURCE LINES 353-371
 
 QuantileTransformer (uniform output)
 ------------------------------------
@@ -533,7 +531,7 @@ approximately the same transformation. But contrary to
 collapse any outlier by setting them to the a priori defined range boundaries
 (0 and 1). This can result in saturation artifacts for extreme values.
 
-.. GENERATED FROM PYTHON SOURCE LINES 373-376
+.. GENERATED FROM PYTHON SOURCE LINES 371-374
 
 .. code-block:: default
 
@@ -552,7 +550,7 @@ collapse any outlier by setting them to the a priori defined range boundaries
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 377-382
+.. GENERATED FROM PYTHON SOURCE LINES 375-380
 
 QuantileTransformer (Gaussian output)
 -------------------------------------
@@ -560,7 +558,7 @@ QuantileTransformer (Gaussian output)
 To map to a Gaussian distribution, set the parameter
 ``output_distribution='normal'``.
 
-.. GENERATED FROM PYTHON SOURCE LINES 382-385
+.. GENERATED FROM PYTHON SOURCE LINES 380-383
 
 .. code-block:: default
 
@@ -579,7 +577,7 @@ To map to a Gaussian distribution, set the parameter
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 386-396
+.. GENERATED FROM PYTHON SOURCE LINES 384-394
 
 Normalizer
 ----------
@@ -592,7 +590,7 @@ example the two selected features have only positive values; therefore the
 transformed data only lie in the positive quadrant. This would not be the
 case if some original features had a mix of positive and negative values.
 
-.. GENERATED FROM PYTHON SOURCE LINES 396-400
+.. GENERATED FROM PYTHON SOURCE LINES 394-398
 
 .. code-block:: default
 
@@ -615,7 +613,7 @@ case if some original features had a mix of positive and negative values.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.467 seconds)
+   **Total running time of the script:** ( 0 minutes  12.595 seconds)
 
 
 .. _sphx_glr_download_auto_examples_preprocessing_plot_all_scaling.py:

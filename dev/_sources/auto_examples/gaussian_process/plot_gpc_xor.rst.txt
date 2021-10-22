@@ -28,7 +28,7 @@ dataset, the DotProduct kernel obtains considerably better results because the
 class-boundaries are linear and coincide with the coordinate axes. In general,
 stationary kernels often obtain better results.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-63
+.. GENERATED FROM PYTHON SOURCE LINES 13-63
 
 
 
@@ -44,7 +44,6 @@ stationary kernels often obtain better results.
 
  .. code-block:: none
 
-
     /home/circleci/project/sklearn/gaussian_process/kernels.py:430: ConvergenceWarning: The optimal value found for dimension 0 of parameter k1__constant_value is close to the specified upper bound 1e+05. Increasing the bound and calling fit again may find a better value.
       warnings.warn(
     /home/circleci/project/sklearn/gaussian_process/kernels.py:430: ConvergenceWarning: The optimal value found for dimension 0 of parameter k1__constant_value is close to the specified upper bound 1e+05. Increasing the bound and calling fit again may find a better value.
@@ -59,7 +58,6 @@ stationary kernels often obtain better results.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
     #
@@ -114,7 +112,7 @@ stationary kernels often obtain better results.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.630 seconds)
+   **Total running time of the script:** ( 0 minutes  0.561 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_gpc_xor.py:

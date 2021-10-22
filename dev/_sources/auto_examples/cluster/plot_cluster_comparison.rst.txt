@@ -41,7 +41,7 @@ While these examples give some intuition about the
 algorithms, this intuition might not apply to very high
 dimensional data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-256
+.. GENERATED FROM PYTHON SOURCE LINES 26-256
 
 
 
@@ -56,7 +56,6 @@ dimensional data.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import time
     import warnings
@@ -291,7 +290,7 @@ dimensional data.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  35.157 seconds)
+   **Total running time of the script:** ( 0 minutes  38.717 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_cluster_comparison.py:

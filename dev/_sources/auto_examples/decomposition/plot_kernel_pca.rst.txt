@@ -25,7 +25,7 @@ Kernel PCA
 This example shows that Kernel PCA is able to find a projection of the data
 that makes data linearly separable.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-73
+.. GENERATED FROM PYTHON SOURCE LINES 10-73
 
 
 
@@ -40,7 +40,6 @@ that makes data linearly separable.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Mathieu Blondel
     #          Andreas Mueller
@@ -108,7 +107,7 @@ that makes data linearly separable.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.383 seconds)
+   **Total running time of the script:** ( 0 minutes  0.555 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_kernel_pca.py:

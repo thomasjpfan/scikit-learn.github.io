@@ -31,12 +31,10 @@ negative examples click the right button.
 
 If all examples are from the same class, it uses a one-class SVM.
 
-.. GENERATED FROM PYTHON SOURCE LINES 16-386
+.. GENERATED FROM PYTHON SOURCE LINES 16-384
 
 .. code-block:: default
 
-
-    print(__doc__)
 
     # Author: Peter Prettenhoer <peter.prettenhofer@gmail.com>
     #

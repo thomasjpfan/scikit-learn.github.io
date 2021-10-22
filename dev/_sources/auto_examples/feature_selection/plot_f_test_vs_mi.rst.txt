@@ -40,7 +40,7 @@ kind of dependency between variables and it rates x_2 as the most
 discriminative feature, which probably agrees better with our intuitive
 perception for this example. Both methods correctly marks x_3 as irrelevant.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-49
+.. GENERATED FROM PYTHON SOURCE LINES 25-49
 
 
 
@@ -55,7 +55,6 @@ perception for this example. Both methods correctly marks x_3 as irrelevant.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -84,7 +83,7 @@ perception for this example. Both methods correctly marks x_3 as irrelevant.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.304 seconds)
+   **Total running time of the script:** ( 0 minutes  0.313 seconds)
 
 
 .. _sphx_glr_download_auto_examples_feature_selection_plot_f_test_vs_mi.py:

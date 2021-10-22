@@ -78,7 +78,7 @@ is to position the labels minimizing overlap. For this we use an
 heuristic based on the direction of the nearest neighbor along each
 axis.
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-278
+.. GENERATED FROM PYTHON SOURCE LINES 63-277
 
 
 
@@ -93,7 +93,6 @@ axis.
  Out:
 
  .. code-block:: none
-
 
     Fetching quote history for 'AAPL'
     Fetching quote history for 'AIG'
@@ -187,8 +186,6 @@ axis.
     import pandas as pd
 
     from sklearn import cluster, covariance, manifold
-
-    print(__doc__)
 
 
     # #############################################################################
@@ -394,7 +391,7 @@ axis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.687 seconds)
+   **Total running time of the script:** ( 0 minutes  5.612 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_stock_market.py:

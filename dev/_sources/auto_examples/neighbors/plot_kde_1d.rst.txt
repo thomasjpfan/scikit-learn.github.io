@@ -45,7 +45,7 @@ samples in 1 dimension.  Though this example uses 1D distributions, kernel
 density estimation is easily and efficiently extensible to higher dimensions
 as well.
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-163
+.. GENERATED FROM PYTHON SOURCE LINES 30-165
 
 
 
@@ -78,6 +78,7 @@ as well.
 
 
 .. code-block:: default
+
 
     # Author: Jake Vanderplas <jakevdp@cs.washington.edu>
     #
@@ -217,7 +218,7 @@ as well.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.699 seconds)
+   **Total running time of the script:** ( 0 minutes  0.669 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neighbors_plot_kde_1d.py:

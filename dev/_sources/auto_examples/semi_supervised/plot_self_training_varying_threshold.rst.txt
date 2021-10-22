@@ -46,7 +46,7 @@ classifier would achieve.
 The optimal accuracy lies in between both of these extremes at a threshold of
 around 0.7.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-119
+.. GENERATED FROM PYTHON SOURCE LINES 31-119
 
 
 
@@ -61,7 +61,6 @@ around 0.7.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Oliver Rausch <rauscho@ethz.ch>
     # License: BSD
@@ -154,7 +153,7 @@ around 0.7.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.556 seconds)
+   **Total running time of the script:** ( 0 minutes  8.809 seconds)
 
 
 .. _sphx_glr_download_auto_examples_semi_supervised_plot_self_training_varying_threshold.py:

@@ -45,7 +45,7 @@ Like LDA, it is a supervised method.
 One can see that NCA enforces a clustering of the data that is visually
 meaningful despite the large reduction in dimension.
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-99
+.. GENERATED FROM PYTHON SOURCE LINES 30-98
 
 
 
@@ -91,8 +91,6 @@ meaningful despite the large reduction in dimension.
     from sklearn.neighbors import KNeighborsClassifier, NeighborhoodComponentsAnalysis
     from sklearn.pipeline import make_pipeline
     from sklearn.preprocessing import StandardScaler
-
-    print(__doc__)
 
     n_neighbors = 3
     random_state = 0
@@ -153,7 +151,7 @@ meaningful despite the large reduction in dimension.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.013 seconds)
+   **Total running time of the script:** ( 0 minutes  2.361 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neighbors_plot_nca_dim_reduction.py:

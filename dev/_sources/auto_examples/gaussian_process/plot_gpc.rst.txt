@@ -39,7 +39,7 @@ The second figure shows the log-marginal-likelihood for different choices of
 the kernel's hyperparameters, highlighting the two choices of the
 hyperparameters used in the first figure by black dots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-131
+.. GENERATED FROM PYTHON SOURCE LINES 24-131
 
 
 
@@ -67,7 +67,6 @@ hyperparameters used in the first figure by black dots.
 
  .. code-block:: none
 
-
     Log Marginal Likelihood (initial): -17.598
     Log Marginal Likelihood (optimized): -3.875
     Accuracy: 1.000 (initial) 1.000 (optimized)
@@ -84,7 +83,6 @@ hyperparameters used in the first figure by black dots.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
     #
@@ -196,7 +194,7 @@ hyperparameters used in the first figure by black dots.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.998 seconds)
+   **Total running time of the script:** ( 0 minutes  3.065 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_gpc.py:

@@ -53,7 +53,7 @@ reconstructed image, contrary to the L1 penalization. Note in particular
 the circular artifact separating the pixels in the corners, that have
 contributed to fewer projections than the central disk.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-148
+.. GENERATED FROM PYTHON SOURCE LINES 38-147
 
 
 
@@ -68,8 +68,6 @@ contributed to fewer projections than the central disk.
 
 .. code-block:: default
 
-
-    print(__doc__)
 
     # Author: Emmanuelle Gouillart <emmanuelle.gouillart@nsup.org>
     # License: BSD 3 clause
@@ -183,7 +181,7 @@ contributed to fewer projections than the central disk.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.653 seconds)
+   **Total running time of the script:** ( 0 minutes  9.933 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_tomography_l1_reconstruction.py:

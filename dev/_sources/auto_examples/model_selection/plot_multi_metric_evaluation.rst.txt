@@ -33,7 +33,7 @@ ending in ``'_<scorer_name>'`` (``'mean_test_precision'``,
 The ``best_estimator_``, ``best_index_``, ``best_score_`` and ``best_params_``
 correspond to the scorer (key) that is set to the ``refit`` attribute.
 
-.. GENERATED FROM PYTHON SOURCE LINES 17-32
+.. GENERATED FROM PYTHON SOURCE LINES 18-31
 
 .. code-block:: default
 
@@ -50,7 +50,6 @@ correspond to the scorer (key) that is set to the ``refit`` attribute.
     from sklearn.metrics import accuracy_score
     from sklearn.tree import DecisionTreeClassifier
 
-    print(__doc__)
 
 
 
@@ -58,14 +57,13 @@ correspond to the scorer (key) that is set to the ``refit`` attribute.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 33-36
+.. GENERATED FROM PYTHON SOURCE LINES 32-35
 
 Running ``GridSearchCV`` using multiple evaluation metrics
 ----------------------------------------------------------
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-58
+.. GENERATED FROM PYTHON SOURCE LINES 35-57
 
 .. code-block:: default
 
@@ -98,12 +96,12 @@ Running ``GridSearchCV`` using multiple evaluation metrics
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-61
+.. GENERATED FROM PYTHON SOURCE LINES 58-60
 
 Plotting the result
 -------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-118
+.. GENERATED FROM PYTHON SOURCE LINES 60-117
 
 .. code-block:: default
 
@@ -179,7 +177,7 @@ Plotting the result
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  31.100 seconds)
+   **Total running time of the script:** ( 0 minutes  31.626 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_multi_metric_evaluation.py:

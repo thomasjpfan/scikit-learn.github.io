@@ -25,7 +25,7 @@ Iso-probability lines for Gaussian Processes classification (GPC)
 A two-dimensional classification example showing iso-probability lines for
 the predicted probabilities.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-101
+.. GENERATED FROM PYTHON SOURCE LINES 11-101
 
 
 
@@ -41,7 +41,6 @@ the predicted probabilities.
 
  .. code-block:: none
 
-
     Learned kernel: 0.0256**2 * DotProduct(sigma_0=5.72) ** 2 
     /home/circleci/project/examples/gaussian_process/plot_gpc_isoprobability.py:81: MatplotlibDeprecationWarning: The 'norm' parameter to Colorbar has no effect because it is overridden by the mappable; it is deprecated since 3.3 and will be removed two minor releases later.
       cb = plt.colorbar(cax, ticks=[0.0, 0.2, 0.4, 0.6, 0.8, 1.0], norm=norm)
@@ -55,7 +54,6 @@ the predicted probabilities.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Author: Vincent Dubourg <vincent.dubourg@gmail.com>
     # Adapted to GaussianProcessClassifier:
@@ -150,7 +148,7 @@ the predicted probabilities.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.216 seconds)
+   **Total running time of the script:** ( 0 minutes  0.220 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_gpc_isoprobability.py:

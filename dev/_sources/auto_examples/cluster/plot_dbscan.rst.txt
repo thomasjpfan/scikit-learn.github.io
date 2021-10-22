@@ -24,7 +24,7 @@ Demo of DBSCAN clustering algorithm
 
 Finds core samples of high density and expands clusters from them.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-88
+.. GENERATED FROM PYTHON SOURCE LINES 10-87
 
 
 
@@ -39,7 +39,6 @@ Finds core samples of high density and expands clusters from them.
  Out:
 
  .. code-block:: none
-
 
     Estimated number of clusters: 3
     Estimated number of noise points: 18
@@ -59,7 +58,6 @@ Finds core samples of high density and expands clusters from them.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
 
@@ -141,7 +139,7 @@ Finds core samples of high density and expands clusters from them.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.135 seconds)
+   **Total running time of the script:** ( 0 minutes  0.150 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_dbscan.py:

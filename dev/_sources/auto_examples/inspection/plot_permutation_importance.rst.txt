@@ -42,11 +42,11 @@ can mitigate those limitations.
    [1] L. Breiman, "Random Forests", Machine Learning, 45(1), 5-32,
        2001. https://doi.org/10.1023/A:1010933404324
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-40
+.. GENERATED FROM PYTHON SOURCE LINES 27-41
 
 .. code-block:: default
 
-    print(__doc__)
+
     import matplotlib.pyplot as plt
     import numpy as np
 
@@ -67,7 +67,7 @@ can mitigate those limitations.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 41-53
+.. GENERATED FROM PYTHON SOURCE LINES 42-54
 
 Data Loading and Feature Engineering
 ------------------------------------
@@ -82,7 +82,7 @@ with the target variable (``survived``):
 - ``random_cat`` is a low cardinality categorical variable (3 possible
   values).
 
-.. GENERATED FROM PYTHON SOURCE LINES 53-83
+.. GENERATED FROM PYTHON SOURCE LINES 54-84
 
 .. code-block:: default
 
@@ -124,7 +124,7 @@ with the target variable (``survived``):
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd {color: black;background-color: white;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd pre{padding: 0;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-toggleable {background-color: white;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-estimator:hover {background-color: #d4ebff;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-item {z-index: 1;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-parallel-item:only-child::after {width: 0;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-container {display: inline-block;position: relative;}#sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd div.sk-text-repr-fallback {display: none;}</style><div id="sk-872ca1ef-b8e6-4681-8816-90b8a4a5d1dd" class"sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;preprocess&#x27;,
+    <style>#sk-8767a307-fe00-4001-b30d-38b7afb8d497 {color: black;background-color: white;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 pre{padding: 0;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-toggleable {background-color: white;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-estimator:hover {background-color: #d4ebff;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-item {z-index: 1;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-parallel-item:only-child::after {width: 0;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-container {display: inline-block;position: relative;}#sk-8767a307-fe00-4001-b30d-38b7afb8d497 div.sk-text-repr-fallback {display: none;}</style><div id="sk-8767a307-fe00-4001-b30d-38b7afb8d497" class"sk-top-container"><div class="sk-text-repr-fallback"><pre>Pipeline(steps=[(&#x27;preprocess&#x27;,
                      ColumnTransformer(transformers=[(&#x27;cat&#x27;,
                                                       OneHotEncoder(handle_unknown=&#x27;ignore&#x27;),
                                                       [&#x27;pclass&#x27;, &#x27;sex&#x27;, &#x27;embarked&#x27;,
@@ -134,7 +134,7 @@ with the target variable (``survived``):
                                                                        SimpleImputer())]),
                                                       [&#x27;age&#x27;, &#x27;sibsp&#x27;, &#x27;parch&#x27;,
                                                        &#x27;fare&#x27;, &#x27;random_num&#x27;])])),
-                    (&#x27;classifier&#x27;, RandomForestClassifier(random_state=42))])</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="b063866a-6079-4599-b7a3-a8fae612ad6d" type="checkbox" ><label class="sk-toggleable__label" for="b063866a-6079-4599-b7a3-a8fae612ad6d">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('preprocess',
+                    (&#x27;classifier&#x27;, RandomForestClassifier(random_state=42))])</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="1f615959-4dd0-4294-84e5-5e7910dd5a72" type="checkbox" ><label class="sk-toggleable__label" for="1f615959-4dd0-4294-84e5-5e7910dd5a72">Pipeline</label><div class="sk-toggleable__content"><pre>Pipeline(steps=[('preprocess',
                      ColumnTransformer(transformers=[('cat',
                                                       OneHotEncoder(handle_unknown='ignore'),
                                                       ['pclass', 'sex', 'embarked',
@@ -144,17 +144,17 @@ with the target variable (``survived``):
                                                                        SimpleImputer())]),
                                                       ['age', 'sibsp', 'parch',
                                                        'fare', 'random_num'])])),
-                    ('classifier', RandomForestClassifier(random_state=42))])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="67d2cb1c-07ff-4170-b54a-cc6c3e6e9cec" type="checkbox" ><label class="sk-toggleable__label" for="67d2cb1c-07ff-4170-b54a-cc6c3e6e9cec">preprocess: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('cat', OneHotEncoder(handle_unknown='ignore'),
+                    ('classifier', RandomForestClassifier(random_state=42))])</pre></div></div></div><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="44ca590f-8083-4c6d-b071-3d2c71447988" type="checkbox" ><label class="sk-toggleable__label" for="44ca590f-8083-4c6d-b071-3d2c71447988">preprocess: ColumnTransformer</label><div class="sk-toggleable__content"><pre>ColumnTransformer(transformers=[('cat', OneHotEncoder(handle_unknown='ignore'),
                                      ['pclass', 'sex', 'embarked', 'random_cat']),
                                     ('num',
                                      Pipeline(steps=[('imputer', SimpleImputer())]),
                                      ['age', 'sibsp', 'parch', 'fare',
-                                      'random_num'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="420e6572-f071-4ef7-8cee-f2cb9a4c00cb" type="checkbox" ><label class="sk-toggleable__label" for="420e6572-f071-4ef7-8cee-f2cb9a4c00cb">cat</label><div class="sk-toggleable__content"><pre>['pclass', 'sex', 'embarked', 'random_cat']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="5e2a1505-cda7-4469-b79c-9f0417cc9fe0" type="checkbox" ><label class="sk-toggleable__label" for="5e2a1505-cda7-4469-b79c-9f0417cc9fe0">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore')</pre></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="4c07a344-e3b4-40f0-a46d-ae9fed6c4136" type="checkbox" ><label class="sk-toggleable__label" for="4c07a344-e3b4-40f0-a46d-ae9fed6c4136">num</label><div class="sk-toggleable__content"><pre>['age', 'sibsp', 'parch', 'fare', 'random_num']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="b5571f2e-9205-4fb4-a997-3579cc43d9de" type="checkbox" ><label class="sk-toggleable__label" for="b5571f2e-9205-4fb4-a997-3579cc43d9de">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer()</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="274c3d15-6b6b-4ec7-ac91-431e668d7594" type="checkbox" ><label class="sk-toggleable__label" for="274c3d15-6b6b-4ec7-ac91-431e668d7594">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(random_state=42)</pre></div></div></div></div></div></div></div>
+                                      'random_num'])])</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="1e8c2214-3dae-4863-aefa-dbadda425402" type="checkbox" ><label class="sk-toggleable__label" for="1e8c2214-3dae-4863-aefa-dbadda425402">cat</label><div class="sk-toggleable__content"><pre>['pclass', 'sex', 'embarked', 'random_cat']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="f1785553-f132-4996-9867-dd2b67b4e3f5" type="checkbox" ><label class="sk-toggleable__label" for="f1785553-f132-4996-9867-dd2b67b4e3f5">OneHotEncoder</label><div class="sk-toggleable__content"><pre>OneHotEncoder(handle_unknown='ignore')</pre></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="bdd7e592-4f03-4d4d-ac58-6122669c74e7" type="checkbox" ><label class="sk-toggleable__label" for="bdd7e592-4f03-4d4d-ac58-6122669c74e7">num</label><div class="sk-toggleable__content"><pre>['age', 'sibsp', 'parch', 'fare', 'random_num']</pre></div></div></div><div class="sk-serial"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="cfe27825-6971-4a52-82bd-479b34995167" type="checkbox" ><label class="sk-toggleable__label" for="cfe27825-6971-4a52-82bd-479b34995167">SimpleImputer</label><div class="sk-toggleable__content"><pre>SimpleImputer()</pre></div></div></div></div></div></div></div></div></div></div><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e32e870d-ed72-437a-b26a-5b93000085c4" type="checkbox" ><label class="sk-toggleable__label" for="e32e870d-ed72-437a-b26a-5b93000085c4">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(random_state=42)</pre></div></div></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-104
+.. GENERATED FROM PYTHON SOURCE LINES 85-105
 
 Accuracy of the Model
 ---------------------
@@ -177,7 +177,7 @@ However let's keep our high capacity random forest model for now so as to
 illustrate some pitfalls with feature importance on variables with many
 unique values.
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-108
+.. GENERATED FROM PYTHON SOURCE LINES 105-109
 
 .. code-block:: default
 
@@ -201,7 +201,7 @@ unique values.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-123
+.. GENERATED FROM PYTHON SOURCE LINES 110-124
 
 Tree's Feature Importance from Mean Decrease in Impurity (MDI)
 --------------------------------------------------------------
@@ -218,7 +218,7 @@ importances:
   predictions that generalize to the test set (when the model has enough
   capacity).
 
-.. GENERATED FROM PYTHON SOURCE LINES 123-140
+.. GENERATED FROM PYTHON SOURCE LINES 124-141
 
 .. code-block:: default
 
@@ -251,7 +251,7 @@ importances:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-147
+.. GENERATED FROM PYTHON SOURCE LINES 142-148
 
 As an alternative, the permutation importances of ``rf`` are computed on a
 held out test set. This shows that the low cardinality categorical feature,
@@ -260,7 +260,7 @@ held out test set. This shows that the low cardinality categorical feature,
 Also note that both random features have very low importances (close to 0) as
 expected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-160
+.. GENERATED FROM PYTHON SOURCE LINES 148-161
 
 .. code-block:: default
 
@@ -289,7 +289,7 @@ expected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 161-167
+.. GENERATED FROM PYTHON SOURCE LINES 162-168
 
 It is also possible to compute the permutation importances on the training
 set. This reveals that ``random_num`` gets a significantly higher importance
@@ -298,7 +298,7 @@ plots is a confirmation that the RF model has enough capacity to use that
 random numerical feature to overfit. You can further confirm this by
 re-running this example with constrained RF with min_samples_leaf=10.
 
-.. GENERATED FROM PYTHON SOURCE LINES 167-179
+.. GENERATED FROM PYTHON SOURCE LINES 168-180
 
 .. code-block:: default
 
@@ -329,7 +329,7 @@ re-running this example with constrained RF with min_samples_leaf=10.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.068 seconds)
+   **Total running time of the script:** ( 0 minutes  6.053 seconds)
 
 
 .. _sphx_glr_download_auto_examples_inspection_plot_permutation_importance.py:

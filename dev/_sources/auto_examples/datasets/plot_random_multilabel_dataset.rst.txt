@@ -52,7 +52,7 @@ generally the number of features would be much greater than the
 Similarly, with ``n_classes > n_features``, it is much less likely that a
 feature distinguishes a particular class.
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-108
+.. GENERATED FROM PYTHON SOURCE LINES 37-107
 
 
 
@@ -67,7 +67,6 @@ feature distinguishes a particular class.
  Out:
 
  .. code-block:: none
-
 
     The data was generated from (random_state=511):
     Class   P(C)    P(w0|C) P(w1|C)
@@ -89,8 +88,6 @@ feature distinguishes a particular class.
     import matplotlib.pyplot as plt
 
     from sklearn.datasets import make_multilabel_classification as make_ml_clf
-
-    print(__doc__)
 
     COLORS = np.array(
         [
@@ -160,7 +157,7 @@ feature distinguishes a particular class.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.175 seconds)
+   **Total running time of the script:** ( 0 minutes  0.203 seconds)
 
 
 .. _sphx_glr_download_auto_examples_datasets_plot_random_multilabel_dataset.py:

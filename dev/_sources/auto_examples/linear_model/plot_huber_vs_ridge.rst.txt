@@ -30,7 +30,7 @@ influenced by the outliers since the model uses the linear loss for these.
 As the parameter epsilon is increased for the Huber regressor, the decision
 function approaches that of the ridge.
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-66
+.. GENERATED FROM PYTHON SOURCE LINES 15-65
 
 
 
@@ -48,8 +48,6 @@ function approaches that of the ridge.
 
     # Authors: Manoj Kumar mks542@nyu.edu
     # License: BSD 3 clause
-
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -101,7 +99,7 @@ function approaches that of the ridge.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.132 seconds)
+   **Total running time of the script:** ( 0 minutes  0.141 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_huber_vs_ridge.py:

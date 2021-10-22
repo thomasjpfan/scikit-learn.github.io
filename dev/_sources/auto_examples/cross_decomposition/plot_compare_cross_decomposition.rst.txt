@@ -37,7 +37,7 @@ first diagonal). This is also true for components 2 in both dataset,
 however, the correlation across datasets for different components is
 weak: the point cloud is very spherical.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-156
+.. GENERATED FROM PYTHON SOURCE LINES 22-156
 
 
 
@@ -52,7 +52,6 @@ weak: the point cloud is very spherical.
  Out:
 
  .. code-block:: none
-
 
     Corr(X)
     [[ 1.    0.52 -0.06 -0.03]
@@ -107,7 +106,6 @@ weak: the point cloud is very spherical.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -246,7 +244,7 @@ weak: the point cloud is very spherical.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.296 seconds)
+   **Total running time of the script:** ( 0 minutes  0.312 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cross_decomposition_plot_compare_cross_decomposition.py:

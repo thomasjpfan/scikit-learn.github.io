@@ -25,7 +25,7 @@ Lasso on dense and sparse data
 We show that linear_model.Lasso provides the same results for dense and sparse
 data and that in the case of sparse data the speed is improved.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-71
+.. GENERATED FROM PYTHON SOURCE LINES 10-70
 
 
 
@@ -36,15 +36,14 @@ data and that in the case of sparse data the speed is improved.
 
  .. code-block:: none
 
-
     --- Dense matrices
-    Sparse Lasso done in 0.110589s
-    Dense Lasso done in 0.063492s
+    Sparse Lasso done in 0.128342s
+    Dense Lasso done in 0.058777s
     Distance between coefficients : 8.680552612979835e-14
     --- Sparse matrices
     Matrix density : 0.6263000000000001 %
-    Sparse Lasso done in 0.207731s
-    Dense Lasso done in 0.971195s
+    Sparse Lasso done in 0.298768s
+    Dense Lasso done in 1.092386s
     Distance between coefficients : 7.768625813853113e-12
 
 
@@ -56,7 +55,6 @@ data and that in the case of sparse data the speed is improved.
 
 .. code-block:: default
 
-    print(__doc__)
 
     from time import time
     from scipy import sparse
@@ -121,7 +119,7 @@ data and that in the case of sparse data the speed is improved.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.457 seconds)
+   **Total running time of the script:** ( 0 minutes  1.701 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_lasso_dense_vs_sparse_data.py:

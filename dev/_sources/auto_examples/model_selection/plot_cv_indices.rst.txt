@@ -29,7 +29,7 @@ groups in test sets, etc.
 This example visualizes the behavior of several common scikit-learn objects
 for comparison.
 
-.. GENERATED FROM PYTHON SOURCE LINES 13-33
+.. GENERATED FROM PYTHON SOURCE LINES 14-34
 
 .. code-block:: default
 
@@ -60,7 +60,7 @@ for comparison.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-46
+.. GENERATED FROM PYTHON SOURCE LINES 35-47
 
 Visualize our data
 ------------------
@@ -75,7 +75,7 @@ do not use this information.
 
 To begin, we'll visualize our data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-87
+.. GENERATED FROM PYTHON SOURCE LINES 47-88
 
 .. code-block:: default
 
@@ -132,7 +132,7 @@ To begin, we'll visualize our data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-95
+.. GENERATED FROM PYTHON SOURCE LINES 89-96
 
 Define a function to visualize cross-validation behavior
 --------------------------------------------------------
@@ -142,7 +142,7 @@ cross-validation object. We'll perform 4 splits of the data. On each
 split, we'll visualize the indices chosen for the training set
 (in blue) and the test set (in red).
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-142
+.. GENERATED FROM PYTHON SOURCE LINES 96-143
 
 .. code-block:: default
 
@@ -200,12 +200,12 @@ split, we'll visualize the indices chosen for the training set
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 143-145
+.. GENERATED FROM PYTHON SOURCE LINES 144-146
 
 Let's see how it looks for the :class:`~sklearn.model_selection.KFold`
 cross-validation object:
 
-.. GENERATED FROM PYTHON SOURCE LINES 145-150
+.. GENERATED FROM PYTHON SOURCE LINES 146-151
 
 .. code-block:: default
 
@@ -234,7 +234,7 @@ cross-validation object:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-160
+.. GENERATED FROM PYTHON SOURCE LINES 152-161
 
 As you can see, by default the KFold cross-validation iterator does not
 take either datapoint class or group into consideration. We can change this
@@ -246,7 +246,7 @@ by using either:
 - ``StratifiedGroupKFold`` to keep the constraint of ``GroupKFold`` while
   attempting to return stratified folds.
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-180
+.. GENERATED FROM PYTHON SOURCE LINES 161-181
 
 .. code-block:: default
 
@@ -301,7 +301,7 @@ by using either:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-191
+.. GENERATED FROM PYTHON SOURCE LINES 182-192
 
 Next we'll visualize this behavior for a number of CV iterators.
 
@@ -314,7 +314,7 @@ common cross-validation objects, visualizing the behavior of each.
 
 Note how some use the group/class information while others do not.
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-218
+.. GENERATED FROM PYTHON SOURCE LINES 192-219
 
 .. code-block:: default
 
@@ -414,7 +414,7 @@ Note how some use the group/class information while others do not.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.476 seconds)
+   **Total running time of the script:** ( 0 minutes  1.452 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_cv_indices.py:

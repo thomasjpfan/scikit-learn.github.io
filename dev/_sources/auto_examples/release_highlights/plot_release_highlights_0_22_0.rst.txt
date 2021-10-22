@@ -37,7 +37,7 @@ or with conda::
 
     conda install -c conda-forge scikit-learn
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-35
+.. GENERATED FROM PYTHON SOURCE LINES 24-36
 
 New plotting API
 ----------------
@@ -52,7 +52,7 @@ but other plots utilities are supported like
 :class:`~metrics.plot_confusion_matrix`. Read more about this new API in the
 :ref:`User Guide <visualizations>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-57
+.. GENERATED FROM PYTHON SOURCE LINES 36-58
 
 .. code-block:: default
 
@@ -101,7 +101,7 @@ but other plots utilities are supported like
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 58-73
+.. GENERATED FROM PYTHON SOURCE LINES 59-74
 
 Stacking Classifier and Regressor
 ---------------------------------
@@ -119,7 +119,7 @@ base estimators using ``cross_val_predict``.
 
 Read more in the :ref:`User Guide <stacking>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-91
+.. GENERATED FROM PYTHON SOURCE LINES 74-92
 
 .. code-block:: default
 
@@ -156,7 +156,7 @@ Read more in the :ref:`User Guide <stacking>`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-97
+.. GENERATED FROM PYTHON SOURCE LINES 93-98
 
 Permutation-based feature importance
 ------------------------------------
@@ -164,7 +164,7 @@ Permutation-based feature importance
 The :func:`inspection.permutation_importance` can be used to get an
 estimate of the importance of each feature, for any fitted estimator:
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-120
+.. GENERATED FROM PYTHON SOURCE LINES 98-121
 
 .. code-block:: default
 
@@ -203,7 +203,7 @@ estimate of the importance of each feature, for any fitted estimator:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 121-128
+.. GENERATED FROM PYTHON SOURCE LINES 122-129
 
 Native support for missing values for gradient boosting
 -------------------------------------------------------
@@ -213,7 +213,7 @@ and :class:`ensemble.HistGradientBoostingRegressor` now have native
 support for missing values (NaNs). This means that there is no need for
 imputing data when training or predicting.
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-137
+.. GENERATED FROM PYTHON SOURCE LINES 129-138
 
 .. code-block:: default
 
@@ -241,7 +241,7 @@ imputing data when training or predicting.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-149
+.. GENERATED FROM PYTHON SOURCE LINES 139-150
 
 Precomputed sparse nearest neighbors graph
 ------------------------------------------
@@ -255,7 +255,7 @@ can also be performed by custom estimators to use alternative
 implementations, such as approximate nearest neighbors methods.
 See more details in the :ref:`User Guide <neighbors_transformer>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 149-170
+.. GENERATED FROM PYTHON SOURCE LINES 150-171
 
 .. code-block:: default
 
@@ -287,7 +287,7 @@ See more details in the :ref:`User Guide <neighbors_transformer>`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-185
+.. GENERATED FROM PYTHON SOURCE LINES 172-186
 
 KNN Based Imputation
 ------------------------------------
@@ -304,7 +304,7 @@ neighbors.
 
 Read more in the :ref:`User Guide <knnimpute>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 185-192
+.. GENERATED FROM PYTHON SOURCE LINES 186-193
 
 .. code-block:: default
 
@@ -333,7 +333,7 @@ Read more in the :ref:`User Guide <knnimpute>`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 193-199
+.. GENERATED FROM PYTHON SOURCE LINES 194-200
 
 Tree pruning
 ------------
@@ -342,7 +342,7 @@ It is now possible to prune most tree-based estimators once the trees are
 built. The pruning is based on minimal cost-complexity. Read more in the
 :ref:`User Guide <minimal_cost_complexity_pruning>` for details.
 
-.. GENERATED FROM PYTHON SOURCE LINES 199-216
+.. GENERATED FROM PYTHON SOURCE LINES 200-217
 
 .. code-block:: default
 
@@ -379,14 +379,14 @@ built. The pruning is based on minimal cost-complexity. Read more in the
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 217-221
+.. GENERATED FROM PYTHON SOURCE LINES 218-222
 
 Retrieve dataframes from OpenML
 -------------------------------
 :func:`datasets.fetch_openml` can now return pandas dataframe and thus
 properly handle datasets with heterogeneous data:
 
-.. GENERATED FROM PYTHON SOURCE LINES 221-227
+.. GENERATED FROM PYTHON SOURCE LINES 222-228
 
 .. code-block:: default
 
@@ -416,7 +416,7 @@ properly handle datasets with heterogeneous data:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 228-240
+.. GENERATED FROM PYTHON SOURCE LINES 229-241
 
 Checking scikit-learn compatibility of an estimator
 ---------------------------------------------------
@@ -431,7 +431,7 @@ to run all checks independently and report the checks that are failing.
   This entry was slightly updated in version 0.24, where passing classes
   isn't supported anymore: pass instances instead.
 
-.. GENERATED FROM PYTHON SOURCE LINES 240-251
+.. GENERATED FROM PYTHON SOURCE LINES 241-252
 
 .. code-block:: default
 
@@ -453,7 +453,7 @@ to run all checks independently and report the checks that are failing.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 252-265
+.. GENERATED FROM PYTHON SOURCE LINES 253-266
 
 ROC AUC now supports multiclass classification
 ----------------------------------------------
@@ -469,7 +469,7 @@ weighting uniformly (``average='macro'``) and weighting by the prevalence
 
 Read more in the :ref:`User Guide <roc_metrics>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 265-274
+.. GENERATED FROM PYTHON SOURCE LINES 266-275
 
 .. code-block:: default
 
@@ -492,7 +492,7 @@ Read more in the :ref:`User Guide <roc_metrics>`.
 
  .. code-block:: none
 
-    0.9873333333333334
+    0.9888
 
 
 
@@ -500,7 +500,7 @@ Read more in the :ref:`User Guide <roc_metrics>`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.767 seconds)
+   **Total running time of the script:** ( 0 minutes  1.547 seconds)
 
 
 .. _sphx_glr_download_auto_examples_release_highlights_plot_release_highlights_0_22_0.py:

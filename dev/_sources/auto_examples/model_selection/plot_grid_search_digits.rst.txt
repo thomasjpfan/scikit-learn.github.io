@@ -33,7 +33,7 @@ the model selection step.
 More details on tools available for model selection can be found in the
 sections on :ref:`cross_validation` and :ref:`grid_search`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-76
+.. GENERATED FROM PYTHON SOURCE LINES 18-75
 
 
 
@@ -43,7 +43,6 @@ sections on :ref:`cross_validation` and :ref:`grid_search`.
  Out:
 
  .. code-block:: none
-
 
     # Tuning hyper-parameters for precision
 
@@ -143,13 +142,12 @@ sections on :ref:`cross_validation` and :ref:`grid_search`.
 
 .. code-block:: default
 
+
     from sklearn import datasets
     from sklearn.model_selection import train_test_split
     from sklearn.model_selection import GridSearchCV
     from sklearn.metrics import classification_report
     from sklearn.svm import SVC
-
-    print(__doc__)
 
     # Loading the Digits dataset
     digits = datasets.load_digits()
@@ -205,7 +203,7 @@ sections on :ref:`cross_validation` and :ref:`grid_search`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.488 seconds)
+   **Total running time of the script:** ( 0 minutes  5.440 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_grid_search_digits.py:

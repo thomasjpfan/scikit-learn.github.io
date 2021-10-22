@@ -41,7 +41,7 @@ full covariance matrices effectively even when there are less examples
 per cluster than there are dimensions in the data, due to
 regularization properties of the inference algorithm.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-93
+.. GENERATED FROM PYTHON SOURCE LINES 26-94
 
 
 
@@ -128,7 +128,7 @@ regularization properties of the inference algorithm.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.231 seconds)
+   **Total running time of the script:** ( 0 minutes  0.259 seconds)
 
 
 .. _sphx_glr_download_auto_examples_mixture_plot_gmm.py:

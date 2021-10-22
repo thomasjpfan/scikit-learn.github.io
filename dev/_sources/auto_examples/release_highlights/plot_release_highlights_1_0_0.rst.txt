@@ -43,7 +43,7 @@ or with conda::
 
     conda install -c conda-forge scikit-learn
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-73
+.. GENERATED FROM PYTHON SOURCE LINES 31-74
 
 Keyword and positional arguments
 ---------------------------------------------------------
@@ -89,7 +89,7 @@ positional arguments are still allowed in some cases, for example in
 :class:`~decomposition.PCA`, where ``PCA(10)`` is still allowed, but ``PCA(10,
 False)`` is not allowed.
 
-.. GENERATED FROM PYTHON SOURCE LINES 75-89
+.. GENERATED FROM PYTHON SOURCE LINES 76-90
 
 Spline Transformers
 ---------------------------------------------------------
@@ -106,7 +106,7 @@ parametrized by their polynomial degree and the positions of the knots. The
 The following code shows splines in action, for more information, please
 refer to the :ref:`User Guide <spline_transformer>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-98
+.. GENERATED FROM PYTHON SOURCE LINES 90-99
 
 .. code-block:: default
 
@@ -138,7 +138,7 @@ refer to the :ref:`User Guide <spline_transformer>`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-135
+.. GENERATED FROM PYTHON SOURCE LINES 100-136
 
 Quantile Regressor
 --------------------------------------------------------------------------
@@ -177,7 +177,7 @@ Guide <quantile_regression>` for more details.
    :align: center
    :scale: 50%
 
-.. GENERATED FROM PYTHON SOURCE LINES 137-147
+.. GENERATED FROM PYTHON SOURCE LINES 138-148
 
 Feature Names Support
 --------------------------------------------------------------------------
@@ -190,7 +190,7 @@ is used to check that the column names of the dataframe passed in
 non-:term:`fit`, such as :term:`predict`, are consistent with features in
 :term:`fit`:
 
-.. GENERATED FROM PYTHON SOURCE LINES 147-154
+.. GENERATED FROM PYTHON SOURCE LINES 148-155
 
 .. code-block:: default
 
@@ -216,7 +216,7 @@ non-:term:`fit`, such as :term:`predict`, are consistent with features in
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-162
+.. GENERATED FROM PYTHON SOURCE LINES 156-163
 
 The support of :term:`get_feature_names_out` is available for transformers
 that already had :term:`get_feature_names` and transformers with a one-to-one
@@ -226,7 +226,7 @@ will be added to all other transformers in future releases. Additionally,
 :meth:`compose.ColumnTransformer.get_feature_names_out` is available to
 combine feature names of its transformers:
 
-.. GENERATED FROM PYTHON SOURCE LINES 162-177
+.. GENERATED FROM PYTHON SOURCE LINES 163-178
 
 .. code-block:: default
 
@@ -260,13 +260,13 @@ combine feature names of its transformers:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 178-181
+.. GENERATED FROM PYTHON SOURCE LINES 179-182
 
 When this ``preprocessor`` is used with a pipeline, the feature names used
 by the classifier are obtained by slicing and calling
 :term:`get_feature_names_out`:
 
-.. GENERATED FROM PYTHON SOURCE LINES 181-190
+.. GENERATED FROM PYTHON SOURCE LINES 182-191
 
 .. code-block:: default
 
@@ -294,7 +294,7 @@ by the classifier are obtained by slicing and calling
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 191-203
+.. GENERATED FROM PYTHON SOURCE LINES 192-204
 
 A more flexible plotting API
 --------------------------------------------------------------------------
@@ -309,7 +309,7 @@ a plot given the predictions or an estimator. This means the corresponding
 <sphx_glr_auto_examples_classification_plot_digits_classification.py>` for
 how to use the new plotting functionalities.
 
-.. GENERATED FROM PYTHON SOURCE LINES 205-225
+.. GENERATED FROM PYTHON SOURCE LINES 206-226
 
 Online One-Class SVM
 --------------------------------------------------------------------------
@@ -332,7 +332,7 @@ details.
    :target: ../miscellaneous/plot_anomaly_comparison.html
    :align: center
 
-.. GENERATED FROM PYTHON SOURCE LINES 227-234
+.. GENERATED FROM PYTHON SOURCE LINES 228-235
 
 Histogram-based Gradient Boosting Models are now stable
 --------------------------------------------------------------------------
@@ -342,7 +342,7 @@ and can simply be imported and used as::
 
     from sklearn.ensemble import HistGradientBoostingClassifier
 
-.. GENERATED FROM PYTHON SOURCE LINES 236-241
+.. GENERATED FROM PYTHON SOURCE LINES 237-242
 
 New documentation improvements
 ------------------------------
@@ -353,7 +353,7 @@ documentation.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.235 seconds)
+   **Total running time of the script:** ( 0 minutes  0.215 seconds)
 
 
 .. _sphx_glr_download_auto_examples_release_highlights_plot_release_highlights_1_0_0.py:
