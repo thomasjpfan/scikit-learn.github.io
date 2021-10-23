@@ -176,10 +176,7 @@
 <li><a class="reference internal" href="#changelog">Changelog</a><ul>
 <li><a class="reference internal" href="#sklearn-calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-cross-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cross_decomposition</span></code></a></li>
-<li><a class="reference internal" href="#sklearn-ensemble"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code></a></li>
-<li><a class="reference internal" href="#sklearn-feature-extraction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-impute"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.impute</span></code></a></li>
-<li><a class="reference internal" href="#sklearn-linear-model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-model-selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-pipeline"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a></li>
@@ -241,38 +238,12 @@ reconstruction of a <code class="docutils literal notranslate"><span class="pre"
 <a class="reference external" href="https://github.com/robinthibaut">Robin Thibaut</a>.</p></li>
 </ul>
 </section>
-<section id="sklearn-ensemble">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.ensemble" title="sklearn.ensemble"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code></a><a class="headerlink" href="#sklearn-ensemble" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed a bug that could produce a segfault in rare cases for
-<a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html#sklearn.ensemble.HistGradientBoostingClassifier" title="sklearn.ensemble.HistGradientBoostingClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingClassifier</span></code></a> and
-<a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingRegressor.html#sklearn.ensemble.HistGradientBoostingRegressor" title="sklearn.ensemble.HistGradientBoostingRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingRegressor</span></code></a>.
-<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21130">#21130</a> <a class="reference external" href="https://github.com/lorentzenchr">Christian Lorentzen</a>.</p></li>
-</ul>
-</section>
-<section id="sklearn-feature-extraction">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.feature_extraction" title="sklearn.feature_extraction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a><a class="headerlink" href="#sklearn-feature-extraction" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed a bug in <code class="xref py py-class docutils literal notranslate"><span class="pre">feature_extraction.CountVectorizer</span></code> and
-<code class="xref py py-class docutils literal notranslate"><span class="pre">feature_extraction.TfidfVectorizer</span></code> by raising an
-error when ‘min_idf’ or ‘max_idf’ are floating-point numbers greater than 1.
-<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20752">#20752</a> by <a class="reference external" href="https://github.com/AlekLefebvre">Alek Lefebvre</a>.</p></li>
-</ul>
-</section>
 <section id="sklearn-impute">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.impute" title="sklearn.impute"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.impute</span></code></a><a class="headerlink" href="#sklearn-impute" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  Adds <code class="xref py py-meth docutils literal notranslate"><span class="pre">get_feature_names_out</span></code> to <a class="reference internal" href="../modules/generated/sklearn.impute.SimpleImputer.html#sklearn.impute.SimpleImputer" title="sklearn.impute.SimpleImputer"><code class="xref py py-class docutils literal notranslate"><span class="pre">impute.SimpleImputer</span></code></a>,
 <a class="reference internal" href="../modules/generated/sklearn.impute.KNNImputer.html#sklearn.impute.KNNImputer" title="sklearn.impute.KNNImputer"><code class="xref py py-class docutils literal notranslate"><span class="pre">impute.KNNImputer</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.impute.IterativeImputer.html#sklearn.impute.IterativeImputer" title="sklearn.impute.IterativeImputer"><code class="xref py py-class docutils literal notranslate"><span class="pre">impute.IterativeImputer</span></code></a>, and
 <a class="reference internal" href="../modules/generated/sklearn.impute.MissingIndicator.html#sklearn.impute.MissingIndicator" title="sklearn.impute.MissingIndicator"><code class="xref py py-class docutils literal notranslate"><span class="pre">impute.MissingIndicator</span></code></a>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21078">#21078</a> by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
-</ul>
-</section>
-<section id="sklearn-linear-model">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.linear_model" title="sklearn.linear_model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a><a class="headerlink" href="#sklearn-linear-model" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" title="sklearn.linear_model.LogisticRegression"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.LogisticRegression</span></code></a> now raises a better error
-message when the solver does not support sparse matrices with int64 indices.
-<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21093">#21093</a> by <a class="reference external" href="https://github.com/TomDLT">Tom Dupre la Tour</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-metrics">
@@ -304,17 +275,6 @@ Setting a transformer to “passthrough” will pass the features unchanged.
 <section id="sklearn-utils">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.utils" title="sklearn.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a><a class="headerlink" href="#sklearn-utils" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <code class="xref py py-func docutils literal notranslate"><span class="pre">utils.validation._check_sample_weight</span></code> can perform a
-non-negativity check on the sample weights. It can be turned on
-using the only_non_negative bool parameter.
-Estimators that check for non-negative weights are updated:
-<a class="reference internal" href="../modules/generated/sklearn.linear_model.LinearRegression.html#sklearn.linear_model.LinearRegression" title="sklearn.linear_model.LinearRegression"><code class="xref py py-func docutils literal notranslate"><span class="pre">linear_model.LinearRegression</span></code></a> (here the previous
-error message was misleading),
-<a class="reference internal" href="../modules/generated/sklearn.ensemble.AdaBoostClassifier.html#sklearn.ensemble.AdaBoostClassifier" title="sklearn.ensemble.AdaBoostClassifier"><code class="xref py py-func docutils literal notranslate"><span class="pre">ensemble.AdaBoostClassifier</span></code></a>,
-<a class="reference internal" href="../modules/generated/sklearn.ensemble.AdaBoostRegressor.html#sklearn.ensemble.AdaBoostRegressor" title="sklearn.ensemble.AdaBoostRegressor"><code class="xref py py-func docutils literal notranslate"><span class="pre">ensemble.AdaBoostRegressor</span></code></a>,
-<a class="reference internal" href="../modules/generated/sklearn.neighbors.KernelDensity.html#sklearn.neighbors.KernelDensity" title="sklearn.neighbors.KernelDensity"><code class="xref py py-func docutils literal notranslate"><span class="pre">neighbors.KernelDensity</span></code></a>.
-<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20880">#20880</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>
-and <a class="reference external" href="https://github.com/simonandras">András Simon</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.utils.estimator_html_repr.html#sklearn.utils.estimator_html_repr" title="sklearn.utils.estimator_html_repr"><code class="xref py py-func docutils literal notranslate"><span class="pre">utils.estimator_html_repr</span></code></a> shows a more helpful error
 message when running in a jupyter notebook that is not trusted. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21316">#21316</a>
 by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
