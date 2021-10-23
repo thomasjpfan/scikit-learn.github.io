@@ -37,13 +37,13 @@ data and that in the case of sparse data the speed is improved.
  .. code-block:: none
 
     --- Dense matrices
-    Sparse Lasso done in 0.125306s
-    Dense Lasso done in 0.028288s
+    Sparse Lasso done in 0.094241s
+    Dense Lasso done in 0.028360s
     Distance between coefficients : 8.680552612979835e-14
     --- Sparse matrices
     Matrix density : 0.6263000000000001 %
-    Sparse Lasso done in 0.222255s
-    Dense Lasso done in 0.928954s
+    Sparse Lasso done in 0.145175s
+    Dense Lasso done in 0.652328s
     Distance between coefficients : 7.768625813853113e-12
 
 
@@ -119,7 +119,7 @@ data and that in the case of sparse data the speed is improved.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.414 seconds)
+   **Total running time of the script:** ( 0 minutes  0.990 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_lasso_dense_vs_sparse_data.py:
