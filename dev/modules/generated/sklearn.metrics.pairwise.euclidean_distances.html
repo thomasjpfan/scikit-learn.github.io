@@ -181,9 +181,8 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.metrics.pairwise" title="sklearn.metrics.pairwise"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics.pairwise</span></code></a>.euclidean_distances<a class="headerlink" href="#sklearn-metrics-pairwise-euclidean-distances" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.metrics.pairwise.euclidean_distances">
-<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.pairwise.</span></span><span class="sig-name descname"><span class="pre">euclidean_distances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y_norm_squared</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">squared</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_norm_squared</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/6f720c5e1/sklearn/metrics/pairwise.py#L226"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.pairwise.euclidean_distances" title="Permalink to this definition">¶</a></dt>
-<dd><p>Considering the rows of X (and Y=X) as vectors, compute the
-distance matrix between each pair of vectors.</p>
+<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.pairwise.</span></span><span class="sig-name descname"><span class="pre">euclidean_distances</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Y_norm_squared</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">squared</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X_norm_squared</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d26900b1/sklearn/metrics/pairwise.py#L226"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.pairwise.euclidean_distances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the distance matrix between each pair from a vector array X and Y.</p>
 <p>For efficiency reasons, the euclidean distance between a pair of row
 vector x and y is computed as:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dist</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span> <span class="o">+</span> <span class="n">dot</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
@@ -201,8 +200,10 @@ symmetric as required by, e.g., <code class="docutils literal notranslate"><span
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples_X, n_features)</span></dt><dd></dd>
-<dt><strong>Y</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples_Y, n_features),             default=None</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">None</span></code>, uses <code class="docutils literal notranslate"><span class="pre">Y=X</span></code>.</p>
+<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples_X, n_features)</span></dt><dd><p>An array where each row is a sample and each column is a feature.</p>
+</dd>
+<dt><strong>Y</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples_Y, n_features),             default=None</span></dt><dd><p>An array where each row is a sample and each column is a feature.
+If <code class="docutils literal notranslate"><span class="pre">None</span></code>, method uses <code class="docutils literal notranslate"><span class="pre">Y=X</span></code>.</p>
 </dd>
 <dt><strong>Y_norm_squared</strong><span class="classifier">array-like of shape (n_samples_Y,) or (n_samples_Y, 1)             or (1, n_samples_Y), default=None</span></dt><dd><p>Pre-computed dot-products of vectors in Y (e.g.,
 <code class="docutils literal notranslate"><span class="pre">(Y**2).sum(axis=1)</span></code>)
@@ -218,7 +219,9 @@ May be ignored in some cases, see the note below.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>distances</strong><span class="classifier">ndarray of shape (n_samples_X, n_samples_Y)</span></dt><dd></dd>
+<dt><strong>distances</strong><span class="classifier">ndarray of shape (n_samples_X, n_samples_Y)</span></dt><dd><p>Returns the distances between the row vectors of <code class="docutils literal notranslate"><span class="pre">X</span></code>
+and the row vectors of <code class="docutils literal notranslate"><span class="pre">Y</span></code>.</p>
+</dd>
 </dl>
 </dd>
 </dl>
@@ -230,8 +233,8 @@ May be ignored in some cases, see the note below.</p>
 </dl>
 </div>
 <p class="rubric">Notes</p>
-<p>To achieve better accuracy, <code class="docutils literal notranslate"><span class="pre">X_norm_squared</span></code> and <code class="docutils literal notranslate"><span class="pre">Y_norm_squared</span></code> may be
-unused if they are passed as <code class="docutils literal notranslate"><span class="pre">float32</span></code>.</p>
+<p>To achieve a better accuracy, <code class="docutils literal notranslate"><span class="pre">X_norm_squared</span></code> and <code class="docutils literal notranslate"><span class="pre">Y_norm_squared</span></code> may be
+unused if they are passed as <code class="docutils literal notranslate"><span class="pre">np.float32</span></code>.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics.pairwise</span> <span class="kn">import</span> <span class="n">euclidean_distances</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
