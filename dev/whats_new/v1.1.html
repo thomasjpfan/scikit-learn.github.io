@@ -176,6 +176,7 @@
 <li><a class="reference internal" href="#changelog">Changelog</a><ul>
 <li><a class="reference internal" href="#sklearn-calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-cross-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cross_decomposition</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-impute"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.impute</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-model-selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a></li>
@@ -236,6 +237,13 @@ scipy 1.1.0+. Optional minimal dependency is matplotlib 2.2.3+.</p>
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <code class="xref py py-func docutils literal notranslate"><span class="pre">cross_decomposition._PLS.inverse_transform</span></code> now allows
 reconstruction of a <code class="docutils literal notranslate"><span class="pre">X</span></code> target when a <code class="docutils literal notranslate"><span class="pre">Y</span></code> parameter is given. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/19680">#19680</a> by
 <a class="reference external" href="https://github.com/robinthibaut">Robin Thibaut</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-decomposition">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.decomposition" title="sklearn.decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a><a class="headerlink" href="#sklearn-decomposition" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.decomposition.FastICA.html#sklearn.decomposition.FastICA" title="sklearn.decomposition.FastICA"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.FastICA</span></code></a> now validates input parameters in <code class="docutils literal notranslate"><span class="pre">fit</span></code> instead of <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21432">#21432</a> by <a class="reference external" href="https://github.com/hhnnhh">Hannah Bohle</a> and <a class="reference external" href="https://github.com/marenwestermann">Maren Westermann</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-impute">
