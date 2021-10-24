@@ -185,17 +185,17 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.covariance" title="sklearn.covariance"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.covariance</span></code></a>.empirical_covariance<a class="headerlink" href="#sklearn-covariance-empirical-covariance" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.covariance.empirical_covariance">
-<span class="sig-prename descclassname"><span class="pre">sklearn.covariance.</span></span><span class="sig-name descname"><span class="pre">empirical_covariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assume_centered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d26900b1/sklearn/covariance/_empirical_covariance.py#L51"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.covariance.empirical_covariance" title="Permalink to this definition">¶</a></dt>
-<dd><p>Computes the Maximum likelihood covariance estimator</p>
+<span class="sig-prename descclassname"><span class="pre">sklearn.covariance.</span></span><span class="sig-name descname"><span class="pre">empirical_covariance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assume_centered</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/d9e24f493/sklearn/covariance/_empirical_covariance.py#L51"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.covariance.empirical_covariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the Maximum likelihood covariance estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">ndarray of shape (n_samples, n_features)</span></dt><dd><p>Data from which to compute the covariance estimate</p>
+<dt><strong>X</strong><span class="classifier">ndarray of shape (n_samples, n_features)</span></dt><dd><p>Data from which to compute the covariance estimate.</p>
 </dd>
-<dt><strong>assume_centered</strong><span class="classifier">bool, default=False</span></dt><dd><p>If True, data will not be centered before computation.
+<dt><strong>assume_centered</strong><span class="classifier">bool, default=False</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, data will not be centered before computation.
 Useful when working with data whose mean is almost, but not exactly
 zero.
-If False, data will be centered before computation.</p>
+If <code class="docutils literal notranslate"><span class="pre">False</span></code>, data will be centered before computation.</p>
 </dd>
 </dl>
 </dd>
