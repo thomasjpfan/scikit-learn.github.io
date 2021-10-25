@@ -41,7 +41,7 @@ https://distill.pub/2016/misread-tsne/ provides a good discussion of the
 effects of various parameters, as well as interactive plots to explore
 those effects.
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-127
+.. GENERATED FROM PYTHON SOURCE LINES 26-131
 
 
 
@@ -57,43 +57,42 @@ those effects.
 
  .. code-block:: none
 
-
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    circles, perplexity=5 in 0.98 sec
+    circles, perplexity=5 in 1.7 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    circles, perplexity=30 in 1.4 sec
+    circles, perplexity=30 in 2.3 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    circles, perplexity=50 in 1.2 sec
+    circles, perplexity=50 in 2 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    circles, perplexity=100 in 2 sec
+    circles, perplexity=100 in 3.3 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    S-curve, perplexity=5 in 1.1 sec
+    S-curve, perplexity=5 in 1.7 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    S-curve, perplexity=30 in 1.4 sec
+    S-curve, perplexity=30 in 2.2 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    S-curve, perplexity=50 in 1.6 sec
+    S-curve, perplexity=50 in 2.3 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    S-curve, perplexity=100 in 1.7 sec
+    S-curve, perplexity=100 in 2.5 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    uniform grid, perplexity=5 in 1 sec
+    uniform grid, perplexity=5 in 1.7 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    uniform grid, perplexity=30 in 1.4 sec
+    uniform grid, perplexity=30 in 2.2 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    uniform grid, perplexity=50 in 1.2 sec
+    uniform grid, perplexity=50 in 1.9 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    uniform grid, perplexity=100 in 1.6 sec
+    uniform grid, perplexity=100 in 2.4 sec
 
 
 
@@ -108,8 +107,6 @@ those effects.
     # Author: Narine Kokhlikyan <narine@slice.com>
     # License: BSD
 
-    print(__doc__)
-
     import numpy as np
     import matplotlib.pyplot as plt
 
@@ -122,7 +119,7 @@ those effects.
     (fig, subplots) = plt.subplots(3, 5, figsize=(15, 8))
     perplexities = [5, 30, 50, 100]
 
-    X, y = datasets.make_circles(n_samples=n_samples, factor=.5, noise=.05)
+    X, y = datasets.make_circles(n_samples=n_samples, factor=0.5, noise=0.05)
 
     red = y == 0
     green = y == 1
@@ -132,14 +129,15 @@ those effects.
     ax.scatter(X[green, 0], X[green, 1], c="g")
     ax.xaxis.set_major_formatter(NullFormatter())
     ax.yaxis.set_major_formatter(NullFormatter())
-    plt.axis('tight')
+    plt.axis("tight")
 
     for i, perplexity in enumerate(perplexities):
         ax = subplots[0][i + 1]
 
         t0 = time()
-        tsne = manifold.TSNE(n_components=n_components, init='random',
-                             random_state=0, perplexity=perplexity)
+        tsne = manifold.TSNE(
+            n_components=n_components, init="random", random_state=0, perplexity=perplexity
+        )
         Y = tsne.fit_transform(X)
         t1 = time()
         print("circles, perplexity=%d in %.2g sec" % (perplexity, t1 - t0))
@@ -148,7 +146,7 @@ those effects.
         ax.scatter(Y[green, 0], Y[green, 1], c="g")
         ax.xaxis.set_major_formatter(NullFormatter())
         ax.yaxis.set_major_formatter(NullFormatter())
-        ax.axis('tight')
+        ax.axis("tight")
 
     # Another example using s-curve
     X, color = datasets.make_s_curve(n_samples, random_state=0)
@@ -162,8 +160,9 @@ those effects.
         ax = subplots[1][i + 1]
 
         t0 = time()
-        tsne = manifold.TSNE(n_components=n_components, init='random',
-                             random_state=0, perplexity=perplexity)
+        tsne = manifold.TSNE(
+            n_components=n_components, init="random", random_state=0, perplexity=perplexity
+        )
         Y = tsne.fit_transform(X)
         t1 = time()
         print("S-curve, perplexity=%d in %.2g sec" % (perplexity, t1 - t0))
@@ -172,16 +171,18 @@ those effects.
         ax.scatter(Y[:, 0], Y[:, 1], c=color)
         ax.xaxis.set_major_formatter(NullFormatter())
         ax.yaxis.set_major_formatter(NullFormatter())
-        ax.axis('tight')
+        ax.axis("tight")
 
 
     # Another example using a 2D uniform grid
     x = np.linspace(0, 1, int(np.sqrt(n_samples)))
     xx, yy = np.meshgrid(x, x)
-    X = np.hstack([
-        xx.ravel().reshape(-1, 1),
-        yy.ravel().reshape(-1, 1),
-    ])
+    X = np.hstack(
+        [
+            xx.ravel().reshape(-1, 1),
+            yy.ravel().reshape(-1, 1),
+        ]
+    )
     color = xx.ravel()
     ax = subplots[2][0]
     ax.scatter(X[:, 0], X[:, 1], c=color)
@@ -192,8 +193,9 @@ those effects.
         ax = subplots[2][i + 1]
 
         t0 = time()
-        tsne = manifold.TSNE(n_components=n_components, init='random',
-                             random_state=0, perplexity=perplexity)
+        tsne = manifold.TSNE(
+            n_components=n_components, init="random", random_state=0, perplexity=perplexity
+        )
         Y = tsne.fit_transform(X)
         t1 = time()
         print("uniform grid, perplexity=%d in %.2g sec" % (perplexity, t1 - t0))
@@ -202,7 +204,7 @@ those effects.
         ax.scatter(Y[:, 0], Y[:, 1], c=color)
         ax.xaxis.set_major_formatter(NullFormatter())
         ax.yaxis.set_major_formatter(NullFormatter())
-        ax.axis('tight')
+        ax.axis("tight")
 
 
     plt.show()
@@ -210,7 +212,7 @@ those effects.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.261 seconds)
+   **Total running time of the script:** ( 0 minutes  27.249 seconds)
 
 
 .. _sphx_glr_download_auto_examples_manifold_plot_t_sne_perplexity.py:

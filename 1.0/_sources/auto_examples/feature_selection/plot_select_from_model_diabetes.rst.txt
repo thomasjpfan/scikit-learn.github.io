@@ -36,22 +36,7 @@ Authors: `Manoj Kumar <mks542@nyu.edu>`_,
 
 License: BSD 3 clause
 
-.. GENERATED FROM PYTHON SOURCE LINES 20-24
-
-.. code-block:: default
-
-
-    print(__doc__)
-
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 25-30
+.. GENERATED FROM PYTHON SOURCE LINES 23-28
 
 Loading the data
 ----------------
@@ -59,7 +44,7 @@ Loading the data
 We first load the diabetes dataset which is available from within
 scikit-learn, and print its description:
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-36
+.. GENERATED FROM PYTHON SOURCE LINES 28-34
 
 .. code-block:: default
 
@@ -121,7 +106,7 @@ scikit-learn, and print its description:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-49
+.. GENERATED FROM PYTHON SOURCE LINES 35-47
 
 Feature importance from coefficients
 ------------------------------------
@@ -136,7 +121,7 @@ For a more complete example on the interpretations of the coefficients of
 linear models, you may refer to
 :ref:`sphx_glr_auto_examples_inspection_plot_linear_model_coefficient_interpretation.py`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-60
+.. GENERATED FROM PYTHON SOURCE LINES 47-58
 
 .. code-block:: default
 
@@ -163,7 +148,7 @@ linear models, you may refer to
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 61-72
+.. GENERATED FROM PYTHON SOURCE LINES 59-70
 
 Selecting features based on importance
 --------------------------------------
@@ -177,7 +162,7 @@ accepts a `threshold` parameter and will select the features whose importance
 Since we want to select only 2 features, we will set this threshold slightly
 above the coefficient of third most important feature.
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-84
+.. GENERATED FROM PYTHON SOURCE LINES 70-81
 
 .. code-block:: default
 
@@ -189,8 +174,7 @@ above the coefficient of third most important feature.
     tic = time()
     sfm = SelectFromModel(lasso, threshold=threshold).fit(X, y)
     toc = time()
-    print("Features selected by SelectFromModel: "
-          f"{feature_names[sfm.get_support()]}")
+    print(f"Features selected by SelectFromModel: {feature_names[sfm.get_support()]}")
     print(f"Done in {toc - tic:.3f}s")
 
 
@@ -204,12 +188,12 @@ above the coefficient of third most important feature.
  .. code-block:: none
 
     Features selected by SelectFromModel: ['s1' 's5']
-    Done in 0.048s
+    Done in 0.068s
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-99
+.. GENERATED FROM PYTHON SOURCE LINES 82-96
 
 Selecting features with Sequential Feature Selection
 ----------------------------------------------------
@@ -226,7 +210,7 @@ We can also go in the reverse direction (backward SFS), *i.e.* start with all
 the features and greedily choose features to remove one by one. We illustrate
 both approaches here.
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-119
+.. GENERATED FROM PYTHON SOURCE LINES 96-122
 
 .. code-block:: default
 
@@ -234,20 +218,26 @@ both approaches here.
     from sklearn.feature_selection import SequentialFeatureSelector
 
     tic_fwd = time()
-    sfs_forward = SequentialFeatureSelector(lasso, n_features_to_select=2,
-                                            direction='forward').fit(X, y)
+    sfs_forward = SequentialFeatureSelector(
+        lasso, n_features_to_select=2, direction="forward"
+    ).fit(X, y)
     toc_fwd = time()
 
     tic_bwd = time()
-    sfs_backward = SequentialFeatureSelector(lasso, n_features_to_select=2,
-                                             direction='backward').fit(X, y)
+    sfs_backward = SequentialFeatureSelector(
+        lasso, n_features_to_select=2, direction="backward"
+    ).fit(X, y)
     toc_bwd = time()
 
-    print("Features selected by forward sequential selection: "
-          f"{feature_names[sfs_forward.get_support()]}")
+    print(
+        "Features selected by forward sequential selection: "
+        f"{feature_names[sfs_forward.get_support()]}"
+    )
     print(f"Done in {toc_fwd - tic_fwd:.3f}s")
-    print("Features selected by backward sequential selection: "
-          f"{feature_names[sfs_backward.get_support()]}")
+    print(
+        "Features selected by backward sequential selection: "
+        f"{feature_names[sfs_backward.get_support()]}"
+    )
     print(f"Done in {toc_bwd - tic_bwd:.3f}s")
 
 
@@ -261,14 +251,14 @@ both approaches here.
  .. code-block:: none
 
     Features selected by forward sequential selection: ['bmi' 's5']
-    Done in 3.271s
+    Done in 5.048s
     Features selected by backward sequential selection: ['bmi' 's5']
-    Done in 9.821s
+    Done in 16.453s
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-143
+.. GENERATED FROM PYTHON SOURCE LINES 123-146
 
 Discussion
 ----------
@@ -297,7 +287,7 @@ SFS needs to perform `n_features - n_features_to_select = 8` iterations.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  13.274 seconds)
+   **Total running time of the script:** ( 0 minutes  21.765 seconds)
 
 
 .. _sphx_glr_download_auto_examples_feature_selection_plot_select_from_model_diabetes.py:

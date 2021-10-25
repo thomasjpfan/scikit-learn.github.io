@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.semi_supervised.SelfTrainingClassifier &mdash; scikit-learn 1.0 documentation</title>
+  <title>sklearn.semi_supervised.SelfTrainingClassifier &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.semi_supervised.SelfTrainingClassifier.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -185,7 +185,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.semi_supervised" title="sklearn.semi_supervised"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.semi_supervised</span></code></a>.SelfTrainingClassifier<a class="headerlink" href="#sklearn-semi-supervised-selftrainingclassifier" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.semi_supervised.SelfTrainingClassifier">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.semi_supervised.</span></span><span class="sig-name descname"><span class="pre">SelfTrainingClassifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criterion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'threshold'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_best</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/semi_supervised/_self_training.py#L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.semi_supervised.</span></span><span class="sig-name descname"><span class="pre">SelfTrainingClassifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">base_estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.75</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">criterion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'threshold'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k_best</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/semi_supervised/_self_training.py#L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Self-training classifier.</p>
 <p>This class allows a given supervised classifier to function as a
 semi-supervised classifier, allowing it to learn from unlabeled data. It
@@ -202,18 +202,18 @@ Invoking the <code class="docutils literal notranslate"><span class="pre">fit</s
 which will be stored in the <code class="docutils literal notranslate"><span class="pre">base_estimator_</span></code> attribute.</p>
 </dd>
 <dt><strong>threshold</strong><span class="classifier">float, default=0.75</span></dt><dd><p>The decision threshold for use with <code class="docutils literal notranslate"><span class="pre">criterion='threshold'</span></code>.
-Should be in [0, 1). When using the ‘threshold’ criterion, a
+Should be in [0, 1). When using the <code class="docutils literal notranslate"><span class="pre">'threshold'</span></code> criterion, a
 <a class="reference internal" href="../calibration.html#calibration"><span class="std std-ref">well calibrated classifier</span></a> should be used.</p>
 </dd>
 <dt><strong>criterion</strong><span class="classifier">{‘threshold’, ‘k_best’}, default=’threshold’</span></dt><dd><p>The selection criterion used to select which labels to add to the
-training set. If ‘threshold’, pseudo-labels with prediction
-probabilities above <code class="docutils literal notranslate"><span class="pre">threshold</span></code> are added to the dataset. If ‘k_best’,
+training set. If <code class="docutils literal notranslate"><span class="pre">'threshold'</span></code>, pseudo-labels with prediction
+probabilities above <code class="docutils literal notranslate"><span class="pre">threshold</span></code> are added to the dataset. If <code class="docutils literal notranslate"><span class="pre">'k_best'</span></code>,
 the <code class="docutils literal notranslate"><span class="pre">k_best</span></code> pseudo-labels with highest prediction probabilities are
 added to the dataset. When using the ‘threshold’ criterion, a
 <a class="reference internal" href="../calibration.html#calibration"><span class="std std-ref">well calibrated classifier</span></a> should be used.</p>
 </dd>
 <dt><strong>k_best</strong><span class="classifier">int, default=10</span></dt><dd><p>The amount of samples to add in each iteration. Only used when
-<code class="docutils literal notranslate"><span class="pre">criterion</span></code> is k_best’.</p>
+<code class="docutils literal notranslate"><span class="pre">criterion='k_best'</span></code>.</p>
 </dd>
 <dt><strong>max_iter</strong><span class="classifier">int or None, default=10</span></dt><dd><p>Maximum number of iterations allowed. Should be greater than or equal
 to 0. If it is <code class="docutils literal notranslate"><span class="pre">None</span></code>, the classifier will continue to predict labels
@@ -255,15 +255,24 @@ base estimator is fitted on relabeled variants of the training set.</p>
 </dd>
 <dt><strong>termination_condition_</strong><span class="classifier">{‘max_iter’, ‘no_change’, ‘all_labeled’}</span></dt><dd><p>The reason that fitting was stopped.</p>
 <ul class="simple">
-<li><p>‘max_iter’: <code class="docutils literal notranslate"><span class="pre">n_iter_</span></code> reached <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>.</p></li>
-<li><p>‘no_change’: no new labels were predicted.</p></li>
-<li><p>‘all_labeled’: all unlabeled samples were labeled before <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>
+<li><p><code class="docutils literal notranslate"><span class="pre">'max_iter'</span></code>: <code class="docutils literal notranslate"><span class="pre">n_iter_</span></code> reached <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'no_change'</span></code>: no new labels were predicted.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'all_labeled'</span></code>: all unlabeled samples were labeled before <code class="docutils literal notranslate"><span class="pre">max_iter</span></code>
 was reached.</p></li>
 </ul>
 </dd>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="sklearn.semi_supervised.LabelPropagation.html#sklearn.semi_supervised.LabelPropagation" title="sklearn.semi_supervised.LabelPropagation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LabelPropagation</span></code></a></dt><dd><p>Label propagation classifier.</p>
+</dd>
+<dt><a class="reference internal" href="sklearn.semi_supervised.LabelSpreading.html#sklearn.semi_supervised.LabelSpreading" title="sklearn.semi_supervised.LabelSpreading"><code class="xref py py-obj docutils literal notranslate"><span class="pre">LabelSpreading</span></code></a></dt><dd><p>Label spreading model for semi-supervised learning.</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">References</p>
 <p>David Yarowsky. 1995. Unsupervised word sense disambiguation rivaling
 supervised methods. In Proceedings of the 33rd annual meeting on
@@ -293,16 +302,16 @@ Computational Linguistics, Stroudsburg, PA, USA, 189-196. DOI:
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.semi_supervised.SelfTrainingClassifier.decision_function" title="sklearn.semi_supervised.SelfTrainingClassifier.decision_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">decision_function</span></code></a>(X)</p></td>
-<td><p>Calls decision function of the <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code>.</p></td>
+<td><p>Call decision function of the <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#sklearn.semi_supervised.SelfTrainingClassifier.fit" title="sklearn.semi_supervised.SelfTrainingClassifier.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(X, y)</p></td>
-<td><p>Fits this <code class="docutils literal notranslate"><span class="pre">SelfTrainingClassifier</span></code> to a dataset.</p></td>
+<td><p>Fit self-training classifier using <code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> as training data.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.semi_supervised.SelfTrainingClassifier.get_params" title="sklearn.semi_supervised.SelfTrainingClassifier.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>([deep])</p></td>
 <td><p>Get parameters for this estimator.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#sklearn.semi_supervised.SelfTrainingClassifier.predict" title="sklearn.semi_supervised.SelfTrainingClassifier.predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict</span></code></a>(X)</p></td>
-<td><p>Predict the classes of X.</p></td>
+<td><p>Predict the classes of <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.semi_supervised.SelfTrainingClassifier.predict_log_proba" title="sklearn.semi_supervised.SelfTrainingClassifier.predict_log_proba"><code class="xref py py-obj docutils literal notranslate"><span class="pre">predict_log_proba</span></code></a>(X)</p></td>
 <td><p>Predict log probability for each possible outcome.</p></td>
@@ -311,7 +320,7 @@ Computational Linguistics, Stroudsburg, PA, USA, 189-196. DOI:
 <td><p>Predict probability for each possible outcome.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.semi_supervised.SelfTrainingClassifier.score" title="sklearn.semi_supervised.SelfTrainingClassifier.score"><code class="xref py py-obj docutils literal notranslate"><span class="pre">score</span></code></a>(X, y)</p></td>
-<td><p>Calls score on the <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code>.</p></td>
+<td><p>Call score on the <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#sklearn.semi_supervised.SelfTrainingClassifier.set_params" title="sklearn.semi_supervised.SelfTrainingClassifier.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(**params)</p></td>
 <td><p>Set the parameters of this estimator.</p></td>
@@ -320,8 +329,8 @@ Computational Linguistics, Stroudsburg, PA, USA, 189-196. DOI:
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.semi_supervised.SelfTrainingClassifier.decision_function">
-<span class="sig-name descname"><span class="pre">decision_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/semi_supervised/_self_training.py#L327"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.decision_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calls decision function of the <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code>.</p>
+<span class="sig-name descname"><span class="pre">decision_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/semi_supervised/_self_training.py#L332"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.decision_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call decision function of the <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -340,8 +349,8 @@ Computational Linguistics, Stroudsburg, PA, USA, 189-196. DOI:
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.semi_supervised.SelfTrainingClassifier.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/semi_supervised/_self_training.py#L154"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fits this <code class="docutils literal notranslate"><span class="pre">SelfTrainingClassifier</span></code> to a dataset.</p>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/semi_supervised/_self_training.py#L159"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit self-training classifier using <code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> as training data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -354,7 +363,7 @@ label -1.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>self</strong><span class="classifier">object</span></dt><dd><p>Returns an instance of self.</p>
+<dt><strong>self</strong><span class="classifier">object</span></dt><dd><p>Fitted estimator.</p>
 </dd>
 </dl>
 </dd>
@@ -363,7 +372,7 @@ label -1.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.semi_supervised.SelfTrainingClassifier.get_params">
-<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/base.py#L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.get_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/base.py#L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -384,8 +393,8 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.semi_supervised.SelfTrainingClassifier.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/semi_supervised/_self_training.py#L282"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.predict" title="Permalink to this definition">¶</a></dt>
-<dd><p>Predict the classes of X.</p>
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/semi_supervised/_self_training.py#L287"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Predict the classes of <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -404,7 +413,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.semi_supervised.SelfTrainingClassifier.predict_log_proba">
-<span class="sig-name descname"><span class="pre">predict_log_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/semi_supervised/_self_training.py#L350"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.predict_log_proba" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict_log_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/semi_supervised/_self_training.py#L355"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.predict_log_proba" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict log probability for each possible outcome.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -424,7 +433,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.semi_supervised.SelfTrainingClassifier.predict_proba">
-<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/semi_supervised/_self_training.py#L305"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.predict_proba" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/semi_supervised/_self_training.py#L310"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.predict_proba" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict probability for each possible outcome.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -444,8 +453,8 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.semi_supervised.SelfTrainingClassifier.score">
-<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/semi_supervised/_self_training.py#L373"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.score" title="Permalink to this definition">¶</a></dt>
-<dd><p>Calls score on the <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code>.</p>
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/semi_supervised/_self_training.py#L378"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call score on the <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -466,7 +475,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.semi_supervised.SelfTrainingClassifier.set_params">
-<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/base.py#L212"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.set_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/base.py#L212"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.semi_supervised.SelfTrainingClassifier.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as <a class="reference internal" href="sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have

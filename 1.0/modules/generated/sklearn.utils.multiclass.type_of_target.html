@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.utils.multiclass.type_of_target &mdash; scikit-learn 1.0 documentation</title>
+  <title>sklearn.utils.multiclass.type_of_target &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.utils.multiclass.type_of_target.html" />
 
@@ -157,7 +157,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -181,7 +181,7 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils.multiclass</span></code>.type_of_target<a class="headerlink" href="#sklearn-utils-multiclass-type-of-target" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.utils.multiclass.type_of_target">
-<span class="sig-prename descclassname"><span class="pre">sklearn.utils.multiclass.</span></span><span class="sig-name descname"><span class="pre">type_of_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/utils/multiclass.py#L201"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.multiclass.type_of_target" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.utils.multiclass.</span></span><span class="sig-name descname"><span class="pre">type_of_target</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/utils/multiclass.py#L201"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.multiclass.type_of_target" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determine the type of data indicated by the target.</p>
 <p>Note that this type is the most specific type that can be inferred.
 For example:</p>
@@ -226,7 +226,8 @@ array, sequence of sequences, or an array of non-sequence objects.</p></li>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.utils.multiclass</span> <span class="kn">import</span> <span class="n">type_of_target</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">type_of_target</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">])</span>
 <span class="go">&#39;continuous&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">type_of_target</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>

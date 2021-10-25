@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.datasets.load_boston &mdash; scikit-learn 1.0 documentation</title>
+  <title>sklearn.datasets.load_boston &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html" />
 
@@ -157,7 +157,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -181,14 +181,14 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.datasets" title="sklearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a>.load_boston<a class="headerlink" href="#sklearn-datasets-load-boston" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.datasets.load_boston">
-<span class="sig-prename descclassname"><span class="pre">sklearn.datasets.</span></span><span class="sig-name descname"><span class="pre">load_boston</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_X_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/datasets/_base.py#L1113"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.datasets.load_boston" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.datasets.</span></span><span class="sig-name descname"><span class="pre">load_boston</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_X_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/datasets/_base.py#L1113"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.datasets.load_boston" title="Permalink to this definition">¶</a></dt>
 <dd><p>DEPRECATED: <code class="docutils literal notranslate"><span class="pre">load_boston</span></code> is deprecated in 1.0 and will be removed in 1.2.</p>
 <p>The Boston housing prices dataset has an ethical problem. You can refer to
 the documentation of this function for further details.</p>
 <p>The scikit-learn maintainers therefore strongly discourage the use of this
 dataset unless the purpose of the code is to study and educate about
 ethical issues in data science and machine learning.</p>
-<p>In this case special case, you can fetch the dataset from the original
+<p>In this special case, you can fetch the dataset from the original
 source:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -200,17 +200,17 @@ source:</p>
 </pre></div>
 </div>
 <p>Alternative datasets include the California housing dataset (i.e.
-func:<code class="docutils literal notranslate"><span class="pre">~sklearn.datasets.fetch_california_housing</span></code>) and the Ames housing
+<a class="reference internal" href="sklearn.datasets.fetch_california_housing.html#sklearn.datasets.fetch_california_housing" title="sklearn.datasets.fetch_california_housing"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_california_housing</span></code></a>) and the Ames housing
 dataset. You can load the datasets as follows:</p>
-<blockquote>
-<div><p>from sklearn.datasets import fetch_california_housing
-housing = fetch_california_housing()</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_california_housing</span>
+<span class="n">housing</span> <span class="o">=</span> <span class="n">fetch_california_housing</span><span class="p">()</span>
+</pre></div>
+</div>
 <p>for the California housing dataset and:</p>
-<blockquote>
-<div><p>from sklearn.datasets import fetch_openml
-housing = fetch_openml(name=”house_prices”, as_frame=True)</p>
-</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_openml</span>
+<span class="n">housing</span> <span class="o">=</span> <span class="n">fetch_openml</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;house_prices&quot;</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>for the Ames housing dataset.</p>
 <p>Load and return the boston house-prices dataset (regression).</p>
 <table class="docutils align-default">
@@ -251,7 +251,7 @@ validity of this assumption.</p>
 <p>The scikit-learn maintainers therefore strongly discourage the use of
 this dataset unless the purpose of the code is to study and educate
 about ethical issues in data science and machine learning.</p>
-<p>In this case special case, you can fetch the dataset from the original
+<p>In this special case, you can fetch the dataset from the original
 source:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>  <span class="c1"># doctest: +SKIP</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -263,7 +263,7 @@ source:</p>
 </pre></div>
 </div>
 <p>Alternative datasets include the California housing dataset <a class="reference internal" href="#rec2f484fdebe-3" id="id3">[3]</a>
-(i.e. func:<code class="docutils literal notranslate"><span class="pre">~sklearn.datasets.fetch_california_housing</span></code>) and Ames
+(i.e. <a class="reference internal" href="sklearn.datasets.fetch_california_housing.html#sklearn.datasets.fetch_california_housing" title="sklearn.datasets.fetch_california_housing"><code class="xref py py-func docutils literal notranslate"><span class="pre">fetch_california_housing</span></code></a>) and Ames
 housing dataset <a class="reference internal" href="#rec2f484fdebe-4" id="id4">[4]</a>. You can load the datasets as follows:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">fetch_california_housing</span>
 <span class="n">housing</span> <span class="o">=</span> <span class="n">fetch_california_housing</span><span class="p">()</span>

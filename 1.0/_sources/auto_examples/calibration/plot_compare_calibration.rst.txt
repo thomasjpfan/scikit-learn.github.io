@@ -33,7 +33,7 @@ models: :ref:`Logistic_regression`, :ref:`gaussian_naive_bayes`,
 :ref:`Random Forest Classifier <forest>` and :ref:`Linear SVM
 <svm_classification>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-30
+.. GENERATED FROM PYTHON SOURCE LINES 20-31
 
 Author: Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
 License: BSD 3 clause.
@@ -47,7 +47,7 @@ redundant (random combinations of the informative features) and the
 remaining 16 are uninformative (random numbers). Of the 100,000 samples,
 100 will be used for model fitting and the remaining for testing.
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-44
+.. GENERATED FROM PYTHON SOURCE LINES 31-47
 
 .. code-block:: default
 
@@ -56,13 +56,15 @@ remaining 16 are uninformative (random numbers). Of the 100,000 samples,
     from sklearn.model_selection import train_test_split
 
     X, y = make_classification(
-      n_samples=100_000, n_features=20, n_informative=2, n_redundant=2,
-      random_state=42
+        n_samples=100_000, n_features=20, n_informative=2, n_redundant=2, random_state=42
     )
 
     train_samples = 100  # Samples used for training the models
     X_train, X_test, y_train, y_test = train_test_split(
-        X, y, shuffle=False, test_size=100_000 - train_samples,
+        X,
+        y,
+        shuffle=False,
+        test_size=100_000 - train_samples,
     )
 
 
@@ -72,7 +74,7 @@ remaining 16 are uninformative (random numbers). Of the 100,000 samples,
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-56
+.. GENERATED FROM PYTHON SOURCE LINES 48-59
 
 Calibration curves
 ------------------
@@ -86,7 +88,7 @@ positives'). Below the calibration curve, we plot a histogram showing
 the distribution of the predicted probabilities or more specifically,
 the number of samples in each predicted probability bin.
 
-.. GENERATED FROM PYTHON SOURCE LINES 56-82
+.. GENERATED FROM PYTHON SOURCE LINES 59-85
 
 .. code-block:: default
 
@@ -123,7 +125,7 @@ the number of samples in each predicted probability bin.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-100
+.. GENERATED FROM PYTHON SOURCE LINES 86-105
 
 .. code-block:: default
 
@@ -139,10 +141,12 @@ the number of samples in each predicted probability bin.
     svc = NaivelyCalibratedLinearSVC(C=1.0)
     rfc = RandomForestClassifier()
 
-    clf_list = [(lr, 'Logistic'),
-                (gnb, 'Naive Bayes'),
-                (svc, 'SVC'),
-                (rfc, 'Random forest')]
+    clf_list = [
+        (lr, "Logistic"),
+        (gnb, "Naive Bayes"),
+        (svc, "SVC"),
+        (rfc, "Random forest"),
+    ]
 
 
 
@@ -151,7 +155,7 @@ the number of samples in each predicted probability bin.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-137
+.. GENERATED FROM PYTHON SOURCE LINES 106-150
 
 .. code-block:: default
 
@@ -161,20 +165,25 @@ the number of samples in each predicted probability bin.
 
     fig = plt.figure(figsize=(10, 10))
     gs = GridSpec(4, 2)
-    colors = plt.cm.get_cmap('Dark2')
+    colors = plt.cm.get_cmap("Dark2")
 
     ax_calibration_curve = fig.add_subplot(gs[:2, :2])
     calibration_displays = {}
     for i, (clf, name) in enumerate(clf_list):
         clf.fit(X_train, y_train)
         display = CalibrationDisplay.from_estimator(
-            clf, X_test, y_test, n_bins=10, name=name, ax=ax_calibration_curve,
-            color=colors(i)
+            clf,
+            X_test,
+            y_test,
+            n_bins=10,
+            name=name,
+            ax=ax_calibration_curve,
+            color=colors(i),
         )
         calibration_displays[name] = display
 
     ax_calibration_curve.grid()
-    ax_calibration_curve.set_title('Calibration plots')
+    ax_calibration_curve.set_title("Calibration plots")
 
     # Add histogram
     grid_positions = [(2, 0), (2, 1), (3, 0), (3, 1)]
@@ -183,8 +192,11 @@ the number of samples in each predicted probability bin.
         ax = fig.add_subplot(gs[row, col])
 
         ax.hist(
-            calibration_displays[name].y_prob, range=(0, 1), bins=10, label=name,
-            color=colors(i)
+            calibration_displays[name].y_prob,
+            range=(0, 1),
+            bins=10,
+            label=name,
+            color=colors(i),
         )
         ax.set(title=name, xlabel="Mean predicted probability", ylabel="Count")
 
@@ -203,7 +215,7 @@ the number of samples in each predicted probability bin.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 138-196
+.. GENERATED FROM PYTHON SOURCE LINES 151-209
 
 :class:`~sklearn.linear_model.LogisticRegression` returns well calibrated
 predictions as it directly optimizes log-loss. In contrast, the other methods
@@ -267,7 +279,7 @@ References
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.229 seconds)
+   **Total running time of the script:** ( 0 minutes  1.938 seconds)
 
 
 .. _sphx_glr_download_auto_examples_calibration_plot_compare_calibration.py:

@@ -25,8 +25,8 @@ This example shows the effect of imposing a connectivity graph to capture
 local structure in the data. The graph is simply the graph of 20 nearest
 neighbors.
 
-Two consequences of imposing a connectivity can be seen. First clustering
-with a connectivity matrix is much faster.
+Two consequences of imposing a connectivity can be seen. First, clustering
+without a connectivity matrix is much faster.
 
 Second, when using a connectivity matrix, single, average and complete
 linkage are unstable and tend to create a few clusters that grow very
@@ -39,9 +39,9 @@ brittle single linkage. This effect is more pronounced for very sparse graphs
 (try decreasing the number of neighbors in kneighbors_graph) and with
 complete linkage. In particular, having a very small number of neighbors in
 the graph, imposes a geometry that is close to that of single linkage,
-which is well known to have this percolation instability. 
+which is well known to have this percolation instability.
 
-.. GENERATED FROM PYTHON SOURCE LINES 24-81
+.. GENERATED FROM PYTHON SOURCE LINES 26-84
 
 
 
@@ -51,28 +51,28 @@ which is well known to have this percolation instability.
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_001.png
-         :alt: n_cluster=30, connectivity=False, linkage=average (time 0.04s), linkage=complete (time 0.05s), linkage=ward (time 0.05s), linkage=single (time 0.02s)
+         :alt: n_cluster=30, connectivity=False, linkage=average (time 0.08s), linkage=complete (time 0.08s), linkage=ward (time 0.08s), linkage=single (time 0.02s)
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_001.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_002.png
-         :alt: n_cluster=3, connectivity=False, linkage=average (time 0.05s), linkage=complete (time 0.04s), linkage=ward (time 0.06s), linkage=single (time 0.01s)
+         :alt: n_cluster=3, connectivity=False, linkage=average (time 0.08s), linkage=complete (time 0.08s), linkage=ward (time 0.07s), linkage=single (time 0.02s)
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_002.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_003.png
-         :alt: n_cluster=30, connectivity=True, linkage=average (time 0.21s), linkage=complete (time 0.14s), linkage=ward (time 0.19s), linkage=single (time 0.03s)
+         :alt: n_cluster=30, connectivity=True, linkage=average (time 0.18s), linkage=complete (time 0.20s), linkage=ward (time 0.31s), linkage=single (time 0.05s)
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_003.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_004.png
-         :alt: n_cluster=3, connectivity=True, linkage=average (time 0.12s), linkage=complete (time 0.17s), linkage=ward (time 0.33s), linkage=single (time 0.03s)
+         :alt: n_cluster=3, connectivity=True, linkage=average (time 0.17s), linkage=complete (time 0.21s), linkage=ward (time 0.45s), linkage=single (time 0.04s)
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_agglomerative_clustering_004.png
          :class: sphx-glr-multi-img
 
@@ -81,6 +81,7 @@ which is well known to have this percolation instability.
 
 
 .. code-block:: default
+
 
     # Authors: Gael Varoquaux, Nelle Varoquaux
     # License: BSD 3 clause
@@ -101,7 +102,7 @@ which is well known to have this percolation instability.
 
 
     X = np.concatenate((x, y))
-    X += .7 * np.random.randn(2, n_samples)
+    X += 0.7 * np.random.randn(2, n_samples)
     X = X.T
 
     # Create a graph capturing local connectivity. Larger number of neighbors
@@ -114,28 +115,28 @@ which is well known to have this percolation instability.
     for connectivity in (None, knn_graph):
         for n_clusters in (30, 3):
             plt.figure(figsize=(10, 4))
-            for index, linkage in enumerate(('average',
-                                             'complete',
-                                             'ward',
-                                             'single')):
+            for index, linkage in enumerate(("average", "complete", "ward", "single")):
                 plt.subplot(1, 4, index + 1)
-                model = AgglomerativeClustering(linkage=linkage,
-                                                connectivity=connectivity,
-                                                n_clusters=n_clusters)
+                model = AgglomerativeClustering(
+                    linkage=linkage, connectivity=connectivity, n_clusters=n_clusters
+                )
                 t0 = time.time()
                 model.fit(X)
                 elapsed_time = time.time() - t0
-                plt.scatter(X[:, 0], X[:, 1], c=model.labels_,
-                            cmap=plt.cm.nipy_spectral)
-                plt.title('linkage=%s\n(time %.2fs)' % (linkage, elapsed_time),
-                          fontdict=dict(verticalalignment='top'))
-                plt.axis('equal')
-                plt.axis('off')
+                plt.scatter(X[:, 0], X[:, 1], c=model.labels_, cmap=plt.cm.nipy_spectral)
+                plt.title(
+                    "linkage=%s\n(time %.2fs)" % (linkage, elapsed_time),
+                    fontdict=dict(verticalalignment="top"),
+                )
+                plt.axis("equal")
+                plt.axis("off")
 
-                plt.subplots_adjust(bottom=0, top=.83, wspace=0,
-                                    left=0, right=1)
-                plt.suptitle('n_cluster=%i, connectivity=%r' %
-                             (n_clusters, connectivity is not None), size=17)
+                plt.subplots_adjust(bottom=0, top=0.83, wspace=0, left=0, right=1)
+                plt.suptitle(
+                    "n_cluster=%i, connectivity=%r"
+                    % (n_clusters, connectivity is not None),
+                    size=17,
+                )
 
 
     plt.show()
@@ -143,7 +144,7 @@ which is well known to have this percolation instability.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.539 seconds)
+   **Total running time of the script:** ( 0 minutes  3.519 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_agglomerative_clustering.py:

@@ -27,9 +27,10 @@ This example illustrates how a successive halving search
 iteratively chooses the best parameter combination out of
 multiple candidates.
 
-.. GENERATED FROM PYTHON SOURCE LINES 12-25
+.. GENERATED FROM PYTHON SOURCE LINES 12-24
 
 .. code-block:: default
+
 
     import pandas as pd
     from sklearn import datasets
@@ -42,7 +43,6 @@ multiple candidates.
     from sklearn.ensemble import RandomForestClassifier
 
 
-    print(__doc__)
 
 
 
@@ -50,13 +50,12 @@ multiple candidates.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 26-28
+.. GENERATED FROM PYTHON SOURCE LINES 25-27
 
 We first define the parameter space and train a
 :class:`~sklearn.model_selection.HalvingRandomSearchCV` instance.
 
-.. GENERATED FROM PYTHON SOURCE LINES 28-48
+.. GENERATED FROM PYTHON SOURCE LINES 27-47
 
 .. code-block:: default
 
@@ -67,17 +66,17 @@ We first define the parameter space and train a
 
     clf = RandomForestClassifier(n_estimators=20, random_state=rng)
 
-    param_dist = {"max_depth": [3, None],
-                  "max_features": randint(1, 11),
-                  "min_samples_split": randint(2, 11),
-                  "bootstrap": [True, False],
-                  "criterion": ["gini", "entropy"]}
+    param_dist = {
+        "max_depth": [3, None],
+        "max_features": randint(1, 11),
+        "min_samples_split": randint(2, 11),
+        "bootstrap": [True, False],
+        "criterion": ["gini", "entropy"],
+    }
 
     rsh = HalvingRandomSearchCV(
-        estimator=clf,
-        param_distributions=param_dist,
-        factor=2,
-        random_state=rng)
+        estimator=clf, param_distributions=param_dist, factor=2, random_state=rng
+    )
     rsh.fit(X, y)
 
 
@@ -88,48 +87,48 @@ We first define the parameter space and train a
 .. raw:: html
 
     <div class="output_subarea output_html rendered_html output_result">
-    <style>#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd {color: black;background-color: white;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd pre{padding: 0;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-toggleable {background-color: white;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-estimator:hover {background-color: #d4ebff;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-item {z-index: 1;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-parallel-item:only-child::after {width: 0;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd div.sk-container {display: inline-block;position: relative;}</style><div id="sk-a7fc3016-3a68-4e90-803c-65dad5b94ecd" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="400214a7-4733-41de-855f-f496a139394a" type="checkbox" ><label class="sk-toggleable__label" for="400214a7-4733-41de-855f-f496a139394a">HalvingRandomSearchCV</label><div class="sk-toggleable__content"><pre>HalvingRandomSearchCV(estimator=RandomForestClassifier(n_estimators=20,
-                                                           random_state=RandomState(MT19937) at 0x7FCAD626CE40),
+    <style>#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b {color: black;background-color: white;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b pre{padding: 0;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-toggleable {background-color: white;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-estimator:hover {background-color: #d4ebff;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-item {z-index: 1;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-parallel-item:only-child::after {width: 0;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b div.sk-container {display: inline-block;position: relative;}</style><div id="sk-08cf4ce3-5b8e-41bb-aaba-31a3c1013f6b" class"sk-top-container"><div class="sk-container"><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="bd6bb8dd-e79a-4271-8c76-72b9d14f27d7" type="checkbox" ><label class="sk-toggleable__label" for="bd6bb8dd-e79a-4271-8c76-72b9d14f27d7">HalvingRandomSearchCV</label><div class="sk-toggleable__content"><pre>HalvingRandomSearchCV(estimator=RandomForestClassifier(n_estimators=20,
+                                                           random_state=RandomState(MT19937) at 0x7F26F99DD440),
                           factor=2,
                           param_distributions={'bootstrap': [True, False],
                                                'criterion': ['gini', 'entropy'],
                                                'max_depth': [3, None],
-                                               'max_features': <scipy.stats._distn_infrastructure.rv_frozen object at 0x7fcab499b580>,
-                                               'min_samples_split': <scipy.stats._distn_infrastructure.rv_frozen object at 0x7fcaaee221f0>},
-                          random_state=RandomState(MT19937) at 0x7FCAD626CE40)</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="e742d59a-1c75-4ecf-9afa-515d1697d329" type="checkbox" ><label class="sk-toggleable__label" for="e742d59a-1c75-4ecf-9afa-515d1697d329">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(n_estimators=20,
-                           random_state=RandomState(MT19937) at 0x7FCAD626CE40)</pre></div></div></div></div></div></div></div></div></div></div>
+                                               'max_features': <scipy.stats._distn_infrastructure.rv_frozen object at 0x7f26fa207af0>,
+                                               'min_samples_split': <scipy.stats._distn_infrastructure.rv_frozen object at 0x7f26f9ddfca0>},
+                          random_state=RandomState(MT19937) at 0x7F26F99DD440)</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="ebf3da52-372a-49a4-8c1e-de1bb5a3c85f" type="checkbox" ><label class="sk-toggleable__label" for="ebf3da52-372a-49a4-8c1e-de1bb5a3c85f">RandomForestClassifier</label><div class="sk-toggleable__content"><pre>RandomForestClassifier(n_estimators=20,
+                           random_state=RandomState(MT19937) at 0x7F26F99DD440)</pre></div></div></div></div></div></div></div></div></div></div>
     </div>
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 49-51
+.. GENERATED FROM PYTHON SOURCE LINES 48-50
 
 We can now use the `cv_results_` attribute of the search estimator to inspect
 and plot the evolution of the search.
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-73
+.. GENERATED FROM PYTHON SOURCE LINES 50-72
 
 .. code-block:: default
 
 
     results = pd.DataFrame(rsh.cv_results_)
-    results['params_str'] = results.params.apply(str)
-    results.drop_duplicates(subset=('params_str', 'iter'), inplace=True)
-    mean_scores = results.pivot(index='iter', columns='params_str',
-                                values='mean_test_score')
-    ax = mean_scores.plot(legend=False, alpha=.6)
+    results["params_str"] = results.params.apply(str)
+    results.drop_duplicates(subset=("params_str", "iter"), inplace=True)
+    mean_scores = results.pivot(
+        index="iter", columns="params_str", values="mean_test_score"
+    )
+    ax = mean_scores.plot(legend=False, alpha=0.6)
 
     labels = [
-        f'iter={i}\nn_samples={rsh.n_resources_[i]}\n'
-        f'n_candidates={rsh.n_candidates_[i]}'
+        f"iter={i}\nn_samples={rsh.n_resources_[i]}\nn_candidates={rsh.n_candidates_[i]}"
         for i in range(rsh.n_iterations_)
     ]
 
     ax.set_xticks(range(rsh.n_iterations_))
-    ax.set_xticklabels(labels, rotation=45, multialignment='left')
-    ax.set_title('Scores of candidates over iterations')
-    ax.set_ylabel('mean test score', fontsize=15)
-    ax.set_xlabel('iterations', fontsize=15)
+    ax.set_xticklabels(labels, rotation=45, multialignment="left")
+    ax.set_title("Scores of candidates over iterations")
+    ax.set_ylabel("mean test score", fontsize=15)
+    ax.set_xlabel("iterations", fontsize=15)
     plt.tight_layout()
     plt.show()
 
@@ -145,7 +144,7 @@ and plot the evolution of the search.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 74-88
+.. GENERATED FROM PYTHON SOURCE LINES 73-87
 
 Number of candidates and amount of resource at each iteration
 -------------------------------------------------------------
@@ -165,7 +164,7 @@ last iteration.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.023 seconds)
+   **Total running time of the script:** ( 0 minutes  13.659 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_successive_halving_iterations.py:

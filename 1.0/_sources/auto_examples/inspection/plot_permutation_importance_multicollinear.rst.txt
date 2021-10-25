@@ -35,11 +35,11 @@ picking a threshold, and keeping a single feature from each cluster.
     See also
     :ref:`sphx_glr_auto_examples_inspection_plot_permutation_importance.py`
 
-.. GENERATED FROM PYTHON SOURCE LINES 19-33
+.. GENERATED FROM PYTHON SOURCE LINES 20-34
 
 .. code-block:: default
 
-    print(__doc__)
+
     from collections import defaultdict
 
     import matplotlib.pyplot as plt
@@ -60,14 +60,14 @@ picking a threshold, and keeping a single feature from each cluster.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-38
+.. GENERATED FROM PYTHON SOURCE LINES 35-39
 
 Random Forest Feature Importance on Breast Cancer Data
 ------------------------------------------------------
 First, we train a random forest on the breast cancer dataset and evaluate
 its accuracy on a test set:
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-46
+.. GENERATED FROM PYTHON SOURCE LINES 39-47
 
 .. code-block:: default
 
@@ -94,7 +94,7 @@ its accuracy on a test set:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-54
+.. GENERATED FROM PYTHON SOURCE LINES 48-55
 
 Next, we plot the tree based feature importance and the permutation
 importance. The permutation importance plot shows that permuting a feature
@@ -104,25 +104,26 @@ computed above: some feature must be important. The permutation importance
 is calculated on the training set to show how much the model relies on each
 feature during training.
 
-.. GENERATED FROM PYTHON SOURCE LINES 54-72
+.. GENERATED FROM PYTHON SOURCE LINES 55-74
 
 .. code-block:: default
 
-    result = permutation_importance(clf, X_train, y_train, n_repeats=10,
-                                    random_state=42)
+    result = permutation_importance(clf, X_train, y_train, n_repeats=10, random_state=42)
     perm_sorted_idx = result.importances_mean.argsort()
 
     tree_importance_sorted_idx = np.argsort(clf.feature_importances_)
     tree_indices = np.arange(0, len(clf.feature_importances_)) + 0.5
 
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 8))
-    ax1.barh(tree_indices,
-             clf.feature_importances_[tree_importance_sorted_idx], height=0.7)
+    ax1.barh(tree_indices, clf.feature_importances_[tree_importance_sorted_idx], height=0.7)
     ax1.set_yticks(tree_indices)
     ax1.set_yticklabels(data.feature_names[tree_importance_sorted_idx])
     ax1.set_ylim((0, len(clf.feature_importances_)))
-    ax2.boxplot(result.importances[perm_sorted_idx].T, vert=False,
-                labels=data.feature_names[perm_sorted_idx])
+    ax2.boxplot(
+        result.importances[perm_sorted_idx].T,
+        vert=False,
+        labels=data.feature_names[perm_sorted_idx],
+    )
     fig.tight_layout()
     plt.show()
 
@@ -138,7 +139,7 @@ feature during training.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-81
+.. GENERATED FROM PYTHON SOURCE LINES 75-83
 
 Handling Multicollinear Features
 --------------------------------
@@ -149,7 +150,7 @@ performing hierarchical clustering on the Spearman rank-order correlations,
 picking a threshold, and keeping a single feature from each cluster. First,
 we plot a heatmap of the correlated features:
 
-.. GENERATED FROM PYTHON SOURCE LINES 81-105
+.. GENERATED FROM PYTHON SOURCE LINES 83-107
 
 .. code-block:: default
 
@@ -157,7 +158,7 @@ we plot a heatmap of the correlated features:
     corr = spearmanr(X).correlation
 
     # Ensure the correlation matrix is symmetric
-    corr = (corr + corr.T)/2
+    corr = (corr + corr.T) / 2
     np.fill_diagonal(corr, 1)
 
     # We convert the correlation matrix to a distance matrix before performing
@@ -167,13 +168,13 @@ we plot a heatmap of the correlated features:
     dendro = hierarchy.dendrogram(
         dist_linkage, labels=data.feature_names.tolist(), ax=ax1, leaf_rotation=90
     )
-    dendro_idx = np.arange(0, len(dendro['ivl']))
+    dendro_idx = np.arange(0, len(dendro["ivl"]))
 
-    ax2.imshow(corr[dendro['leaves'], :][:, dendro['leaves']])
+    ax2.imshow(corr[dendro["leaves"], :][:, dendro["leaves"]])
     ax2.set_xticks(dendro_idx)
     ax2.set_yticks(dendro_idx)
-    ax2.set_xticklabels(dendro['ivl'], rotation='vertical')
-    ax2.set_yticklabels(dendro['ivl'])
+    ax2.set_xticklabels(dendro["ivl"], rotation="vertical")
+    ax2.set_yticklabels(dendro["ivl"])
     fig.tight_layout()
     plt.show()
 
@@ -189,7 +190,7 @@ we plot a heatmap of the correlated features:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-111
+.. GENERATED FROM PYTHON SOURCE LINES 108-113
 
 Next, we manually pick a threshold by visual inspection of the dendrogram
 to group our features into clusters and choose a feature from each cluster to
@@ -197,11 +198,11 @@ keep, select those features from our dataset, and train a new random forest.
 The test accuracy of the new random forest did not change much compared to
 the random forest trained on the complete dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-124
+.. GENERATED FROM PYTHON SOURCE LINES 113-129
 
 .. code-block:: default
 
-    cluster_ids = hierarchy.fcluster(dist_linkage, 1, criterion='distance')
+    cluster_ids = hierarchy.fcluster(dist_linkage, 1, criterion="distance")
     cluster_id_to_feature_ids = defaultdict(list)
     for idx, cluster_id in enumerate(cluster_ids):
         cluster_id_to_feature_ids[cluster_id].append(idx)
@@ -212,8 +213,11 @@ the random forest trained on the complete dataset.
 
     clf_sel = RandomForestClassifier(n_estimators=100, random_state=42)
     clf_sel.fit(X_train_sel, y_train)
-    print("Accuracy on test data with features removed: {:.2f}".format(
-          clf_sel.score(X_test_sel, y_test)))
+    print(
+        "Accuracy on test data with features removed: {:.2f}".format(
+            clf_sel.score(X_test_sel, y_test)
+        )
+    )
 
 
 
@@ -232,7 +236,7 @@ the random forest trained on the complete dataset.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.145 seconds)
+   **Total running time of the script:** ( 0 minutes  7.025 seconds)
 
 
 .. _sphx_glr_download_auto_examples_inspection_plot_permutation_importance_multicollinear.py:

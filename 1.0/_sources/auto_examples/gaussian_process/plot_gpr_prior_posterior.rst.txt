@@ -30,11 +30,10 @@ and posterior distributions.
 Here, we only give some illustration. To know more about kernels' formulation,
 refer to the :ref:`User Guide <gp_kernels>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-20
+.. GENERATED FROM PYTHON SOURCE LINES 15-20
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Jan Hendrik Metzen <jhm@informatik.uni-bremen.de>
     #          Guillaume Lemaitre <g.lemaitre58@gmail.com>
@@ -62,7 +61,7 @@ drawn sample from the Gaussian process. If the model was not fit, the samples
 are drawn from the prior distribution while after model fitting, the samples are
 drawn from the posterior distribution.
 
-.. GENERATED FROM PYTHON SOURCE LINES 33-85
+.. GENERATED FROM PYTHON SOURCE LINES 33-82
 
 .. code-block:: default
 
@@ -89,9 +88,6 @@ drawn from the posterior distribution.
         """
         x = np.linspace(0, 5, 100)
         X = x.reshape(-1, 1)
-
-        y_mean, y_std = gpr_model.predict(X, return_std=True)
-        y_samples = gpr_model.sample_y(X, n_samples)
 
         y_mean, y_std = gpr_model.predict(X, return_std=True)
         y_samples = gpr_model.sample_y(X, n_samples)
@@ -125,13 +121,13 @@ drawn from the posterior distribution.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-89
+.. GENERATED FROM PYTHON SOURCE LINES 83-86
 
 Dataset and Gaussian process generation
 ---------------------------------------
 We will create a training dataset that we will use in the different sections.
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-94
+.. GENERATED FROM PYTHON SOURCE LINES 86-91
 
 .. code-block:: default
 
@@ -147,7 +143,7 @@ We will create a training dataset that we will use in the different sections.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 95-103
+.. GENERATED FROM PYTHON SOURCE LINES 92-100
 
 Kernel cookbook
 ---------------
@@ -158,7 +154,7 @@ distributions of the Gaussian process with different kernels.
 Radial Basis Function kernel
 ............................
 
-.. GENERATED FROM PYTHON SOURCE LINES 103-125
+.. GENERATED FROM PYTHON SOURCE LINES 100-122
 
 .. code-block:: default
 
@@ -196,7 +192,7 @@ Radial Basis Function kernel
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 126-132
+.. GENERATED FROM PYTHON SOURCE LINES 123-129
 
 .. code-block:: default
 
@@ -225,12 +221,12 @@ Radial Basis Function kernel
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 133-135
+.. GENERATED FROM PYTHON SOURCE LINES 130-132
 
 Rational Quadradtic kernel
 ..........................
 
-.. GENERATED FROM PYTHON SOURCE LINES 135-156
+.. GENERATED FROM PYTHON SOURCE LINES 132-153
 
 .. code-block:: default
 
@@ -270,15 +266,15 @@ Rational Quadradtic kernel
 
  .. code-block:: none
 
-    /home/circleci/project/sklearn/gaussian_process/_gpr.py:461: RuntimeWarning: covariance is not positive-semidefinite.
+    /home/circleci/project/sklearn/gaussian_process/_gpr.py:428: UserWarning: Predicted variances smaller than 0. Setting those variances to 0.
+      warnings.warn(
+    /home/circleci/project/sklearn/gaussian_process/_gpr.py:475: RuntimeWarning: covariance is not positive-semidefinite.
       y_samples = rng.multivariate_normal(y_mean, y_cov, n_samples).T
-    /home/circleci/project/sklearn/gaussian_process/_gpr.py:461: RuntimeWarning: covariance is not positive-semidefinite.
-      y_samples = rng.multivariate_normal(y_mean, y_cov, n_samples).T
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-163
+.. GENERATED FROM PYTHON SOURCE LINES 154-160
 
 .. code-block:: default
 
@@ -301,18 +297,18 @@ Rational Quadradtic kernel
     Kernel parameters before fit:
     1**2 * RationalQuadratic(alpha=0.1, length_scale=1))
     Kernel parameters after fit: 
-    0.594**2 * RationalQuadratic(alpha=5.97e+07, length_scale=0.279) 
-    Log-likelihood: -0.067
+    0.594**2 * RationalQuadratic(alpha=5.3e+10, length_scale=0.279) 
+    Log-likelihood: 0.008
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 164-166
+.. GENERATED FROM PYTHON SOURCE LINES 161-163
 
 Periodic kernel
 ...............
 
-.. GENERATED FROM PYTHON SOURCE LINES 166-192
+.. GENERATED FROM PYTHON SOURCE LINES 163-189
 
 .. code-block:: default
 
@@ -354,7 +350,7 @@ Periodic kernel
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 193-199
+.. GENERATED FROM PYTHON SOURCE LINES 190-196
 
 .. code-block:: default
 
@@ -383,12 +379,12 @@ Periodic kernel
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 200-202
+.. GENERATED FROM PYTHON SOURCE LINES 197-199
 
 Dot product kernel
 ..................
 
-.. GENERATED FROM PYTHON SOURCE LINES 202-225
+.. GENERATED FROM PYTHON SOURCE LINES 199-222
 
 .. code-block:: default
 
@@ -424,23 +420,10 @@ Dot product kernel
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/circleci/project/sklearn/gaussian_process/_gpr.py:596: ConvergenceWarning: lbfgs failed to converge (status=2):
-    ABNORMAL_TERMINATION_IN_LNSRCH.
-
-    Increase the number of iterations (max_iter) or scale the data as shown in:
-        https://scikit-learn.org/stable/modules/preprocessing.html
-      _check_optimize_result("lbfgs", opt_res)
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 226-232
+.. GENERATED FROM PYTHON SOURCE LINES 223-229
 
 .. code-block:: default
 
@@ -463,18 +446,18 @@ Dot product kernel
     Kernel parameters before fit:
     0.316**2 * DotProduct(sigma_0=1) ** 2)
     Kernel parameters after fit: 
-    0.857**2 * DotProduct(sigma_0=2.71) ** 2 
-    Log-likelihood: -7958235635.078
+    0.316**2 * DotProduct(sigma_0=0.998) ** 2 
+    Log-likelihood: -7960503293.911
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 233-235
+.. GENERATED FROM PYTHON SOURCE LINES 230-232
 
 Mattern kernel
 ..............
 
-.. GENERATED FROM PYTHON SOURCE LINES 235-256
+.. GENERATED FROM PYTHON SOURCE LINES 232-253
 
 .. code-block:: default
 
@@ -511,7 +494,7 @@ Mattern kernel
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 257-262
+.. GENERATED FROM PYTHON SOURCE LINES 254-259
 
 .. code-block:: default
 
@@ -542,7 +525,7 @@ Mattern kernel
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.312 seconds)
+   **Total running time of the script:** ( 0 minutes  1.976 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_gpr_prior_posterior.py:

@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Maintainer / core-developer information &mdash; scikit-learn 1.0 documentation</title>
+  <title>Maintainer / core-developer information &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/developers/maintainer.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -368,6 +368,15 @@ files) to <a class="reference external" href="https://test.pypi.org">https://tes
 following GitHub Actions workflow:</p>
 <p><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/actions?query=workflow%3A%22Publish+to+Pypi%22">https://github.com/scikit-learn/scikit-learn/actions?query=workflow%3A%22Publish+to+Pypi%22</a></p>
 </li>
+</ol>
+<dl class="simple">
+<dt>4.1 You can test the conda-forge builds by submitting a PR to the feedstock</dt><dd><p>repo: <a class="reference external" href="https://github.com/conda-forge/scikit-learn-feedstock">https://github.com/conda-forge/scikit-learn-feedstock</a>. If you want to
+publish an RC release on conda-forge, the PR should target the <code class="docutils literal notranslate"><span class="pre">rc</span></code> branch
+as opposed to the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch. The two branches need to be kept sync
+together otherwise.</p>
+</dd>
+</dl>
+<ol class="arabic" start="5">
 <li><p>If this went fine, you can proceed with tagging. Proceed with caution.
 Ideally, tags should be created when you’re almost certain that the release
 is ready, since adding a tag to the main repo can trigger certain automated
@@ -406,11 +415,11 @@ and the <code class="docutils literal notranslate"><span class="pre">latestStabl
 <span class="prompt1">git clone --depth <span class="m">1</span> --no-checkout git@github.com:scikit-learn/scikit-learn.github.io.git</span>
 <span class="prompt1"><span class="nb">cd</span> scikit-learn.github.io</span>
 <span class="prompt1"><span class="nb">echo</span> stable &gt; .git/info/sparse-checkout</span>
-<span class="prompt1">git checkout master</span>
+<span class="prompt1">git checkout main</span>
 <span class="prompt1">rm stable</span>
 <span class="prompt1">ln -s <span class="m">0</span>.999 stable</span>
 <span class="prompt1">sed -i <span class="s2">&quot;s/latestStable = &#39;.*/latestStable = &#39;0.999&#39;;/&quot;</span> versionwarning.js</span>
-<span class="prompt1">git add stable/ versionwarning.js</span>
+<span class="prompt1">git add stable versionwarning.js</span>
 <span class="prompt1">git commit -m <span class="s2">&quot;Update stable to point to 0.999&quot;</span></span>
 <span class="prompt1">git push origin master</span>
 </pre></div></div></li>
@@ -425,14 +434,11 @@ and the <code class="docutils literal notranslate"><span class="pre">latestStabl
 * [ ] merge the PR with `[cd build]` commit message to upload wheels to the staging repo
 * [ ] upload the wheels and source tarball to https://test.pypi.org
 * [ ] create tag on the main github repo
-* [ ] upload the wheels and source tarball to PyPI
-* [ ] https://github.com/scikit-learn/scikit-learn/releases draft
 * [ ] confirm bot detected at
   https://github.com/conda-forge/scikit-learn-feedstock and wait for merge
+* [ ] upload the wheels and source tarball to PyPI
 * [ ] https://github.com/scikit-learn/scikit-learn/releases publish
-* [ ] fix the binder release version in ``.binder/requirement.txt`` (see
-  #15847)
-* [ ] announce on mailing list and on twitter
+* [ ] announce on mailing list and on Twitter, and LinkedIn
 </pre></div>
 </div>
 </section>

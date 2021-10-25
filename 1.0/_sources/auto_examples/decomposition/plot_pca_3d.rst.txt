@@ -26,7 +26,7 @@ These figures aid in illustrating how a point cloud
 can be very flat in one direction--which is where PCA
 comes in to choose a direction that is not flat.
 
-.. GENERATED FROM PYTHON SOURCE LINES 14-98
+.. GENERATED FROM PYTHON SOURCE LINES 12-94
 
 
 
@@ -54,11 +54,10 @@ comes in to choose a direction that is not flat.
 
  .. code-block:: none
 
-
-    /home/circleci/project/examples/decomposition/plot_pca_3d.py:64: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
-      ax = Axes3D(fig, rect=[0, 0, .95, 1], elev=elev, azim=azim)
-    /home/circleci/project/examples/decomposition/plot_pca_3d.py:64: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
-      ax = Axes3D(fig, rect=[0, 0, .95, 1], elev=elev, azim=azim)
+    /home/circleci/project/examples/decomposition/plot_pca_3d.py:60: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+      ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=elev, azim=azim)
+    /home/circleci/project/examples/decomposition/plot_pca_3d.py:60: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+      ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=elev, azim=azim)
 
 
 
@@ -69,7 +68,6 @@ comes in to choose a direction that is not flat.
 
 .. code-block:: default
 
-    print(__doc__)
 
     # Authors: Gael Varoquaux
     #          Jaques Grobler
@@ -92,8 +90,7 @@ comes in to choose a direction that is not flat.
 
 
     def pdf(x):
-        return 0.5 * (stats.norm(scale=0.25 / e).pdf(x)
-                      + stats.norm(scale=4 / e).pdf(x))
+        return 0.5 * (stats.norm(scale=0.25 / e).pdf(x) + stats.norm(scale=4 / e).pdf(x))
 
 
     y = np.random.normal(scale=0.5, size=(30000))
@@ -119,9 +116,9 @@ comes in to choose a direction that is not flat.
     def plot_figs(fig_num, elev, azim):
         fig = plt.figure(fig_num, figsize=(4, 3))
         plt.clf()
-        ax = Axes3D(fig, rect=[0, 0, .95, 1], elev=elev, azim=azim)
+        ax = Axes3D(fig, rect=[0, 0, 0.95, 1], elev=elev, azim=azim)
 
-        ax.scatter(a[::10], b[::10], c[::10], c=density[::10], marker='+', alpha=.4)
+        ax.scatter(a[::10], b[::10], c[::10], c=density[::10], marker="+", alpha=0.4)
         Y = np.c_[a, b, c]
 
         # Using SciPy's SVD, this would be:
@@ -132,9 +129,9 @@ comes in to choose a direction that is not flat.
         V = pca.components_.T
 
         x_pca_axis, y_pca_axis, z_pca_axis = 3 * V
-        x_pca_plane = np.r_[x_pca_axis[:2], - x_pca_axis[1::-1]]
-        y_pca_plane = np.r_[y_pca_axis[:2], - y_pca_axis[1::-1]]
-        z_pca_plane = np.r_[z_pca_axis[:2], - z_pca_axis[1::-1]]
+        x_pca_plane = np.r_[x_pca_axis[:2], -x_pca_axis[1::-1]]
+        y_pca_plane = np.r_[y_pca_axis[:2], -y_pca_axis[1::-1]]
+        z_pca_plane = np.r_[z_pca_axis[:2], -z_pca_axis[1::-1]]
         x_pca_plane.shape = (2, 2)
         y_pca_plane.shape = (2, 2)
         z_pca_plane.shape = (2, 2)
@@ -157,7 +154,7 @@ comes in to choose a direction that is not flat.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.167 seconds)
+   **Total running time of the script:** ( 0 minutes  0.308 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_pca_3d.py:

@@ -25,7 +25,7 @@ Lasso on dense and sparse data
 We show that linear_model.Lasso provides the same results for dense and sparse
 data and that in the case of sparse data the speed is improved.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-67
+.. GENERATED FROM PYTHON SOURCE LINES 10-70
 
 
 
@@ -36,15 +36,14 @@ data and that in the case of sparse data the speed is improved.
 
  .. code-block:: none
 
-
     --- Dense matrices
-    Sparse Lasso done in 0.119034s
-    Dense Lasso done in 0.040422s
+    Sparse Lasso done in 0.121868s
+    Dense Lasso done in 0.049592s
     Distance between coefficients : 8.680552612979835e-14
     --- Sparse matrices
     Matrix density : 0.6263000000000001 %
-    Sparse Lasso done in 0.148449s
-    Dense Lasso done in 0.910001s
+    Sparse Lasso done in 0.212646s
+    Dense Lasso done in 1.097173s
     Distance between coefficients : 7.768625813853113e-12
 
 
@@ -56,7 +55,6 @@ data and that in the case of sparse data the speed is improved.
 
 .. code-block:: default
 
-    print(__doc__)
 
     from time import time
     from scipy import sparse
@@ -85,8 +83,10 @@ data and that in the case of sparse data the speed is improved.
     dense_lasso.fit(X, y)
     print("Dense Lasso done in %fs" % (time() - t0))
 
-    print("Distance between coefficients : %s"
-          % linalg.norm(sparse_lasso.coef_ - dense_lasso.coef_))
+    print(
+        "Distance between coefficients : %s"
+        % linalg.norm(sparse_lasso.coef_ - dense_lasso.coef_)
+    )
 
     # #############################################################################
     # The two Lasso implementations on Sparse data
@@ -111,13 +111,15 @@ data and that in the case of sparse data the speed is improved.
     dense_lasso.fit(Xs.toarray(), y)
     print("Dense Lasso done in %fs" % (time() - t0))
 
-    print("Distance between coefficients : %s"
-          % linalg.norm(sparse_lasso.coef_ - dense_lasso.coef_))
+    print(
+        "Distance between coefficients : %s"
+        % linalg.norm(sparse_lasso.coef_ - dense_lasso.coef_)
+    )
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.315 seconds)
+   **Total running time of the script:** ( 0 minutes  1.587 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_lasso_dense_vs_sparse_data.py:

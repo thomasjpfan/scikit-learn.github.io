@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>FeatureHasher and DictVectorizer Comparison &mdash; scikit-learn 1.0 documentation</title>
+  <title>FeatureHasher and DictVectorizer Comparison &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/text/plot_hashing_vs_dict_vectorizer.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -201,15 +201,15 @@ Loading 20 newsgroups training data
 3803 documents - 6.245MB
 
 DictVectorizer
-done in 1.000906s at 6.239MB/s
+done in 1.771134s at 3.526MB/s
 Found 47928 unique terms
 
 FeatureHasher on frequency dicts
-done in 0.585812s at 10.660MB/s
+done in 1.015568s at 6.149MB/s
 Found 43873 unique terms
 
 FeatureHasher on raw tokens
-done in 0.572074s at 10.916MB/s
+done in 0.988488s at 6.318MB/s
 Found 43873 unique terms
 </pre></div>
 </div>
@@ -218,6 +218,7 @@ Found 43873 unique terms
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Lars Buitinck</span>
 <span class="c1"># License: BSD 3 clause</span>
+
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <a href="https://docs.python.org/3/library/collections.html#collections.defaultdict" title="collections.defaultdict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">defaultdict</span></a>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">import</span> <span class="nn">sys</span>
@@ -252,13 +253,13 @@ Found 43873 unique terms
 
 
 <span class="n">categories</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;alt.atheism&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;comp.graphics&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;comp.sys.ibm.pc.hardware&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;misc.forsale&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;rec.autos&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;sci.space&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;talk.religion.misc&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;alt.atheism&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;comp.graphics&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;comp.sys.ibm.pc.hardware&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;misc.forsale&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rec.autos&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sci.space&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;talk.religion.misc&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="c1"># Uncomment the following line to use a larger set (11k+ documents)</span>
 <span class="c1"># categories = None</span>
@@ -278,9 +279,8 @@ Found 43873 unique terms
 
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading 20 newsgroups training data&quot;</span><span class="p">)</span>
-<span class="n">raw_data</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="sklearn.datasets.fetch_20newsgroups" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_20newsgroups</span></a><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span>
-                                 <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">data_size_mb</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">raw_data</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span>
+<span class="n">raw_data</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_20newsgroups.html#sklearn.datasets.fetch_20newsgroups" title="sklearn.datasets.fetch_20newsgroups" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_20newsgroups</span></a><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="s2">&quot;train&quot;</span><span class="p">,</span> <span class="n">categories</span><span class="o">=</span><span class="n">categories</span><span class="p">,</span> <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">data_size_mb</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf-8&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">raw_data</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e6</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> documents - </span><span class="si">%0.3f</span><span class="s2">MB&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">raw_data</span><span class="p">),</span> <span class="n">data_size_mb</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">()</span>
 
@@ -311,7 +311,7 @@ Found 43873 unique terms
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Found </span><span class="si">%d</span><span class="s2"> unique terms&quot;</span> <span class="o">%</span> <span class="n">n_nonzero_columns</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.442 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.176 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-hashing-vs-dict-vectorizer-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/text/plot_hashing_vs_dict_vectorizer.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo29.svg" width="150px" /></a>

@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Comparison of Manifold Learning methods &mdash; scikit-learn 1.0 documentation</title>
+  <title>Comparison of Manifold Learning methods &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/manifold/plot_compare_methods.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -196,27 +196,25 @@ representation of the data (here 2D) in which the distances respect well
 the distances in the original high-dimensional space, unlike other
 manifold-learning algorithms, it does not seeks an isotropic
 representation of the data in the low-dimensional space.</p>
-<img src="../../_images/sphx_glr_plot_compare_methods_001.png" srcset="../../_images/sphx_glr_plot_compare_methods_001.png" alt="Manifold Learning with 1000 points, 10 neighbors, LLE (0.078 sec), LTSA (0.13 sec), Hessian LLE (0.22 sec), Modified LLE (0.17 sec), Isomap (0.5 sec), MDS (1.5 sec), SE (0.06 sec), t-SNE (6.8 sec)" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>LLE: 0.078 sec
-LTSA: 0.13 sec
-Hessian LLE: 0.22 sec
-Modified LLE: 0.17 sec
-Isomap: 0.5 sec
-MDS: 1.5 sec
-SE: 0.06 sec
+<img src="../../_images/sphx_glr_plot_compare_methods_001.png" srcset="../../_images/sphx_glr_plot_compare_methods_001.png" alt="Manifold Learning with 1000 points, 10 neighbors, LLE (0.12 sec), LTSA (0.21 sec), Hessian LLE (0.32 sec), Modified LLE (0.26 sec), Isomap (0.72 sec), MDS (2.2 sec), SE (0.12 sec), t-SNE (11 sec)" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>LLE: 0.12 sec
+LTSA: 0.21 sec
+Hessian LLE: 0.32 sec
+Modified LLE: 0.26 sec
+Isomap: 0.72 sec
+MDS: 2.2 sec
+SE: 0.12 sec
 /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to &#39;auto&#39; in 1.2.
   warnings.warn(
 /home/circleci/project/sklearn/manifold/_t_sne.py:982: FutureWarning: The PCA initialization in TSNE will change to have the standard deviation of PC1 equal to 1e-4 in 1.2. This will ensure better convergence.
   warnings.warn(
-t-SNE: 6.8 sec
+t-SNE: 11 sec
 </pre></div>
 </div>
 <div class="line-block">
 <div class="line"><br /></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Jake Vanderplas -- &lt;vanderplas@astro.washington.edu&gt;</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <a href="https://docs.python.org/3/library/collections.html#collections.OrderedDict" title="collections.OrderedDict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">OrderedDict</span></a>
 <span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <a href="https://docs.python.org/3/library/functools.html#functools.partial" title="functools.partial" class="sphx-glr-backref-module-functools sphx-glr-backref-type-py-function"><span class="n">partial</span></a>
@@ -238,31 +236,34 @@ t-SNE: 6.8 sec
 
 <span class="c1"># Create figure</span>
 <span class="n">fig</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s2">&quot;Manifold Learning with </span><span class="si">%i</span><span class="s2"> points, </span><span class="si">%i</span><span class="s2"> neighbors&quot;</span>
-             <span class="o">%</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span>
+    <span class="s2">&quot;Manifold Learning with </span><span class="si">%i</span><span class="s2"> points, </span><span class="si">%i</span><span class="s2"> neighbors&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span>
+<span class="p">)</span>
 
 <span class="c1"># Add 3d scatter plot</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">251</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">251</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">X</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">color</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Spectral</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">72</span><span class="p">)</span>
 
 <span class="c1"># Set-up manifold methods</span>
-<span class="n">LLE</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functools.html#functools.partial" title="functools.partial" class="sphx-glr-backref-module-functools sphx-glr-backref-type-py-function"><span class="n">partial</span></a><span class="p">(</span><a href="../../modules/generated/sklearn.manifold.LocallyLinearEmbedding.html#sklearn.manifold.LocallyLinearEmbedding" title="sklearn.manifold.LocallyLinearEmbedding" class="sphx-glr-backref-module-sklearn-manifold sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">manifold</span><span class="o">.</span><span class="n">LocallyLinearEmbedding</span></a><span class="p">,</span>
-              <span class="n">n_neighbors</span><span class="o">=</span><span class="n">n_neighbors</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span>
-              <span class="n">eigen_solver</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">LLE</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/functools.html#functools.partial" title="functools.partial" class="sphx-glr-backref-module-functools sphx-glr-backref-type-py-function"><span class="n">partial</span></a><span class="p">(</span>
+    <a href="../../modules/generated/sklearn.manifold.LocallyLinearEmbedding.html#sklearn.manifold.LocallyLinearEmbedding" title="sklearn.manifold.LocallyLinearEmbedding" class="sphx-glr-backref-module-sklearn-manifold sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">manifold</span><span class="o">.</span><span class="n">LocallyLinearEmbedding</span></a><span class="p">,</span>
+    <span class="n">n_neighbors</span><span class="o">=</span><span class="n">n_neighbors</span><span class="p">,</span>
+    <span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span>
+    <span class="n">eigen_solver</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">methods</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/collections.html#collections.OrderedDict" title="collections.OrderedDict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">OrderedDict</span></a><span class="p">()</span>
-<span class="n">methods</span><span class="p">[</span><span class="s1">&#39;LLE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LLE</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;standard&#39;</span><span class="p">)</span>
-<span class="n">methods</span><span class="p">[</span><span class="s1">&#39;LTSA&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LLE</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;ltsa&#39;</span><span class="p">)</span>
-<span class="n">methods</span><span class="p">[</span><span class="s1">&#39;Hessian LLE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LLE</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;hessian&#39;</span><span class="p">)</span>
-<span class="n">methods</span><span class="p">[</span><span class="s1">&#39;Modified LLE&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LLE</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;modified&#39;</span><span class="p">)</span>
-<span class="n">methods</span><span class="p">[</span><span class="s1">&#39;Isomap&#39;</span><span class="p">]</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.manifold.Isomap.html#sklearn.manifold.Isomap" title="sklearn.manifold.Isomap" class="sphx-glr-backref-module-sklearn-manifold sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">manifold</span><span class="o">.</span><span class="n">Isomap</span></a><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">n_neighbors</span><span class="p">,</span>
-                                    <span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">)</span>
-<span class="n">methods</span><span class="p">[</span><span class="s1">&#39;MDS&#39;</span><span class="p">]</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.manifold.MDS.html#sklearn.manifold.MDS" title="sklearn.manifold.MDS" class="sphx-glr-backref-module-sklearn-manifold sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">manifold</span><span class="o">.</span><span class="n">MDS</span></a><span class="p">(</span><span class="n">n_components</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">methods</span><span class="p">[</span><span class="s1">&#39;SE&#39;</span><span class="p">]</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.manifold.SpectralEmbedding.html#sklearn.manifold.SpectralEmbedding" title="sklearn.manifold.SpectralEmbedding" class="sphx-glr-backref-module-sklearn-manifold sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">manifold</span><span class="o">.</span><span class="n">SpectralEmbedding</span></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span>
-                                           <span class="n">n_neighbors</span><span class="o">=</span><span class="n">n_neighbors</span><span class="p">)</span>
-<span class="n">methods</span><span class="p">[</span><span class="s1">&#39;t-SNE&#39;</span><span class="p">]</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.manifold.TSNE.html#sklearn.manifold.TSNE" title="sklearn.manifold.TSNE" class="sphx-glr-backref-module-sklearn-manifold sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">manifold</span><span class="o">.</span><span class="n">TSNE</span></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s1">&#39;pca&#39;</span><span class="p">,</span>
-                                 <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">methods</span><span class="p">[</span><span class="s2">&quot;LLE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LLE</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;standard&quot;</span><span class="p">)</span>
+<span class="n">methods</span><span class="p">[</span><span class="s2">&quot;LTSA&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LLE</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;ltsa&quot;</span><span class="p">)</span>
+<span class="n">methods</span><span class="p">[</span><span class="s2">&quot;Hessian LLE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LLE</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;hessian&quot;</span><span class="p">)</span>
+<span class="n">methods</span><span class="p">[</span><span class="s2">&quot;Modified LLE&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">LLE</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s2">&quot;modified&quot;</span><span class="p">)</span>
+<span class="n">methods</span><span class="p">[</span><span class="s2">&quot;Isomap&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.manifold.Isomap.html#sklearn.manifold.Isomap" title="sklearn.manifold.Isomap" class="sphx-glr-backref-module-sklearn-manifold sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">manifold</span><span class="o">.</span><span class="n">Isomap</span></a><span class="p">(</span><span class="n">n_neighbors</span><span class="o">=</span><span class="n">n_neighbors</span><span class="p">,</span> <span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">)</span>
+<span class="n">methods</span><span class="p">[</span><span class="s2">&quot;MDS&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.manifold.MDS.html#sklearn.manifold.MDS" title="sklearn.manifold.MDS" class="sphx-glr-backref-module-sklearn-manifold sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">manifold</span><span class="o">.</span><span class="n">MDS</span></a><span class="p">(</span><span class="n">n_components</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">methods</span><span class="p">[</span><span class="s2">&quot;SE&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.manifold.SpectralEmbedding.html#sklearn.manifold.SpectralEmbedding" title="sklearn.manifold.SpectralEmbedding" class="sphx-glr-backref-module-sklearn-manifold sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">manifold</span><span class="o">.</span><span class="n">SpectralEmbedding</span></a><span class="p">(</span>
+    <span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span> <span class="n">n_neighbors</span><span class="o">=</span><span class="n">n_neighbors</span>
+<span class="p">)</span>
+<span class="n">methods</span><span class="p">[</span><span class="s2">&quot;t-SNE&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.manifold.TSNE.html#sklearn.manifold.TSNE" title="sklearn.manifold.TSNE" class="sphx-glr-backref-module-sklearn-manifold sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">manifold</span><span class="o">.</span><span class="n">TSNE</span></a><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="n">n_components</span><span class="p">,</span> <span class="n">init</span><span class="o">=</span><span class="s2">&quot;pca&quot;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># Plot results</span>
 <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">methods</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
@@ -275,12 +276,12 @@ t-SNE: 6.8 sec
     <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%s</span><span class="s2"> (</span><span class="si">%.2g</span><span class="s2"> sec)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="https://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter" title="matplotlib.ticker.NullFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NullFormatter</span></a><span class="p">())</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><a href="https://matplotlib.org/api/ticker_api.html#matplotlib.ticker.NullFormatter" title="matplotlib.ticker.NullFormatter" class="sphx-glr-backref-module-matplotlib-ticker sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">NullFormatter</span></a><span class="p">())</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
 
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.030 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  16.204 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-manifold-plot-compare-methods-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/manifold/plot_compare_methods.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo18.svg" width="150px" /></a>

@@ -50,21 +50,7 @@ linear regressor to the transformed data. The main difference with PCR is
 that the PLS transformation is supervised. Therefore, as we will see in this
 example, it does not suffer from the issue we just mentioned.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-37
-
-.. code-block:: default
-
-
-    print(__doc__)
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 38-45
+.. GENERATED FROM PYTHON SOURCE LINES 37-44
 
 The data
 --------
@@ -74,7 +60,7 @@ into PCR and PLS, we fit a PCA estimator to display the two principal
 components of this dataset, i.e. the two directions that explain the most
 variance in the data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-68
+.. GENERATED FROM PYTHON SOURCE LINES 44-74
 
 .. code-block:: default
 
@@ -84,20 +70,27 @@ variance in the data.
 
     rng = np.random.RandomState(0)
     n_samples = 500
-    cov = [[3, 3],
-           [3, 4]]
+    cov = [[3, 3], [3, 4]]
     X = rng.multivariate_normal(mean=[0, 0], cov=cov, size=n_samples)
     pca = PCA(n_components=2).fit(X)
 
 
-    plt.scatter(X[:, 0], X[:, 1], alpha=.3, label='samples')
+    plt.scatter(X[:, 0], X[:, 1], alpha=0.3, label="samples")
     for i, (comp, var) in enumerate(zip(pca.components_, pca.explained_variance_)):
         comp = comp * var  # scale component by its variance explanation power
-        plt.plot([0, comp[0]], [0, comp[1]], label=f"Component {i}", linewidth=5,
-                 color=f"C{i + 2}")
-    plt.gca().set(aspect='equal',
-                  title="2-dimensional dataset with principal components",
-                  xlabel='first feature', ylabel='second feature')
+        plt.plot(
+            [0, comp[0]],
+            [0, comp[1]],
+            label=f"Component {i}",
+            linewidth=5,
+            color=f"C{i + 2}",
+        )
+    plt.gca().set(
+        aspect="equal",
+        title="2-dimensional dataset with principal components",
+        xlabel="first feature",
+        ylabel="second feature",
+    )
     plt.legend()
     plt.show()
 
@@ -113,13 +106,13 @@ variance in the data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 69-72
+.. GENERATED FROM PYTHON SOURCE LINES 75-78
 
 For the purpose of this example, we now define the target `y` such that it is
 strongly correlated with a direction that has a small variance. To this end,
 we will project `X` onto the second component, and add some noise to it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-84
+.. GENERATED FROM PYTHON SOURCE LINES 78-90
 
 .. code-block:: default
 
@@ -128,10 +121,10 @@ we will project `X` onto the second component, and add some noise to it.
 
     fig, axes = plt.subplots(1, 2, figsize=(10, 3))
 
-    axes[0].scatter(X.dot(pca.components_[0]), y, alpha=.3)
-    axes[0].set(xlabel='Projected data onto first PCA component', ylabel='y')
-    axes[1].scatter(X.dot(pca.components_[1]), y, alpha=.3)
-    axes[1].set(xlabel='Projected data onto second PCA component', ylabel='y')
+    axes[0].scatter(X.dot(pca.components_[0]), y, alpha=0.3)
+    axes[0].set(xlabel="Projected data onto first PCA component", ylabel="y")
+    axes[1].scatter(X.dot(pca.components_[1]), y, alpha=0.3)
+    axes[1].set(xlabel="Projected data onto second PCA component", ylabel="y")
     plt.tight_layout()
     plt.show()
 
@@ -147,7 +140,7 @@ we will project `X` onto the second component, and add some noise to it.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-96
+.. GENERATED FROM PYTHON SOURCE LINES 91-102
 
 Projection on one component and predictive power
 ------------------------------------------------
@@ -161,7 +154,7 @@ For both models, we plot the projected data onto the first component against
 the target. In both cases, this projected data is what the regressors will
 use as training data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-128
+.. GENERATED FROM PYTHON SOURCE LINES 102-136
 
 .. code-block:: default
 
@@ -176,23 +169,25 @@ use as training data.
 
     pcr = make_pipeline(StandardScaler(), PCA(n_components=1), LinearRegression())
     pcr.fit(X_train, y_train)
-    pca = pcr.named_steps['pca']  # retrieve the PCA step of the pipeline
+    pca = pcr.named_steps["pca"]  # retrieve the PCA step of the pipeline
 
     pls = PLSRegression(n_components=1)
     pls.fit(X_train, y_train)
 
     fig, axes = plt.subplots(1, 2, figsize=(10, 3))
-    axes[0].scatter(pca.transform(X_test), y_test, alpha=.3, label='ground truth')
-    axes[0].scatter(pca.transform(X_test), pcr.predict(X_test), alpha=.3,
-                    label='predictions')
-    axes[0].set(xlabel='Projected data onto first PCA component',
-                ylabel='y', title='PCR / PCA')
+    axes[0].scatter(pca.transform(X_test), y_test, alpha=0.3, label="ground truth")
+    axes[0].scatter(
+        pca.transform(X_test), pcr.predict(X_test), alpha=0.3, label="predictions"
+    )
+    axes[0].set(
+        xlabel="Projected data onto first PCA component", ylabel="y", title="PCR / PCA"
+    )
     axes[0].legend()
-    axes[1].scatter(pls.transform(X_test), y_test, alpha=.3, label='ground truth')
-    axes[1].scatter(pls.transform(X_test), pls.predict(X_test), alpha=.3,
-                    label='predictions')
-    axes[1].set(xlabel='Projected data onto first PLS component',
-                ylabel='y', title='PLS')
+    axes[1].scatter(pls.transform(X_test), y_test, alpha=0.3, label="ground truth")
+    axes[1].scatter(
+        pls.transform(X_test), pls.predict(X_test), alpha=0.3, label="predictions"
+    )
+    axes[1].set(xlabel="Projected data onto first PLS component", ylabel="y", title="PLS")
     axes[1].legend()
     plt.tight_layout()
     plt.show()
@@ -209,7 +204,7 @@ use as training data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 129-146
+.. GENERATED FROM PYTHON SOURCE LINES 137-154
 
 As expected, the unsupervised PCA transformation of PCR has dropped the
 second component, i.e. the direction with the lowest variance, despite
@@ -229,7 +224,7 @@ that PLS is a better alternative than PCR in this case. A negative R-squared
 indicates that PCR performs worse than a regressor that would simply predict
 the mean of the target.
 
-.. GENERATED FROM PYTHON SOURCE LINES 146-150
+.. GENERATED FROM PYTHON SOURCE LINES 154-158
 
 .. code-block:: default
 
@@ -253,13 +248,13 @@ the mean of the target.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 151-154
+.. GENERATED FROM PYTHON SOURCE LINES 159-162
 
 As a final remark, we note that PCR with 2 components performs as well as
 PLS: this is because in this case, PCR was able to leverage the second
 component which has the most preditive power on the target.
 
-.. GENERATED FROM PYTHON SOURCE LINES 154-158
+.. GENERATED FROM PYTHON SOURCE LINES 162-166
 
 .. code-block:: default
 
@@ -285,7 +280,7 @@ component which has the most preditive power on the target.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.404 seconds)
+   **Total running time of the script:** ( 0 minutes  0.689 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cross_decomposition_plot_pcr_vs_pls.py:

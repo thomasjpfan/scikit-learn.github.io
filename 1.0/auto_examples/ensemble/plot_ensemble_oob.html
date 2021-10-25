@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>OOB Errors for Random Forests &mdash; scikit-learn 1.0 documentation</title>
+  <title>OOB Errors for Random Forests &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/ensemble/plot_ensemble_oob.html" />
 
@@ -153,12 +153,12 @@
           </a>
         </div>
         <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-            <a href="plot_gradient_boosting_regression.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Gradient Boosting regression">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
-            <a href="plot_adaboost_twoclass.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Two-class AdaBoost">Next</a>
+            <a href="plot_adaboost_twoclass.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Two-class AdaBoost">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+            <a href="plot_random_forest_embedding.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Hashing feature transformation using Totally Random Trees">Next</a>
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -201,43 +201,60 @@ error stabilizes.</p>
 Learning Ed. 2”, p592-593, Springer, 2009.</p>
 </dd>
 </dl>
-<img src="../../_images/sphx_glr_plot_ensemble_oob_001.png" srcset="../../_images/sphx_glr_plot_ensemble_oob_001.png" alt="plot ensemble oob" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <a href="https://docs.python.org/3/library/collections.html#collections.OrderedDict" title="collections.OrderedDict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">OrderedDict</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.make_classification.html#sklearn.datasets.make_classification" title="sklearn.datasets.make_classification" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_classification</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier" class="sphx-glr-backref-module-sklearn-ensemble sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RandomForestClassifier</span></a>
-
-<span class="c1"># Author: Kian Ho &lt;hui.kian.ho@gmail.com&gt;</span>
+<img src="../../_images/sphx_glr_plot_ensemble_oob_001.png" srcset="../../_images/sphx_glr_plot_ensemble_oob_001.png" alt="plot ensemble oob" class = "sphx-glr-single-img"/><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Kian Ho &lt;hui.kian.ho@gmail.com&gt;</span>
 <span class="c1">#         Gilles Louppe &lt;g.louppe@gmail.com&gt;</span>
 <span class="c1">#         Andreas Mueller &lt;amueller@ais.uni-bonn.de&gt;</span>
 <span class="c1">#</span>
 <span class="c1"># License: BSD 3 Clause</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <a href="https://docs.python.org/3/library/collections.html#collections.OrderedDict" title="collections.OrderedDict" class="sphx-glr-backref-module-collections sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">OrderedDict</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.make_classification.html#sklearn.datasets.make_classification" title="sklearn.datasets.make_classification" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_classification</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier" class="sphx-glr-backref-module-sklearn-ensemble sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RandomForestClassifier</span></a>
 
 <span class="n">RANDOM_STATE</span> <span class="o">=</span> <span class="mi">123</span>
 
 <span class="c1"># Generate a binary classification dataset.</span>
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.make_classification.html#sklearn.datasets.make_classification" title="sklearn.datasets.make_classification" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_classification</span></a><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
-                           <span class="n">n_clusters_per_class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_informative</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
-                           <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_STATE</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.make_classification.html#sklearn.datasets.make_classification" title="sklearn.datasets.make_classification" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">make_classification</span></a><span class="p">(</span>
+    <span class="n">n_samples</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
+    <span class="n">n_features</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span>
+    <span class="n">n_clusters_per_class</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">n_informative</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_STATE</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="c1"># NOTE: Setting the `warm_start` construction parameter to `True` disables</span>
 <span class="c1"># support for parallelized ensembles but is necessary for tracking the OOB</span>
 <span class="c1"># error trajectory during training.</span>
 <span class="n">ensemble_clfs</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s2">&quot;RandomForestClassifier, max_features=&#39;sqrt&#39;&quot;</span><span class="p">,</span>
-        <a href="../../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier" class="sphx-glr-backref-module-sklearn-ensemble sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RandomForestClassifier</span></a><span class="p">(</span><span class="n">warm_start</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">oob_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                               <span class="n">max_features</span><span class="o">=</span><span class="s2">&quot;sqrt&quot;</span><span class="p">,</span>
-                               <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_STATE</span><span class="p">)),</span>
-    <span class="p">(</span><span class="s2">&quot;RandomForestClassifier, max_features=&#39;log2&#39;&quot;</span><span class="p">,</span>
-        <a href="../../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier" class="sphx-glr-backref-module-sklearn-ensemble sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RandomForestClassifier</span></a><span class="p">(</span><span class="n">warm_start</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="s1">&#39;log2&#39;</span><span class="p">,</span>
-                               <span class="n">oob_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                               <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_STATE</span><span class="p">)),</span>
-    <span class="p">(</span><span class="s2">&quot;RandomForestClassifier, max_features=None&quot;</span><span class="p">,</span>
-        <a href="../../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier" class="sphx-glr-backref-module-sklearn-ensemble sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RandomForestClassifier</span></a><span class="p">(</span><span class="n">warm_start</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">max_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-                               <span class="n">oob_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-                               <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_STATE</span><span class="p">))</span>
+    <span class="p">(</span>
+        <span class="s2">&quot;RandomForestClassifier, max_features=&#39;sqrt&#39;&quot;</span><span class="p">,</span>
+        <a href="../../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier" class="sphx-glr-backref-module-sklearn-ensemble sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RandomForestClassifier</span></a><span class="p">(</span>
+            <span class="n">warm_start</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">oob_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">max_features</span><span class="o">=</span><span class="s2">&quot;sqrt&quot;</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_STATE</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">),</span>
+    <span class="p">(</span>
+        <span class="s2">&quot;RandomForestClassifier, max_features=&#39;log2&#39;&quot;</span><span class="p">,</span>
+        <a href="../../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier" class="sphx-glr-backref-module-sklearn-ensemble sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RandomForestClassifier</span></a><span class="p">(</span>
+            <span class="n">warm_start</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">max_features</span><span class="o">=</span><span class="s2">&quot;log2&quot;</span><span class="p">,</span>
+            <span class="n">oob_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_STATE</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">),</span>
+    <span class="p">(</span>
+        <span class="s2">&quot;RandomForestClassifier, max_features=None&quot;</span><span class="p">,</span>
+        <a href="../../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier" class="sphx-glr-backref-module-sklearn-ensemble sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RandomForestClassifier</span></a><span class="p">(</span>
+            <span class="n">warm_start</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">max_features</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+            <span class="n">oob_score</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">random_state</span><span class="o">=</span><span class="n">RANDOM_STATE</span><span class="p">,</span>
+        <span class="p">),</span>
+    <span class="p">),</span>
 <span class="p">]</span>
 
 <span class="c1"># Map a classifier name to a list of (&lt;n_estimators&gt;, &lt;error rate&gt;) pairs.</span>
@@ -268,7 +285,7 @@ Learning Ed. 2”, p592-593, Springer, 2009.</p>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  13.543 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  24.214 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-ensemble-plot-ensemble-oob-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/ensemble/plot_ensemble_oob.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo10.svg" width="150px" /></a>

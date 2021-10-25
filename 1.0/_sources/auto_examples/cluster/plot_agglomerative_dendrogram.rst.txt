@@ -24,7 +24,7 @@ Plot Hierarchical Clustering Dendrogram
 This example plots the corresponding dendrogram of a hierarchical clustering
 using AgglomerativeClustering and the dendrogram method available in scipy.
 
-.. GENERATED FROM PYTHON SOURCE LINES 10-53
+.. GENERATED FROM PYTHON SOURCE LINES 11-55
 
 
 
@@ -63,8 +63,9 @@ using AgglomerativeClustering and the dendrogram method available in scipy.
                     current_count += counts[child_idx - n_samples]
             counts[i] = current_count
 
-        linkage_matrix = np.column_stack([model.children_, model.distances_,
-                                          counts]).astype(float)
+        linkage_matrix = np.column_stack(
+            [model.children_, model.distances_, counts]
+        ).astype(float)
 
         # Plot the corresponding dendrogram
         dendrogram(linkage_matrix, **kwargs)
@@ -77,16 +78,16 @@ using AgglomerativeClustering and the dendrogram method available in scipy.
     model = AgglomerativeClustering(distance_threshold=0, n_clusters=None)
 
     model = model.fit(X)
-    plt.title('Hierarchical Clustering Dendrogram')
+    plt.title("Hierarchical Clustering Dendrogram")
     # plot the top three levels of the dendrogram
-    plot_dendrogram(model, truncate_mode='level', p=3)
+    plot_dendrogram(model, truncate_mode="level", p=3)
     plt.xlabel("Number of points in node (or index of point if no parenthesis).")
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.104 seconds)
+   **Total running time of the script:** ( 0 minutes  0.149 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_agglomerative_dendrogram.py:

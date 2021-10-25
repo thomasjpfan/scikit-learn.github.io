@@ -51,21 +51,7 @@ California housing dataset. The example is taken from [1]_.
        Individual Conditional Expectation. (2015) Journal of Computational and
        Graphical Statistics, 24(1): 44-65 (https://arxiv.org/abs/1309.6392)
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-38
-
-.. code-block:: default
-
-
-    print(__doc__)
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 39-45
+.. GENERATED FROM PYTHON SOURCE LINES 38-44
 
 California Housing data preprocessing
 -------------------------------------
@@ -74,7 +60,7 @@ Center target to avoid gradient boosting init bias: gradient boosting
 with the 'recursion' method does not account for the initial estimator
 (here the average target, by default).
 
-.. GENERATED FROM PYTHON SOURCE LINES 45-58
+.. GENERATED FROM PYTHON SOURCE LINES 44-57
 
 .. code-block:: default
 
@@ -98,7 +84,7 @@ with the 'recursion' method does not account for the initial estimator
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-73
+.. GENERATED FROM PYTHON SOURCE LINES 58-72
 
 1-way partial dependence with different models
 ----------------------------------------------
@@ -115,7 +101,7 @@ Multi-layer perceptron
 Let's fit a :class:`~sklearn.neural_network.MLPRegressor` and compute
 single-variable partial dependence plots.
 
-.. GENERATED FROM PYTHON SOURCE LINES 73-91
+.. GENERATED FROM PYTHON SOURCE LINES 72-90
 
 .. code-block:: default
 
@@ -148,13 +134,13 @@ single-variable partial dependence plots.
  .. code-block:: none
 
     Training MLPRegressor...
-    done in 3.646s
+    done in 6.377s
     Test R2 score: 0.81
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-111
+.. GENERATED FROM PYTHON SOURCE LINES 91-110
 
 We configured a pipeline to scale the numerical input features and tuned the
 neural network size and learning rate to get a reasonable compromise between
@@ -176,7 +162,7 @@ a poor model.
 We will plot the partial dependence, both individual (ICE) and averaged one
 (PDP). We limit to only 50 ICE curves to not overcrowd the plot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 111-138
+.. GENERATED FROM PYTHON SOURCE LINES 110-137
 
 .. code-block:: default
 
@@ -223,12 +209,12 @@ We will plot the partial dependence, both individual (ICE) and averaged one
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 2.594s
+    done in 4.705s
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 139-144
+.. GENERATED FROM PYTHON SOURCE LINES 138-143
 
 Gradient boosting
 .................
@@ -236,7 +222,7 @@ Gradient boosting
 Let's now fit a :class:`~sklearn.ensemble.HistGradientBoostingRegressor` and
 compute the partial dependence on the same features.
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-154
+.. GENERATED FROM PYTHON SOURCE LINES 143-153
 
 .. code-block:: default
 
@@ -261,13 +247,13 @@ compute the partial dependence on the same features.
  .. code-block:: none
 
     Training HistGradientBoostingRegressor...
-    done in 0.370s
+    done in 0.628s
     Test R2 score: 0.85
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 155-166
+.. GENERATED FROM PYTHON SOURCE LINES 154-165
 
 Here, we used the default hyperparameters for the gradient boosting model
 without any preprocessing as tree-based models are naturally robust to
@@ -281,7 +267,7 @@ to work well while this is not often the case for neural networks).
 We will plot the partial dependence, both individual (ICE) and averaged one
 (PDP). We limit to only 50 ICE curves to not overcrowd the plot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 166-188
+.. GENERATED FROM PYTHON SOURCE LINES 165-187
 
 .. code-block:: default
 
@@ -323,12 +309,12 @@ We will plot the partial dependence, both individual (ICE) and averaged one
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 4.524s
+    done in 6.650s
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 189-217
+.. GENERATED FROM PYTHON SOURCE LINES 188-216
 
 Analysis of the plots
 .....................
@@ -359,7 +345,7 @@ smoother predictions than
 However, it is worth noting that we are creating potential meaningless
 synthetic samples if features are correlated.
 
-.. GENERATED FROM PYTHON SOURCE LINES 219-227
+.. GENERATED FROM PYTHON SOURCE LINES 218-226
 
 2D interaction plots
 --------------------
@@ -370,7 +356,7 @@ Another consideration is linked to the performance to compute the PDPs. With
 the tree-based algorithm, when only PDPs are requested, they can be computed
 on an efficient way using the `'recursion'` method.
 
-.. GENERATED FROM PYTHON SOURCE LINES 227-248
+.. GENERATED FROM PYTHON SOURCE LINES 226-247
 
 .. code-block:: default
 
@@ -411,12 +397,12 @@ on an efficient way using the `'recursion'` method.
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 0.225s
+    done in 0.379s
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 249-261
+.. GENERATED FROM PYTHON SOURCE LINES 248-260
 
 The two-way partial dependence plot shows the dependence of median house
 price on joint values of house age and average occupants per household. We
@@ -431,7 +417,7 @@ age.
 Let's make the same partial dependence plot for the 2 features interaction,
 this time in 3 dimensions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 261-288
+.. GENERATED FROM PYTHON SOURCE LINES 260-287
 
 .. code-block:: default
 
@@ -477,7 +463,7 @@ this time in 3 dimensions.
 
  .. code-block:: none
 
-    /home/circleci/project/examples/inspection/plot_partial_dependence.py:273: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
+    /home/circleci/project/examples/inspection/plot_partial_dependence.py:272: MatplotlibDeprecationWarning: Axes3D(fig) adding itself to the figure is deprecated since 3.4. Pass the keyword argument auto_add_to_figure=False and use fig.add_axes(ax) to suppress this warning. The default value of auto_add_to_figure will change to False in mpl3.5 and True values will no longer work in 3.6.  This is consistent with other Axes classes.
       ax = Axes3D(fig)
 
 
@@ -486,7 +472,7 @@ this time in 3 dimensions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.133 seconds)
+   **Total running time of the script:** ( 0 minutes  20.039 seconds)
 
 
 .. _sphx_glr_download_auto_examples_inspection_plot_partial_dependence.py:

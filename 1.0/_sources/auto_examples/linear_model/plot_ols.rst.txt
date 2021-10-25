@@ -31,7 +31,7 @@ and the responses predicted by the linear approximation.
 The coefficients, residual sum of squares and the coefficient of
 determination are also calculated.
 
-.. GENERATED FROM PYTHON SOURCE LINES 18-70
+.. GENERATED FROM PYTHON SOURCE LINES 17-64
 
 
 
@@ -47,7 +47,6 @@ determination are also calculated.
 
  .. code-block:: none
 
-
     Coefficients: 
      [938.23786125]
     Mean squared error: 2548.07
@@ -62,12 +61,9 @@ determination are also calculated.
 
 .. code-block:: default
 
-    print(__doc__)
-
 
     # Code source: Jaques Grobler
     # License: BSD 3 clause
-
 
     import matplotlib.pyplot as plt
     import numpy as np
@@ -98,17 +94,15 @@ determination are also calculated.
     diabetes_y_pred = regr.predict(diabetes_X_test)
 
     # The coefficients
-    print('Coefficients: \n', regr.coef_)
+    print("Coefficients: \n", regr.coef_)
     # The mean squared error
-    print('Mean squared error: %.2f'
-          % mean_squared_error(diabetes_y_test, diabetes_y_pred))
+    print("Mean squared error: %.2f" % mean_squared_error(diabetes_y_test, diabetes_y_pred))
     # The coefficient of determination: 1 is perfect prediction
-    print('Coefficient of determination: %.2f'
-          % r2_score(diabetes_y_test, diabetes_y_pred))
+    print("Coefficient of determination: %.2f" % r2_score(diabetes_y_test, diabetes_y_pred))
 
     # Plot outputs
-    plt.scatter(diabetes_X_test, diabetes_y_test,  color='black')
-    plt.plot(diabetes_X_test, diabetes_y_pred, color='blue', linewidth=3)
+    plt.scatter(diabetes_X_test, diabetes_y_test, color="black")
+    plt.plot(diabetes_X_test, diabetes_y_pred, color="blue", linewidth=3)
 
     plt.xticks(())
     plt.yticks(())
@@ -118,7 +112,7 @@ determination are also calculated.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.047 seconds)
+   **Total running time of the script:** ( 0 minutes  0.069 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_ols.py:

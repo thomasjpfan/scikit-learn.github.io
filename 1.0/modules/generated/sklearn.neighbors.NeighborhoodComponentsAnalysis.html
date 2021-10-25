@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.neighbors.NeighborhoodComponentsAnalysis &mdash; scikit-learn 1.0 documentation</title>
+  <title>sklearn.neighbors.NeighborhoodComponentsAnalysis &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NeighborhoodComponentsAnalysis.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -185,8 +185,8 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.neighbors" title="sklearn.neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a>.NeighborhoodComponentsAnalysis<a class="headerlink" href="#sklearn-neighbors-neighborhoodcomponentsanalysis" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.neighbors.NeighborhoodComponentsAnalysis">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.neighbors.</span></span><span class="sig-name descname"><span class="pre">NeighborhoodComponentsAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warm_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/neighbors/_nca.py#L29"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis" title="Permalink to this definition">¶</a></dt>
-<dd><p>Neighborhood Components Analysis</p>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.neighbors.</span></span><span class="sig-name descname"><span class="pre">NeighborhoodComponentsAnalysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warm_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1e-05</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/neighbors/_nca.py#L27"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Neighborhood Components Analysis.</p>
 <p>Neighborhood Component Analysis (NCA) is a machine learning algorithm for
 metric learning. It learns a linear transformation in a supervised fashion
 to improve the classification accuracy of a stochastic nearest neighbors
@@ -194,46 +194,64 @@ rule in the transformed space.</p>
 <p>Read more in the <a class="reference internal" href="../neighbors.html#nca"><span class="std std-ref">User Guide</span></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl>
+<dd class="field-odd"><dl class="simple">
 <dt><strong>n_components</strong><span class="classifier">int, default=None</span></dt><dd><p>Preferred dimensionality of the projected space.
 If None it will be set to <code class="docutils literal notranslate"><span class="pre">n_features</span></code>.</p>
 </dd>
 <dt><strong>init</strong><span class="classifier">{‘auto’, ‘pca’, ‘lda’, ‘identity’, ‘random’} or ndarray of shape             (n_features_a, n_features_b), default=’auto’</span></dt><dd><p>Initialization of the linear transformation. Possible options are
-‘auto’, ‘pca’, ‘lda’, ‘identity’, ‘random’, and a numpy array of shape
-(n_features_a, n_features_b).</p>
-<dl class="simple">
-<dt>‘auto’</dt><dd><p>Depending on <code class="docutils literal notranslate"><span class="pre">n_components</span></code>, the most reasonable initialization
-will be chosen. If <code class="docutils literal notranslate"><span class="pre">n_components</span> <span class="pre">&lt;=</span> <span class="pre">n_classes</span></code> we use ‘lda’, as
+<code class="docutils literal notranslate"><span class="pre">'auto'</span></code>, <code class="docutils literal notranslate"><span class="pre">'pca'</span></code>, <code class="docutils literal notranslate"><span class="pre">'lda'</span></code>, <code class="docutils literal notranslate"><span class="pre">'identity'</span></code>, <code class="docutils literal notranslate"><span class="pre">'random'</span></code>, and a numpy
+array of shape <code class="docutils literal notranslate"><span class="pre">(n_features_a,</span> <span class="pre">n_features_b)</span></code>.</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'auto'</span></code></dt><dd><p>Depending on <code class="docutils literal notranslate"><span class="pre">n_components</span></code>, the most reasonable initialization
+will be chosen. If <code class="docutils literal notranslate"><span class="pre">n_components</span> <span class="pre">&lt;=</span> <span class="pre">n_classes</span></code> we use <code class="docutils literal notranslate"><span class="pre">'lda'</span></code>, as
 it uses labels information. If not, but
-<code class="docutils literal notranslate"><span class="pre">n_components</span> <span class="pre">&lt;</span> <span class="pre">min(n_features,</span> <span class="pre">n_samples)</span></code>, we use ‘pca’, as
+<code class="docutils literal notranslate"><span class="pre">n_components</span> <span class="pre">&lt;</span> <span class="pre">min(n_features,</span> <span class="pre">n_samples)</span></code>, we use <code class="docutils literal notranslate"><span class="pre">'pca'</span></code>, as
 it projects data in meaningful directions (those of higher
-variance). Otherwise, we just use ‘identity’.</p>
+variance). Otherwise, we just use <code class="docutils literal notranslate"><span class="pre">'identity'</span></code>.</p>
 </dd>
-<dt>‘pca’</dt><dd><p><code class="docutils literal notranslate"><span class="pre">n_components</span></code> principal components of the inputs passed
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'pca'</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">n_components</span></code> principal components of the inputs passed
 to <a class="reference internal" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit" title="sklearn.neighbors.NeighborhoodComponentsAnalysis.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a> will be used to initialize the transformation.
 (See <a class="reference internal" href="sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="sklearn.decomposition.PCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">PCA</span></code></a>)</p>
 </dd>
-<dt>‘lda’</dt><dd><p><code class="docutils literal notranslate"><span class="pre">min(n_components,</span> <span class="pre">n_classes)</span></code> most discriminative
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'lda'</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">min(n_components,</span> <span class="pre">n_classes)</span></code> most discriminative
 components of the inputs passed to <a class="reference internal" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit" title="sklearn.neighbors.NeighborhoodComponentsAnalysis.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a> will be used to
 initialize the transformation. (If <code class="docutils literal notranslate"><span class="pre">n_components</span> <span class="pre">&gt;</span> <span class="pre">n_classes</span></code>,
 the rest of the components will be zero.) (See
 <a class="reference internal" href="sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#sklearn.discriminant_analysis.LinearDiscriminantAnalysis" title="sklearn.discriminant_analysis.LinearDiscriminantAnalysis"><code class="xref py py-class docutils literal notranslate"><span class="pre">LinearDiscriminantAnalysis</span></code></a>)</p>
 </dd>
-<dt>‘identity’</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">n_components</span></code> is strictly smaller than the
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'identity'</span></code></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">n_components</span></code> is strictly smaller than the
 dimensionality of the inputs passed to <a class="reference internal" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit" title="sklearn.neighbors.NeighborhoodComponentsAnalysis.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a>, the identity
 matrix will be truncated to the first <code class="docutils literal notranslate"><span class="pre">n_components</span></code> rows.</p>
 </dd>
-<dt>‘random’</dt><dd><p>The initial transformation will be a random array of shape
+</dl>
+</li>
+<li><dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">'random'</span></code></dt><dd><p>The initial transformation will be a random array of shape
 <code class="docutils literal notranslate"><span class="pre">(n_components,</span> <span class="pre">n_features)</span></code>. Each value is sampled from the
 standard normal distribution.</p>
 </dd>
-<dt>numpy array</dt><dd><p>n_features_b must match the dimensionality of the inputs passed to
-<a class="reference internal" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit" title="sklearn.neighbors.NeighborhoodComponentsAnalysis.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a> and n_features_a must be less than or equal to that.
-If <code class="docutils literal notranslate"><span class="pre">n_components</span></code> is not None, n_features_a must match it.</p>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>numpy array</dt><dd><p><code class="docutils literal notranslate"><span class="pre">n_features_b</span></code> must match the dimensionality of the inputs passed
+to <a class="reference internal" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit" title="sklearn.neighbors.NeighborhoodComponentsAnalysis.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a> and n_features_a must be less than or equal to that.
+If <code class="docutils literal notranslate"><span class="pre">n_components</span></code> is not <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">n_features_a</span></code> must match it.</p>
 </dd>
 </dl>
+</li>
+</ul>
 </dd>
-<dt><strong>warm_start</strong><span class="classifier">bool, default=False</span></dt><dd><p>If True and <a class="reference internal" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit" title="sklearn.neighbors.NeighborhoodComponentsAnalysis.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a> has been called before, the solution of the
+<dt><strong>warm_start</strong><span class="classifier">bool, default=False</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code> and <a class="reference internal" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit" title="sklearn.neighbors.NeighborhoodComponentsAnalysis.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a> has been called before, the solution of the
 previous call to <a class="reference internal" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit" title="sklearn.neighbors.NeighborhoodComponentsAnalysis.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a> is used as the initial linear
 transformation (<code class="docutils literal notranslate"><span class="pre">n_components</span></code> and <code class="docutils literal notranslate"><span class="pre">init</span></code> will be ignored).</p>
 </dd>
@@ -241,7 +259,7 @@ transformation (<code class="docutils literal notranslate"><span class="pre">n_c
 </dd>
 <dt><strong>tol</strong><span class="classifier">float, default=1e-5</span></dt><dd><p>Convergence tolerance for the optimization.</p>
 </dd>
-<dt><strong>callback</strong><span class="classifier">callable, default=None</span></dt><dd><p>If not None, this function is called after every iteration of the
+<dt><strong>callback</strong><span class="classifier">callable, default=None</span></dt><dd><p>If not <code class="docutils literal notranslate"><span class="pre">None</span></code>, this function is called after every iteration of the
 optimizer, taking as arguments the current solution (flattened
 transformation matrix) and the number of iterations. This might be
 useful in case one wants to examine or store the transformation
@@ -258,7 +276,7 @@ parameter of <a class="reference external" href="https://docs.scipy.org/doc/scip
 transformation. If <code class="docutils literal notranslate"><span class="pre">init='pca'</span></code>, <code class="docutils literal notranslate"><span class="pre">random_state</span></code> is passed as an
 argument to PCA when initializing the transformation. Pass an int
 for reproducible results across multiple function calls.
-See :term: <code class="docutils literal notranslate"><span class="pre">Glossary</span> <span class="pre">&lt;random_state&gt;</span></code>.</p>
+See <a class="reference internal" href="../../glossary.html#term-random_state"><span class="xref std std-term">Glossary</span></a>.</p>
 </dd>
 </dl>
 </dd>
@@ -284,6 +302,15 @@ has feature names that are all strings.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html#sklearn.discriminant_analysis.LinearDiscriminantAnalysis" title="sklearn.discriminant_analysis.LinearDiscriminantAnalysis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sklearn.discriminant_analysis.LinearDiscriminantAnalysis</span></code></a></dt><dd><p>Linear Discriminant Analysis.</p>
+</dd>
+<dt><a class="reference internal" href="sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="sklearn.decomposition.PCA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sklearn.decomposition.PCA</span></code></a></dt><dd><p>Principal component analysis (PCA).</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">References</p>
 <dl class="citation">
 <dt class="label" id="rf9b6baee8229-1"><span class="brackets">1</span></dt>
@@ -339,13 +366,13 @@ Processing Systems. 17, 513-520, 2005.
 <td><p>Set the parameters of this estimator.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.transform" title="sklearn.neighbors.NeighborhoodComponentsAnalysis.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(X)</p></td>
-<td><p>Applies the learned transformation to the given data.</p></td>
+<td><p>Apply the learned transformation to the given data.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.neighbors.NeighborhoodComponentsAnalysis.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/neighbors/_nca.py#L196"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/neighbors/_nca.py#L199"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model according to the given training data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -358,7 +385,7 @@ Processing Systems. 17, 513-520, 2005.
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>self</strong><span class="classifier">object</span></dt><dd><p>returns a trained NeighborhoodComponentsAnalysis model.</p>
+<dt><strong>self</strong><span class="classifier">object</span></dt><dd><p>Fitted estimator.</p>
 </dd>
 </dl>
 </dd>
@@ -367,7 +394,7 @@ Processing Systems. 17, 513-520, 2005.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.neighbors.NeighborhoodComponentsAnalysis.fit_transform">
-<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/base.py#L816"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit_transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/base.py#L819"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit to data, then transform it.</p>
 <p>Fits transformer to <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> with optional parameters <code class="docutils literal notranslate"><span class="pre">fit_params</span></code>
 and returns a transformed version of <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
@@ -393,7 +420,7 @@ and returns a transformed version of <code class="docutils literal notranslate">
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.neighbors.NeighborhoodComponentsAnalysis.get_params">
-<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/base.py#L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.get_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/base.py#L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -414,7 +441,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.neighbors.NeighborhoodComponentsAnalysis.set_params">
-<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/base.py#L212"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.set_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/base.py#L212"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as <a class="reference internal" href="sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
@@ -438,8 +465,8 @@ possible to update each component of a nested object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.neighbors.NeighborhoodComponentsAnalysis.transform">
-<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/neighbors/_nca.py#L268"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Applies the learned transformation to the given data.</p>
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/neighbors/_nca.py#L271"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.neighbors.NeighborhoodComponentsAnalysis.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the learned transformation to the given data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -478,16 +505,16 @@ possible to update each component of a nested object.</p>
 <p><span class="caption-text"><a class="reference internal" href="../../auto_examples/neighbors/plot_nca_illustration.html#sphx-glr-auto-examples-neighbors-plot-nca-illustration-py"><span class="std std-ref">Neighborhood Components Analysis Illustration</span></a></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-</div><div class="sphx-glr-thumbcontainer" tooltip="An example comparing nearest neighbors classification with and without Neighborhood Components ..."><figure class="align-default" id="id5">
-<img alt="Comparing Nearest Neighbors with and without Neighborhood Components Analysis" src="../../_images/sphx_glr_plot_nca_classification_thumb.png" />
-<figcaption>
-<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/neighbors/plot_nca_classification.html#sphx-glr-auto-examples-neighbors-plot-nca-classification-py"><span class="std std-ref">Comparing Nearest Neighbors with and without Neighborhood Components Analysis</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</div><div class="sphx-glr-thumbcontainer" tooltip="Sample usage of Neighborhood Components Analysis for dimensionality reduction."><figure class="align-default" id="id6">
+</div><div class="sphx-glr-thumbcontainer" tooltip="Sample usage of Neighborhood Components Analysis for dimensionality reduction."><figure class="align-default" id="id5">
 <img alt="Dimensionality Reduction with Neighborhood Components Analysis" src="../../_images/sphx_glr_plot_nca_dim_reduction_thumb.png" />
 <figcaption>
-<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/neighbors/plot_nca_dim_reduction.html#sphx-glr-auto-examples-neighbors-plot-nca-dim-reduction-py"><span class="std std-ref">Dimensionality Reduction with Neighborhood Components Analysis</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/neighbors/plot_nca_dim_reduction.html#sphx-glr-auto-examples-neighbors-plot-nca-dim-reduction-py"><span class="std std-ref">Dimensionality Reduction with Neighborhood Components Analysis</span></a></span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer" tooltip="An example comparing nearest neighbors classification with and without Neighborhood Components ..."><figure class="align-default" id="id6">
+<img alt="Comparing Nearest Neighbors with and without Neighborhood Components Analysis" src="../../_images/sphx_glr_plot_nca_classification_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/neighbors/plot_nca_classification.html#sphx-glr-auto-examples-neighbors-plot-nca-classification-py"><span class="std std-ref">Comparing Nearest Neighbors with and without Neighborhood Components Analysis</span></a></span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </div><div class="clearer"></div></section>

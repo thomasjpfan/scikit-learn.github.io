@@ -50,11 +50,10 @@ label.
     See also :func:`sklearn.metrics.roc_auc_score`,
              :ref:`sphx_glr_auto_examples_model_selection_plot_roc_crossval.py`
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-85
+.. GENERATED FROM PYTHON SOURCE LINES 35-84
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -83,12 +82,12 @@ label.
     X = np.c_[X, random_state.randn(n_samples, 200 * n_features)]
 
     # shuffle and split training and test sets
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.5,
-                                                        random_state=0)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=0)
 
     # Learn to predict each class against the other
-    classifier = OneVsRestClassifier(svm.SVC(kernel='linear', probability=True,
-                                     random_state=random_state))
+    classifier = OneVsRestClassifier(
+        svm.SVC(kernel="linear", probability=True, random_state=random_state)
+    )
     y_score = classifier.fit(X_train, y_train).decision_function(X_test)
 
     # Compute ROC curve and ROC area for each class
@@ -111,24 +110,29 @@ label.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-87
+.. GENERATED FROM PYTHON SOURCE LINES 85-86
 
 Plot of a ROC curve for a specific class
 
-.. GENERATED FROM PYTHON SOURCE LINES 87-101
+.. GENERATED FROM PYTHON SOURCE LINES 86-105
 
 .. code-block:: default
 
     plt.figure()
     lw = 2
-    plt.plot(fpr[2], tpr[2], color='darkorange',
-             lw=lw, label='ROC curve (area = %0.2f)' % roc_auc[2])
-    plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+    plt.plot(
+        fpr[2],
+        tpr[2],
+        color="darkorange",
+        lw=lw,
+        label="ROC curve (area = %0.2f)" % roc_auc[2],
+    )
+    plt.plot([0, 1], [0, 1], color="navy", lw=lw, linestyle="--")
     plt.xlim([0.0, 1.0])
     plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Receiver operating characteristic example')
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("True Positive Rate")
+    plt.title("Receiver operating characteristic example")
     plt.legend(loc="lower right")
     plt.show()
 
@@ -145,13 +149,13 @@ Plot of a ROC curve for a specific class
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 102-105
+.. GENERATED FROM PYTHON SOURCE LINES 106-109
 
-Plot ROC curves for the multilabel problem
+Plot ROC curves for the multiclass problem
 ..........................................
 Compute macro-average ROC curve and ROC area
 
-.. GENERATED FROM PYTHON SOURCE LINES 105-149
+.. GENERATED FROM PYTHON SOURCE LINES 109-165
 
 .. code-block:: default
 
@@ -173,28 +177,40 @@ Compute macro-average ROC curve and ROC area
 
     # Plot all ROC curves
     plt.figure()
-    plt.plot(fpr["micro"], tpr["micro"],
-             label='micro-average ROC curve (area = {0:0.2f})'
-                   ''.format(roc_auc["micro"]),
-             color='deeppink', linestyle=':', linewidth=4)
+    plt.plot(
+        fpr["micro"],
+        tpr["micro"],
+        label="micro-average ROC curve (area = {0:0.2f})".format(roc_auc["micro"]),
+        color="deeppink",
+        linestyle=":",
+        linewidth=4,
+    )
 
-    plt.plot(fpr["macro"], tpr["macro"],
-             label='macro-average ROC curve (area = {0:0.2f})'
-                   ''.format(roc_auc["macro"]),
-             color='navy', linestyle=':', linewidth=4)
+    plt.plot(
+        fpr["macro"],
+        tpr["macro"],
+        label="macro-average ROC curve (area = {0:0.2f})".format(roc_auc["macro"]),
+        color="navy",
+        linestyle=":",
+        linewidth=4,
+    )
 
-    colors = cycle(['aqua', 'darkorange', 'cornflowerblue'])
+    colors = cycle(["aqua", "darkorange", "cornflowerblue"])
     for i, color in zip(range(n_classes), colors):
-        plt.plot(fpr[i], tpr[i], color=color, lw=lw,
-                 label='ROC curve of class {0} (area = {1:0.2f})'
-                 ''.format(i, roc_auc[i]))
+        plt.plot(
+            fpr[i],
+            tpr[i],
+            color=color,
+            lw=lw,
+            label="ROC curve of class {0} (area = {1:0.2f})".format(i, roc_auc[i]),
+        )
 
-    plt.plot([0, 1], [0, 1], 'k--', lw=lw)
+    plt.plot([0, 1], [0, 1], "k--", lw=lw)
     plt.xlim([0.0, 1.0])
     plt.ylim([0.0, 1.05])
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('Some extension of Receiver operating characteristic to multi-class')
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("True Positive Rate")
+    plt.title("Some extension of Receiver operating characteristic to multiclass")
     plt.legend(loc="lower right")
     plt.show()
 
@@ -203,7 +219,7 @@ Compute macro-average ROC curve and ROC area
 
 
 .. image-sg:: /auto_examples/model_selection/images/sphx_glr_plot_roc_002.png
-   :alt: Some extension of Receiver operating characteristic to multi-class
+   :alt: Some extension of Receiver operating characteristic to multiclass
    :srcset: /auto_examples/model_selection/images/sphx_glr_plot_roc_002.png
    :class: sphx-glr-single-img
 
@@ -214,13 +230,13 @@ Compute macro-average ROC curve and ROC area
 
  .. code-block:: none
 
-    /home/circleci/project/examples/model_selection/plot_roc.py:112: DeprecationWarning: scipy.interp is deprecated and will be removed in SciPy 2.0.0, use numpy.interp instead
+    /home/circleci/project/examples/model_selection/plot_roc.py:116: DeprecationWarning: scipy.interp is deprecated and will be removed in SciPy 2.0.0, use numpy.interp instead
       mean_tpr += interp(all_fpr, fpr[i], tpr[i])
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 150-157
+.. GENERATED FROM PYTHON SOURCE LINES 166-173
 
 Area under ROC for the multiclass problem
 .........................................
@@ -230,26 +246,28 @@ unique pairwise combination of classes. In this section, we calculate the AUC
 using the OvR and OvO schemes. We report a macro average, and a
 prevalence-weighted average.
 
-.. GENERATED FROM PYTHON SOURCE LINES 157-173
+.. GENERATED FROM PYTHON SOURCE LINES 173-191
 
 .. code-block:: default
 
     y_prob = classifier.predict_proba(X_test)
 
-    macro_roc_auc_ovo = roc_auc_score(y_test, y_prob, multi_class="ovo",
-                                      average="macro")
-    weighted_roc_auc_ovo = roc_auc_score(y_test, y_prob, multi_class="ovo",
-                                         average="weighted")
-    macro_roc_auc_ovr = roc_auc_score(y_test, y_prob, multi_class="ovr",
-                                      average="macro")
-    weighted_roc_auc_ovr = roc_auc_score(y_test, y_prob, multi_class="ovr",
-                                         average="weighted")
-    print("One-vs-One ROC AUC scores:\n{:.6f} (macro),\n{:.6f} "
-          "(weighted by prevalence)"
-          .format(macro_roc_auc_ovo, weighted_roc_auc_ovo))
-    print("One-vs-Rest ROC AUC scores:\n{:.6f} (macro),\n{:.6f} "
-          "(weighted by prevalence)"
-          .format(macro_roc_auc_ovr, weighted_roc_auc_ovr))
+    macro_roc_auc_ovo = roc_auc_score(y_test, y_prob, multi_class="ovo", average="macro")
+    weighted_roc_auc_ovo = roc_auc_score(
+        y_test, y_prob, multi_class="ovo", average="weighted"
+    )
+    macro_roc_auc_ovr = roc_auc_score(y_test, y_prob, multi_class="ovr", average="macro")
+    weighted_roc_auc_ovr = roc_auc_score(
+        y_test, y_prob, multi_class="ovr", average="weighted"
+    )
+    print(
+        "One-vs-One ROC AUC scores:\n{:.6f} (macro),\n{:.6f} "
+        "(weighted by prevalence)".format(macro_roc_auc_ovo, weighted_roc_auc_ovo)
+    )
+    print(
+        "One-vs-Rest ROC AUC scores:\n{:.6f} (macro),\n{:.6f} "
+        "(weighted by prevalence)".format(macro_roc_auc_ovr, weighted_roc_auc_ovr)
+    )
 
 
 
@@ -273,7 +291,7 @@ prevalence-weighted average.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.189 seconds)
+   **Total running time of the script:** ( 0 minutes  0.304 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_roc.py:

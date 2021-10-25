@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.impute.MissingIndicator &mdash; scikit-learn 1.0 documentation</title>
+  <title>sklearn.impute.MissingIndicator &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.impute.MissingIndicator.html" />
 
@@ -157,7 +157,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -181,7 +181,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.impute" title="sklearn.impute"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.impute</span></code></a>.MissingIndicator<a class="headerlink" href="#sklearn-impute-missingindicator" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.impute.MissingIndicator">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.impute.</span></span><span class="sig-name descname"><span class="pre">MissingIndicator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'missing-only'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_on_new</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/impute/_base.py#L600"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.impute.</span></span><span class="sig-name descname"><span class="pre">MissingIndicator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">nan</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'missing-only'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sparse</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_on_new</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/impute/_base.py#L600"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Binary indicators for missing values.</p>
 <p>Note that this component typically should not be used in a vanilla
 <code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code> consisting of transformers and a classifier, but rather
@@ -193,7 +193,7 @@ could be added using a <code class="xref py py-class docutils literal notranslat
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>missing_values</strong><span class="classifier">int, float, string, np.nan or None, default=np.nan</span></dt><dd><p>The placeholder for the missing values. All occurrences of
+<dt><strong>missing_values</strong><span class="classifier">int, float, str, np.nan or None, default=np.nan</span></dt><dd><p>The placeholder for the missing values. All occurrences of
 <code class="docutils literal notranslate"><span class="pre">missing_values</span></code> will be imputed. For pandas’ dataframes with
 nullable integer dtypes with missing values, <code class="docutils literal notranslate"><span class="pre">missing_values</span></code>
 should be set to <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>, since <code class="docutils literal notranslate"><span class="pre">pd.NA</span></code> will be converted to <code class="docutils literal notranslate"><span class="pre">np.nan</span></code>.</p>
@@ -201,30 +201,30 @@ should be set to <code class="docutils literal notranslate"><span class="pre">np
 <dt><strong>features</strong><span class="classifier">{‘missing-only’, ‘all’}, default=’missing-only’</span></dt><dd><p>Whether the imputer mask should represent all or a subset of
 features.</p>
 <ul class="simple">
-<li><p>If ‘missing-only’ (default), the imputer mask will only represent
+<li><p>If <code class="docutils literal notranslate"><span class="pre">'missing-only'</span></code> (default), the imputer mask will only represent
 features containing missing values during fit time.</p></li>
-<li><p>If ‘all’, the imputer mask will represent all features.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">'all'</span></code>, the imputer mask will represent all features.</p></li>
 </ul>
 </dd>
 <dt><strong>sparse</strong><span class="classifier">bool or ‘auto’, default=’auto’</span></dt><dd><p>Whether the imputer mask format should be sparse or dense.</p>
 <ul class="simple">
-<li><p>If ‘auto’ (default), the imputer mask will be of same type as
+<li><p>If <code class="docutils literal notranslate"><span class="pre">'auto'</span></code> (default), the imputer mask will be of same type as
 input.</p></li>
-<li><p>If True, the imputer mask will be a sparse matrix.</p></li>
-<li><p>If False, the imputer mask will be a numpy array.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the imputer mask will be a sparse matrix.</p></li>
+<li><p>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, the imputer mask will be a numpy array.</p></li>
 </ul>
 </dd>
-<dt><strong>error_on_new</strong><span class="classifier">bool, default=True</span></dt><dd><p>If True, transform will raise an error when there are features with
-missing values in transform that have no missing values in fit. This is
-applicable only when <code class="docutils literal notranslate"><span class="pre">features='missing-only'</span></code>.</p>
+<dt><strong>error_on_new</strong><span class="classifier">bool, default=True</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, <a class="reference internal" href="#sklearn.impute.MissingIndicator.transform" title="sklearn.impute.MissingIndicator.transform"><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform</span></code></a> will raise an error when there are
+features with missing values that have no missing values in
+<a class="reference internal" href="#sklearn.impute.MissingIndicator.fit" title="sklearn.impute.MissingIndicator.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a>. This is applicable only when <code class="docutils literal notranslate"><span class="pre">features='missing-only'</span></code>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Attributes</dt>
 <dd class="field-even"><dl>
-<dt><strong>features_</strong><span class="classifier">ndarray, shape (n_missing_features,) or (n_features,)</span></dt><dd><p>The features indices which will be returned when calling <code class="docutils literal notranslate"><span class="pre">transform</span></code>.
-They are computed during <code class="docutils literal notranslate"><span class="pre">fit</span></code>. For <code class="docutils literal notranslate"><span class="pre">features='all'</span></code>, it is
-to <code class="docutils literal notranslate"><span class="pre">range(n_features)</span></code>.</p>
+<dt><strong>features_</strong><span class="classifier">ndarray of shape (n_missing_features,) or (n_features,)</span></dt><dd><p>The features indices which will be returned when calling
+<a class="reference internal" href="#sklearn.impute.MissingIndicator.transform" title="sklearn.impute.MissingIndicator.transform"><code class="xref py py-meth docutils literal notranslate"><span class="pre">transform</span></code></a>. They are computed during <a class="reference internal" href="#sklearn.impute.MissingIndicator.fit" title="sklearn.impute.MissingIndicator.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a>. If
+<code class="docutils literal notranslate"><span class="pre">features='all'</span></code>, <code class="docutils literal notranslate"><span class="pre">features_</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">range(n_features)</span></code>.</p>
 </dd>
 <dt><strong>n_features_in_</strong><span class="classifier">int</span></dt><dd><p>Number of features seen during <a class="reference internal" href="../../glossary.html#term-fit"><span class="xref std std-term">fit</span></a>.</p>
 <div class="versionadded">
@@ -240,6 +240,15 @@ has feature names that are all strings.</p>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="sklearn.impute.SimpleImputer.html#sklearn.impute.SimpleImputer" title="sklearn.impute.SimpleImputer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SimpleImputer</span></code></a></dt><dd><p>Univariate imputation of missing values.</p>
+</dd>
+<dt><a class="reference internal" href="sklearn.impute.IterativeImputer.html#sklearn.impute.IterativeImputer" title="sklearn.impute.IterativeImputer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">IterativeImputer</span></code></a></dt><dd><p>Multivariate imputation of missing values.</p>
+</dd>
+</dl>
+</div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">MissingIndicator</span>
@@ -267,10 +276,10 @@ has feature names that are all strings.</p>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.impute.MissingIndicator.fit" title="sklearn.impute.MissingIndicator.fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit</span></code></a>(X[, y])</p></td>
-<td><p>Fit the transformer on X.</p></td>
+<td><p>Fit the transformer on <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#sklearn.impute.MissingIndicator.fit_transform" title="sklearn.impute.MissingIndicator.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(X[, y])</p></td>
-<td><p>Generate missing values indicator for X.</p></td>
+<td><p>Generate missing values indicator for <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.impute.MissingIndicator.get_params" title="sklearn.impute.MissingIndicator.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>([deep])</p></td>
 <td><p>Get parameters for this estimator.</p></td>
@@ -279,25 +288,27 @@ has feature names that are all strings.</p>
 <td><p>Set the parameters of this estimator.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.impute.MissingIndicator.transform" title="sklearn.impute.MissingIndicator.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(X)</p></td>
-<td><p>Generate missing values indicator for X.</p></td>
+<td><p>Generate missing values indicator for <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.impute.MissingIndicator.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/impute/_base.py#L836"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator.fit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Fit the transformer on X.</p>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/impute/_base.py#L838"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the transformer on <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt><dd><p>Input data, where <code class="docutils literal notranslate"><span class="pre">n_samples</span></code> is the number of samples and
+<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples, n_features)</span></dt><dd><p>Input data, where <code class="docutils literal notranslate"><span class="pre">n_samples</span></code> is the number of samples and
 <code class="docutils literal notranslate"><span class="pre">n_features</span></code> is the number of features.</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">Ignored</span></dt><dd><p>Not used, present for API consistency by convention.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>self</strong><span class="classifier">object</span></dt><dd><p>Returns self.</p>
+<dt><strong>self</strong><span class="classifier">object</span></dt><dd><p>Fitted estimator.</p>
 </dd>
 </dl>
 </dd>
@@ -306,18 +317,20 @@ has feature names that are all strings.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.impute.MissingIndicator.fit_transform">
-<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/impute/_base.py#L896"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator.fit_transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate missing values indicator for X.</p>
+<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/impute/_base.py#L900"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator.fit_transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate missing values indicator for <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt><dd><p>The input data to complete.</p>
+<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples, n_features)</span></dt><dd><p>The input data to complete.</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">Ignored</span></dt><dd><p>Not used, present for API consistency by convention.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>Xt</strong><span class="classifier">{ndarray or sparse matrix}, shape (n_samples, n_features)         or (n_samples, n_features_with_missing)</span></dt><dd><p>The missing indicator for input data. The data type of <code class="docutils literal notranslate"><span class="pre">Xt</span></code>
+<dt><strong>Xt</strong><span class="classifier">{ndarray, sparse matrix} of shape (n_samples, n_features)         or (n_samples, n_features_with_missing)</span></dt><dd><p>The missing indicator for input data. The data type of <code class="docutils literal notranslate"><span class="pre">Xt</span></code>
 will be boolean.</p>
 </dd>
 </dl>
@@ -327,7 +340,7 @@ will be boolean.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.impute.MissingIndicator.get_params">
-<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/base.py#L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator.get_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/base.py#L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -348,7 +361,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.impute.MissingIndicator.set_params">
-<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/base.py#L212"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator.set_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/base.py#L212"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as <a class="reference internal" href="sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
@@ -372,18 +385,18 @@ possible to update each component of a nested object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.impute.MissingIndicator.transform">
-<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/844b4be24/sklearn/impute/_base.py#L854"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator.transform" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generate missing values indicator for X.</p>
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/impute/_base.py#L859"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.impute.MissingIndicator.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate missing values indicator for <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix}, shape (n_samples, n_features)</span></dt><dd><p>The input data to complete.</p>
+<dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples, n_features)</span></dt><dd><p>The input data to complete.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>Xt</strong><span class="classifier">{ndarray or sparse matrix}, shape (n_samples, n_features)         or (n_samples, n_features_with_missing)</span></dt><dd><p>The missing indicator for input data. The data type of <code class="docutils literal notranslate"><span class="pre">Xt</span></code>
+<dt><strong>Xt</strong><span class="classifier">{ndarray, sparse matrix} of shape (n_samples, n_features)         or (n_samples, n_features_with_missing)</span></dt><dd><p>The missing indicator for input data. The data type of <code class="docutils literal notranslate"><span class="pre">Xt</span></code>
 will be boolean.</p>
 </dd>
 </dl>

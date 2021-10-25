@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Understanding the decision tree structure &mdash; scikit-learn 1.0 documentation</title>
+  <title>Understanding the decision tree structure &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/tree/plot_unveil_tree_structure.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -224,7 +224,7 @@ show how to retrieve:</p>
 </pre></div>
 </div>
 <div class="output_subarea output_html rendered_html output_result">
-<style>#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d {color: black;background-color: white;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d pre{padding: 0;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-toggleable {background-color: white;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-estimator:hover {background-color: #d4ebff;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-item {z-index: 1;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-parallel-item:only-child::after {width: 0;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d div.sk-container {display: inline-block;position: relative;}</style><div id="sk-259e0f80-83fe-4c42-b3cc-4288d732bd0d" class"sk-top-container"><div class="sk-container"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="18683e05-2b93-461f-90b2-64f6d75ac569" type="checkbox" checked><label class="sk-toggleable__label" for="18683e05-2b93-461f-90b2-64f6d75ac569">DecisionTreeClassifier</label><div class="sk-toggleable__content"><pre>DecisionTreeClassifier(max_leaf_nodes=3, random_state=0)</pre></div></div></div></div></div>
+<style>#sk-e725fc47-781c-4aa3-b04c-9cef972269db {color: black;background-color: white;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db pre{padding: 0;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-toggleable {background-color: white;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-estimator:hover {background-color: #d4ebff;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-item {z-index: 1;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-parallel-item:only-child::after {width: 0;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-e725fc47-781c-4aa3-b04c-9cef972269db div.sk-container {display: inline-block;position: relative;}</style><div id="sk-e725fc47-781c-4aa3-b04c-9cef972269db" class"sk-top-container"><div class="sk-container"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="bc4a44e1-0584-4a64-b7f6-d31c7a24149b" type="checkbox" checked><label class="sk-toggleable__label" for="bc4a44e1-0584-4a64-b7f6-d31c7a24149b">DecisionTreeClassifier</label><div class="sk-toggleable__content"><pre>DecisionTreeClassifier(max_leaf_nodes=3, random_state=0)</pre></div></div></div></div></div>
 </div>
 <br />
 <br /></section>
@@ -281,22 +281,30 @@ it is a leaf.</p>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">is_leaves</span><span class="p">[</span><span class="n">node_id</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The binary tree structure has </span><span class="si">{n}</span><span class="s2"> nodes and has &quot;</span>
-      <span class="s2">&quot;the following tree structure:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n_nodes</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;The binary tree structure has </span><span class="si">{n}</span><span class="s2"> nodes and has &quot;</span>
+    <span class="s2">&quot;the following tree structure:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="n">n_nodes</span><span class="p">)</span>
+<span class="p">)</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_nodes</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">is_leaves</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{space}</span><span class="s2">node=</span><span class="si">{node}</span><span class="s2"> is a leaf node.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-            <span class="n">space</span><span class="o">=</span><span class="n">node_depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="n">i</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="si">{space}</span><span class="s2">node=</span><span class="si">{node}</span><span class="s2"> is a leaf node.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">space</span><span class="o">=</span><span class="n">node_depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">node</span><span class="o">=</span><span class="n">i</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{space}</span><span class="s2">node=</span><span class="si">{node}</span><span class="s2"> is a split node: &quot;</span>
-              <span class="s2">&quot;go to node </span><span class="si">{left}</span><span class="s2"> if X[:, </span><span class="si">{feature}</span><span class="s2">] &lt;= </span><span class="si">{threshold}</span><span class="s2"> &quot;</span>
-              <span class="s2">&quot;else to node </span><span class="si">{right}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-                  <span class="n">space</span><span class="o">=</span><span class="n">node_depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
-                  <span class="n">node</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
-                  <span class="n">left</span><span class="o">=</span><span class="n">children_left</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-                  <span class="n">feature</span><span class="o">=</span><span class="n">feature</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-                  <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
-                  <span class="n">right</span><span class="o">=</span><span class="n">children_right</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="s2">&quot;</span><span class="si">{space}</span><span class="s2">node=</span><span class="si">{node}</span><span class="s2"> is a split node: &quot;</span>
+            <span class="s2">&quot;go to node </span><span class="si">{left}</span><span class="s2"> if X[:, </span><span class="si">{feature}</span><span class="s2">] &lt;= </span><span class="si">{threshold}</span><span class="s2"> &quot;</span>
+            <span class="s2">&quot;else to node </span><span class="si">{right}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+                <span class="n">space</span><span class="o">=</span><span class="n">node_depth</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="n">node</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
+                <span class="n">left</span><span class="o">=</span><span class="n">children_left</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                <span class="n">feature</span><span class="o">=</span><span class="n">feature</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+                <span class="n">right</span><span class="o">=</span><span class="n">children_right</span><span class="p">[</span><span class="n">i</span><span class="p">],</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -335,29 +343,33 @@ Note that <code class="docutils literal notranslate"><span class="pre">node_inde
 
 <span class="n">sample_id</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="c1"># obtain ids of the nodes `sample_id` goes through, i.e., row `sample_id`</span>
-<span class="n">node_index</span> <span class="o">=</span> <span class="n">node_indicator</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span><span class="n">node_indicator</span><span class="o">.</span><span class="n">indptr</span><span class="p">[</span><span class="n">sample_id</span><span class="p">]:</span>
-                                    <span class="n">node_indicator</span><span class="o">.</span><span class="n">indptr</span><span class="p">[</span><span class="n">sample_id</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="n">node_index</span> <span class="o">=</span> <span class="n">node_indicator</span><span class="o">.</span><span class="n">indices</span><span class="p">[</span>
+    <span class="n">node_indicator</span><span class="o">.</span><span class="n">indptr</span><span class="p">[</span><span class="n">sample_id</span><span class="p">]</span> <span class="p">:</span> <span class="n">node_indicator</span><span class="o">.</span><span class="n">indptr</span><span class="p">[</span><span class="n">sample_id</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Rules used to predict sample </span><span class="si">{id}</span><span class="s1">:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">sample_id</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rules used to predict sample </span><span class="si">{id}</span><span class="s2">:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="n">sample_id</span><span class="p">))</span>
 <span class="k">for</span> <span class="n">node_id</span> <span class="ow">in</span> <span class="n">node_index</span><span class="p">:</span>
     <span class="c1"># continue to the next node if it is a leaf node</span>
     <span class="k">if</span> <span class="n">leaf_id</span><span class="p">[</span><span class="n">sample_id</span><span class="p">]</span> <span class="o">==</span> <span class="n">node_id</span><span class="p">:</span>
         <span class="k">continue</span>
 
     <span class="c1"># check if value of the split feature for sample 0 is below threshold</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="n">sample_id</span><span class="p">,</span> <span class="n">feature</span><span class="p">[</span><span class="n">node_id</span><span class="p">]]</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">[</span><span class="n">node_id</span><span class="p">]):</span>
+    <span class="k">if</span> <span class="n">X_test</span><span class="p">[</span><span class="n">sample_id</span><span class="p">,</span> <span class="n">feature</span><span class="p">[</span><span class="n">node_id</span><span class="p">]]</span> <span class="o">&lt;=</span> <span class="n">threshold</span><span class="p">[</span><span class="n">node_id</span><span class="p">]:</span>
         <span class="n">threshold_sign</span> <span class="o">=</span> <span class="s2">&quot;&lt;=&quot;</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">threshold_sign</span> <span class="o">=</span> <span class="s2">&quot;&gt;&quot;</span>
 
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;decision node </span><span class="si">{node}</span><span class="s2"> : (X_test[</span><span class="si">{sample}</span><span class="s2">, </span><span class="si">{feature}</span><span class="s2">] = </span><span class="si">{value}</span><span class="s2">) &quot;</span>
-          <span class="s2">&quot;</span><span class="si">{inequality}</span><span class="s2"> </span><span class="si">{threshold}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-              <span class="n">node</span><span class="o">=</span><span class="n">node_id</span><span class="p">,</span>
-              <span class="n">sample</span><span class="o">=</span><span class="n">sample_id</span><span class="p">,</span>
-              <span class="n">feature</span><span class="o">=</span><span class="n">feature</span><span class="p">[</span><span class="n">node_id</span><span class="p">],</span>
-              <span class="n">value</span><span class="o">=</span><span class="n">X_test</span><span class="p">[</span><span class="n">sample_id</span><span class="p">,</span> <span class="n">feature</span><span class="p">[</span><span class="n">node_id</span><span class="p">]],</span>
-              <span class="n">inequality</span><span class="o">=</span><span class="n">threshold_sign</span><span class="p">,</span>
-              <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">[</span><span class="n">node_id</span><span class="p">]))</span>
+    <span class="nb">print</span><span class="p">(</span>
+        <span class="s2">&quot;decision node </span><span class="si">{node}</span><span class="s2"> : (X_test[</span><span class="si">{sample}</span><span class="s2">, </span><span class="si">{feature}</span><span class="s2">] = </span><span class="si">{value}</span><span class="s2">) &quot;</span>
+        <span class="s2">&quot;</span><span class="si">{inequality}</span><span class="s2"> </span><span class="si">{threshold}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+            <span class="n">node</span><span class="o">=</span><span class="n">node_id</span><span class="p">,</span>
+            <span class="n">sample</span><span class="o">=</span><span class="n">sample_id</span><span class="p">,</span>
+            <span class="n">feature</span><span class="o">=</span><span class="n">feature</span><span class="p">[</span><span class="n">node_id</span><span class="p">],</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">X_test</span><span class="p">[</span><span class="n">sample_id</span><span class="p">,</span> <span class="n">feature</span><span class="p">[</span><span class="n">node_id</span><span class="p">]],</span>
+            <span class="n">inequality</span><span class="o">=</span><span class="n">threshold_sign</span><span class="p">,</span>
+            <span class="n">threshold</span><span class="o">=</span><span class="n">threshold</span><span class="p">[</span><span class="n">node_id</span><span class="p">],</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -371,15 +383,16 @@ decision node 2 : (X_test[0, 2] = 5.1) &gt; 4.950000047683716)
 through.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sample_ids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="c1"># boolean array indicating the nodes both samples go through</span>
-<span class="n">common_nodes</span> <span class="o">=</span> <span class="p">(</span><span class="n">node_indicator</span><span class="o">.</span><span class="n">toarray</span><span class="p">()[</span><span class="n">sample_ids</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span>
-                <span class="nb">len</span><span class="p">(</span><span class="n">sample_ids</span><span class="p">))</span>
+<span class="n">common_nodes</span> <span class="o">=</span> <span class="n">node_indicator</span><span class="o">.</span><span class="n">toarray</span><span class="p">()[</span><span class="n">sample_ids</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">sample_ids</span><span class="p">)</span>
 <span class="c1"># obtain node ids using position in array</span>
 <span class="n">common_node_id</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="n">n_nodes</span><span class="p">)[</span><span class="n">common_nodes</span><span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The following samples </span><span class="si">{samples}</span><span class="s2"> share the node(s) </span><span class="si">{nodes}</span><span class="s2"> in the &quot;</span>
-      <span class="s2">&quot;tree.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">samples</span><span class="o">=</span><span class="n">sample_ids</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">common_node_id</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is </span><span class="si">{prop}% o</span><span class="s2">f all nodes.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-    <span class="n">prop</span><span class="o">=</span><span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">common_node_id</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_nodes</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The following samples </span><span class="si">{samples}</span><span class="s2"> share the node(s) </span><span class="si">{nodes}</span><span class="s2"> in the tree.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+        <span class="n">samples</span><span class="o">=</span><span class="n">sample_ids</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">common_node_id</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is </span><span class="si">{prop}% o</span><span class="s2">f all nodes.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">prop</span><span class="o">=</span><span class="mi">100</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">common_node_id</span><span class="p">)</span> <span class="o">/</span> <span class="n">n_nodes</span><span class="p">))</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -387,7 +400,7 @@ through.</p>
 This is 40.0% of all nodes.
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.105 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.156 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-tree-plot-unveil-tree-structure-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/tree/plot_unveil_tree_structure.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo30.svg" width="150px" /></a>

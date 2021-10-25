@@ -37,7 +37,7 @@ learn an inductive model with a classifier, which has several benefits:
 This example illustrates a generic implementation of a meta-estimator which
 extends clustering by inducing a classifier from the cluster labels.
 
-.. GENERATED FROM PYTHON SOURCE LINES 21-134
+.. GENERATED FROM PYTHON SOURCE LINES 22-135
 
 
 
@@ -52,9 +52,9 @@ extends clustering by inducing a classifier from the cluster labels.
 
 .. code-block:: default
 
+
     # Authors: Chirag Nagpal
     #          Christos Aridas
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -169,7 +169,7 @@ extends clustering by inducing a classifier from the cluster labels.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.281 seconds)
+   **Total running time of the script:** ( 0 minutes  3.627 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_inductive_clustering.py:

@@ -25,7 +25,7 @@ Recursive feature elimination with cross-validation
 A recursive feature elimination example with automatic tuning of the
 number of features selected with cross-validation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-42
+.. GENERATED FROM PYTHON SOURCE LINES 10-54
 
 
 
@@ -41,7 +41,6 @@ number of features selected with cross-validation.
 
  .. code-block:: none
 
-
     Optimal number of features : 3
     /home/circleci/project/sklearn/utils/deprecation.py:103: FutureWarning: The `grid_scores_` attribute is deprecated in version 1.0 in favor of `cv_results_` and will be removed in version 1.2.
       warnings.warn(msg, category=FutureWarning)
@@ -55,7 +54,6 @@ number of features selected with cross-validation.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import matplotlib.pyplot as plt
     from sklearn.svm import SVC
@@ -64,18 +62,29 @@ number of features selected with cross-validation.
     from sklearn.datasets import make_classification
 
     # Build a classification task using 3 informative features
-    X, y = make_classification(n_samples=1000, n_features=25, n_informative=3,
-                               n_redundant=2, n_repeated=0, n_classes=8,
-                               n_clusters_per_class=1, random_state=0)
+    X, y = make_classification(
+        n_samples=1000,
+        n_features=25,
+        n_informative=3,
+        n_redundant=2,
+        n_repeated=0,
+        n_classes=8,
+        n_clusters_per_class=1,
+        random_state=0,
+    )
 
     # Create the RFE object and compute a cross-validated score.
     svc = SVC(kernel="linear")
     # The "accuracy" scoring shows the proportion of correct classifications
 
     min_features_to_select = 1  # Minimum number of features to consider
-    rfecv = RFECV(estimator=svc, step=1, cv=StratifiedKFold(2),
-                  scoring='accuracy',
-                  min_features_to_select=min_features_to_select)
+    rfecv = RFECV(
+        estimator=svc,
+        step=1,
+        cv=StratifiedKFold(2),
+        scoring="accuracy",
+        min_features_to_select=min_features_to_select,
+    )
     rfecv.fit(X, y)
 
     print("Optimal number of features : %d" % rfecv.n_features_)
@@ -84,15 +93,16 @@ number of features selected with cross-validation.
     plt.figure()
     plt.xlabel("Number of features selected")
     plt.ylabel("Cross validation score (accuracy)")
-    plt.plot(range(min_features_to_select,
-                   len(rfecv.grid_scores_) + min_features_to_select),
-             rfecv.grid_scores_)
+    plt.plot(
+        range(min_features_to_select, len(rfecv.grid_scores_) + min_features_to_select),
+        rfecv.grid_scores_,
+    )
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.380 seconds)
+   **Total running time of the script:** ( 0 minutes  4.191 seconds)
 
 
 .. _sphx_glr_download_auto_examples_feature_selection_plot_rfe_with_cross_validation.py:

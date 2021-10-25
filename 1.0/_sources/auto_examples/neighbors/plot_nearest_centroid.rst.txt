@@ -25,7 +25,7 @@ Nearest Centroid Classification
 Sample usage of Nearest Centroid classification.
 It will plot the decision boundaries for each class.
 
-.. GENERATED FROM PYTHON SOURCE LINES 9-59
+.. GENERATED FROM PYTHON SOURCE LINES 10-56
 
 
 
@@ -53,12 +53,11 @@ It will plot the decision boundaries for each class.
 
  .. code-block:: none
 
-
-    None 0.8133333333333334
-    /home/circleci/project/examples/neighbors/plot_nearest_centroid.py:49: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
+    None 8.133333333333334e-01
+    /home/circleci/project/examples/neighbors/plot_nearest_centroid.py:48: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
       plt.pcolormesh(xx, yy, Z, cmap=cmap_light)
     0.2 0.82
-    /home/circleci/project/examples/neighbors/plot_nearest_centroid.py:49: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
+    /home/circleci/project/examples/neighbors/plot_nearest_centroid.py:48: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
       plt.pcolormesh(xx, yy, Z, cmap=cmap_light)
 
 
@@ -70,7 +69,6 @@ It will plot the decision boundaries for each class.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -87,13 +85,13 @@ It will plot the decision boundaries for each class.
     X = iris.data[:, :2]
     y = iris.target
 
-    h = .02  # step size in the mesh
+    h = 0.02  # step size in the mesh
 
     # Create color maps
-    cmap_light = ListedColormap(['orange', 'cyan', 'cornflowerblue'])
-    cmap_bold = ListedColormap(['darkorange', 'c', 'darkblue'])
+    cmap_light = ListedColormap(["orange", "cyan", "cornflowerblue"])
+    cmap_bold = ListedColormap(["darkorange", "c", "darkblue"])
 
-    for shrinkage in [None, .2]:
+    for shrinkage in [None, 0.2]:
         # we create an instance of Neighbours Classifier and fit the data.
         clf = NearestCentroid(shrink_threshold=shrinkage)
         clf.fit(X, y)
@@ -103,8 +101,7 @@ It will plot the decision boundaries for each class.
         # point in the mesh [x_min, x_max]x[y_min, y_max].
         x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
         y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
-        xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
-                             np.arange(y_min, y_max, h))
+        xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
         Z = clf.predict(np.c_[xx.ravel(), yy.ravel()])
 
         # Put the result into a color plot
@@ -113,18 +110,16 @@ It will plot the decision boundaries for each class.
         plt.pcolormesh(xx, yy, Z, cmap=cmap_light)
 
         # Plot also the training points
-        plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap_bold,
-                    edgecolor='k', s=20)
-        plt.title("3-Class classification (shrink_threshold=%r)"
-                  % shrinkage)
-        plt.axis('tight')
+        plt.scatter(X[:, 0], X[:, 1], c=y, cmap=cmap_bold, edgecolor="k", s=20)
+        plt.title("3-Class classification (shrink_threshold=%r)" % shrinkage)
+        plt.axis("tight")
 
     plt.show()
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.206 seconds)
+   **Total running time of the script:** ( 0 minutes  0.357 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neighbors_plot_nearest_centroid.py:

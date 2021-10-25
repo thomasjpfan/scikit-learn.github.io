@@ -27,7 +27,7 @@ A tutorial exercise for using different SVM kernels.
 This exercise is used in the :ref:`using_kernels_tut` part of the
 :ref:`supervised_learning_tut` section of the :ref:`stat_learn_tut_index`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-68
+.. GENERATED FROM PYTHON SOURCE LINES 12-75
 
 
 
@@ -62,12 +62,11 @@ This exercise is used in the :ref:`using_kernels_tut` part of the
 
  .. code-block:: none
 
-
-    /home/circleci/project/examples/exercises/plot_iris_exercise.py:62: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
+    /home/circleci/project/examples/exercises/plot_iris_exercise.py:63: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
       plt.pcolormesh(XX, YY, Z > 0, cmap=plt.cm.Paired)
-    /home/circleci/project/examples/exercises/plot_iris_exercise.py:62: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
+    /home/circleci/project/examples/exercises/plot_iris_exercise.py:63: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
       plt.pcolormesh(XX, YY, Z > 0, cmap=plt.cm.Paired)
-    /home/circleci/project/examples/exercises/plot_iris_exercise.py:62: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
+    /home/circleci/project/examples/exercises/plot_iris_exercise.py:63: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
       plt.pcolormesh(XX, YY, Z > 0, cmap=plt.cm.Paired)
 
 
@@ -78,8 +77,6 @@ This exercise is used in the :ref:`using_kernels_tut` part of the
 |
 
 .. code-block:: default
-
-    print(__doc__)
 
 
     import numpy as np
@@ -100,26 +97,28 @@ This exercise is used in the :ref:`using_kernels_tut` part of the
     X = X[order]
     y = y[order].astype(float)
 
-    X_train = X[:int(.9 * n_sample)]
-    y_train = y[:int(.9 * n_sample)]
-    X_test = X[int(.9 * n_sample):]
-    y_test = y[int(.9 * n_sample):]
+    X_train = X[: int(0.9 * n_sample)]
+    y_train = y[: int(0.9 * n_sample)]
+    X_test = X[int(0.9 * n_sample) :]
+    y_test = y[int(0.9 * n_sample) :]
 
     # fit the model
-    for kernel in ('linear', 'rbf', 'poly'):
+    for kernel in ("linear", "rbf", "poly"):
         clf = svm.SVC(kernel=kernel, gamma=10)
         clf.fit(X_train, y_train)
 
         plt.figure()
         plt.clf()
-        plt.scatter(X[:, 0], X[:, 1], c=y, zorder=10, cmap=plt.cm.Paired,
-                    edgecolor='k', s=20)
+        plt.scatter(
+            X[:, 0], X[:, 1], c=y, zorder=10, cmap=plt.cm.Paired, edgecolor="k", s=20
+        )
 
         # Circle out the test data
-        plt.scatter(X_test[:, 0], X_test[:, 1], s=80, facecolors='none',
-                    zorder=10, edgecolor='k')
+        plt.scatter(
+            X_test[:, 0], X_test[:, 1], s=80, facecolors="none", zorder=10, edgecolor="k"
+        )
 
-        plt.axis('tight')
+        plt.axis("tight")
         x_min = X[:, 0].min()
         x_max = X[:, 0].max()
         y_min = X[:, 1].min()
@@ -131,8 +130,14 @@ This exercise is used in the :ref:`using_kernels_tut` part of the
         # Put the result into a color plot
         Z = Z.reshape(XX.shape)
         plt.pcolormesh(XX, YY, Z > 0, cmap=plt.cm.Paired)
-        plt.contour(XX, YY, Z, colors=['k', 'k', 'k'],
-                    linestyles=['--', '-', '--'], levels=[-.5, 0, .5])
+        plt.contour(
+            XX,
+            YY,
+            Z,
+            colors=["k", "k", "k"],
+            linestyles=["--", "-", "--"],
+            levels=[-0.5, 0, 0.5],
+        )
 
         plt.title(kernel)
     plt.show()
@@ -140,7 +145,7 @@ This exercise is used in the :ref:`using_kernels_tut` part of the
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  5.394 seconds)
+   **Total running time of the script:** ( 0 minutes  9.497 seconds)
 
 
 .. _sphx_glr_download_auto_examples_exercises_plot_iris_exercise.py:

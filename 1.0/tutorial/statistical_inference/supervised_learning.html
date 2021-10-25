@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Supervised learning: predicting an output variable from high-dimensional observations &mdash; scikit-learn 1.0 documentation</title>
+  <title>Supervised learning: predicting an output variable from high-dimensional observations &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/tutorial/statistical_inference/supervised_learning.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -608,12 +608,12 @@ performance on these observations.</p>
 you would be testing on only one class.</p>
 <p><strong>Hint</strong>: You can use the <code class="docutils literal notranslate"><span class="pre">decision_function</span></code> method on a grid to get
 intuitions.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">[</span><span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+
 </pre></div>
 </div>
 <a class="reference external image-reference" href="../../auto_examples/datasets/plot_iris_dataset.html"><img alt="../../_images/sphx_glr_plot_iris_dataset_001.png" class="align-center" src="../../_images/sphx_glr_plot_iris_dataset_001.png" style="width: 560.0px; height: 420.0px;" /></a>

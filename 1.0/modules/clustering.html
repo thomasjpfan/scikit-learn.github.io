@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>2.3. Clustering &mdash; scikit-learn 1.0 documentation</title>
+  <title>2.3. Clustering &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/clustering.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -339,14 +339,15 @@ distances, transductive</p></td>
 <tr class="row-even"><td><p><a class="reference internal" href="#dbscan"><span class="std std-ref">DBSCAN</span></a></p></td>
 <td><p>neighborhood size</p></td>
 <td><p>Very large <code class="docutils literal notranslate"><span class="pre">n_samples</span></code>, medium <code class="docutils literal notranslate"><span class="pre">n_clusters</span></code></p></td>
-<td><p>Non-flat geometry, uneven cluster sizes, transductive</p></td>
+<td><p>Non-flat geometry, uneven cluster sizes, outlier removal,
+transductive</p></td>
 <td><p>Distances between nearest points</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#optics"><span class="std std-ref">OPTICS</span></a></p></td>
 <td><p>minimum cluster membership</p></td>
 <td><p>Very large <code class="docutils literal notranslate"><span class="pre">n_samples</span></code>, large <code class="docutils literal notranslate"><span class="pre">n_clusters</span></code></p></td>
 <td><p>Non-flat geometry, uneven cluster sizes, variable cluster density,
-transductive</p></td>
+outlier removal, transductive</p></td>
 <td><p>Distances between points</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="mixture.html#mixture"><span class="std std-ref">Gaussian mixtures</span></a></p></td>
@@ -716,7 +717,7 @@ Jianbo Shi, Jitendra Malik, 2000</p></li>
 Marina Meila, Jianbo Shi, 2001</p></li>
 <li><p><a class="reference external" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.19.8100">“On Spectral Clustering: Analysis and an algorithm”</a>
 Andrew Y. Ng, Michael I. Jordan, Yair Weiss, 2001</p></li>
-<li><p><a class="reference external" href="https://arxiv.org/abs/1708.07481">“Preconditioned Spectral Clustering for Stochastic
+<li><p><a class="reference external" href="https://arxiv.org/abs/1309.0238">“Preconditioned Spectral Clustering for Stochastic
 Block Partition Streaming Graph Challenge”</a>
 David Zhuzhunashvili, Andrew Knyazev</p></li>
 </ul>
@@ -1741,10 +1742,9 @@ cluster analysis.</p>
 <div class="topic">
 <p class="topic-title">References</p>
 <ul class="simple">
-<li><p>Peter J. Rousseeuw (1987). “Silhouettes: a Graphical Aid to the
-Interpretation and Validation of Cluster Analysis”. Computational
-and Applied Mathematics 20: 53–65.
-<a class="reference external" href="https://doi.org/10.1016/0377-0427(87)90125-7">doi:10.1016/0377-0427(87)90125-7</a>.</p></li>
+<li><p>Peter J. Rousseeuw (1987). <a class="reference external" href="https://doi.org/10.1016/0377-0427(87)90125-7">“Silhouettes: a Graphical Aid to the
+Interpretation and Validation of Cluster Analysis”</a>
+. Computational and Applied Mathematics 20: 53–65.</p></li>
 </ul>
 </div>
 <section id="id24">
@@ -1835,8 +1835,7 @@ number of points in cluster <span class="math notranslate nohighlight">\(q\)</sp
 <ul class="simple">
 <li><p>Caliński, T., &amp; Harabasz, J. (1974).
 <a class="reference external" href="https://www.researchgate.net/publication/233096619_A_Dendrite_Method_for_Cluster_Analysis">“A Dendrite Method for Cluster Analysis”</a>.
-Communications in Statistics-theory and Methods 3: 1-27.
-<a class="reference external" href="https://doi.org/10.1080/03610927408827101">doi:10.1080/03610927408827101</a>.</p></li>
+<a class="reference external" href="https://doi.org/10.1080/03610927408827101">Communications in Statistics-theory and Methods 3: 1-27</a>.</p></li>
 </ul>
 </div>
 </section>
@@ -1869,7 +1868,8 @@ cluster analysis as follows:</p>
 <h4><span class="section-number">2.3.10.7.1. </span>Advantages<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">
 <li><p>The computation of Davies-Bouldin is simpler than that of Silhouette scores.</p></li>
-<li><p>The index is computed only quantities and features inherent to the dataset.</p></li>
+<li><p>The index is solely based on quantities and features inherent to the dataset
+as its computation only uses point-wise distances.</p></li>
 </ul>
 </section>
 <section id="id32">
@@ -1902,14 +1902,12 @@ symmetric is:</p>
 <p class="topic-title">References</p>
 <ul class="simple">
 <li><p>Davies, David L.; Bouldin, Donald W. (1979).
-“A Cluster Separation Measure”
+<a class="reference external" href="https://doi.org/10.1109/TPAMI.1979.4766909">“A Cluster Separation Measure”</a>
 IEEE Transactions on Pattern Analysis and Machine Intelligence.
-PAMI-1 (2): 224-227.
-<a class="reference external" href="https://doi.org/10.1109/TPAMI.1979.4766909">doi:10.1109/TPAMI.1979.4766909</a>.</p></li>
+PAMI-1 (2): 224-227.</p></li>
 <li><p>Halkidi, Maria; Batistakis, Yannis; Vazirgiannis, Michalis (2001).
-“On Clustering Validation Techniques”
-Journal of Intelligent Information Systems, 17(2-3), 107-145.
-<a class="reference external" href="https://doi.org/10.1023/A:1012801612483">doi:10.1023/A:1012801612483</a>.</p></li>
+<a class="reference external" href="https://doi.org/10.1023/A:1012801612483">“On Clustering Validation Techniques”</a>
+Journal of Intelligent Information Systems, 17(2-3), 107-145.</p></li>
 <li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Davies–Bouldin_index">Wikipedia entry for Davies-Bouldin index</a>.</p></li>
 </ul>
 </div>

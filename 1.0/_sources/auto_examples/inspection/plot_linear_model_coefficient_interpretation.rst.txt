@@ -46,12 +46,10 @@ wage as a function of various features such as experience, age, or education.
    :local:
    :depth: 1
 
-.. GENERATED FROM PYTHON SOURCE LINES 30-39
+.. GENERATED FROM PYTHON SOURCE LINES 31-38
 
 .. code-block:: default
 
-
-    print(__doc__)
 
     import numpy as np
     import scipy as sp
@@ -66,7 +64,7 @@ wage as a function of various features such as experience, age, or education.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-46
+.. GENERATED FROM PYTHON SOURCE LINES 39-45
 
 The dataset: wages
 ------------------
@@ -75,7 +73,7 @@ We fetch the data from `OpenML <http://openml.org/>`_.
 Note that setting the parameter `as_frame` to True will retrieve the data
 as a pandas dataframe.
 
-.. GENERATED FROM PYTHON SOURCE LINES 46-51
+.. GENERATED FROM PYTHON SOURCE LINES 45-50
 
 .. code-block:: default
 
@@ -91,13 +89,13 @@ as a pandas dataframe.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 52-55
+.. GENERATED FROM PYTHON SOURCE LINES 51-54
 
 Then, we identify features `X` and targets `y`: the column WAGE is our
 target variable (i.e., the variable which we want to predict).
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 55-58
+.. GENERATED FROM PYTHON SOURCE LINES 54-57
 
 .. code-block:: default
 
@@ -293,13 +291,13 @@ target variable (i.e., the variable which we want to predict).
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-62
+.. GENERATED FROM PYTHON SOURCE LINES 58-61
 
 Note that the dataset contains categorical and numerical variables.
 We will need to take this into account when preprocessing the dataset
 thereafter.
 
-.. GENERATED FROM PYTHON SOURCE LINES 62-65
+.. GENERATED FROM PYTHON SOURCE LINES 61-64
 
 .. code-block:: default
 
@@ -417,12 +415,12 @@ thereafter.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 66-68
+.. GENERATED FROM PYTHON SOURCE LINES 65-67
 
 Our target for prediction: the wage.
 Wages are described as floating-point number in dollars per hour.
 
-.. GENERATED FROM PYTHON SOURCE LINES 68-71
+.. GENERATED FROM PYTHON SOURCE LINES 67-70
 
 .. code-block:: default
 
@@ -449,7 +447,7 @@ Wages are described as floating-point number in dollars per hour.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 72-77
+.. GENERATED FROM PYTHON SOURCE LINES 71-76
 
 We split the sample into a train and a test dataset.
 Only the train dataset will be used in the following exploratory analysis.
@@ -457,7 +455,7 @@ This is a way to emulate a real situation where predictions are performed on
 an unknown target, and we don't want our analysis and decisions to be biased
 by our knowledge of the test data.
 
-.. GENERATED FROM PYTHON SOURCE LINES 77-82
+.. GENERATED FROM PYTHON SOURCE LINES 76-81
 
 .. code-block:: default
 
@@ -473,7 +471,7 @@ by our knowledge of the test data.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 83-88
+.. GENERATED FROM PYTHON SOURCE LINES 82-87
 
 First, let's get some insights by looking at the variable distributions and
 at the pairwise relationships between them. Only numerical
@@ -481,7 +479,7 @@ variables will be used. In the following plot, each dot represents a sample.
 
   .. _marginal_dependencies:
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-93
+.. GENERATED FROM PYTHON SOURCE LINES 87-92
 
 .. code-block:: default
 
@@ -502,7 +500,7 @@ variables will be used. In the following plot, each dot represents a sample.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 94-113
+.. GENERATED FROM PYTHON SOURCE LINES 93-112
 
 Looking closely at the WAGE distribution reveals that it has a
 long tail. For this reason, we should take its logarithm
@@ -524,7 +522,7 @@ The machine-learning pipeline
 To design our machine-learning pipeline, we first manually
 check the type of data that we are dealing with:
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-116
+.. GENERATED FROM PYTHON SOURCE LINES 112-115
 
 .. code-block:: default
 
@@ -562,7 +560,7 @@ check the type of data that we are dealing with:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-128
+.. GENERATED FROM PYTHON SOURCE LINES 116-127
 
 As seen previously, the dataset contains columns with different data types
 and we need to apply a specific preprocessing for each data types.
@@ -576,7 +574,7 @@ Our pre-processor will
 - as a first approach (we will see after how the normalisation of numerical
   values will affect our discussion), keep numerical values as they are.
 
-.. GENERATED FROM PYTHON SOURCE LINES 128-141
+.. GENERATED FROM PYTHON SOURCE LINES 127-140
 
 .. code-block:: default
 
@@ -600,12 +598,12 @@ Our pre-processor will
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 142-144
+.. GENERATED FROM PYTHON SOURCE LINES 141-143
 
 To describe the dataset as a linear model we use a ridge regressor
 with a very small regularization and to model the logarithm of the WAGE.
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-157
+.. GENERATED FROM PYTHON SOURCE LINES 143-156
 
 .. code-block:: default
 
@@ -629,14 +627,14 @@ with a very small regularization and to model the logarithm of the WAGE.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 158-162
+.. GENERATED FROM PYTHON SOURCE LINES 157-161
 
 Processing the dataset
 ----------------------
 
 First, we fit the model.
 
-.. GENERATED FROM PYTHON SOURCE LINES 162-165
+.. GENERATED FROM PYTHON SOURCE LINES 161-164
 
 .. code-block:: default
 
@@ -650,13 +648,13 @@ First, we fit the model.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 166-169
+.. GENERATED FROM PYTHON SOURCE LINES 165-168
 
 Then we check the performance of the computed model plotting its predictions
 on the test set and computing,
 for example, the median absolute error of the model.
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-189
+.. GENERATED FROM PYTHON SOURCE LINES 168-188
 
 .. code-block:: default
 
@@ -692,7 +690,7 @@ for example, the median absolute error of the model.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 190-204
+.. GENERATED FROM PYTHON SOURCE LINES 189-203
 
 The model learnt is far from being a good model making accurate predictions:
 this is obvious when looking at the plot above, where good predictions
@@ -709,7 +707,7 @@ Interpreting coefficients: scale matters
 First of all, we can take a look to the values of the coefficients of the
 regressor we have fitted.
 
-.. GENERATED FROM PYTHON SOURCE LINES 204-214
+.. GENERATED FROM PYTHON SOURCE LINES 203-213
 
 .. code-block:: default
 
@@ -836,7 +834,7 @@ regressor we have fitted.
     <br />
     <br />
 
-.. GENERATED FROM PYTHON SOURCE LINES 215-227
+.. GENERATED FROM PYTHON SOURCE LINES 214-226
 
 The AGE coefficient is expressed in "dollars/hour per living years" while the
 EDUCATION one is expressed in "dollars/hour per years of education". This
@@ -851,7 +849,7 @@ different coefficients since the features have different natural scales, and
 hence value ranges, because of their different unit of measure. This is more
 visible if we plot the coefficients.
 
-.. GENERATED FROM PYTHON SOURCE LINES 227-233
+.. GENERATED FROM PYTHON SOURCE LINES 226-232
 
 .. code-block:: default
 
@@ -873,7 +871,7 @@ visible if we plot the coefficients.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 234-245
+.. GENERATED FROM PYTHON SOURCE LINES 233-244
 
 Indeed, from the plot above the most important factor in determining WAGE
 appears to be the
@@ -887,7 +885,7 @@ varies a lot more, several decades.
 This is visible if we compare the standard deviations of different
 features.
 
-.. GENERATED FROM PYTHON SOURCE LINES 245-254
+.. GENERATED FROM PYTHON SOURCE LINES 244-253
 
 .. code-block:: default
 
@@ -912,7 +910,7 @@ features.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 255-265
+.. GENERATED FROM PYTHON SOURCE LINES 254-264
 
 Multiplying the coefficients by the standard deviation of the related
 feature would reduce all the coefficients to the same unit of measure.
@@ -925,7 +923,7 @@ In that way, we emphasize that the
 greater the variance of a feature, the larger the weight of the corresponding
 coefficient on the output, all else being equal.
 
-.. GENERATED FROM PYTHON SOURCE LINES 265-277
+.. GENERATED FROM PYTHON SOURCE LINES 264-276
 
 .. code-block:: default
 
@@ -953,7 +951,7 @@ coefficient on the output, all else being equal.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 278-305
+.. GENERATED FROM PYTHON SOURCE LINES 277-304
 
 Now that the coefficients have been scaled, we can safely compare them.
 
@@ -983,7 +981,7 @@ If coefficients vary significantly when changing the input dataset
 their robustness is not guaranteed, and they should probably be interpreted
 with caution.
 
-.. GENERATED FROM PYTHON SOURCE LINES 305-333
+.. GENERATED FROM PYTHON SOURCE LINES 304-332
 
 .. code-block:: default
 
@@ -1027,7 +1025,7 @@ with caution.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 334-346
+.. GENERATED FROM PYTHON SOURCE LINES 333-345
 
 The problem of correlated variables
 -----------------------------------
@@ -1042,7 +1040,7 @@ EXPERIENCE coefficient.
 
 .. _covariation:
 
-.. GENERATED FROM PYTHON SOURCE LINES 346-355
+.. GENERATED FROM PYTHON SOURCE LINES 345-354
 
 .. code-block:: default
 
@@ -1067,7 +1065,7 @@ EXPERIENCE coefficient.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 356-361
+.. GENERATED FROM PYTHON SOURCE LINES 355-360
 
 Two regions are populated: when the EXPERIENCE coefficient is
 positive the AGE one is negative and vice-versa.
@@ -1075,7 +1073,7 @@ positive the AGE one is negative and vice-versa.
 To go further we remove one of the 2 features and check what is the impact
 on the model stability.
 
-.. GENERATED FROM PYTHON SOURCE LINES 361-388
+.. GENERATED FROM PYTHON SOURCE LINES 360-387
 
 .. code-block:: default
 
@@ -1118,7 +1116,7 @@ on the model stability.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 389-403
+.. GENERATED FROM PYTHON SOURCE LINES 388-402
 
 The estimation of the EXPERIENCE coefficient is now less variable and
 remain important for all models trained during cross-validation.
@@ -1135,7 +1133,7 @@ in the Ridge.
 The preprocessor is redefined in order to subtract the mean and scale
 variables to unit variance.
 
-.. GENERATED FROM PYTHON SOURCE LINES 403-412
+.. GENERATED FROM PYTHON SOURCE LINES 402-411
 
 .. code-block:: default
 
@@ -1155,11 +1153,11 @@ variables to unit variance.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 413-414
+.. GENERATED FROM PYTHON SOURCE LINES 412-413
 
 The model will stay unchanged.
 
-.. GENERATED FROM PYTHON SOURCE LINES 414-424
+.. GENERATED FROM PYTHON SOURCE LINES 413-423
 
 .. code-block:: default
 
@@ -1180,13 +1178,13 @@ The model will stay unchanged.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 425-428
+.. GENERATED FROM PYTHON SOURCE LINES 424-427
 
 Again, we check the performance of the computed
 model using, for example, the median absolute error of the model and the R
 squared coefficient.
 
-.. GENERATED FROM PYTHON SOURCE LINES 428-447
+.. GENERATED FROM PYTHON SOURCE LINES 427-446
 
 .. code-block:: default
 
@@ -1221,11 +1219,11 @@ squared coefficient.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 448-449
+.. GENERATED FROM PYTHON SOURCE LINES 447-448
 
 For the coefficient analysis, scaling is not needed this time.
 
-.. GENERATED FROM PYTHON SOURCE LINES 449-460
+.. GENERATED FROM PYTHON SOURCE LINES 448-459
 
 .. code-block:: default
 
@@ -1252,11 +1250,11 @@ For the coefficient analysis, scaling is not needed this time.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 461-462
+.. GENERATED FROM PYTHON SOURCE LINES 460-461
 
 We now inspect the coefficients across several cross-validation folds.
 
-.. GENERATED FROM PYTHON SOURCE LINES 462-485
+.. GENERATED FROM PYTHON SOURCE LINES 461-484
 
 .. code-block:: default
 
@@ -1295,7 +1293,7 @@ We now inspect the coefficients across several cross-validation folds.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 486-499
+.. GENERATED FROM PYTHON SOURCE LINES 485-498
 
 The result is quite similar to the non-normalized case.
 
@@ -1311,7 +1309,7 @@ variance of the estimates. RidgeCV applies cross validation in order to
 determine which value of the regularization parameter (`alpha`) is best
 suited for prediction.
 
-.. GENERATED FROM PYTHON SOURCE LINES 499-513
+.. GENERATED FROM PYTHON SOURCE LINES 498-512
 
 .. code-block:: default
 
@@ -1336,11 +1334,11 @@ suited for prediction.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 514-515
+.. GENERATED FROM PYTHON SOURCE LINES 513-514
 
 First we check which value of :math:`\alpha` has been selected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 515-518
+.. GENERATED FROM PYTHON SOURCE LINES 514-517
 
 .. code-block:: default
 
@@ -1362,11 +1360,11 @@ First we check which value of :math:`\alpha` has been selected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 519-520
+.. GENERATED FROM PYTHON SOURCE LINES 518-519
 
 Then we check the quality of the predictions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 520-540
+.. GENERATED FROM PYTHON SOURCE LINES 519-539
 
 .. code-block:: default
 
@@ -1402,12 +1400,12 @@ Then we check the quality of the predictions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 541-543
+.. GENERATED FROM PYTHON SOURCE LINES 540-542
 
 The ability to reproduce the data of the regularized model is similar to
 the one of the non-regularized model.
 
-.. GENERATED FROM PYTHON SOURCE LINES 543-554
+.. GENERATED FROM PYTHON SOURCE LINES 542-553
 
 .. code-block:: default
 
@@ -1434,7 +1432,7 @@ the one of the non-regularized model.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 555-568
+.. GENERATED FROM PYTHON SOURCE LINES 554-567
 
 The coefficients are significantly different.
 AGE and EXPERIENCE coefficients are both positive but they now have less
@@ -1450,7 +1448,7 @@ increased stability is visible from the plot, obtained from data
 perturbations, in a cross validation. This plot can  be compared with
 the :ref:`previous one<covariation>`.
 
-.. GENERATED FROM PYTHON SOURCE LINES 568-594
+.. GENERATED FROM PYTHON SOURCE LINES 567-593
 
 .. code-block:: default
 
@@ -1492,7 +1490,7 @@ the :ref:`previous one<covariation>`.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 595-606
+.. GENERATED FROM PYTHON SOURCE LINES 594-605
 
 Linear models with sparse coefficients
 --------------------------------------
@@ -1506,7 +1504,7 @@ coefficients. LassoCV applies cross validation in order to
 determine which value of the regularization parameter (`alpha`) is best
 suited for the model estimation.
 
-.. GENERATED FROM PYTHON SOURCE LINES 606-620
+.. GENERATED FROM PYTHON SOURCE LINES 605-619
 
 .. code-block:: default
 
@@ -1531,11 +1529,11 @@ suited for the model estimation.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 621-622
+.. GENERATED FROM PYTHON SOURCE LINES 620-621
 
 First we verify which value of :math:`\alpha` has been selected.
 
-.. GENERATED FROM PYTHON SOURCE LINES 622-625
+.. GENERATED FROM PYTHON SOURCE LINES 621-624
 
 .. code-block:: default
 
@@ -1557,11 +1555,11 @@ First we verify which value of :math:`\alpha` has been selected.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 626-627
+.. GENERATED FROM PYTHON SOURCE LINES 625-626
 
 Then we check the quality of the predictions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 627-647
+.. GENERATED FROM PYTHON SOURCE LINES 626-646
 
 .. code-block:: default
 
@@ -1597,11 +1595,11 @@ Then we check the quality of the predictions.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 648-649
+.. GENERATED FROM PYTHON SOURCE LINES 647-648
 
 For our dataset, again the model is not very predictive.
 
-.. GENERATED FROM PYTHON SOURCE LINES 649-660
+.. GENERATED FROM PYTHON SOURCE LINES 648-659
 
 .. code-block:: default
 
@@ -1628,7 +1626,7 @@ For our dataset, again the model is not very predictive.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 661-686
+.. GENERATED FROM PYTHON SOURCE LINES 660-685
 
 A Lasso model identifies the correlation between
 AGE and EXPERIENCE and suppresses one of them for the sake of the prediction.
@@ -1659,7 +1657,7 @@ Lessons learned
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  8.613 seconds)
+   **Total running time of the script:** ( 0 minutes  13.022 seconds)
 
 
 .. _sphx_glr_download_auto_examples_inspection_plot_linear_model_coefficient_interpretation.py:

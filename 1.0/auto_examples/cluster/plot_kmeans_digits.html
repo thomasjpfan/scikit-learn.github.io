@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>A demo of K-Means clustering on the handwritten digits data &mdash; scikit-learn 1.0 documentation</title>
+  <title>A demo of K-Means clustering on the handwritten digits data &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_digits.html" />
 
@@ -153,12 +153,12 @@
           </a>
         </div>
         <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-            <a href="plot_linkage_comparison.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Comparing different hierarchical linkage methods on toy datasets">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+            <a href="plot_mini_batch_kmeans.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Comparison of the K-Means and MiniBatchKMeans clustering algorithms">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
             <a href="plot_kmeans_silhouette_analysis.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Selecting the number of clusters with silhouette analysis on KMeans clustering">Next</a>
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -228,9 +228,6 @@ definitions and discussions of the metrics):</p>
 </tr>
 </tbody>
 </table>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
-</pre></div>
-</div>
 <section id="load-the-dataset">
 <h2>Load the dataset<a class="headerlink" href="#load-the-dataset" title="Permalink to this headline">¶</a></h2>
 <p>We will start by loading the <code class="docutils literal notranslate"><span class="pre">digits</span></code> dataset. This dataset contains
@@ -242,9 +239,7 @@ to group images such that the handwritten digits on the image are the same.</p>
 <span class="n">data</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits" title="sklearn.datasets.load_digits" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">load_digits</span></a><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="p">(</span><span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span><span class="p">),</span> <span class="n">n_digits</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.unique.html#numpy.unique" title="numpy.unique" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">unique</span></a><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">size</span>
 
-<span class="nb">print</span><span class="p">(</span>
-    <span class="sa">f</span><span class="s2">&quot;# digits: </span><span class="si">{</span><span class="n">n_digits</span><span class="si">}</span><span class="s2">; # samples: </span><span class="si">{</span><span class="n">n_samples</span><span class="si">}</span><span class="s2">; # features </span><span class="si">{</span><span class="n">n_features</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# digits: </span><span class="si">{</span><span class="n">n_digits</span><span class="si">}</span><span class="s2">; # samples: </span><span class="si">{</span><span class="n">n_samples</span><span class="si">}</span><span class="s2">; # features </span><span class="si">{</span><span class="n">n_features</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
@@ -303,13 +298,18 @@ compare different initialization methods for KMeans. Our benchmark will:</p>
 
     <span class="c1"># The silhouette score requires the full dataset</span>
     <span class="n">results</span> <span class="o">+=</span> <span class="p">[</span>
-        <a href="../../modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score" title="sklearn.metrics.silhouette_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span></a><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">estimator</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span>
-                                 <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;euclidean&quot;</span><span class="p">,</span> <span class="n">sample_size</span><span class="o">=</span><span class="mi">300</span><span class="p">,)</span>
+        <a href="../../modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score" title="sklearn.metrics.silhouette_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">silhouette_score</span></a><span class="p">(</span>
+            <span class="n">data</span><span class="p">,</span>
+            <span class="n">estimator</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span>
+            <span class="n">metric</span><span class="o">=</span><span class="s2">&quot;euclidean&quot;</span><span class="p">,</span>
+            <span class="n">sample_size</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span>
+        <span class="p">)</span>
     <span class="p">]</span>
 
     <span class="c1"># Show the results</span>
-    <span class="n">formatter_result</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{:9s}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="s2">s</span><span class="se">\t</span><span class="si">{:.0f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="s2">&quot;</span>
-                        <span class="s2">&quot;</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">formatter_result</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s2">&quot;</span><span class="si">{:9s}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="s2">s</span><span class="se">\t</span><span class="si">{:.0f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="se">\t</span><span class="si">{:.3f}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">formatter_result</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">*</span><span class="n">results</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -330,11 +330,10 @@ deterministic and a single initialization suffice.</p></li>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="sklearn.cluster.KMeans" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">KMeans</span></a>
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="sklearn.decomposition.PCA" class="sphx-glr-backref-module-sklearn-decomposition sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">PCA</span></a>
 
-<span class="nb">print</span><span class="p">(</span><span class="mi">82</span> <span class="o">*</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;init</span><span class="se">\t\t</span><span class="s1">time</span><span class="se">\t</span><span class="s1">inertia</span><span class="se">\t</span><span class="s1">homo</span><span class="se">\t</span><span class="s1">compl</span><span class="se">\t</span><span class="s1">v-meas</span><span class="se">\t</span><span class="s1">ARI</span><span class="se">\t</span><span class="s1">AMI</span><span class="se">\t</span><span class="s1">silhouette&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">82</span> <span class="o">*</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;init</span><span class="se">\t\t</span><span class="s2">time</span><span class="se">\t</span><span class="s2">inertia</span><span class="se">\t</span><span class="s2">homo</span><span class="se">\t</span><span class="s2">compl</span><span class="se">\t</span><span class="s2">v-meas</span><span class="se">\t</span><span class="s2">ARI</span><span class="se">\t</span><span class="s2">AMI</span><span class="se">\t</span><span class="s2">silhouette&quot;</span><span class="p">)</span>
 
-<span class="n">kmeans</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="sklearn.cluster.KMeans" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">KMeans</span></a><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="s2">&quot;k-means++&quot;</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="n">n_digits</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span>
-                <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">kmeans</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="sklearn.cluster.KMeans" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">KMeans</span></a><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="s2">&quot;k-means++&quot;</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="n">n_digits</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">bench_k_means</span><span class="p">(</span><span class="n">kmeans</span><span class="o">=</span><span class="n">kmeans</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;k-means++&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
 
 <span class="n">kmeans</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="sklearn.cluster.KMeans" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">KMeans</span></a><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="s2">&quot;random&quot;</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="n">n_digits</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -344,15 +343,15 @@ deterministic and a single initialization suffice.</p></li>
 <span class="n">kmeans</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans" title="sklearn.cluster.KMeans" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">KMeans</span></a><span class="p">(</span><span class="n">init</span><span class="o">=</span><span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="n">n_digits</span><span class="p">,</span> <span class="n">n_init</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">bench_k_means</span><span class="p">(</span><span class="n">kmeans</span><span class="o">=</span><span class="n">kmeans</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;PCA-based&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="mi">82</span> <span class="o">*</span> <span class="s1">&#39;_&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">82</span> <span class="o">*</span> <span class="s2">&quot;_&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>__________________________________________________________________________________
 init            time    inertia homo    compl   v-meas  ARI     AMI     silhouette
-k-means++       0.082s  69662   0.680   0.719   0.699   0.570   0.695   0.173
-random          0.050s  69707   0.675   0.716   0.694   0.560   0.691   0.188
-PCA-based       0.018s  72686   0.636   0.658   0.647   0.521   0.643   0.144
+k-means++       0.095s  69662   0.680   0.719   0.699   0.570   0.695   0.159
+random          0.082s  69707   0.675   0.716   0.694   0.560   0.691   0.181
+PCA-based       0.022s  72686   0.636   0.658   0.647   0.521   0.643   0.143
 __________________________________________________________________________________
 </pre></div>
 </div>
@@ -370,7 +369,7 @@ we can use <a class="reference internal" href="../../modules/generated/sklearn.d
 <span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">reduced_data</span><span class="p">)</span>
 
 <span class="c1"># Step size of the mesh. Decrease to increase the quality of the VQ.</span>
-<span class="n">h</span> <span class="o">=</span> <span class="mf">.02</span>     <span class="c1"># point in the mesh [x_min, x_max]x[y_min, y_max].</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.02</span>  <span class="c1"># point in the mesh [x_min, x_max]x[y_min, y_max].</span>
 
 <span class="c1"># Plot the decision boundary. For that, we will assign a color to each</span>
 <span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span> <span class="o">=</span> <span class="n">reduced_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">reduced_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span>
@@ -384,17 +383,31 @@ we can use <a class="reference internal" href="../../modules/generated/sklearn.d
 <span class="n">Z</span> <span class="o">=</span> <span class="n">Z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.clf.html#matplotlib.pyplot.clf" title="matplotlib.pyplot.clf" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">clf</span></a><span class="p">()</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="matplotlib.pyplot.imshow" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span></a><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span>
-           <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">xx</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span>
-           <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Paired</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="matplotlib.pyplot.imshow" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span></a><span class="p">(</span>
+    <span class="n">Z</span><span class="p">,</span>
+    <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">,</span>
+    <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">xx</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">max</span><span class="p">()),</span>
+    <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">Paired</span><span class="p">,</span>
+    <span class="n">aspect</span><span class="o">=</span><span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+    <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">reduced_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">reduced_data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;k.&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">reduced_data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">reduced_data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;k.&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="c1"># Plot the centroids as a white X</span>
 <span class="n">centroids</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter" title="matplotlib.pyplot.scatter" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">centroids</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">centroids</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">169</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-            <span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s2">&quot;K-means clustering on the digits dataset (PCA-reduced data)</span><span class="se">\n</span><span class="s2">&quot;</span>
-          <span class="s2">&quot;Centroids are marked with white cross&quot;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter" title="matplotlib.pyplot.scatter" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span>
+    <span class="n">centroids</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="n">centroids</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">marker</span><span class="o">=</span><span class="s2">&quot;x&quot;</span><span class="p">,</span>
+    <span class="n">s</span><span class="o">=</span><span class="mi">169</span><span class="p">,</span>
+    <span class="n">linewidths</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;w&quot;</span><span class="p">,</span>
+    <span class="n">zorder</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+<span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span>
+    <span class="s2">&quot;K-means clustering on the digits dataset (PCA-reduced data)</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;Centroids are marked with white cross&quot;</span>
+<span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlim.html#matplotlib.pyplot.xlim" title="matplotlib.pyplot.xlim" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span></a><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylim.html#matplotlib.pyplot.ylim" title="matplotlib.pyplot.ylim" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylim</span></a><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xticks.html#matplotlib.pyplot.xticks" title="matplotlib.pyplot.xticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span></a><span class="p">(())</span>
@@ -402,7 +415,7 @@ we can use <a class="reference internal" href="../../modules/generated/sklearn.d
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_kmeans_digits_001.png" srcset="../../_images/sphx_glr_plot_kmeans_digits_001.png" alt="K-means clustering on the digits dataset (PCA-reduced data) Centroids are marked with white cross" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.012 seconds)</p>
+<img src="../../_images/sphx_glr_plot_kmeans_digits_001.png" srcset="../../_images/sphx_glr_plot_kmeans_digits_001.png" alt="K-means clustering on the digits dataset (PCA-reduced data) Centroids are marked with white cross" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.363 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-cluster-plot-kmeans-digits-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_kmeans_digits.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo4.svg" width="150px" /></a>

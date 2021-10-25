@@ -27,7 +27,7 @@ and anisotropic RBF kernel on a two-dimensional version for the iris-dataset.
 The anisotropic RBF kernel obtains slightly higher log-marginal-likelihood by
 assigning different length-scales to the two feature dimensions.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-64
+.. GENERATED FROM PYTHON SOURCE LINES 12-63
 
 
 
@@ -42,7 +42,6 @@ assigning different length-scales to the two feature dimensions.
 
 .. code-block:: default
 
-    print(__doc__)
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -55,7 +54,7 @@ assigning different length-scales to the two feature dimensions.
     X = iris.data[:, :2]  # we only take the first two features.
     y = np.array(iris.target, dtype=int)
 
-    h = .02  # step size in the mesh
+    h = 0.02  # step size in the mesh
 
     kernel = 1.0 * RBF([1.0])
     gpc_rbf_isotropic = GaussianProcessClassifier(kernel=kernel).fit(X, y)
@@ -65,8 +64,7 @@ assigning different length-scales to the two feature dimensions.
     # create a mesh to plot in
     x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
     y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
-    xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
-                         np.arange(y_min, y_max, h))
+    xx, yy = np.meshgrid(np.arange(x_min, x_max, h), np.arange(y_min, y_max, h))
 
     titles = ["Isotropic RBF", "Anisotropic RBF"]
     plt.figure(figsize=(10, 5))
@@ -82,16 +80,16 @@ assigning different length-scales to the two feature dimensions.
         plt.imshow(Z, extent=(x_min, x_max, y_min, y_max), origin="lower")
 
         # Plot also the training points
-        plt.scatter(X[:, 0], X[:, 1], c=np.array(["r", "g", "b"])[y],
-                    edgecolors=(0, 0, 0))
-        plt.xlabel('Sepal length')
-        plt.ylabel('Sepal width')
+        plt.scatter(X[:, 0], X[:, 1], c=np.array(["r", "g", "b"])[y], edgecolors=(0, 0, 0))
+        plt.xlabel("Sepal length")
+        plt.ylabel("Sepal width")
         plt.xlim(xx.min(), xx.max())
         plt.ylim(yy.min(), yy.max())
         plt.xticks(())
         plt.yticks(())
-        plt.title("%s, LML: %.3f" %
-                  (titles[i], clf.log_marginal_likelihood(clf.kernel_.theta)))
+        plt.title(
+            "%s, LML: %.3f" % (titles[i], clf.log_marginal_likelihood(clf.kernel_.theta))
+        )
 
     plt.tight_layout()
     plt.show()
@@ -99,7 +97,7 @@ assigning different length-scales to the two feature dimensions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.055 seconds)
+   **Total running time of the script:** ( 0 minutes  3.206 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_gpc_iris.py:

@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Version 0.20.4 &mdash; scikit-learn 1.0 documentation</title>
+  <title>Version 0.20.4 &mdash; scikit-learn 1.0.1 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/whats_new/v0.20.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0</strong><br/>
+          <strong>scikit-learn 1.0.1</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -610,10 +610,10 @@ split in the multiclass case and this would cause a crash when using
 those estimators as part of parallel parameter search or cross-validation.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/12122">#12122</a> by <a class="reference external" href="https://github.com/ogrisel">Olivier Grisel</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixed a bug affecting <code class="xref py py-class docutils literal notranslate"><span class="pre">SGDClassifier</span></code> in the multiclass
-case. Each one-versus-all step is run in a <a class="reference external" href="https://joblib.readthedocs.io/en/latest/generated/joblib.Parallel.html#joblib.Parallel" title="(in joblib v1.1.0.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">joblib.Parallel</span></code></a> call and
+case. Each one-versus-all step is run in a <a class="reference external" href="https://joblib.readthedocs.io/en/latest/generated/joblib.Parallel.html#joblib.Parallel" title="(in joblib v1.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">joblib.Parallel</span></code></a> call and
 mutating a common parameter, causing a segmentation fault if called within a
 backend using processes and not threads. We now use <code class="docutils literal notranslate"><span class="pre">require=sharedmem</span></code>
-at the <a class="reference external" href="https://joblib.readthedocs.io/en/latest/generated/joblib.Parallel.html#joblib.Parallel" title="(in joblib v1.1.0.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">joblib.Parallel</span></code></a> instance creation. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/12518">#12518</a> by
+at the <a class="reference external" href="https://joblib.readthedocs.io/en/latest/generated/joblib.Parallel.html#joblib.Parallel" title="(in joblib v1.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">joblib.Parallel</span></code></a> instance creation. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/12518">#12518</a> by
 <a class="reference external" href="https://github.com/pierreglaser">Pierre Glaser</a> and <a class="reference external" href="https://github.com/ogrisel">Olivier Grisel</a>.</p></li>
 </ul>
 </section>
@@ -1655,7 +1655,7 @@ Beside, the behaviour parameter will be removed in 0.24.
 <li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  Added convergence warning to <a class="reference internal" href="../modules/generated/sklearn.svm.LinearSVC.html#sklearn.svm.LinearSVC" title="sklearn.svm.LinearSVC"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.LinearSVC</span></code></a> and
 <a class="reference internal" href="../modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" title="sklearn.linear_model.LogisticRegression"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.LogisticRegression</span></code></a> when <code class="docutils literal notranslate"><span class="pre">verbose</span></code> is set to 0.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/10881">#10881</a> by <a class="reference external" href="https://github.com/AlexandreSev">Alexandre Sevin</a>.</p></li>
-<li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  Changed warning type from <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#UserWarning" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserWarning</span></code></a> to
+<li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  Changed warning type from <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#UserWarning" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">UserWarning</span></code></a> to
 <a class="reference internal" href="../modules/generated/sklearn.exceptions.ConvergenceWarning.html#sklearn.exceptions.ConvergenceWarning" title="sklearn.exceptions.ConvergenceWarning"><code class="xref py py-class docutils literal notranslate"><span class="pre">exceptions.ConvergenceWarning</span></code></a> for failing convergence in
 <code class="xref py py-func docutils literal notranslate"><span class="pre">linear_model.logistic_regression_path</span></code>,
 <a class="reference internal" href="../modules/generated/sklearn.linear_model.RANSACRegressor.html#sklearn.linear_model.RANSACRegressor" title="sklearn.linear_model.RANSACRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.RANSACRegressor</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.linear_model.ridge_regression.html#sklearn.linear_model.ridge_regression" title="sklearn.linear_model.ridge_regression"><code class="xref py py-func docutils literal notranslate"><span class="pre">linear_model.ridge_regression</span></code></a>,
@@ -1673,7 +1673,7 @@ Beside, the behaviour parameter will be removed in 0.24.
 to control memory consumption limits in chunked operations, such as the new
 <a class="reference internal" href="../modules/generated/sklearn.metrics.pairwise_distances_chunked.html#sklearn.metrics.pairwise_distances_chunked" title="sklearn.metrics.pairwise_distances_chunked"><code class="xref py py-func docutils literal notranslate"><span class="pre">metrics.pairwise_distances_chunked</span></code></a>. See <a class="reference internal" href="../computing/computational_performance.html#working-memory"><span class="std std-ref">Limiting Working Memory</span></a>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/10280">#10280</a> by <a class="reference external" href="https://joelnothman.com/">Joel Nothman</a> and <a class="reference external" href="https://github.com/dalmia">Aman Dalmia</a>.</p></li>
-<li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  The version of <a class="reference external" href="https://joblib.readthedocs.io/en/latest/index.html#module-joblib" title="(in joblib v1.1.0.dev0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">joblib</span></code></a> bundled with Scikit-learn is now 0.12.
+<li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  The version of <a class="reference external" href="https://joblib.readthedocs.io/en/latest/index.html#module-joblib" title="(in joblib v1.1.0)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">joblib</span></code></a> bundled with Scikit-learn is now 0.12.
 This uses a new default multiprocessing implementation, named <a class="reference external" href="https://github.com/tomMoral/loky">loky</a>. While this may incur some memory and
 communication overhead, it should provide greater cross-platform stability
 than relying on Python standard library multiprocessing. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/issues/11741">#11741</a> by
