@@ -5,30 +5,30 @@
 
 Computation times
 =================
-**01:54.041** total execution time for **auto_examples_applications** files:
+**01:47.499** total execution time for **auto_examples_applications** files:
 
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_face_recognition.py` (``plot_face_recognition.py``)                             | 00:19.717 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_face_recognition.py` (``plot_face_recognition.py``)                             | 00:17.940 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_model_complexity_influence.py` (``plot_model_complexity_influence.py``)         | 00:19.063 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_model_complexity_influence.py` (``plot_model_complexity_influence.py``)         | 00:16.984 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_cyclical_feature_engineering.py` (``plot_cyclical_feature_engineering.py``)     | 00:11.764 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_species_distribution_modeling.py` (``plot_species_distribution_modeling.py``)   | 00:11.485 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_digits_denoising.py` (``plot_digits_denoising.py``)                             | 00:11.344 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_cyclical_feature_engineering.py` (``plot_cyclical_feature_engineering.py``)     | 00:11.105 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_prediction_latency.py` (``plot_prediction_latency.py``)                         | 00:10.830 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_prediction_latency.py` (``plot_prediction_latency.py``)                         | 00:10.083 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_topics_extraction_with_nmf_lda.py` (``plot_topics_extraction_with_nmf_lda.py``) | 00:09.961 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_digits_denoising.py` (``plot_digits_denoising.py``)                             | 00:09.990 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_tomography_l1_reconstruction.py` (``plot_tomography_l1_reconstruction.py``)     | 00:08.681 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_tomography_l1_reconstruction.py` (``plot_tomography_l1_reconstruction.py``)     | 00:08.508 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_out_of_core_classification.py` (``plot_out_of_core_classification.py``)         | 00:07.953 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_topics_extraction_with_nmf_lda.py` (``plot_topics_extraction_with_nmf_lda.py``) | 00:08.197 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_species_distribution_modeling.py` (``plot_species_distribution_modeling.py``)   | 00:06.751 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_out_of_core_classification.py` (``plot_out_of_core_classification.py``)         | 00:07.819 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_stock_market.py` (``plot_stock_market.py``)                                     | 00:06.232 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_stock_market.py` (``plot_stock_market.py``)                                     | 00:03.696 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_applications_plot_outlier_detection_wine.py` (``plot_outlier_detection_wine.py``)                 | 00:01.743 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_applications_plot_outlier_detection_wine.py` (``plot_outlier_detection_wine.py``)                 | 00:01.691 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_examples_applications_svm_gui.py` (``svm_gui.py``)                                                         | 00:00.000 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------+--------+

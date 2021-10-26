@@ -58,21 +58,21 @@ matrix decomposition (dimension reduction) methods from the module
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_004.png
-         :alt: Independent components - FastICA - Train time 0.2s
+         :alt: Independent components - FastICA - Train time 0.1s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_004.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_005.png
-         :alt: Sparse comp. - MiniBatchSparsePCA - Train time 0.9s
+         :alt: Sparse comp. - MiniBatchSparsePCA - Train time 0.6s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_005.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_006.png
-         :alt: MiniBatchDictionaryLearning - Train time 0.7s
+         :alt: MiniBatchDictionaryLearning - Train time 0.4s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_006.png
          :class: sphx-glr-multi-img
 
@@ -93,7 +93,7 @@ matrix decomposition (dimension reduction) methods from the module
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_009.png
-         :alt: Factor Analysis components - FA - Train time 0.2s
+         :alt: Factor Analysis components - FA - Train time 0.1s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_009.png
          :class: sphx-glr-multi-img
 
@@ -141,27 +141,27 @@ matrix decomposition (dimension reduction) methods from the module
 
     Dataset consists of 400 faces
     Extracting the top 6 Eigenfaces - PCA using randomized SVD...
-    done in 0.035s
+    done in 0.028s
     Extracting the top 6 Non-negative components - NMF...
-    done in 0.127s
+    done in 0.078s
     Extracting the top 6 Independent components - FastICA...
-    done in 0.157s
+    done in 0.098s
     Extracting the top 6 Sparse comp. - MiniBatchSparsePCA...
-    done in 0.873s
+    done in 0.578s
     Extracting the top 6 MiniBatchDictionaryLearning...
-    done in 0.654s
+    done in 0.377s
     Extracting the top 6 Cluster centers - MiniBatchKMeans...
-    done in 0.080s
+    done in 0.057s
     Extracting the top 6 Factor Analysis components - FA...
-    done in 0.182s
+    done in 0.124s
     Extracting the top 6 Dictionary learning...
-    done in 0.542s
+    done in 0.398s
     Extracting the top 6 Dictionary learning - positive dictionary...
-    done in 0.541s
+    done in 0.404s
     Extracting the top 6 Dictionary learning - positive code...
-    done in 0.169s
+    done in 0.143s
     Extracting the top 6 Dictionary learning - positive dictionary & code...
-    done in 0.238s
+    done in 0.169s
 
 
 
@@ -404,7 +404,7 @@ matrix decomposition (dimension reduction) methods from the module
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.142 seconds)
+   **Total running time of the script:** ( 0 minutes  4.323 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_faces_decomposition.py:
