@@ -181,7 +181,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.calibration" title="sklearn.calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a>.CalibrationDisplay<a class="headerlink" href="#sklearn-calibration-calibrationdisplay" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.calibration.CalibrationDisplay">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.calibration.</span></span><span class="sig-name descname"><span class="pre">CalibrationDisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prob_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prob_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_prob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimator_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/87838c20c/sklearn/calibration.py#L990"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.calibration.</span></span><span class="sig-name descname"><span class="pre">CalibrationDisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prob_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prob_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_prob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimator_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/90bef4641/sklearn/calibration.py#L990"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calibration curve (also known as reliability diagram) visualization.</p>
 <p>It is recommended to use
 <a class="reference internal" href="#sklearn.calibration.CalibrationDisplay.from_estimator" title="sklearn.calibration.CalibrationDisplay.from_estimator"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_estimator</span></code></a> or
@@ -192,9 +192,9 @@ more about the scikit-learn visualization API in <a class="reference internal" h
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.0.</span></p>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>prob_true</strong><span class="classifier">ndarray of shape (n_bins,)</span></dt><dd><p>The proportion of samples whose class is the positive class (fraction
 of positives), in each bin.</p>
 </dd>
@@ -203,6 +203,13 @@ of positives), in each bin.</p>
 <dt><strong>y_prob</strong><span class="classifier">ndarray of shape (n_samples,)</span></dt><dd><p>Probability estimates for the positive class, for each sample.</p>
 </dd>
 <dt><strong>estimator_name</strong><span class="classifier">str, default=None</span></dt><dd><p>Name of estimator. If None, the estimator name is not shown.</p>
+</dd>
+<dt><strong>pos_label</strong><span class="classifier">str or int, default=None</span></dt><dd><p>The positive class when computing the calibration curve.
+By default, <code class="docutils literal notranslate"><span class="pre">estimators.classes_[1]</span></code> is considered as the
+positive class.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
 </dd>
 </dl>
 </dd>
@@ -266,7 +273,7 @@ of positives), in each bin.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.calibration.CalibrationDisplay.from_estimator">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/87838c20c/sklearn/calibration.py#L1119"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.from_estimator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/90bef4641/sklearn/calibration.py#L1134"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.from_estimator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot calibration curve using a binary classifier and data.</p>
 <p>A calibration curve, also known as a reliability diagram, uses inputs
 from a binary classifier and plots the average predicted probability
@@ -281,7 +288,7 @@ more about the scikit-learn visualization API in <a class="reference internal" h
 </div>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>estimator</strong><span class="classifier">estimator instance</span></dt><dd><p>Fitted classifier or a fitted <a class="reference internal" href="sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>
 in which the last estimator is a classifier. The classifier must
 have a <a class="reference internal" href="../../glossary.html#term-predict_proba"><span class="xref std std-term">predict_proba</span></a> method.</p>
@@ -300,6 +307,13 @@ data.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">'quantile'</span></code>: The bins have the same number of samples and depend
 on predicted probabilities.</p></li>
 </ul>
+</dd>
+<dt><strong>pos_label</strong><span class="classifier">str or int, default=None</span></dt><dd><p>The positive class when computing the calibration curve.
+By default, <code class="docutils literal notranslate"><span class="pre">estimators.classes_[1]</span></code> is considered as the
+positive class.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
 </dd>
 <dt><strong>name</strong><span class="classifier">str, default=None</span></dt><dd><p>Name for labeling curve. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, the name of the estimator is
 used.</p>
@@ -351,7 +365,7 @@ created.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.calibration.CalibrationDisplay.from_predictions">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_prob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/87838c20c/sklearn/calibration.py#L1238"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.from_predictions" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_prob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pos_label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/90bef4641/sklearn/calibration.py#L1260"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.from_predictions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot calibration curve using true labels and predicted probabilities.</p>
 <p>Calibration curve, also known as reliability diagram, uses inputs
 from a binary classifier and plots the average predicted probability
@@ -366,7 +380,7 @@ more about the scikit-learn visualization API in <a class="reference internal" h
 </div>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>y_true</strong><span class="classifier">array-like of shape (n_samples,)</span></dt><dd><p>True labels.</p>
 </dd>
 <dt><strong>y_prob</strong><span class="classifier">array-like of shape (n_samples,)</span></dt><dd><p>The predicted probabilities of the positive class.</p>
@@ -381,6 +395,13 @@ data.</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">'quantile'</span></code>: The bins have the same number of samples and depend
 on predicted probabilities.</p></li>
 </ul>
+</dd>
+<dt><strong>pos_label</strong><span class="classifier">str or int, default=None</span></dt><dd><p>The positive class when computing the calibration curve.
+By default, <code class="docutils literal notranslate"><span class="pre">estimators.classes_[1]</span></code> is considered as the
+positive class.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
 </dd>
 <dt><strong>name</strong><span class="classifier">str, default=None</span></dt><dd><p>Name for labeling curve.</p>
 </dd>
@@ -432,7 +453,7 @@ created.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.calibration.CalibrationDisplay.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/87838c20c/sklearn/calibration.py#L1063"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.plot" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/90bef4641/sklearn/calibration.py#L1073"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot visualization.</p>
 <p>Extra keyword arguments will be passed to
 <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.4.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
