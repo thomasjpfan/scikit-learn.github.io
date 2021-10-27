@@ -378,7 +378,7 @@ problem solved is a PCA problem (dictionary learning) with an
 <div class="math notranslate nohighlight">
 \[\begin{split}(U^*, V^*) = \underset{U, V}{\operatorname{arg\,min\,}} &amp; \frac{1}{2}
              ||X-UV||_{\text{Fro}}^2+\alpha||V||_{1,1} \\
-             \text{subject to } &amp; ||U_k||_2 = 1 \text{ for all }
+             \text{subject to } &amp; ||U_k||_2 &lt;= 1 \text{ for all }
              0 \leq k &lt; n_{components}\end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(||.||_{\text{Fro}}\)</span> stands for the Frobenius norm and <span class="math notranslate nohighlight">\(||.||_{1,1}\)</span>
 stands for the entry-wise matrix norm which is the sum of the absolute values
@@ -630,7 +630,7 @@ dictionary fixed, and then updating the dictionary to best fit the sparse code.<
 <div class="math notranslate nohighlight">
 \[\begin{split}(U^*, V^*) = \underset{U, V}{\operatorname{arg\,min\,}} &amp; \frac{1}{2}
              ||X-UV||_{\text{Fro}}^2+\alpha||U||_{1,1} \\
-             \text{subject to } &amp; ||V_k||_2 = 1 \text{ for all }
+             \text{subject to } &amp; ||V_k||_2 &lt;= 1 \text{ for all }
              0 \leq k &lt; n_{\mathrm{atoms}}\end{split}\]</div>
 <p class="centered">
 <strong><a class="reference external" href="../auto_examples/decomposition/plot_faces_decomposition.html"><img alt="pca_img2" src="../_images/sphx_glr_plot_faces_decomposition_002.png" style="width: 360.0px; height: 270.59999999999997px;" /></a> <a class="reference external" href="../auto_examples/decomposition/plot_faces_decomposition.html"><img alt="dict_img2" src="../_images/sphx_glr_plot_faces_decomposition_006.png" style="width: 360.0px; height: 270.59999999999997px;" /></a></strong></p><p><span class="math notranslate nohighlight">\(||.||_{\text{Fro}}\)</span> stands for the Frobenius norm and <span class="math notranslate nohighlight">\(||.||_{1,1}\)</span>
