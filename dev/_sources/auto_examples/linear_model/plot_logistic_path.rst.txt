@@ -59,7 +59,7 @@ full-path.
  .. code-block:: none
 
     Computing regularization path ...
-    This took 0.038s
+    This took 0.037s
 
 
 
