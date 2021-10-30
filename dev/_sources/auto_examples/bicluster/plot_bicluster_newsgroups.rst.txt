@@ -53,9 +53,9 @@ achieve a better V-measure than clusters found by MiniBatchKMeans.
 
     Vectorizing...
     Coclustering...
-    Done in 2.38s. V-measure: 0.4431
+    Done in 2.09s. V-measure: 0.4431
     MiniBatchKMeans...
-    Done in 4.90s. V-measure: 0.3177
+    Done in 5.34s. V-measure: 0.3177
 
     Best biclusters:
     ----------------
