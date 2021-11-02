@@ -181,6 +181,7 @@
 <li><a class="reference internal" href="#sklearn-metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-model-selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-pipeline"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a></li>
 </ul>
@@ -312,6 +313,14 @@ all the models and all the splits failed. <a class="reference external" href="ht
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Added support for “passthrough” in <code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureUnion</span></code>.
 Setting a transformer to “passthrough” will pass the features unchanged.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20860">#20860</a> by <a class="reference external" href="https://github.com/shubhraneel">Shubhraneel Pal</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-preprocessing">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.preprocessing" title="sklearn.preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a><a class="headerlink" href="#sklearn-preprocessing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.preprocessing.LabelBinarizer.html#sklearn.preprocessing.LabelBinarizer" title="sklearn.preprocessing.LabelBinarizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">preprocessing.LabelBinarizer</span></code></a> now validates input parameters in <code class="docutils literal notranslate"><span class="pre">fit</span></code>
+instead of <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21434">#21434</a> by <a class="reference external" href="https://github.com/krumeto">Krum Arnaudov</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-utils">
