@@ -677,23 +677,41 @@ to split the image of coins in regions.</p></li>
 In particular, unless you control the <code class="docutils literal notranslate"><span class="pre">random_state</span></code>, it may not be
 reproducible from run-to-run, as it depends on random initialization.
 The alternative <code class="docutils literal notranslate"><span class="pre">&quot;discretize&quot;</span></code> strategy is 100% reproducible, but tends
-to create parcels of fairly even and geometrical shape.</p>
+to create parcels of fairly even and geometrical shape.
+The recently added <code class="docutils literal notranslate"><span class="pre">&quot;cluster_qr&quot;</span></code> option is a deterministic alternative that
+tends to create the visually best partitioning on the example application
+below.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p><code class="docutils literal notranslate"><span class="pre">assign_labels=&quot;kmeans&quot;</span></code></p></th>
 <th class="head"><p><code class="docutils literal notranslate"><span class="pre">assign_labels=&quot;discretize&quot;</span></code></p></th>
+<th class="head"><p><code class="docutils literal notranslate"><span class="pre">assign_labels=&quot;cluster_qr&quot;</span></code></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="../auto_examples/cluster/plot_coin_segmentation.html"><img alt="coin_kmeans" src="../_images/sphx_glr_plot_coin_segmentation_001.png" style="width: 325.0px; height: 325.0px;" /></a></p></td>
-<td><p><a class="reference external" href="../auto_examples/cluster/plot_coin_segmentation.html"><img alt="coin_discretize" src="../_images/sphx_glr_plot_coin_segmentation_002.png" style="width: 325.0px; height: 325.0px;" /></a></p></td>
+<tr class="row-even"><td><p><a class="reference external" href="../auto_examples/cluster/plot_coin_segmentation.html"><img alt="coin_kmeans" src="../_images/sphx_glr_plot_coin_segmentation_001.png" style="width: 175.0px; height: 175.0px;" /></a></p></td>
+<td><p><a class="reference external" href="../auto_examples/cluster/plot_coin_segmentation.html"><img alt="coin_discretize" src="../_images/sphx_glr_plot_coin_segmentation_002.png" style="width: 175.0px; height: 175.0px;" /></a></p></td>
+<td><p><a class="reference external" href="../auto_examples/cluster/plot_coin_segmentation.html"><img alt="coin_cluster_qr" src="../_images/sphx_glr_plot_coin_segmentation_003.png" style="width: 175.0px; height: 175.0px;" /></a></p></td>
 </tr>
 </tbody>
 </table>
+<div class="topic">
+<p class="topic-title">References:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www1.icsi.berkeley.edu/~stellayu/publication/doc/2003kwayICCV.pdf">“Multiclass spectral clustering”</a>
+Stella X. Yu, Jianbo Shi, 2003</p></li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://doi.org/10.1093/imaiai/iay008">“Simple, direct, and efficient multi-way spectral clustering”</a></dt><dd><p>Anil Damle, Victor Minden, Lexing Ying, 2019</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
 </section>
 <section id="spectral-clustering-graphs">
 <h3><span class="section-number">2.3.5.2. </span>Spectral Clustering Graphs<a class="headerlink" href="#spectral-clustering-graphs" title="Permalink to this headline">¶</a></h3>

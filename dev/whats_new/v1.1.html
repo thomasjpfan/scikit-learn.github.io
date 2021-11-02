@@ -242,6 +242,12 @@ message suggests potential solutions.
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <code class="xref py py-class docutils literal notranslate"><span class="pre">CalibrationDisplay</span></code> accepts a parameter <code class="docutils literal notranslate"><span class="pre">pos_label</span></code> to
 add this information to the plot.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21038">#21038</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.cluster.SpectralClustering.html#sklearn.cluster.SpectralClustering" title="sklearn.cluster.SpectralClustering"><code class="xref py py-class docutils literal notranslate"><span class="pre">cluster.SpectralClustering</span></code></a> and <code class="xref py py-func docutils literal notranslate"><span class="pre">cluster.spectral</span></code>
+now include the new <code class="docutils literal notranslate"><span class="pre">'cluster_qr'</span></code> method from <code class="xref py py-func docutils literal notranslate"><span class="pre">cluster.cluster_qr</span></code>
+that clusters samples in the embedding space as an alternative to the existing
+<code class="docutils literal notranslate"><span class="pre">'kmeans'</span></code> and <code class="docutils literal notranslate"><span class="pre">'discrete'</span></code> methods.
+See <a class="reference internal" href="../modules/generated/sklearn.cluster.spectral_clustering.html#sklearn.cluster.spectral_clustering" title="sklearn.cluster.spectral_clustering"><code class="xref py py-func docutils literal notranslate"><span class="pre">cluster.spectral_clustering</span></code></a> for more details.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21148">#21148</a> by <a class="reference external" href="https://github.com/lobpcg">Andrew Knyazev</a></p></li>
 </ul>
 </section>
 <section id="sklearn-cross-decomposition">

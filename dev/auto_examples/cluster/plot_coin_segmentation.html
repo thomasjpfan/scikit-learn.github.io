@@ -153,8 +153,8 @@
           </a>
         </div>
         <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-            <a href="plot_cluster_iris.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="K-means Clustering">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
-            <a href="plot_digits_linkage.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Various Agglomerative Clustering on a 2D embedding of digits">Next</a>
+            <a href="plot_kmeans_stability_low_dim_dense.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Empirical evaluation of the impact of k-means initialization">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+            <a href="plot_adjusted_for_chance_measures.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Adjustment for chance in clustering performance evaluation">Next</a>
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
@@ -190,14 +190,18 @@ voxel-to-voxel difference on an image to break this image into multiple
 partly-homogeneous regions.</p>
 <p>This procedure (spectral clustering on an image) is an efficient
 approximate solution for finding normalized graph cuts.</p>
-<p>There are two options to assign labels:</p>
+<p>There are three options to assign labels:</p>
 <ul class="simple">
-<li><p>with ‘kmeans’ spectral clustering will cluster samples in the embedding space
+<li><p>‘kmeans’ spectral clustering clusters samples in the embedding space
 using a kmeans algorithm</p></li>
-<li><p>whereas ‘discrete’ will iteratively search for the closest partition
-space to the embedding space.</p></li>
+<li><p>‘discrete’ iteratively searches for the closest partition
+space to the embedding space of spectral clustering.</p></li>
+<li><p>‘cluster_qr’ assigns labels using the QR factorization with pivoting
+that directly determines the partition in the embedding space.</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Gael Varoquaux &lt;gael.varoquaux@normalesup.org&gt;, Brian Cheung</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Gael Varoquaux &lt;gael.varoquaux@normalesup.org&gt;</span>
+<span class="c1">#         Brian Cheung</span>
+<span class="c1">#         Andrew Knyazev &lt;Andrew.Knyazev@ucdenver.edu&gt;</span>
 <span class="c1"># License: BSD 3 clause</span>
 
 <span class="kn">import</span> <span class="nn">time</span>
@@ -239,42 +243,67 @@ space to the embedding space.</p></li>
 <span class="n">eps</span> <span class="o">=</span> <span class="mf">1e-6</span>
 <span class="n">graph</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.exp.html#numpy.exp" title="numpy.exp" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">exp</span></a><span class="p">(</span><span class="o">-</span><span class="n">beta</span> <span class="o">*</span> <span class="n">graph</span><span class="o">.</span><span class="n">data</span> <span class="o">/</span> <span class="n">graph</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">std</span><span class="p">())</span> <span class="o">+</span> <span class="n">eps</span>
 
-<span class="c1"># Apply spectral clustering (this step goes much faster if you have pyamg</span>
-<span class="c1"># installed)</span>
-<span class="n">N_REGIONS</span> <span class="o">=</span> <span class="mi">25</span>
+<span class="c1"># The number of segmented regions to display needs to be chosen manually.</span>
+<span class="c1"># The current version of &#39;spectral_clustering&#39; does not support determining</span>
+<span class="c1"># the number of good quality clusters automatically.</span>
+<span class="n">n_regions</span> <span class="o">=</span> <span class="mi">26</span>
 </pre></div>
 </div>
-<p>Visualize the resulting regions</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">assign_labels</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;kmeans&quot;</span><span class="p">,</span> <span class="s2">&quot;discretize&quot;</span><span class="p">):</span>
+<p>Compute and visualize the resulting regions</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Computing a few extra eigenvectors may speed up the eigen_solver.</span>
+<span class="c1"># The spectral clustering quality may also benetif from requesting</span>
+<span class="c1"># extra regions for segmentation.</span>
+<span class="n">n_regions_plus</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Apply spectral clustering using the default eigen_solver=&#39;arpack&#39;.</span>
+<span class="c1"># Any implemented solver can be used: eigen_solver=&#39;arpack&#39;, &#39;lobpcg&#39;, or &#39;amg&#39;.</span>
+<span class="c1"># Choosing eigen_solver=&#39;amg&#39; requires an extra package called &#39;pyamg&#39;.</span>
+<span class="c1"># The quality of segmentation and the speed of calculations is mostly determined</span>
+<span class="c1"># by the choice of the solver and the value of the tolerance &#39;eigen_tol&#39;.</span>
+<span class="c1"># TODO: varying eigen_tol seems to have no effect for &#39;lobpcg&#39; and &#39;amg&#39; #21243.</span>
+<span class="k">for</span> <span class="n">assign_labels</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;kmeans&quot;</span><span class="p">,</span> <span class="s2">&quot;discretize&quot;</span><span class="p">,</span> <span class="s2">&quot;cluster_qr&quot;</span><span class="p">):</span>
     <span class="n">t0</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span>
     <span class="n">labels</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.spectral_clustering.html#sklearn.cluster.spectral_clustering" title="sklearn.cluster.spectral_clustering" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-function"><span class="n">spectral_clustering</span></a><span class="p">(</span>
-        <span class="n">graph</span><span class="p">,</span> <span class="n">n_clusters</span><span class="o">=</span><span class="n">N_REGIONS</span><span class="p">,</span> <span class="n">assign_labels</span><span class="o">=</span><span class="n">assign_labels</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+        <span class="n">graph</span><span class="p">,</span>
+        <span class="n">n_clusters</span><span class="o">=</span><span class="p">(</span><span class="n">n_regions</span> <span class="o">+</span> <span class="n">n_regions_plus</span><span class="p">),</span>
+        <span class="n">eigen_tol</span><span class="o">=</span><span class="mf">1e-7</span><span class="p">,</span>
+        <span class="n">assign_labels</span><span class="o">=</span><span class="n">assign_labels</span><span class="p">,</span>
+        <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span>
     <span class="p">)</span>
+
     <span class="n">t1</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span>
     <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">rescaled_coins</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-
     <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
     <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="matplotlib.pyplot.imshow" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span></a><span class="p">(</span><span class="n">rescaled_coins</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N_REGIONS</span><span class="p">):</span>
-        <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html#matplotlib.pyplot.contour" title="matplotlib.pyplot.contour" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">contour</span></a><span class="p">(</span><span class="n">labels</span> <span class="o">==</span> <span class="n">l</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">nipy_spectral</span><span class="p">(</span><span class="n">l</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">N_REGIONS</span><span class="p">))])</span>
+
     <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xticks.html#matplotlib.pyplot.xticks" title="matplotlib.pyplot.xticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xticks</span></a><span class="p">(())</span>
     <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.yticks.html#matplotlib.pyplot.yticks" title="matplotlib.pyplot.yticks" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">yticks</span></a><span class="p">(())</span>
     <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Spectral clustering: </span><span class="si">%s</span><span class="s2">, </span><span class="si">%.2f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">assign_labels</span><span class="p">,</span> <span class="p">(</span><span class="n">t1</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
     <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="n">title</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_regions</span><span class="p">):</span>
+        <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">nipy_spectral</span><span class="p">((</span><span class="n">l</span> <span class="o">+</span> <span class="mi">4</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">n_regions</span> <span class="o">+</span> <span class="mi">4</span><span class="p">))]</span>
+        <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.contour.html#matplotlib.pyplot.contour" title="matplotlib.pyplot.contour" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">contour</span></a><span class="p">(</span><span class="n">labels</span> <span class="o">==</span> <span class="n">l</span><span class="p">,</span> <span class="n">colors</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+        <span class="c1"># To view individual segments as appear comment in plt.pause(0.5)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+
+<span class="c1"># TODO: After #21194 is merged and #21243 is fixed, check which eigen_solver</span>
+<span class="c1"># is the best and set eigen_solver=&#39;arpack&#39;, &#39;lobpcg&#39;, or &#39;amg&#39; and eigen_tol</span>
+<span class="c1"># explicitly in this example.</span>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_coin_segmentation_001.png" srcset="../../_images/sphx_glr_plot_coin_segmentation_001.png" alt="Spectral clustering: kmeans, 1.88s" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_coin_segmentation_002.png" srcset="../../_images/sphx_glr_plot_coin_segmentation_002.png" alt="Spectral clustering: discretize, 1.77s" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_coin_segmentation_001.png" srcset="../../_images/sphx_glr_plot_coin_segmentation_001.png" alt="Spectral clustering: kmeans, 1.80s" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_coin_segmentation_002.png" srcset="../../_images/sphx_glr_plot_coin_segmentation_002.png" alt="Spectral clustering: discretize, 1.68s" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_coin_segmentation_003.png" srcset="../../_images/sphx_glr_plot_coin_segmentation_003.png" alt="Spectral clustering: cluster_qr, 1.65s" class = "sphx-glr-multi-img"/></li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Spectral clustering: kmeans, 1.88s
-Spectral clustering: discretize, 1.77s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Spectral clustering: kmeans, 1.80s
+Spectral clustering: discretize, 1.68s
+Spectral clustering: cluster_qr, 1.65s
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.163 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.874 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-cluster-plot-coin-segmentation-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_coin_segmentation.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo4.svg" width="150px" /></a>

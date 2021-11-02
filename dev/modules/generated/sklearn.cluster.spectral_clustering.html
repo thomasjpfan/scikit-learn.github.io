@@ -11,9 +11,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scikit-learn/stable/modules/generated/sklearn.cluster.spectral_clustering.html" />
   <meta property="og:site_name" content="scikit-learn" />
-  <meta property="og:description" content="Examples using sklearn.cluster.spectral_clustering: Segmenting the picture of greek coins in regions Segmenting the picture of greek coins in regions, Spectral clustering for image segmentation Spe..." />
-  <meta property="og:image" content="../../_images/sphx_glr_plot_coin_segmentation_thumb.png" />
-  <meta property="og:image:alt" content="Segmenting the picture of greek coins in regions" />
+  <meta property="og:description" content="Examples using sklearn.cluster.spectral_clustering: Spectral clustering for image segmentation Spectral clustering for image segmentation, Segmenting the picture of greek coins in regions Segmentin..." />
+  <meta property="og:image" content="../../_images/sphx_glr_plot_segmentation_toy_thumb.png" />
+  <meta property="og:image:alt" content="Spectral clustering for image segmentation" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -185,7 +185,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.cluster" title="sklearn.cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a>.spectral_clustering<a class="headerlink" href="#sklearn-cluster-spectral-clustering" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.cluster.spectral_clustering">
-<span class="sig-prename descclassname"><span class="pre">sklearn.cluster.</span></span><span class="sig-name descname"><span class="pre">spectral_clustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">affinity</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_clusters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigen_solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigen_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assign_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kmeans'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c241fe7e5/sklearn/cluster/_spectral.py#L160"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.spectral_clustering" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.cluster.</span></span><span class="sig-name descname"><span class="pre">spectral_clustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">affinity</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_clusters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigen_solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigen_tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assign_labels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'kmeans'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f449af888/sklearn/cluster/_spectral.py#L193"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.spectral_clustering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Apply clustering to a projection of the normalized Laplacian.</p>
 <p>In practice Spectral Clustering is very useful when the structure of
 the individual clusters is highly non-convex or more generally when
@@ -213,10 +213,11 @@ embed. <strong>Must be symmetric</strong>.</p>
 </dd>
 <dt><strong>n_components</strong><span class="classifier">int, default=n_clusters</span></dt><dd><p>Number of eigenvectors to use for the spectral embedding</p>
 </dd>
-<dt><strong>eigen_solver</strong><span class="classifier">{None, ‘arpack’, ‘lobpcg’, or ‘amg’}</span></dt><dd><p>The eigenvalue decomposition strategy to use. AMG requires pyamg
-to be installed. It can be faster on very large, sparse problems,
-but may also lead to instabilities. If None, then <code class="docutils literal notranslate"><span class="pre">'arpack'</span></code> is
-used. See <a class="reference internal" href="#r89dec4780971-4" id="id3">[4]</a> for more details regarding <code class="docutils literal notranslate"><span class="pre">'lobpcg'</span></code>.</p>
+<dt><strong>eigen_solver</strong><span class="classifier">{None, ‘arpack’, ‘lobpcg’, or ‘amg’}</span></dt><dd><p>The eigenvalue decomposition method. If None then <code class="docutils literal notranslate"><span class="pre">'arpack'</span></code> is used.
+See <a class="reference internal" href="#r89dec4780971-4" id="id3">[4]</a> for more details regarding <code class="docutils literal notranslate"><span class="pre">'lobpcg'</span></code>.
+Eigensolver <code class="docutils literal notranslate"><span class="pre">'amg'</span></code> runs <code class="docutils literal notranslate"><span class="pre">'lobpcg'</span></code> with optional
+Algebraic MultiGrid preconditioning and requires pyamg to be installed.
+It can be faster on very large sparse problems <a class="reference internal" href="#r89dec4780971-6" id="id4">[6]</a> and <a class="reference internal" href="#r89dec4780971-7" id="id5">[7]</a>.</p>
 </dd>
 <dt><strong>random_state</strong><span class="classifier">int, RandomState instance, default=None</span></dt><dd><p>A pseudo random number generator used for the initialization
 of the lobpcg eigenvectors decomposition when <code class="docutils literal notranslate"><span class="pre">eigen_solver</span> <span class="pre">==</span>
@@ -240,11 +241,18 @@ consecutive runs in terms of inertia. Only used if
 <dt><strong>eigen_tol</strong><span class="classifier">float, default=0.0</span></dt><dd><p>Stopping criterion for eigendecomposition of the Laplacian matrix
 when using arpack eigen_solver.</p>
 </dd>
-<dt><strong>assign_labels</strong><span class="classifier">{‘kmeans’, ‘discretize’}, default=’kmeans’</span></dt><dd><p>The strategy to use to assign labels in the embedding
-space.  There are two ways to assign labels after the Laplacian
+<dt><strong>assign_labels</strong><span class="classifier">{‘kmeans’, ‘discretize’, ‘cluster_qr’}, default=’kmeans’</span></dt><dd><p>The strategy to use to assign labels in the embedding
+space.  There are three ways to assign labels after the Laplacian
 embedding.  k-means can be applied and is a popular choice. But it can
 also be sensitive to initialization. Discretization is another
-approach which is less sensitive to random initialization <a class="reference internal" href="#r89dec4780971-3" id="id4">[3]</a>.</p>
+approach which is less sensitive to random initialization <a class="reference internal" href="#r89dec4780971-3" id="id6">[3]</a>.
+The cluster_qr method <a class="reference internal" href="#r89dec4780971-5" id="id7">[5]</a> directly extracts clusters from eigenvectors
+in spectral clustering. In contrast to k-means and discretization, cluster_qr
+has no tuning parameters and is not an iterative method, yet may outperform
+k-means and discretization in terms of both quality and speed.</p>
+<div class="versionchanged">
+<p><span class="versionmodified changed">Changed in version 1.1: </span>Added new labeling method ‘cluster_qr’.</p>
+</div>
 </dd>
 <dt><strong>verbose</strong><span class="classifier">bool, default=False</span></dt><dd><p>Verbosity mode.</p>
 <div class="versionadded">
@@ -261,7 +269,7 @@ approach which is less sensitive to random initialization <a class="reference in
 </dd>
 </dl>
 <p class="rubric">Notes</p>
-<p>The graph should contain only one connect component, elsewhere
+<p>The graph should contain only one connected component, elsewhere
 the results make little sense.</p>
 <p>This algorithm solves the normalized cut for k=2: it is a
 normalized spectral clustering.</p>
@@ -275,31 +283,49 @@ Jianbo Shi, Jitendra Malik</a></p>
 <dd><p><a class="reference external" href="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.165.9323">A Tutorial on Spectral Clustering, 2007
 Ulrike von Luxburg</a></p>
 </dd>
-<dt class="label" id="r89dec4780971-3"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dt class="label" id="r89dec4780971-3"><span class="brackets"><a class="fn-backref" href="#id6">3</a></span></dt>
 <dd><p><a class="reference external" href="https://www1.icsi.berkeley.edu/~stellayu/publication/doc/2003kwayICCV.pdf">Multiclass spectral clustering, 2003
 Stella X. Yu, Jianbo Shi</a></p>
 </dd>
 <dt class="label" id="r89dec4780971-4"><span class="brackets"><a class="fn-backref" href="#id3">4</a></span></dt>
-<dd><p><a class="reference external" href="https://epubs.siam.org/doi/pdf/10.1137/S1064827500366124">Toward the Optimal Preconditioned Eigensolver:
-Locally Optimal Block Preconditioned Conjugate Gradient Method, 2001.
-A. V. Knyazev
-SIAM Journal on Scientific Computing 23, no. 2, pp. 517-541.</a></p>
+<dd><p><code class="docutils literal notranslate"><span class="pre">Toward</span> <span class="pre">the</span> <span class="pre">Optimal</span> <span class="pre">Preconditioned</span> <span class="pre">Eigensolver:</span>
+<span class="pre">Locally</span> <span class="pre">Optimal</span> <span class="pre">Block</span> <span class="pre">Preconditioned</span> <span class="pre">Conjugate</span> <span class="pre">Gradient</span> <span class="pre">Method,</span> <span class="pre">2001</span>
+<span class="pre">A.</span> <span class="pre">V.</span> <span class="pre">Knyazev</span>
+<span class="pre">SIAM</span> <span class="pre">Journal</span> <span class="pre">on</span> <span class="pre">Scientific</span> <span class="pre">Computing</span> <span class="pre">23,</span> <span class="pre">no.</span> <span class="pre">2,</span> <span class="pre">pp.</span> <span class="pre">517-541.</span>
+<span class="pre">&lt;:doi:`10.1137/S1064827500366124</span></code>&gt;`_</p>
+</dd>
+<dt class="label" id="r89dec4780971-5"><span class="brackets"><a class="fn-backref" href="#id7">5</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">Simple,</span> <span class="pre">direct,</span> <span class="pre">and</span> <span class="pre">efficient</span> <span class="pre">multi-way</span> <span class="pre">spectral</span> <span class="pre">clustering,</span> <span class="pre">2019</span>
+<span class="pre">Anil</span> <span class="pre">Damle,</span> <span class="pre">Victor</span> <span class="pre">Minden,</span> <span class="pre">Lexing</span> <span class="pre">Ying</span>
+<span class="pre">&lt;:doi:`10.1093/imaiai/iay008</span></code>&gt;`_</p>
+</dd>
+<dt class="label" id="r89dec4780971-6"><span class="brackets"><a class="fn-backref" href="#id4">6</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">Multiscale</span> <span class="pre">Spectral</span> <span class="pre">Image</span> <span class="pre">Segmentation</span> <span class="pre">Multiscale</span> <span class="pre">preconditioning</span>
+<span class="pre">for</span> <span class="pre">computing</span> <span class="pre">eigenvalues</span> <span class="pre">of</span> <span class="pre">graph</span> <span class="pre">Laplacians</span> <span class="pre">in</span> <span class="pre">image</span> <span class="pre">segmentation,</span> <span class="pre">2006</span>
+<span class="pre">Andrew</span> <span class="pre">Knyazev</span>
+<span class="pre">&lt;:doi:`10.13140/RG.2.2.35280.02565</span></code>&gt;`_</p>
+</dd>
+<dt class="label" id="r89dec4780971-7"><span class="brackets"><a class="fn-backref" href="#id5">7</a></span></dt>
+<dd><p><code class="docutils literal notranslate"><span class="pre">Preconditioned</span> <span class="pre">spectral</span> <span class="pre">clustering</span> <span class="pre">for</span> <span class="pre">stochastic</span> <span class="pre">block</span> <span class="pre">partition</span>
+<span class="pre">streaming</span> <span class="pre">graph</span> <span class="pre">challenge</span> <span class="pre">(Preliminary</span> <span class="pre">version</span> <span class="pre">at</span> <span class="pre">arXiv.)</span>
+<span class="pre">David</span> <span class="pre">Zhuzhunashvili,</span> <span class="pre">Andrew</span> <span class="pre">Knyazev</span>
+<span class="pre">&lt;:doi:`10.1109/HPEC.2017.8091045</span></code>&gt;`_</p>
 </dd>
 </dl>
 </dd></dl>
 
 <section id="examples-using-sklearn-cluster-spectral-clustering">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.cluster.spectral_clustering</span></code><a class="headerlink" href="#examples-using-sklearn-cluster-spectral-clustering" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="This example uses spectral_clustering on a graph created from voxel-to-voxel difference on an i..."><figure class="align-default" id="id9">
-<img alt="Segmenting the picture of greek coins in regions" src="../../_images/sphx_glr_plot_coin_segmentation_thumb.png" />
-<figcaption>
-<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/cluster/plot_coin_segmentation.html#sphx-glr-auto-examples-cluster-plot-coin-segmentation-py"><span class="std std-ref">Segmenting the picture of greek coins in regions</span></a></span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</div><div class="sphx-glr-thumbcontainer" tooltip="In this example, an image with connected circles is generated and spectral clustering is used t..."><figure class="align-default" id="id10">
+<div class="sphx-glr-thumbcontainer" tooltip="In this example, an image with connected circles is generated and spectral clustering is used t..."><figure class="align-default" id="id15">
 <img alt="Spectral clustering for image segmentation" src="../../_images/sphx_glr_plot_segmentation_toy_thumb.png" />
 <figcaption>
-<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/cluster/plot_segmentation_toy.html#sphx-glr-auto-examples-cluster-plot-segmentation-toy-py"><span class="std std-ref">Spectral clustering for image segmentation</span></a></span><a class="headerlink" href="#id10" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/cluster/plot_segmentation_toy.html#sphx-glr-auto-examples-cluster-plot-segmentation-toy-py"><span class="std std-ref">Spectral clustering for image segmentation</span></a></span><a class="headerlink" href="#id15" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example uses spectral_clustering on a graph created from voxel-to-voxel difference on an i..."><figure class="align-default" id="id16">
+<img alt="Segmenting the picture of greek coins in regions" src="../../_images/sphx_glr_plot_coin_segmentation_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/cluster/plot_coin_segmentation.html#sphx-glr-auto-examples-cluster-plot-coin-segmentation-py"><span class="std std-ref">Segmenting the picture of greek coins in regions</span></a></span><a class="headerlink" href="#id16" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </div><div class="clearer"></div></section>
