@@ -492,7 +492,7 @@ Read more in the :ref:`User Guide <roc_metrics>`.
 
  .. code-block:: none
 
-    0.9930619658119658
+    0.9858032051282052
 
 
 
@@ -500,7 +500,7 @@ Read more in the :ref:`User Guide <roc_metrics>`.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.068 seconds)
+   **Total running time of the script:** ( 0 minutes  1.711 seconds)
 
 
 .. _sphx_glr_download_auto_examples_release_highlights_plot_release_highlights_0_22_0.py:
