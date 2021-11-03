@@ -2882,14 +2882,14 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Both kernel ridge regression (KRR) and Gaussian process regression (GPR) learn a target functio...">
+    <div class="sphx-glr-thumbcontainer" tooltip="A simple one-dimensional regression example computed in two different ways:">
 
 .. only:: html
 
- .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_compare_gpr_krr_thumb.png
-     :alt: Comparison of kernel ridge and Gaussian process regression
+ .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_noisy_targets_thumb.png
+     :alt: Gaussian Processes regression: basic introductory example
 
-     :ref:`sphx_glr_auto_examples_gaussian_process_plot_compare_gpr_krr.py`
+     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy_targets.py`
 
 .. raw:: html
 
@@ -2899,7 +2899,7 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 .. toctree::
    :hidden:
 
-   /auto_examples/gaussian_process/plot_compare_gpr_krr
+   /auto_examples/gaussian_process/plot_gpr_noisy_targets
 
 .. raw:: html
 
@@ -2924,14 +2924,14 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates that GPR with a sum-kernel including a WhiteKernel can estimate the no...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example is based on Section 5.4.3 of &quot;Gaussian Processes for Machine Learning&quot; [RW2006]_. ...">
 
 .. only:: html
 
- .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_noisy_thumb.png
-     :alt: Gaussian process regression (GPR) with noise-level estimation
+ .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_co2_thumb.png
+     :alt: Gaussian process regression (GPR) on Mauna Loa CO2 data
 
-     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy.py`
+     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_co2.py`
 
 .. raw:: html
 
@@ -2941,7 +2941,7 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 .. toctree::
    :hidden:
 
-   /auto_examples/gaussian_process/plot_gpr_noisy
+   /auto_examples/gaussian_process/plot_gpr_co2
 
 .. raw:: html
 
@@ -2966,14 +2966,14 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="A simple one-dimensional regression example computed in two different ways:">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows the ability of the WhiteKernel to estimate the noise level in the data. More...">
 
 .. only:: html
 
- .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_noisy_targets_thumb.png
-     :alt: Gaussian Processes regression: basic introductory example
+ .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_noisy_thumb.png
+     :alt: Gaussian process regression (GPR) with noise-level estimation
 
-     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy_targets.py`
+     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy.py`
 
 .. raw:: html
 
@@ -2983,28 +2983,7 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 .. toctree::
    :hidden:
 
-   /auto_examples/gaussian_process/plot_gpr_noisy_targets
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example is based on Section 5.4.3 of &quot;Gaussian Processes for Machine Learning&quot; [RW2006]. I...">
-
-.. only:: html
-
- .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_co2_thumb.png
-     :alt: Gaussian process regression (GPR) on Mauna Loa CO2 data.
-
-     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_co2.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/gaussian_process/plot_gpr_co2
+   /auto_examples/gaussian_process/plot_gpr_noisy
 
 .. raw:: html
 
@@ -3026,6 +3005,27 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
    :hidden:
 
    /auto_examples/gaussian_process/plot_gpr_on_structured_data
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates differences between a kernel ridge regression and a Gaussian process r...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_compare_gpr_krr_thumb.png
+     :alt: Comparison of kernel ridge and Gaussian process regression
+
+     :ref:`sphx_glr_auto_examples_gaussian_process_plot_compare_gpr_krr.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/gaussian_process/plot_compare_gpr_krr
 
 .. raw:: html
 

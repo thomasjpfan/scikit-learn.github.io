@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://scikit-learn/stable/modules/gaussian_process.html" />
   <meta property="og:site_name" content="scikit-learn" />
   <meta property="og:description" content="Gaussian Processes (GP) are a generic supervised learning method designed to solve regression and probabilistic classification problems. The advantages of Gaussian processes are: The prediction int..." />
-  <meta property="og:image" content="../_images/sphx_glr_plot_gpr_noisy_001.png" />
+  <meta property="og:image" content="../_images/sphx_glr_plot_gpr_noisy_003.png" />
   <meta property="og:image:alt" content="scikit-learn" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -276,12 +276,12 @@ estimate the noise level of data. An illustration of the
 log-marginal-likelihood (LML) landscape shows that there exist two local
 maxima of LML.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/gaussian_process/plot_gpr_noisy.html"><img alt="../_images/sphx_glr_plot_gpr_noisy_001.png" src="../_images/sphx_glr_plot_gpr_noisy_001.png" /></a>
+<a class="reference external image-reference" href="../auto_examples/gaussian_process/plot_gpr_noisy.html"><img alt="../_images/sphx_glr_plot_gpr_noisy_003.png" src="../_images/sphx_glr_plot_gpr_noisy_003.png" /></a>
 </figure>
 <p>The first corresponds to a model with a high noise level and a
 large length scale, which explains all variations in the data by noise.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/gaussian_process/plot_gpr_noisy.html"><img alt="../_images/sphx_glr_plot_gpr_noisy_002.png" src="../_images/sphx_glr_plot_gpr_noisy_002.png" /></a>
+<a class="reference external image-reference" href="../auto_examples/gaussian_process/plot_gpr_noisy.html"><img alt="../_images/sphx_glr_plot_gpr_noisy_004.png" src="../_images/sphx_glr_plot_gpr_noisy_004.png" /></a>
 </figure>
 <p>The second one has a smaller noise level and shorter length scale, which explains
 most of the variation by the noise-free functional relationship. The second
@@ -290,7 +290,7 @@ hyperparameters, the gradient-based optimization might also converge to the
 high-noise solution. It is thus important to repeat the optimization several
 times for different initializations.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/gaussian_process/plot_gpr_noisy.html"><img alt="../_images/sphx_glr_plot_gpr_noisy_003.png" src="../_images/sphx_glr_plot_gpr_noisy_003.png" /></a>
+<a class="reference external image-reference" href="../auto_examples/gaussian_process/plot_gpr_noisy.html"><img alt="../_images/sphx_glr_plot_gpr_noisy_005.png" src="../_images/sphx_glr_plot_gpr_noisy_005.png" /></a>
 </figure>
 </section>
 <section id="comparison-of-gpr-and-kernel-ridge-regression">
@@ -321,7 +321,7 @@ Moreover, the noise level
 of the data is learned explicitly by GPR by an additional WhiteKernel component
 in the kernel and by the regularization parameter alpha of KRR.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/gaussian_process/plot_compare_gpr_krr.html"><img alt="../_images/sphx_glr_plot_compare_gpr_krr_001.png" src="../_images/sphx_glr_plot_compare_gpr_krr_001.png" /></a>
+<a class="reference external image-reference" href="../auto_examples/gaussian_process/plot_compare_gpr_krr.html"><img alt="../_images/sphx_glr_plot_compare_gpr_krr_005.png" src="../_images/sphx_glr_plot_compare_gpr_krr_005.png" /></a>
 </figure>
 <p>The figure shows that both methods learn reasonable models of the target
 function. GPR correctly identifies the periodicity of the function to be
@@ -390,7 +390,7 @@ overall noise level is very small, indicating that the data can be very well
 explained by the model. The figure shows also that the model makes very
 confident predictions until around 2015</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/gaussian_process/plot_gpr_co2.html"><img alt="../_images/sphx_glr_plot_gpr_co2_001.png" src="../_images/sphx_glr_plot_gpr_co2_001.png" /></a>
+<a class="reference external image-reference" href="../auto_examples/gaussian_process/plot_gpr_co2.html"><img alt="../_images/sphx_glr_plot_gpr_co2_003.png" src="../_images/sphx_glr_plot_gpr_co2_003.png" /></a>
 </figure>
 </section>
 </section>
