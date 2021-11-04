@@ -5,16 +5,16 @@
 
 Computation times
 =================
-**00:03.164** total execution time for **auto_examples_tree** files:
+**00:03.409** total execution time for **auto_examples_tree** files:
 
 +------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_tree_plot_iris_dtc.py` (``plot_iris_dtc.py``)                                       | 00:01.610 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_tree_plot_iris_dtc.py` (``plot_iris_dtc.py``)                                       | 00:01.666 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_tree_plot_cost_complexity_pruning.py` (``plot_cost_complexity_pruning.py``)         | 00:00.699 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_tree_plot_cost_complexity_pruning.py` (``plot_cost_complexity_pruning.py``)         | 00:00.847 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_tree_plot_tree_regression_multioutput.py` (``plot_tree_regression_multioutput.py``) | 00:00.477 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_tree_plot_tree_regression_multioutput.py` (``plot_tree_regression_multioutput.py``) | 00:00.482 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py` (``plot_unveil_tree_structure.py``)             | 00:00.205 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_tree_plot_unveil_tree_structure.py` (``plot_unveil_tree_structure.py``)             | 00:00.233 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_tree_plot_tree_regression.py` (``plot_tree_regression.py``)                         | 00:00.173 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_tree_plot_tree_regression.py` (``plot_tree_regression.py``)                         | 00:00.180 | 0.0 MB |
 +------------------------------------------------------------------------------------------------------------------+-----------+--------+
