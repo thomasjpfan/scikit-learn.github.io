@@ -185,15 +185,15 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.decomposition" title="sklearn.decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a>.KernelPCA<a class="headerlink" href="#sklearn-decomposition-kernelpca" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.decomposition.KernelPCA">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.decomposition.</span></span><span class="sig-name descname"><span class="pre">KernelPCA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coef0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_inverse_transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigen_solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterated_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_zero_eig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy_X</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f8728dfc0/sklearn/decomposition/_kernel_pca.py#L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Kernel Principal component analysis (KPCA).</p>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.decomposition.</span></span><span class="sig-name descname"><span class="pre">KernelPCA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_components</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'linear'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coef0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kernel_params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_inverse_transform</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigen_solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterated_power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_zero_eig</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy_X</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/d5ce9c496/sklearn/decomposition/_kernel_pca.py#L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kernel Principal component analysis (KPCA) <a class="reference internal" href="#r396fc7d924b8-1" id="id1">[1]</a>.</p>
 <p>Non-linear dimensionality reduction through the use of kernels (see
 <a class="reference internal" href="../metrics.html#metrics"><span class="std std-ref">Pairwise metrics, Affinities and Kernels</span></a>).</p>
-<p>It uses the <code class="docutils literal notranslate"><span class="pre">scipy.linalg.eigh</span></code> LAPACK implementation of the full SVD or
-the <code class="docutils literal notranslate"><span class="pre">scipy.sparse.linalg.eigsh</span></code> ARPACK implementation of the truncated SVD,
-depending on the shape of the input data and the number of components to
-extract. It can also use a randomized truncated SVD by the method of
-Halko et al. 2009, see <code class="docutils literal notranslate"><span class="pre">eigen_solver</span></code>.</p>
+<p>It uses the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/reference/generated/scipy.linalg.eigh.html#scipy.linalg.eigh" title="(in SciPy v1.7.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.linalg.eigh</span></code></a> LAPACK implementation of the full SVD
+or the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/reference/generated/scipy.sparse.linalg.eigsh.html#scipy.sparse.linalg.eigsh" title="(in SciPy v1.7.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.sparse.linalg.eigsh</span></code></a> ARPACK implementation of the
+truncated SVD, depending on the shape of the input data and the number of
+components to extract. It can also use a randomized truncated SVD by the
+method proposed in <a class="reference internal" href="#r396fc7d924b8-3" id="id2">[3]</a>, see <code class="docutils literal notranslate"><span class="pre">eigen_solver</span></code>.</p>
 <p>Read more in the <a class="reference internal" href="../decomposition.html#kernel-pca"><span class="std std-ref">User Guide</span></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
@@ -218,12 +218,14 @@ Ignored by other kernels.</p>
 inverse transform (when fit_inverse_transform=True).</p>
 </dd>
 <dt><strong>fit_inverse_transform</strong><span class="classifier">bool, default=False</span></dt><dd><p>Learn the inverse transform for non-precomputed kernels
-(i.e. learn to find the pre-image of a point).</p>
+(i.e. learn to find the pre-image of a point). This method is based
+on <a class="reference internal" href="#r396fc7d924b8-2" id="id3">[2]</a>.</p>
 </dd>
-<dt><strong>eigen_solver</strong><span class="classifier">{‘auto’, ‘dense’, ‘arpack’, ‘randomized’},         default=’auto’</span></dt><dd><p>Select eigensolver to use. If <code class="docutils literal notranslate"><span class="pre">n_components</span></code> is much
+<dt><strong>eigen_solver</strong><span class="classifier">{‘auto’, ‘dense’, ‘arpack’, ‘randomized’},             default=’auto’</span></dt><dd><p>Select eigensolver to use. If <code class="docutils literal notranslate"><span class="pre">n_components</span></code> is much
 less than the number of training samples, randomized (or arpack to a
 smaller extend) may be more efficient than the dense eigensolver.
-Randomized SVD is performed according to the method of Halko et al.</p>
+Randomized SVD is performed according to the method of Halko et al
+<a class="reference internal" href="#r396fc7d924b8-3" id="id4">[3]</a>.</p>
 <dl class="simple">
 <dt>auto :</dt><dd><p>the solver is selected by a default policy based on n_samples
 (the number of training samples) and <code class="docutils literal notranslate"><span class="pre">n_components</span></code>:
@@ -241,10 +243,10 @@ by postprocessing</p>
 <code class="docutils literal notranslate"><span class="pre">scipy.sparse.linalg.eigsh</span></code>. It requires strictly
 0 &lt; n_components &lt; n_samples</p>
 </dd>
-<dt>randomized :</dt><dd><p>run randomized SVD by the method of Halko et al. The current
+<dt>randomized :</dt><dd><p>run randomized SVD by the method of Halko et al. <a class="reference internal" href="#r396fc7d924b8-3" id="id5">[3]</a>. The current
 implementation selects eigenvalues based on their module; therefore
 using this method can lead to unexpected results if the kernel is
-not positive semi-definite.</p>
+not positive semi-definite. See also <a class="reference internal" href="#r396fc7d924b8-4" id="id6">[4]</a>.</p>
 </dd>
 </dl>
 <div class="versionchanged">
@@ -348,20 +350,28 @@ has feature names that are all strings.</p>
 </dl>
 </div>
 <p class="rubric">References</p>
-<dl class="simple">
-<dt>Kernel PCA was introduced in:</dt><dd><p>Bernhard Schoelkopf, Alexander J. Smola,
-and Klaus-Robert Mueller. 1999. Kernel principal
-component analysis. In Advances in kernel methods,
-MIT Press, Cambridge, MA, USA 327-352.</p>
+<dl class="citation">
+<dt class="label" id="r396fc7d924b8-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p><a class="reference external" href="https://people.eecs.berkeley.edu/~wainwrig/stat241b/scholkopf_kernel.pdf">Schölkopf, Bernhard, Alexander Smola, and Klaus-Robert Müller.
+“Kernel principal component analysis.”
+International conference on artificial neural networks.
+Springer, Berlin, Heidelberg, 1997.</a></p>
 </dd>
-</dl>
-<p>For eigen_solver == ‘arpack’, refer to <code class="docutils literal notranslate"><span class="pre">scipy.sparse.linalg.eigsh</span></code>.</p>
-<dl class="simple">
-<dt>For eigen_solver == ‘randomized’, see:</dt><dd><p>Finding structure with randomness: Stochastic algorithms
-for constructing approximate matrix decompositions Halko, et al., 2009
-(arXiv:909)
-A randomized algorithm for the decomposition of matrices
-Per-Gunnar Martinsson, Vladimir Rokhlin and Mark Tygert</p>
+<dt class="label" id="r396fc7d924b8-2"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dd><p><a class="reference external" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.68.5164&amp;rep=rep1&amp;type=pdf">Bakır, Gökhan H., Jason Weston, and Bernhard Schölkopf.
+“Learning to find pre-images.”
+Advances in neural information processing systems 16 (2004): 449-456.</a></p>
+</dd>
+<dt class="label" id="r396fc7d924b8-3"><span class="brackets">3</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id4">2</a>,<a href="#id5">3</a>)</span></dt>
+<dd><p><a class="reference external" href="https://arxiv.org/abs/0909.4061">Halko, Nathan, Per-Gunnar Martinsson, and Joel A. Tropp.
+“Finding structure with randomness: Probabilistic algorithms for
+constructing approximate matrix decompositions.”
+SIAM review 53.2 (2011): 217-288.</a></p>
+</dd>
+<dt class="label" id="r396fc7d924b8-4"><span class="brackets"><a class="fn-backref" href="#id6">4</a></span></dt>
+<dd><p><a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S1063520310000242">Martinsson, Per-Gunnar, Vladimir Rokhlin, and Mark Tygert.
+“A randomized algorithm for the decomposition of matrices.”
+Applied and Computational Harmonic Analysis 30.1 (2011): 47-68.</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -412,7 +422,7 @@ Per-Gunnar Martinsson, Vladimir Rokhlin and Mark Tygert</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.decomposition.KernelPCA.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f8728dfc0/sklearn/decomposition/_kernel_pca.py#L407"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/d5ce9c496/sklearn/decomposition/_kernel_pca.py#L415"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model from data in X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -435,7 +445,7 @@ and <code class="docutils literal notranslate"><span class="pre">n_features</spa
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.decomposition.KernelPCA.fit_transform">
-<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f8728dfc0/sklearn/decomposition/_kernel_pca.py#L438"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.fit_transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/d5ce9c496/sklearn/decomposition/_kernel_pca.py#L446"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model from data in X and transform X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -461,7 +471,7 @@ the fit_transform instance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.decomposition.KernelPCA.get_feature_names_out">
-<span class="sig-name descname"><span class="pre">get_feature_names_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f8728dfc0/sklearn/base.py#L904"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.get_feature_names_out" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_feature_names_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/d5ce9c496/sklearn/base.py#L904"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.get_feature_names_out" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get output feature names for transformation.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -481,7 +491,7 @@ the fit_transform instance.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.decomposition.KernelPCA.get_params">
-<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f8728dfc0/sklearn/base.py#L190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.get_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/d5ce9c496/sklearn/base.py#L190"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -502,7 +512,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.decomposition.KernelPCA.inverse_transform">
-<span class="sig-name descname"><span class="pre">inverse_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f8728dfc0/sklearn/decomposition/_kernel_pca.py#L499"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">inverse_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/d5ce9c496/sklearn/decomposition/_kernel_pca.py#L507"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X back to original space.</p>
 <p><code class="docutils literal notranslate"><span class="pre">inverse_transform</span></code> approximates the inverse transformation using
 a learned pre-image. The pre-image is learned by kernel ridge
@@ -534,7 +544,9 @@ and <code class="docutils literal notranslate"><span class="pre">n_features</spa
 </dd>
 </dl>
 <p class="rubric">References</p>
-<p>“Learning to Find Pre-Images”, G BakIr et al, 2004.</p>
+<p><a class="reference external" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.68.5164&amp;rep=rep1&amp;type=pdf">Bakır, Gökhan H., Jason Weston, and Bernhard Schölkopf.
+“Learning to find pre-images.”
+Advances in neural information processing systems 16 (2004): 449-456.</a></p>
 </dd></dl>
 
 <dl class="py property">
@@ -545,7 +557,7 @@ and <code class="docutils literal notranslate"><span class="pre">n_features</spa
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.decomposition.KernelPCA.set_params">
-<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f8728dfc0/sklearn/base.py#L214"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.set_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/d5ce9c496/sklearn/base.py#L214"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as <a class="reference internal" href="sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
@@ -569,7 +581,7 @@ possible to update each component of a nested object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.decomposition.KernelPCA.transform">
-<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/f8728dfc0/sklearn/decomposition/_kernel_pca.py#L469"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/d5ce9c496/sklearn/decomposition/_kernel_pca.py#L477"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.decomposition.KernelPCA.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -592,16 +604,16 @@ and <code class="docutils literal notranslate"><span class="pre">n_features</spa
 
 <section id="examples-using-sklearn-decomposition-kernelpca">
 <h2>Examples using <code class="docutils literal notranslate"><span class="pre">sklearn.decomposition.KernelPCA</span></code><a class="headerlink" href="#examples-using-sklearn-decomposition-kernelpca" title="Permalink to this headline">¶</a></h2>
-<div class="sphx-glr-thumbcontainer" tooltip="This example shows that Kernel PCA is able to find a projection of the data that makes data lin..."><figure class="align-default" id="id1">
+<div class="sphx-glr-thumbcontainer" tooltip="This example shows the difference between the Principal Components Analysis (:class:`~sklearn.d..."><figure class="align-default" id="id12">
 <img alt="Kernel PCA" src="../../_images/sphx_glr_plot_kernel_pca_thumb.png" />
 <figcaption>
-<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/decomposition/plot_kernel_pca.html#sphx-glr-auto-examples-decomposition-plot-kernel-pca-py"><span class="std std-ref">Kernel PCA</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/decomposition/plot_kernel_pca.html#sphx-glr-auto-examples-decomposition-plot-kernel-pca-py"><span class="std std-ref">Kernel PCA</span></a></span><a class="headerlink" href="#id12" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use KernelPCA to denoise images. In short, we take advantage of the a..."><figure class="align-default" id="id2">
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows how to use KernelPCA to denoise images. In short, we take advantage of the a..."><figure class="align-default" id="id13">
 <img alt="Image denoising using kernel PCA" src="../../_images/sphx_glr_plot_digits_denoising_thumb.png" />
 <figcaption>
-<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/applications/plot_digits_denoising.html#sphx-glr-auto-examples-applications-plot-digits-denoising-py"><span class="std std-ref">Image denoising using kernel PCA</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/applications/plot_digits_denoising.html#sphx-glr-auto-examples-applications-plot-digits-denoising-py"><span class="std std-ref">Image denoising using kernel PCA</span></a></span><a class="headerlink" href="#id13" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </div><div class="clearer"></div></section>

@@ -421,13 +421,21 @@ R. Jenatton, G. Obozinski, F. Bach, 2009</p>
 <section id="exact-kernel-pca">
 <h3><span class="section-number">2.5.2.1. </span>Exact Kernel PCA<a class="headerlink" href="#exact-kernel-pca" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="generated/sklearn.decomposition.KernelPCA.html#sklearn.decomposition.KernelPCA" title="sklearn.decomposition.KernelPCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelPCA</span></code></a> is an extension of PCA which achieves non-linear
-dimensionality reduction through the use of kernels (see <a class="reference internal" href="metrics.html#metrics"><span class="std std-ref">Pairwise metrics, Affinities and Kernels</span></a>). It
+dimensionality reduction through the use of kernels (see <a class="reference internal" href="metrics.html#metrics"><span class="std std-ref">Pairwise metrics, Affinities and Kernels</span></a>) <a class="reference internal" href="#scholkopf1997" id="id3"><span>[Scholkopf1997]</span></a>. It
 has many applications including denoising, compression and structured
 prediction (kernel dependency estimation). <a class="reference internal" href="generated/sklearn.decomposition.KernelPCA.html#sklearn.decomposition.KernelPCA" title="sklearn.decomposition.KernelPCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">KernelPCA</span></code></a> supports both
 <code class="docutils literal notranslate"><span class="pre">transform</span></code> and <code class="docutils literal notranslate"><span class="pre">inverse_transform</span></code>.</p>
 <figure class="align-center">
-<a class="reference external image-reference" href="../auto_examples/decomposition/plot_kernel_pca.html"><img alt="../_images/sphx_glr_plot_kernel_pca_001.png" src="../_images/sphx_glr_plot_kernel_pca_001.png" style="width: 480.0px; height: 360.0px;" /></a>
+<a class="reference external image-reference" href="../auto_examples/decomposition/plot_kernel_pca.html"><img alt="../_images/sphx_glr_plot_kernel_pca_002.png" src="../_images/sphx_glr_plot_kernel_pca_002.png" style="width: 1050.0px; height: 300.0px;" /></a>
 </figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><a class="reference internal" href="generated/sklearn.decomposition.KernelPCA.html#sklearn.decomposition.KernelPCA.inverse_transform" title="sklearn.decomposition.KernelPCA.inverse_transform"><code class="xref py py-meth docutils literal notranslate"><span class="pre">KernelPCA.inverse_transform</span></code></a> relies on a kernel ridge to learn the
+function mapping samples from the PCA basis into the original feature
+space <a class="reference internal" href="#bakir2004" id="id4"><span>[Bakir2004]</span></a>. Thus, the reconstruction obtained with
+<a class="reference internal" href="generated/sklearn.decomposition.KernelPCA.html#sklearn.decomposition.KernelPCA.inverse_transform" title="sklearn.decomposition.KernelPCA.inverse_transform"><code class="xref py py-meth docutils literal notranslate"><span class="pre">KernelPCA.inverse_transform</span></code></a> is an approximation. See the example
+linked below for more details.</p>
+</div>
 <div class="topic">
 <p class="topic-title">Examples:</p>
 <ul class="simple">
@@ -436,11 +444,19 @@ prediction (kernel dependency estimation). <a class="reference internal" href="g
 </div>
 <div class="topic">
 <p class="topic-title">References:</p>
-<ul class="simple">
-<li><p>Kernel PCA was introduced in “Kernel principal component analysis”
-Bernhard Schoelkopf, Alexander J. Smola, and Klaus-Robert Mueller. 1999.
-In Advances in kernel methods, MIT Press, Cambridge, MA, USA 327-352.</p></li>
-</ul>
+<dl class="citation">
+<dt class="label" id="scholkopf1997"><span class="brackets"><a class="fn-backref" href="#id3">Scholkopf1997</a></span></dt>
+<dd><p>Schölkopf, Bernhard, Alexander Smola, and Klaus-Robert Müller.
+<a class="reference external" href="https://people.eecs.berkeley.edu/~wainwrig/stat241b/scholkopf_kernel.pdf">“Kernel principal component analysis.”</a>
+International conference on artificial neural networks.
+Springer, Berlin, Heidelberg, 1997.</p>
+</dd>
+<dt class="label" id="bakir2004"><span class="brackets"><a class="fn-backref" href="#id4">Bakir2004</a></span></dt>
+<dd><p>Bakır, Gökhan H., Jason Weston, and Bernhard Schölkopf.
+<a class="reference external" href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.68.5164&amp;rep=rep1&amp;type=pdf">“Learning to find pre-images.”</a>
+Advances in neural information processing systems 16 (2004): 449-456.</p>
+</dd>
+</dl>
 </div>
 </section>
 <section id="choice-of-solver-for-kernel-pca">
@@ -793,7 +809,7 @@ components with some sparsity:</p>
 <span id="nmf"></span><h2><span class="section-number">2.5.7. </span>Non-negative matrix factorization (NMF or NNMF)<a class="headerlink" href="#non-negative-matrix-factorization-nmf-or-nnmf" title="Permalink to this headline">¶</a></h2>
 <section id="nmf-with-the-frobenius-norm">
 <h3><span class="section-number">2.5.7.1. </span>NMF with the Frobenius norm<a class="headerlink" href="#nmf-with-the-frobenius-norm" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference internal" href="generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF" title="sklearn.decomposition.NMF"><code class="xref py py-class docutils literal notranslate"><span class="pre">NMF</span></code></a> <a class="footnote-reference brackets" href="#id11" id="id5">1</a> is an alternative approach to decomposition that assumes that the
+<p><a class="reference internal" href="generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF" title="sklearn.decomposition.NMF"><code class="xref py py-class docutils literal notranslate"><span class="pre">NMF</span></code></a> <a class="footnote-reference brackets" href="#id13" id="id7">1</a> is an alternative approach to decomposition that assumes that the
 data and the components are non-negative. <a class="reference internal" href="generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF" title="sklearn.decomposition.NMF"><code class="xref py py-class docutils literal notranslate"><span class="pre">NMF</span></code></a> can be plugged in
 instead of <a class="reference internal" href="generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="sklearn.decomposition.PCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">PCA</span></code></a> or its variants, in the cases where the data matrix
 does not contain negative values. It finds a decomposition of samples
@@ -806,7 +822,7 @@ norm, which is an obvious extension of the Euclidean norm to matrices:</p>
 <p>Unlike <a class="reference internal" href="generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="sklearn.decomposition.PCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">PCA</span></code></a>, the representation of a vector is obtained in an additive
 fashion, by superimposing the components, without subtracting. Such additive
 models are efficient for representing images and text.</p>
-<p>It has been observed in [Hoyer, 2004] <a class="footnote-reference brackets" href="#id12" id="id6">2</a> that, when carefully constrained,
+<p>It has been observed in [Hoyer, 2004] <a class="footnote-reference brackets" href="#id14" id="id8">2</a> that, when carefully constrained,
 <a class="reference internal" href="generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF" title="sklearn.decomposition.NMF"><code class="xref py py-class docutils literal notranslate"><span class="pre">NMF</span></code></a> can produce a parts-based representation of the dataset,
 resulting in interpretable models. The following example displays 16
 sparse components found by <a class="reference internal" href="generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF" title="sklearn.decomposition.NMF"><code class="xref py py-class docutils literal notranslate"><span class="pre">NMF</span></code></a> from the images in the Olivetti
@@ -814,7 +830,7 @@ faces dataset, in comparison with the PCA eigenfaces.</p>
 <p class="centered">
 <strong><a class="reference external" href="../auto_examples/decomposition/plot_faces_decomposition.html"><img alt="pca_img5" src="../_images/sphx_glr_plot_faces_decomposition_002.png" style="width: 360.0px; height: 270.59999999999997px;" /></a> <a class="reference external" href="../auto_examples/decomposition/plot_faces_decomposition.html"><img alt="nmf_img5" src="../_images/sphx_glr_plot_faces_decomposition_003.png" style="width: 360.0px; height: 270.59999999999997px;" /></a></strong></p><p>The <code class="xref py py-attr docutils literal notranslate"><span class="pre">init</span></code> attribute determines the initialization method applied, which
 has a great impact on the performance of the method. <a class="reference internal" href="generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF" title="sklearn.decomposition.NMF"><code class="xref py py-class docutils literal notranslate"><span class="pre">NMF</span></code></a> implements the
-method Nonnegative Double Singular Value Decomposition. NNDSVD <a class="footnote-reference brackets" href="#id13" id="id7">4</a> is based on
+method Nonnegative Double Singular Value Decomposition. NNDSVD <a class="footnote-reference brackets" href="#id15" id="id9">4</a> is based on
 two SVD processes, one approximating the data matrix, the other approximating
 positive sections of the resulting partial SVD factors utilizing an algebraic
 property of unit rank matrices. The basic NNDSVD algorithm is better fit for
@@ -864,7 +880,7 @@ Kullback-Leibler (KL) divergence, also referred as I-divergence:</p>
 <div class="math notranslate nohighlight">
 \[d_{IS}(X, Y) = \sum_{i,j} (\frac{X_{ij}}{Y_{ij}} - \log(\frac{X_{ij}}{Y_{ij}}) - 1)\]</div>
 <p>These three distances are special cases of the beta-divergence family, with
-<span class="math notranslate nohighlight">\(\beta = 2, 1, 0\)</span> respectively <a class="footnote-reference brackets" href="#id15" id="id8">6</a>. The beta-divergence are
+<span class="math notranslate nohighlight">\(\beta = 2, 1, 0\)</span> respectively <a class="footnote-reference brackets" href="#id17" id="id10">6</a>. The beta-divergence are
 defined by :</p>
 <div class="math notranslate nohighlight">
 \[d_{\beta}(X, Y) = \sum_{i,j} \frac{1}{\beta(\beta - 1)}(X_{ij}^\beta + (\beta-1)Y_{ij}^\beta - \beta X_{ij} Y_{ij}^{\beta - 1})\]</div>
@@ -874,8 +890,8 @@ defined by :</p>
 <p>Note that this definition is not valid if <span class="math notranslate nohighlight">\(\beta \in (0; 1)\)</span>, yet it can
 be continuously extended to the definitions of <span class="math notranslate nohighlight">\(d_{KL}\)</span> and <span class="math notranslate nohighlight">\(d_{IS}\)</span>
 respectively.</p>
-<p><a class="reference internal" href="generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF" title="sklearn.decomposition.NMF"><code class="xref py py-class docutils literal notranslate"><span class="pre">NMF</span></code></a> implements two solvers, using Coordinate Descent (‘cd’) <a class="footnote-reference brackets" href="#id14" id="id9">5</a>, and
-Multiplicative Update (‘mu’) <a class="footnote-reference brackets" href="#id15" id="id10">6</a>. The ‘mu’ solver can optimize every
+<p><a class="reference internal" href="generated/sklearn.decomposition.NMF.html#sklearn.decomposition.NMF" title="sklearn.decomposition.NMF"><code class="xref py py-class docutils literal notranslate"><span class="pre">NMF</span></code></a> implements two solvers, using Coordinate Descent (‘cd’) <a class="footnote-reference brackets" href="#id16" id="id11">5</a>, and
+Multiplicative Update (‘mu’) <a class="footnote-reference brackets" href="#id17" id="id12">6</a>. The ‘mu’ solver can optimize every
 beta-divergence, including of course the Frobenius norm (<span class="math notranslate nohighlight">\(\beta=2\)</span>), the
 (generalized) Kullback-Leibler divergence (<span class="math notranslate nohighlight">\(\beta=1\)</span>) and the
 Itakura-Saito divergence (<span class="math notranslate nohighlight">\(\beta=0\)</span>). Note that for
@@ -910,25 +926,25 @@ stored components:</p>
 <div class="topic">
 <p class="topic-title">References:</p>
 <dl class="footnote brackets">
-<dt class="label" id="id11"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id7">1</a></span></dt>
 <dd><p><a class="reference external" href="http://www.columbia.edu/~jwp2128/Teaching/E4903/papers/nmf_nature.pdf">“Learning the parts of objects by non-negative matrix factorization”</a>
 D. Lee, S. Seung, 1999</p>
 </dd>
-<dt class="label" id="id12"><span class="brackets"><a class="fn-backref" href="#id6">2</a></span></dt>
+<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id8">2</a></span></dt>
 <dd><p><a class="reference external" href="http://www.jmlr.org/papers/volume5/hoyer04a/hoyer04a.pdf">“Non-negative Matrix Factorization with Sparseness Constraints”</a>
 P. Hoyer, 2004</p>
 </dd>
-<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id7">4</a></span></dt>
+<dt class="label" id="id15"><span class="brackets"><a class="fn-backref" href="#id9">4</a></span></dt>
 <dd><p><a class="reference external" href="http://scgroup.hpclab.ceid.upatras.gr/faculty/stratis/Papers/HPCLAB020107.pdf">“SVD based initialization: A head start for nonnegative
 matrix factorization”</a>
 C. Boutsidis, E. Gallopoulos, 2008</p>
 </dd>
-<dt class="label" id="id14"><span class="brackets"><a class="fn-backref" href="#id9">5</a></span></dt>
+<dt class="label" id="id16"><span class="brackets"><a class="fn-backref" href="#id11">5</a></span></dt>
 <dd><p><a class="reference external" href="http://www.bsp.brain.riken.jp/publications/2009/Cichocki-Phan-IEICE_col.pdf">“Fast local algorithms for large scale nonnegative matrix and tensor
 factorizations.”</a>
 A. Cichocki, A. Phan, 2009</p>
 </dd>
-<dt class="label" id="id15"><span class="brackets">6</span><span class="fn-backref">(<a href="#id8">1</a>,<a href="#id10">2</a>)</span></dt>
+<dt class="label" id="id17"><span class="brackets">6</span><span class="fn-backref">(<a href="#id10">1</a>,<a href="#id12">2</a>)</span></dt>
 <dd><p><a class="reference external" href="https://arxiv.org/pdf/1010.1763.pdf">“Algorithms for nonnegative matrix factorization with the beta-divergence”</a>
 C. Fevotte, J. Idier, 2011</p>
 </dd>

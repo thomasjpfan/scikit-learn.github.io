@@ -1603,27 +1603,6 @@ Examples concerning the :mod:`sklearn.decomposition` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows that Kernel PCA is able to find a projection of the data that makes data lin...">
-
-.. only:: html
-
- .. figure:: /auto_examples/decomposition/images/thumb/sphx_glr_plot_kernel_pca_thumb.png
-     :alt: Kernel PCA
-
-     :ref:`sphx_glr_auto_examples_decomposition_plot_kernel_pca.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/decomposition/plot_kernel_pca
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates visually in the feature space a comparison by results using two differ...">
 
 .. only:: html
@@ -1642,6 +1621,27 @@ Examples concerning the :mod:`sklearn.decomposition` module.
    :hidden:
 
    /auto_examples/decomposition/plot_ica_vs_pca
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows the difference between the Principal Components Analysis (:class:`~sklearn.d...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/decomposition/images/thumb/sphx_glr_plot_kernel_pca_thumb.png
+     :alt: Kernel PCA
+
+     :ref:`sphx_glr_auto_examples_decomposition_plot_kernel_pca.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/decomposition/plot_kernel_pca
 
 .. raw:: html
 
