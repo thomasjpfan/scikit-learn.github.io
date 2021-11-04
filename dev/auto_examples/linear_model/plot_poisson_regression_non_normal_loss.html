@@ -533,6 +533,11 @@ the training sample.</p>
 <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_train</span><span class="p">,</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">],</span> <span class="n">regressor__sample_weight</span><span class="o">=</span><span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;Exposure&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/project/sklearn/preprocessing/_discretization.py:217: FutureWarning: In version 1.3 onwards, subsample=2e5 will be used by default. Set subsample explicitly to silence this warning in the mean time. Set subsample=None to disable subsampling explicitly.
+  warnings.warn(
+</pre></div>
+</div>
 <p>Let’s compute the performance of this constant prediction baseline with 3
 different regression metrics:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="sklearn.metrics.mean_squared_error" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">mean_squared_error</span></a>
@@ -607,6 +612,11 @@ on such a large dataset.</p>
 <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">df_train</span><span class="p">,</span> <span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;Frequency&quot;</span><span class="p">],</span> <span class="n">regressor__sample_weight</span><span class="o">=</span><span class="n">df_train</span><span class="p">[</span><span class="s2">&quot;Exposure&quot;</span><span class="p">])</span>
 </pre></div>
 </div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/project/sklearn/preprocessing/_discretization.py:217: FutureWarning: In version 1.3 onwards, subsample=2e5 will be used by default. Set subsample explicitly to silence this warning in the mean time. Set subsample=None to disable subsampling explicitly.
+  warnings.warn(
+</pre></div>
+</div>
 <p>The Poisson deviance cannot be computed on non-positive values predicted by
 the model. For models that do return a few non-positive predictions (e.g.
 <a class="reference internal" href="../../modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge" title="sklearn.linear_model.Ridge"><code class="xref py py-class docutils literal notranslate"><span class="pre">Ridge</span></code></a>) we ignore the corresponding samples,
@@ -653,7 +663,9 @@ vanilla linear model as is the case for Ridge regression.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>PoissonRegressor evaluation:
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/project/sklearn/preprocessing/_discretization.py:217: FutureWarning: In version 1.3 onwards, subsample=2e5 will be used by default. Set subsample explicitly to silence this warning in the mean time. Set subsample=None to disable subsampling explicitly.
+  warnings.warn(
+PoissonRegressor evaluation:
 MSE: 0.560
 MAE: 0.186
 mean Poisson deviance: 0.594
@@ -932,7 +944,7 @@ each model.</p>
 </pre></div>
 </div>
 <img src="../../_images/sphx_glr_plot_poisson_regression_non_normal_loss_004.png" srcset="../../_images/sphx_glr_plot_poisson_regression_non_normal_loss_004.png" alt="Lorenz curves by model" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fb40d4e8370&gt;
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend object at 0x7fec08df5c70&gt;
 </pre></div>
 </div>
 <p>As expected, the dummy regressor is unable to correctly rank the samples and
@@ -982,7 +994,7 @@ Error are hard to meaningfully interpret on count values with many zeros.</p></l
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  12.039 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  20.467 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-linear-model-plot-poisson-regression-non-normal-loss-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/linear_model/plot_poisson_regression_non_normal_loss.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo17.svg" width="150px" /></a>
