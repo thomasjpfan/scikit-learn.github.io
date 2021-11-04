@@ -173,6 +173,7 @@
 <li><a class="reference internal" href="#changelog">Changelog</a><ul>
 <li><a class="reference internal" href="#sklearn-cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
 </ul>
 </li>
@@ -224,10 +225,10 @@
 <li><a class="reference internal" href="#id11"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-neural-network"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neural_network</span></code></a></li>
 <li><a class="reference internal" href="#id12"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a></li>
-<li><a class="reference internal" href="#sklearn-preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a></li>
-<li><a class="reference internal" href="#id13"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a></li>
+<li><a class="reference internal" href="#id13"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a></li>
+<li><a class="reference internal" href="#id14"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-tree"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.tree</span></code></a></li>
-<li><a class="reference internal" href="#id14"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
+<li><a class="reference internal" href="#id15"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#code-and-documentation-contributors">Code and Documentation Contributors</a></li>
@@ -262,6 +263,13 @@ moving an iteration counter from try to except.
 <a class="reference internal" href="../modules/generated/sklearn.decomposition.MiniBatchDictionaryLearning.html#sklearn.decomposition.MiniBatchDictionaryLearning" title="sklearn.decomposition.MiniBatchDictionaryLearning"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.MiniBatchDictionaryLearning</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.decomposition.SparsePCA.html#sklearn.decomposition.SparsePCA" title="sklearn.decomposition.SparsePCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.SparsePCA</span></code></a>
 and <a class="reference internal" href="../modules/generated/sklearn.decomposition.MiniBatchSparsePCA.html#sklearn.decomposition.MiniBatchSparsePCA" title="sklearn.decomposition.MiniBatchSparsePCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.MiniBatchSparsePCA</span></code></a> to be convex and match the referenced
 article. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/19210">#19210</a> by <a class="reference external" href="https://github.com/jeremiedbb">Jérémie du Boisberranger</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-preprocessing">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.preprocessing" title="sklearn.preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a><a class="headerlink" href="#sklearn-preprocessing" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fixes compatibility bug with NumPy 1.22 in <a class="reference internal" href="../modules/generated/sklearn.preprocessing.OneHotEncoder.html#sklearn.preprocessing.OneHotEncoder" title="sklearn.preprocessing.OneHotEncoder"><code class="xref py py-class docutils literal notranslate"><span class="pre">preprocessing.OneHotEncoder</span></code></a>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21517">#21517</a> by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-utils">
@@ -1081,8 +1089,8 @@ when loading from a pickled file. <a class="reference external" href="https://gi
 estimator. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/19790">#19790</a> by <a class="reference external" href="https://github.com/crflynn">Christopher Flynn</a>.</p></li>
 </ul>
 </section>
-<section id="sklearn-preprocessing">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.preprocessing" title="sklearn.preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a><a class="headerlink" href="#sklearn-preprocessing" title="Permalink to this headline">¶</a></h3>
+<section id="id13">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.preprocessing" title="sklearn.preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-success">Feature</span></span>  The new <a class="reference internal" href="../modules/generated/sklearn.preprocessing.SplineTransformer.html#sklearn.preprocessing.SplineTransformer" title="sklearn.preprocessing.SplineTransformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">preprocessing.SplineTransformer</span></code></a> is a feature
 preprocessing tool for the generation of B-splines, parametrized by the
@@ -1141,8 +1149,8 @@ based on the input to <code class="docutils literal notranslate"><span class="pr
 <a class="reference external" href="https://github.com/jeremiedbb">Jérémie du Boisberranger</a>.</p></li>
 </ul>
 </section>
-<section id="id13">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.svm" title="sklearn.svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a><a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<section id="id14">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.svm" title="sklearn.svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  The parameter <code class="docutils literal notranslate"><span class="pre">**params</span></code> of <a class="reference internal" href="../modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM.fit" title="sklearn.svm.OneClassSVM.fit"><code class="xref py py-func docutils literal notranslate"><span class="pre">svm.OneClassSVM.fit</span></code></a> is
 deprecated and will be removed in 1.2.
@@ -1168,8 +1176,8 @@ and will be removed in 1.2. <a class="reference external" href="https://github.c
 <a class="reference external" href="https://github.com/jeremiedbb">Jérémie du Boisberranger</a>.</p></li>
 </ul>
 </section>
-<section id="id14">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.utils" title="sklearn.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a><a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<section id="id15">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.utils" title="sklearn.utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a><a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Deprecated the default value of the <code class="docutils literal notranslate"><span class="pre">random_state=0</span></code> in
 <a class="reference internal" href="../modules/generated/sklearn.utils.extmath.randomized_svd.html#sklearn.utils.extmath.randomized_svd" title="sklearn.utils.extmath.randomized_svd"><code class="xref py py-func docutils literal notranslate"><span class="pre">randomized_svd</span></code></a>. Starting in 1.2,
