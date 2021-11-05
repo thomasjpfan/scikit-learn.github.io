@@ -5,32 +5,32 @@
 
 Computation times
 =================
-**00:32.085** total execution time for **auto_examples_decomposition** files:
+**00:41.981** total execution time for **auto_examples_decomposition** files:
 
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_image_denoising.py` (``plot_image_denoising.py``)                         | 00:18.801 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_image_denoising.py` (``plot_image_denoising.py``)                         | 00:24.491 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_pca_vs_fa_model_selection.py` (``plot_pca_vs_fa_model_selection.py``)     | 00:07.145 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_pca_vs_fa_model_selection.py` (``plot_pca_vs_fa_model_selection.py``)     | 00:09.538 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_faces_decomposition.py` (``plot_faces_decomposition.py``)                 | 00:03.711 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_faces_decomposition.py` (``plot_faces_decomposition.py``)                 | 00:04.722 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_kernel_pca.py` (``plot_kernel_pca.py``)                                   | 00:00.509 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_kernel_pca.py` (``plot_kernel_pca.py``)                                   | 00:00.672 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_varimax_fa.py` (``plot_varimax_fa.py``)                                   | 00:00.322 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_varimax_fa.py` (``plot_varimax_fa.py``)                                   | 00:00.434 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_ica_vs_pca.py` (``plot_ica_vs_pca.py``)                                   | 00:00.264 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_ica_vs_pca.py` (``plot_ica_vs_pca.py``)                                   | 00:00.401 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_sparse_coding.py` (``plot_sparse_coding.py``)                             | 00:00.262 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_sparse_coding.py` (``plot_sparse_coding.py``)                             | 00:00.332 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_ica_blind_source_separation.py` (``plot_ica_blind_source_separation.py``) | 00:00.232 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_ica_blind_source_separation.py` (``plot_ica_blind_source_separation.py``) | 00:00.306 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_incremental_pca.py` (``plot_incremental_pca.py``)                         | 00:00.212 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_incremental_pca.py` (``plot_incremental_pca.py``)                         | 00:00.276 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_beta_divergence.py` (``plot_beta_divergence.py``)                         | 00:00.210 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_beta_divergence.py` (``plot_beta_divergence.py``)                         | 00:00.268 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_pca_vs_lda.py` (``plot_pca_vs_lda.py``)                                   | 00:00.179 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_pca_vs_lda.py` (``plot_pca_vs_lda.py``)                                   | 00:00.232 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_pca_3d.py` (``plot_pca_3d.py``)                                           | 00:00.157 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_pca_3d.py` (``plot_pca_3d.py``)                                           | 00:00.207 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_decomposition_plot_pca_iris.py` (``plot_pca_iris.py``)                                       | 00:00.081 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_decomposition_plot_pca_iris.py` (``plot_pca_iris.py``)                                       | 00:00.103 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
