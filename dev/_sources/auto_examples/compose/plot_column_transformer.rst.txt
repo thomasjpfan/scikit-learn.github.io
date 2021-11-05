@@ -323,18 +323,18 @@ topics for ``X_test``. Performance metrics of our pipeline are then printed.
  .. code-block:: none
 
     [Pipeline] ....... (step 1 of 3) Processing subjectbody, total=   0.0s
-    [Pipeline] ............. (step 2 of 3) Processing union, total=   0.5s
+    [Pipeline] ............. (step 2 of 3) Processing union, total=   0.4s
     [Pipeline] ............... (step 3 of 3) Processing svc, total=   0.0s
     Classification report:
 
                   precision    recall  f1-score   support
 
-               0       0.84      0.87      0.86       396
+               0       0.84      0.88      0.86       396
                1       0.87      0.83      0.85       394
 
-        accuracy                           0.85       790
-       macro avg       0.85      0.85      0.85       790
-    weighted avg       0.85      0.85      0.85       790
+        accuracy                           0.86       790
+       macro avg       0.86      0.86      0.86       790
+    weighted avg       0.86      0.86      0.86       790
 
 
 
@@ -343,7 +343,7 @@ topics for ``X_test``. Performance metrics of our pipeline are then printed.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.903 seconds)
+   **Total running time of the script:** ( 0 minutes  2.461 seconds)
 
 
 .. _sphx_glr_download_auto_examples_compose_plot_column_transformer.py:
