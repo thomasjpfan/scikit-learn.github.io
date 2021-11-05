@@ -72,11 +72,11 @@ randomly) is also shown.
  .. code-block:: none
 
     Fitting model on a small sub-sample of the data
-    done in 0.184s.
+    done in 0.192s.
     Predicting color indices on the full image (k-means)
     done in 0.036s.
     Predicting color indices on the full image (random)
-    done in 0.159s.
+    done in 0.157s.
 
 
 
