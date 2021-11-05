@@ -428,25 +428,29 @@ span.prompt1:before {
 </style><span class="prompt1">git clone git@github.com:YourLogin/scikit-learn.git  <span class="c1"># add --depth 1 if your connection is slow</span></span>
 <span class="prompt1"><span class="nb">cd</span> scikit-learn</span>
 </pre></div></div></li>
-<li><p>Install the development dependencies:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip install cython pytest pytest-cov flake8 mypy <span class="nv">black</span><span class="o">==</span><span class="m">21</span>.6b0</span>
-</pre></div></div></div></blockquote>
-</li>
-<li><p>Install scikit-learn in editable mode:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip install --no-build-isolation --editable .</span>
-</pre></div></div></div></blockquote>
-<p>If you receive errors in building scikit-learn, see the
-<a class="reference internal" href="advanced_installation.html#install-bleeding-edge"><span class="std std-ref">Building from source</span></a> section.</p>
-</li>
 </ol>
-<ol class="arabic" id="upstream" start="6">
+<ol class="arabic" start="3">
+<li><p>Follow steps 2-7 in <a class="reference internal" href="advanced_installation.html#install-bleeding-edge"><span class="std std-ref">Building from source</span></a> to build scikit-learn in
+development mode and return to this document.</p></li>
+<li><p>Install the development dependencies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip install pytest pytest-cov flake8 mypy <span class="nv">black</span><span class="o">==</span><span class="m">21</span>.6b0</span>
+</pre></div></div></li>
+</ol>
+<ol class="arabic" id="upstream" start="5">
 <li><p>Add the <code class="docutils literal notranslate"><span class="pre">upstream</span></code> remote. This saves a reference to the main
 scikit-learn repository, which you can use to keep your repository
 synchronized with the latest changes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git remote add upstream https://github.com/scikit-learn/scikit-learn.git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git remote add upstream git@github.com:scikit-learn/scikit-learn.git</span>
 </pre></div></div></li>
+<li><p>Check that the <code class="docutils literal notranslate"><span class="pre">upstream</span></code> and <code class="docutils literal notranslate"><span class="pre">origin</span></code> remote aliases are configured correctly
+by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> which should display:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">origin</span>  <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YourLogin</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">origin</span>  <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YourLogin</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+<span class="n">upstream</span>        <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">upstream</span>        <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
 </ol>
 <p>You should now have a working installation of scikit-learn, and your git
 repository properly configured. The next steps now describe the process of

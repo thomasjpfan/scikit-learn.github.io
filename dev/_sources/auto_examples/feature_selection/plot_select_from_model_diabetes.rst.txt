@@ -188,7 +188,7 @@ above the coefficient of third most important feature.
  .. code-block:: none
 
     Features selected by SelectFromModel: ['s1' 's5']
-    Done in 0.059s
+    Done in 0.087s
 
 
 
@@ -251,9 +251,9 @@ both approaches here.
  .. code-block:: none
 
     Features selected by forward sequential selection: ['bmi' 's5']
-    Done in 5.059s
+    Done in 4.548s
     Features selected by backward sequential selection: ['bmi' 's5']
-    Done in 13.828s
+    Done in 14.461s
 
 
 
@@ -287,7 +287,7 @@ SFS needs to perform `n_features - n_features_to_select = 8` iterations.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  19.142 seconds)
+   **Total running time of the script:** ( 0 minutes  19.271 seconds)
 
 
 .. _sphx_glr_download_auto_examples_feature_selection_plot_select_from_model_diabetes.py:

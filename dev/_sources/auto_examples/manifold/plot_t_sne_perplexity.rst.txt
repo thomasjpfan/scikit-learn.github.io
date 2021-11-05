@@ -59,25 +59,25 @@ those effects.
 
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    circles, perplexity=5 in 1.5 sec
+    circles, perplexity=5 in 1.4 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    circles, perplexity=30 in 2 sec
+    circles, perplexity=30 in 1.8 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    circles, perplexity=50 in 1.8 sec
+    circles, perplexity=50 in 1.9 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
     circles, perplexity=100 in 3 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    S-curve, perplexity=5 in 1.6 sec
+    S-curve, perplexity=5 in 1.4 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    S-curve, perplexity=30 in 2 sec
+    S-curve, perplexity=30 in 1.8 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    S-curve, perplexity=50 in 2.1 sec
+    S-curve, perplexity=50 in 2 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
     S-curve, perplexity=100 in 2.3 sec
@@ -86,10 +86,10 @@ those effects.
     uniform grid, perplexity=5 in 1.5 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    uniform grid, perplexity=30 in 2.1 sec
+    uniform grid, perplexity=30 in 1.9 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
-    uniform grid, perplexity=50 in 1.8 sec
+    uniform grid, perplexity=50 in 1.6 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
     uniform grid, perplexity=100 in 2.2 sec
@@ -212,7 +212,7 @@ those effects.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  25.063 seconds)
+   **Total running time of the script:** ( 0 minutes  23.910 seconds)
 
 
 .. _sphx_glr_download_auto_examples_manifold_plot_t_sne_perplexity.py:
