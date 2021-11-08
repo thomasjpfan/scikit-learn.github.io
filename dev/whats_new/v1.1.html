@@ -284,6 +284,10 @@ reconstruction of a <code class="docutils literal notranslate"><span class="pre"
 <a class="reference internal" href="../modules/generated/sklearn.decomposition.SparsePCA.html#sklearn.decomposition.SparsePCA" title="sklearn.decomposition.SparsePCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">SparsePCA</span></code></a>,
 and <a class="reference internal" href="../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="sklearn.decomposition.TruncatedSVD"><code class="xref py py-class docutils literal notranslate"><span class="pre">TruncatedSVD</span></code></a>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21334">#21334</a> by
 <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  <a class="reference internal" href="../modules/generated/sklearn.decomposition.FastICA.html#sklearn.decomposition.FastICA" title="sklearn.decomposition.FastICA"><code class="xref py py-func docutils literal notranslate"><span class="pre">decomposition.FastICA</span></code></a> now supports unit variance for whitening.
+The default value of its <code class="docutils literal notranslate"><span class="pre">whiten</span></code> argument will change from <code class="docutils literal notranslate"><span class="pre">True</span></code>
+(which behaves like <code class="docutils literal notranslate"><span class="pre">'arbitrary-variance'</span></code>) to <code class="docutils literal notranslate"><span class="pre">'unit-variance'</span></code> in version 1.3.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/19490">#19490</a> by <a class="reference external" href="https://github.com/fferrin">Facundo Ferrin</a> and <a class="reference external" href="https://github.com/jjerphan">Julien Jerphanion</a></p></li>
 </ul>
 </section>
 <section id="sklearn-impute">
