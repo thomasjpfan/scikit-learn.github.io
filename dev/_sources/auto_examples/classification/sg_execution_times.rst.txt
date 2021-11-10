@@ -5,16 +5,16 @@
 
 Computation times
 =================
-**00:18.948** total execution time for **auto_examples_classification** files:
+**00:20.365** total execution time for **auto_examples_classification** files:
 
 +--------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_classification_plot_lda.py` (``plot_lda.py``)                                               | 00:08.800 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_classification_plot_lda.py` (``plot_lda.py``)                                               | 00:09.210 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_classification_plot_classifier_comparison.py` (``plot_classifier_comparison.py``)           | 00:07.055 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_classification_plot_classifier_comparison.py` (``plot_classifier_comparison.py``)           | 00:07.820 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_classification_plot_classification_probability.py` (``plot_classification_probability.py``) | 00:01.793 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_classification_plot_classification_probability.py` (``plot_classification_probability.py``) | 00:01.892 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_classification_plot_digits_classification.py` (``plot_digits_classification.py``)           | 00:00.755 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_classification_plot_digits_classification.py` (``plot_digits_classification.py``)           | 00:00.788 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_classification_plot_lda_qda.py` (``plot_lda_qda.py``)                                       | 00:00.545 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_classification_plot_lda_qda.py` (``plot_lda_qda.py``)                                       | 00:00.656 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------------+-----------+--------+

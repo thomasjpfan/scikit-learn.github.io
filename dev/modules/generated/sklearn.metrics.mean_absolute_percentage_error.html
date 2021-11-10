@@ -181,10 +181,13 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.metrics" title="sklearn.metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a>.mean_absolute_percentage_error<a class="headerlink" href="#sklearn-metrics-mean-absolute-percentage-error" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.metrics.mean_absolute_percentage_error">
-<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">mean_absolute_percentage_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multioutput</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform_average'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/df2f0d01c/sklearn/metrics/_regression.py#L286"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.mean_absolute_percentage_error" title="Permalink to this definition">¶</a></dt>
-<dd><p>Mean absolute percentage error regression loss.</p>
-<p>Note here that we do not represent the output as a percentage in range
-[0, 100]. Instead, we represent it in range [0, 1/eps]. Read more in the
+<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">mean_absolute_percentage_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multioutput</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform_average'</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/793e90b34/sklearn/metrics/_regression.py#L286"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.mean_absolute_percentage_error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean absolute percentage error (MAPE) regression loss.</p>
+<p>Note here that the output is not a percentage in the range [0, 100]
+and a value of 100 does not mean 100% but 1e2. Furthermore, the output
+can be arbitrarily high when <code class="docutils literal notranslate"><span class="pre">y_true</span></code> is small (which is specific to the
+metric) or when <code class="docutils literal notranslate"><span class="pre">abs(y_true</span> <span class="pre">-</span> <span class="pre">y_pred)</span></code> is large (which is common for most
+regression metrics). Read more in the
 <a class="reference internal" href="../model_evaluation.html#mean-absolute-percentage-error"><span class="std std-ref">User Guide</span></a>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.24.</span></p>
@@ -212,14 +215,14 @@ If input is list then the shape must be (n_outputs,).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>loss</strong><span class="classifier">float or ndarray of floats in the range [0, 1/eps]</span></dt><dd><p>If multioutput is ‘raw_values’, then mean absolute percentage error
+<dt><strong>loss</strong><span class="classifier">float or ndarray of floats</span></dt><dd><p>If multioutput is ‘raw_values’, then mean absolute percentage error
 is returned for each output separately.
 If multioutput is ‘uniform_average’ or an ndarray of weights, then the
 weighted average of all output errors is returned.</p>
 <p>MAPE output is non-negative floating point. The best value is 0.0.
-But note the fact that bad predictions can lead to arbitrarily large
-MAPE values, especially if some y_true values are very close to zero.
-Note that we return a large value instead of <code class="docutils literal notranslate"><span class="pre">inf</span></code> when y_true is zero.</p>
+But note that bad predictions can lead to arbitrarily large
+MAPE values, especially if some <code class="docutils literal notranslate"><span class="pre">y_true</span></code> values are very close to zero.
+Note that we return a large value instead of <code class="docutils literal notranslate"><span class="pre">inf</span></code> when <code class="docutils literal notranslate"><span class="pre">y_true</span></code> is zero.</p>
 </dd>
 </dl>
 </dd>
@@ -236,6 +239,12 @@ Note that we return a large value instead of <code class="docutils literal notra
 <span class="go">0.5515...</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">multioutput</span><span class="o">=</span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">])</span>
 <span class="go">0.6198...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># the value when some element of the y_true is zero is arbitrarily high because</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># of the division by epsilon</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">7.</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">,</span> <span class="mf">8.</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="go">112589990684262.48</span>
 </pre></div>
 </div>
 </dd></dl>
