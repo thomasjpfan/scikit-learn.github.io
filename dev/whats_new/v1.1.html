@@ -323,6 +323,11 @@ multilabel classification.
 Using <code class="docutils literal notranslate"><span class="pre">neighbors.DistanceMetric</span></code> for imports is still valid for
 backward compatibility, but this alias will be removed in 1.3.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21177">#21177</a> by <a class="reference external" href="https://github.com/jjerphan">Julien Jerphanion</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  Parameters <code class="docutils literal notranslate"><span class="pre">sample_weight</span></code> and <code class="docutils literal notranslate"><span class="pre">multioutput</span></code> of <code class="xref py py-func docutils literal notranslate"><span class="pre">metrics.</span>
+<span class="pre">mean_absolute_percentage_error</span></code> are now keyword-only, in accordance with <code class="docutils literal notranslate"><span class="pre">SLEP009</span>
+<span class="pre">&lt;https://scikit-learn-enhancement-proposals.readthedocs.io/en/latest/slep009/proposal.html&gt;</span></code>.
+A deprecation cycle was introduced.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21576">#21576</a> by <a class="reference external" href="https://github.com/pedugnat">Paul-Emile Dugnat</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-manifold">
