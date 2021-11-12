@@ -5,12 +5,12 @@
 
 Computation times
 =================
-**00:15.436** total execution time for **auto_examples_bicluster** files:
+**00:20.409** total execution time for **auto_examples_bicluster** files:
 
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_bicluster_plot_bicluster_newsgroups.py` (``plot_bicluster_newsgroups.py``)   | 00:14.100 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_bicluster_plot_bicluster_newsgroups.py` (``plot_bicluster_newsgroups.py``)   | 00:18.748 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_bicluster_plot_spectral_biclustering.py` (``plot_spectral_biclustering.py``) | 00:00.830 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_bicluster_plot_spectral_biclustering.py` (``plot_spectral_biclustering.py``) | 00:01.093 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_bicluster_plot_spectral_coclustering.py` (``plot_spectral_coclustering.py``) | 00:00.506 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_bicluster_plot_spectral_coclustering.py` (``plot_spectral_coclustering.py``) | 00:00.568 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
