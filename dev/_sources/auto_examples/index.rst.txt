@@ -4061,12 +4061,12 @@ Examples concerning the :mod:`sklearn.manifold` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="An illustration of Swiss Roll reduction with locally linear embedding">
+    <div class="sphx-glr-thumbcontainer" tooltip="Swiss Roll And Swiss-Hole Reduction">
 
 .. only:: html
 
  .. figure:: /auto_examples/manifold/images/thumb/sphx_glr_plot_swissroll_thumb.png
-     :alt: Swiss Roll reduction with LLE
+     :alt: Swiss Roll And Swiss-Hole Reduction
 
      :ref:`sphx_glr_auto_examples_manifold_plot_swissroll.py`
 
