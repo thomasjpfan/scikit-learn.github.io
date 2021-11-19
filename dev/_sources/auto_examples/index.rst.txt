@@ -534,6 +534,27 @@ Examples concerning the :mod:`sklearn.cluster` module.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="An illustration of various linkage option for agglomerative clustering on a 2D embedding of the...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/cluster/images/thumb/sphx_glr_plot_digits_linkage_thumb.png
+     :alt: Various Agglomerative Clustering on a 2D embedding of digits
+
+     :ref:`sphx_glr_auto_examples_cluster_plot_digits_linkage.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/cluster/plot_digits_linkage
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example uses a large dataset of faces to learn a set of 20 x 20 images patches that consti...">
 
 .. only:: html
@@ -636,27 +657,6 @@ Examples concerning the :mod:`sklearn.cluster` module.
    :hidden:
 
    /auto_examples/cluster/plot_cluster_iris
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="An illustration of various linkage option for agglomerative clustering on a 2D embedding of the...">
-
-.. only:: html
-
- .. figure:: /auto_examples/cluster/images/thumb/sphx_glr_plot_digits_linkage_thumb.png
-     :alt: Various Agglomerative Clustering on a 2D embedding of digits
-
-     :ref:`sphx_glr_auto_examples_cluster_plot_digits_linkage.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/cluster/plot_digits_linkage
 
 .. raw:: html
 
