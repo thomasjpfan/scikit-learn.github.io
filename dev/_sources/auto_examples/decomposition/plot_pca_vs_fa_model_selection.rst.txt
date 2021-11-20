@@ -35,13 +35,14 @@ One can observe that with homoscedastic noise both FA and PCA succeed
 in recovering the size of the low rank subspace. The likelihood with PCA
 is higher than FA in this case. However PCA fails and overestimates
 the rank when heteroscedastic noise is present. Under appropriate
-circumstances the low rank models are more likely than shrinkage models.
+circumstances (choice of the number of components), the held-out
+data is more likely for low rank models than for shrinkage models.
 
 The automatic estimation from
 Automatic Choice of Dimensionality for PCA. NIPS 2000: 598-604
 by Thomas P. Minka is also compared.
 
-.. GENERATED FROM PYTHON SOURCE LINES 26-142
+.. GENERATED FROM PYTHON SOURCE LINES 27-143
 
 
 
@@ -69,12 +70,12 @@ by Thomas P. Minka is also compared.
 
  .. code-block:: none
 
-    best n_components by PCA CV = 10
-    best n_components by FactorAnalysis CV = 10
-    best n_components by PCA MLE = 10
-    best n_components by PCA CV = 35
-    best n_components by FactorAnalysis CV = 10
-    best n_components by PCA MLE = 38
+    best n_components by PCA CV = 5
+    best n_components by FactorAnalysis CV = 5
+    best n_components by PCA MLE = 5
+    best n_components by PCA CV = 20
+    best n_components by FactorAnalysis CV = 5
+    best n_components by PCA MLE = 18
 
 
 
@@ -102,7 +103,7 @@ by Thomas P. Minka is also compared.
     # #############################################################################
     # Create the data
 
-    n_samples, n_features, rank = 1000, 50, 10
+    n_samples, n_features, rank = 500, 25, 5
     sigma = 1.0
     rng = np.random.RandomState(42)
     U, _, _ = linalg.svd(rng.randn(n_features, n_features))
@@ -205,7 +206,7 @@ by Thomas P. Minka is also compared.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.651 seconds)
+   **Total running time of the script:** ( 0 minutes  3.698 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_pca_vs_fa_model_selection.py:
