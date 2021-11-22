@@ -390,7 +390,7 @@ Plot the results
 Finally we are going to visualize the score:
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 258-310
+.. GENERATED FROM PYTHON SOURCE LINES 258-307
 
 .. code-block:: default
 
@@ -443,9 +443,6 @@ Finally we are going to visualize the score:
 
     plt.show()
 
-    # You can also try different techniques. For instance, the median is a more
-    # robust estimator for data with high magnitude variables which could dominate
-    # results (otherwise known as a 'long tail').
 
 
 
@@ -458,10 +455,16 @@ Finally we are going to visualize the score:
 
 
 
+.. GENERATED FROM PYTHON SOURCE LINES 308-311
+
+You can also try different techniques. For instance, the median is a more
+robust estimator for data with high magnitude variables which could dominate
+results (otherwise known as a 'long tail').
+
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  19.583 seconds)
+   **Total running time of the script:** ( 0 minutes  20.486 seconds)
 
 
 .. _sphx_glr_download_auto_examples_impute_plot_missing_values.py:
