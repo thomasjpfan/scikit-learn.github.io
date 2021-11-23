@@ -3528,6 +3528,27 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="This example reproduces the example of Fig. 2 of [ZHT2007]_. A LassoLarsIC estimator is fit on ...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_lasso_lars_ic_thumb.png
+     :alt: Lasso model selection via information criteria
+
+     :ref:`sphx_glr_auto_examples_linear_model_plot_lasso_lars_ic.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/linear_model/plot_lasso_lars_ic
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Plot decision surface of multi-class SGD on iris dataset. The hyperplanes corresponding to the ...">
 
 .. only:: html
@@ -3759,12 +3780,12 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Use the Akaike information criterion (AIC), the Bayes Information criterion (BIC) and cross-val...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example focuses on model selection for Lasso models that are linear models with an L1 pena...">
 
 .. only:: html
 
  .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_lasso_model_selection_thumb.png
-     :alt: Lasso model selection: Cross-Validation / AIC / BIC
+     :alt: Lasso model selection: AIC-BIC / cross-validation
 
      :ref:`sphx_glr_auto_examples_linear_model_plot_lasso_model_selection.py`
 
