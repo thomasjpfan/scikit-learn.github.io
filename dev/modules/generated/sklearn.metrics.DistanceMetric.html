@@ -239,8 +239,8 @@ distance metric classes:</p>
 </tr>
 <tr class="row-odd"><td><p>“minkowski”</p></td>
 <td><p>MinkowskiDistance</p></td>
-<td><p>p</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">sum(|x</span> <span class="pre">-</span> <span class="pre">y|^p)^(1/p)</span></code></p></td>
+<td><p>p, w</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sum(w</span> <span class="pre">*</span> <span class="pre">|x</span> <span class="pre">-</span> <span class="pre">y|^p)^(1/p)</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>“wminkowski”</p></td>
 <td><p>WMinkowskiDistance</p></td>
@@ -259,6 +259,9 @@ distance metric classes:</p>
 </tr>
 </tbody>
 </table>
+<p>Note that “minkowski” with a non-None <code class="docutils literal notranslate"><span class="pre">w</span></code> parameter actually calls
+<code class="docutils literal notranslate"><span class="pre">WMinkowskiDistance</span></code> with <code class="docutils literal notranslate"><span class="pre">w=w</span> <span class="pre">**</span> <span class="pre">(1/p)</span></code> in order to be consistent with the
+parametrization of scipy 1.8 and later.</p>
 <p><strong>Metrics intended for two-dimensional vector spaces:</strong>  Note that the haversine
 distance metric requires data in the form of [latitude, longitude] and both
 inputs and outputs are in units of radians.</p>

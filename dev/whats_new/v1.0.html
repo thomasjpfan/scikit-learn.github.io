@@ -273,6 +273,13 @@ article. <a class="reference external" href="https://github.com/scikit-learn/sci
 read-only buffer attributes.
 This fixes a regression introduced in 1.0.0 with respect to 0.24.2.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21694">#21694</a> by <a class="reference external" href="https://github.com/jjerphan">Julien Jerphanion</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  All <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.metrics.MinkowskiDistance</span></code> now accepts a weight
+parameter that makes it possible to write code that behaves consistently both
+with scipy 1.8 and earlier versions. In turns this means that all
+neighbors-based estimators (except those that use <code class="docutils literal notranslate"><span class="pre">algorithm=&quot;kd_tree&quot;</span></code>) now
+accept a weight parameter with <code class="docutils literal notranslate"><span class="pre">metric=&quot;minknowski&quot;</span></code> to yield results that
+are always consistent with <code class="docutils literal notranslate"><span class="pre">scipy.spatial.distance.cdist</span></code>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21741">#21741</a> by <a class="reference external" href="https://github.com/ogrisel">Olivier Grisel</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-preprocessing">
