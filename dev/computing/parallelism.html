@@ -445,6 +445,11 @@ for reproducibility.</p>
 that need network access are skipped. When this environment variable is
 not set then network tests are skipped.</p>
 </dd>
+<dt class="field-even">SKLEARN_ENABLE_DEBUG_CYTHON_DIRECTIVES</dt>
+<dd class="field-even"><p>When this environment variable is set to a non zero value, the <code class="docutils literal notranslate"><span class="pre">Cython</span></code>
+derivative, <code class="docutils literal notranslate"><span class="pre">boundscheck</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>. This is useful for finding
+segfaults.</p>
+</dd>
 </dl>
 </section>
 </section>
