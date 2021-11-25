@@ -190,6 +190,7 @@
 <li><a class="reference internal" href="#sklearn-utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-random-projection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.random_projection</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-tree"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.tree</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#code-and-documentation-contributors">Code and Documentation Contributors</a></li>
@@ -448,6 +449,15 @@ array with <code class="docutils literal notranslate"><span class="pre">pd.NA</s
 <a class="reference internal" href="../modules/generated/sklearn.random_projection.GaussianRandomProjection.html#sklearn.random_projection.GaussianRandomProjection" title="sklearn.random_projection.GaussianRandomProjection"><code class="xref py py-class docutils literal notranslate"><span class="pre">GaussianRandomProjection</span></code></a> and
 <a class="reference internal" href="../modules/generated/sklearn.random_projection.SparseRandomProjection.html#sklearn.random_projection.SparseRandomProjection" title="sklearn.random_projection.SparseRandomProjection"><code class="xref py py-class docutils literal notranslate"><span class="pre">SparseRandomProjection</span></code></a>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21330">#21330</a> by
 <a class="reference external" href="https://github.com/lesteve">Loïc Estève</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-tree">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.tree" title="sklearn.tree"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.tree</span></code></a><a class="headerlink" href="#sklearn-tree" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Support loading pickles of decision tree models when the pickle has
+been generated on a platform with a different bitness. A typical example is
+to train and pickle the model on 64 bit machine and load the model on a 32
+bit machine for prediction. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21552">#21552</a> by <a class="reference external" href="https://github.com/lesteve">Loïc Estève</a>.</p></li>
 </ul>
 </section>
 </section>
