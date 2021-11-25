@@ -85,7 +85,7 @@ We use a GridSearchCV to set the dimensionality of the PCA
         "pca__n_components": [5, 15, 30, 45, 64],
         "logistic__C": np.logspace(-4, 4, 4),
     }
-    search = GridSearchCV(pipe, param_grid, n_jobs=-1)
+    search = GridSearchCV(pipe, param_grid, n_jobs=2)
     search.fit(X_digits, y_digits)
     print("Best parameter (CV score=%0.3f):" % search.best_score_)
     print(search.best_params_)
@@ -127,7 +127,7 @@ We use a GridSearchCV to set the dimensionality of the PCA
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.393 seconds)
+   **Total running time of the script:** ( 0 minutes  18.869 seconds)
 
 
 .. _sphx_glr_download_auto_examples_compose_plot_digits_pipe.py:
