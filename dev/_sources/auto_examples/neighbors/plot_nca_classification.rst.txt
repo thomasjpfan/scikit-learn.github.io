@@ -85,7 +85,7 @@ training set.
         X, y, stratify=y, test_size=0.7, random_state=42
     )
 
-    h = 0.05  # step size in the mesh
+    h = 0.01  # step size in the mesh
 
     # Create color maps
     cmap_light = ListedColormap(["#FFAAAA", "#AAFFAA", "#AAAAFF"])
@@ -147,7 +147,7 @@ training set.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.169 seconds)
+   **Total running time of the script:** ( 0 minutes  23.338 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neighbors_plot_nca_classification.py:
