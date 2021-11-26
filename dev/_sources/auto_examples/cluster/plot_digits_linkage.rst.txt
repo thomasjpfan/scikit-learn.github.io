@@ -44,7 +44,7 @@ The other linkage strategies lead to more evenly distributed
 clusters that are therefore likely to be less sensible to a
 random resampling of the dataset.
 
-.. GENERATED FROM PYTHON SOURCE LINES 29-88
+.. GENERATED FROM PYTHON SOURCE LINES 29-89
 
 
 
@@ -113,7 +113,8 @@ random resampling of the dataset.
 
     from sklearn import manifold, datasets
 
-    X, y = datasets.load_digits(return_X_y=True)
+    digits = datasets.load_digits()
+    X, y = digits.data, digits.target
     n_samples, n_features = X.shape
 
     np.random.seed(0)
@@ -126,13 +127,13 @@ random resampling of the dataset.
         X_red = (X_red - x_min) / (x_max - x_min)
 
         plt.figure(figsize=(6, 4))
-        for i in range(X_red.shape[0]):
-            plt.text(
-                X_red[i, 0],
-                X_red[i, 1],
-                str(y[i]),
-                color=plt.cm.nipy_spectral(labels[i] / 10.0),
-                fontdict={"weight": "bold", "size": 9},
+        for digit in digits.target_names:
+            plt.scatter(
+                *X_red[y == digit].T,
+                marker=f"${digit}$",
+                s=50,
+                c=plt.cm.nipy_spectral(labels[y == digit] / 10),
+                alpha=0.5,
             )
 
         plt.xticks([])
@@ -165,7 +166,7 @@ random resampling of the dataset.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.299 seconds)
+   **Total running time of the script:** ( 0 minutes  2.475 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_digits_linkage.py:
