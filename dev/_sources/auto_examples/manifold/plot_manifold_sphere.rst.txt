@@ -47,7 +47,7 @@ that of representing a flat map of the Earth, as with
 
 
 .. image-sg:: /auto_examples/manifold/images/sphx_glr_plot_manifold_sphere_001.png
-   :alt: Manifold Learning with 1000 points, 10 neighbors, LLE (0.089 sec), LTSA (0.14 sec), Hessian LLE (0.21 sec), Modified LLE (0.16 sec), Isomap (0.27 sec), MDS (1 sec), Spectral Embedding (0.078 sec), t-SNE (5.2 sec)
+   :alt: Manifold Learning with 1000 points, 10 neighbors, LLE (0.099 sec), LTSA (0.16 sec), Hessian LLE (0.26 sec), Modified LLE (0.18 sec), Isomap (0.31 sec), MDS (1.3 sec), Spectral Embedding (0.074 sec), t-SNE (6.4 sec)
    :srcset: /auto_examples/manifold/images/sphx_glr_plot_manifold_sphere_001.png
    :class: sphx-glr-single-img
 
@@ -58,18 +58,18 @@ that of representing a flat map of the Earth, as with
 
  .. code-block:: none
 
-    standard: 0.089 sec
-    ltsa: 0.14 sec
-    hessian: 0.21 sec
-    modified: 0.16 sec
-    ISO: 0.27 sec
-    MDS: 1 sec
-    Spectral Embedding: 0.078 sec
+    standard: 0.099 sec
+    ltsa: 0.16 sec
+    hessian: 0.26 sec
+    modified: 0.18 sec
+    ISO: 0.31 sec
+    MDS: 1.3 sec
+    Spectral Embedding: 0.074 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:790: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
     /home/circleci/project/sklearn/manifold/_t_sne.py:982: FutureWarning: The PCA initialization in TSNE will change to have the standard deviation of PC1 equal to 1e-4 in 1.2. This will ensure better convergence.
       warnings.warn(
-    t-SNE: 5.2 sec
+    t-SNE: 6.4 sec
 
 
 
@@ -214,7 +214,7 @@ that of representing a flat map of the Earth, as with
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.866 seconds)
+   **Total running time of the script:** ( 0 minutes  9.549 seconds)
 
 
 .. _sphx_glr_download_auto_examples_manifold_plot_manifold_sphere.py:
