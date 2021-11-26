@@ -185,7 +185,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.preprocessing" title="sklearn.preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a>.KBinsDiscretizer<a class="headerlink" href="#sklearn-preprocessing-kbinsdiscretizer" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.preprocessing.KBinsDiscretizer">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.preprocessing.</span></span><span class="sig-name descname"><span class="pre">KBinsDiscretizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'onehot'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'quantile'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subsample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'warn'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/84c655c15/sklearn/preprocessing/_discretization.py#L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.preprocessing.</span></span><span class="sig-name descname"><span class="pre">KBinsDiscretizer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'onehot'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'quantile'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dtype</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subsample</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'warn'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/231ca9e80/sklearn/preprocessing/_discretization.py#L24"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bin continuous data into intervals.</p>
 <p>Read more in the <a class="reference internal" href="../preprocessing.html#preprocessing-discretization"><span class="std std-ref">User Guide</span></a>.</p>
 <div class="versionadded">
@@ -197,29 +197,23 @@
 <dt><strong>n_bins</strong><span class="classifier">int or array-like of shape (n_features,), default=5</span></dt><dd><p>The number of bins to produce. Raises ValueError if <code class="docutils literal notranslate"><span class="pre">n_bins</span> <span class="pre">&lt;</span> <span class="pre">2</span></code>.</p>
 </dd>
 <dt><strong>encode</strong><span class="classifier">{‘onehot’, ‘onehot-dense’, ‘ordinal’}, default=’onehot’</span></dt><dd><p>Method used to encode the transformed result.</p>
-<dl class="simple">
-<dt>onehot</dt><dd><p>Encode the transformed result with one-hot encoding
+<ul class="simple">
+<li><p>‘onehot’: Encode the transformed result with one-hot encoding
 and return a sparse matrix. Ignored features are always
-stacked to the right.</p>
-</dd>
-<dt>onehot-dense</dt><dd><p>Encode the transformed result with one-hot encoding
+stacked to the right.</p></li>
+<li><p>‘onehot-dense’: Encode the transformed result with one-hot encoding
 and return a dense array. Ignored features are always
-stacked to the right.</p>
-</dd>
-<dt>ordinal</dt><dd><p>Return the bin identifier encoded as an integer value.</p>
-</dd>
-</dl>
+stacked to the right.</p></li>
+<li><p>‘ordinal’: Return the bin identifier encoded as an integer value.</p></li>
+</ul>
 </dd>
 <dt><strong>strategy</strong><span class="classifier">{‘uniform’, ‘quantile’, ‘kmeans’}, default=’quantile’</span></dt><dd><p>Strategy used to define the widths of the bins.</p>
-<dl class="simple">
-<dt>uniform</dt><dd><p>All bins in each feature have identical widths.</p>
-</dd>
-<dt>quantile</dt><dd><p>All bins in each feature have the same number of points.</p>
-</dd>
-<dt>kmeans</dt><dd><p>Values in each bin have the same nearest center of a 1D k-means
-cluster.</p>
-</dd>
-</dl>
+<ul class="simple">
+<li><p>‘uniform’: All bins in each feature have identical widths.</p></li>
+<li><p>‘quantile’: All bins in each feature have the same number of points.</p></li>
+<li><p>‘kmeans’: Values in each bin have the same nearest center of a 1D
+k-means cluster.</p></li>
+</ul>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">{np.float32, np.float64}, default=None</span></dt><dd><p>The desired data-type for the output. If None, output dtype is
 consistent with input dtype. Only np.float32 and np.float64 are
@@ -354,7 +348,7 @@ of the two bin edges.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.preprocessing.KBinsDiscretizer.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/84c655c15/sklearn/preprocessing/_discretization.py#L180"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/231ca9e80/sklearn/preprocessing/_discretization.py#L174"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -377,7 +371,7 @@ of the two bin edges.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.preprocessing.KBinsDiscretizer.fit_transform">
-<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/84c655c15/sklearn/base.py#L840"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.fit_transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/231ca9e80/sklearn/base.py#L840"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit to data, then transform it.</p>
 <p>Fits transformer to <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> with optional parameters <code class="docutils literal notranslate"><span class="pre">fit_params</span></code>
 and returns a transformed version of <code class="docutils literal notranslate"><span class="pre">X</span></code>.</p>
@@ -403,7 +397,7 @@ and returns a transformed version of <code class="docutils literal notranslate">
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.preprocessing.KBinsDiscretizer.get_feature_names_out">
-<span class="sig-name descname"><span class="pre">get_feature_names_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/84c655c15/sklearn/preprocessing/_discretization.py#L445"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.get_feature_names_out" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_feature_names_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/231ca9e80/sklearn/preprocessing/_discretization.py#L439"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.get_feature_names_out" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get output feature names.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -430,7 +424,7 @@ match <code class="docutils literal notranslate"><span class="pre">feature_names
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.preprocessing.KBinsDiscretizer.get_params">
-<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/84c655c15/sklearn/base.py#L195"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.get_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/231ca9e80/sklearn/base.py#L195"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -451,7 +445,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.preprocessing.KBinsDiscretizer.inverse_transform">
-<span class="sig-name descname"><span class="pre">inverse_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Xt</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/84c655c15/sklearn/preprocessing/_discretization.py#L407"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.inverse_transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">inverse_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Xt</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/231ca9e80/sklearn/preprocessing/_discretization.py#L401"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.inverse_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform discretized data back to original feature space.</p>
 <p>Note that this function does not regenerate the original data
 due to discretization rounding.</p>
@@ -473,7 +467,7 @@ due to discretization rounding.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.preprocessing.KBinsDiscretizer.set_params">
-<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/84c655c15/sklearn/base.py#L219"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.set_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/231ca9e80/sklearn/base.py#L219"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as <a class="reference internal" href="sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
@@ -497,7 +491,7 @@ possible to update each component of a nested object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.preprocessing.KBinsDiscretizer.transform">
-<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/84c655c15/sklearn/preprocessing/_discretization.py#L360"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/231ca9e80/sklearn/preprocessing/_discretization.py#L354"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.preprocessing.KBinsDiscretizer.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Discretize the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
