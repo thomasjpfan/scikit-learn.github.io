@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scikit-learn/stable/whats_new/v1.0.html" />
   <meta property="og:site_name" content="scikit-learn" />
-  <meta property="og:description" content="In Development Changelog: sklearn.cluster: Fixed an infinite loop in cluster.SpectralClustering by moving an iteration counter from try to except.#21271 by Tyler Martin. sklearn.decomposition: Fixe..." />
+  <meta property="og:description" content="In Development cluster.Birch, feature_selection.RFECV, ensemble.RandomForestRegressor, ensemble.RandomForestClassifier, ensemble.GradientBoostingRegressor, and ensemble.GradientBoostingClassifier d..." />
   <meta property="og:image" content="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" />
   <meta property="og:image:alt" content="scikit-learn" />
   
@@ -246,6 +246,14 @@
   <section id="version-1-0-2">
 <span id="changes-1-0-2"></span><h1>Version 1.0.2<a class="headerlink" href="#version-1-0-2" title="Permalink to this headline">¶</a></h1>
 <p><strong>In Development</strong></p>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.cluster.Birch.html#sklearn.cluster.Birch" title="sklearn.cluster.Birch"><code class="xref py py-class docutils literal notranslate"><span class="pre">cluster.Birch</span></code></a>,
+<a class="reference internal" href="../modules/generated/sklearn.feature_selection.RFECV.html#sklearn.feature_selection.RFECV" title="sklearn.feature_selection.RFECV"><code class="xref py py-class docutils literal notranslate"><span class="pre">feature_selection.RFECV</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor" title="sklearn.ensemble.RandomForestRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.RandomForestRegressor</span></code></a>,
+<a class="reference internal" href="../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.RandomForestClassifier</span></code></a>,
+<a class="reference internal" href="../modules/generated/sklearn.ensemble.GradientBoostingRegressor.html#sklearn.ensemble.GradientBoostingRegressor" title="sklearn.ensemble.GradientBoostingRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.GradientBoostingRegressor</span></code></a>, and
+<a class="reference internal" href="../modules/generated/sklearn.ensemble.GradientBoostingClassifier.html#sklearn.ensemble.GradientBoostingClassifier" title="sklearn.ensemble.GradientBoostingClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.GradientBoostingClassifier</span></code></a> do not raise warning when fitted
+on a pandas DataFrame anymore. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21578">#21578</a> by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
+</ul>
 <section id="changelog">
 <h2>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h2>
 <section id="sklearn-cluster">
