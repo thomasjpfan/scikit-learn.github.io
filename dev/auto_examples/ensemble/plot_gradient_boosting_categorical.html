@@ -215,36 +215,37 @@ and categorical features, where the houses’ sales prices is the target.</p>
 are either categorical or numerical:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a>
 
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="mi">41211</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="mi">42165</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="c1"># Select only a subset of features of X to make the example faster to run</span>
 <span class="n">categorical_columns_subset</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;Bldg_Type&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Garage_Finish&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Lot_Config&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BldgType&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GarageFinish&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LotConfig&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Functional&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Mas_Vnr_Type&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;House_Style&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Fireplace_Qu&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Exter_Cond&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Exter_Qual&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Pool_QC&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MasVnrType&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HouseStyle&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FireplaceQu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ExterCond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ExterQual&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PoolQC&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="n">numerical_columns_subset</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s2">&quot;Three_season_porch&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;3SsnPorch&quot;</span><span class="p">,</span>
     <span class="s2">&quot;Fireplaces&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Bsmt_Half_Bath&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Half_Bath&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Garage_Cars&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;TotRms_AbvGrd&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;BsmtFin_SF_1&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;BsmtFin_SF_2&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Gr_Liv_Area&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Screen_Porch&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BsmtHalfBath&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HalfBath&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GarageCars&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TotRmsAbvGrd&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BsmtFinSF1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BsmtFinSF2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GrLivArea&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ScreenPorch&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">categorical_columns_subset</span> <span class="o">+</span> <span class="n">numerical_columns_subset</span><span class="p">]</span>
+<span class="n">X</span><span class="p">[</span><span class="n">categorical_columns_subset</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">categorical_columns_subset</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
 
 <span class="n">n_categorical_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 <span class="n">n_numerical_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -256,9 +257,7 @@ are either categorical or numerical:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/project/sklearn/datasets/_openml.py:876: UserWarning: Version 1 of dataset ames-housing is inactive, meaning that issues have been found in the dataset. Try using a newer version from this URL: https://www.openml.org/data/v1/download/20649135/ames-housing.arff
-  warn(
-Number of samples: 2930
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Number of samples: 1460
 Number of features: 20
 Number of categorical features: 10
 Number of numerical features: 10
@@ -455,7 +454,7 @@ the native category handling strategy performs the best when the splitting
 budget is constrained. The two other strategies (one-hot encoding and
 treating categories as ordinal values) lead to error values comparable
 to the baseline model that just dropped the categorical features altogether.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.895 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  4.577 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-ensemble-plot-gradient-boosting-categorical-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/ensemble/plot_gradient_boosting_categorical.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo10.svg" width="150px" /></a>
