@@ -442,6 +442,14 @@ the model. The option is only available when <code class="docutils literal notra
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.preprocessing.LabelBinarizer.html#sklearn.preprocessing.LabelBinarizer" title="sklearn.preprocessing.LabelBinarizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">preprocessing.LabelBinarizer</span></code></a> now validates input parameters in <code class="docutils literal notranslate"><span class="pre">fit</span></code>
 instead of <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21434">#21434</a> by <a class="reference external" href="https://github.com/krumeto">Krum Arnaudov</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Added the <code class="docutils literal notranslate"><span class="pre">get_feature_names_out</span></code> method and a new parameter
+<code class="docutils literal notranslate"><span class="pre">feature_names_out</span></code> to <a class="reference internal" href="../modules/generated/sklearn.preprocessing.FunctionTransformer.html#sklearn.preprocessing.FunctionTransformer" title="sklearn.preprocessing.FunctionTransformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">preprocessing.FunctionTransformer</span></code></a>. You can set
+<code class="docutils literal notranslate"><span class="pre">feature_names_out</span></code> to ‘one-to-one’ to use the input features names as the
+output feature names, or you can set it to a callable that returns the output
+feature names. This is especially useful when the transformer changes the
+number of features. If <code class="docutils literal notranslate"><span class="pre">feature_names_out</span></code> is None (which is the default),
+then <code class="docutils literal notranslate"><span class="pre">get_output_feature_names</span></code> is not defined.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21569">#21569</a> by <a class="reference external" href="https://github.com/ageron">Aurélien Geron</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-svm">
