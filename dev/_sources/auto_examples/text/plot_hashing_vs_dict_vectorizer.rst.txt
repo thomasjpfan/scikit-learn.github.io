@@ -52,15 +52,15 @@ for FeatureHasher is to be expected due to hash collisions.
     3803 documents - 6.245MB
 
     DictVectorizer
-    done in 1.424687s at 4.383MB/s
+    done in 1.449806s at 4.307MB/s
     Found 47928 unique terms
 
     FeatureHasher on frequency dicts
-    done in 0.821488s at 7.602MB/s
+    done in 0.783243s at 7.973MB/s
     Found 43873 unique terms
 
     FeatureHasher on raw tokens
-    done in 0.751607s at 8.309MB/s
+    done in 0.750113s at 8.325MB/s
     Found 43873 unique terms
 
 
@@ -170,7 +170,7 @@ for FeatureHasher is to be expected due to hash collisions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.338 seconds)
+   **Total running time of the script:** ( 0 minutes  3.320 seconds)
 
 
 .. _sphx_glr_download_auto_examples_text_plot_hashing_vs_dict_vectorizer.py:
