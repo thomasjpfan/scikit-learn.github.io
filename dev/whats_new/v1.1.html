@@ -368,6 +368,10 @@ changes are also applied for <a class="reference internal" href="../modules/gene
 A warning will always be raised upon the removal of empty columns.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21448">#21448</a> by <a class="reference external" href="https://github.com/OlehKSS">Oleh Kozynets</a> and
 <a class="reference external" href="https://github.com/chritter">Christian Ritter</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <code class="xref py py-class docutils literal notranslate"><span class="pre">SimpleImputer</span></code> now warns with feature names
+when features which are skipped due to the lack of any observed
+values in the training set.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21617">#21617</a> by <a class="reference external" href="https://github.com/chritter">Christian Ritter</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fix a bug in <a class="reference internal" href="../modules/generated/sklearn.linear_model.RidgeClassifierCV.html#sklearn.linear_model.RidgeClassifierCV" title="sklearn.linear_model.RidgeClassifierCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.RidgeClassifierCV</span></code></a> where the method
 <code class="docutils literal notranslate"><span class="pre">predict</span></code> was performing an <code class="docutils literal notranslate"><span class="pre">argmax</span></code> on the scores obtained from
 <code class="docutils literal notranslate"><span class="pre">decision_function</span></code> instead of returning the multilabel indicator matrix.
