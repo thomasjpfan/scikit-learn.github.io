@@ -262,7 +262,11 @@ a pandas Series.</p>
 </dd>
 </dl>
 </dd>
-<dt><strong>(data, target)</strong><span class="classifier">tuple if <code class="docutils literal notranslate"><span class="pre">return_X_y</span></code> is True</span></dt><dd><div class="versionadded">
+<dt><strong>(data, target)</strong><span class="classifier">tuple if <code class="docutils literal notranslate"><span class="pre">return_X_y</span></code> is True</span></dt><dd><p>A tuple of two ndarray. The first containing a 2D array of shape
+(n_samples, n_features) with each row representing one sample and
+each column representing the features. The second ndarray of shape
+(n_samples,) containing the target samples.</p>
+<div class="versionadded">
 <p><span class="versionmodified added">New in version 0.18.</span></p>
 </div>
 </dd>
