@@ -298,6 +298,9 @@ reconstruction of a <code class="docutils literal notranslate"><span class="pre"
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.datasets.make_swiss_roll.html#sklearn.datasets.make_swiss_roll" title="sklearn.datasets.make_swiss_roll"><code class="xref py py-func docutils literal notranslate"><span class="pre">datasets.make_swiss_roll</span></code></a> now supports the optional argument
 hole; when set to True, it returns the swiss-hole dataset. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21482">#21482</a> by
 <a class="reference external" href="https://github.com/pujaltes">Sebastian Pujalte</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml"><code class="xref py py-func docutils literal notranslate"><span class="pre">datasets.fetch_openml</span></code></a> is now thread safe. Data is first downloaded
+to a temporary subfolder and then renamed.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21833">#21833</a> by <a class="reference external" href="https://github.com/siavrez">Siavash Rezazadeh</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-decomposition">

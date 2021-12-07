@@ -96,6 +96,15 @@ There are three options to assign labels:
 
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/circleci/miniconda/envs/testenv/lib/python3.9/site-packages/skimage/_shared/utils.py:338: FutureWarning: `multichannel` is a deprecated argument name for `rescale`. It will be removed in version 1.0.Please use `channel_axis` instead.
+      return func(*args, **kwargs)
+
 
 
 
@@ -157,21 +166,21 @@ Compute and visualize the resulting regions
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_coin_segmentation_001.png
-         :alt: Spectral clustering: kmeans, 2.30s
+         :alt: Spectral clustering: kmeans, 1.90s
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_coin_segmentation_001.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_coin_segmentation_002.png
-         :alt: Spectral clustering: discretize, 2.04s
+         :alt: Spectral clustering: discretize, 1.79s
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_coin_segmentation_002.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/cluster/images/sphx_glr_plot_coin_segmentation_003.png
-         :alt: Spectral clustering: cluster_qr, 1.99s
+         :alt: Spectral clustering: cluster_qr, 1.76s
          :srcset: /auto_examples/cluster/images/sphx_glr_plot_coin_segmentation_003.png
          :class: sphx-glr-multi-img
 
@@ -182,9 +191,9 @@ Compute and visualize the resulting regions
 
  .. code-block:: none
 
-    Spectral clustering: kmeans, 2.30s
-    Spectral clustering: discretize, 2.04s
-    Spectral clustering: cluster_qr, 1.99s
+    Spectral clustering: kmeans, 1.90s
+    Spectral clustering: discretize, 1.79s
+    Spectral clustering: cluster_qr, 1.76s
 
 
 
@@ -192,7 +201,7 @@ Compute and visualize the resulting regions
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  6.998 seconds)
+   **Total running time of the script:** ( 0 minutes  6.005 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_coin_segmentation.py:
