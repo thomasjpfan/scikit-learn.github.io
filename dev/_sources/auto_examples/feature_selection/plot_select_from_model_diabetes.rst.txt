@@ -251,9 +251,9 @@ both approaches here.
  .. code-block:: none
 
     Features selected by forward sequential selection: ['bmi' 's5']
-    Done in 0.182s
+    Done in 0.168s
     Features selected by backward sequential selection: ['bmi' 's5']
-    Done in 0.513s
+    Done in 0.539s
 
 
 

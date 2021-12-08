@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="Plot the decision surface of a decision tree on the iris dataset" />
+  <meta property="og:title" content="Plot the decision surface of decision trees trained on the iris dataset" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scikit-learn/stable/auto_examples/tree/plot_iris_dtc.html" />
   <meta property="og:site_name" content="scikit-learn" />
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Plot the decision surface of a decision tree on the iris dataset &mdash; scikit-learn 1.1.dev0 documentation</title>
+  <title>Plot the decision surface of decision trees trained on the iris dataset &mdash; scikit-learn 1.1.dev0 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/tree/plot_iris_dtc.html" />
 
@@ -169,7 +169,7 @@
         </div>
             <div class="sk-sidebar-toc">
               <ul>
-<li><a class="reference internal" href="#">Plot the decision surface of a decision tree on the iris dataset</a></li>
+<li><a class="reference internal" href="#">Plot the decision surface of decision trees trained on the iris dataset</a></li>
 </ul>
 
             </div>
@@ -183,8 +183,8 @@
 <p>Click <a class="reference internal" href="#sphx-glr-download-auto-examples-tree-plot-iris-dtc-py"><span class="std std-ref">here</span></a>
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
-<section class="sphx-glr-example-title" id="plot-the-decision-surface-of-a-decision-tree-on-the-iris-dataset">
-<span id="sphx-glr-auto-examples-tree-plot-iris-dtc-py"></span><h1>Plot the decision surface of a decision tree on the iris dataset<a class="headerlink" href="#plot-the-decision-surface-of-a-decision-tree-on-the-iris-dataset" title="Permalink to this headline">¶</a></h1>
+<section class="sphx-glr-example-title" id="plot-the-decision-surface-of-decision-trees-trained-on-the-iris-dataset">
+<span id="sphx-glr-auto-examples-tree-plot-iris-dtc-py"></span><h1>Plot the decision surface of decision trees trained on the iris dataset<a class="headerlink" href="#plot-the-decision-surface-of-decision-trees-trained-on-the-iris-dataset" title="Permalink to this headline">¶</a></h1>
 <p>Plot the decision surface of a decision tree trained on pairs
 of features of the iris dataset.</p>
 <p>See <a class="reference internal" href="../../modules/tree.html#tree"><span class="std std-ref">decision tree</span></a> for more information on the estimator.</p>
@@ -192,23 +192,22 @@ of features of the iris dataset.</p>
 boundaries made of combinations of simple thresholding rules inferred from
 the training samples.</p>
 <p>We also show the tree structure of a model built on all of the features.</p>
-<ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_iris_dtc_001.png" srcset="../../_images/sphx_glr_plot_iris_dtc_001.png" alt="Decision surface of a decision tree using paired features" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_iris_dtc_002.png" srcset="../../_images/sphx_glr_plot_iris_dtc_002.png" alt="plot iris dtc" class = "sphx-glr-multi-img"/></li>
-</ul>
+<p>First load the copy of the Iris dataset shipped with scikit-learn:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris" title="sklearn.datasets.load_iris" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">load_iris</span></a>
+
+<span class="n">iris</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris" title="sklearn.datasets.load_iris" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">load_iris</span></a><span class="p">()</span>
+</pre></div>
+</div>
+<p>Display the decision functions of trees trained on all pairs of features.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris" title="sklearn.datasets.load_iris" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">load_iris</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier" title="sklearn.tree.DecisionTreeClassifier" class="sphx-glr-backref-module-sklearn-tree sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">DecisionTreeClassifier</span></a><span class="p">,</span> <a href="../../modules/generated/sklearn.tree.plot_tree.html#sklearn.tree.plot_tree" title="sklearn.tree.plot_tree" class="sphx-glr-backref-module-sklearn-tree sphx-glr-backref-type-py-function"><span class="n">plot_tree</span></a>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier" title="sklearn.tree.DecisionTreeClassifier" class="sphx-glr-backref-module-sklearn-tree sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">DecisionTreeClassifier</span></a>
 
 <span class="c1"># Parameters</span>
 <span class="n">n_classes</span> <span class="o">=</span> <span class="mi">3</span>
 <span class="n">plot_colors</span> <span class="o">=</span> <span class="s2">&quot;ryb&quot;</span>
 <span class="n">plot_step</span> <span class="o">=</span> <span class="mf">0.02</span>
 
-<span class="c1"># Load data</span>
-<span class="n">iris</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris" title="sklearn.datasets.load_iris" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">load_iris</span></a><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">pairidx</span><span class="p">,</span> <span class="n">pair</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]]):</span>
     <span class="c1"># We only take the two corresponding features</span>
@@ -248,17 +247,23 @@ the training samples.</p>
             <span class="n">s</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
         <span class="p">)</span>
 
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.suptitle.html#matplotlib.pyplot.suptitle" title="matplotlib.pyplot.suptitle" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s2">&quot;Decision surface of a decision tree using paired features&quot;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.suptitle.html#matplotlib.pyplot.suptitle" title="matplotlib.pyplot.suptitle" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">suptitle</span></a><span class="p">(</span><span class="s2">&quot;Decision surface of decision trees trained on pairs of features&quot;</span><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span> <span class="n">borderpad</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">handletextpad</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axis.html#matplotlib.pyplot.axis" title="matplotlib.pyplot.axis" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axis</span></a><span class="p">(</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axis.html#matplotlib.pyplot.axis" title="matplotlib.pyplot.axis" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">axis</span></a><span class="p">(</span><span class="s2">&quot;tight&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_iris_dtc_001.png" srcset="../../_images/sphx_glr_plot_iris_dtc_001.png" alt="Decision surface of decision trees trained on pairs of features" class = "sphx-glr-single-img"/><p>Display the structure of a single decision tree trained on all the features
+together.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.tree.plot_tree.html#sklearn.tree.plot_tree" title="sklearn.tree.plot_tree" class="sphx-glr-backref-module-sklearn-tree sphx-glr-backref-type-py-function"><span class="n">plot_tree</span></a>
 
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.figure.html#matplotlib.pyplot.figure" title="matplotlib.pyplot.figure" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span></a><span class="p">()</span>
 <span class="n">clf</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.tree.DecisionTreeClassifier.html#sklearn.tree.DecisionTreeClassifier" title="sklearn.tree.DecisionTreeClassifier" class="sphx-glr-backref-module-sklearn-tree sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">DecisionTreeClassifier</span></a><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
 <a href="../../modules/generated/sklearn.tree.plot_tree.html#sklearn.tree.plot_tree" title="sklearn.tree.plot_tree" class="sphx-glr-backref-module-sklearn-tree sphx-glr-backref-type-py-function"><span class="n">plot_tree</span></a><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s2">&quot;Decision tree trained on all the iris features&quot;</span><span class="p">)</span>
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.654 seconds)</p>
+<img src="../../_images/sphx_glr_plot_iris_dtc_002.png" srcset="../../_images/sphx_glr_plot_iris_dtc_002.png" alt="Decision tree trained on all the iris features" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.004 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-tree-plot-iris-dtc-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/tree/plot_iris_dtc.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo30.svg" width="150px" /></a>
