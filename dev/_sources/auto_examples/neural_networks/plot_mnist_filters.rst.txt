@@ -87,7 +87,7 @@ to build this documentation on a regular basis.
     from sklearn.model_selection import train_test_split
 
     # Load data from https://www.openml.org/d/554
-    X, y = fetch_openml("mnist_784", version=1, return_X_y=True)
+    X, y = fetch_openml("mnist_784", version=1, return_X_y=True, as_frame=False)
     X = X / 255.0
 
     # Split data into train partition and test partition
@@ -126,7 +126,7 @@ to build this documentation on a regular basis.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  59.773 seconds)
+   **Total running time of the script:** ( 0 minutes  21.023 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neural_networks_plot_mnist_filters.py:

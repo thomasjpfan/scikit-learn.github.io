@@ -3801,27 +3801,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Stochastic Gradient Descent is an optimization technique which minimizes a loss function in a s...">
-
-.. only:: html
-
- .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_sgd_early_stopping_thumb.png
-     :alt: Early stopping of Stochastic Gradient Descent
-
-     :ref:`sphx_glr_auto_examples_linear_model_plot_sgd_early_stopping.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/linear_model/plot_sgd_early_stopping
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to approximate a function with polynomials up to degree degree by...">
 
 .. only:: html
@@ -3840,6 +3819,27 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    /auto_examples/linear_model/plot_polynomial_interpolation
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Stochastic Gradient Descent is an optimization technique which minimizes a loss function in a s...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_sgd_early_stopping_thumb.png
+     :alt: Early stopping of Stochastic Gradient Descent
+
+     :ref:`sphx_glr_auto_examples_linear_model_plot_sgd_early_stopping.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/linear_model/plot_sgd_early_stopping
 
 .. raw:: html
 
