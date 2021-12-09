@@ -180,6 +180,7 @@
 <li><a class="reference internal" href="#sklearn-datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-ensemble"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-feature-extraction-text"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction.text</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-impute"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.impute</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-linear-model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a></li>
@@ -357,6 +358,15 @@ results as before, but are much easier to understand. The old default value
 changes are also applied for <a class="reference internal" href="../modules/generated/sklearn.ensemble.ExtraTreesRegressor.html#sklearn.ensemble.ExtraTreesRegressor" title="sklearn.ensemble.ExtraTreesRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.ExtraTreesRegressor</span></code></a> and
 <a class="reference internal" href="../modules/generated/sklearn.ensemble.ExtraTreesClassifier.html#sklearn.ensemble.ExtraTreesClassifier" title="sklearn.ensemble.ExtraTreesClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.ExtraTreesClassifier</span></code></a>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20803">#20803</a> by <a class="reference external" href="https://github.com/bsun94">Brian Sun</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-feature-extraction-text">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.feature_extraction.text" title="sklearn.feature_extraction.text"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction.text</span></code></a><a class="headerlink" href="#sklearn-feature-extraction-text" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html#sklearn.feature_extraction.text.TfidfVectorizer" title="sklearn.feature_extraction.text.TfidfVectorizer"><code class="xref py py-class docutils literal notranslate"><span class="pre">feature_extraction.text.TfidfVectorizer</span></code></a> now does not create
+a <a class="reference internal" href="../modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer" title="sklearn.feature_extraction.text.TfidfTransformer"><code class="xref py py-class docutils literal notranslate"><span class="pre">feature_extraction.text.TfidfTransformer</span></code></a> at <code class="docutils literal notranslate"><span class="pre">__init__</span></code> as required
+by our API.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21832">#21832</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-impute">
