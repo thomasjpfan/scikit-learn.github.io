@@ -3423,27 +3423,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="An example showing how different online solvers perform on the hand-written digits dataset.">
-
-.. only:: html
-
- .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_sgd_comparison_thumb.png
-     :alt: Comparing various online solvers
-
-     :ref:`sphx_glr_auto_examples_linear_model_plot_sgd_comparison.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/linear_model/plot_sgd_comparison
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="We show that linear_model.Lasso provides the same results for dense and sparse data and that in...">
 
 .. only:: html
@@ -3483,6 +3462,27 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    /auto_examples/linear_model/plot_multi_task_lasso_support
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Comparing various online solvers">
+
+.. only:: html
+
+ .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_sgd_comparison_thumb.png
+     :alt: Comparing various online solvers
+
+     :ref:`sphx_glr_auto_examples_linear_model_plot_sgd_comparison.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/linear_model/plot_sgd_comparison
 
 .. raw:: html
 
