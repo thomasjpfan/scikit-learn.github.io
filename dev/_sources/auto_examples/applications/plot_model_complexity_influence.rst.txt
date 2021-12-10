@@ -385,49 +385,49 @@ ensemble is not as detrimental.
 
     Benchmarking SGDClassifier(alpha=0.001, l1_ratio=0.25, loss='modified_huber',
                   penalty='elasticnet')
-    Complexity: 5000 | Hamming Loss (Misclassification Ratio): 0.2632 | Pred. Time: 0.057874s
+    Complexity: 5000 | Hamming Loss (Misclassification Ratio): 0.2632 | Pred. Time: 0.057270s
 
     Benchmarking SGDClassifier(alpha=0.001, l1_ratio=0.5, loss='modified_huber',
                   penalty='elasticnet')
-    Complexity: 1843 | Hamming Loss (Misclassification Ratio): 0.2973 | Pred. Time: 0.044360s
+    Complexity: 1843 | Hamming Loss (Misclassification Ratio): 0.2973 | Pred. Time: 0.044047s
 
     Benchmarking SGDClassifier(alpha=0.001, l1_ratio=0.75, loss='modified_huber',
                   penalty='elasticnet')
-    Complexity: 965 | Hamming Loss (Misclassification Ratio): 0.3219 | Pred. Time: 0.035573s
+    Complexity: 965 | Hamming Loss (Misclassification Ratio): 0.3219 | Pred. Time: 0.034624s
 
     Benchmarking SGDClassifier(alpha=0.001, l1_ratio=0.9, loss='modified_huber',
                   penalty='elasticnet')
-    Complexity: 731 | Hamming Loss (Misclassification Ratio): 0.3370 | Pred. Time: 0.032789s
+    Complexity: 731 | Hamming Loss (Misclassification Ratio): 0.3370 | Pred. Time: 0.032355s
 
     Benchmarking NuSVR(C=1000.0, gamma=3.0517578125e-05, nu=0.05)
-    Complexity: 18 | MSE: 5558.7313 | Pred. Time: 0.000145s
+    Complexity: 18 | MSE: 5558.7313 | Pred. Time: 0.000138s
 
     Benchmarking NuSVR(C=1000.0, gamma=3.0517578125e-05, nu=0.1)
-    Complexity: 36 | MSE: 5289.8022 | Pred. Time: 0.000215s
+    Complexity: 36 | MSE: 5289.8022 | Pred. Time: 0.000210s
 
     Benchmarking NuSVR(C=1000.0, gamma=3.0517578125e-05, nu=0.2)
-    Complexity: 72 | MSE: 5193.8358 | Pred. Time: 0.000362s
+    Complexity: 72 | MSE: 5193.8358 | Pred. Time: 0.000359s
 
     Benchmarking NuSVR(C=1000.0, gamma=3.0517578125e-05, nu=0.35)
-    Complexity: 124 | MSE: 5131.3279 | Pred. Time: 0.000568s
+    Complexity: 124 | MSE: 5131.3279 | Pred. Time: 0.000558s
 
     Benchmarking NuSVR(C=1000.0, gamma=3.0517578125e-05)
-    Complexity: 178 | MSE: 5149.0779 | Pred. Time: 0.000798s
+    Complexity: 178 | MSE: 5149.0779 | Pred. Time: 0.000780s
 
     Benchmarking GradientBoostingRegressor(learning_rate=0.05, max_depth=2, n_estimators=10)
-    Complexity: 10 | MSE: 4066.4812 | Pred. Time: 0.000109s
+    Complexity: 10 | MSE: 4066.4812 | Pred. Time: 0.000101s
 
     Benchmarking GradientBoostingRegressor(learning_rate=0.05, max_depth=2, n_estimators=25)
-    Complexity: 25 | MSE: 3551.1723 | Pred. Time: 0.000125s
+    Complexity: 25 | MSE: 3551.1723 | Pred. Time: 0.000123s
 
     Benchmarking GradientBoostingRegressor(learning_rate=0.05, max_depth=2, n_estimators=50)
-    Complexity: 50 | MSE: 3445.2171 | Pred. Time: 0.000155s
+    Complexity: 50 | MSE: 3445.2171 | Pred. Time: 0.000150s
 
     Benchmarking GradientBoostingRegressor(learning_rate=0.05, max_depth=2, n_estimators=75)
-    Complexity: 75 | MSE: 3438.0035 | Pred. Time: 0.000187s
+    Complexity: 75 | MSE: 3438.0035 | Pred. Time: 0.000186s
 
     Benchmarking GradientBoostingRegressor(learning_rate=0.05, max_depth=2)
-    Complexity: 100 | MSE: 3461.3150 | Pred. Time: 0.000220s
+    Complexity: 100 | MSE: 3461.3150 | Pred. Time: 0.000216s
 
 
 
@@ -450,7 +450,7 @@ under-fitting or over-fitting.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.419 seconds)
+   **Total running time of the script:** ( 0 minutes  8.307 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_model_complexity_influence.py:

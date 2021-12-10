@@ -455,6 +455,9 @@ all the models and all the splits failed. <a class="reference external" href="ht
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Added support for “passthrough” in <code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureUnion</span></code>.
 Setting a transformer to “passthrough” will pass the features unchanged.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20860">#20860</a> by <a class="reference external" href="https://github.com/shubhraneel">Shubhraneel Pal</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  :class: <code class="docutils literal notranslate"><span class="pre">pipeline.Pipeline</span></code> now does not validate hyper-parameters in
+<code class="docutils literal notranslate"><span class="pre">__init__</span></code> but in <code class="docutils literal notranslate"><span class="pre">.fit()</span></code>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21888">#21888</a> by <a class="reference external" href="https://github.com/iofall">iofall</a> and :user: <code class="docutils literal notranslate"><span class="pre">Arisa</span> <span class="pre">Y.</span> <span class="pre">&lt;arisayosh&gt;</span></code>.</p></li>
 </ul>
 </section>
 <section id="sklearn-preprocessing">
