@@ -294,11 +294,11 @@ development) and the other one for testing (or for performance evaluation).
     4 categories
 
     Extracting features from the training data using a sparse vectorizer
-    done in 0.391714s at 10.159MB/s
+    done in 0.370615s at 10.738MB/s
     n_samples: 2034, n_features: 33809
 
     Extracting features from the test data using the same vectorizer
-    done in 0.238595s at 12.018MB/s
+    done in 0.228740s at 12.536MB/s
     n_samples: 1353, n_features: 33809
 
 
@@ -433,7 +433,7 @@ and get performance results for each model.
     RidgeClassifier(solver='sag', tol=0.01)
     /home/circleci/project/sklearn/linear_model/_ridge.py:743: UserWarning: "sag" solver requires many iterations to fit an intercept with sparse inputs. Either set the solver to "auto" or "sparse_cg", or set a low "tol" and a high "max_iter" (especially if inputs are not standardized).
       warnings.warn(
-    train time: 0.153s
+    train time: 0.156s
     test time:  0.001s
     accuracy:   0.898
     dimensionality: 33809
@@ -458,7 +458,7 @@ and get performance results for each model.
     Training: 
     PassiveAggressiveClassifier(max_iter=50)
     train time: 0.028s
-    test time:  0.002s
+    test time:  0.001s
     accuracy:   0.902
     dimensionality: 33809
     density: 0.711867
@@ -470,7 +470,7 @@ and get performance results for each model.
     Training: 
     KNeighborsClassifier(n_neighbors=10)
     train time: 0.001s
-    test time:  0.153s
+    test time:  0.168s
     accuracy:   0.858
 
     ================================================================================
@@ -478,8 +478,8 @@ and get performance results for each model.
     ________________________________________________________________________________
     Training: 
     RandomForestClassifier()
-    train time: 1.216s
-    test time:  0.078s
+    train time: 1.218s
+    test time:  0.076s
     accuracy:   0.826
 
     ================================================================================
@@ -509,7 +509,7 @@ and get performance results for each model.
     ________________________________________________________________________________
     Training: 
     LinearSVC(dual=False, penalty='l1', tol=0.001)
-    train time: 0.166s
+    train time: 0.165s
     test time:  0.001s
     accuracy:   0.873
     dimensionality: 33809
@@ -576,7 +576,7 @@ and get performance results for each model.
     ________________________________________________________________________________
     Training: 
     ComplementNB(alpha=0.1)
-    train time: 0.004s
+    train time: 0.003s
     test time:  0.001s
     accuracy:   0.911
     /home/circleci/project/sklearn/utils/deprecation.py:103: FutureWarning: Attribute `coef_` was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).
@@ -593,7 +593,7 @@ and get performance results for each model.
                      SelectFromModel(estimator=LinearSVC(dual=False, penalty='l1',
                                                          tol=0.001))),
                     ('classification', LinearSVC())])
-    train time: 0.183s
+    train time: 0.181s
     test time:  0.002s
     accuracy:   0.879
 
@@ -650,7 +650,7 @@ The bar plot indicates the accuracy, training time (normalized) and test time
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.620 seconds)
+   **Total running time of the script:** ( 0 minutes  3.590 seconds)
 
 
 .. _sphx_glr_download_auto_examples_text_plot_document_classification_20newsgroups.py:
