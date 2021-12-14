@@ -241,6 +241,10 @@ instead of <code class="docutils literal notranslate"><span class="pre">algorith
 <code class="docutils literal notranslate"><span class="pre">algorithm=&quot;elkan&quot;</span></code>. Lloyd’s algorithm and Elkan’s algorithm converge to the
 same solution, up to numerical rounding errors, but in general Lloyd’s
 algorithm uses much less memory, and it is often faster.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  The eigenvectors initialization for <a class="reference internal" href="../modules/generated/sklearn.cluster.SpectralClustering.html#sklearn.cluster.SpectralClustering" title="sklearn.cluster.SpectralClustering"><code class="xref py py-class docutils literal notranslate"><span class="pre">cluster.SpectralClustering</span></code></a>
+and <a class="reference internal" href="../modules/generated/sklearn.manifold.SpectralEmbedding.html#sklearn.manifold.SpectralEmbedding" title="sklearn.manifold.SpectralEmbedding"><code class="xref py py-class docutils literal notranslate"><span class="pre">manifold.SpectralEmbedding</span></code></a> now samples from a Gaussian when
+using the <code class="docutils literal notranslate"><span class="pre">'amg'</span></code> or <code class="docutils literal notranslate"><span class="pre">'lobpcg'</span></code> solver. This change  improves numerical
+stability of the solver, but may result in a different model.</p></li>
 </ul>
 </section>
 <section id="changelog">
@@ -439,6 +443,10 @@ A deprecation cycle was introduced.
 <a class="reference internal" href="../modules/generated/sklearn.manifold.SpectralEmbedding.html#sklearn.manifold.SpectralEmbedding" title="sklearn.manifold.SpectralEmbedding"><code class="xref py py-class docutils literal notranslate"><span class="pre">manifold.SpectralEmbedding</span></code></a> supports <code class="docutils literal notranslate"><span class="pre">np.float32</span></code> dtype and will
 preserve this dtype.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21534">#21534</a> by <a class="reference external" href="https://github.com/lobpcg">Andrew Knyazev</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.manifold.spectral_embedding.html#sklearn.manifold.spectral_embedding" title="sklearn.manifold.spectral_embedding"><code class="xref py py-func docutils literal notranslate"><span class="pre">manifold.spectral_embedding</span></code></a> now uses Gaussian instead of
+the previous uniform on [0, 1] random initial approximations to eigenvectors
+in eigen_solvers <code class="docutils literal notranslate"><span class="pre">lobpcg</span></code> and <code class="docutils literal notranslate"><span class="pre">amg</span></code> to improve their numerical stability.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21565">#21565</a> by <a class="reference external" href="https://github.com/lobpcg">Andrew Knyazev</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-model-selection">
