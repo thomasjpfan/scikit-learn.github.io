@@ -237,10 +237,10 @@ compensate for the stochastic nature of :class:`PolynomialCountSketch`.
 
  .. code-block:: none
 
-    Linear SVM score on 250 PolynomialCountSketch features: 76.63%
-    Linear SVM score on 500 PolynomialCountSketch features: 77.33%
-    Linear SVM score on 1000 PolynomialCountSketch features: 77.88%
-    Linear SVM score on 2000 PolynomialCountSketch features: 78.18%
+    Linear SVM score on 250 PolynomialCountSketch features: 76.04%
+    Linear SVM score on 500 PolynomialCountSketch features: 77.23%
+    Linear SVM score on 1000 PolynomialCountSketch features: 78.07%
+    Linear SVM score on 2000 PolynomialCountSketch features: 78.20%
 
 
 
@@ -385,7 +385,7 @@ https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/binary.html
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  45.583 seconds)
+   **Total running time of the script:** ( 0 minutes  30.850 seconds)
 
 
 .. _sphx_glr_download_auto_examples_kernel_approximation_plot_scalable_poly_kernels.py:
