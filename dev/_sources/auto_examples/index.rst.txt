@@ -2329,27 +2329,6 @@ interactive user interface.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of applying NMF and LatentDirichletAllocation on a corpus of documents and e...">
-
-.. only:: html
-
- .. figure:: /auto_examples/applications/images/thumb/sphx_glr_plot_topics_extraction_with_nmf_lda_thumb.png
-     :alt: Topic extraction with Non-negative Matrix Factorization and Latent Dirichlet Allocation
-
-     :ref:`sphx_glr_auto_examples_applications_plot_topics_extraction_with_nmf_lda.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/applications/plot_topics_extraction_with_nmf_lda
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="The dataset used in this example is a preprocessed excerpt of the &quot;Labeled Faces in the Wild&quot;, ...">
 
 .. only:: html
@@ -2368,6 +2347,27 @@ interactive user interface.
    :hidden:
 
    /auto_examples/applications/plot_face_recognition
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of applying NMF and LatentDirichletAllocation on a corpus of documents and e...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/applications/images/thumb/sphx_glr_plot_topics_extraction_with_nmf_lda_thumb.png
+     :alt: Topic extraction with Non-negative Matrix Factorization and Latent Dirichlet Allocation
+
+     :ref:`sphx_glr_auto_examples_applications_plot_topics_extraction_with_nmf_lda.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/applications/plot_topics_extraction_with_nmf_lda
 
 .. raw:: html
 
