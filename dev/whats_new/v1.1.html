@@ -422,7 +422,9 @@ now raise consistent error message when passed invalid values for <code class="d
 a parameter in order to provide an estimate of the noise variance.
 This is particularly relevant when <code class="docutils literal notranslate"><span class="pre">n_features</span> <span class="pre">&gt;</span> <span class="pre">n_samples</span></code> and the
 estimator of the noise variance cannot be computed.
-<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21481">#21481</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a></p></li>
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21481">#21481</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.QuantileRegressor.html#sklearn.linear_model.QuantileRegressor" title="sklearn.linear_model.QuantileRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.QuantileRegressor</span></code></a> support sparse inputs.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21086">#21086</a> by <a class="reference external" href="https://github.com/venkyyuvy">Venkatachalam Natchiappan</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.LassoLarsIC.html#sklearn.linear_model.LassoLarsIC" title="sklearn.linear_model.LassoLarsIC"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.LassoLarsIC</span></code></a> now correctly computes AIC
 and BIC. An error is now raised when <code class="docutils literal notranslate"><span class="pre">n_features</span> <span class="pre">&gt;</span> <span class="pre">n_samples</span></code> and
 when the noise variance is not provided.
