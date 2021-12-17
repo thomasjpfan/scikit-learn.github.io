@@ -288,7 +288,7 @@ download any file from some external website.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="../modules/generated/sklearn.datasets.load_iris.html#sklearn.datasets.load_iris" title="sklearn.datasets.load_iris"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_iris</span></code></a>(*[, return_X_y, as_frame])</p></td>
 <td><p>Load and return the iris dataset (classification).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="../modules/generated/sklearn.datasets.load_diabetes.html#sklearn.datasets.load_diabetes" title="sklearn.datasets.load_diabetes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_diabetes</span></code></a>(*[, return_X_y, as_frame])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="../modules/generated/sklearn.datasets.load_diabetes.html#sklearn.datasets.load_diabetes" title="sklearn.datasets.load_diabetes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_diabetes</span></code></a>(*[, return_X_y, as_frame, scaled])</p></td>
 <td><p>Load and return the diabetes dataset (regression).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="../modules/generated/sklearn.datasets.load_digits.html#sklearn.datasets.load_digits" title="sklearn.datasets.load_digits"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_digits</span></code></a>(*[, n_class, return_X_y, as_frame])</p></td>
@@ -524,7 +524,7 @@ quantitative measure of disease progression one year after baseline.</p>
 </dd>
 </dl>
 </div></blockquote>
-<p>Note: Each of these 10 feature variables have been mean centered and scaled by the standard deviation times <code class="docutils literal notranslate"><span class="pre">n_samples</span></code> (i.e. the sum of squares of each column totals 1).</p>
+<p>Note: Each of these 10 feature variables have been mean centered and scaled by the standard deviation times the square root of <code class="docutils literal notranslate"><span class="pre">n_samples</span></code> (i.e. the sum of squares of each column totals 1).</p>
 <p>Source URL:
 <a class="reference external" href="https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html">https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html</a></p>
 <p>For more information see:

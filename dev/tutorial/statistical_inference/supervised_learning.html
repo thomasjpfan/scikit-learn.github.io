@@ -351,13 +351,13 @@ of the model as small as possible.</p>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># The mean square error</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">((</span><span class="n">regr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">)</span> <span class="o">-</span> <span class="n">diabetes_y_test</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="go">2004.56760268...</span>
+<span class="go">2004.5...</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># Explained variance score: 1 is perfect prediction</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># and 0 means that there is no linear relationship</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># between X and y.</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">regr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">,</span> <span class="n">diabetes_y_test</span><span class="p">)</span>
-<span class="go">0.5850753022690...</span>
+<span class="go">0.585...</span>
 </pre></div>
 </div>
 </section>
@@ -410,8 +410,7 @@ diabetes dataset rather than our synthetic data:</p>
 <span class="gp">... </span>           <span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">diabetes_X_train</span><span class="p">,</span> <span class="n">diabetes_y_train</span><span class="p">)</span>
 <span class="gp">... </span>           <span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">diabetes_X_test</span><span class="p">,</span> <span class="n">diabetes_y_test</span><span class="p">)</span>
 <span class="gp">... </span>       <span class="k">for</span> <span class="n">alpha</span> <span class="ow">in</span> <span class="n">alphas</span><span class="p">])</span>
-<span class="go">[0.5851110683883..., 0.5852073015444..., 0.5854677540698...,</span>
-<span class="go"> 0.5855512036503..., 0.5830717085554..., 0.57058999437...]</span>
+<span class="go">[0.585..., 0.585..., 0.5854..., 0.5855..., 0.583..., 0.570...]</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -454,8 +453,8 @@ application of Occam’s razor: <em>prefer simpler models</em>.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">regr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">diabetes_X_train</span><span class="p">,</span> <span class="n">diabetes_y_train</span><span class="p">)</span>
 <span class="go">Lasso(alpha=0.025118864315095794)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">regr</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span>
-<span class="go">[   0.         -212.437...  517.194...  313.779... -160.830...</span>
-<span class="go">   -0.         -187.195...   69.382...  508.660...   71.842...]</span>
+<span class="go">[   0.         -212.4...   517.2...  313.7... -160.8...</span>
+<span class="go">   -0.         -187.1...   69.3...  508.6...   71.8... ]</span>
 </pre></div>
 </div>
 <div class="topic">

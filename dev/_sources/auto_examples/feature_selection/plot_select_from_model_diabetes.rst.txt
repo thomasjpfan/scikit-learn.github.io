@@ -94,7 +94,7 @@ scikit-learn, and print its description:
           - s5      ltg, possibly log of serum triglycerides level
           - s6      glu, blood sugar level
 
-    Note: Each of these 10 feature variables have been mean centered and scaled by the standard deviation times `n_samples` (i.e. the sum of squares of each column totals 1).
+    Note: Each of these 10 feature variables have been mean centered and scaled by the standard deviation times the square root of `n_samples` (i.e. the sum of squares of each column totals 1).
 
     Source URL:
     https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html
@@ -102,6 +102,7 @@ scikit-learn, and print its description:
     For more information see:
     Bradley Efron, Trevor Hastie, Iain Johnstone and Robert Tibshirani (2004) "Least Angle Regression," Annals of Statistics (with discussion), 407-499.
     (https://web.stanford.edu/~hastie/Papers/LARS/LeastAngle_2002.pdf)
+
 
 
 
@@ -251,9 +252,9 @@ both approaches here.
  .. code-block:: none
 
     Features selected by forward sequential selection: ['bmi' 's5']
-    Done in 0.130s
+    Done in 0.164s
     Features selected by backward sequential selection: ['bmi' 's5']
-    Done in 0.385s
+    Done in 0.470s
 
 
 
@@ -287,7 +288,7 @@ SFS needs to perform `n_features - n_features_to_select = 8` iterations.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.595 seconds)
+   **Total running time of the script:** ( 0 minutes  0.729 seconds)
 
 
 .. _sphx_glr_download_auto_examples_feature_selection_plot_select_from_model_diabetes.py:
