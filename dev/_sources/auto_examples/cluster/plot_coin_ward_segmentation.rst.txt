@@ -45,7 +45,7 @@ for each segmented region to be in one piece.
     /home/circleci/miniconda/envs/testenv/lib/python3.9/site-packages/skimage/_shared/utils.py:338: FutureWarning: `multichannel` is a deprecated argument name for `rescale`. It will be removed in version 1.0.Please use `channel_axis` instead.
       return func(*args, **kwargs)
     Compute structured hierarchical clustering...
-    Elapsed time:  0.27152490615844727
+    Elapsed time:  0.17466354370117188
     Number of pixels:  4697
     Number of clusters:  27
 
@@ -132,7 +132,7 @@ for each segmented region to be in one piece.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.795 seconds)
+   **Total running time of the script:** ( 0 minutes  0.525 seconds)
 
 
 .. _sphx_glr_download_auto_examples_cluster_plot_coin_ward_segmentation.py:
