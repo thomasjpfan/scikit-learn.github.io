@@ -181,27 +181,37 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.feature_selection" title="sklearn.feature_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a>.r_regression<a class="headerlink" href="#sklearn-feature-selection-r-regression" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.feature_selection.r_regression">
-<span class="sig-prename descclassname"><span class="pre">sklearn.feature_selection.</span></span><span class="sig-name descname"><span class="pre">r_regression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cece90e57/sklearn/feature_selection/_univariate_selection.py#L230"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.feature_selection.r_regression" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.feature_selection.</span></span><span class="sig-name descname"><span class="pre">r_regression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_finite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7de08f5ce/sklearn/feature_selection/_univariate_selection.py#L230"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.feature_selection.r_regression" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute Pearson’s r for each features and the target.</p>
 <p>Pearson’s r is also known as the Pearson correlation coefficient.</p>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 1.0.</span></p>
-</div>
 <p>Linear model for testing the individual effect of each of many regressors.
 This is a scoring function to be used in a feature selection procedure, not
 a free standing feature selection procedure.</p>
 <p>The cross correlation between each regressor and the target is computed
 as ((X[:, i] - mean(X[:, i])) * (y - mean_y)) / (std(X[:, i]) * std(y)).</p>
 <p>For more on usage see the <a class="reference internal" href="../feature_selection.html#univariate-feature-selection"><span class="std std-ref">User Guide</span></a>.</p>
-<dl class="field-list simple">
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.0.</span></p>
+</div>
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples, n_features)</span></dt><dd><p>The data matrix.</p>
 </dd>
 <dt><strong>y</strong><span class="classifier">array-like of shape (n_samples,)</span></dt><dd><p>The target vector.</p>
 </dd>
 <dt><strong>center</strong><span class="classifier">bool, default=True</span></dt><dd><p>Whether or not to center the data matrix <code class="docutils literal notranslate"><span class="pre">X</span></code> and the target vector <code class="docutils literal notranslate"><span class="pre">y</span></code>.
 By default, <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> will be centered.</p>
+</dd>
+<dt><strong>force_finite</strong><span class="classifier">bool, default=True</span></dt><dd><p>Whether or not to force the Pearson’s R correlation to be finite.
+In the particular case where some features in <code class="docutils literal notranslate"><span class="pre">X</span></code> or the target <code class="docutils literal notranslate"><span class="pre">y</span></code>
+are constant, the Pearson’s R correlation is not defined. When
+<code class="docutils literal notranslate"><span class="pre">force_finite=False</span></code>, a correlation of <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> is returned to
+acknowledge this case. When <code class="docutils literal notranslate"><span class="pre">force_finite=True</span></code>, this value will be
+forced to a minimal correlation of <code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
 </dd>
 </dl>
 </dd>

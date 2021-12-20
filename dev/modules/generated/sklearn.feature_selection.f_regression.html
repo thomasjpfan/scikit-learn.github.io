@@ -185,7 +185,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.feature_selection" title="sklearn.feature_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a>.f_regression<a class="headerlink" href="#sklearn-feature-selection-f-regression" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.feature_selection.f_regression">
-<span class="sig-prename descclassname"><span class="pre">sklearn.feature_selection.</span></span><span class="sig-name descname"><span class="pre">f_regression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cece90e57/sklearn/feature_selection/_univariate_selection.py#L294"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.feature_selection.f_regression" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.feature_selection.</span></span><span class="sig-name descname"><span class="pre">f_regression</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">center</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">force_finite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7de08f5ce/sklearn/feature_selection/_univariate_selection.py#L311"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.feature_selection.f_regression" title="Permalink to this definition">¶</a></dt>
 <dd><p>Univariate linear regression tests returning F-statistic and p-values.</p>
 <p>Quick linear model for testing the effect of a single regressor,
 sequentially for many regressors.</p>
@@ -207,15 +207,34 @@ the sign of the association with the target variable.</p>
 <p>Furthermore <a class="reference internal" href="#sklearn.feature_selection.f_regression" title="sklearn.feature_selection.f_regression"><code class="xref py py-func docutils literal notranslate"><span class="pre">f_regression</span></code></a> returns p-values while
 <a class="reference internal" href="sklearn.feature_selection.r_regression.html#sklearn.feature_selection.r_regression" title="sklearn.feature_selection.r_regression"><code class="xref py py-func docutils literal notranslate"><span class="pre">r_regression</span></code></a> does not.</p>
 <p>Read more in the <a class="reference internal" href="../feature_selection.html#univariate-feature-selection"><span class="std std-ref">User Guide</span></a>.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>X</strong><span class="classifier">{array-like, sparse matrix} of shape (n_samples, n_features)</span></dt><dd><p>The data matrix.</p>
 </dd>
 <dt><strong>y</strong><span class="classifier">array-like of shape (n_samples,)</span></dt><dd><p>The target vector.</p>
 </dd>
 <dt><strong>center</strong><span class="classifier">bool, default=True</span></dt><dd><p>Whether or not to center the data matrix <code class="docutils literal notranslate"><span class="pre">X</span></code> and the target vector <code class="docutils literal notranslate"><span class="pre">y</span></code>.
 By default, <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> will be centered.</p>
+</dd>
+<dt><strong>force_finite</strong><span class="classifier">bool, default=True</span></dt><dd><p>Whether or not to force the F-statistics and associated p-values to
+be finite. There are two cases where the F-statistic is expected to not
+be finite:</p>
+<ul class="simple">
+<li><p>when the target <code class="docutils literal notranslate"><span class="pre">y</span></code> or some features in <code class="docutils literal notranslate"><span class="pre">X</span></code> are constant. In this
+case, the Pearson’s R correlation is not defined leading to obtain
+<code class="docutils literal notranslate"><span class="pre">np.nan</span></code> values in the F-statistic and p-value. When
+<code class="docutils literal notranslate"><span class="pre">force_finite=True</span></code>, the F-statistic is set to <code class="docutils literal notranslate"><span class="pre">0.0</span></code> and the
+associated p-value is set to <code class="docutils literal notranslate"><span class="pre">1.0</span></code>.</p></li>
+<li><p>when the a feature in <code class="docutils literal notranslate"><span class="pre">X</span></code> is perfectly correlated (or
+anti-correlated) with the target <code class="docutils literal notranslate"><span class="pre">y</span></code>. In this case, the F-statistic
+is expected to be <code class="docutils literal notranslate"><span class="pre">np.inf</span></code>. When <code class="docutils literal notranslate"><span class="pre">force_finite=True</span></code>, the F-statistic
+is set to <code class="docutils literal notranslate"><span class="pre">np.finfo(dtype).max</span></code> and the associated p-value is set to
+<code class="docutils literal notranslate"><span class="pre">0.0</span></code>.</p></li>
+</ul>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.1.</span></p>
+</div>
 </dd>
 </dl>
 </dd>
