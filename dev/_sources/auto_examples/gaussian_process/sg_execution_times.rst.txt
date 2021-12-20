@@ -5,26 +5,26 @@
 
 Computation times
 =================
-**00:19.829** total execution time for **auto_examples_gaussian_process** files:
+**00:18.136** total execution time for **auto_examples_gaussian_process** files:
 
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_co2.py` (``plot_gpr_co2.py``)                               | 00:05.189 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_co2.py` (``plot_gpr_co2.py``)                               | 00:04.732 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_iris.py` (``plot_gpc_iris.py``)                             | 00:04.445 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_iris.py` (``plot_gpc_iris.py``)                             | 00:03.862 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_gaussian_process_plot_compare_gpr_krr.py` (``plot_compare_gpr_krr.py``)               | 00:03.473 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_gaussian_process_plot_compare_gpr_krr.py` (``plot_compare_gpr_krr.py``)               | 00:03.287 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy.py` (``plot_gpr_noisy.py``)                           | 00:02.489 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy.py` (``plot_gpr_noisy.py``)                           | 00:02.315 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc.py` (``plot_gpc.py``)                                       | 00:01.930 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc.py` (``plot_gpc.py``)                                       | 00:01.761 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_prior_posterior.py` (``plot_gpr_prior_posterior.py``)       | 00:01.030 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_prior_posterior.py` (``plot_gpr_prior_posterior.py``)       | 00:00.995 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_xor.py` (``plot_gpc_xor.py``)                               | 00:00.456 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy_targets.py` (``plot_gpr_noisy_targets.py``)           | 00:00.430 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy_targets.py` (``plot_gpr_noisy_targets.py``)           | 00:00.436 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_xor.py` (``plot_gpc_xor.py``)                               | 00:00.429 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_on_structured_data.py` (``plot_gpr_on_structured_data.py``) | 00:00.239 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_on_structured_data.py` (``plot_gpr_on_structured_data.py``) | 00:00.188 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_isoprobability.py` (``plot_gpc_isoprobability.py``)         | 00:00.142 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpc_isoprobability.py` (``plot_gpc_isoprobability.py``)         | 00:00.138 | 0.0 MB |
 +--------------------------------------------------------------------------------------------------------------------+-----------+--------+
