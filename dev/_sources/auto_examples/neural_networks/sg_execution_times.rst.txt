@@ -5,14 +5,14 @@
 
 Computation times
 =================
-**00:37.077** total execution time for **auto_examples_neural_networks** files:
+**00:45.348** total execution time for **auto_examples_neural_networks** files:
 
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neural_networks_plot_mnist_filters.py` (``plot_mnist_filters.py``)                             | 00:22.539 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neural_networks_plot_mnist_filters.py` (``plot_mnist_filters.py``)                             | 00:25.803 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neural_networks_plot_rbm_logistic_classification.py` (``plot_rbm_logistic_classification.py``) | 00:08.992 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neural_networks_plot_rbm_logistic_classification.py` (``plot_rbm_logistic_classification.py``) | 00:12.248 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neural_networks_plot_mlp_training_curves.py` (``plot_mlp_training_curves.py``)                 | 00:03.550 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neural_networks_plot_mlp_training_curves.py` (``plot_mlp_training_curves.py``)                 | 00:04.726 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neural_networks_plot_mlp_alpha.py` (``plot_mlp_alpha.py``)                                     | 00:01.996 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neural_networks_plot_mlp_alpha.py` (``plot_mlp_alpha.py``)                                     | 00:02.572 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+

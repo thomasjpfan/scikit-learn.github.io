@@ -174,6 +174,7 @@
 <li><a class="reference internal" href="#sklearn-cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-multiclass"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.multiclass</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-tree"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.tree</span></code></a></li>
@@ -290,6 +291,13 @@ neighbors-based estimators (except those that use <code class="docutils literal 
 accept a weight parameter with <code class="docutils literal notranslate"><span class="pre">metric=&quot;minknowski&quot;</span></code> to yield results that
 are always consistent with <code class="docutils literal notranslate"><span class="pre">scipy.spatial.distance.cdist</span></code>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21741">#21741</a> by <a class="reference external" href="https://github.com/ogrisel">Olivier Grisel</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-multiclass">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.multiclass" title="sklearn.multiclass"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.multiclass</span></code></a><a class="headerlink" href="#sklearn-multiclass" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.multiclass.OneVsRestClassifier.html#sklearn.multiclass.OneVsRestClassifier.predict_proba" title="sklearn.multiclass.OneVsRestClassifier.predict_proba"><code class="xref py py-meth docutils literal notranslate"><span class="pre">multiclass.OneVsRestClassifier.predict_proba</span></code></a> does not error when
+fitted on constant integer targets. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21871">#21871</a> by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-neighbors">
