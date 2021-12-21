@@ -189,8 +189,9 @@
 <li><a class="reference internal" href="#sklearn-manifold"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.manifold</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-model-selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-pipeline"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a></li>
-<li><a class="reference internal" href="#sklearn-preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-random-projection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.random_projection</span></code></a></li>
@@ -508,6 +509,15 @@ all the models and all the splits failed. <a class="reference external" href="ht
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Added support for “passthrough” in <code class="xref py py-class docutils literal notranslate"><span class="pre">FeatureUnion</span></code>.
 Setting a transformer to “passthrough” will pass the features unchanged.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20860">#20860</a> by <a class="reference external" href="https://github.com/shubhraneel">Shubhraneel Pal</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-svm">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.svm" title="sklearn.svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a><a class="headerlink" href="#sklearn-svm" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM" title="sklearn.svm.OneClassSVM"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.OneClassSVM</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.svm.NuSVC.html#sklearn.svm.NuSVC" title="sklearn.svm.NuSVC"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.NuSVC</span></code></a>,
+<a class="reference internal" href="../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="sklearn.svm.NuSVR"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.NuSVR</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="sklearn.svm.SVC"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.SVC</span></code></a> and <a class="reference internal" href="../modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR" title="sklearn.svm.SVR"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.SVR</span></code></a> now expose
+<code class="docutils literal notranslate"><span class="pre">n_iter_</span></code>, the number of iterations of the libsvm optimization routine.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21408">#21408</a> by <a class="reference external" href="https://github.com/jmloyola">Juan Martín Loyola</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  :class: <code class="docutils literal notranslate"><span class="pre">pipeline.Pipeline</span></code> now does not validate hyper-parameters in
 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> but in <code class="docutils literal notranslate"><span class="pre">.fit()</span></code>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21888">#21888</a> by <a class="reference external" href="https://github.com/iofall">iofall</a> and :user: <code class="docutils literal notranslate"><span class="pre">Arisa</span> <span class="pre">Y.</span> <span class="pre">&lt;arisayosh&gt;</span></code>.</p></li>
@@ -533,8 +543,8 @@ then <code class="docutils literal notranslate"><span class="pre">get_output_fea
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21569">#21569</a> by <a class="reference external" href="https://github.com/ageron">Aurélien Geron</a>.</p></li>
 </ul>
 </section>
-<section id="sklearn-svm">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.svm" title="sklearn.svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a><a class="headerlink" href="#sklearn-svm" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.svm" title="sklearn.svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <code class="xref py py-class docutils literal notranslate"><span class="pre">smv.NuSVC</span></code>, <a class="reference internal" href="../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="sklearn.svm.NuSVR"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.NuSVR</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="sklearn.svm.SVC"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.SVC</span></code></a>,
 <a class="reference internal" href="../modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR" title="sklearn.svm.SVR"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.SVR</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM" title="sklearn.svm.OneClassSVM"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.OneClassSVM</span></code></a> now validate input
