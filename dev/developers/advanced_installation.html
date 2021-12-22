@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://scikit-learn/stable/developers/advanced_installation.html" />
   <meta property="og:site_name" content="scikit-learn" />
   <meta property="og:description" content="This section introduces how to install the main branch of scikit-learn. This can be done by either installing a nightly build or building from source. Installing nightly builds: The continuous inte..." />
-  <meta property="og:image" content="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" />
+  <meta property="og:image" content="https://scikit-learn/_images/visual-studio-build-tools-selection.png" />
   <meta property="og:image:alt" content="scikit-learn" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -360,13 +360,11 @@ folder. Have a look at the <code class="docutils literal notranslate"><span clas
 to build scikit-learn Cython extensions for each supported platform.</p>
 <section id="windows">
 <span id="compiler-windows"></span><h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
-<p>First, install <a class="reference external" href="https://visualstudio.microsoft.com/downloads/">Build Tools for Visual Studio 2019</a>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>You DO NOT need to install Visual Studio 2019. You only need the “Build
-Tools for Visual Studio 2019”, under “All downloads” -&gt; “Tools for Visual
-Studio 2019”.</p>
-</div>
+<p>First, download the <a class="reference external" href="https://aka.ms/vs/17/release/vs_buildtools.exe">Build Tools for Visual Studio 2019 installer</a>.</p>
+<p>Run the downloaded <code class="docutils literal notranslate"><span class="pre">vs_buildtools.exe</span></code> file, during the installation you will
+need to make sure you select “Desktop development with C++”, similarly to this
+screenshot:</p>
+<img alt="../_images/visual-studio-build-tools-selection.png" src="../_images/visual-studio-build-tools-selection.png" />
 <p>Secondly, find out if you are running 64-bit or 32-bit Python. The building
 command depends on the architecture of the Python interpreter. You can check
 the architecture by running the following in <code class="docutils literal notranslate"><span class="pre">cmd</span></code> or <code class="docutils literal notranslate"><span class="pre">powershell</span></code>
