@@ -323,6 +323,10 @@ dataset is now computed from the unscaled data, and can produce slightly
 different different results that in previous version (within a 1e-4 absolute
 tolerance).
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/16605">#16605</a> by <a class="reference external" href="https://github.com/happilyeverafter95">Mandy Gu</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml"><code class="xref py py-func docutils literal notranslate"><span class="pre">datasets.fetch_openml</span></code></a> now has two optional arguments
+<code class="docutils literal notranslate"><span class="pre">n_retries</span></code> and <code class="docutils literal notranslate"><span class="pre">delay</span></code>. By default, <a class="reference internal" href="../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml"><code class="xref py py-func docutils literal notranslate"><span class="pre">datasets.fetch_openml</span></code></a> will retry
+3 times in case of a network failure with a delay between each try.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21901">#21901</a> by <a class="reference external" href="https://github.com/rileran">Rileran</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-decomposition">
