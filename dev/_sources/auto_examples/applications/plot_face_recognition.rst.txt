@@ -165,9 +165,9 @@ dataset): unsupervised feature extraction / dimensionality reduction
  .. code-block:: none
 
     Extracting the top 150 eigenfaces from 966 faces
-    done in 0.102s
+    done in 0.127s
     Projecting the input data on the eigenfaces orthonormal basis
-    done in 0.012s
+    done in 0.011s
 
 
 
@@ -207,7 +207,7 @@ Train a SVM classification model
  .. code-block:: none
 
     Fitting the classifier to the training set
-    done in 6.206s
+    done in 6.528s
     Best estimator found by grid search:
     SVC(C=5387.73239387596, class_weight='balanced', gamma=0.0005355267666024514)
 
@@ -369,7 +369,7 @@ tensorflow to implement such models.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.130 seconds)
+   **Total running time of the script:** ( 0 minutes  7.471 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_face_recognition.py:
