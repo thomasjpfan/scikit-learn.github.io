@@ -93,7 +93,7 @@ matrix decomposition (dimension reduction) methods from the module
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_009.png
-         :alt: Factor Analysis components - FA - Train time 0.3s
+         :alt: Factor Analysis components - FA - Train time 0.2s
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_faces_decomposition_009.png
          :class: sphx-glr-multi-img
 
@@ -141,29 +141,29 @@ matrix decomposition (dimension reduction) methods from the module
 
     Dataset consists of 400 faces
     Extracting the top 6 Eigenfaces - PCA using randomized SVD...
-    done in 0.025s
+    done in 0.023s
     Extracting the top 6 Non-negative components - NMF...
-    done in 0.115s
+    done in 0.106s
     Extracting the top 6 Independent components - FastICA...
     /home/circleci/project/sklearn/decomposition/_fastica.py:669: FutureWarning: From version 1.3 whiten=True should be specified as whiten='arbitrary-variance' (its current behaviour). This behavior is deprecated in 1.1 and will raise ValueError in 1.3.
       self._fit(X, compute_sources=False)
-    done in 0.117s
+    done in 0.111s
     Extracting the top 6 Sparse comp. - MiniBatchSparsePCA...
-    done in 0.487s
+    done in 0.485s
     Extracting the top 6 MiniBatchDictionaryLearning...
-    done in 0.322s
+    done in 0.315s
     Extracting the top 6 Cluster centers - MiniBatchKMeans...
-    done in 0.042s
+    done in 0.039s
     Extracting the top 6 Factor Analysis components - FA...
-    done in 0.252s
+    done in 0.206s
     Extracting the top 6 Dictionary learning...
-    done in 0.324s
+    done in 0.317s
     Extracting the top 6 Dictionary learning - positive dictionary...
-    done in 0.348s
+    done in 0.329s
     Extracting the top 6 Dictionary learning - positive code...
-    done in 0.118s
+    done in 0.115s
     Extracting the top 6 Dictionary learning - positive dictionary & code...
-    done in 0.145s
+    done in 0.143s
 
 
 
@@ -406,7 +406,7 @@ matrix decomposition (dimension reduction) methods from the module
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.772 seconds)
+   **Total running time of the script:** ( 0 minutes  3.596 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_faces_decomposition.py:
