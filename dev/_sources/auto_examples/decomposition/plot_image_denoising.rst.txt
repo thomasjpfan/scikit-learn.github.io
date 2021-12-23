@@ -73,14 +73,14 @@ necessarily related to visualisation.
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_003.png
-         :alt: Orthogonal Matching Pursuit 1 atom (time: 0.5s), Image, Difference (norm: 11.33)
+         :alt: Orthogonal Matching Pursuit 1 atom (time: 0.6s), Image, Difference (norm: 11.33)
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_003.png
          :class: sphx-glr-multi-img
 
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_004.png
-         :alt: Orthogonal Matching Pursuit 2 atoms (time: 1.1s), Image, Difference (norm: 9.61)
+         :alt: Orthogonal Matching Pursuit 2 atoms (time: 1.2s), Image, Difference (norm: 9.61)
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_004.png
          :class: sphx-glr-multi-img
 
@@ -109,18 +109,18 @@ necessarily related to visualisation.
     Extracting reference patches...
     done in 0.01s.
     Learning the dictionary...
-    done in 0.91s.
+    done in 0.93s.
     Extracting noisy patches... 
     done in 0.00s.
     Orthogonal Matching Pursuit
     1 atom...
-    done in 0.54s.
+    done in 0.63s.
     Orthogonal Matching Pursuit
     2 atoms...
-    done in 1.10s.
+    done in 1.15s.
     Least-angle regression
     4 atoms...
-    done in 8.66s.
+    done in 8.65s.
     Thresholding
      alpha=0.1...
     done in 0.09s.
@@ -272,7 +272,7 @@ necessarily related to visualisation.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  12.491 seconds)
+   **Total running time of the script:** ( 0 minutes  12.688 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_image_denoising.py:
