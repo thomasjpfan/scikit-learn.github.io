@@ -5,18 +5,18 @@
 
 Computation times
 =================
-**00:14.816** total execution time for **auto_examples_semi_supervised** files:
+**00:28.346** total execution time for **auto_examples_semi_supervised** files:
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_semi_supervised_plot_semi_supervised_newsgroups.py` (``plot_semi_supervised_newsgroups.py``)                             | 00:07.546 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_semi_supervised_plot_semi_supervised_newsgroups.py` (``plot_semi_supervised_newsgroups.py``)                             | 00:15.514 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_semi_supervised_plot_self_training_varying_threshold.py` (``plot_self_training_varying_threshold.py``)                   | 00:05.499 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_semi_supervised_plot_self_training_varying_threshold.py` (``plot_self_training_varying_threshold.py``)                   | 00:09.504 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_semi_supervised_plot_semi_supervised_versus_svm_iris.py` (``plot_semi_supervised_versus_svm_iris.py``)                   | 00:01.038 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_semi_supervised_plot_semi_supervised_versus_svm_iris.py` (``plot_semi_supervised_versus_svm_iris.py``)                   | 00:01.861 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_semi_supervised_plot_label_propagation_digits_active_learning.py` (``plot_label_propagation_digits_active_learning.py``) | 00:00.411 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_semi_supervised_plot_label_propagation_digits_active_learning.py` (``plot_label_propagation_digits_active_learning.py``) | 00:00.824 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_semi_supervised_plot_label_propagation_digits.py` (``plot_label_propagation_digits.py``)                                 | 00:00.203 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_semi_supervised_plot_label_propagation_digits.py` (``plot_label_propagation_digits.py``)                                 | 00:00.410 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_semi_supervised_plot_label_propagation_structure.py` (``plot_label_propagation_structure.py``)                           | 00:00.119 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_semi_supervised_plot_label_propagation_structure.py` (``plot_label_propagation_structure.py``)                           | 00:00.232 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
