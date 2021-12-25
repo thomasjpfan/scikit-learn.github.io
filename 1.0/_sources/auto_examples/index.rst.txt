@@ -534,6 +534,27 @@ Examples concerning the :mod:`sklearn.cluster` module.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="An illustration of various linkage option for agglomerative clustering on a 2D embedding of the...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/cluster/images/thumb/sphx_glr_plot_digits_linkage_thumb.png
+     :alt: Various Agglomerative Clustering on a 2D embedding of digits
+
+     :ref:`sphx_glr_auto_examples_cluster_plot_digits_linkage.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/cluster/plot_digits_linkage
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This example uses a large dataset of faces to learn a set of 20 x 20 images patches that consti...">
 
 .. only:: html
@@ -657,27 +678,6 @@ Examples concerning the :mod:`sklearn.cluster` module.
    :hidden:
 
    /auto_examples/cluster/plot_coin_segmentation
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="An illustration of various linkage option for agglomerative clustering on a 2D embedding of the...">
-
-.. only:: html
-
- .. figure:: /auto_examples/cluster/images/thumb/sphx_glr_plot_digits_linkage_thumb.png
-     :alt: Various Agglomerative Clustering on a 2D embedding of digits
-
-     :ref:`sphx_glr_auto_examples_cluster_plot_digits_linkage.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/cluster/plot_digits_linkage
 
 .. raw:: html
 
@@ -1381,7 +1381,7 @@ Examples concerning the :mod:`sklearn.tree` module.
 .. only:: html
 
  .. figure:: /auto_examples/tree/images/thumb/sphx_glr_plot_iris_dtc_thumb.png
-     :alt: Plot the decision surface of a decision tree on the iris dataset
+     :alt: Plot the decision surface of decision trees trained on the iris dataset
 
      :ref:`sphx_glr_auto_examples_tree_plot_iris_dtc.py`
 
@@ -1603,27 +1603,6 @@ Examples concerning the :mod:`sklearn.decomposition` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example shows that Kernel PCA is able to find a projection of the data that makes data lin...">
-
-.. only:: html
-
- .. figure:: /auto_examples/decomposition/images/thumb/sphx_glr_plot_kernel_pca_thumb.png
-     :alt: Kernel PCA
-
-     :ref:`sphx_glr_auto_examples_decomposition_plot_kernel_pca.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/decomposition/plot_kernel_pca
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates visually in the feature space a comparison by results using two differ...">
 
 .. only:: html
@@ -1642,6 +1621,27 @@ Examples concerning the :mod:`sklearn.decomposition` module.
    :hidden:
 
    /auto_examples/decomposition/plot_ica_vs_pca
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows the difference between the Principal Components Analysis (:class:`~sklearn.d...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/decomposition/images/thumb/sphx_glr_plot_kernel_pca_thumb.png
+     :alt: Kernel PCA
+
+     :ref:`sphx_glr_auto_examples_decomposition_plot_kernel_pca.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/decomposition/plot_kernel_pca
 
 .. raw:: html
 
@@ -2165,27 +2165,6 @@ Examples concerning the :mod:`sklearn.ensemble` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we will compare the training times and prediction performances of HistGradient...">
-
-.. only:: html
-
- .. figure:: /auto_examples/ensemble/images/thumb/sphx_glr_plot_gradient_boosting_categorical_thumb.png
-     :alt: Categorical Feature Support in Gradient Boosting
-
-     :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_categorical.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/ensemble/plot_gradient_boosting_categorical
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Plot the decision surfaces of forests of randomized trees trained on pairs of features of the i...">
 
 .. only:: html
@@ -2204,6 +2183,27 @@ Examples concerning the :mod:`sklearn.ensemble` module.
    :hidden:
 
    /auto_examples/ensemble/plot_forest_iris
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this example, we will compare the training times and prediction performances of HistGradient...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/ensemble/images/thumb/sphx_glr_plot_gradient_boosting_categorical_thumb.png
+     :alt: Categorical Feature Support in Gradient Boosting
+
+     :ref:`sphx_glr_auto_examples_ensemble_plot_gradient_boosting_categorical.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/ensemble/plot_gradient_boosting_categorical
 
 .. raw:: html
 
@@ -2329,27 +2329,6 @@ interactive user interface.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of applying NMF and LatentDirichletAllocation on a corpus of documents and e...">
-
-.. only:: html
-
- .. figure:: /auto_examples/applications/images/thumb/sphx_glr_plot_topics_extraction_with_nmf_lda_thumb.png
-     :alt: Topic extraction with Non-negative Matrix Factorization and Latent Dirichlet Allocation
-
-     :ref:`sphx_glr_auto_examples_applications_plot_topics_extraction_with_nmf_lda.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/applications/plot_topics_extraction_with_nmf_lda
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="The dataset used in this example is a preprocessed excerpt of the &quot;Labeled Faces in the Wild&quot;, ...">
 
 .. only:: html
@@ -2371,14 +2350,14 @@ interactive user interface.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Demonstrate how model complexity influences both prediction accuracy and computational performa...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This is an example of applying NMF and LatentDirichletAllocation on a corpus of documents and e...">
 
 .. only:: html
 
- .. figure:: /auto_examples/applications/images/thumb/sphx_glr_plot_model_complexity_influence_thumb.png
-     :alt: Model Complexity Influence
+ .. figure:: /auto_examples/applications/images/thumb/sphx_glr_plot_topics_extraction_with_nmf_lda_thumb.png
+     :alt: Topic extraction with Non-negative Matrix Factorization and Latent Dirichlet Allocation
 
-     :ref:`sphx_glr_auto_examples_applications_plot_model_complexity_influence.py`
+     :ref:`sphx_glr_auto_examples_applications_plot_topics_extraction_with_nmf_lda.py`
 
 .. raw:: html
 
@@ -2388,7 +2367,7 @@ interactive user interface.
 .. toctree::
    :hidden:
 
-   /auto_examples/applications/plot_model_complexity_influence
+   /auto_examples/applications/plot_topics_extraction_with_nmf_lda
 
 .. raw:: html
 
@@ -2410,6 +2389,27 @@ interactive user interface.
    :hidden:
 
    /auto_examples/applications/plot_stock_market
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Demonstrate how model complexity influences both prediction accuracy and computational performa...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/applications/images/thumb/sphx_glr_plot_model_complexity_influence_thumb.png
+     :alt: Model Complexity Influence
+
+     :ref:`sphx_glr_auto_examples_applications_plot_model_complexity_influence.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/applications/plot_model_complexity_influence
 
 .. raw:: html
 
@@ -2882,14 +2882,14 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Both kernel ridge regression (KRR) and Gaussian process regression (GPR) learn a target functio...">
+    <div class="sphx-glr-thumbcontainer" tooltip="A simple one-dimensional regression example computed in two different ways:">
 
 .. only:: html
 
- .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_compare_gpr_krr_thumb.png
-     :alt: Comparison of kernel ridge and Gaussian process regression
+ .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_noisy_targets_thumb.png
+     :alt: Gaussian Processes regression: basic introductory example
 
-     :ref:`sphx_glr_auto_examples_gaussian_process_plot_compare_gpr_krr.py`
+     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy_targets.py`
 
 .. raw:: html
 
@@ -2899,7 +2899,7 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 .. toctree::
    :hidden:
 
-   /auto_examples/gaussian_process/plot_compare_gpr_krr
+   /auto_examples/gaussian_process/plot_gpr_noisy_targets
 
 .. raw:: html
 
@@ -2924,14 +2924,14 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates that GPR with a sum-kernel including a WhiteKernel can estimate the no...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example is based on Section 5.4.3 of &quot;Gaussian Processes for Machine Learning&quot; [RW2006]_. ...">
 
 .. only:: html
 
- .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_noisy_thumb.png
-     :alt: Gaussian process regression (GPR) with noise-level estimation
+ .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_co2_thumb.png
+     :alt: Gaussian process regression (GPR) on Mauna Loa CO2 data
 
-     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy.py`
+     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_co2.py`
 
 .. raw:: html
 
@@ -2941,7 +2941,7 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 .. toctree::
    :hidden:
 
-   /auto_examples/gaussian_process/plot_gpr_noisy
+   /auto_examples/gaussian_process/plot_gpr_co2
 
 .. raw:: html
 
@@ -2966,14 +2966,14 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="A simple one-dimensional regression example computed in two different ways:">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example shows the ability of the WhiteKernel to estimate the noise level in the data. More...">
 
 .. only:: html
 
- .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_noisy_targets_thumb.png
-     :alt: Gaussian Processes regression: basic introductory example
+ .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_noisy_thumb.png
+     :alt: Gaussian process regression (GPR) with noise-level estimation
 
-     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy_targets.py`
+     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_noisy.py`
 
 .. raw:: html
 
@@ -2983,28 +2983,7 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
 .. toctree::
    :hidden:
 
-   /auto_examples/gaussian_process/plot_gpr_noisy_targets
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="This example is based on Section 5.4.3 of &quot;Gaussian Processes for Machine Learning&quot; [RW2006]. I...">
-
-.. only:: html
-
- .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_gpr_co2_thumb.png
-     :alt: Gaussian process regression (GPR) on Mauna Loa CO2 data.
-
-     :ref:`sphx_glr_auto_examples_gaussian_process_plot_gpr_co2.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/gaussian_process/plot_gpr_co2
+   /auto_examples/gaussian_process/plot_gpr_noisy
 
 .. raw:: html
 
@@ -3026,6 +3005,27 @@ Examples concerning the :mod:`sklearn.gaussian_process` module.
    :hidden:
 
    /auto_examples/gaussian_process/plot_gpr_on_structured_data
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates differences between a kernel ridge regression and a Gaussian process r...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/gaussian_process/images/thumb/sphx_glr_plot_compare_gpr_krr_thumb.png
+     :alt: Comparison of kernel ridge and Gaussian process regression
+
+     :ref:`sphx_glr_auto_examples_gaussian_process_plot_compare_gpr_krr.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/gaussian_process/plot_compare_gpr_krr
 
 .. raw:: html
 
@@ -3423,27 +3423,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="An example showing how different online solvers perform on the hand-written digits dataset.">
-
-.. only:: html
-
- .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_sgd_comparison_thumb.png
-     :alt: Comparing various online solvers
-
-     :ref:`sphx_glr_auto_examples_linear_model_plot_sgd_comparison.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/linear_model/plot_sgd_comparison
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="We show that linear_model.Lasso provides the same results for dense and sparse data and that in...">
 
 .. only:: html
@@ -3486,6 +3465,27 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Comparing various online solvers">
+
+.. only:: html
+
+ .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_sgd_comparison_thumb.png
+     :alt: Comparing various online solvers
+
+     :ref:`sphx_glr_auto_examples_linear_model_plot_sgd_comparison.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/linear_model/plot_sgd_comparison
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="Here we fit a multinomial logistic regression with L1 penalty on a subset of the MNIST digits c...">
 
 .. only:: html
@@ -3525,6 +3525,27 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    /auto_examples/linear_model/plot_omp
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example reproduces the example of Fig. 2 of [ZHT2007]_. A LassoLarsIC estimator is fit on ...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_lasso_lars_ic_thumb.png
+     :alt: Lasso model selection via information criteria
+
+     :ref:`sphx_glr_auto_examples_linear_model_plot_lasso_lars_ic.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/linear_model/plot_lasso_lars_ic
 
 .. raw:: html
 
@@ -3759,12 +3780,12 @@ Examples concerning the :mod:`sklearn.linear_model` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="Use the Akaike information criterion (AIC), the Bayes Information criterion (BIC) and cross-val...">
+    <div class="sphx-glr-thumbcontainer" tooltip="This example focuses on model selection for Lasso models that are linear models with an L1 pena...">
 
 .. only:: html
 
  .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_lasso_model_selection_thumb.png
-     :alt: Lasso model selection: Cross-Validation / AIC / BIC
+     :alt: Lasso model selection: AIC-BIC / cross-validation
 
      :ref:`sphx_glr_auto_examples_linear_model_plot_lasso_model_selection.py`
 
@@ -3777,27 +3798,6 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    /auto_examples/linear_model/plot_lasso_model_selection
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Stochastic Gradient Descent is an optimization technique which minimizes a loss function in a s...">
-
-.. only:: html
-
- .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_sgd_early_stopping_thumb.png
-     :alt: Early stopping of Stochastic Gradient Descent
-
-     :ref:`sphx_glr_auto_examples_linear_model_plot_sgd_early_stopping.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/linear_model/plot_sgd_early_stopping
 
 .. raw:: html
 
@@ -3819,6 +3819,27 @@ Examples concerning the :mod:`sklearn.linear_model` module.
    :hidden:
 
    /auto_examples/linear_model/plot_polynomial_interpolation
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Stochastic Gradient Descent is an optimization technique which minimizes a loss function in a s...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/linear_model/images/thumb/sphx_glr_plot_sgd_early_stopping_thumb.png
+     :alt: Early stopping of Stochastic Gradient Descent
+
+     :ref:`sphx_glr_auto_examples_linear_model_plot_sgd_early_stopping.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/linear_model/plot_sgd_early_stopping
 
 .. raw:: html
 
@@ -4572,27 +4593,6 @@ Examples related to the :mod:`sklearn.model_selection` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="In this plot you can see the training scores and validation scores of an SVM for different valu...">
-
-.. only:: html
-
- .. figure:: /auto_examples/model_selection/images/thumb/sphx_glr_plot_validation_curve_thumb.png
-     :alt: Plotting Validation Curves
-
-     :ref:`sphx_glr_auto_examples_model_selection_plot_validation_curve.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/model_selection/plot_validation_curve
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="In this example, we compare receiver operating characteristic (ROC) and detection error tradeof...">
 
 .. only:: html
@@ -4611,6 +4611,27 @@ Examples related to the :mod:`sklearn.model_selection` module.
    :hidden:
 
    /auto_examples/model_selection/plot_det
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="In this plot you can see the training scores and validation scores of an SVM for different valu...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/model_selection/images/thumb/sphx_glr_plot_validation_curve_thumb.png
+     :alt: Plotting Validation Curves
+
+     :ref:`sphx_glr_auto_examples_model_selection_plot_validation_curve.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/model_selection/plot_validation_curve
 
 .. raw:: html
 
@@ -5639,27 +5660,6 @@ Examples concerning the :mod:`sklearn.preprocessing` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="A demonstration of feature discretization on synthetic classification datasets. Feature discret...">
-
-.. only:: html
-
- .. figure:: /auto_examples/preprocessing/images/thumb/sphx_glr_plot_discretization_classification_thumb.png
-     :alt: Feature discretization
-
-     :ref:`sphx_glr_auto_examples_preprocessing_plot_discretization_classification.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/preprocessing/plot_discretization_classification
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="Feature 0 (median income in a block) and feature 5 (average house occupancy) of the california_...">
 
 .. only:: html
@@ -5678,6 +5678,27 @@ Examples concerning the :mod:`sklearn.preprocessing` module.
    :hidden:
 
    /auto_examples/preprocessing/plot_all_scaling
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="A demonstration of feature discretization on synthetic classification datasets. Feature discret...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/preprocessing/images/thumb/sphx_glr_plot_discretization_classification_thumb.png
+     :alt: Feature discretization
+
+     :ref:`sphx_glr_auto_examples_preprocessing_plot_discretization_classification.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/preprocessing/plot_discretization_classification
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

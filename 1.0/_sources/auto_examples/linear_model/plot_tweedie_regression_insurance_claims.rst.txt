@@ -305,7 +305,7 @@ containing the claim amount (``ClaimAmount``) for the same policy ids
 
  .. code-block:: none
 
-    /home/circleci/project/sklearn/preprocessing/_discretization.py:236: UserWarning: Bins whose width are too small (i.e., <= 1e-8) in feature 0 are removed. Consider decreasing the number of bins.
+    /home/circleci/project/sklearn/preprocessing/_discretization.py:230: UserWarning: Bins whose width are too small (i.e., <= 1e-8) in feature 0 are removed. Consider decreasing the number of bins.
       warnings.warn(
            ClaimNb  Exposure Area  VehPower  VehAge  DrivAge  BonusMalus VehBrand  \
     IDpol                                                                           
@@ -384,7 +384,7 @@ Here we model the frequency ``y = ClaimNb / Exposure``, which is still a
     Evaluation of PoissonRegressor on target Frequency
     subset               train    test
     metric                            
-    D² explained        0.0591  0.0580
+    D² explained        0.0590  0.0579
     mean abs. error     0.1706  0.1661
     mean squared error  0.3041  0.3043
 
@@ -719,15 +719,15 @@ regardless of `power`.
     subset                            train          test            train          test
     metric                                                                              
     D² explained                        NaN           NaN     2.550000e-02  2.480000e-02
-    mean Tweedie dev p=1.5000  8.217340e+01  8.646200e+01     7.960780e+01  8.618680e+01
-    mean Tweedie dev p=1.7000  3.833470e+01  3.922390e+01     3.737380e+01  3.917450e+01
-    mean Tweedie dev p=1.8000  3.106740e+01  3.149880e+01     3.047890e+01  3.148120e+01
-    mean Tweedie dev p=1.9000  3.396140e+01  3.421260e+01     3.360060e+01  3.420820e+01
-    mean Tweedie dev p=1.9900  1.989235e+02  1.996459e+02     1.986911e+02  1.996461e+02
-    mean Tweedie dev p=1.9990  1.886428e+03  1.892752e+03     1.886206e+03  1.892753e+03
+    mean Tweedie dev p=1.5000  8.217730e+01  8.642070e+01     7.960790e+01  8.618600e+01
+    mean Tweedie dev p=1.7000  3.833610e+01  3.921070e+01     3.737390e+01  3.917420e+01
+    mean Tweedie dev p=1.8000  3.106820e+01  3.149130e+01     3.047890e+01  3.148110e+01
+    mean Tweedie dev p=1.9000  3.396190e+01  3.420830e+01     3.360060e+01  3.420810e+01
+    mean Tweedie dev p=1.9900  1.989239e+02  1.996433e+02     1.986910e+02  1.996461e+02
+    mean Tweedie dev p=1.9990  1.886429e+03  1.892750e+03     1.886206e+03  1.892753e+03
     mean Tweedie dev p=1.9999  1.876452e+04  1.882692e+04     1.876430e+04  1.882692e+04
-    mean abs. error            3.246724e+02  3.469663e+02     3.202456e+02  3.397020e+02
-    mean squared error         1.469185e+08  3.325937e+07     1.469327e+08  3.325470e+07
+    mean abs. error            3.246192e+02  3.468907e+02     3.202521e+02  3.397060e+02
+    mean squared error         1.469184e+08  3.325909e+07     1.469327e+08  3.325470e+07
 
 
 
@@ -780,8 +780,8 @@ behavior depends on the amount of regularization).
 
     subset                                      train          test
     observed                             4.577616e+06  1.725665e+06
-    predicted, frequency*severity model  4.565402e+06  1.495568e+06
-    predicted, tweedie, power=1.90       4.451547e+06  1.431960e+06
+    predicted, frequency*severity model  4.563391e+06  1.494688e+06
+    predicted, tweedie, power=1.90       4.451781e+06  1.432017e+06
 
 
 
@@ -888,7 +888,7 @@ pair of models, each with its own set of hyperparameters.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  33.927 seconds)
+   **Total running time of the script:** ( 0 minutes  36.126 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_tweedie_regression_insurance_claims.py:

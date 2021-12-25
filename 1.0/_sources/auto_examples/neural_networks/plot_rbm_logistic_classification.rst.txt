@@ -59,29 +59,29 @@ classification accuracy.
 
  .. code-block:: none
 
-    [BernoulliRBM] Iteration 1, pseudo-likelihood = -25.57, time = 0.18s
-    [BernoulliRBM] Iteration 2, pseudo-likelihood = -23.68, time = 0.26s
-    [BernoulliRBM] Iteration 3, pseudo-likelihood = -22.88, time = 0.24s
-    [BernoulliRBM] Iteration 4, pseudo-likelihood = -21.91, time = 0.23s
-    [BernoulliRBM] Iteration 5, pseudo-likelihood = -21.79, time = 0.26s
+    [BernoulliRBM] Iteration 1, pseudo-likelihood = -25.57, time = 0.17s
+    [BernoulliRBM] Iteration 2, pseudo-likelihood = -23.68, time = 0.25s
+    [BernoulliRBM] Iteration 3, pseudo-likelihood = -22.88, time = 0.25s
+    [BernoulliRBM] Iteration 4, pseudo-likelihood = -21.91, time = 0.24s
+    [BernoulliRBM] Iteration 5, pseudo-likelihood = -21.79, time = 0.24s
     [BernoulliRBM] Iteration 6, pseudo-likelihood = -20.96, time = 0.24s
-    [BernoulliRBM] Iteration 7, pseudo-likelihood = -20.88, time = 0.25s
-    [BernoulliRBM] Iteration 8, pseudo-likelihood = -20.50, time = 0.23s
-    [BernoulliRBM] Iteration 9, pseudo-likelihood = -20.36, time = 0.27s
-    [BernoulliRBM] Iteration 10, pseudo-likelihood = -20.07, time = 0.23s
+    [BernoulliRBM] Iteration 7, pseudo-likelihood = -20.88, time = 0.24s
+    [BernoulliRBM] Iteration 8, pseudo-likelihood = -20.50, time = 0.24s
+    [BernoulliRBM] Iteration 9, pseudo-likelihood = -20.34, time = 0.24s
+    [BernoulliRBM] Iteration 10, pseudo-likelihood = -20.21, time = 0.24s
     Logistic regression using RBM features:
                   precision    recall  f1-score   support
 
-               0       0.99      0.98      0.99       174
-               1       0.91      0.93      0.92       184
-               2       0.94      0.96      0.95       166
-               3       0.94      0.89      0.92       194
+               0       1.00      0.98      0.99       174
+               1       0.92      0.93      0.92       184
+               2       0.93      0.94      0.94       166
+               3       0.94      0.90      0.92       194
                4       0.96      0.94      0.95       186
-               5       0.95      0.92      0.93       181
+               5       0.94      0.92      0.93       181
                6       0.98      0.96      0.97       207
                7       0.94      0.99      0.97       154
-               8       0.90      0.91      0.90       182
-               9       0.87      0.91      0.89       169
+               8       0.90      0.91      0.91       182
+               9       0.88      0.92      0.90       169
 
         accuracy                           0.94      1797
        macro avg       0.94      0.94      0.94      1797
@@ -91,16 +91,16 @@ classification accuracy.
     Logistic regression using raw pixel features:
                   precision    recall  f1-score   support
 
-               0       0.90      0.91      0.91       174
+               0       0.90      0.92      0.91       174
                1       0.60      0.58      0.59       184
                2       0.75      0.85      0.80       166
                3       0.78      0.78      0.78       194
                4       0.81      0.84      0.83       186
-               5       0.75      0.76      0.75       181
+               5       0.77      0.76      0.76       181
                6       0.90      0.87      0.89       207
-               7       0.85      0.88      0.87       154
-               8       0.67      0.59      0.63       182
-               9       0.75      0.76      0.76       169
+               7       0.86      0.88      0.87       154
+               8       0.67      0.58      0.62       182
+               9       0.74      0.76      0.75       169
 
         accuracy                           0.78      1797
        macro avg       0.78      0.78      0.78      1797
@@ -226,7 +226,7 @@ classification accuracy.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.994 seconds)
+   **Total running time of the script:** ( 0 minutes  16.225 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neural_networks_plot_rbm_logistic_classification.py:

@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Plot the decision surfaces of ensembles of trees on the iris dataset &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>Plot the decision surfaces of ensembles of trees on the iris dataset &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_iris.html" />
 
@@ -153,12 +153,12 @@
           </a>
         </div>
         <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-            <a href="plot_gradient_boosting_categorical.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Categorical Feature Support in Gradient Boosting">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
-            <a href="plot_stack_predictors.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Combine predictors using stacking">Next</a>
+            <a href="plot_gradient_boosting_oob.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Gradient Boosting Out-of-Bag estimates">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+            <a href="plot_gradient_boosting_categorical.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Categorical Feature Support in Gradient Boosting">Next</a>
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -217,18 +217,18 @@ the scores (but the average score does not improve).</p>
 on many cores as each tree is built independently of the others. AdaBoost’s
 samples are built sequentially and so do not use multiple cores.</p>
 <img src="../../_images/sphx_glr_plot_forest_iris_001.png" srcset="../../_images/sphx_glr_plot_forest_iris_001.png" alt="Classifiers on feature subsets of the Iris dataset, DecisionTree, RandomForest, ExtraTrees, AdaBoost" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DecisionTree with features [0, 1] has a score of 9.266666666666666e-01
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>DecisionTree with features [0, 1] has a score of 0.9266666666666666
 RandomForest with 30 estimators with features [0, 1] has a score of 0.9266666666666666
 ExtraTrees with 30 estimators with features [0, 1] has a score of 0.9266666666666666
-AdaBoost with 30 estimators with features [0, 1] has a score of 8.533333333333334e-01
+AdaBoost with 30 estimators with features [0, 1] has a score of 0.8533333333333334
 DecisionTree with features [0, 2] has a score of 0.9933333333333333
 RandomForest with 30 estimators with features [0, 2] has a score of 0.9933333333333333
 ExtraTrees with 30 estimators with features [0, 2] has a score of 0.9933333333333333
-AdaBoost with 30 estimators with features [0, 2] has a score of 9.933333333333333e-01
+AdaBoost with 30 estimators with features [0, 2] has a score of 0.9933333333333333
 DecisionTree with features [2, 3] has a score of 0.9933333333333333
 RandomForest with 30 estimators with features [2, 3] has a score of 0.9933333333333333
 ExtraTrees with 30 estimators with features [2, 3] has a score of 0.9933333333333333
-AdaBoost with 30 estimators with features [2, 3] has a score of 9.933333333333333e-01
+AdaBoost with 30 estimators with features [2, 3] has a score of 0.9933333333333333
 </pre></div>
 </div>
 <div class="line-block">
@@ -365,7 +365,7 @@ AdaBoost with 30 estimators with features [2, 3] has a score of 9.93333333333333
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.322 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.401 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-ensemble-plot-forest-iris-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/ensemble/plot_forest_iris.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo10.svg" width="150px" /></a>

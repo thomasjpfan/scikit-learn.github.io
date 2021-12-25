@@ -11,14 +11,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scikit-learn/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html" />
   <meta property="og:site_name" content="scikit-learn" />
-  <meta property="og:description" content="Examples using sklearn.cluster.AgglomerativeClustering: Plot Hierarchical Clustering Dendrogram Plot Hierarchical Clustering Dendrogram, Agglomerative clustering with and without structure Agglomer..." />
-  <meta property="og:image" content="../../_images/sphx_glr_plot_agglomerative_dendrogram_thumb.png" />
+  <meta property="og:description" content="Examples using sklearn.cluster.AgglomerativeClustering: Plot Hierarchical Clustering Dendrogram Plot Hierarchical Clustering Dendrogram, Various Agglomerative Clustering on a 2D embedding of digits..." />
+  <meta property="og:image" content="https://scikit-learn/_images/sphx_glr_plot_agglomerative_dendrogram_thumb.png" />
   <meta property="og:image:alt" content="Plot Hierarchical Clustering Dendrogram" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.cluster.AgglomerativeClustering &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>sklearn.cluster.AgglomerativeClustering &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -185,7 +185,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.cluster" title="sklearn.cluster"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cluster</span></code></a>.AgglomerativeClustering<a class="headerlink" href="#sklearn-cluster-agglomerativeclustering" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.cluster.AgglomerativeClustering">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.cluster.</span></span><span class="sig-name descname"><span class="pre">AgglomerativeClustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_clusters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'euclidean'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_full_tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linkage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ward'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_distances</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/cluster/_agglomerative.py#L740"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.cluster.</span></span><span class="sig-name descname"><span class="pre">AgglomerativeClustering</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_clusters</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">affinity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'euclidean'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectivity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_full_tree</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">linkage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'ward'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_distances</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/cluster/_agglomerative.py#L740"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering" title="Permalink to this definition">¶</a></dt>
 <dd><p>Agglomerative Clustering.</p>
 <p>Recursively merges pair of clusters of sample data; uses linkage distance.</p>
 <p>Read more in the <a class="reference internal" href="../clustering.html#hierarchical-clustering"><span class="std std-ref">User Guide</span></a>.</p>
@@ -327,7 +327,7 @@ is set to <code class="docutils literal notranslate"><span class="pre">True</spa
 <td><p>Fit the hierarchical clustering from features, or distance matrix.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#sklearn.cluster.AgglomerativeClustering.fit_predict" title="sklearn.cluster.AgglomerativeClustering.fit_predict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_predict</span></code></a>(X[, y])</p></td>
-<td><p>Fit and return the result of each sample’s clustering assignment.</p></td>
+<td><p>Fit and return the result of each sample's clustering assignment.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.cluster.AgglomerativeClustering.get_params" title="sklearn.cluster.AgglomerativeClustering.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>([deep])</p></td>
 <td><p>Get parameters for this estimator.</p></td>
@@ -339,7 +339,7 @@ is set to <code class="docutils literal notranslate"><span class="pre">True</spa
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.cluster.AgglomerativeClustering.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/cluster/_agglomerative.py#L899"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/cluster/_agglomerative.py#L899"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the hierarchical clustering from features, or distance matrix.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -362,7 +362,7 @@ is set to <code class="docutils literal notranslate"><span class="pre">True</spa
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.cluster.AgglomerativeClustering.fit_predict">
-<span class="sig-name descname"><span class="pre">fit_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/cluster/_agglomerative.py#L1033"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.fit_predict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit_predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/cluster/_agglomerative.py#L1033"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.fit_predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit and return the result of each sample’s clustering assignment.</p>
 <p>In addition to fitting, this method also return the result of the
 clustering assignment for each sample in the training set.</p>
@@ -387,7 +387,7 @@ clustering assignment for each sample in the training set.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.cluster.AgglomerativeClustering.get_params">
-<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/base.py#L188"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.get_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/base.py#L193"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -408,7 +408,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.cluster.AgglomerativeClustering.set_params">
-<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/base.py#L212"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.set_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/base.py#L217"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.cluster.AgglomerativeClustering.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as <a class="reference internal" href="sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
@@ -440,16 +440,16 @@ possible to update each component of a nested object.</p>
 <p><span class="caption-text"><a class="reference internal" href="../../auto_examples/cluster/plot_agglomerative_dendrogram.html#sphx-glr-auto-examples-cluster-plot-agglomerative-dendrogram-py"><span class="std std-ref">Plot Hierarchical Clustering Dendrogram</span></a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
-</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows the effect of imposing a connectivity graph to capture local structure in th..."><figure class="align-default" id="id2">
-<img alt="Agglomerative clustering with and without structure" src="../../_images/sphx_glr_plot_agglomerative_clustering_thumb.png" />
-<figcaption>
-<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/cluster/plot_agglomerative_clustering.html#sphx-glr-auto-examples-cluster-plot-agglomerative-clustering-py"><span class="std std-ref">Agglomerative clustering with and without structure</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</div><div class="sphx-glr-thumbcontainer" tooltip="An illustration of various linkage option for agglomerative clustering on a 2D embedding of the..."><figure class="align-default" id="id3">
+</div><div class="sphx-glr-thumbcontainer" tooltip="An illustration of various linkage option for agglomerative clustering on a 2D embedding of the..."><figure class="align-default" id="id2">
 <img alt="Various Agglomerative Clustering on a 2D embedding of digits" src="../../_images/sphx_glr_plot_digits_linkage_thumb.png" />
 <figcaption>
-<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/cluster/plot_digits_linkage.html#sphx-glr-auto-examples-cluster-plot-digits-linkage-py"><span class="std std-ref">Various Agglomerative Clustering on a 2D embedding of digits</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/cluster/plot_digits_linkage.html#sphx-glr-auto-examples-cluster-plot-digits-linkage-py"><span class="std std-ref">Various Agglomerative Clustering on a 2D embedding of digits</span></a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example shows the effect of imposing a connectivity graph to capture local structure in th..."><figure class="align-default" id="id3">
+<img alt="Agglomerative clustering with and without structure" src="../../_images/sphx_glr_plot_agglomerative_clustering_thumb.png" />
+<figcaption>
+<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/cluster/plot_agglomerative_clustering.html#sphx-glr-auto-examples-cluster-plot-agglomerative-clustering-py"><span class="std std-ref">Agglomerative clustering with and without structure</span></a></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Compute the segmentation of a 2D image with Ward hierarchical clustering. The clustering is spa..."><figure class="align-default" id="id4">

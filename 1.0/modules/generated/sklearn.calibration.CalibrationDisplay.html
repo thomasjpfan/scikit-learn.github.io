@@ -11,13 +11,13 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scikit-learn/stable/modules/generated/sklearn.calibration.CalibrationDisplay.html" />
   <meta property="og:site_name" content="scikit-learn" />
-  <meta property="og:image" content="../../_images/sklearn-calibration-CalibrationDisplay-1.png" />
+  <meta property="og:image" content="https://scikit-learn/_images/sklearn-calibration-CalibrationDisplay-1.png" />
   <meta property="og:image:alt" content="scikit-learn" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.calibration.CalibrationDisplay &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>sklearn.calibration.CalibrationDisplay &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.calibration.CalibrationDisplay.html" />
 
@@ -157,7 +157,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -181,7 +181,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.calibration" title="sklearn.calibration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.calibration</span></code></a>.CalibrationDisplay<a class="headerlink" href="#sklearn-calibration-calibrationdisplay" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.calibration.CalibrationDisplay">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.calibration.</span></span><span class="sig-name descname"><span class="pre">CalibrationDisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prob_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prob_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_prob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimator_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/calibration.py#L977"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.calibration.</span></span><span class="sig-name descname"><span class="pre">CalibrationDisplay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prob_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prob_pred</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_prob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimator_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/calibration.py#L977"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calibration curve (also known as reliability diagram) visualization.</p>
 <p>It is recommended to use
 <a class="reference internal" href="#sklearn.calibration.CalibrationDisplay.from_estimator" title="sklearn.calibration.CalibrationDisplay.from_estimator"><code class="xref py py-func docutils literal notranslate"><span class="pre">from_estimator</span></code></a> or
@@ -253,10 +253,10 @@ of positives), in each bin.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.calibration.CalibrationDisplay.from_estimator" title="sklearn.calibration.CalibrationDisplay.from_estimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_estimator</span></code></a>(estimator, X, y, *[, n_bins, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.calibration.CalibrationDisplay.from_estimator" title="sklearn.calibration.CalibrationDisplay.from_estimator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_estimator</span></code></a>(estimator, X, y, *[, n_bins, ...])</p></td>
 <td><p>Plot calibration curve using a binary classifier and data.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.calibration.CalibrationDisplay.from_predictions" title="sklearn.calibration.CalibrationDisplay.from_predictions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_predictions</span></code></a>(y_true, y_prob, *[, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.calibration.CalibrationDisplay.from_predictions" title="sklearn.calibration.CalibrationDisplay.from_predictions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">from_predictions</span></code></a>(y_true, y_prob, *[, ...])</p></td>
 <td><p>Plot calibration curve using true labels and predicted probabilities.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.calibration.CalibrationDisplay.plot" title="sklearn.calibration.CalibrationDisplay.plot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">plot</span></code></a>(*[, ax, name, ref_line])</p></td>
@@ -266,14 +266,14 @@ of positives), in each bin.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.calibration.CalibrationDisplay.from_estimator">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/calibration.py#L1106"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.from_estimator" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_estimator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/calibration.py#L1106"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.from_estimator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot calibration curve using a binary classifier and data.</p>
 <p>A calibration curve, also known as a reliability diagram, uses inputs
 from a binary classifier and plots the average predicted probability
 for each bin against the fraction of positive classes, on the
 y-axis.</p>
 <p>Extra keyword arguments will be passed to
-<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.4.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
+<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.5.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
 <p>Read more about calibration in the <a class="reference internal" href="../calibration.html#calibration"><span class="std std-ref">User Guide</span></a> and
 more about the scikit-learn visualization API in <a class="reference internal" href="../../visualizations.html#visualizations"><span class="std std-ref">Visualizations</span></a>.</p>
 <div class="versionadded">
@@ -310,7 +310,7 @@ calibrated classifier.</p>
 <dt><strong>ax</strong><span class="classifier">matplotlib axes, default=None</span></dt><dd><p>Axes object to plot on. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, a new figure and axes is
 created.</p>
 </dd>
-<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments to be passed to <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.4.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments to be passed to <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.5.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
@@ -351,14 +351,14 @@ created.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.calibration.CalibrationDisplay.from_predictions">
-<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_prob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/calibration.py#L1225"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.from_predictions" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">classmethod</span> </em><span class="sig-name descname"><span class="pre">from_predictions</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y_true</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_prob</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">strategy</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'uniform'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/calibration.py#L1225"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.from_predictions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot calibration curve using true labels and predicted probabilities.</p>
 <p>Calibration curve, also known as reliability diagram, uses inputs
 from a binary classifier and plots the average predicted probability
 for each bin against the fraction of positive classes, on the
 y-axis.</p>
 <p>Extra keyword arguments will be passed to
-<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.4.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
+<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.5.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
 <p>Read more about calibration in the <a class="reference internal" href="../calibration.html#calibration"><span class="std std-ref">User Guide</span></a> and
 more about the scikit-learn visualization API in <a class="reference internal" href="../../visualizations.html#visualizations"><span class="std std-ref">Visualizations</span></a>.</p>
 <div class="versionadded">
@@ -390,7 +390,7 @@ calibrated classifier.</p>
 <dt><strong>ax</strong><span class="classifier">matplotlib axes, default=None</span></dt><dd><p>Axes object to plot on. If <code class="docutils literal notranslate"><span class="pre">None</span></code>, a new figure and axes is
 created.</p>
 </dd>
-<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments to be passed to <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.4.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments to be passed to <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.5.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
@@ -432,10 +432,10 @@ created.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.calibration.CalibrationDisplay.plot">
-<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/calibration.py#L1050"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.plot" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ref_line</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/calibration.py#L1050"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.calibration.CalibrationDisplay.plot" title="Permalink to this definition">¶</a></dt>
 <dd><p>Plot visualization.</p>
 <p>Extra keyword arguments will be passed to
-<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.4.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
+<a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.5.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -448,7 +448,7 @@ not <code class="docutils literal notranslate"><span class="pre">None</span></co
 <dt><strong>ref_line</strong><span class="classifier">bool, default=True</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">True</span></code>, plots a reference line representing a perfectly
 calibrated classifier.</p>
 </dd>
-<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments to be passed to <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.4.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
+<dt><strong>**kwargs</strong><span class="classifier">dict</span></dt><dd><p>Keyword arguments to be passed to <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="(in Matplotlib v3.5.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.plot</span></code></a>.</p>
 </dd>
 </dl>
 </dd>

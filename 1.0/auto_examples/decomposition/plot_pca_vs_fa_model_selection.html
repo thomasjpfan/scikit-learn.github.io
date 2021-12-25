@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Model selection with Probabilistic PCA and Factor Analysis (FA) &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>Model selection with Probabilistic PCA and Factor Analysis (FA) &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/decomposition/plot_pca_vs_fa_model_selection.html" />
 
@@ -153,12 +153,12 @@
           </a>
         </div>
         <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-            <a href="plot_ica_vs_pca.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="FastICA on 2D point clouds">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+            <a href="plot_kernel_pca.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Kernel PCA">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
             <a href="plot_sparse_coding.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Sparse coding with a precomputed dictionary">Next</a>
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -197,7 +197,8 @@ likelihood to the likelihoods obtained from shrinkage covariance estimators.</p>
 in recovering the size of the low rank subspace. The likelihood with PCA
 is higher than FA in this case. However PCA fails and overestimates
 the rank when heteroscedastic noise is present. Under appropriate
-circumstances the low rank models are more likely than shrinkage models.</p>
+circumstances (choice of the number of components), the held-out
+data is more likely for low rank models than for shrinkage models.</p>
 <p>The automatic estimation from
 Automatic Choice of Dimensionality for PCA. NIPS 2000: 598-604
 by Thomas P. Minka is also compared.</p>
@@ -206,12 +207,12 @@ by Thomas P. Minka is also compared.</p>
 <li><img src="../../_images/sphx_glr_plot_pca_vs_fa_model_selection_002.png" srcset="../../_images/sphx_glr_plot_pca_vs_fa_model_selection_002.png" alt="Heteroscedastic Noise" class = "sphx-glr-multi-img"/></li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>best n_components by PCA CV = 10
-best n_components by FactorAnalysis CV = 10
-best n_components by PCA MLE = 10
-best n_components by PCA CV = 35
-best n_components by FactorAnalysis CV = 10
-best n_components by PCA MLE = 38
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>best n_components by PCA CV = 5
+best n_components by FactorAnalysis CV = 5
+best n_components by PCA MLE = 5
+best n_components by PCA CV = 20
+best n_components by FactorAnalysis CV = 5
+best n_components by PCA MLE = 18
 </pre></div>
 </div>
 <div class="line-block">
@@ -233,7 +234,7 @@ best n_components by PCA MLE = 38
 <span class="c1"># #############################################################################</span>
 <span class="c1"># Create the data</span>
 
-<span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span><span class="p">,</span> <span class="n">rank</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span>
+<span class="n">n_samples</span><span class="p">,</span> <span class="n">n_features</span><span class="p">,</span> <span class="n">rank</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">5</span>
 <span class="n">sigma</span> <span class="o">=</span> <span class="mf">1.0</span>
 <span class="n">rng</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="numpy.random.RandomState" class="sphx-glr-backref-module-numpy-random sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">RandomState</span></a><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">U</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy/reference/reference/generated/scipy.linalg.svd.html#scipy.linalg.svd" title="scipy.linalg.svd" class="sphx-glr-backref-module-scipy-linalg sphx-glr-backref-type-py-function"><span class="n">linalg</span><span class="o">.</span><span class="n">svd</span></a><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">n_features</span><span class="p">,</span> <span class="n">n_features</span><span class="p">))</span>
@@ -334,7 +335,7 @@ best n_components by PCA MLE = 38
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  14.494 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.706 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-decomposition-plot-pca-vs-fa-model-selection-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/decomposition/plot_pca_vs_fa_model_selection.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo9.svg" width="150px" /></a>

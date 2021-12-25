@@ -12,13 +12,13 @@
   <meta property="og:url" content="https://scikit-learn/stable/modules/generated/sklearn.datasets.load_iris.html" />
   <meta property="og:site_name" content="scikit-learn" />
   <meta property="og:description" content="Examples using sklearn.datasets.load_iris: Release Highlights for scikit-learn 0.24 Release Highlights for scikit-learn 0.24, Release Highlights for scikit-learn 0.22 Release Highlights for scikit-..." />
-  <meta property="og:image" content="../../_images/sphx_glr_plot_release_highlights_0_24_0_thumb.png" />
+  <meta property="og:image" content="https://scikit-learn/_images/sphx_glr_plot_release_highlights_0_24_0_thumb.png" />
   <meta property="og:image:alt" content="Release Highlights for scikit-learn 0.24" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.datasets.load_iris &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>sklearn.datasets.load_iris &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_iris.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -185,7 +185,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.datasets" title="sklearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a>.load_iris<a class="headerlink" href="#sklearn-datasets-load-iris" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.datasets.load_iris">
-<span class="sig-prename descclassname"><span class="pre">sklearn.datasets.</span></span><span class="sig-name descname"><span class="pre">load_iris</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_X_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/datasets/_base.py#L520"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.datasets.load_iris" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.datasets.</span></span><span class="sig-name descname"><span class="pre">load_iris</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_X_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">as_frame</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/datasets/_base.py#L520"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.datasets.load_iris" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load and return the iris dataset (classification).</p>
 <p>The iris dataset is a classic and very easy multi-class classification
 dataset.</p>
@@ -262,7 +262,11 @@ a pandas Series.</p>
 </dd>
 </dl>
 </dd>
-<dt><strong>(data, target)</strong><span class="classifier">tuple if <code class="docutils literal notranslate"><span class="pre">return_X_y</span></code> is True</span></dt><dd><div class="versionadded">
+<dt><strong>(data, target)</strong><span class="classifier">tuple if <code class="docutils literal notranslate"><span class="pre">return_X_y</span></code> is True</span></dt><dd><p>A tuple of two ndarray. The first containing a 2D array of shape
+(n_samples, n_features) with each row representing one sample and
+each column representing the features. The second ndarray of shape
+(n_samples,) containing the target samples.</p>
+<div class="versionadded">
 <p><span class="versionmodified added">New in version 0.18.</span></p>
 </div>
 </dd>
@@ -327,9 +331,9 @@ know their class name.</p>
 </figcaption>
 </figure>
 </div><div class="sphx-glr-thumbcontainer" tooltip="Plot the decision surface of a decision tree trained on pairs of features of the iris dataset."><figure class="align-default" id="id7">
-<img alt="Plot the decision surface of a decision tree on the iris dataset" src="../../_images/sphx_glr_plot_iris_dtc_thumb.png" />
+<img alt="Plot the decision surface of decision trees trained on the iris dataset" src="../../_images/sphx_glr_plot_iris_dtc_thumb.png" />
 <figcaption>
-<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/tree/plot_iris_dtc.html#sphx-glr-auto-examples-tree-plot-iris-dtc-py"><span class="std std-ref">Plot the decision surface of a decision tree on the iris dataset</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text"><a class="reference internal" href="../../auto_examples/tree/plot_iris_dtc.html#sphx-glr-auto-examples-tree-plot-iris-dtc-py"><span class="std std-ref">Plot the decision surface of decision trees trained on the iris dataset</span></a></span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </div><div class="sphx-glr-thumbcontainer" tooltip="The decision tree structure can be analysed to gain further insight on the relation between the..."><figure class="align-default" id="id8">

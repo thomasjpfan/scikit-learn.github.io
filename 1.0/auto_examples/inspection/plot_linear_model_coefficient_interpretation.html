@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Common pitfalls in the interpretation of coefficients of linear models &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>Common pitfalls in the interpretation of coefficients of linear models &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/inspection/plot_linear_model_coefficient_interpretation.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -726,51 +726,51 @@ regressor we have fitted.</p>
   <tbody>
     <tr>
       <th>RACE_Hispanic</th>
-      <td>-0.013564</td>
+      <td>-0.013520</td>
     </tr>
     <tr>
       <th>RACE_Other</th>
-      <td>-0.009120</td>
+      <td>-0.009077</td>
     </tr>
     <tr>
       <th>RACE_White</th>
-      <td>0.022549</td>
+      <td>0.022593</td>
     </tr>
     <tr>
       <th>OCCUPATION_Clerical</th>
-      <td>0.000048</td>
+      <td>0.000047</td>
     </tr>
     <tr>
       <th>OCCUPATION_Management</th>
-      <td>0.090531</td>
+      <td>0.090530</td>
     </tr>
     <tr>
       <th>OCCUPATION_Other</th>
-      <td>-0.025098</td>
+      <td>-0.025100</td>
     </tr>
     <tr>
       <th>OCCUPATION_Professional</th>
-      <td>0.071967</td>
+      <td>0.071965</td>
     </tr>
     <tr>
       <th>OCCUPATION_Sales</th>
-      <td>-0.046633</td>
+      <td>-0.046634</td>
     </tr>
     <tr>
       <th>OCCUPATION_Service</th>
-      <td>-0.091050</td>
+      <td>-0.091051</td>
     </tr>
     <tr>
       <th>SECTOR_Construction</th>
-      <td>-0.000180</td>
+      <td>-0.000207</td>
     </tr>
     <tr>
       <th>SECTOR_Manufacturing</th>
-      <td>0.031273</td>
+      <td>0.031245</td>
     </tr>
     <tr>
       <th>SECTOR_Other</th>
-      <td>-0.031008</td>
+      <td>-0.031035</td>
     </tr>
     <tr>
       <th>MARR_Unmarried</th>
@@ -894,7 +894,7 @@ with caution.</p>
     <span class="n">y</span><span class="p">,</span>
     <span class="n">cv</span><span class="o">=</span><a href="../../modules/generated/sklearn.model_selection.RepeatedKFold.html#sklearn.model_selection.RepeatedKFold" title="sklearn.model_selection.RepeatedKFold" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RepeatedKFold</span></a><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
     <span class="n">return_estimator</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">coefs</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></a><span class="p">(</span>
     <span class="p">[</span>
@@ -943,7 +943,7 @@ on the model stability.</p>
     <span class="n">y</span><span class="p">,</span>
     <span class="n">cv</span><span class="o">=</span><a href="../../modules/generated/sklearn.model_selection.RepeatedKFold.html#sklearn.model_selection.RepeatedKFold" title="sklearn.model_selection.RepeatedKFold" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RepeatedKFold</span></a><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
     <span class="n">return_estimator</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">coefs</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></a><span class="p">(</span>
     <span class="p">[</span>
@@ -1034,7 +1034,7 @@ squared coefficient.</p>
     <span class="n">y</span><span class="p">,</span>
     <span class="n">cv</span><span class="o">=</span><a href="../../modules/generated/sklearn.model_selection.RepeatedKFold.html#sklearn.model_selection.RepeatedKFold" title="sklearn.model_selection.RepeatedKFold" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RepeatedKFold</span></a><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
     <span class="n">return_estimator</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">coefs</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></a><span class="p">(</span>
     <span class="p">[</span>
@@ -1135,7 +1135,7 @@ the <a class="reference internal" href="#covariation"><span class="std std-ref">
     <span class="n">y</span><span class="p">,</span>
     <span class="n">cv</span><span class="o">=</span><a href="../../modules/generated/sklearn.model_selection.RepeatedKFold.html#sklearn.model_selection.RepeatedKFold" title="sklearn.model_selection.RepeatedKFold" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RepeatedKFold</span></a><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">n_repeats</span><span class="o">=</span><span class="mi">5</span><span class="p">),</span>
     <span class="n">return_estimator</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">n_jobs</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">coefs</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="pandas.DataFrame" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span></a><span class="p">(</span>
     <span class="p">[</span>
@@ -1245,7 +1245,7 @@ coefficients could significantly vary from one another.</p></li>
 <li><p>Inspecting coefficients across the folds of a cross-validation loop
 gives an idea of their stability.</p></li>
 </ul>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  13.022 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.741 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-inspection-plot-linear-model-coefficient-interpretation-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/inspection/plot_linear_model_coefficient_interpretation.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo15.svg" width="150px" /></a>

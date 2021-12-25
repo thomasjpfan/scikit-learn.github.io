@@ -50,7 +50,7 @@ label.
     See also :func:`sklearn.metrics.roc_auc_score`,
              :ref:`sphx_glr_auto_examples_model_selection_plot_roc_crossval.py`
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-84
+.. GENERATED FROM PYTHON SOURCE LINES 35-83
 
 .. code-block:: default
 
@@ -64,7 +64,6 @@ label.
     from sklearn.model_selection import train_test_split
     from sklearn.preprocessing import label_binarize
     from sklearn.multiclass import OneVsRestClassifier
-    from scipy import interp
     from sklearn.metrics import roc_auc_score
 
     # Import some data to play with
@@ -110,11 +109,11 @@ label.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-86
+.. GENERATED FROM PYTHON SOURCE LINES 84-85
 
 Plot of a ROC curve for a specific class
 
-.. GENERATED FROM PYTHON SOURCE LINES 86-105
+.. GENERATED FROM PYTHON SOURCE LINES 85-104
 
 .. code-block:: default
 
@@ -149,13 +148,13 @@ Plot of a ROC curve for a specific class
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-109
+.. GENERATED FROM PYTHON SOURCE LINES 105-108
 
 Plot ROC curves for the multiclass problem
 ..........................................
 Compute macro-average ROC curve and ROC area
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-165
+.. GENERATED FROM PYTHON SOURCE LINES 108-164
 
 .. code-block:: default
 
@@ -166,7 +165,7 @@ Compute macro-average ROC curve and ROC area
     # Then interpolate all ROC curves at this points
     mean_tpr = np.zeros_like(all_fpr)
     for i in range(n_classes):
-        mean_tpr += interp(all_fpr, fpr[i], tpr[i])
+        mean_tpr += np.interp(all_fpr, fpr[i], tpr[i])
 
     # Finally average it and compute AUC
     mean_tpr /= n_classes
@@ -224,19 +223,10 @@ Compute macro-average ROC curve and ROC area
    :class: sphx-glr-single-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/circleci/project/examples/model_selection/plot_roc.py:116: DeprecationWarning: scipy.interp is deprecated and will be removed in SciPy 2.0.0, use numpy.interp instead
-      mean_tpr += interp(all_fpr, fpr[i], tpr[i])
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 166-173
+.. GENERATED FROM PYTHON SOURCE LINES 165-172
 
 Area under ROC for the multiclass problem
 .........................................
@@ -246,7 +236,7 @@ unique pairwise combination of classes. In this section, we calculate the AUC
 using the OvR and OvO schemes. We report a macro average, and a
 prevalence-weighted average.
 
-.. GENERATED FROM PYTHON SOURCE LINES 173-191
+.. GENERATED FROM PYTHON SOURCE LINES 172-190
 
 .. code-block:: default
 
@@ -291,7 +281,7 @@ prevalence-weighted average.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.304 seconds)
+   **Total running time of the script:** ( 0 minutes  0.327 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_roc.py:

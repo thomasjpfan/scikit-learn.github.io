@@ -30,7 +30,7 @@ values for both scores, i.e. the classifier is performing fairly well. If gamma
 is too high, the classifier will overfit, which means that the training score
 is good but the validation score is poor.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-69
+.. GENERATED FROM PYTHON SOURCE LINES 15-71
 
 
 
@@ -54,6 +54,8 @@ is good but the validation score is poor.
     from sklearn.model_selection import validation_curve
 
     X, y = load_digits(return_X_y=True)
+    subset_mask = np.isin(y, [1, 2])  # binary classification: 1 vs 2
+    X, y = X[subset_mask], y[subset_mask]
 
     param_range = np.logspace(-6, -1, 5)
     train_scores, test_scores = validation_curve(
@@ -63,7 +65,7 @@ is good but the validation score is poor.
         param_name="gamma",
         param_range=param_range,
         scoring="accuracy",
-        n_jobs=1,
+        n_jobs=2,
     )
     train_scores_mean = np.mean(train_scores, axis=1)
     train_scores_std = np.std(train_scores, axis=1)
@@ -103,7 +105,7 @@ is good but the validation score is poor.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.478 seconds)
+   **Total running time of the script:** ( 0 minutes  0.735 seconds)
 
 
 .. _sphx_glr_download_auto_examples_model_selection_plot_validation_curve.py:

@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Glossary of Common Terms and API Elements &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>Glossary of Common Terms and API Elements &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/glossary.html" />
 
@@ -159,7 +159,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -231,8 +231,8 @@ functions, array-like is any type object for which
 <li><p>a numpy array</p></li>
 <li><p>a list of numbers</p></li>
 <li><p>a list of length-k lists of numbers for some fixed length k</p></li>
-<li><p>a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.3.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> with all columns numeric</p></li>
-<li><p>a numeric <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.3.4)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Series</span></code></a></p></li>
+<li><p>a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v1.3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> with all columns numeric</p></li>
+<li><p>a numeric <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.html#pandas.Series" title="(in pandas v1.3.5)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.Series</span></code></a></p></li>
 </ul>
 <p>It excludes:</p>
 <ul class="simple">
@@ -719,9 +719,8 @@ matrices that are symmetric and hence store data redundantly.</p>
 <p>See also <a class="reference internal" href="#term-precomputed"><span class="xref std std-term">precomputed</span></a> and <a class="reference internal" href="#term-metric"><span class="xref std std-term">metric</span></a>.</p>
 <p>Note that for most distance metrics, we rely on implementations from
 <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/reference/spatial.distance.html#module-scipy.spatial.distance" title="(in SciPy v1.7.1)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.spatial.distance</span></code></a>, but may reimplement for efficiency in
-our context.  The <code class="xref py py-mod docutils literal notranslate"><span class="pre">neighbors</span></code> module also duplicates some metric
-implementations for integration with efficient binary tree search data
-structures.</p>
+our context. The <a class="reference internal" href="modules/generated/sklearn.metrics.DistanceMetric.html#sklearn.metrics.DistanceMetric" title="sklearn.metrics.DistanceMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">metrics.DistanceMetric</span></code></a> interface is used to implement
+distance metrics for integration with efficient neighbors search.</p>
 </dd>
 <dt id="term-pd">pd<a class="headerlink" href="#term-pd" title="Permalink to this term">¶</a></dt><dd><p>A shorthand for <a class="reference external" href="https://pandas.pydata.org">Pandas</a> due to the
 conventional import statement:</p>
@@ -1024,7 +1023,7 @@ See <a class="reference internal" href="modules/model_evaluation.html#scoring-pa
 </dl>
 <p>Further examples:</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="modules/generated/sklearn.neighbors.DistanceMetric.html#sklearn.neighbors.DistanceMetric" title="sklearn.neighbors.DistanceMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.DistanceMetric</span></code></a></p></li>
+<li><p><a class="reference internal" href="modules/generated/sklearn.metrics.DistanceMetric.html#sklearn.metrics.DistanceMetric" title="sklearn.metrics.DistanceMetric"><code class="xref py py-class docutils literal notranslate"><span class="pre">metrics.DistanceMetric</span></code></a></p></li>
 <li><p><a class="reference internal" href="modules/generated/sklearn.gaussian_process.kernels.Kernel.html#sklearn.gaussian_process.kernels.Kernel" title="sklearn.gaussian_process.kernels.Kernel"><code class="xref py py-class docutils literal notranslate"><span class="pre">gaussian_process.kernels.Kernel</span></code></a></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">tree.Criterion</span></code></p></li>
 </ul>
@@ -1430,11 +1429,11 @@ pass over every sample in the data).</p>
 <p>FIXME perhaps we should have some common tests about the relationship
 between ConvergenceWarning and max_iter.</p>
 </dd>
-<dt id="term-memory"><code class="docutils literal notranslate"><span class="pre">memory</span></code><a class="headerlink" href="#term-memory" title="Permalink to this term">¶</a></dt><dd><p>Some estimators make use of <a class="reference external" href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="(in joblib v1.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">joblib.Memory</span></code></a> to
+<dt id="term-memory"><code class="docutils literal notranslate"><span class="pre">memory</span></code><a class="headerlink" href="#term-memory" title="Permalink to this term">¶</a></dt><dd><p>Some estimators make use of <a class="reference external" href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="(in joblib v1.2.0.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">joblib.Memory</span></code></a> to
 store partial solutions during fitting. Thus when <code class="docutils literal notranslate"><span class="pre">fit</span></code> is called
 again, those partial solutions have been memoized and can be reused.</p>
 <p>A <code class="docutils literal notranslate"><span class="pre">memory</span></code> parameter can be specified as a string with a path to a
-directory, or a <a class="reference external" href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="(in joblib v1.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">joblib.Memory</span></code></a> instance (or an object with a
+directory, or a <a class="reference external" href="https://joblib.readthedocs.io/en/latest/generated/joblib.Memory.html#joblib.Memory" title="(in joblib v1.2.0.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">joblib.Memory</span></code></a> instance (or an object with a
 similar interface, i.e. a <code class="docutils literal notranslate"><span class="pre">cache</span></code> method) can be used.</p>
 <p><code class="docutils literal notranslate"><span class="pre">memory</span></code> values are validated and interpreted with
 <a class="reference internal" href="modules/generated/sklearn.utils.validation.check_memory.html#sklearn.utils.validation.check_memory" title="sklearn.utils.validation.check_memory"><code class="xref py py-func docutils literal notranslate"><span class="pre">utils.validation.check_memory</span></code></a>.</p>
@@ -1466,7 +1465,7 @@ which is useful for debugging. If set to -1, all CPUs are used. For
 <code class="docutils literal notranslate"><span class="pre">n_jobs=-2</span></code>, all CPUs but one are used.</p>
 <p><code class="docutils literal notranslate"><span class="pre">n_jobs</span></code> is <code class="docutils literal notranslate"><span class="pre">None</span></code> by default, which means <em>unset</em>; it will
 generally be interpreted as <code class="docutils literal notranslate"><span class="pre">n_jobs=1</span></code>, unless the current
-<a class="reference external" href="https://joblib.readthedocs.io/en/latest/generated/joblib.Parallel.html#joblib.Parallel" title="(in joblib v1.1.0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">joblib.Parallel</span></code></a> backend context specifies otherwise.</p>
+<a class="reference external" href="https://joblib.readthedocs.io/en/latest/generated/joblib.Parallel.html#joblib.Parallel" title="(in joblib v1.2.0.dev0)"><code class="xref py py-class docutils literal notranslate"><span class="pre">joblib.Parallel</span></code></a> backend context specifies otherwise.</p>
 <p>For more details on the use of <code class="docutils literal notranslate"><span class="pre">joblib</span></code> and its interactions with
 scikit-learn, please refer to our <a class="reference internal" href="computing/parallelism.html#parallelism"><span class="std std-ref">parallelism notes</span></a>.</p>
 </dd>

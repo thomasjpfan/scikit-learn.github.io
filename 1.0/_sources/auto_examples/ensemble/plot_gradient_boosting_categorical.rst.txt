@@ -44,19 +44,50 @@ and categorical features, where the houses' sales prices is the target.
 
 Load Ames Housing dataset
 -------------------------
-First, we load the ames housing data as a pandas dataframe. The features
+First, we load the Ames Housing data as a pandas dataframe. The features
 are either categorical or numerical:
 
-.. GENERATED FROM PYTHON SOURCE LINES 31-42
+.. GENERATED FROM PYTHON SOURCE LINES 31-73
 
 .. code-block:: default
 
     from sklearn.datasets import fetch_openml
 
-    X, y = fetch_openml(data_id=41211, as_frame=True, return_X_y=True)
+    X, y = fetch_openml(data_id=42165, as_frame=True, return_X_y=True)
 
-    n_categorical_features = (X.dtypes == "category").sum()
-    n_numerical_features = (X.dtypes == "float").sum()
+    # Select only a subset of features of X to make the example faster to run
+    categorical_columns_subset = [
+        "BldgType",
+        "GarageFinish",
+        "LotConfig",
+        "Functional",
+        "MasVnrType",
+        "HouseStyle",
+        "FireplaceQu",
+        "ExterCond",
+        "ExterQual",
+        "PoolQC",
+    ]
+
+    numerical_columns_subset = [
+        "3SsnPorch",
+        "Fireplaces",
+        "BsmtHalfBath",
+        "HalfBath",
+        "GarageCars",
+        "TotRmsAbvGrd",
+        "BsmtFinSF1",
+        "BsmtFinSF2",
+        "GrLivArea",
+        "ScreenPorch",
+    ]
+
+    X = X[categorical_columns_subset + numerical_columns_subset]
+    X[categorical_columns_subset] = X[categorical_columns_subset].astype("category")
+
+    n_categorical_features = X.select_dtypes(include="category").shape[1]
+    n_numerical_features = X.select_dtypes(include="number").shape[1]
+
     print(f"Number of samples: {X.shape[0]}")
     print(f"Number of features: {X.shape[1]}")
     print(f"Number of categorical features: {n_categorical_features}")
@@ -72,24 +103,22 @@ are either categorical or numerical:
 
  .. code-block:: none
 
-    /home/circleci/project/sklearn/datasets/_openml.py:876: UserWarning: Version 1 of dataset ames-housing is inactive, meaning that issues have been found in the dataset. Try using a newer version from this URL: https://www.openml.org/data/v1/download/20649135/ames-housing.arff
-      warn(
-    Number of samples: 2930
-    Number of features: 80
-    Number of categorical features: 46
-    Number of numerical features: 34
+    Number of samples: 1460
+    Number of features: 20
+    Number of categorical features: 10
+    Number of numerical features: 10
 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-47
+.. GENERATED FROM PYTHON SOURCE LINES 74-78
 
 Gradient boosting estimator with dropped categorical features
 -------------------------------------------------------------
 As a baseline, we create an estimator where the categorical features are
 dropped:
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-58
+.. GENERATED FROM PYTHON SOURCE LINES 78-89
 
 .. code-block:: default
 
@@ -111,14 +140,14 @@ dropped:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 59-63
+.. GENERATED FROM PYTHON SOURCE LINES 90-94
 
 Gradient boosting estimator with one-hot encoding
 -------------------------------------------------
 Next, we create a pipeline that will one-hot encode the categorical features
 and let the rest of the numerical data to passthrough:
 
-.. GENERATED FROM PYTHON SOURCE LINES 63-78
+.. GENERATED FROM PYTHON SOURCE LINES 94-109
 
 .. code-block:: default
 
@@ -144,7 +173,7 @@ and let the rest of the numerical data to passthrough:
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 79-84
+.. GENERATED FROM PYTHON SOURCE LINES 110-115
 
 Gradient boosting estimator with ordinal encoding
 -------------------------------------------------
@@ -152,7 +181,7 @@ Next, we create a pipeline that will treat categorical features as if they
 were ordered quantities, i.e. the categories will be encoded as 0, 1, 2,
 etc., and treated as continuous features.
 
-.. GENERATED FROM PYTHON SOURCE LINES 84-100
+.. GENERATED FROM PYTHON SOURCE LINES 115-131
 
 .. code-block:: default
 
@@ -179,7 +208,7 @@ etc., and treated as continuous features.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 101-114
+.. GENERATED FROM PYTHON SOURCE LINES 132-145
 
 Gradient boosting estimator with native categorical support
 -----------------------------------------------------------
@@ -195,13 +224,14 @@ The main difference between this pipeline and the previous one is that in
 this one, we let the :class:`~ensemble.HistGradientBoostingRegressor` know
 which features are categorical.
 
-.. GENERATED FROM PYTHON SOURCE LINES 114-126
+.. GENERATED FROM PYTHON SOURCE LINES 145-157
 
 .. code-block:: default
 
 
     # The ordinal encoder will first output the categorical features, and then the
     # continuous (passed-through) features
+
     categorical_mask = [True] * n_categorical_features + [False] * n_numerical_features
     hist_native = make_pipeline(
         ordinal_encoder,
@@ -217,8 +247,7 @@ which features are categorical.
 
 
 
-
-.. GENERATED FROM PYTHON SOURCE LINES 127-132
+.. GENERATED FROM PYTHON SOURCE LINES 158-163
 
 Model comparison
 ----------------
@@ -226,7 +255,7 @@ Finally, we evaluate the models using cross validation. Here we compare the
 models performance in terms of
 :func:`~metrics.mean_absolute_percentage_error` and fit times.
 
-.. GENERATED FROM PYTHON SOURCE LINES 132-178
+.. GENERATED FROM PYTHON SOURCE LINES 163-215
 
 .. code-block:: default
 
@@ -235,10 +264,12 @@ models performance in terms of
     import matplotlib.pyplot as plt
 
     scoring = "neg_mean_absolute_percentage_error"
-    dropped_result = cross_validate(hist_dropped, X, y, cv=3, scoring=scoring)
-    one_hot_result = cross_validate(hist_one_hot, X, y, cv=3, scoring=scoring)
-    ordinal_result = cross_validate(hist_ordinal, X, y, cv=3, scoring=scoring)
-    native_result = cross_validate(hist_native, X, y, cv=3, scoring=scoring)
+    n_cv_folds = 3
+
+    dropped_result = cross_validate(hist_dropped, X, y, cv=n_cv_folds, scoring=scoring)
+    one_hot_result = cross_validate(hist_one_hot, X, y, cv=n_cv_folds, scoring=scoring)
+    ordinal_result = cross_validate(hist_ordinal, X, y, cv=n_cv_folds, scoring=scoring)
+    native_result = cross_validate(hist_native, X, y, cv=n_cv_folds, scoring=scoring)
 
 
     def plot_results(figure_title):
@@ -246,7 +277,7 @@ models performance in terms of
 
         plot_info = [
             ("fit_time", "Fit times (s)", ax1, None),
-            ("test_score", "Mean Absolute Percentage Error", ax2, (0, 0.20)),
+            ("test_score", "Mean Absolute Percentage Error", ax2, None),
         ]
 
         x, width = np.arange(4), 0.9
@@ -257,11 +288,15 @@ models performance in terms of
                 ordinal_result[key],
                 native_result[key],
             ]
+
+            mape_cv_mean = [np.mean(np.abs(item)) for item in items]
+            mape_cv_std = [np.std(item) for item in items]
+
             ax.bar(
-                x,
-                [np.mean(np.abs(item)) for item in items],
-                width,
-                yerr=[np.std(item) for item in items],
+                x=x,
+                height=mape_cv_mean,
+                width=width,
+                yerr=mape_cv_std,
                 color=["C0", "C1", "C2", "C3"],
             )
             ax.set(
@@ -274,13 +309,13 @@ models performance in terms of
         fig.suptitle(figure_title)
 
 
-    plot_results("Gradient Boosting on Adult Census")
+    plot_results("Gradient Boosting on Ames Housing")
 
 
 
 
 .. image-sg:: /auto_examples/ensemble/images/sphx_glr_plot_gradient_boosting_categorical_001.png
-   :alt: Gradient Boosting on Adult Census, Fit times (s), Mean Absolute Percentage Error
+   :alt: Gradient Boosting on Ames Housing, Fit times (s), Mean Absolute Percentage Error
    :srcset: /auto_examples/ensemble/images/sphx_glr_plot_gradient_boosting_categorical_001.png
    :class: sphx-glr-single-img
 
@@ -288,7 +323,7 @@ models performance in terms of
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 179-192
+.. GENERATED FROM PYTHON SOURCE LINES 216-229
 
 We see that the model with one-hot-encoded data is by far the slowest. This
 is to be expected, since one-hot-encoding creates one additional feature per
@@ -304,11 +339,10 @@ In terms of prediction performance, dropping the categorical features leads
 to poorer performance. The three models that use categorical features have
 comparable error rates, with a slight edge for the native handling.
 
-.. GENERATED FROM PYTHON SOURCE LINES 194-215
+.. GENERATED FROM PYTHON SOURCE LINES 231-251
 
 Limitting the number of splits
 ------------------------------
-
 In general, one can expect poorer predictions from one-hot-encoded data,
 especially when the tree depths or the number of nodes are limited: with
 one-hot-encoded data, one needs more split points, i.e. more depth, in order
@@ -328,7 +362,7 @@ To see this, let us re-run the same analysis with under-fitting models where
 we artificially limit the total number of splits by both limitting the number
 of trees and the depth of each tree.
 
-.. GENERATED FROM PYTHON SOURCE LINES 215-231
+.. GENERATED FROM PYTHON SOURCE LINES 251-267
 
 .. code-block:: default
 
@@ -339,12 +373,12 @@ of trees and the depth of each tree.
             histgradientboostingregressor__max_iter=15,
         )
 
-    dropped_result = cross_validate(hist_dropped, X, y, cv=3, scoring=scoring)
-    one_hot_result = cross_validate(hist_one_hot, X, y, cv=3, scoring=scoring)
-    ordinal_result = cross_validate(hist_ordinal, X, y, cv=3, scoring=scoring)
-    native_result = cross_validate(hist_native, X, y, cv=3, scoring=scoring)
+    dropped_result = cross_validate(hist_dropped, X, y, cv=n_cv_folds, scoring=scoring)
+    one_hot_result = cross_validate(hist_one_hot, X, y, cv=n_cv_folds, scoring=scoring)
+    ordinal_result = cross_validate(hist_ordinal, X, y, cv=n_cv_folds, scoring=scoring)
+    native_result = cross_validate(hist_native, X, y, cv=n_cv_folds, scoring=scoring)
 
-    plot_results("Gradient Boosting on Adult Census (few and small trees)")
+    plot_results("Gradient Boosting on Ames Housing (few and small trees)")
 
     plt.show()
 
@@ -352,7 +386,7 @@ of trees and the depth of each tree.
 
 
 .. image-sg:: /auto_examples/ensemble/images/sphx_glr_plot_gradient_boosting_categorical_002.png
-   :alt: Gradient Boosting on Adult Census (few and small trees), Fit times (s), Mean Absolute Percentage Error
+   :alt: Gradient Boosting on Ames Housing (few and small trees), Fit times (s), Mean Absolute Percentage Error
    :srcset: /auto_examples/ensemble/images/sphx_glr_plot_gradient_boosting_categorical_002.png
    :class: sphx-glr-single-img
 
@@ -360,7 +394,7 @@ of trees and the depth of each tree.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 232-237
+.. GENERATED FROM PYTHON SOURCE LINES 268-273
 
 The results for these under-fitting models confirm our previous intuition:
 the native category handling strategy performs the best when the splitting
@@ -371,7 +405,7 @@ to the baseline model that just dropped the categorical features altogether.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  21.856 seconds)
+   **Total running time of the script:** ( 0 minutes  6.291 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_gradient_boosting_categorical.py:

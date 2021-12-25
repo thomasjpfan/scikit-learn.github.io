@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Contributing &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>Contributing &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/developers/contributing.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -428,25 +428,29 @@ span.prompt1:before {
 </style><span class="prompt1">git clone git@github.com:YourLogin/scikit-learn.git  <span class="c1"># add --depth 1 if your connection is slow</span></span>
 <span class="prompt1"><span class="nb">cd</span> scikit-learn</span>
 </pre></div></div></li>
-<li><p>Install the development dependencies:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip install cython pytest pytest-cov flake8 mypy <span class="nv">black</span><span class="o">==</span><span class="m">21</span>.6b0</span>
-</pre></div></div></div></blockquote>
-</li>
-<li><p>Install scikit-learn in editable mode:</p>
-<blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip install --no-build-isolation --editable .</span>
-</pre></div></div></div></blockquote>
-<p>If you receive errors in building scikit-learn, see the
-<a class="reference internal" href="advanced_installation.html#install-bleeding-edge"><span class="std std-ref">Building from source</span></a> section.</p>
-</li>
 </ol>
-<ol class="arabic" id="upstream" start="6">
+<ol class="arabic" start="3">
+<li><p>Follow steps 2-7 in <a class="reference internal" href="advanced_installation.html#install-bleeding-edge"><span class="std std-ref">Building from source</span></a> to build scikit-learn in
+development mode and return to this document.</p></li>
+<li><p>Install the development dependencies:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">pip install pytest pytest-cov flake8 mypy <span class="nv">black</span><span class="o">==</span><span class="m">21</span>.6b0</span>
+</pre></div></div></li>
+</ol>
+<ol class="arabic" id="upstream" start="5">
 <li><p>Add the <code class="docutils literal notranslate"><span class="pre">upstream</span></code> remote. This saves a reference to the main
 scikit-learn repository, which you can use to keep your repository
 synchronized with the latest changes:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git remote add upstream https://github.com/scikit-learn/scikit-learn.git</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">git remote add upstream git@github.com:scikit-learn/scikit-learn.git</span>
 </pre></div></div></li>
+<li><p>Check that the <code class="docutils literal notranslate"><span class="pre">upstream</span></code> and <code class="docutils literal notranslate"><span class="pre">origin</span></code> remote aliases are configured correctly
+by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> which should display:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">origin</span>  <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YourLogin</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">origin</span>  <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">YourLogin</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+<span class="n">upstream</span>        <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">upstream</span>        <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">/</span><span class="n">scikit</span><span class="o">-</span><span class="n">learn</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
 </ol>
 <p>You should now have a working installation of scikit-learn, and your git
 repository properly configured. The next steps now describe the process of
@@ -640,7 +644,7 @@ right direction.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For two very well documented and more detailed guides on development
-workflow, please pay a visit to the <a class="reference external" href="https://docs.scipy.org/doc/numpy/dev/gitwash/development_workflow.html">Scipy Development Workflow</a> -
+workflow, please pay a visit to the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/dev/contributor/development_workflow.html">Scipy Development Workflow</a> -
 and the <a class="reference external" href="https://astropy.readthedocs.io/en/latest/development/workflow/development_workflow.html">Astropy Workflow for Developers</a>
 sections.</p>
 </div>
@@ -650,15 +654,15 @@ sections.</p>
 <li><p>Azure pipelines are used for testing scikit-learn on Linux, Mac and Windows,
 with different dependencies and settings.</p></li>
 <li><p>CircleCI is used to build the docs for viewing, for linting with flake8, and
-for testing with PyPy and ARM64 / aarch64 on Linux</p></li>
+for testing with ARM64 / aarch64 on Linux</p></li>
 </ul>
 <p>Please note that if one of the following markers appear in the latest commit
 message, the following actions are taken.</p>
 <blockquote>
 <div><table class="docutils align-default">
 <colgroup>
-<col style="width: 21%" />
-<col style="width: 79%" />
+<col style="width: 22%" />
+<col style="width: 78%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>Commit Message Marker</p></td>
@@ -670,14 +674,20 @@ message, the following actions are taken.</p>
 <tr class="row-odd"><td><p>[cd build]</p></td>
 <td><p>CD is run (wheels and source distribution are built)</p></td>
 </tr>
-<tr class="row-even"><td><p>[lint skip]</p></td>
+<tr class="row-even"><td><p>[cd build gh]</p></td>
+<td><p>CD is run only for GitHub Actions</p></td>
+</tr>
+<tr class="row-odd"><td><p>[lint skip]</p></td>
 <td><p>Azure pipeline skips linting</p></td>
 </tr>
-<tr class="row-odd"><td><p>[scipy-dev]</p></td>
-<td><p>Add a Travis build with our dependencies (numpy, scipy, etc …) development builds</p></td>
+<tr class="row-even"><td><p>[scipy-dev]</p></td>
+<td><p>Build &amp; test with our dependencies (numpy, scipy, etc …) development builds</p></td>
 </tr>
-<tr class="row-even"><td><p>[icc-build]</p></td>
-<td><p>Add a Travis build with the Intel C compiler (ICC)</p></td>
+<tr class="row-odd"><td><p>[icc-build]</p></td>
+<td><p>Build &amp; test with the Intel C compiler (ICC)</p></td>
+</tr>
+<tr class="row-even"><td><p>[pypy]</p></td>
+<td><p>Build &amp; test with PyPy</p></td>
 </tr>
 <tr class="row-odd"><td><p>[doc skip]</p></td>
 <td><p>Docs are not built</p></td>

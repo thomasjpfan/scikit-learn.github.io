@@ -7,18 +7,18 @@
   <meta charset="utf-8">
   <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="Gaussian process regression (GPR) on Mauna Loa CO2 data." />
+  <meta property="og:title" content="Gaussian process regression (GPR) on Mauna Loa CO2 data" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scikit-learn/stable/auto_examples/gaussian_process/plot_gpr_co2.html" />
   <meta property="og:site_name" content="scikit-learn" />
-  <meta property="og:description" content="This example is based on Section 5.4.3 of “Gaussian Processes for Machine Learning” [RW2006]. It illustrates an example of complex kernel engineering and hyperparameter optimization using gradient ..." />
+  <meta property="og:description" content="This example is based on Section 5.4.3 of “Gaussian Processes for Machine Learning”[RW2006]. It illustrates an example of complex kernel engineering and hyperparameter optimization using gradient a..." />
   <meta property="og:image" content="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" />
   <meta property="og:image:alt" content="scikit-learn" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Gaussian process regression (GPR) on Mauna Loa CO2 data. &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>Gaussian process regression (GPR) on Mauna Loa CO2 data &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/gaussian_process/plot_gpr_co2.html" />
 
@@ -153,12 +153,12 @@
           </a>
         </div>
         <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-            <a href="plot_gpr_noisy_targets.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Gaussian Processes regression: basic introductory example">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
-            <a href="plot_gpr_on_structured_data.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Gaussian processes on discrete data structures">Next</a>
+            <a href="plot_gpc_isoprobability.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Iso-probability lines for Gaussian Processes classification (GPC)">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+            <a href="plot_gpc.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Probabilistic predictions with Gaussian process classification (GPC)">Next</a>
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -169,7 +169,13 @@
         </div>
             <div class="sk-sidebar-toc">
               <ul>
-<li><a class="reference internal" href="#">Gaussian process regression (GPR) on Mauna Loa CO2 data.</a></li>
+<li><a class="reference internal" href="#">Gaussian process regression (GPR) on Mauna Loa CO2 data</a><ul>
+<li><a class="reference internal" href="#build-the-dataset">Build the dataset</a></li>
+<li><a class="reference internal" href="#design-the-proper-kernel">Design the proper kernel</a></li>
+<li><a class="reference internal" href="#model-fitting-and-extrapolation">Model fitting and extrapolation</a></li>
+<li><a class="reference internal" href="#interpretation-of-kernel-hyperparameters">Interpretation of kernel hyperparameters</a></li>
+</ul>
+</li>
 </ul>
 
             </div>
@@ -184,170 +190,360 @@
 to download the full example code or to run this example in your browser via Binder</p>
 </div>
 <section class="sphx-glr-example-title" id="gaussian-process-regression-gpr-on-mauna-loa-co2-data">
-<span id="sphx-glr-auto-examples-gaussian-process-plot-gpr-co2-py"></span><h1>Gaussian process regression (GPR) on Mauna Loa CO2 data.<a class="headerlink" href="#gaussian-process-regression-gpr-on-mauna-loa-co2-data" title="Permalink to this headline">¶</a></h1>
+<span id="sphx-glr-auto-examples-gaussian-process-plot-gpr-co2-py"></span><h1>Gaussian process regression (GPR) on Mauna Loa CO2 data<a class="headerlink" href="#gaussian-process-regression-gpr-on-mauna-loa-co2-data" title="Permalink to this headline">¶</a></h1>
 <p>This example is based on Section 5.4.3 of “Gaussian Processes for Machine
-Learning” [RW2006]. It illustrates an example of complex kernel engineering and
-hyperparameter optimization using gradient ascent on the
+Learning” <a class="reference internal" href="../../modules/gaussian_process.html#rw2006" id="id1"><span>[RW2006]</span></a>. It illustrates an example of complex kernel engineering
+and hyperparameter optimization using gradient ascent on the
 log-marginal-likelihood. The data consists of the monthly average atmospheric
-CO2 concentrations (in parts per million by volume (ppmv)) collected at the
+CO2 concentrations (in parts per million by volume (ppm)) collected at the
 Mauna Loa Observatory in Hawaii, between 1958 and 2001. The objective is to
-model the CO2 concentration as a function of the time t.</p>
-<p>The kernel is composed of several terms that are responsible for explaining
-different properties of the signal:</p>
-<ul class="simple">
-<li><p>a long term, smooth rising trend is to be explained by an RBF kernel. The
-RBF kernel with a large length-scale enforces this component to be smooth;
-it is not enforced that the trend is rising which leaves this choice to the
-GP. The specific length-scale and the amplitude are free hyperparameters.</p></li>
-<li><p>a seasonal component, which is to be explained by the periodic
-ExpSineSquared kernel with a fixed periodicity of 1 year. The length-scale
-of this periodic component, controlling its smoothness, is a free parameter.
-In order to allow decaying away from exact periodicity, the product with an
-RBF kernel is taken. The length-scale of this RBF component controls the
-decay time and is a further free parameter.</p></li>
-<li><p>smaller, medium term irregularities are to be explained by a
-RationalQuadratic kernel component, whose length-scale and alpha parameter,
-which determines the diffuseness of the length-scales, are to be determined.
-According to [RW2006], these irregularities can better be explained by
-a RationalQuadratic than an RBF kernel component, probably because it can
-accommodate several length-scales.</p></li>
-<li><p>a “noise” term, consisting of an RBF kernel contribution, which shall
-explain the correlated noise components such as local weather phenomena,
-and a WhiteKernel contribution for the white noise. The relative amplitudes
-and the RBF’s length scale are further free parameters.</p></li>
-</ul>
-<p>Maximizing the log-marginal-likelihood after subtracting the target’s mean
-yields the following kernel with an LML of -83.214:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">34.4</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">41.8</span><span class="p">)</span>
-<span class="o">+</span> <span class="mf">3.27</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mi">180</span><span class="p">)</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.ExpSineSquared.html#sklearn.gaussian_process.kernels.ExpSineSquared" title="sklearn.gaussian_process.kernels.ExpSineSquared" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ExpSineSquared</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">1.44</span><span class="p">,</span>
-                                                   <span class="n">periodicity</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="o">+</span> <span class="mf">0.446</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RationalQuadratic.html#sklearn.gaussian_process.kernels.RationalQuadratic" title="sklearn.gaussian_process.kernels.RationalQuadratic" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RationalQuadratic</span></a><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mf">17.7</span><span class="p">,</span> <span class="n">length_scale</span><span class="o">=</span><span class="mf">0.957</span><span class="p">)</span>
-<span class="o">+</span> <span class="mf">0.197</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">0.138</span><span class="p">)</span> <span class="o">+</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.WhiteKernel.html#sklearn.gaussian_process.kernels.WhiteKernel" title="sklearn.gaussian_process.kernels.WhiteKernel" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">WhiteKernel</span></a><span class="p">(</span><span class="n">noise_level</span><span class="o">=</span><span class="mf">0.0336</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Thus, most of the target signal (34.4ppm) is explained by a long-term rising
-trend (length-scale 41.8 years). The periodic component has an amplitude of
-3.27ppm, a decay time of 180 years and a length-scale of 1.44. The long decay
-time indicates that we have a locally very close to periodic seasonal
-component. The correlated noise has an amplitude of 0.197ppm with a length
-scale of 0.138 years and a white-noise contribution of 0.197ppm. Thus, the
-overall noise level is very small, indicating that the data can be very well
-explained by the model. The figure shows also that the model makes very
-confident predictions until around 2015.</p>
-<img src="../../_images/sphx_glr_plot_gpr_co2_001.png" srcset="../../_images/sphx_glr_plot_gpr_co2_001.png" alt="Atmospheric CO$_2$ concentration at Mauna Loa" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>GPML kernel: 66**2 * RBF(length_scale=67) + 2.4**2 * RBF(length_scale=90) * ExpSineSquared(length_scale=1.3, periodicity=1) + 0.66**2 * RationalQuadratic(alpha=0.78, length_scale=1.2) + 0.18**2 * RBF(length_scale=0.134) + WhiteKernel(noise_level=0.0361)
-Log-marginal-likelihood: 155.006
+model the CO2 concentration as a function of the time <span class="math notranslate nohighlight">\(t\)</span> and extrapolate
+for years after 2001.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
 
-Learned kernel: 2.63**2 * RBF(length_scale=51.6) + 0.155**2 * RBF(length_scale=91.5) * ExpSineSquared(length_scale=1.48, periodicity=1) + 0.0314**2 * RationalQuadratic(alpha=2.89, length_scale=0.968) + 0.011**2 * RBF(length_scale=0.122) + WhiteKernel(noise_level=0.000126)
-Log-marginal-likelihood: 1362.655
-</pre></div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Jan Hendrik Metzen &lt;jhm@informatik.uni-bremen.de&gt;</span>
-<span class="c1">#</span>
+<span class="c1"># Authors: Jan Hendrik Metzen &lt;jhm@informatik.uni-bremen.de&gt;</span>
+<span class="c1">#          Guillaume Lemaitre &lt;g.lemaitre58@gmail.com&gt;</span>
 <span class="c1"># License: BSD 3 clause</span>
+</pre></div>
+</div>
+<section id="build-the-dataset">
+<h2>Build the dataset<a class="headerlink" href="#build-the-dataset" title="Permalink to this headline">¶</a></h2>
+<p>We will derive a dataset from the Mauna Loa Observatory that collected air
+samples. We are interested in estimating the concentration of CO2 and
+extrapolate it for futher year. First, we load the original dataset available
+in OpenML.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a>
 
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">co2</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="mi">41187</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">co2</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.gaussian_process</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.gaussian_process.GaussianProcessRegressor.html#sklearn.gaussian_process.GaussianProcessRegressor" title="sklearn.gaussian_process.GaussianProcessRegressor" class="sphx-glr-backref-module-sklearn-gaussian_process sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">GaussianProcessRegressor</span></a>
-<span class="kn">from</span> <span class="nn">sklearn.gaussian_process.kernels</span> <span class="kn">import</span> <span class="p">(</span>
-    <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">,</span>
-    <a href="../../modules/generated/sklearn.gaussian_process.kernels.WhiteKernel.html#sklearn.gaussian_process.kernels.WhiteKernel" title="sklearn.gaussian_process.kernels.WhiteKernel" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">WhiteKernel</span></a><span class="p">,</span>
-    <a href="../../modules/generated/sklearn.gaussian_process.kernels.RationalQuadratic.html#sklearn.gaussian_process.kernels.RationalQuadratic" title="sklearn.gaussian_process.kernels.RationalQuadratic" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RationalQuadratic</span></a><span class="p">,</span>
-    <a href="../../modules/generated/sklearn.gaussian_process.kernels.ExpSineSquared.html#sklearn.gaussian_process.kernels.ExpSineSquared" title="sklearn.gaussian_process.kernels.ExpSineSquared" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ExpSineSquared</span></a><span class="p">,</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>year</th>
+      <th>month</th>
+      <th>day</th>
+      <th>weight</th>
+      <th>flag</th>
+      <th>station</th>
+      <th>co2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1958.0</td>
+      <td>3.0</td>
+      <td>29.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>MLO</td>
+      <td>316.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1958.0</td>
+      <td>4.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>MLO</td>
+      <td>317.3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1958.0</td>
+      <td>4.0</td>
+      <td>12.0</td>
+      <td>4.0</td>
+      <td>0.0</td>
+      <td>MLO</td>
+      <td>317.6</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1958.0</td>
+      <td>4.0</td>
+      <td>19.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>MLO</td>
+      <td>317.5</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1958.0</td>
+      <td>4.0</td>
+      <td>26.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>MLO</td>
+      <td>316.4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<br />
+<br /><p>First, we process the original dataframe to create a date index and select
+only the CO2 column.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">co2_data</span> <span class="o">=</span> <span class="n">co2</span><span class="o">.</span><span class="n">frame</span>
+<span class="n">co2_data</span><span class="p">[</span><span class="s2">&quot;date&quot;</span><span class="p">]</span> <span class="o">=</span> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.to_datetime.html#pandas.to_datetime" title="pandas.to_datetime" class="sphx-glr-backref-module-pandas sphx-glr-backref-type-py-function"><span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span></a><span class="p">(</span><span class="n">co2_data</span><span class="p">[[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">]])</span>
+<span class="n">co2_data</span> <span class="o">=</span> <span class="n">co2_data</span><span class="p">[[</span><span class="s2">&quot;date&quot;</span><span class="p">,</span> <span class="s2">&quot;co2&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;date&quot;</span><span class="p">)</span>
+<span class="n">co2_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>co2</th>
+    </tr>
+    <tr>
+      <th>date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1958-03-29</th>
+      <td>316.1</td>
+    </tr>
+    <tr>
+      <th>1958-04-05</th>
+      <td>317.3</td>
+    </tr>
+    <tr>
+      <th>1958-04-12</th>
+      <td>317.6</td>
+    </tr>
+    <tr>
+      <th>1958-04-19</th>
+      <td>317.5</td>
+    </tr>
+    <tr>
+      <th>1958-04-26</th>
+      <td>316.4</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+<br />
+<br /><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">co2_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">co2_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>(Timestamp(&#39;1958-03-29 00:00:00&#39;), Timestamp(&#39;2001-12-29 00:00:00&#39;))
+</pre></div>
+</div>
+<p>We see that we get CO2 concentration for some days from March, 1958 to
+December, 2001. We can plot these raw information to have a better
+understanding.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">co2_data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="s2">&quot;CO$_2$ concentration (ppm)&quot;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="s2">&quot;Raw air samples measurements from the Mauna Loa Observatory&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_gpr_co2_001.png" srcset="../../_images/sphx_glr_plot_gpr_co2_001.png" alt="Raw air samples measurements from the Mauna Loa Observatory" class = "sphx-glr-single-img"/><p>We will preprocess the dataset by taking a monthly average and drop month
+for which no measurements were collected. Such a processing will have an
+smoothing effect on the data.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">co2_data</span> <span class="o">=</span> <span class="n">co2_data</span><span class="o">.</span><span class="n">resample</span><span class="p">(</span><span class="s2">&quot;M&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s2">&quot;any&quot;</span><span class="p">)</span>
+<span class="n">co2_data</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="s2">&quot;Monthly average of CO$_2$ concentration (ppm)&quot;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span>
+    <span class="s2">&quot;Monthly average of air samples measurements</span><span class="se">\n</span><span class="s2">from the Mauna Loa Observatory&quot;</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_gpr_co2_002.png" srcset="../../_images/sphx_glr_plot_gpr_co2_002.png" alt="Monthly average of air samples measurements from the Mauna Loa Observatory" class = "sphx-glr-single-img"/><p>The idea in this example will be to predict the CO2 concentration in function
+of the date. We are as well interested in extrapolating for upcoming year
+after 2001.</p>
+<p>As a first step, we will divide the data and the target to estimate. The data
+being a date, we will convert it into a numeric.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">(</span><span class="n">co2_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="n">co2_data</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">month</span> <span class="o">/</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">co2_data</span><span class="p">[</span><span class="s2">&quot;co2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="design-the-proper-kernel">
+<h2>Design the proper kernel<a class="headerlink" href="#design-the-proper-kernel" title="Permalink to this headline">¶</a></h2>
+<p>To design the kernel to use with our Gaussian process, we can make some
+assumption regarding the data at hand. We observe that they have several
+characteristics: we see a long term rising trend, a pronounced seasonal
+variation and some smaller irregularities. We can use different appropriate
+kernel that would capture these features.</p>
+<p>First, the long term rising trend could be fitted using a radial basis
+function (RBF) kernel with a large length-scale parameter. The RBF kernel
+with a large length-scale enforces this component to be smooth. An trending
+increase is not enforced as to give a degree of freedom to our model. The
+specific length-scale and the amplitude are free hyperparameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.gaussian_process.kernels</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a>
 
+<span class="n">long_term_trend_kernel</span> <span class="o">=</span> <span class="mf">50.0</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">50.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The seasonal variation is explained by the periodic exponential sine squared
+kernel with a fixed periodicity of 1 year. The length-scale of this periodic
+component, controlling its smoothness, is a free parameter. In order to allow
+decaying away from exact periodicity, the product with an RBF kernel is
+taken. The length-scale of this RBF component controls the decay time and is
+a further free parameter. This type of kernel is also known as locally
+periodic kernel.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.gaussian_process.kernels</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.ExpSineSquared.html#sklearn.gaussian_process.kernels.ExpSineSquared" title="sklearn.gaussian_process.kernels.ExpSineSquared" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ExpSineSquared</span></a>
 
-<span class="k">def</span> <span class="nf">load_mauna_loa_atmospheric_co2</span><span class="p">():</span>
-    <span class="n">ml_data</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="mi">41187</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">months</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">ppmv_sums</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">counts</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="n">y</span> <span class="o">=</span> <span class="n">ml_data</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="n">m</span> <span class="o">=</span> <span class="n">ml_data</span><span class="o">.</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
-    <span class="n">month_float</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="p">(</span><span class="n">m</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">/</span> <span class="mi">12</span>
-    <span class="n">ppmvs</span> <span class="o">=</span> <span class="n">ml_data</span><span class="o">.</span><span class="n">target</span>
-
-    <span class="k">for</span> <span class="n">month</span><span class="p">,</span> <span class="n">ppmv</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">month_float</span><span class="p">,</span> <span class="n">ppmvs</span><span class="p">):</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">months</span> <span class="ow">or</span> <span class="n">month</span> <span class="o">!=</span> <span class="n">months</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
-            <span class="n">months</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">month</span><span class="p">)</span>
-            <span class="n">ppmv_sums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ppmv</span><span class="p">)</span>
-            <span class="n">counts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># aggregate monthly sum to produce average</span>
-            <span class="n">ppmv_sums</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="n">ppmv</span>
-            <span class="n">counts</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-
-    <span class="n">months</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.asarray.html#numpy.asarray" title="numpy.asarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">asarray</span></a><span class="p">(</span><span class="n">months</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-    <span class="n">avg_ppmvs</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.asarray.html#numpy.asarray" title="numpy.asarray" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">asarray</span></a><span class="p">(</span><span class="n">ppmv_sums</span><span class="p">)</span> <span class="o">/</span> <span class="n">counts</span>
-    <span class="k">return</span> <span class="n">months</span><span class="p">,</span> <span class="n">avg_ppmvs</span>
-
-
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">load_mauna_loa_atmospheric_co2</span><span class="p">()</span>
-
-<span class="c1"># Kernel with parameters given in GPML book</span>
-<span class="n">k1</span> <span class="o">=</span> <span class="mf">66.0</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">67.0</span><span class="p">)</span>  <span class="c1"># long term smooth rising trend</span>
-<span class="n">k2</span> <span class="o">=</span> <span class="p">(</span>
-    <span class="mf">2.4</span> <span class="o">**</span> <span class="mi">2</span>
-    <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">90.0</span><span class="p">)</span>
-    <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.ExpSineSquared.html#sklearn.gaussian_process.kernels.ExpSineSquared" title="sklearn.gaussian_process.kernels.ExpSineSquared" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ExpSineSquared</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">1.3</span><span class="p">,</span> <span class="n">periodicity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="p">)</span>  <span class="c1"># seasonal component</span>
-<span class="c1"># medium term irregularity</span>
-<span class="n">k3</span> <span class="o">=</span> <span class="mf">0.66</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RationalQuadratic.html#sklearn.gaussian_process.kernels.RationalQuadratic" title="sklearn.gaussian_process.kernels.RationalQuadratic" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RationalQuadratic</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">1.2</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.78</span><span class="p">)</span>
-<span class="n">k4</span> <span class="o">=</span> <span class="mf">0.18</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">0.134</span><span class="p">)</span> <span class="o">+</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.WhiteKernel.html#sklearn.gaussian_process.kernels.WhiteKernel" title="sklearn.gaussian_process.kernels.WhiteKernel" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">WhiteKernel</span></a><span class="p">(</span>
-    <span class="n">noise_level</span><span class="o">=</span><span class="mf">0.19</span> <span class="o">**</span> <span class="mi">2</span>
-<span class="p">)</span>  <span class="c1"># noise terms</span>
-<span class="n">kernel_gpml</span> <span class="o">=</span> <span class="n">k1</span> <span class="o">+</span> <span class="n">k2</span> <span class="o">+</span> <span class="n">k3</span> <span class="o">+</span> <span class="n">k4</span>
-
-<span class="n">gp</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.gaussian_process.GaussianProcessRegressor.html#sklearn.gaussian_process.GaussianProcessRegressor" title="sklearn.gaussian_process.GaussianProcessRegressor" class="sphx-glr-backref-module-sklearn-gaussian_process sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">GaussianProcessRegressor</span></a><span class="p">(</span>
-    <span class="n">kernel</span><span class="o">=</span><span class="n">kernel_gpml</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">optimizer</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">normalize_y</span><span class="o">=</span><span class="kc">True</span>
-<span class="p">)</span>
-<span class="n">gp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;GPML kernel: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">gp</span><span class="o">.</span><span class="n">kernel_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Log-marginal-likelihood: </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">gp</span><span class="o">.</span><span class="n">log_marginal_likelihood</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">kernel_</span><span class="o">.</span><span class="n">theta</span><span class="p">))</span>
-
-<span class="c1"># Kernel with optimized parameters</span>
-<span class="n">k1</span> <span class="o">=</span> <span class="mf">50.0</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">50.0</span><span class="p">)</span>  <span class="c1"># long term smooth rising trend</span>
-<span class="n">k2</span> <span class="o">=</span> <span class="p">(</span>
+<span class="n">seasonal_kernel</span> <span class="o">=</span> <span class="p">(</span>
     <span class="mf">2.0</span> <span class="o">**</span> <span class="mi">2</span>
     <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">100.0</span><span class="p">)</span>
     <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.ExpSineSquared.html#sklearn.gaussian_process.kernels.ExpSineSquared" title="sklearn.gaussian_process.kernels.ExpSineSquared" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">ExpSineSquared</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">periodicity</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">periodicity_bounds</span><span class="o">=</span><span class="s2">&quot;fixed&quot;</span><span class="p">)</span>
-<span class="p">)</span>  <span class="c1"># seasonal component</span>
-<span class="c1"># medium term irregularities</span>
-<span class="n">k3</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RationalQuadratic.html#sklearn.gaussian_process.kernels.RationalQuadratic" title="sklearn.gaussian_process.kernels.RationalQuadratic" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RationalQuadratic</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
-<span class="n">k4</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span> <span class="o">+</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.WhiteKernel.html#sklearn.gaussian_process.kernels.WhiteKernel" title="sklearn.gaussian_process.kernels.WhiteKernel" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">WhiteKernel</span></a><span class="p">(</span>
-    <span class="n">noise_level</span><span class="o">=</span><span class="mf">0.1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">noise_level_bounds</span><span class="o">=</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">,</span> <a href="https://numpy.org/doc/stable/reference/constants.html#numpy.inf" title="numpy.inf" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">inf</span></a><span class="p">)</span>
-<span class="p">)</span>  <span class="c1"># noise terms</span>
-<span class="n">kernel</span> <span class="o">=</span> <span class="n">k1</span> <span class="o">+</span> <span class="n">k2</span> <span class="o">+</span> <span class="n">k3</span> <span class="o">+</span> <span class="n">k4</span>
-
-<span class="n">gp</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.gaussian_process.GaussianProcessRegressor.html#sklearn.gaussian_process.GaussianProcessRegressor" title="sklearn.gaussian_process.GaussianProcessRegressor" class="sphx-glr-backref-module-sklearn-gaussian_process sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">GaussianProcessRegressor</span></a><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="n">kernel</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">normalize_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">gp</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Learned kernel: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">gp</span><span class="o">.</span><span class="n">kernel_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Log-marginal-likelihood: </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">gp</span><span class="o">.</span><span class="n">log_marginal_likelihood</span><span class="p">(</span><span class="n">gp</span><span class="o">.</span><span class="n">kernel_</span><span class="o">.</span><span class="n">theta</span><span class="p">))</span>
-
-<span class="n">X_</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X</span><span class="o">.</span><span class="n">max</span><span class="p">()</span> <span class="o">+</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)[:,</span> <a href="https://numpy.org/doc/stable/reference/constants.html#numpy.newaxis" title="numpy.newaxis" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-data"><span class="n">np</span><span class="o">.</span><span class="n">newaxis</span></a><span class="p">]</span>
-<span class="n">y_pred</span><span class="p">,</span> <span class="n">y_std</span> <span class="o">=</span> <span class="n">gp</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_</span><span class="p">,</span> <span class="n">return_std</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="c1"># Illustration</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.scatter.html#matplotlib.pyplot.scatter" title="matplotlib.pyplot.scatter" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">X_</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.fill_between.html#matplotlib.pyplot.fill_between" title="matplotlib.pyplot.fill_between" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span></a><span class="p">(</span><span class="n">X_</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y_pred</span> <span class="o">-</span> <span class="n">y_std</span><span class="p">,</span> <span class="n">y_pred</span> <span class="o">+</span> <span class="n">y_std</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlim.html#matplotlib.pyplot.xlim" title="matplotlib.pyplot.xlim" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlim</span></a><span class="p">(</span><span class="n">X_</span><span class="o">.</span><span class="n">min</span><span class="p">(),</span> <span class="n">X_</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;CO$_2$ in ppm&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Atmospheric CO$_2$ concentration at Mauna Loa&quot;</span><span class="p">)</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.tight_layout.html#matplotlib.pyplot.tight_layout" title="matplotlib.pyplot.tight_layout" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span></a><span class="p">()</span>
-<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
+<span class="p">)</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  14.504 seconds)</p>
+<p>The small irregularities are to be explained by a rational quadratic kernel
+component, whose length-scale and alpha parameter, which quantifies the
+diffuseness of the length-scales, are to be determined. A rational quadratic
+kernel is equivalent to an RBF kernel with several length-scale and will
+better accommodate the different irregularities.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.gaussian_process.kernels</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RationalQuadratic.html#sklearn.gaussian_process.kernels.RationalQuadratic" title="sklearn.gaussian_process.kernels.RationalQuadratic" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RationalQuadratic</span></a>
+
+<span class="n">irregularities_kernel</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RationalQuadratic.html#sklearn.gaussian_process.kernels.RationalQuadratic" title="sklearn.gaussian_process.kernels.RationalQuadratic" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RationalQuadratic</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Finally, the noise in the dataset can be accounted with a kernel consisting
+of an RBF kernel contribution, which shall explain the correlated noise
+components such as local weather phenomena, and a white kernel contribution
+for the white noise. The relative amplitudes and the RBF’s length scale are
+further free parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.gaussian_process.kernels</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.WhiteKernel.html#sklearn.gaussian_process.kernels.WhiteKernel" title="sklearn.gaussian_process.kernels.WhiteKernel" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">WhiteKernel</span></a>
+
+<span class="n">noise_kernel</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">*</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.RBF.html#sklearn.gaussian_process.kernels.RBF" title="sklearn.gaussian_process.kernels.RBF" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">RBF</span></a><span class="p">(</span><span class="n">length_scale</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span> <span class="o">+</span> <a href="../../modules/generated/sklearn.gaussian_process.kernels.WhiteKernel.html#sklearn.gaussian_process.kernels.WhiteKernel" title="sklearn.gaussian_process.kernels.WhiteKernel" class="sphx-glr-backref-module-sklearn-gaussian_process-kernels sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">WhiteKernel</span></a><span class="p">(</span>
+    <span class="n">noise_level</span><span class="o">=</span><span class="mf">0.1</span> <span class="o">**</span> <span class="mi">2</span><span class="p">,</span> <span class="n">noise_level_bounds</span><span class="o">=</span><span class="p">(</span><span class="mf">1e-5</span><span class="p">,</span> <span class="mf">1e5</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Thus, our final kernel is an addition of all previous kernel.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">co2_kernel</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">long_term_trend_kernel</span> <span class="o">+</span> <span class="n">seasonal_kernel</span> <span class="o">+</span> <span class="n">irregularities_kernel</span> <span class="o">+</span> <span class="n">noise_kernel</span>
+<span class="p">)</span>
+<span class="n">co2_kernel</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>50**2 * RBF(length_scale=50) + 2**2 * RBF(length_scale=100) * ExpSineSquared(length_scale=1, periodicity=1) + 0.5**2 * RationalQuadratic(alpha=1, length_scale=1) + 0.1**2 * RBF(length_scale=0.1) + WhiteKernel(noise_level=0.01)
+</pre></div>
+</div>
+</section>
+<section id="model-fitting-and-extrapolation">
+<h2>Model fitting and extrapolation<a class="headerlink" href="#model-fitting-and-extrapolation" title="Permalink to this headline">¶</a></h2>
+<p>Now, we are ready to use a Gaussian process regressor and fit the available
+data. To follow the example from the literature, we will subtract the mean
+from the target. We could have used <code class="docutils literal notranslate"><span class="pre">normalize_y=True</span></code>. However, doing so
+would have also scaled the target (dividing <code class="docutils literal notranslate"><span class="pre">y</span></code> by its standard deviation).
+Thus, the hyperparameters of the different kernel would have had different
+meaning since they would not have been expressed in ppm.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.gaussian_process</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.gaussian_process.GaussianProcessRegressor.html#sklearn.gaussian_process.GaussianProcessRegressor" title="sklearn.gaussian_process.GaussianProcessRegressor" class="sphx-glr-backref-module-sklearn-gaussian_process sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">GaussianProcessRegressor</span></a>
+
+<span class="n">y_mean</span> <span class="o">=</span> <span class="n">y</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">gaussian_process</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.gaussian_process.GaussianProcessRegressor.html#sklearn.gaussian_process.GaussianProcessRegressor" title="sklearn.gaussian_process.GaussianProcessRegressor" class="sphx-glr-backref-module-sklearn-gaussian_process sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">GaussianProcessRegressor</span></a><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="n">co2_kernel</span><span class="p">,</span> <span class="n">normalize_y</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">gaussian_process</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">-</span> <span class="n">y_mean</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="output_subarea output_html rendered_html output_result">
+<style>#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd {color: black;background-color: white;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd pre{padding: 0;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-toggleable {background-color: white;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd label.sk-toggleable__label {cursor: pointer;display: block;width: 100%;margin-bottom: 0;padding: 0.3em;box-sizing: border-box;text-align: center;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd label.sk-toggleable__label-arrow:before {content: "▸";float: left;margin-right: 0.25em;color: #696969;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd label.sk-toggleable__label-arrow:hover:before {color: black;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-estimator:hover label.sk-toggleable__label-arrow:before {color: black;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-toggleable__content {max-height: 0;max-width: 0;overflow: hidden;text-align: left;background-color: #f0f8ff;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-toggleable__content pre {margin: 0.2em;color: black;border-radius: 0.25em;background-color: #f0f8ff;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd input.sk-toggleable__control:checked~div.sk-toggleable__content {max-height: 200px;max-width: 100%;overflow: auto;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {content: "▾";}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {background-color: #d4ebff;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd input.sk-hidden--visually {border: 0;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-estimator {font-family: monospace;background-color: #f0f8ff;border: 1px dotted black;border-radius: 0.25em;box-sizing: border-box;margin-bottom: 0.5em;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-estimator:hover {background-color: #d4ebff;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-parallel-item::after {content: "";width: 100%;border-bottom: 1px solid gray;flex-grow: 1;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-label:hover label.sk-toggleable__label {background-color: #d4ebff;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-serial::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-serial {display: flex;flex-direction: column;align-items: center;background-color: white;padding-right: 0.2em;padding-left: 0.2em;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-item {z-index: 1;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-parallel {display: flex;align-items: stretch;justify-content: center;background-color: white;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-parallel::before {content: "";position: absolute;border-left: 1px solid gray;box-sizing: border-box;top: 2em;bottom: 0;left: 50%;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-parallel-item {display: flex;flex-direction: column;position: relative;background-color: white;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-parallel-item:first-child::after {align-self: flex-end;width: 50%;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-parallel-item:last-child::after {align-self: flex-start;width: 50%;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-parallel-item:only-child::after {width: 0;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-dashed-wrapped {border: 1px dashed gray;margin: 0 0.4em 0.5em 0.4em;box-sizing: border-box;padding-bottom: 0.4em;background-color: white;position: relative;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-label label {font-family: monospace;font-weight: bold;background-color: white;display: inline-block;line-height: 1.2em;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-label-container {position: relative;z-index: 2;text-align: center;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-container {/* jupyter's `normalize.less` sets `[hidden] { display: none; }` but bootstrap.min.css set `[hidden] { display: none !important; }` so we also need the `!important` here to be able to override the default hidden behavior on the sphinx rendered scikit-learn.org. See: https://github.com/scikit-learn/scikit-learn/issues/21755 */display: inline-block !important;position: relative;}#sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd div.sk-text-repr-fallback {display: none;}</style><div id="sk-45dd2416-082d-4dd2-9cf8-e0eb0cf167bd" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>GaussianProcessRegressor(kernel=50**2 * RBF(length_scale=50) + 2**2 * RBF(length_scale=100) * ExpSineSquared(length_scale=1, periodicity=1) + 0.5**2 * RationalQuadratic(alpha=1, length_scale=1) + 0.1**2 * RBF(length_scale=0.1) + WhiteKernel(noise_level=0.01))</pre><b>Please rerun this cell to show the HTML repr or trust the notebook.</b></div><div class="sk-container" hidden><div class="sk-item sk-dashed-wrapped"><div class="sk-label-container"><div class="sk-label sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="bf041bd3-d96a-410c-b3fe-d2ba51e66ca7" type="checkbox" ><label for="bf041bd3-d96a-410c-b3fe-d2ba51e66ca7" class="sk-toggleable__label sk-toggleable__label-arrow">GaussianProcessRegressor</label><div class="sk-toggleable__content"><pre>GaussianProcessRegressor(kernel=50**2 * RBF(length_scale=50) + 2**2 * RBF(length_scale=100) * ExpSineSquared(length_scale=1, periodicity=1) + 0.5**2 * RationalQuadratic(alpha=1, length_scale=1) + 0.1**2 * RBF(length_scale=0.1) + WhiteKernel(noise_level=0.01))</pre></div></div></div><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2b663703-98be-4d96-b393-51612da579cb" type="checkbox" ><label for="2b663703-98be-4d96-b393-51612da579cb" class="sk-toggleable__label sk-toggleable__label-arrow">ConstantKernel</label><div class="sk-toggleable__content"><pre>50**2</pre></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="2d7cf08b-2821-489c-b3dc-ddda8de40d5e" type="checkbox" ><label for="2d7cf08b-2821-489c-b3dc-ddda8de40d5e" class="sk-toggleable__label sk-toggleable__label-arrow">RBF</label><div class="sk-toggleable__content"><pre>RBF(length_scale=50)</pre></div></div></div></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="9225904c-7b4d-4c5f-b07d-560fe609160d" type="checkbox" ><label for="9225904c-7b4d-4c5f-b07d-560fe609160d" class="sk-toggleable__label sk-toggleable__label-arrow">ConstantKernel</label><div class="sk-toggleable__content"><pre>2**2</pre></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c48b4b28-5889-4f6d-975b-a2cab6770b7d" type="checkbox" ><label for="c48b4b28-5889-4f6d-975b-a2cab6770b7d" class="sk-toggleable__label sk-toggleable__label-arrow">RBF</label><div class="sk-toggleable__content"><pre>RBF(length_scale=100)</pre></div></div></div></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="c354f87d-1547-47f0-bc75-160a49fc3ef6" type="checkbox" ><label for="c354f87d-1547-47f0-bc75-160a49fc3ef6" class="sk-toggleable__label sk-toggleable__label-arrow">ExpSineSquared</label><div class="sk-toggleable__content"><pre>ExpSineSquared(length_scale=1, periodicity=1)</pre></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="95339836-6a88-4b13-a686-19bde93021ba" type="checkbox" ><label for="95339836-6a88-4b13-a686-19bde93021ba" class="sk-toggleable__label sk-toggleable__label-arrow">ConstantKernel</label><div class="sk-toggleable__content"><pre>0.5**2</pre></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="3c822330-0f8f-4281-8de6-38d7d5454b3a" type="checkbox" ><label for="3c822330-0f8f-4281-8de6-38d7d5454b3a" class="sk-toggleable__label sk-toggleable__label-arrow">RationalQuadratic</label><div class="sk-toggleable__content"><pre>RationalQuadratic(alpha=1, length_scale=1)</pre></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item sk-dashed-wrapped"><div class="sk-parallel"><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="6ff7b4f1-4c78-4a28-8457-34ba68590216" type="checkbox" ><label for="6ff7b4f1-4c78-4a28-8457-34ba68590216" class="sk-toggleable__label sk-toggleable__label-arrow">ConstantKernel</label><div class="sk-toggleable__content"><pre>0.1**2</pre></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="87f8ef0e-848e-4249-8364-cbbe0415941b" type="checkbox" ><label for="87f8ef0e-848e-4249-8364-cbbe0415941b" class="sk-toggleable__label sk-toggleable__label-arrow">RBF</label><div class="sk-toggleable__content"><pre>RBF(length_scale=0.1)</pre></div></div></div></div></div></div></div></div></div></div></div><div class="sk-parallel-item"><div class="sk-item"><div class="sk-serial"><div class="sk-item"><div class="sk-estimator sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="255cfe58-14ee-4a11-a6a5-fa0a26c61d15" type="checkbox" ><label for="255cfe58-14ee-4a11-a6a5-fa0a26c61d15" class="sk-toggleable__label sk-toggleable__label-arrow">WhiteKernel</label><div class="sk-toggleable__content"><pre>WhiteKernel(noise_level=0.01)</pre></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div>
+</div>
+<br />
+<br /><p>Now, we will use the Gaussian process to predict on:</p>
+<ul class="simple">
+<li><p>training data to inspect the goodness of fit;</p></li>
+<li><p>future data to see the extrapolation done by the model.</p></li>
+</ul>
+<p>Thus, we create synthetic data from 1958 to the current month. In addition,
+we need to add the subtracted mean computed during training.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">today</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="n">current_month</span> <span class="o">=</span> <span class="n">today</span><span class="o">.</span><span class="n">year</span> <span class="o">+</span> <span class="n">today</span><span class="o">.</span><span class="n">month</span> <span class="o">/</span> <span class="mi">12</span>
+<span class="n">X_test</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html#numpy.linspace" title="numpy.linspace" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">linspace</span></a><span class="p">(</span><span class="n">start</span><span class="o">=</span><span class="mi">1958</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">current_month</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">1_000</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mean_y_pred</span><span class="p">,</span> <span class="n">std_y_pred</span> <span class="o">=</span> <span class="n">gaussian_process</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">return_std</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">mean_y_pred</span> <span class="o">+=</span> <span class="n">y_mean</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Measurements&quot;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">mean_y_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;Gaussian process&quot;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.fill_between.html#matplotlib.pyplot.fill_between" title="matplotlib.pyplot.fill_between" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span></a><span class="p">(</span>
+    <span class="n">X_test</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span>
+    <span class="n">mean_y_pred</span> <span class="o">-</span> <span class="n">std_y_pred</span><span class="p">,</span>
+    <span class="n">mean_y_pred</span> <span class="o">+</span> <span class="n">std_y_pred</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="s2">&quot;tab:blue&quot;</span><span class="p">,</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span>
+<span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.legend.html#matplotlib.pyplot.legend" title="matplotlib.pyplot.legend" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">legend</span></a><span class="p">()</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlabel.html#matplotlib.pyplot.xlabel" title="matplotlib.pyplot.xlabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span></a><span class="p">(</span><span class="s2">&quot;Year&quot;</span><span class="p">)</span>
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.ylabel.html#matplotlib.pyplot.ylabel" title="matplotlib.pyplot.ylabel" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span></a><span class="p">(</span><span class="s2">&quot;Monthly average of CO$_2$ concentration (ppm)&quot;</span><span class="p">)</span>
+<span class="n">_</span> <span class="o">=</span> <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.title.html#matplotlib.pyplot.title" title="matplotlib.pyplot.title" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">title</span></a><span class="p">(</span>
+    <span class="s2">&quot;Monthly average of air samples measurements</span><span class="se">\n</span><span class="s2">from the Mauna Loa Observatory&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_gpr_co2_003.png" srcset="../../_images/sphx_glr_plot_gpr_co2_003.png" alt="Monthly average of air samples measurements from the Mauna Loa Observatory" class = "sphx-glr-single-img"/><p>Our fitted model is capable to fit previous data properly and extrapolate to
+future year with confidence.</p>
+</section>
+<section id="interpretation-of-kernel-hyperparameters">
+<h2>Interpretation of kernel hyperparameters<a class="headerlink" href="#interpretation-of-kernel-hyperparameters" title="Permalink to this headline">¶</a></h2>
+<p>Now, we can have a look at the hyperparameters of the kernel.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gaussian_process</span><span class="o">.</span><span class="n">kernel_</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>44.8**2 * RBF(length_scale=51.6) + 2.64**2 * RBF(length_scale=91.5) * ExpSineSquared(length_scale=1.48, periodicity=1) + 0.536**2 * RationalQuadratic(alpha=2.89, length_scale=0.968) + 0.188**2 * RBF(length_scale=0.122) + WhiteKernel(noise_level=0.0367)
+</pre></div>
+</div>
+<p>Thus, most of the target signal, with the mean substracted, is explained by a
+long-term rising trend for ~45 ppm and a length-scale of ~52 years. The
+periodic component has an amplitude of ~2.6ppm, a decay time of ~90 years and
+a length-scale of ~1.5. The long decay time indicates that we have a
+component very close to a seasonal periodicity. The correlated noise has an
+amplitude of ~0.2 ppm with a length scale of ~0.12 years and a white-noise
+contribution of ~0.04 ppm. Thus, the overall noise level is very small,
+indicating that the data can be very well explained by the model.</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  11.014 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-gaussian-process-plot-gpr-co2-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/gaussian_process/plot_gpr_co2.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo13.svg" width="150px" /></a>
@@ -360,6 +556,7 @@ Log-marginal-likelihood: 1362.655
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
 </section>
 
 

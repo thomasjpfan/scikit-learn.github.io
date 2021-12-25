@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.utils.validation.column_or_1d &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>sklearn.utils.validation.column_or_1d &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.utils.validation.column_or_1d.html" />
 
@@ -157,7 +157,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -181,19 +181,27 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils.validation</span></code>.column_or_1d<a class="headerlink" href="#sklearn-utils-validation-column-or-1d" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.utils.validation.column_or_1d">
-<span class="sig-prename descclassname"><span class="pre">sklearn.utils.validation.</span></span><span class="sig-name descname"><span class="pre">column_or_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/utils/validation.py#L994"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.validation.column_or_1d" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.utils.validation.</span></span><span class="sig-name descname"><span class="pre">column_or_1d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/utils/validation.py#L1002"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.utils.validation.column_or_1d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ravel column or 1d numpy array, else raises an error.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>y</strong><span class="classifier">array-like</span></dt><dd></dd>
+<dt><strong>y</strong><span class="classifier">array-like</span></dt><dd><p>Input data.</p>
+</dd>
 <dt><strong>warn</strong><span class="classifier">bool, default=False</span></dt><dd><p>To control display of warnings.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>y</strong><span class="classifier">ndarray</span></dt><dd></dd>
+<dt><strong>y</strong><span class="classifier">ndarray</span></dt><dd><p>Output data.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><dl class="simple">
+<dt>ValueError</dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">y</span></code> is not a 1D array or a 2D array with a single row or column.</p>
+</dd>
 </dl>
 </dd>
 </dl>

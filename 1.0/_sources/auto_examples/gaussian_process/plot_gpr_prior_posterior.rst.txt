@@ -297,8 +297,8 @@ Rational Quadradtic kernel
     Kernel parameters before fit:
     1**2 * RationalQuadratic(alpha=0.1, length_scale=1))
     Kernel parameters after fit: 
-    0.594**2 * RationalQuadratic(alpha=5.3e+10, length_scale=0.279) 
-    Log-likelihood: 0.008
+    0.594**2 * RationalQuadratic(alpha=7.66e+09, length_scale=0.279) 
+    Log-likelihood: -0.060
 
 
 
@@ -420,6 +420,19 @@ Dot product kernel
    :class: sphx-glr-single-img
 
 
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    /home/circleci/project/sklearn/gaussian_process/_gpr.py:610: ConvergenceWarning: lbfgs failed to converge (status=2):
+    ABNORMAL_TERMINATION_IN_LNSRCH.
+
+    Increase the number of iterations (max_iter) or scale the data as shown in:
+        https://scikit-learn.org/stable/modules/preprocessing.html
+      _check_optimize_result("lbfgs", opt_res)
+
 
 
 
@@ -446,8 +459,8 @@ Dot product kernel
     Kernel parameters before fit:
     0.316**2 * DotProduct(sigma_0=1) ** 2)
     Kernel parameters after fit: 
-    0.316**2 * DotProduct(sigma_0=0.998) ** 2 
-    Log-likelihood: -7960503293.911
+    0.337**2 * DotProduct(sigma_0=0.94) ** 2 
+    Log-likelihood: -7960336057.074
 
 
 
@@ -525,7 +538,7 @@ Mattern kernel
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  1.976 seconds)
+   **Total running time of the script:** ( 0 minutes  1.937 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_gpr_prior_posterior.py:

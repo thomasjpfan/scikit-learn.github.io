@@ -7,9 +7,9 @@
   <meta charset="utf-8">
   <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-  <meta property="og:title" content="sklearn.neighbors.DistanceMetric" />
+  <meta property="og:title" content="sklearn.metrics.DistanceMetric" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://scikit-learn/stable/modules/generated/sklearn.neighbors.DistanceMetric.html" />
+  <meta property="og:url" content="https://scikit-learn/stable/modules/generated/sklearn.metrics.DistanceMetric.html" />
   <meta property="og:site_name" content="scikit-learn" />
   <meta property="og:image" content="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" />
   <meta property="og:image:alt" content="scikit-learn" />
@@ -17,9 +17,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.neighbors.DistanceMetric &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>sklearn.metrics.DistanceMetric &mdash; scikit-learn 1.0.2 documentation</title>
   
-  <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html" />
+  <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.metrics.DistanceMetric.html" />
 
   
   <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -152,12 +152,12 @@
           </a>
         </div>
         <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-            <a href="sklearn.neighbors.BallTree.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.neighbors.BallTree">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
-            <a href="sklearn.neighbors.KDTree.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.neighbors.KDTree">Next</a>
+            <a href="sklearn.metrics.consensus_score.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.metrics.consensus_score">Prev</a><a href="../classes.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="API Reference">Up</a>
+            <a href="sklearn.metrics.pairwise.additive_chi2_kernel.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="sklearn.metrics.pairwise.additive_chi2_kernel">Next</a>
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -168,7 +168,7 @@
         </div>
             <div class="sk-sidebar-toc">
               <ul>
-<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code>.DistanceMetric</a></li>
+<li><a class="reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code>.DistanceMetric</a></li>
 </ul>
 
             </div>
@@ -177,17 +177,17 @@
     <div id="sk-page-content-wrapper">
       <div class="sk-page-content container-fluid body px-md-3" role="main">
         
-  <section id="sklearn-neighbors-distancemetric">
-<h1><a class="reference internal" href="../classes.html#module-sklearn.neighbors" title="sklearn.neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a>.DistanceMetric<a class="headerlink" href="#sklearn-neighbors-distancemetric" title="Permalink to this headline">¶</a></h1>
+  <section id="sklearn-metrics-distancemetric">
+<h1><a class="reference internal" href="../classes.html#module-sklearn.metrics" title="sklearn.metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a>.DistanceMetric<a class="headerlink" href="#sklearn-metrics-distancemetric" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="sklearn.neighbors.DistanceMetric">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.neighbors.</span></span><span class="sig-name descname"><span class="pre">DistanceMetric</span></span><a class="headerlink" href="#sklearn.neighbors.DistanceMetric" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="sklearn.metrics.DistanceMetric">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">DistanceMetric</span></span><a class="headerlink" href="#sklearn.metrics.DistanceMetric" title="Permalink to this definition">¶</a></dt>
 <dd><p>DistanceMetric class</p>
 <p>This class provides a uniform interface to fast distance metric
-functions.  The various metrics can be accessed via the <a class="reference internal" href="#sklearn.neighbors.DistanceMetric.get_metric" title="sklearn.neighbors.DistanceMetric.get_metric"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_metric</span></code></a>
+functions.  The various metrics can be accessed via the <a class="reference internal" href="#sklearn.metrics.DistanceMetric.get_metric" title="sklearn.metrics.DistanceMetric.get_metric"><code class="xref py py-meth docutils literal notranslate"><span class="pre">get_metric</span></code></a>
 class method and the metric string identifier (see below).</p>
 <p class="rubric">Examples</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">DistanceMetric</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">DistanceMetric</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dist</span> <span class="o">=</span> <span class="n">DistanceMetric</span><span class="o">.</span><span class="n">get_metric</span><span class="p">(</span><span class="s1">&#39;euclidean&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
 <span class="go">         [3, 4, 5]]</span>
@@ -239,8 +239,8 @@ distance metric classes:</p>
 </tr>
 <tr class="row-odd"><td><p>“minkowski”</p></td>
 <td><p>MinkowskiDistance</p></td>
-<td><p>p</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">sum(|x</span> <span class="pre">-</span> <span class="pre">y|^p)^(1/p)</span></code></p></td>
+<td><p>p, w</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sum(w</span> <span class="pre">*</span> <span class="pre">|x</span> <span class="pre">-</span> <span class="pre">y|^p)^(1/p)</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p>“wminkowski”</p></td>
 <td><p>WMinkowskiDistance</p></td>
@@ -259,6 +259,9 @@ distance metric classes:</p>
 </tr>
 </tbody>
 </table>
+<p>Note that “minkowski” with a non-None <code class="docutils literal notranslate"><span class="pre">w</span></code> parameter actually calls
+<code class="docutils literal notranslate"><span class="pre">WMinkowskiDistance</span></code> with <code class="docutils literal notranslate"><span class="pre">w=w</span> <span class="pre">**</span> <span class="pre">(1/p)</span></code> in order to be consistent with the
+parametrization of scipy 1.8 and later.</p>
 <p><strong>Metrics intended for two-dimensional vector spaces:</strong>  Note that the haversine
 distance metric requires data in the form of [latitude, longitude] and both
 inputs and outputs are in units of radians.</p>
@@ -404,28 +407,27 @@ scaling as other distances.</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.neighbors.DistanceMetric.dist_to_rdist" title="sklearn.neighbors.DistanceMetric.dist_to_rdist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dist_to_rdist</span></code></a></p></td>
-<td><p>Convert the true distance to the reduced distance.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.metrics.DistanceMetric.dist_to_rdist" title="sklearn.metrics.DistanceMetric.dist_to_rdist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dist_to_rdist</span></code></a></p></td>
+<td><p>Convert the true distance to the rank-preserving surrogate distance.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.neighbors.DistanceMetric.get_metric" title="sklearn.neighbors.DistanceMetric.get_metric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_metric</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.metrics.DistanceMetric.get_metric" title="sklearn.metrics.DistanceMetric.get_metric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_metric</span></code></a></p></td>
 <td><p>Get the given distance metric from the string identifier.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.neighbors.DistanceMetric.pairwise" title="sklearn.neighbors.DistanceMetric.pairwise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pairwise</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.metrics.DistanceMetric.pairwise" title="sklearn.metrics.DistanceMetric.pairwise"><code class="xref py py-obj docutils literal notranslate"><span class="pre">pairwise</span></code></a></p></td>
 <td><p>Compute the pairwise distances between X and Y</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.neighbors.DistanceMetric.rdist_to_dist" title="sklearn.neighbors.DistanceMetric.rdist_to_dist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rdist_to_dist</span></code></a></p></td>
-<td><p>Convert the Reduced distance to the true distance.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.metrics.DistanceMetric.rdist_to_dist" title="sklearn.metrics.DistanceMetric.rdist_to_dist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rdist_to_dist</span></code></a></p></td>
+<td><p>Convert the rank-preserving surrogate distance to the distance.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
-<dt class="sig sig-object py" id="sklearn.neighbors.DistanceMetric.dist_to_rdist">
-<span class="sig-name descname"><span class="pre">dist_to_rdist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sklearn.neighbors.DistanceMetric.dist_to_rdist" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert the true distance to the reduced distance.</p>
-<p>The reduced distance, defined for some metrics, is a computationally
-more efficient measure which preserves the rank of the true distance.
-For example, in the Euclidean distance metric, the reduced distance
-is the squared-euclidean distance.</p>
+<dt class="sig sig-object py" id="sklearn.metrics.DistanceMetric.dist_to_rdist">
+<span class="sig-name descname"><span class="pre">dist_to_rdist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sklearn.metrics.DistanceMetric.dist_to_rdist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the true distance to the rank-preserving surrogate distance.</p>
+<p>The surrogate distance is any measure that yields the same rank as the
+distance, but is more efficient to compute. For example, for the
+Euclidean metric, the surrogate distance is the squared-euclidean distance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
@@ -435,7 +437,7 @@ is the squared-euclidean distance.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt>double</dt><dd><p>Reduced distance.</p>
+<dt>double</dt><dd><p>Surrogate distance.</p>
 </dd>
 </dl>
 </dd>
@@ -443,8 +445,8 @@ is the squared-euclidean distance.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="sklearn.neighbors.DistanceMetric.get_metric">
-<span class="sig-name descname"><span class="pre">get_metric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sklearn.neighbors.DistanceMetric.get_metric" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="sklearn.metrics.DistanceMetric.get_metric">
+<span class="sig-name descname"><span class="pre">get_metric</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sklearn.metrics.DistanceMetric.get_metric" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the given distance metric from the string identifier.</p>
 <p>See the docstring of DistanceMetric for a list of available metrics.</p>
 <dl class="field-list simple">
@@ -460,8 +462,8 @@ is the squared-euclidean distance.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="sklearn.neighbors.DistanceMetric.pairwise">
-<span class="sig-name descname"><span class="pre">pairwise</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sklearn.neighbors.DistanceMetric.pairwise" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="sklearn.metrics.DistanceMetric.pairwise">
+<span class="sig-name descname"><span class="pre">pairwise</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sklearn.metrics.DistanceMetric.pairwise" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the pairwise distances between X and Y</p>
 <p>This is a convenience routine for the sake of testing.  For many
 metrics, the utilities in scipy.spatial.distance.cdist and
@@ -487,17 +489,16 @@ X and Y.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="sklearn.neighbors.DistanceMetric.rdist_to_dist">
-<span class="sig-name descname"><span class="pre">rdist_to_dist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sklearn.neighbors.DistanceMetric.rdist_to_dist" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert the Reduced distance to the true distance.</p>
-<p>The reduced distance, defined for some metrics, is a computationally
-more efficient measure which preserves the rank of the true distance.
-For example, in the Euclidean distance metric, the reduced distance
-is the squared-euclidean distance.</p>
+<dt class="sig sig-object py" id="sklearn.metrics.DistanceMetric.rdist_to_dist">
+<span class="sig-name descname"><span class="pre">rdist_to_dist</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#sklearn.metrics.DistanceMetric.rdist_to_dist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the rank-preserving surrogate distance to the distance.</p>
+<p>The surrogate distance is any measure that yields the same rank as the
+distance, but is more efficient to compute. For example, for the
+Euclidean metric, the surrogate distance is the squared-euclidean distance.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>rdist</strong><span class="classifier">double</span></dt><dd><p>Reduced distance.</p>
+<dt><strong>rdist</strong><span class="classifier">double</span></dt><dd><p>Surrogate distance.</p>
 </dd>
 </dl>
 </dd>
@@ -519,7 +520,7 @@ is the squared-euclidean distance.</p>
     <div class="container">
       <footer class="sk-content-footer">
             &copy; 2007 - 2021, scikit-learn developers (BSD License).
-          <a href="../../_sources/modules/generated/sklearn.neighbors.DistanceMetric.rst.txt" rel="nofollow">Show this page source</a>
+          <a href="../../_sources/modules/generated/sklearn.metrics.DistanceMetric.rst.txt" rel="nofollow">Show this page source</a>
       </footer>
     </div>
   </div>

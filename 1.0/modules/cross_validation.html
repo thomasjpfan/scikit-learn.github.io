@@ -12,13 +12,13 @@
   <meta property="og:url" content="https://scikit-learn/stable/modules/cross_validation.html" />
   <meta property="og:site_name" content="scikit-learn" />
   <meta property="og:description" content="Learning the parameters of a prediction function and testing it on the same data is a methodological mistake: a model that would just repeat the labels of the samples that it has just seen would ha..." />
-  <meta property="og:image" content="../_images/grid_search_workflow.png" />
+  <meta property="og:image" content="https://scikit-learn/_images/grid_search_workflow.png" />
   <meta property="og:image:alt" content="Grid Search Workflow" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>3.1. Cross-validation: evaluating estimator performance &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>3.1. Cross-validation: evaluating estimator performance &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/cross_validation.html" />
 
@@ -158,7 +158,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -795,7 +795,7 @@ dataset so that using just <a class="reference internal" href="generated/sklearn
 <li><p>With the current implementation full shuffle is not possible in most
 scenarios. When shuffle=True, the following happens:</p>
 <ol class="arabic simple">
-<li><p>All groups a shuffled.</p></li>
+<li><p>All groups are shuffled.</p></li>
 <li><p>Groups are sorted by standard deviation of classes using stable sort.</p></li>
 <li><p>Sorted groups are iterated over and assigned to folds.</p></li>
 </ol>
@@ -1034,7 +1034,7 @@ to obtain good results. A high p-value could be due to a lack of dependency
 between features and labels (there is no difference in feature values between
 the classes) or because the classifier was not able to use the dependency in
 the data. In the latter case, using a more appropriate classifier that
-is able to utilize the structure in the data, would result in a low
+is able to utilize the structure in the data, would result in a lower
 p-value.</p>
 <p>Cross-validation provides information about how well a classifier generalizes,
 specifically the range of expected errors of the classifier. However, a

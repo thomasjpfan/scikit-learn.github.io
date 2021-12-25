@@ -49,7 +49,7 @@ almost the same accuracy as compared to a model built without early stopping
 using many fewer estimators. This can significantly reduce training time,
 memory usage and prediction latency.
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-96
+.. GENERATED FROM PYTHON SOURCE LINES 34-98
 
 .. code-block:: default
 
@@ -67,10 +67,12 @@ memory usage and prediction latency.
     from sklearn import datasets
     from sklearn.model_selection import train_test_split
 
-    data_list = [datasets.load_iris(), datasets.load_digits()]
-    data_list = [(d.data, d.target) for d in data_list]
-    data_list += [datasets.make_hastie_10_2()]
-    names = ["Iris Data", "Digits Data", "Hastie Data"]
+    data_list = [
+        datasets.load_iris(return_X_y=True),
+        datasets.make_classification(n_samples=800, random_state=0),
+        datasets.make_hastie_10_2(n_samples=2000, random_state=0),
+    ]
+    names = ["Iris Data", "Classification Data", "Hastie Data"]
 
     n_gb = []
     score_gb = []
@@ -79,7 +81,7 @@ memory usage and prediction latency.
     score_gbes = []
     time_gbes = []
 
-    n_estimators = 500
+    n_estimators = 200
 
     for X, y in data_list:
         X_train, X_test, y_train, y_test = train_test_split(
@@ -122,12 +124,12 @@ memory usage and prediction latency.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 97-99
+.. GENERATED FROM PYTHON SOURCE LINES 99-101
 
 Compare scores with and without early stopping
 ----------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-140
+.. GENERATED FROM PYTHON SOURCE LINES 101-142
 
 .. code-block:: default
 
@@ -184,12 +186,12 @@ Compare scores with and without early stopping
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-143
+.. GENERATED FROM PYTHON SOURCE LINES 143-145
 
 Compare fit times with and without early stopping
 -------------------------------------------------
 
-.. GENERATED FROM PYTHON SOURCE LINES 143-169
+.. GENERATED FROM PYTHON SOURCE LINES 145-171
 
 .. code-block:: default
 
@@ -234,7 +236,7 @@ Compare fit times with and without early stopping
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  58.039 seconds)
+   **Total running time of the script:** ( 0 minutes  2.566 seconds)
 
 
 .. _sphx_glr_download_auto_examples_ensemble_plot_gradient_boosting_early_stopping.py:

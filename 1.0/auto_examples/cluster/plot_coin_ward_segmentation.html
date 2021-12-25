@@ -11,14 +11,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://scikit-learn/stable/auto_examples/cluster/plot_coin_ward_segmentation.html" />
   <meta property="og:site_name" content="scikit-learn" />
-  <meta property="og:description" content="Compute the segmentation of a 2D image with Ward hierarchical clustering. The clustering is spatially constrained in order for each segmented region to be in one piece. Out: Compute structured hier..." />
+  <meta property="og:description" content="Compute the segmentation of a 2D image with Ward hierarchical clustering. The clustering is spatially constrained in order for each segmented region to be in one piece. Out:, Total running time of ..." />
   <meta property="og:image" content="https://scikit-learn.org/stable/_static/scikit-learn-logo-small.png" />
   <meta property="og:image:alt" content="scikit-learn" />
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>A demo of structured Ward hierarchical clustering on an image of coins &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>A demo of structured Ward hierarchical clustering on an image of coins &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/cluster/plot_coin_ward_segmentation.html" />
 
@@ -153,12 +153,12 @@
           </a>
         </div>
         <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-            <a href="plot_digits_linkage.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Various Agglomerative Clustering on a 2D embedding of digits">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+            <a href="plot_coin_segmentation.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Segmenting the picture of greek coins in regions">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
             <a href="plot_segmentation_toy.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Spectral clustering for image segmentation">Next</a>
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -189,8 +189,10 @@ to download the full example code or to run this example in your browser via Bin
 clustering. The clustering is spatially constrained in order
 for each segmented region to be in one piece.</p>
 <img src="../../_images/sphx_glr_plot_coin_ward_segmentation_001.png" srcset="../../_images/sphx_glr_plot_coin_ward_segmentation_001.png" alt="plot coin ward segmentation" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Compute structured hierarchical clustering...
-Elapsed time:  0.302278995513916
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/miniconda/envs/testenv/lib/python3.9/site-packages/skimage/_shared/utils.py:338: FutureWarning: `multichannel` is a deprecated argument name for `rescale`. It will be removed in version 1.0.Please use `channel_axis` instead.
+  return func(*args, **kwargs)
+Compute structured hierarchical clustering...
+Elapsed time:  0.14667797088623047
 Number of pixels:  4697
 Number of clusters:  27
 </pre></div>
@@ -269,7 +271,7 @@ Number of clusters:  27
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.710 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.358 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-cluster-plot-coin-ward-segmentation-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_coin_ward_segmentation.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo4.svg" width="150px" /></a>

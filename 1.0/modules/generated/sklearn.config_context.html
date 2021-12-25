@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>sklearn.config_context &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>sklearn.config_context &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/modules/generated/sklearn.config_context.html" />
 
@@ -157,7 +157,7 @@
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -181,37 +181,46 @@
 <h1><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn</span></code>.config_context<a class="headerlink" href="#sklearn-config-context" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.config_context">
-<span class="sig-prename descclassname"><span class="pre">sklearn.</span></span><span class="sig-name descname"><span class="pre">config_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">new_config</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/0d378913b/sklearn/_config.py#L100"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.config_context" title="Permalink to this definition">¶</a></dt>
-<dd><p>Context manager for global scikit-learn configuration</p>
+<span class="sig-prename descclassname"><span class="pre">sklearn.</span></span><span class="sig-name descname"><span class="pre">config_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assume_finite</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_memory</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_changed_only</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">display</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/7e1e6d09b/sklearn/_config.py#L100"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.config_context" title="Permalink to this definition">¶</a></dt>
+<dd><p>Context manager for global scikit-learn configuration.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>assume_finite</strong><span class="classifier">bool, default=False</span></dt><dd><p>If True, validation for finiteness will be skipped,
+<dt><strong>assume_finite</strong><span class="classifier">bool, default=None</span></dt><dd><p>If True, validation for finiteness will be skipped,
 saving time, but leading to potential crashes. If
 False, validation for finiteness will be performed,
-avoiding error.  Global default: False.</p>
+avoiding error. If None, the existing value won’t change.
+The default value is False.</p>
 </dd>
-<dt><strong>working_memory</strong><span class="classifier">int, default=1024</span></dt><dd><p>If set, scikit-learn will attempt to limit the size of temporary arrays
+<dt><strong>working_memory</strong><span class="classifier">int, default=None</span></dt><dd><p>If set, scikit-learn will attempt to limit the size of temporary arrays
 to this number of MiB (per job when parallelised), often saving both
 computation time and memory on expensive operations that can be
-performed in chunks. Global default: 1024.</p>
+performed in chunks. If None, the existing value won’t change.
+The default value is 1024.</p>
 </dd>
-<dt><strong>print_changed_only</strong><span class="classifier">bool, default=True</span></dt><dd><p>If True, only the parameters that were set to non-default
+<dt><strong>print_changed_only</strong><span class="classifier">bool, default=None</span></dt><dd><p>If True, only the parameters that were set to non-default
 values will be printed when printing an estimator. For example,
 <code class="docutils literal notranslate"><span class="pre">print(SVC())</span></code> while True will only print ‘SVC()’, but would print
 ‘SVC(C=1.0, cache_size=200, …)’ with all the non-changed parameters
-when False. Default is True.</p>
+when False. If None, the existing value won’t change.
+The default value is True.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 0.23: </span>Default changed from False to True.</p>
 </div>
 </dd>
-<dt><strong>display</strong><span class="classifier">{‘text’, ‘diagram’}, default=’text’</span></dt><dd><p>If ‘diagram’, estimators will be displayed as a diagram in a Jupyter
+<dt><strong>display</strong><span class="classifier">{‘text’, ‘diagram’}, default=None</span></dt><dd><p>If ‘diagram’, estimators will be displayed as a diagram in a Jupyter
 lab or notebook context. If ‘text’, estimators will be displayed as
-text. Default is ‘text’.</p>
+text. If None, the existing value won’t change.
+The default value is ‘text’.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.23.</span></p>
 </div>
 </dd>
+</dl>
+</dd>
+<dt class="field-even">Yields</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None.</dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -237,7 +246,7 @@ their previous values when the context manager is exited.</p>
 <span class="gp">... </span>        <span class="n">assert_all_finite</span><span class="p">([</span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">)])</span>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
-<span class="gr">ValueError</span>: <span class="n">Input contains NaN, ...</span>
+<span class="gr">ValueError</span>: <span class="n">Input contains NaN...</span>
 </pre></div>
 </div>
 </dd></dl>

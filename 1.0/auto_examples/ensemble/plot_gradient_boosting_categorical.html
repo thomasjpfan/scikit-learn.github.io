@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   
-  <title>Categorical Feature Support in Gradient Boosting &mdash; scikit-learn 1.0.1 documentation</title>
+  <title>Categorical Feature Support in Gradient Boosting &mdash; scikit-learn 1.0.2 documentation</title>
   
   <link rel="canonical" href="http://scikit-learn.org/stable/auto_examples/ensemble/plot_gradient_boosting_categorical.html" />
 
@@ -153,12 +153,12 @@
           </a>
         </div>
         <div class="btn-group w-100 mb-2" role="group" aria-label="rellinks">
-            <a href="plot_gradient_boosting_oob.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Gradient Boosting Out-of-Bag estimates">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
-            <a href="plot_forest_iris.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Plot the decision surfaces of ensembles of trees on the iris dataset">Next</a>
+            <a href="plot_forest_iris.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Plot the decision surfaces of ensembles of trees on the iris dataset">Prev</a><a href="../index.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Examples">Up</a>
+            <a href="plot_stack_predictors.html" role="button" class="btn sk-btn-rellink py-1" sk-rellink-tooltip="Combine predictors using stacking">Next</a>
         </div>
         <div class="alert alert-danger p-1 mb-2" role="alert">
           <p class="text-center mb-0">
-          <strong>scikit-learn 1.0.1</strong><br/>
+          <strong>scikit-learn 1.0.2</strong><br/>
           <a href="http://scikit-learn.org/dev/versions.html">Other versions</a>
           </p>
         </div>
@@ -211,14 +211,45 @@ category support</span></a> of the
 and categorical features, where the houses’ sales prices is the target.</p>
 <section id="load-ames-housing-dataset">
 <h2>Load Ames Housing dataset<a class="headerlink" href="#load-ames-housing-dataset" title="Permalink to this headline">¶</a></h2>
-<p>First, we load the ames housing data as a pandas dataframe. The features
+<p>First, we load the Ames Housing data as a pandas dataframe. The features
 are either categorical or numerical:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a>
 
-<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="mi">41211</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">X</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.datasets.fetch_openml.html#sklearn.datasets.fetch_openml" title="sklearn.datasets.fetch_openml" class="sphx-glr-backref-module-sklearn-datasets sphx-glr-backref-type-py-function"><span class="n">fetch_openml</span></a><span class="p">(</span><span class="n">data_id</span><span class="o">=</span><span class="mi">42165</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="n">n_categorical_features</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">==</span> <span class="s2">&quot;category&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-<span class="n">n_numerical_features</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">dtypes</span> <span class="o">==</span> <span class="s2">&quot;float&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="c1"># Select only a subset of features of X to make the example faster to run</span>
+<span class="n">categorical_columns_subset</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;BldgType&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GarageFinish&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LotConfig&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Functional&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MasVnrType&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HouseStyle&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FireplaceQu&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ExterCond&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ExterQual&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;PoolQC&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">numerical_columns_subset</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;3SsnPorch&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Fireplaces&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BsmtHalfBath&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;HalfBath&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GarageCars&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TotRmsAbvGrd&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BsmtFinSF1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;BsmtFinSF2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;GrLivArea&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ScreenPorch&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">categorical_columns_subset</span> <span class="o">+</span> <span class="n">numerical_columns_subset</span><span class="p">]</span>
+<span class="n">X</span><span class="p">[</span><span class="n">categorical_columns_subset</span><span class="p">]</span> <span class="o">=</span> <span class="n">X</span><span class="p">[</span><span class="n">categorical_columns_subset</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;category&quot;</span><span class="p">)</span>
+
+<span class="n">n_categorical_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;category&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">n_numerical_features</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s2">&quot;number&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of samples: </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of features: </span><span class="si">{</span><span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of categorical features: </span><span class="si">{</span><span class="n">n_categorical_features</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -226,12 +257,10 @@ are either categorical or numerical:</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>/home/circleci/project/sklearn/datasets/_openml.py:876: UserWarning: Version 1 of dataset ames-housing is inactive, meaning that issues have been found in the dataset. Try using a newer version from this URL: https://www.openml.org/data/v1/download/20649135/ames-housing.arff
-  warn(
-Number of samples: 2930
-Number of features: 80
-Number of categorical features: 46
-Number of numerical features: 34
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Number of samples: 1460
+Number of features: 20
+Number of categorical features: 10
+Number of numerical features: 10
 </pre></div>
 </div>
 </section>
@@ -306,6 +335,7 @@ this one, we let the <a class="reference internal" href="../../modules/generated
 which features are categorical.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># The ordinal encoder will first output the categorical features, and then the</span>
 <span class="c1"># continuous (passed-through) features</span>
+
 <span class="n">categorical_mask</span> <span class="o">=</span> <span class="p">[</span><span class="kc">True</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_categorical_features</span> <span class="o">+</span> <span class="p">[</span><span class="kc">False</span><span class="p">]</span> <span class="o">*</span> <span class="n">n_numerical_features</span>
 <span class="n">hist_native</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.pipeline.make_pipeline.html#sklearn.pipeline.make_pipeline" title="sklearn.pipeline.make_pipeline" class="sphx-glr-backref-module-sklearn-pipeline sphx-glr-backref-type-py-function"><span class="n">make_pipeline</span></a><span class="p">(</span>
     <span class="n">ordinal_encoder</span><span class="p">,</span>
@@ -325,10 +355,12 @@ models performance in terms of
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="n">scoring</span> <span class="o">=</span> <span class="s2">&quot;neg_mean_absolute_percentage_error&quot;</span>
-<span class="n">dropped_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_dropped</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
-<span class="n">one_hot_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_one_hot</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
-<span class="n">ordinal_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_ordinal</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
-<span class="n">native_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_native</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="n">n_cv_folds</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">dropped_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_dropped</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">n_cv_folds</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="n">one_hot_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_one_hot</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">n_cv_folds</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="n">ordinal_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_ordinal</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">n_cv_folds</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="n">native_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_native</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">n_cv_folds</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">plot_results</span><span class="p">(</span><span class="n">figure_title</span><span class="p">):</span>
@@ -336,7 +368,7 @@ models performance in terms of
 
     <span class="n">plot_info</span> <span class="o">=</span> <span class="p">[</span>
         <span class="p">(</span><span class="s2">&quot;fit_time&quot;</span><span class="p">,</span> <span class="s2">&quot;Fit times (s)&quot;</span><span class="p">,</span> <span class="n">ax1</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
-        <span class="p">(</span><span class="s2">&quot;test_score&quot;</span><span class="p">,</span> <span class="s2">&quot;Mean Absolute Percentage Error&quot;</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">)),</span>
+        <span class="p">(</span><span class="s2">&quot;test_score&quot;</span><span class="p">,</span> <span class="s2">&quot;Mean Absolute Percentage Error&quot;</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
     <span class="p">]</span>
 
     <span class="n">x</span><span class="p">,</span> <span class="n">width</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html#numpy.arange" title="numpy.arange" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">arange</span></a><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="mf">0.9</span>
@@ -347,11 +379,15 @@ models performance in terms of
             <span class="n">ordinal_result</span><span class="p">[</span><span class="n">key</span><span class="p">],</span>
             <span class="n">native_result</span><span class="p">[</span><span class="n">key</span><span class="p">],</span>
         <span class="p">]</span>
+
+        <span class="n">mape_cv_mean</span> <span class="o">=</span> <span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">item</span><span class="p">))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+        <span class="n">mape_cv_std</span> <span class="o">=</span> <span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.std.html#numpy.std" title="numpy.std" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">std</span></a><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">]</span>
+
         <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
-            <span class="n">x</span><span class="p">,</span>
-            <span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">mean</span></a><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">item</span><span class="p">))</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">],</span>
-            <span class="n">width</span><span class="p">,</span>
-            <span class="n">yerr</span><span class="o">=</span><span class="p">[</span><a href="https://numpy.org/doc/stable/reference/generated/numpy.std.html#numpy.std" title="numpy.std" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">std</span></a><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">],</span>
+            <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span>
+            <span class="n">height</span><span class="o">=</span><span class="n">mape_cv_mean</span><span class="p">,</span>
+            <span class="n">width</span><span class="o">=</span><span class="n">width</span><span class="p">,</span>
+            <span class="n">yerr</span><span class="o">=</span><span class="n">mape_cv_std</span><span class="p">,</span>
             <span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;C0&quot;</span><span class="p">,</span> <span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="s2">&quot;C3&quot;</span><span class="p">],</span>
         <span class="p">)</span>
         <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span>
@@ -364,10 +400,10 @@ models performance in terms of
     <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">figure_title</span><span class="p">)</span>
 
 
-<span class="n">plot_results</span><span class="p">(</span><span class="s2">&quot;Gradient Boosting on Adult Census&quot;</span><span class="p">)</span>
+<span class="n">plot_results</span><span class="p">(</span><span class="s2">&quot;Gradient Boosting on Ames Housing&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_gradient_boosting_categorical_001.png" srcset="../../_images/sphx_glr_plot_gradient_boosting_categorical_001.png" alt="Gradient Boosting on Adult Census, Fit times (s), Mean Absolute Percentage Error" class = "sphx-glr-single-img"/><p>We see that the model with one-hot-encoded data is by far the slowest. This
+<img src="../../_images/sphx_glr_plot_gradient_boosting_categorical_001.png" srcset="../../_images/sphx_glr_plot_gradient_boosting_categorical_001.png" alt="Gradient Boosting on Ames Housing, Fit times (s), Mean Absolute Percentage Error" class = "sphx-glr-single-img"/><p>We see that the model with one-hot-encoded data is by far the slowest. This
 is to be expected, since one-hot-encoding creates one additional feature per
 category value (for each categorical feature), and thus more split points
 need to be considered during fitting. In theory, we expect the native
@@ -403,22 +439,22 @@ of trees and the depth of each tree.</p>
         <span class="n">histgradientboostingregressor__max_iter</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
     <span class="p">)</span>
 
-<span class="n">dropped_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_dropped</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
-<span class="n">one_hot_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_one_hot</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
-<span class="n">ordinal_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_ordinal</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
-<span class="n">native_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_native</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="n">dropped_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_dropped</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">n_cv_folds</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="n">one_hot_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_one_hot</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">n_cv_folds</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="n">ordinal_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_ordinal</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">n_cv_folds</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
+<span class="n">native_result</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.model_selection.cross_validate.html#sklearn.model_selection.cross_validate" title="sklearn.model_selection.cross_validate" class="sphx-glr-backref-module-sklearn-model_selection sphx-glr-backref-type-py-function"><span class="n">cross_validate</span></a><span class="p">(</span><span class="n">hist_native</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="n">n_cv_folds</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">scoring</span><span class="p">)</span>
 
-<span class="n">plot_results</span><span class="p">(</span><span class="s2">&quot;Gradient Boosting on Adult Census (few and small trees)&quot;</span><span class="p">)</span>
+<span class="n">plot_results</span><span class="p">(</span><span class="s2">&quot;Gradient Boosting on Ames Housing (few and small trees)&quot;</span><span class="p">)</span>
 
 <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_gradient_boosting_categorical_002.png" srcset="../../_images/sphx_glr_plot_gradient_boosting_categorical_002.png" alt="Gradient Boosting on Adult Census (few and small trees), Fit times (s), Mean Absolute Percentage Error" class = "sphx-glr-single-img"/><p>The results for these under-fitting models confirm our previous intuition:
+<img src="../../_images/sphx_glr_plot_gradient_boosting_categorical_002.png" srcset="../../_images/sphx_glr_plot_gradient_boosting_categorical_002.png" alt="Gradient Boosting on Ames Housing (few and small trees), Fit times (s), Mean Absolute Percentage Error" class = "sphx-glr-single-img"/><p>The results for these under-fitting models confirm our previous intuition:
 the native category handling strategy performs the best when the splitting
 budget is constrained. The two other strategies (one-hot encoding and
 treating categories as ordinal values) lead to error values comparable
 to the baseline model that just dropped the categorical features altogether.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  21.856 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.291 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-ensemble-plot-gradient-boosting-categorical-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/1.0.X?urlpath=lab/tree/notebooks/auto_examples/ensemble/plot_gradient_boosting_categorical.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo10.svg" width="150px" /></a>

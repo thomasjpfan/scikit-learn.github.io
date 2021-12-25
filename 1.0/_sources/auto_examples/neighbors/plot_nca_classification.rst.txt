@@ -54,23 +54,8 @@ training set.
          :class: sphx-glr-multi-img
 
 
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    /home/circleci/project/examples/neighbors/plot_nca_classification.py:83: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
-      plt.pcolormesh(xx, yy, Z, cmap=cmap_light, alpha=0.8)
-    /home/circleci/project/examples/neighbors/plot_nca_classification.py:83: MatplotlibDeprecationWarning: shading='flat' when X and Y have the same dimensions as C is deprecated since 3.3.  Either specify the corners of the quadrilaterals with X and Y, or pass shading='auto', 'nearest' or 'gouraud', or set rcParams['pcolor.shading'].  This will become an error two minor releases later.
-      plt.pcolormesh(xx, yy, Z, cmap=cmap_light, alpha=0.8)
 
 
-
-
-
-
-|
 
 .. code-block:: default
 
@@ -100,7 +85,7 @@ training set.
         X, y, stratify=y, test_size=0.7, random_state=42
     )
 
-    h = 0.01  # step size in the mesh
+    h = 0.05  # step size in the mesh
 
     # Create color maps
     cmap_light = ListedColormap(["#FFAAAA", "#AAFFAA", "#AAAAFF"])
@@ -162,7 +147,7 @@ training set.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  23.081 seconds)
+   **Total running time of the script:** ( 0 minutes  1.163 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neighbors_plot_nca_classification.py:

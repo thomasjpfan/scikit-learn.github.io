@@ -5,32 +5,32 @@
 
 Computation times
 =================
-**00:45.302** total execution time for **auto_examples_neighbors** files:
+**00:24.850** total execution time for **auto_examples_neighbors** files:
 
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_nca_classification.py` (``plot_nca_classification.py``)               | 00:23.081 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_digits_kde_sampling.py` (``plot_digits_kde_sampling.py``)             | 00:07.881 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_digits_kde_sampling.py` (``plot_digits_kde_sampling.py``)             | 00:07.376 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_species_kde.py` (``plot_species_kde.py``)                             | 00:05.772 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_species_kde.py` (``plot_species_kde.py``)                             | 00:05.789 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_nca_dim_reduction.py` (``plot_nca_dim_reduction.py``)                 | 00:02.649 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_classification.py` (``plot_classification.py``)                       | 00:02.310 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_classification.py` (``plot_classification.py``)                       | 00:02.382 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_nca_dim_reduction.py` (``plot_nca_dim_reduction.py``)                 | 00:02.295 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_caching_nearest_neighbors.py` (``plot_caching_nearest_neighbors.py``) | 00:02.164 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_caching_nearest_neighbors.py` (``plot_caching_nearest_neighbors.py``) | 00:02.038 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_nca_classification.py` (``plot_nca_classification.py``)               | 00:01.163 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_lof_novelty_detection.py` (``plot_lof_novelty_detection.py``)         | 00:00.775 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_lof_novelty_detection.py` (``plot_lof_novelty_detection.py``)         | 00:01.088 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_kde_1d.py` (``plot_kde_1d.py``)                                       | 00:00.660 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_kde_1d.py` (``plot_kde_1d.py``)                                       | 00:00.706 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_nearest_centroid.py` (``plot_nearest_centroid.py``)                   | 00:00.357 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_nearest_centroid.py` (``plot_nearest_centroid.py``)                   | 00:00.370 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_regression.py` (``plot_regression.py``)                               | 00:00.243 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_nca_illustration.py` (``plot_nca_illustration.py``)                   | 00:00.285 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_nca_illustration.py` (``plot_nca_illustration.py``)                   | 00:00.238 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_regression.py` (``plot_regression.py``)                               | 00:00.254 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_neighbors_plot_lof_outlier_detection.py` (``plot_lof_outlier_detection.py``)         | 00:00.140 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_neighbors_plot_lof_outlier_detection.py` (``plot_lof_outlier_detection.py``)         | 00:00.137 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_examples_neighbors_approximate_nearest_neighbors.py` (``approximate_nearest_neighbors.py``)   | 00:00.000 | 0.0 MB |
 +-------------------------------------------------------------------------------------------------------------------+-----------+--------+
