@@ -294,7 +294,7 @@ length scale, which will explain all variations in the data by noise.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_gpr_noisy_003.png" srcset="../../_images/sphx_glr_plot_gpr_noisy_003.png" alt="Initial: 1**2 * RBF(length_scale=10) + WhiteKernel(noise_level=1) Optimum: 0.763**2 * RBF(length_scale=1e+03) + WhiteKernel(noise_level=0.525) Log-Marginal-Likelihood: -23.49926645542419" class = "sphx-glr-single-img"/><p>We see that the optimum kernel found still have a high noise level and
+<img src="../../_images/sphx_glr_plot_gpr_noisy_003.png" srcset="../../_images/sphx_glr_plot_gpr_noisy_003.png" alt="Initial: 1**2 * RBF(length_scale=10) + WhiteKernel(noise_level=1) Optimum: 0.763**2 * RBF(length_scale=1e+03) + WhiteKernel(noise_level=0.525) Log-Marginal-Likelihood: -23.499266455424188" class = "sphx-glr-single-img"/><p>We see that the optimum kernel found still have a high noise level and
 an even larger length scale. Furthermore, we observe that the
 model does not provide faithful predictions.</p>
 <p>Now, we will initialize the
@@ -323,7 +323,7 @@ with a smaller noise level lower bound.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_plot_gpr_noisy_004.png" srcset="../../_images/sphx_glr_plot_gpr_noisy_004.png" alt="Initial: 1**2 * RBF(length_scale=0.1) + WhiteKernel(noise_level=0.01) Optimum: 1.05**2 * RBF(length_scale=0.569) + WhiteKernel(noise_level=0.134) Log-Marginal-Likelihood: -18.429732528984054" class = "sphx-glr-single-img"/><p>First, we see that the model’s predictions are more precise than the
+<img src="../../_images/sphx_glr_plot_gpr_noisy_004.png" srcset="../../_images/sphx_glr_plot_gpr_noisy_004.png" alt="Initial: 1**2 * RBF(length_scale=0.1) + WhiteKernel(noise_level=0.01) Optimum: 1.05**2 * RBF(length_scale=0.569) + WhiteKernel(noise_level=0.134) Log-Marginal-Likelihood: -18.429732528984058" class = "sphx-glr-single-img"/><p>First, we see that the model’s predictions are more precise than the
 previous model’s: this new model is able to estimate the noise-free
 functional relationship.</p>
 <p>Looking at the kernel hyperparameters, we see that the best combination found
@@ -369,7 +369,7 @@ of hyperparameters previously found. Depending on the initial values for the
 hyperparameters, the gradient-based optimization might converge whether or
 not to the best model. It is thus important to repeat the optimization
 several times for different initializations.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  2.390 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.483 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-gaussian-process-plot-gpr-noisy-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/gaussian_process/plot_gpr_noisy.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo13.svg" width="150px" /></a>
