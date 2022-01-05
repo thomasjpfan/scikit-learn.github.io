@@ -459,49 +459,49 @@ ensemble is not as detrimental.</p>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Benchmarking SGDClassifier(alpha=0.001, l1_ratio=0.25, loss=&#39;modified_huber&#39;,
               penalty=&#39;elasticnet&#39;)
-Complexity: 5000 | Hamming Loss (Misclassification Ratio): 0.2632 | Pred. Time: 0.066165s
+Complexity: 5000 | Hamming Loss (Misclassification Ratio): 0.2632 | Pred. Time: 0.084501s
 
 Benchmarking SGDClassifier(alpha=0.001, l1_ratio=0.5, loss=&#39;modified_huber&#39;,
               penalty=&#39;elasticnet&#39;)
-Complexity: 1843 | Hamming Loss (Misclassification Ratio): 0.2973 | Pred. Time: 0.053251s
+Complexity: 1843 | Hamming Loss (Misclassification Ratio): 0.2973 | Pred. Time: 0.063378s
 
 Benchmarking SGDClassifier(alpha=0.001, l1_ratio=0.75, loss=&#39;modified_huber&#39;,
               penalty=&#39;elasticnet&#39;)
-Complexity: 965 | Hamming Loss (Misclassification Ratio): 0.3219 | Pred. Time: 0.041278s
+Complexity: 965 | Hamming Loss (Misclassification Ratio): 0.3219 | Pred. Time: 0.050228s
 
 Benchmarking SGDClassifier(alpha=0.001, l1_ratio=0.9, loss=&#39;modified_huber&#39;,
               penalty=&#39;elasticnet&#39;)
-Complexity: 731 | Hamming Loss (Misclassification Ratio): 0.3370 | Pred. Time: 0.038434s
+Complexity: 731 | Hamming Loss (Misclassification Ratio): 0.3370 | Pred. Time: 0.048121s
 
 Benchmarking NuSVR(C=1000.0, gamma=3.0517578125e-05, nu=0.05)
-Complexity: 18 | MSE: 5558.7313 | Pred. Time: 0.000133s
+Complexity: 18 | MSE: 5558.7313 | Pred. Time: 0.000281s
 
 Benchmarking NuSVR(C=1000.0, gamma=3.0517578125e-05, nu=0.1)
-Complexity: 36 | MSE: 5289.8022 | Pred. Time: 0.000407s
+Complexity: 36 | MSE: 5289.8022 | Pred. Time: 0.000439s
 
 Benchmarking NuSVR(C=1000.0, gamma=3.0517578125e-05, nu=0.2)
-Complexity: 72 | MSE: 5193.8353 | Pred. Time: 0.000737s
+Complexity: 72 | MSE: 5193.8353 | Pred. Time: 0.000729s
 
 Benchmarking NuSVR(C=1000.0, gamma=3.0517578125e-05, nu=0.35)
-Complexity: 124 | MSE: 5131.3279 | Pred. Time: 0.000861s
+Complexity: 124 | MSE: 5131.3279 | Pred. Time: 0.001182s
 
 Benchmarking NuSVR(C=1000.0, gamma=3.0517578125e-05)
-Complexity: 178 | MSE: 5149.0779 | Pred. Time: 0.000762s
+Complexity: 178 | MSE: 5149.0779 | Pred. Time: 0.001597s
 
 Benchmarking GradientBoostingRegressor(learning_rate=0.05, max_depth=2, n_estimators=10)
-Complexity: 10 | MSE: 4066.4812 | Pred. Time: 0.000093s
+Complexity: 10 | MSE: 4066.4812 | Pred. Time: 0.000222s
 
 Benchmarking GradientBoostingRegressor(learning_rate=0.05, max_depth=2, n_estimators=25)
-Complexity: 25 | MSE: 3551.1723 | Pred. Time: 0.000213s
+Complexity: 25 | MSE: 3551.1723 | Pred. Time: 0.000246s
 
 Benchmarking GradientBoostingRegressor(learning_rate=0.05, max_depth=2, n_estimators=50)
-Complexity: 50 | MSE: 3445.2171 | Pred. Time: 0.000158s
+Complexity: 50 | MSE: 3445.2171 | Pred. Time: 0.000292s
 
 Benchmarking GradientBoostingRegressor(learning_rate=0.05, max_depth=2, n_estimators=75)
-Complexity: 75 | MSE: 3433.0358 | Pred. Time: 0.000178s
+Complexity: 75 | MSE: 3433.0358 | Pred. Time: 0.000338s
 
 Benchmarking GradientBoostingRegressor(learning_rate=0.05, max_depth=2)
-Complexity: 100 | MSE: 3456.0602 | Pred. Time: 0.000206s
+Complexity: 100 | MSE: 3456.0602 | Pred. Time: 0.000388s
 </pre></div>
 </div>
 </section>
@@ -515,7 +515,7 @@ training time;</p></li>
 </ul>
 <p>These aspects are related to model generalization and avoiding model
 under-fitting or over-fitting.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.896 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  20.193 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-applications-plot-model-complexity-influence-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/applications/plot_model_complexity_influence.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
