@@ -2262,6 +2262,17 @@ then the explained variance is estimated as follow:</p>
 <div class="math notranslate nohighlight">
 \[explained\_{}variance(y, \hat{y}) = 1 - \frac{Var\{ y - \hat{y}\}}{Var\{y\}}\]</div>
 <p>The best possible score is 1.0, lower values are worse.</p>
+<p>Note: when the prediction residuals have zero mean, the Explained Variance
+score and the <a class="reference internal" href="#r2-score"><span class="std std-ref">R² score, the coefficient of determination</span></a> are identical.</p>
+<p>In the particular case where the true target is constant, the Explained
+Variance score is not finite: it is either <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (perfect predictions) or
+<code class="docutils literal notranslate"><span class="pre">-Inf</span></code> (imperfect predictions). Such non-finite scores may prevent correct
+model optimization such as grid-search cross-validation to be performed
+correctly. For this reason the default behaviour of
+<a class="reference internal" href="generated/sklearn.metrics.explained_variance_score.html#sklearn.metrics.explained_variance_score" title="sklearn.metrics.explained_variance_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">explained_variance_score</span></code></a> is to replace them with 1.0 (perfect
+predictions) or 0.0 (imperfect predictions). You can set the <code class="docutils literal notranslate"><span class="pre">force_finite</span></code>
+parameter to <code class="docutils literal notranslate"><span class="pre">False</span></code> to prevent this fix from happening and fallback on the
+original Explained Variance score.</p>
 <p>Here is a small example of usage of the <a class="reference internal" href="generated/sklearn.metrics.explained_variance_score.html#sklearn.metrics.explained_variance_score" title="sklearn.metrics.explained_variance_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">explained_variance_score</span></code></a>
 function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">explained_variance_score</span>
@@ -2275,6 +2286,18 @@ function:</p>
 <span class="go">array([0.967..., 1.        ])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">explained_variance_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">multioutput</span><span class="o">=</span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">])</span>
 <span class="go">0.990...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explained_variance_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explained_variance_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">force_finite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">nan</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explained_variance_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">explained_variance_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">force_finite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">-inf</span>
 </pre></div>
 </div>
 </section>
@@ -2453,8 +2476,10 @@ predicted by the model, through the proportion of explained variance.</p>
 <p>As such variance is dataset dependent, R² may not be meaningfully comparable
 across different datasets. Best possible score is 1.0 and it can be negative
 (because the model can be arbitrarily worse). A constant model that always
-predicts the expected value of y, disregarding the input features, would get a
-R² score of 0.0.</p>
+predicts the expected (average) value of y, disregarding the input features,
+would get an <span class="math notranslate nohighlight">\(R^2\)</span> score of 0.0.</p>
+<p>Note: when the prediction residuals have zero mean, the <span class="math notranslate nohighlight">\(R^2\)</span> score and
+the <a class="reference internal" href="#explained-variance-score"><span class="std std-ref">Explained variance score</span></a> are identical.</p>
 <p>If <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> is the predicted value of the <span class="math notranslate nohighlight">\(i\)</span>-th sample
 and <span class="math notranslate nohighlight">\(y_i\)</span> is the corresponding true value for total <span class="math notranslate nohighlight">\(n\)</span> samples,
 the estimated R² is defined as:</p>
@@ -2463,6 +2488,13 @@ the estimated R² is defined as:</p>
 <p>where <span class="math notranslate nohighlight">\(\bar{y} = \frac{1}{n} \sum_{i=1}^{n} y_i\)</span> and <span class="math notranslate nohighlight">\(\sum_{i=1}^{n} (y_i - \hat{y}_i)^2 = \sum_{i=1}^{n} \epsilon_i^2\)</span>.</p>
 <p>Note that <a class="reference internal" href="generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score" title="sklearn.metrics.r2_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">r2_score</span></code></a> calculates unadjusted R² without correcting for
 bias in sample variance of y.</p>
+<p>In the particular case where the true target is constant, the <span class="math notranslate nohighlight">\(R^2\)</span> score is
+not finite: it is either <code class="docutils literal notranslate"><span class="pre">NaN</span></code> (perfect predictions) or <code class="docutils literal notranslate"><span class="pre">-Inf</span></code> (imperfect
+predictions). Such non-finite scores may prevent correct model optimization
+such as grid-search cross-validation to be performed correctly. For this reason
+the default behaviour of <a class="reference internal" href="generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score" title="sklearn.metrics.r2_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">r2_score</span></code></a> is to replace them with 1.0 (perfect
+predictions) or 0.0 (imperfect predictions). If <code class="docutils literal notranslate"><span class="pre">force_finite</span></code>
+is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>, this score falls back on the original <span class="math notranslate nohighlight">\(R^2\)</span> definition.</p>
 <p>Here is a small example of usage of the <a class="reference internal" href="generated/sklearn.metrics.r2_score.html#sklearn.metrics.r2_score" title="sklearn.metrics.r2_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">r2_score</span></code></a> function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">r2_score</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
@@ -2481,6 +2513,18 @@ bias in sample variance of y.</p>
 <span class="go">array([0.965..., 0.908...])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">multioutput</span><span class="o">=</span><span class="p">[</span><span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">])</span>
 <span class="go">0.925...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="go">1.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">force_finite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">nan</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_true</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="go">0.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">r2_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">force_finite</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="go">-inf</span>
 </pre></div>
 </div>
 <div class="topic">
