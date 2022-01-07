@@ -287,7 +287,7 @@ time needed to perform each projection.
     Computing Random Trees embedding...
     Computing Spectral embedding...
     Computing t-SNE embeedding...
-    /home/circleci/project/sklearn/manifold/_t_sne.py:982: FutureWarning: The PCA initialization in TSNE will change to have the standard deviation of PC1 equal to 1e-4 in 1.2. This will ensure better convergence.
+    /home/circleci/project/sklearn/manifold/_t_sne.py:984: FutureWarning: The PCA initialization in TSNE will change to have the standard deviation of PC1 equal to 1e-4 in 1.2. This will ensure better convergence.
       warnings.warn(
     Computing NCA embedding...
 
@@ -318,7 +318,7 @@ Finally, we can plot the resulting projection given by each method.
 
 
 .. image-sg:: /auto_examples/manifold/images/sphx_glr_plot_lle_digits_002.png
-   :alt: Random projection embedding (time 0.001s), Truncated SVD embedding (time 0.002s), Linear Discriminant Analysis embedding (time 0.010s), Isomap embedding (time 0.885s), Standard LLE embedding (time 0.193s), Modified LLE embedding (time 0.502s), Hessian LLE embedding (time 0.591s), LTSA LLE embedding (time 0.430s), MDS embedding (time 3.376s), Random Trees embedding (time 0.215s), Spectral embedding (time 0.183s), t-SNE embeedding (time 2.667s), NCA embedding (time 1.891s)
+   :alt: Random projection embedding (time 0.001s), Truncated SVD embedding (time 0.002s), Linear Discriminant Analysis embedding (time 0.010s), Isomap embedding (time 0.907s), Standard LLE embedding (time 0.191s), Modified LLE embedding (time 0.429s), Hessian LLE embedding (time 0.540s), LTSA LLE embedding (time 0.397s), MDS embedding (time 3.227s), Random Trees embedding (time 0.195s), Spectral embedding (time 0.181s), t-SNE embeedding (time 2.778s), NCA embedding (time 1.901s)
    :srcset: /auto_examples/manifold/images/sphx_glr_plot_lle_digits_002.png
    :class: sphx-glr-single-img
 
@@ -329,7 +329,7 @@ Finally, we can plot the resulting projection given by each method.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  15.613 seconds)
+   **Total running time of the script:** ( 0 minutes  15.310 seconds)
 
 
 .. _sphx_glr_download_auto_examples_manifold_plot_lle_digits.py:
