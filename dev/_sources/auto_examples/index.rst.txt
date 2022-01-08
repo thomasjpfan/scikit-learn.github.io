@@ -250,27 +250,6 @@ Examples illustrating the calibration of predicted probabilities of classifiers.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="When performing classification one often wants to predict not only the class label, but also th...">
-
-.. only:: html
-
- .. figure:: /auto_examples/calibration/images/thumb/sphx_glr_plot_calibration_curve_thumb.png
-     :alt: Probability Calibration curves
-
-     :ref:`sphx_glr_auto_examples_calibration_plot_calibration_curve.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/calibration/plot_calibration_curve
-
-.. raw:: html
-
     <div class="sphx-glr-thumbcontainer" tooltip="This example illustrates how sigmoid calibration changes predicted probabilities for a 3-class ...">
 
 .. only:: html
@@ -289,6 +268,27 @@ Examples illustrating the calibration of predicted probabilities of classifiers.
    :hidden:
 
    /auto_examples/calibration/plot_calibration_multiclass
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="When performing classification one often wants to predict not only the class label, but also th...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/calibration/images/thumb/sphx_glr_plot_calibration_curve_thumb.png
+     :alt: Probability Calibration curves
+
+     :ref:`sphx_glr_auto_examples_calibration_plot_calibration_curve.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/calibration/plot_calibration_curve
 .. raw:: html
 
     <div class="sphx-glr-clear"></div>

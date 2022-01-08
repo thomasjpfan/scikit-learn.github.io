@@ -182,7 +182,7 @@ We recall that PCA transforms the data linearly. Intuitively, it means that
 the coordinate system will be centered, rescaled on each component
 with respected to its variance and finally be rotated.
 The obtained data from this transformation is isotropic and can now be
-projected on its _principal components_.
+projected on its *principal components*.
 
 Thus, looking at the projection made using PCA (i.e. the middle figure), we
 see that there is no change regarding the scaling; indeed the data being two
@@ -285,7 +285,7 @@ the mapping.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.619 seconds)
+   **Total running time of the script:** ( 0 minutes  0.545 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_kernel_pca.py:
