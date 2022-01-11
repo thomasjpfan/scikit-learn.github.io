@@ -5,14 +5,14 @@
 
 Computation times
 =================
-**00:09.875** total execution time for **auto_examples_exercises** files:
+**00:10.907** total execution time for **auto_examples_exercises** files:
 
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_exercises_plot_iris_exercise.py` (``plot_iris_exercise.py``)                                   | 00:05.123 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_exercises_plot_iris_exercise.py` (``plot_iris_exercise.py``)                                   | 00:05.481 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_exercises_plot_cv_digits.py` (``plot_cv_digits.py``)                                           | 00:04.123 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_exercises_plot_cv_digits.py` (``plot_cv_digits.py``)                                           | 00:04.717 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_exercises_plot_cv_diabetes.py` (``plot_cv_diabetes.py``)                                       | 00:00.431 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_exercises_plot_cv_diabetes.py` (``plot_cv_diabetes.py``)                                       | 00:00.481 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_exercises_plot_digits_classification_exercise.py` (``plot_digits_classification_exercise.py``) | 00:00.197 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_exercises_plot_digits_classification_exercise.py` (``plot_digits_classification_exercise.py``) | 00:00.227 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------------------------+-----------+--------+
