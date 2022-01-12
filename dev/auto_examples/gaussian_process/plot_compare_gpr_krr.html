@@ -319,7 +319,7 @@ between samples in the higher dimensional feature space is computed using the
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fitting KernelRidge with default kernel: 0.000 seconds
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fitting KernelRidge with default kernel: 0.001 seconds
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot" title="matplotlib.pyplot.plot" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">plot</span></a><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;True signal&quot;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">)</span>
@@ -383,7 +383,7 @@ parameter and the kernel parameters.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Time for KernelRidge fitting: 2.549 seconds
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Time for KernelRidge fitting: 2.744 seconds
 </pre></div>
 </div>
 <p>Fitting the model is now more computationally expensive since we have to try
@@ -459,7 +459,7 @@ estimate the noise in the dataset.</p>
 </pre></div>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Time for GaussianProcessRegressor fitting: 0.025 seconds
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Time for GaussianProcessRegressor fitting: 0.029 seconds
 </pre></div>
 </div>
 <p>The computation cost of training a Gaussian process is much less than the
@@ -601,7 +601,7 @@ periodicity effect once that no sample are available in the training.
 As testing samples get further away from the training ones, predictions
 are converging towards their mean and their standard deviation
 also increases.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.066 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  3.299 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-gaussian-process-plot-compare-gpr-krr-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/gaussian_process/plot_compare_gpr_krr.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo13.svg" width="150px" /></a>
