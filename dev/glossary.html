@@ -1493,7 +1493,8 @@ Using an int will produce the same results across different calls.
 However, it may be
 worthwhile checking that your results are stable across a
 number of different distinct random seeds. Popular integer
-random seeds are 0 and <a class="reference external" href="https://en.wikipedia.org/wiki/Answer_to_the_Ultimate_Question_of_Life%2C_the_Universe%2C_and_Everything">42</a>.</p>
+random seeds are 0 and <a class="reference external" href="https://en.wikipedia.org/wiki/Answer_to_the_Ultimate_Question_of_Life%2C_the_Universe%2C_and_Everything">42</a>.
+Integer values must be in the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">2**32</span> <span class="pre">-</span> <span class="pre">1]</span></code>.</p>
 </dd>
 <dt>A <a class="reference external" href="https://numpy.org/doc/stable/reference/random/legacy.html#numpy.random.RandomState" title="(in NumPy v1.22)"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.random.RandomState</span></code></a> instance</dt><dd><p>Use the provided random state, only affecting other users
 of that same random state instance. Calling the function

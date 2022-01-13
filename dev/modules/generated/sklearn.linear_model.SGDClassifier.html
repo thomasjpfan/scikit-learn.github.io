@@ -185,7 +185,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.linear_model" title="sklearn.linear_model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a>.SGDClassifier<a class="headerlink" href="#sklearn-linear-model-sgdclassifier" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.linear_model.</span></span><span class="sig-name descname"><span class="pre">SGDClassifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hinge'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'l2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'optimal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">early_stopping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_fraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter_no_change</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warm_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">average</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/linear_model/_stochastic_gradient.py#L896"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.linear_model.</span></span><span class="sig-name descname"><span class="pre">SGDClassifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">loss</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'hinge'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">penalty</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'l2'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l1_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">learning_rate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'optimal'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eta0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power_t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">early_stopping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validation_fraction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_iter_no_change</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warm_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">average</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/linear_model/_stochastic_gradient.py#L896"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linear classifiers (SVM, logistic regression, etc.) with SGD training.</p>
 <p>This estimator implements regularized linear models with stochastic
 gradient descent (SGD) learning: the gradient of the loss is estimated
@@ -236,18 +236,21 @@ not achievable with ‘l2’.</p>
 <dt><strong>alpha</strong><span class="classifier">float, default=0.0001</span></dt><dd><p>Constant that multiplies the regularization term. The higher the
 value, the stronger the regularization.
 Also used to compute the learning rate when set to <code class="docutils literal notranslate"><span class="pre">learning_rate</span></code> is
-set to ‘optimal’.</p>
+set to ‘optimal’.
+Values must be in the range <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">inf)</span></code>.</p>
 </dd>
 <dt><strong>l1_ratio</strong><span class="classifier">float, default=0.15</span></dt><dd><p>The Elastic Net mixing parameter, with 0 &lt;= l1_ratio &lt;= 1.
 l1_ratio=0 corresponds to L2 penalty, l1_ratio=1 to L1.
-Only used if <code class="docutils literal notranslate"><span class="pre">penalty</span></code> is ‘elasticnet’.</p>
+Only used if <code class="docutils literal notranslate"><span class="pre">penalty</span></code> is ‘elasticnet’.
+Values must be in the range <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">1.0]</span></code>.</p>
 </dd>
 <dt><strong>fit_intercept</strong><span class="classifier">bool, default=True</span></dt><dd><p>Whether the intercept should be estimated or not. If False, the
 data is assumed to be already centered.</p>
 </dd>
 <dt><strong>max_iter</strong><span class="classifier">int, default=1000</span></dt><dd><p>The maximum number of passes over the training data (aka epochs).
 It only impacts the behavior in the <code class="docutils literal notranslate"><span class="pre">fit</span></code> method, and not the
-<a class="reference internal" href="#sklearn.linear_model.SGDClassifier.partial_fit" title="sklearn.linear_model.SGDClassifier.partial_fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">partial_fit</span></code></a> method.</p>
+<a class="reference internal" href="#sklearn.linear_model.SGDClassifier.partial_fit" title="sklearn.linear_model.SGDClassifier.partial_fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">partial_fit</span></code></a> method.
+Values must be in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">inf)</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.19.</span></p>
 </div>
@@ -256,21 +259,24 @@ It only impacts the behavior in the <code class="docutils literal notranslate"><
 when (loss &gt; best_loss - tol) for <code class="docutils literal notranslate"><span class="pre">n_iter_no_change</span></code> consecutive
 epochs.
 Convergence is checked against the training loss or the
-validation loss depending on the <code class="docutils literal notranslate"><span class="pre">early_stopping</span></code> parameter.</p>
+validation loss depending on the <code class="docutils literal notranslate"><span class="pre">early_stopping</span></code> parameter.
+Values must be in the range <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">inf)</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.19.</span></p>
 </div>
 </dd>
 <dt><strong>shuffle</strong><span class="classifier">bool, default=True</span></dt><dd><p>Whether or not the training data should be shuffled after each epoch.</p>
 </dd>
-<dt><strong>verbose</strong><span class="classifier">int, default=0</span></dt><dd><p>The verbosity level.</p>
+<dt><strong>verbose</strong><span class="classifier">int, default=0</span></dt><dd><p>The verbosity level.
+Values must be in the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">inf)</span></code>.</p>
 </dd>
 <dt><strong>epsilon</strong><span class="classifier">float, default=0.1</span></dt><dd><p>Epsilon in the epsilon-insensitive loss functions; only if <code class="docutils literal notranslate"><span class="pre">loss</span></code> is
 ‘huber’, ‘epsilon_insensitive’, or ‘squared_epsilon_insensitive’.
 For ‘huber’, determines the threshold at which it becomes less
 important to get the prediction exactly right.
 For epsilon-insensitive, any differences between the current prediction
-and the correct label are ignored if they are less than this threshold.</p>
+and the correct label are ignored if they are less than this threshold.
+Values must be in the range <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">inf)</span></code>.</p>
 </dd>
 <dt><strong>n_jobs</strong><span class="classifier">int, default=None</span></dt><dd><p>The number of CPUs to use to do the OVA (One Versus All, for
 multi-class problems) computation.
@@ -280,18 +286,19 @@ for more details.</p>
 </dd>
 <dt><strong>random_state</strong><span class="classifier">int, RandomState instance, default=None</span></dt><dd><p>Used for shuffling the data, when <code class="docutils literal notranslate"><span class="pre">shuffle</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>.
 Pass an int for reproducible output across multiple function calls.
-See <a class="reference internal" href="../../glossary.html#term-random_state"><span class="xref std std-term">Glossary</span></a>.</p>
+See <a class="reference internal" href="../../glossary.html#term-random_state"><span class="xref std std-term">Glossary</span></a>.
+Integer values must be in the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">2**32</span> <span class="pre">-</span> <span class="pre">1]</span></code>.</p>
 </dd>
 <dt><strong>learning_rate</strong><span class="classifier">str, default=’optimal’</span></dt><dd><p>The learning rate schedule:</p>
 <ul>
 <li><p>‘constant’: <code class="docutils literal notranslate"><span class="pre">eta</span> <span class="pre">=</span> <span class="pre">eta0</span></code></p></li>
 <li><p>‘optimal’: <code class="docutils literal notranslate"><span class="pre">eta</span> <span class="pre">=</span> <span class="pre">1.0</span> <span class="pre">/</span> <span class="pre">(alpha</span> <span class="pre">*</span> <span class="pre">(t</span> <span class="pre">+</span> <span class="pre">t0))</span></code>
-where t0 is chosen by a heuristic proposed by Leon Bottou.</p></li>
+where <code class="docutils literal notranslate"><span class="pre">t0</span></code> is chosen by a heuristic proposed by Leon Bottou.</p></li>
 <li><p>‘invscaling’: <code class="docutils literal notranslate"><span class="pre">eta</span> <span class="pre">=</span> <span class="pre">eta0</span> <span class="pre">/</span> <span class="pre">pow(t,</span> <span class="pre">power_t)</span></code></p></li>
-<li><p>‘adaptive’: eta = eta0, as long as the training keeps decreasing.
+<li><p>‘adaptive’: <code class="docutils literal notranslate"><span class="pre">eta</span> <span class="pre">=</span> <span class="pre">eta0</span></code>, as long as the training keeps decreasing.
 Each time n_iter_no_change consecutive epochs fail to decrease the
 training loss by tol or fail to increase validation score by tol if
-early_stopping is True, the current learning rate is divided by 5.</p>
+<code class="docutils literal notranslate"><span class="pre">early_stopping</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, the current learning rate is divided by 5.</p>
 <blockquote>
 <div><div class="versionadded">
 <p><span class="versionmodified added">New in version 0.20: </span>Added ‘adaptive’ option</p>
@@ -302,12 +309,14 @@ early_stopping is True, the current learning rate is divided by 5.</p>
 </dd>
 <dt><strong>eta0</strong><span class="classifier">float, default=0.0</span></dt><dd><p>The initial learning rate for the ‘constant’, ‘invscaling’ or
 ‘adaptive’ schedules. The default value is 0.0 as eta0 is not used by
-the default schedule ‘optimal’.</p>
+the default schedule ‘optimal’.
+Values must be in the range <code class="docutils literal notranslate"><span class="pre">(0.0,</span> <span class="pre">inf)</span></code>.</p>
 </dd>
-<dt><strong>power_t</strong><span class="classifier">float, default=0.5</span></dt><dd><p>The exponent for inverse scaling learning rate [default 0.5].</p>
+<dt><strong>power_t</strong><span class="classifier">float, default=0.5</span></dt><dd><p>The exponent for inverse scaling learning rate [default 0.5].
+Values must be in the range <code class="docutils literal notranslate"><span class="pre">(-inf,</span> <span class="pre">inf)</span></code>.</p>
 </dd>
 <dt><strong>early_stopping</strong><span class="classifier">bool, default=False</span></dt><dd><p>Whether to use early stopping to terminate training when validation
-score is not improving. If set to True, it will automatically set aside
+score is not improving. If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, it will automatically set aside
 a stratified fraction of training data as validation and terminate
 training when validation score returned by the <code class="docutils literal notranslate"><span class="pre">score</span></code> method is not
 improving by at least tol for n_iter_no_change consecutive epochs.</p>
@@ -317,7 +326,8 @@ improving by at least tol for n_iter_no_change consecutive epochs.</p>
 </dd>
 <dt><strong>validation_fraction</strong><span class="classifier">float, default=0.1</span></dt><dd><p>The proportion of training data to set aside as validation set for
 early stopping. Must be between 0 and 1.
-Only used if <code class="docutils literal notranslate"><span class="pre">early_stopping</span></code> is True.</p>
+Only used if <code class="docutils literal notranslate"><span class="pre">early_stopping</span></code> is True.
+Values must be in the range <code class="docutils literal notranslate"><span class="pre">(0.0,</span> <span class="pre">1.0)</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.20: </span>Added ‘validation_fraction’ option</p>
 </div>
@@ -325,7 +335,8 @@ Only used if <code class="docutils literal notranslate"><span class="pre">early_
 <dt><strong>n_iter_no_change</strong><span class="classifier">int, default=5</span></dt><dd><p>Number of iterations with no improvement to wait before stopping
 fitting.
 Convergence is checked against the training loss or the
-validation loss depending on the <code class="docutils literal notranslate"><span class="pre">early_stopping</span></code> parameter.</p>
+validation loss depending on the <code class="docutils literal notranslate"><span class="pre">early_stopping</span></code> parameter.
+Integer values must be in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">max_iter)</span></code>.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 0.20: </span>Added ‘n_iter_no_change’ option</p>
 </div>
@@ -348,11 +359,12 @@ depending on the number of samples already seen. Calling <code class="docutils l
 this counter, while <code class="docutils literal notranslate"><span class="pre">partial_fit</span></code> will result in increasing the
 existing counter.</p>
 </dd>
-<dt><strong>average</strong><span class="classifier">bool or int, default=False</span></dt><dd><p>When set to True, computes the averaged SGD weights across all
+<dt><strong>average</strong><span class="classifier">bool or int, default=False</span></dt><dd><p>When set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, computes the averaged SGD weights across all
 updates and stores the result in the <code class="docutils literal notranslate"><span class="pre">coef_</span></code> attribute. If set to
 an int greater than 1, averaging will begin once the total number of
 samples seen reaches <code class="docutils literal notranslate"><span class="pre">average</span></code>. So <code class="docutils literal notranslate"><span class="pre">average=10</span></code> will begin
-averaging after seeing 10 samples.</p>
+averaging after seeing 10 samples.
+Integer values must be in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">n_samples]</span></code>.</p>
 </dd>
 </dl>
 </dd>
@@ -456,7 +468,7 @@ has feature names that are all strings.</p>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.decision_function">
-<span class="sig-name descname"><span class="pre">decision_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/linear_model/_base.py#L386"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.decision_function" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">decision_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/linear_model/_base.py#L386"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.decision_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict confidence scores for samples.</p>
 <p>The confidence score for a sample is proportional to the signed
 distance of that sample to the hyperplane.</p>
@@ -480,7 +492,7 @@ this class would be predicted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.densify">
-<span class="sig-name descname"><span class="pre">densify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/linear_model/_base.py#L455"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.densify" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">densify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/linear_model/_base.py#L455"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.densify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert coefficient matrix to dense array format.</p>
 <p>Converts the <code class="docutils literal notranslate"><span class="pre">coef_</span></code> member (back) to a numpy.ndarray. This is the
 default format of <code class="docutils literal notranslate"><span class="pre">coef_</span></code> and is required for fitting, so calling
@@ -498,7 +510,7 @@ sparsified; otherwise, it is a no-op.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coef_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intercept_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/linear_model/_stochastic_gradient.py#L855"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coef_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">intercept_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/linear_model/_stochastic_gradient.py#L855"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit linear model with Stochastic Gradient Descent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -529,7 +541,7 @@ constructor) if class_weight is specified.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.get_params">
-<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/base.py#L195"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.get_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/base.py#L195"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -550,7 +562,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.partial_fit">
-<span class="sig-name descname"><span class="pre">partial_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/linear_model/_stochastic_gradient.py#L795"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.partial_fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">partial_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/linear_model/_stochastic_gradient.py#L795"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.partial_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform one epoch of stochastic gradient descent on given samples.</p>
 <p>Internally, this method uses <code class="docutils literal notranslate"><span class="pre">max_iter</span> <span class="pre">=</span> <span class="pre">1</span></code>. Therefore, it is not
 guaranteed that a minimum of the cost function is reached after calling
@@ -586,7 +598,7 @@ If not provided, uniform weights are assumed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/linear_model/_base.py#L411"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.predict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/linear_model/_base.py#L411"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict class labels for samples in X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -606,7 +618,7 @@ If not provided, uniform weights are assumed.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.predict_log_proba">
-<span class="sig-name descname"><span class="pre">predict_log_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/linear_model/_stochastic_gradient.py#L1286"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.predict_log_proba" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict_log_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/linear_model/_stochastic_gradient.py#L1298"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.predict_log_proba" title="Permalink to this definition">¶</a></dt>
 <dd><p>Log of probability estimates.</p>
 <p>This method is only available for log loss and modified Huber loss.</p>
 <p>When loss=”modified_huber”, probability estimates may be hard zeros
@@ -632,7 +644,7 @@ model, where classes are ordered as they are in
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.predict_proba">
-<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/linear_model/_stochastic_gradient.py#L1204"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.predict_proba" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/linear_model/_stochastic_gradient.py#L1216"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.predict_proba" title="Permalink to this definition">¶</a></dt>
 <dd><p>Probability estimates.</p>
 <p>This method is only available for log loss and modified Huber loss.</p>
 <p>Multiclass probability estimates are derived from binary (one-vs.-rest)
@@ -669,7 +681,7 @@ case is in the appendix B in:
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.score">
-<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/base.py#L641"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.score" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/base.py#L641"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mean accuracy on the given test data and labels.</p>
 <p>In multi-label classification, this is the subset accuracy
 which is a harsh metric since you require for each sample that
@@ -696,7 +708,7 @@ each label set be correctly predicted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.set_params">
-<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/base.py#L219"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.set_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/base.py#L219"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as <a class="reference internal" href="sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
@@ -720,7 +732,7 @@ possible to update each component of a nested object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.SGDClassifier.sparsify">
-<span class="sig-name descname"><span class="pre">sparsify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/fdf5533ca/sklearn/linear_model/_base.py#L475"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.sparsify" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">sparsify</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/8d6217107/sklearn/linear_model/_base.py#L475"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.SGDClassifier.sparsify" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert coefficient matrix to sparse format.</p>
 <p>Converts the <code class="docutils literal notranslate"><span class="pre">coef_</span></code> member to a scipy.sparse matrix, which for
 L1-regularized models can be much more memory- and storage-efficient
