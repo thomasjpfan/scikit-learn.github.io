@@ -406,6 +406,10 @@ in <code class="docutils literal notranslate"><span class="pre">fit</span></code
 <section id="sklearn-ensemble">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.ensemble" title="sklearn.ensemble"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code></a><a class="headerlink" href="#sklearn-ensemble" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-info">Efficiency</span></span>  <code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code> of <code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.BaseGradientBoosting</span></code> now
+calls <code class="xref py py-func docutils literal notranslate"><span class="pre">check_array</span></code> with parameter <code class="docutils literal notranslate"><span class="pre">force_all_finite=False</span></code> for non
+initial warm-start runs as it has already been checked before.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22159">#22159</a> by <a class="reference external" href="https://github.com/Geoffrey-Paris">Geoffrey Paris</a></p></li>
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.ensemble.HistGradientBoostingClassifier.html#sklearn.ensemble.HistGradientBoostingClassifier" title="sklearn.ensemble.HistGradientBoostingClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.HistGradientBoostingClassifier</span></code></a> is faster,
 for binary and in particular for multiclass problems thanks to the new private loss
 function module.
