@@ -506,7 +506,10 @@ estimator of the noise variance cannot be computed.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22002">#22002</a> by <a class="reference external" href="https://github.com/takoika">Takeshi Oura</a></p></li>
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.QuantileRegressor.html#sklearn.linear_model.QuantileRegressor" title="sklearn.linear_model.QuantileRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.QuantileRegressor</span></code></a> support sparse input
 for the highs based solvers.
-<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21086">#21086</a> by <a class="reference external" href="https://github.com/venkyyuvy">Venkatachalam Natchiappan</a>.</p></li>
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21086">#21086</a> by <a class="reference external" href="https://github.com/venkyyuvy">Venkatachalam Natchiappan</a>.
+In addition, those solvers now use the CSC matrix right from the
+beginning which speeds up fitting.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22206">#22206</a> by <a class="reference external" href="https://github.com/lorentzenchr">Christian Lorentzen</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Rename parameter <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code> to <code class="docutils literal notranslate"><span class="pre">estimator</span></code> in
 <a class="reference internal" href="../modules/generated/sklearn.linear_model.RANSACRegressor.html#sklearn.linear_model.RANSACRegressor" title="sklearn.linear_model.RANSACRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.RANSACRegressor</span></code></a> to improve readability and consistency.
 <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code> is deprecated and will be removed in 1.3.
