@@ -185,6 +185,7 @@
 <li><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-feature-extraction-text"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction.text</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-feature-selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-gaussian-process"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.gaussian_process</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-impute"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.impute</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-linear-model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a></li>
@@ -463,6 +464,14 @@ output to be finite in the case where a feature or a the target is constant
 or that the feature and target are perfectly correlated (only for the
 F-statistic).
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/17819">#17819</a> by <a class="reference external" href="https://github.com/alfaro96">Juan Carlos Alfaro Jiménez</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-gaussian-process">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.gaussian_process" title="sklearn.gaussian_process"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.gaussian_process</span></code></a><a class="headerlink" href="#sklearn-gaussian-process" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.gaussian_process.GaussianProcessClassifier.html#sklearn.gaussian_process.GaussianProcessClassifier" title="sklearn.gaussian_process.GaussianProcessClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">gaussian_process.GaussianProcessClassifier</span></code></a> raises
+a more informative error if <code class="docutils literal notranslate"><span class="pre">CompoundKernel</span></code> is passed via <code class="docutils literal notranslate"><span class="pre">kernel</span></code>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22223">#22223</a> by <a class="reference external" href="https://github.com/marcozzxx810">MarcoM</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-impute">
