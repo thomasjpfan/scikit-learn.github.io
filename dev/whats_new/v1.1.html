@@ -193,6 +193,7 @@
 <li><a class="reference internal" href="#sklearn-model-selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.model_selection</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-mixture"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.mixture</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-neighbors"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neighbors</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-neural-network"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neural_network</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-pipeline"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.pipeline</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-random-projection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.random_projection</span></code></a></li>
@@ -605,6 +606,15 @@ array with <code class="docutils literal notranslate"><span class="pre">pd.NA</s
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.neighbors.KernelDensity.html#sklearn.neighbors.KernelDensity" title="sklearn.neighbors.KernelDensity"><code class="xref py py-class docutils literal notranslate"><span class="pre">neighbors.KernelDensity</span></code></a> now validates input parameters in <code class="docutils literal notranslate"><span class="pre">fit</span></code>
 instead of <code class="docutils literal notranslate"><span class="pre">__init__</span></code>. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21430">#21430</a> by <a class="reference external" href="https://github.com/DessyVV">Desislava Vasileva</a> and
 <a class="reference external" href="https://github.com/LucyJimenez">Lucy Jimenez</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-neural-network">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.neural_network" title="sklearn.neural_network"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.neural_network</span></code></a><a class="headerlink" href="#sklearn-neural-network" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.neural_network.MLPClassifier.html#sklearn.neural_network.MLPClassifier" title="sklearn.neural_network.MLPClassifier"><code class="xref py py-func docutils literal notranslate"><span class="pre">neural_network.MLPClassifier</span></code></a> and
+<a class="reference internal" href="../modules/generated/sklearn.neural_network.MLPRegressor.html#sklearn.neural_network.MLPRegressor" title="sklearn.neural_network.MLPRegressor"><code class="xref py py-func docutils literal notranslate"><span class="pre">neural_network.MLPRegressor</span></code></a> show error
+messages when optimizers produce non-finite parameter weights. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22150">#22150</a>
+by <a class="reference external" href="https://github.com/chritter">Christian Ritter</a> and <a class="reference external" href="https://github.com/norbusan">Norbert Preining</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-pipeline">
