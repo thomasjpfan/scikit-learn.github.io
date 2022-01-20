@@ -5,26 +5,26 @@
 
 Computation times
 =================
-**00:37.162** total execution time for **auto_examples_miscellaneous** files:
+**00:37.423** total execution time for **auto_examples_miscellaneous** files:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_miscellaneous_plot_kernel_ridge_regression.py` (``plot_kernel_ridge_regression.py``)                           | 00:13.414 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_miscellaneous_plot_kernel_ridge_regression.py` (``plot_kernel_ridge_regression.py``)                           | 00:13.583 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_miscellaneous_plot_johnson_lindenstrauss_bound.py` (``plot_johnson_lindenstrauss_bound.py``)                   | 00:12.130 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_miscellaneous_plot_johnson_lindenstrauss_bound.py` (``plot_johnson_lindenstrauss_bound.py``)                   | 00:12.138 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_miscellaneous_plot_anomaly_comparison.py` (``plot_anomaly_comparison.py``)                                     | 00:04.921 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_miscellaneous_plot_anomaly_comparison.py` (``plot_anomaly_comparison.py``)                                     | 00:04.966 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_miscellaneous_plot_partial_dependence_visualization_api.py` (``plot_partial_dependence_visualization_api.py``) | 00:02.680 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_miscellaneous_plot_partial_dependence_visualization_api.py` (``plot_partial_dependence_visualization_api.py``) | 00:02.569 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_miscellaneous_plot_multioutput_face_completion.py` (``plot_multioutput_face_completion.py``)                   | 00:01.879 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_miscellaneous_plot_multioutput_face_completion.py` (``plot_multioutput_face_completion.py``)                   | 00:01.902 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_miscellaneous_plot_kernel_approximation.py` (``plot_kernel_approximation.py``)                                 | 00:01.284 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_miscellaneous_plot_kernel_approximation.py` (``plot_kernel_approximation.py``)                                 | 00:01.391 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_miscellaneous_plot_display_object_visualization.py` (``plot_display_object_visualization.py``)                 | 00:00.328 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_miscellaneous_plot_display_object_visualization.py` (``plot_display_object_visualization.py``)                 | 00:00.332 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_miscellaneous_plot_multilabel.py` (``plot_multilabel.py``)                                                     | 00:00.182 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_miscellaneous_plot_multilabel.py` (``plot_multilabel.py``)                                                     | 00:00.188 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_miscellaneous_plot_roc_curve_visualization_api.py` (``plot_roc_curve_visualization_api.py``)                   | 00:00.142 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_miscellaneous_plot_roc_curve_visualization_api.py` (``plot_roc_curve_visualization_api.py``)                   | 00:00.150 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
 | :ref:`sphx_glr_auto_examples_miscellaneous_plot_isotonic_regression.py` (``plot_isotonic_regression.py``)                                   | 00:00.129 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
