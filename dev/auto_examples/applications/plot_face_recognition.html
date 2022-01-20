@@ -265,9 +265,9 @@ dataset): unsupervised feature extraction / dimensionality reduction</p>
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Extracting the top 150 eigenfaces from 966 faces
-done in 0.097s
+done in 0.088s
 Projecting the input data on the eigenfaces orthonormal basis
-done in 0.011s
+done in 0.010s
 </pre></div>
 </div>
 <p>Train a SVM classification model</p>
@@ -288,7 +288,7 @@ done in 0.011s
 </div>
 <p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Fitting the classifier to the training set
-done in 6.251s
+done in 5.626s
 Best estimator found by grid search:
 SVC(C=5387.73239387596, class_weight=&#39;balanced&#39;, gamma=0.0005355267666024514)
 </pre></div>
@@ -309,7 +309,7 @@ SVC(C=5387.73239387596, class_weight=&#39;balanced&#39;, gamma=0.000535526766602
 </div>
 <img src="../../_images/sphx_glr_plot_face_recognition_001.png" srcset="../../_images/sphx_glr_plot_face_recognition_001.png" alt="plot face recognition" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Predicting people&#39;s names on the test set
-done in 0.051s
+done in 0.041s
                    precision    recall  f1-score   support
 
      Ariel Sharon       0.56      0.69      0.62        13
@@ -363,7 +363,7 @@ Gerhard Schroeder       0.78      0.84      0.81        25
 convolutional neural networks but this family of models is outside of the scope of
 the scikit-learn library. Interested readers should instead try to use pytorch or
 tensorflow to implement such models.</p>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  7.181 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.439 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-applications-plot-face-recognition-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/applications/plot_face_recognition.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
