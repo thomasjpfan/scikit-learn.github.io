@@ -179,13 +179,14 @@
 <li><a class="reference internal" href="#sklearn-cross-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.cross_decomposition</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-discriminant-analysis"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.discriminant_analysis</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-feature-extraction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-feature-selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-decomposition"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.decomposition</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-ensemble"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.ensemble</span></code></a></li>
-<li><a class="reference internal" href="#sklearn-feature-selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a></li>
-<li><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a></li>
+<li><a class="reference internal" href="#id1"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a></li>
+<li><a class="reference internal" href="#id2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-feature-extraction-text"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction.text</span></code></a></li>
-<li><a class="reference internal" href="#id2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a></li>
+<li><a class="reference internal" href="#id3"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-gaussian-process"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.gaussian_process</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-impute"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.impute</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-linear-model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a></li>
@@ -342,6 +343,13 @@ improvement does not exceed the argument <code class="docutils literal notransla
 <a class="reference external" href="https://github.com/murata-yu">&#64;murata-yu</a>.</p></li>
 </ul>
 </section>
+<section id="sklearn-feature-selection">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.feature_selection" title="sklearn.feature_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a><a class="headerlink" href="#sklearn-feature-selection" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-info">Efficiency</span></span>  Improve runtime performance of <a class="reference internal" href="../modules/generated/sklearn.feature_selection.chi2.html#sklearn.feature_selection.chi2" title="sklearn.feature_selection.chi2"><code class="xref py py-func docutils literal notranslate"><span class="pre">feature_selection.chi2</span></code></a>
+with boolean arrays. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22235">#22235</a> by <a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
+</ul>
+</section>
 <section id="sklearn-datasets">
 <h3><a class="reference internal" href="../modules/classes.html#module-sklearn.datasets" title="sklearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a><a class="headerlink" href="#sklearn-datasets" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -428,8 +436,8 @@ changes are also applied for <a class="reference internal" href="../modules/gene
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20803">#20803</a> by <a class="reference external" href="https://github.com/bsun94">Brian Sun</a>.</p></li>
 </ul>
 </section>
-<section id="sklearn-feature-selection">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.feature_selection" title="sklearn.feature_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a><a class="headerlink" href="#sklearn-feature-selection" title="Permalink to this headline">¶</a></h3>
+<section id="id1">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.feature_selection" title="sklearn.feature_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-info">Efficiency</span></span>  Reduced memory usage of <a class="reference internal" href="../modules/generated/sklearn.feature_selection.chi2.html#sklearn.feature_selection.chi2" title="sklearn.feature_selection.chi2"><code class="xref py py-func docutils literal notranslate"><span class="pre">feature_selection.chi2</span></code></a>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21837">#21837</a> by <a class="reference external" href="https://github.com/lrwagner">Louis Wagner</a></p></li>
@@ -441,8 +449,8 @@ is now faster in a multiprocessing setting, especially for subsequent fits with
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22106">#22106</a> by <a class="reference external" href="https://github.com/PGijsbers">Pieter Gijsbers</a>.</p></li>
 </ul>
 </section>
-<section id="id1">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.feature_extraction" title="sklearn.feature_extraction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<section id="id2">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.feature_extraction" title="sklearn.feature_extraction"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_extraction</span></code></a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  <a class="reference internal" href="../modules/generated/sklearn.decomposition.FastICA.html#sklearn.decomposition.FastICA" title="sklearn.decomposition.FastICA"><code class="xref py py-func docutils literal notranslate"><span class="pre">decomposition.FastICA</span></code></a> now supports unit variance for whitening.
 The default value of its <code class="docutils literal notranslate"><span class="pre">whiten</span></code> argument will change from <code class="docutils literal notranslate"><span class="pre">True</span></code>
@@ -463,8 +471,8 @@ by our API.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21832">#21832</a> by <a class="reference external" href="https://github.com/glemaitre">Guillaume Lemaitre</a>.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.feature_selection" title="sklearn.feature_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<section id="id3">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.feature_selection" title="sklearn.feature_selection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.feature_selection</span></code></a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Add a parameter <code class="docutils literal notranslate"><span class="pre">force_finite</span></code> to
 <a class="reference internal" href="../modules/generated/sklearn.feature_selection.f_regression.html#sklearn.feature_selection.f_regression" title="sklearn.feature_selection.f_regression"><code class="xref py py-func docutils literal notranslate"><span class="pre">feature_selection.f_regression</span></code></a> and
