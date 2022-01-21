@@ -5,18 +5,18 @@
 
 Computation times
 =================
-**00:54.764** total execution time for **auto_examples_manifold** files:
+**00:53.731** total execution time for **auto_examples_manifold** files:
 
 +------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_manifold_plot_swissroll.py` (``plot_swissroll.py``)               | 00:18.796 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_manifold_plot_swissroll.py` (``plot_swissroll.py``)               | 00:18.743 | 0.0 MB |
 +------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_manifold_plot_lle_digits.py` (``plot_lle_digits.py``)             | 00:15.843 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_manifold_plot_lle_digits.py` (``plot_lle_digits.py``)             | 00:15.196 | 0.0 MB |
 +------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_manifold_plot_compare_methods.py` (``plot_compare_methods.py``)   | 00:10.244 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_manifold_plot_compare_methods.py` (``plot_compare_methods.py``)   | 00:10.198 | 0.0 MB |
 +------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_manifold_plot_manifold_sphere.py` (``plot_manifold_sphere.py``)   | 00:06.051 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_manifold_plot_manifold_sphere.py` (``plot_manifold_sphere.py``)   | 00:05.898 | 0.0 MB |
 +------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_manifold_plot_t_sne_perplexity.py` (``plot_t_sne_perplexity.py``) | 00:03.644 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_manifold_plot_t_sne_perplexity.py` (``plot_t_sne_perplexity.py``) | 00:03.528 | 0.0 MB |
 +------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_manifold_plot_mds.py` (``plot_mds.py``)                           | 00:00.186 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_manifold_plot_mds.py` (``plot_mds.py``)                           | 00:00.170 | 0.0 MB |
 +------------------------------------------------------------------------------------------------+-----------+--------+
