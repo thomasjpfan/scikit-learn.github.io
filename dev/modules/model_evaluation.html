@@ -1406,6 +1406,11 @@ apply to multilabel and multiclass through the use of <code class="docutils lite
 <span class="go">0.6666...</span>
 </pre></div>
 </div>
+<p>In the 2D comparison case (e.g. image similarity):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jaccard_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s2">&quot;micro&quot;</span><span class="p">)</span>
+<span class="go">0.6</span>
+</pre></div>
+</div>
 <p>In the multilabel case with binary label indicators:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jaccard_score</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s1">&#39;samples&#39;</span><span class="p">)</span>
 <span class="go">0.5833...</span>
