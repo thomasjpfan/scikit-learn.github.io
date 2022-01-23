@@ -181,7 +181,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.datasets" title="sklearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a>.fetch_rcv1<a class="headerlink" href="#sklearn-datasets-fetch-rcv1" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.datasets.fetch_rcv1">
-<span class="sig-prename descclassname"><span class="pre">sklearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_rcv1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_if_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_X_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/6145cae3d/sklearn/datasets/_rcv1.py#L79"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.datasets.fetch_rcv1" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.datasets.</span></span><span class="sig-name descname"><span class="pre">fetch_rcv1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_home</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'all'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">download_if_missing</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shuffle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_X_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cdf0d69c9/sklearn/datasets/_rcv1.py#L79"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.datasets.fetch_rcv1" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load the RCV1 multilabel dataset (classification).</p>
 <p>Download it if necessary.</p>
 <p>Version: RCV1-v2, vectors, full sets, topics multilabels.</p>
@@ -240,22 +240,40 @@ object. See below for more information about the <code class="docutils literal n
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>dataset</strong><span class="classifier"><a class="reference internal" href="sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bunch</span></code></a></span></dt><dd><p>Dictionary-like object, with the following attributes.</p>
-<dl class="simple">
+<dt><strong>dataset</strong><span class="classifier"><a class="reference internal" href="sklearn.utils.Bunch.html#sklearn.utils.Bunch" title="sklearn.utils.Bunch"><code class="xref py py-class docutils literal notranslate"><span class="pre">Bunch</span></code></a></span></dt><dd><p>Dictionary-like object. Returned only if <code class="docutils literal notranslate"><span class="pre">return_X_y</span></code> is False.
+<code class="docutils literal notranslate"><span class="pre">dataset</span></code> has the following attributes:</p>
+<ul class="simple">
+<li><dl class="simple">
 <dt>data<span class="classifier">sparse matrix of shape (804414, 47236), dtype=np.float64</span></dt><dd><p>The array has 0.16% of non zero values. Will be of CSR format.</p>
 </dd>
+</dl>
+</li>
+<li><dl class="simple">
 <dt>target<span class="classifier">sparse matrix of shape (804414, 103), dtype=np.uint8</span></dt><dd><p>Each sample has a value of 1 in its categories, and 0 in others.
 The array has 3.15% of non zero values. Will be of CSR format.</p>
 </dd>
+</dl>
+</li>
+<li><dl class="simple">
 <dt>sample_id<span class="classifier">ndarray of shape (804414,), dtype=np.uint32,</span></dt><dd><p>Identification number of each sample, as ordered in dataset.data.</p>
 </dd>
+</dl>
+</li>
+<li><dl class="simple">
 <dt>target_names<span class="classifier">ndarray of shape (103,), dtype=object</span></dt><dd><p>Names of each target (RCV1 topics), as ordered in dataset.target.</p>
 </dd>
+</dl>
+</li>
+<li><dl class="simple">
 <dt>DESCR<span class="classifier">str</span></dt><dd><p>Description of the RCV1 dataset.</p>
 </dd>
 </dl>
+</li>
+</ul>
 </dd>
-<dt><strong>(data, target)</strong><span class="classifier">tuple if <code class="docutils literal notranslate"><span class="pre">return_X_y</span></code> is True</span></dt><dd><div class="versionadded">
+<dt><strong>(data, target)</strong><span class="classifier">tuple</span></dt><dd><p>A tuple consisting of <code class="docutils literal notranslate"><span class="pre">dataset.data</span></code> and <code class="docutils literal notranslate"><span class="pre">dataset.target</span></code>, as
+described above. Returned only if <code class="docutils literal notranslate"><span class="pre">return_X_y</span></code> is True.</p>
+<div class="versionadded">
 <p><span class="versionmodified added">New in version 0.20.</span></p>
 </div>
 </dd>
