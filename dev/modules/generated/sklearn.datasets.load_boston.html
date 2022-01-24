@@ -181,7 +181,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.datasets" title="sklearn.datasets"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.datasets</span></code></a>.load_boston<a class="headerlink" href="#sklearn-datasets-load-boston" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.datasets.load_boston">
-<span class="sig-prename descclassname"><span class="pre">sklearn.datasets.</span></span><span class="sig-name descname"><span class="pre">load_boston</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_X_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/cdf0d69c9/sklearn/datasets/_base.py#L1131"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.datasets.load_boston" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.datasets.</span></span><span class="sig-name descname"><span class="pre">load_boston</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_X_y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/6bdfb9a11/sklearn/datasets/_base.py#L1131"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.datasets.load_boston" title="Permalink to this definition">¶</a></dt>
 <dd><p>DEPRECATED: <code class="docutils literal notranslate"><span class="pre">load_boston</span></code> is deprecated in 1.0 and will be removed in 1.2.</p>
 <p>The Boston housing prices dataset has an ethical problem. You can refer to
 the documentation of this function for further details.</p>
@@ -212,7 +212,7 @@ dataset. You can load the datasets as follows:</p>
 </pre></div>
 </div>
 <p>for the Ames housing dataset.</p>
-<p>Load and return the boston house-prices dataset (regression).</p>
+<p>Load and return the Boston house-prices dataset (regression).</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 50%" />
@@ -234,11 +234,6 @@ dataset. You can load the datasets as follows:</p>
 </tbody>
 </table>
 <p>Read more in the <a class="reference internal" href="../../datasets/toy_dataset.html#boston-dataset"><span class="std std-ref">User Guide</span></a>.</p>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 1.0: </span>This function is deprecated in 1.0 and will be removed in 1.2. See the
-warning message below for further details regarding the alternative
-datasets.</p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The Boston housing prices dataset has an ethical problem: as
@@ -257,7 +252,7 @@ source:</p>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="n">data_url</span> <span class="o">=</span> <span class="s2">&quot;http://lib.stat.cmu.edu/datasets/boston&quot;</span>
-<span class="n">raw_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;s+&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">raw_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_url</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;\s+&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">22</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">raw_df</span><span class="o">.</span><span class="n">values</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:],</span> <span class="n">raw_df</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">:</span><span class="mi">2</span><span class="p">]])</span>
 <span class="n">target</span> <span class="o">=</span> <span class="n">raw_df</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
 </pre></div>
@@ -306,7 +301,10 @@ See below for more information about the <code class="docutils literal notransla
 </dd>
 </dl>
 </dd>
-<dt><strong>(data, target)</strong><span class="classifier">tuple if <code class="docutils literal notranslate"><span class="pre">return_X_y</span></code> is True</span></dt><dd><div class="versionadded">
+<dt><strong>(data, target)</strong><span class="classifier">tuple if <code class="docutils literal notranslate"><span class="pre">return_X_y</span></code> is True</span></dt><dd><p>A tuple of two ndarrays. The first contains a 2D array of shape (506, 13)
+with each row representing one sample and each column representing the features.
+The second array of shape (506,) contains the target samples.</p>
+<div class="versionadded">
 <p><span class="versionmodified added">New in version 0.18.</span></p>
 </div>
 </dd>
