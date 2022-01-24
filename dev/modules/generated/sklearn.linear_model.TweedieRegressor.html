@@ -185,7 +185,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.linear_model" title="sklearn.linear_model"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.linear_model</span></code></a>.TweedieRegressor<a class="headerlink" href="#sklearn-linear-model-tweedieregressor" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.linear_model.TweedieRegressor">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.linear_model.</span></span><span class="sig-name descname"><span class="pre">TweedieRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warm_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/561bad9f8/sklearn/linear_model/_glm/glm.py#L688"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.TweedieRegressor" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.linear_model.</span></span><span class="sig-name descname"><span class="pre">TweedieRegressor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">power</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_intercept</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">link</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">warm_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/561bad9f8/sklearn/linear_model/_glm/glm.py#L676"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.TweedieRegressor" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generalized Linear Model with a Tweedie distribution.</p>
 <p>This estimator can be used to model different GLMs depending on the
 <code class="docutils literal notranslate"><span class="pre">power</span></code> parameter, which determines the underlying distribution.</p>
@@ -231,8 +231,7 @@ to the following table:</p>
 <dt><strong>alpha</strong><span class="classifier">float, default=1</span></dt><dd><p>Constant that multiplies the penalty term and thus determines the
 regularization strength. <code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">=</span> <span class="pre">0</span></code> is equivalent to unpenalized
 GLMs. In this case, the design matrix <code class="docutils literal notranslate"><span class="pre">X</span></code> must have full column rank
-(no collinearities).
-Values must be in the range <code class="docutils literal notranslate"><span class="pre">[0.0,</span> <span class="pre">inf)</span></code>.</p>
+(no collinearities).</p>
 </dd>
 <dt><strong>fit_intercept</strong><span class="classifier">bool, default=True</span></dt><dd><p>Specifies if a constant (a.k.a. bias or intercept) should be
 added to the linear predictor (X &#64; coef + intercept).</p>
@@ -245,20 +244,17 @@ the link depending on the chosen family as follows:</p>
 <li><p>‘log’ for Poisson,  Gamma and Inverse Gaussian distributions</p></li>
 </ul>
 </dd>
-<dt><strong>max_iter</strong><span class="classifier">int, default=100</span></dt><dd><p>The maximal number of iterations for the solver.
-Values must be in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">inf)</span></code>.</p>
+<dt><strong>max_iter</strong><span class="classifier">int, default=100</span></dt><dd><p>The maximal number of iterations for the solver.</p>
 </dd>
 <dt><strong>tol</strong><span class="classifier">float, default=1e-4</span></dt><dd><p>Stopping criterion. For the lbfgs solver,
 the iteration will stop when <code class="docutils literal notranslate"><span class="pre">max{|g_j|,</span> <span class="pre">j</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">...,</span> <span class="pre">d}</span> <span class="pre">&lt;=</span> <span class="pre">tol</span></code>
 where <code class="docutils literal notranslate"><span class="pre">g_j</span></code> is the j-th component of the gradient (derivative) of
-the objective function.
-Values must be in the range <code class="docutils literal notranslate"><span class="pre">(0.0,</span> <span class="pre">inf)</span></code>.</p>
+the objective function.</p>
 </dd>
 <dt><strong>warm_start</strong><span class="classifier">bool, default=False</span></dt><dd><p>If set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, reuse the solution of the previous call to <code class="docutils literal notranslate"><span class="pre">fit</span></code>
 as initialization for <code class="docutils literal notranslate"><span class="pre">coef_</span></code> and <code class="docutils literal notranslate"><span class="pre">intercept_</span></code> .</p>
 </dd>
-<dt><strong>verbose</strong><span class="classifier">int, default=0</span></dt><dd><p>For the lbfgs solver set verbose to any positive number for verbosity.
-Values must be in the range <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">inf)</span></code>.</p>
+<dt><strong>verbose</strong><span class="classifier">int, default=0</span></dt><dd><p>For the lbfgs solver set verbose to any positive number for verbosity.</p>
 </dd>
 </dl>
 </dd>
@@ -343,7 +339,7 @@ has feature names that are all strings.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.TweedieRegressor.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/561bad9f8/sklearn/linear_model/_glm/glm.py#L157"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.TweedieRegressor.fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/561bad9f8/sklearn/linear_model/_glm/glm.py#L153"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.TweedieRegressor.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit a Generalized Linear Model.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -388,7 +384,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.TweedieRegressor.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/561bad9f8/sklearn/linear_model/_glm/glm.py#L374"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.TweedieRegressor.predict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/561bad9f8/sklearn/linear_model/_glm/glm.py#L370"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.TweedieRegressor.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Predict using GLM with feature matrix X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -408,7 +404,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.linear_model.TweedieRegressor.score">
-<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/561bad9f8/sklearn/linear_model/_glm/glm.py#L392"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.TweedieRegressor.score" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/561bad9f8/sklearn/linear_model/_glm/glm.py#L388"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.linear_model.TweedieRegressor.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute D^2, the percentage of deviance explained.</p>
 <p>D^2 is a generalization of the coefficient of determination R^2.
 R^2 uses squared error and D^2 deviance. Note that those two are equal
