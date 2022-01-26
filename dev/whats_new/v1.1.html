@@ -200,6 +200,7 @@
 <li><a class="reference internal" href="#sklearn-preprocessing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.preprocessing</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-random-projection"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.random_projection</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-svm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.svm</span></code></a></li>
+<li><a class="reference internal" href="#sklearn-tree"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.tree</span></code></a></li>
 <li><a class="reference internal" href="#sklearn-utils"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.utils</span></code></a></li>
 </ul>
 </li>
@@ -704,6 +705,14 @@ then <code class="docutils literal notranslate"><span class="pre">get_output_fea
 <a class="reference internal" href="../modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR" title="sklearn.svm.SVR"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.SVR</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM" title="sklearn.svm.OneClassSVM"><code class="xref py py-class docutils literal notranslate"><span class="pre">svm.OneClassSVM</span></code></a> now validate input
 parameters in <code class="docutils literal notranslate"><span class="pre">fit</span></code> instead of <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21436">#21436</a> by <a class="reference external" href="https://github.com/Haidar13">Haidar Almubarak</a>.</p></li>
+</ul>
+</section>
+<section id="sklearn-tree">
+<h3><a class="reference internal" href="../modules/classes.html#module-sklearn.tree" title="sklearn.tree"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.tree</span></code></a><a class="headerlink" href="#sklearn-tree" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Fix a bug in the Poisson splitting criterion for
+<a class="reference internal" href="../modules/generated/sklearn.tree.DecisionTreeRegressor.html#sklearn.tree.DecisionTreeRegressor" title="sklearn.tree.DecisionTreeRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">tree.DecisionTreeRegressor</span></code></a>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22191">#22191</a> by <a class="reference external" href="https://github.com/lorentzenchr">Christian Lorentzen</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR" title="sklearn.svm.SVR"><code class="xref py py-func docutils literal notranslate"><span class="pre">svm.SVR</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.svm.SVC.html#sklearn.svm.SVC" title="sklearn.svm.SVC"><code class="xref py py-func docutils literal notranslate"><span class="pre">svm.SVC</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.svm.NuSVR.html#sklearn.svm.NuSVR" title="sklearn.svm.NuSVR"><code class="xref py py-func docutils literal notranslate"><span class="pre">svm.NuSVR</span></code></a>,
 <a class="reference internal" href="../modules/generated/sklearn.svm.OneClassSVM.html#sklearn.svm.OneClassSVM" title="sklearn.svm.OneClassSVM"><code class="xref py py-func docutils literal notranslate"><span class="pre">svm.OneClassSVM</span></code></a>, <a class="reference internal" href="../modules/generated/sklearn.svm.NuSVC.html#sklearn.svm.NuSVC" title="sklearn.svm.NuSVC"><code class="xref py py-func docutils literal notranslate"><span class="pre">svm.NuSVC</span></code></a> now raise an error
 when the dual-gap estimation produce non-finite parameter weights.
