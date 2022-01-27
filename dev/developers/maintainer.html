@@ -395,7 +395,11 @@ following commands in the scikit-learn source folder (checked out at the
 release tag):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">rm -r dist</span>
 <span class="prompt1">pip install -U wheelhouse_uploader twine</span>
-<span class="prompt1">python setup.py fetch_artifacts</span>
+<span class="prompt1">python -m wheelhouse_uploader fetch <span class="se">\</span>
+  --version <span class="m">0</span>.99.0 <span class="se">\</span>
+  --local-folder dist <span class="se">\</span>
+  scikit-learn <span class="se">\</span>
+  https://pypi.anaconda.org/scikit-learn-wheels-staging/simple/scikit-learn/</span>
 </pre></div></div><p>This command will download all the binary packages accumulated in the
 <a class="reference external" href="https://anaconda.org/scikit-learn-wheels-staging/scikit-learn/files">staging area on the anaconda.org hosting service</a> and
 put them in your local <code class="docutils literal notranslate"><span class="pre">./dist</span></code> folder.</p>
