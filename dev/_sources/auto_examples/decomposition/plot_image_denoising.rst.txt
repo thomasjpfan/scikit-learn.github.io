@@ -87,7 +87,7 @@ necessarily related to visualisation.
     *
 
       .. image-sg:: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_005.png
-         :alt: Least-angle regression 4 atoms (time: 10.3s), Image, Difference (norm: 13.50)
+         :alt: Least-angle regression 4 atoms (time: 10.1s), Image, Difference (norm: 13.50)
          :srcset: /auto_examples/decomposition/images/sphx_glr_plot_image_denoising_005.png
          :class: sphx-glr-multi-img
 
@@ -109,18 +109,18 @@ necessarily related to visualisation.
     Extracting reference patches...
     done in 0.01s.
     Learning the dictionary...
-    done in 0.99s.
+    done in 1.02s.
     Extracting noisy patches... 
     done in 0.00s.
     Orthogonal Matching Pursuit
     1 atom...
-    done in 0.57s.
+    done in 0.61s.
     Orthogonal Matching Pursuit
     2 atoms...
-    done in 1.21s.
+    done in 1.24s.
     Least-angle regression
     4 atoms...
-    done in 10.31s.
+    done in 10.07s.
     Thresholding
      alpha=0.1...
     done in 0.10s.
@@ -272,7 +272,7 @@ necessarily related to visualisation.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.445 seconds)
+   **Total running time of the script:** ( 0 minutes  14.308 seconds)
 
 
 .. _sphx_glr_download_auto_examples_decomposition_plot_image_denoising.py:
