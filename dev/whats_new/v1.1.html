@@ -413,6 +413,11 @@ in <code class="docutils literal notranslate"><span class="pre">fit</span></code
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.decomposition.KernelPCA.html#sklearn.decomposition.KernelPCA" title="sklearn.decomposition.KernelPCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.KernelPCA</span></code></a> now validates input parameters in
 <code class="docutils literal notranslate"><span class="pre">fit</span></code> instead of <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21567">#21567</a> by <a class="reference external" href="https://github.com/MaggieChege">Maggie Chege</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="sklearn.decomposition.PCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.PCA</span></code></a> and <a class="reference internal" href="../modules/generated/sklearn.decomposition.IncrementalPCA.html#sklearn.decomposition.IncrementalPCA" title="sklearn.decomposition.IncrementalPCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.IncrementalPCA</span></code></a>
+more safely calculate precision using the inverse of the covariance matrix
+if <code class="docutils literal notranslate"><span class="pre">self.noise_variance_</span></code> is zero.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22300">#22300</a> by <a class="reference external" href="https://github.com/micky774">Meekail Zain</a> and <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/15948">#15948</a> by
+<a class="reference external" href="https://github.com/sysuresh">&#64;sysuresh</a></p></li>
 </ul>
 </section>
 <section id="sklearn-ensemble">
