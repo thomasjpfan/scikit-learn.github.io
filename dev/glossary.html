@@ -1013,7 +1013,10 @@ that they can take advantage of warm-starting by reusing precomputed
 results in the previous steps of the cross-validation process. This
 generally leads to speed improvements. An exception is the
 <a class="reference internal" href="modules/generated/sklearn.linear_model.RidgeCV.html#sklearn.linear_model.RidgeCV" title="sklearn.linear_model.RidgeCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">RidgeCV</span></code></a> class, which can instead
-perform efficient Leave-One-Out CV.</p>
+perform efficient Leave-One-Out (LOO) CV. By default, all these
+estimators, apart from <a class="reference internal" href="modules/generated/sklearn.linear_model.RidgeCV.html#sklearn.linear_model.RidgeCV" title="sklearn.linear_model.RidgeCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">RidgeCV</span></code></a> with an
+LOO-CV, will be refitted on the full training dataset after finding the
+best combination of hyper-parameters.</p>
 </dd>
 <dt id="term-scorer">scorer<a class="headerlink" href="#term-scorer" title="Permalink to this term">¶</a></dt><dd><p>A non-estimator callable object which evaluates an estimator on given
 test data, returning a number. Unlike <a class="reference internal" href="#term-evaluation-metrics"><span class="xref std std-term">evaluation metrics</span></a>,
