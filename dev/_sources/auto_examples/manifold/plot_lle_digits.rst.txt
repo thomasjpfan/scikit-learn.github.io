@@ -318,7 +318,7 @@ Finally, we can plot the resulting projection given by each method.
 
 
 .. image-sg:: /auto_examples/manifold/images/sphx_glr_plot_lle_digits_002.png
-   :alt: Random projection embedding (time 0.001s), Truncated SVD embedding (time 0.002s), Linear Discriminant Analysis embedding (time 0.010s), Isomap embedding (time 1.009s), Standard LLE embedding (time 0.222s), Modified LLE embedding (time 0.591s), Hessian LLE embedding (time 0.661s), LTSA LLE embedding (time 0.521s), MDS embedding (time 3.595s), Random Trees embedding (time 0.202s), Spectral embedding (time 0.201s), t-SNE embeedding (time 2.981s), NCA embedding (time 2.088s)
+   :alt: Random projection embedding (time 0.001s), Truncated SVD embedding (time 0.002s), Linear Discriminant Analysis embedding (time 0.010s), Isomap embedding (time 1.020s), Standard LLE embedding (time 0.192s), Modified LLE embedding (time 0.479s), Hessian LLE embedding (time 0.576s), LTSA LLE embedding (time 0.427s), MDS embedding (time 3.544s), Random Trees embedding (time 0.196s), Spectral embedding (time 0.183s), t-SNE embeedding (time 2.618s), NCA embedding (time 1.905s)
    :srcset: /auto_examples/manifold/images/sphx_glr_plot_lle_digits_002.png
    :class: sphx-glr-single-img
 
@@ -329,7 +329,7 @@ Finally, we can plot the resulting projection given by each method.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  17.482 seconds)
+   **Total running time of the script:** ( 0 minutes  16.004 seconds)
 
 
 .. _sphx_glr_download_auto_examples_manifold_plot_lle_digits.py:
