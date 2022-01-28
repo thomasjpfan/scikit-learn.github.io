@@ -185,7 +185,7 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.naive_bayes" title="sklearn.naive_bayes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.naive_bayes</span></code></a>.BernoulliNB<a class="headerlink" href="#sklearn-naive-bayes-bernoullinb" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB">
-<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.naive_bayes.</span></span><span class="sig-name descname"><span class="pre">BernoulliNB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binarize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_prior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_prior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/31aa26b73/sklearn/naive_bayes.py#L1031"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">sklearn.naive_bayes.</span></span><span class="sig-name descname"><span class="pre">BernoulliNB</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binarize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fit_prior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_prior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c3dd4051d/sklearn/naive_bayes.py#L967"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB" title="Permalink to this definition">¶</a></dt>
 <dd><p>Naive Bayes classifier for multivariate Bernoulli models.</p>
 <p>Like MultinomialNB, this classifier is suitable for discrete data. The
 difference is that while MultinomialNB works with occurrence counts,
@@ -217,15 +217,11 @@ value is weighted by the sample weight when provided.</p>
 </dd>
 <dt><strong>classes_</strong><span class="classifier">ndarray of shape (n_classes,)</span></dt><dd><p>Class labels known to the classifier</p>
 </dd>
-<dt><a class="reference internal" href="#sklearn.naive_bayes.BernoulliNB.coef_" title="sklearn.naive_bayes.BernoulliNB.coef_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coef_</span></code></a><span class="classifier">ndarray of shape (n_classes, n_features)</span></dt><dd><p>DEPRECATED: Attribute <code class="docutils literal notranslate"><span class="pre">coef_</span></code> was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).</p>
-</dd>
 <dt><strong>feature_count_</strong><span class="classifier">ndarray of shape (n_classes, n_features)</span></dt><dd><p>Number of samples encountered for each (class, feature)
 during fitting. This value is weighted by the sample weight when
 provided.</p>
 </dd>
 <dt><strong>feature_log_prob_</strong><span class="classifier">ndarray of shape (n_classes, n_features)</span></dt><dd><p>Empirical log probability of features given a class, P(x_i|y).</p>
-</dd>
-<dt><a class="reference internal" href="#sklearn.naive_bayes.BernoulliNB.intercept_" title="sklearn.naive_bayes.BernoulliNB.intercept_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">intercept_</span></code></a><span class="classifier">ndarray of shape (n_classes,)</span></dt><dd><p>DEPRECATED: Attribute <code class="docutils literal notranslate"><span class="pre">intercept_</span></code> was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).</p>
 </dd>
 <dt><a class="reference internal" href="#sklearn.naive_bayes.BernoulliNB.n_features_" title="sklearn.naive_bayes.BernoulliNB.n_features_"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_features_</span></code></a><span class="classifier">int</span></dt><dd><p>DEPRECATED: Attribute <code class="docutils literal notranslate"><span class="pre">n_features_</span></code> was deprecated in version 1.0 and will be removed in 1.2.</p>
 </dd>
@@ -311,15 +307,9 @@ naive Bayes – Which naive Bayes? 3rd Conf. on Email and Anti-Spam (CEAS).</p>
 </tr>
 </tbody>
 </table>
-<dl class="py property">
-<dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.coef_">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">coef_</span></span><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.coef_" title="Permalink to this definition">¶</a></dt>
-<dd><p>DEPRECATED: Attribute <code class="docutils literal notranslate"><span class="pre">coef_</span></code> was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).</p>
-</dd></dl>
-
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/31aa26b73/sklearn/naive_bayes.py#L643"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c3dd4051d/sklearn/naive_bayes.py#L643"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit Naive Bayes classifier according to X, y.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -344,7 +334,7 @@ naive Bayes – Which naive Bayes? 3rd Conf. on Email and Anti-Spam (CEAS).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.get_params">
-<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/31aa26b73/sklearn/base.py#L195"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.get_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">deep</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c3dd4051d/sklearn/base.py#L195"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.get_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get parameters for this estimator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -364,12 +354,6 @@ contained subobjects that are estimators.</p>
 </dd></dl>
 
 <dl class="py property">
-<dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.intercept_">
-<em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">intercept_</span></span><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.intercept_" title="Permalink to this definition">¶</a></dt>
-<dd><p>DEPRECATED: Attribute <code class="docutils literal notranslate"><span class="pre">intercept_</span></code> was deprecated in version 0.24 and will be removed in 1.1 (renaming of 0.26).</p>
-</dd></dl>
-
-<dl class="py property">
 <dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.n_features_">
 <em class="property"><span class="pre">property</span> </em><span class="sig-name descname"><span class="pre">n_features_</span></span><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.n_features_" title="Permalink to this definition">¶</a></dt>
 <dd><p>DEPRECATED: Attribute <code class="docutils literal notranslate"><span class="pre">n_features_</span></code> was deprecated in version 1.0 and will be removed in 1.2. Use <code class="docutils literal notranslate"><span class="pre">n_features_in_</span></code> instead.</p>
@@ -377,7 +361,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.partial_fit">
-<span class="sig-name descname"><span class="pre">partial_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/31aa26b73/sklearn/naive_bayes.py#L562"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.partial_fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">partial_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">classes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c3dd4051d/sklearn/naive_bayes.py#L562"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.partial_fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Incremental fit on a batch of samples.</p>
 <p>This method is expected to be called several times consecutively
 on different chunks of a dataset so as to implement out-of-core
@@ -414,7 +398,7 @@ in subsequent calls.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.predict">
-<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/31aa26b73/sklearn/naive_bayes.py#L67"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c3dd4051d/sklearn/naive_bayes.py#L67"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform classification on an array of test vectors X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -434,7 +418,7 @@ in subsequent calls.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.predict_log_proba">
-<span class="sig-name descname"><span class="pre">predict_log_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/31aa26b73/sklearn/naive_bayes.py#L86"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict_log_proba" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict_log_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c3dd4051d/sklearn/naive_bayes.py#L86"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict_log_proba" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return log-probability estimates for the test vector X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -456,7 +440,7 @@ order, as they appear in the attribute <a class="reference internal" href="../..
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.predict_proba">
-<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/31aa26b73/sklearn/naive_bayes.py#L109"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict_proba" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c3dd4051d/sklearn/naive_bayes.py#L109"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.predict_proba" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return probability estimates for the test vector X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -478,7 +462,7 @@ order, as they appear in the attribute <a class="reference internal" href="../..
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.score">
-<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/31aa26b73/sklearn/base.py#L641"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.score" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c3dd4051d/sklearn/base.py#L641"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the mean accuracy on the given test data and labels.</p>
 <p>In multi-label classification, this is the subset accuracy
 which is a harsh metric since you require for each sample that
@@ -505,7 +489,7 @@ each label set be correctly predicted.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.naive_bayes.BernoulliNB.set_params">
-<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/31aa26b73/sklearn/base.py#L219"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.set_params" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">set_params</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">params</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/c3dd4051d/sklearn/base.py#L219"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.naive_bayes.BernoulliNB.set_params" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set the parameters of this estimator.</p>
 <p>The method works on simple estimators as well as on nested objects
 (such as <a class="reference internal" href="sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code></a>). The latter have
