@@ -416,6 +416,18 @@ in <code class="docutils literal notranslate"><span class="pre">fit</span></code
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.decomposition.KernelPCA.html#sklearn.decomposition.KernelPCA" title="sklearn.decomposition.KernelPCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.KernelPCA</span></code></a> now validates input parameters in
 <code class="docutils literal notranslate"><span class="pre">fit</span></code> instead of <code class="docutils literal notranslate"><span class="pre">__init__</span></code>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21567">#21567</a> by <a class="reference external" href="https://github.com/MaggieChege">Maggie Chege</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.decomposition.TruncatedSVD.html#sklearn.decomposition.TruncatedSVD" title="sklearn.decomposition.TruncatedSVD"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.TruncatedSVD</span></code></a> exposes the parameter
+<code class="docutils literal notranslate"><span class="pre">n_oversamples</span></code> and <code class="docutils literal notranslate"><span class="pre">power_iteration_normalizer</span></code> to tune
+<code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.decomposition.randomized_svd</span></code> and
+get accurate results when the number of features is large, the rank of
+the matrix is high, or other features of the matrix make low rank
+approximation difficult.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21705">#21705</a> by <a class="reference external" href="https://github.com/stanleyjs">Jay S. Stanley III</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="sklearn.decomposition.PCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.PCA</span></code></a> exposes the parameter
+<code class="docutils literal notranslate"><span class="pre">power_iteration_normalizer</span></code> to tune
+<code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.decomposition.randomized_svd</span></code> and
+get more accurate results when low rank approximation is difficult.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21705">#21705</a> by <a class="reference external" href="https://github.com/stanleyjs">Jay S. Stanley III</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.decomposition.PCA.html#sklearn.decomposition.PCA" title="sklearn.decomposition.PCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.PCA</span></code></a> and <a class="reference internal" href="../modules/generated/sklearn.decomposition.IncrementalPCA.html#sklearn.decomposition.IncrementalPCA" title="sklearn.decomposition.IncrementalPCA"><code class="xref py py-class docutils literal notranslate"><span class="pre">decomposition.IncrementalPCA</span></code></a>
 more safely calculate precision using the inverse of the covariance matrix
 if <code class="docutils literal notranslate"><span class="pre">self.noise_variance_</span></code> is zero.
