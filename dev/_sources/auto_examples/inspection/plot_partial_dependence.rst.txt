@@ -46,10 +46,10 @@ California housing dataset. The example is taken from [1]_.
 .. [2] For classification you can think of it as the regression score before
        the link function.
 
-.. [3] Goldstein, A., Kapelner, A., Bleich, J., and Pitkin, E., Peeking Inside
-       the Black Box: Visualizing Statistical Learning With Plots of
-       Individual Conditional Expectation. (2015) Journal of Computational and
-       Graphical Statistics, 24(1): 44-65 (https://arxiv.org/abs/1309.6392)
+.. [3] :arxiv:`Goldstein, A., Kapelner, A., Bleich, J., and Pitkin, E. (2015).
+       "Peeking Inside the Black Box: Visualizing Statistical Learning With Plots of
+       Individual Conditional Expectation". Journal of Computational and
+       Graphical Statistics, 24(1): 44-65 <1309.6392>`
 
 .. GENERATED FROM PYTHON SOURCE LINES 38-44
 
@@ -137,7 +137,7 @@ single-variable partial dependence plots.
  .. code-block:: none
 
     Training MLPRegressor...
-    done in 3.178s
+    done in 3.122s
     Test R2 score: 0.82
 
 
@@ -212,7 +212,7 @@ We will plot the partial dependence, both individual (ICE) and averaged one
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 1.937s
+    done in 2.027s
 
 
 
@@ -250,7 +250,7 @@ compute the partial dependence on the same features.
  .. code-block:: none
 
     Training HistGradientBoostingRegressor...
-    done in 0.417s
+    done in 0.462s
     Test R2 score: 0.85
 
 
@@ -312,7 +312,7 @@ We will plot the partial dependence, both individual (ICE) and averaged one
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 7.932s
+    done in 8.356s
 
 
 
@@ -400,7 +400,7 @@ on an efficient way using the `'recursion'` method.
  .. code-block:: none
 
     Computing partial dependence plots...
-    done in 0.347s
+    done in 0.256s
 
 
 
@@ -476,7 +476,7 @@ this time in 3 dimensions.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  14.544 seconds)
+   **Total running time of the script:** ( 0 minutes  14.896 seconds)
 
 
 .. _sphx_glr_download_auto_examples_inspection_plot_partial_dependence.py:
