@@ -54,9 +54,9 @@ step before the final (global) clustering step that further reduces these
 
  .. code-block:: none
 
-    BIRCH without global clustering as the final step took 0.62 seconds
+    BIRCH without global clustering as the final step took 0.64 seconds
     n_clusters : 158
-    BIRCH with global clustering as the final step took 0.62 seconds
+    BIRCH with global clustering as the final step took 0.63 seconds
     n_clusters : 100
     Time taken to run MiniBatchKMeans 0.24 seconds
 

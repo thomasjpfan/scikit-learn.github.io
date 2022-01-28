@@ -358,9 +358,11 @@ to a binary classifier. The order for classes
 a somewhat hard to grasp layout.
 The columns correspond to the support vectors involved in any
 of the <code class="docutils literal notranslate"><span class="pre">n_classes</span> <span class="pre">*</span> <span class="pre">(n_classes</span> <span class="pre">-</span> <span class="pre">1)</span> <span class="pre">/</span> <span class="pre">2</span></code> “one-vs-one” classifiers.
-Each of the support vectors is used in <code class="docutils literal notranslate"><span class="pre">n_classes</span> <span class="pre">-</span> <span class="pre">1</span></code> classifiers.
-The <code class="docutils literal notranslate"><span class="pre">n_classes</span> <span class="pre">-</span> <span class="pre">1</span></code> entries in each row correspond to the dual coefficients
-for these classifiers.</p>
+Each support vector <code class="docutils literal notranslate"><span class="pre">v</span></code> has a dual coefficient in each of the
+<code class="docutils literal notranslate"><span class="pre">n_classes</span> <span class="pre">-</span> <span class="pre">1</span></code> classifiers comparing the class of <code class="docutils literal notranslate"><span class="pre">v</span></code> against another class.
+Note that some, but not all, of these dual coefficients, may be zero.
+The <code class="docutils literal notranslate"><span class="pre">n_classes</span> <span class="pre">-</span> <span class="pre">1</span></code> entries in each column are these dual coefficients,
+ordered by the opposing class.</p>
 <p>This might be clearer with an example: consider a three class problem with
 class 0 having three support vectors
 <span class="math notranslate nohighlight">\(v^{0}_0, v^{1}_0, v^{2}_0\)</span> and class 1 and 2 having two support vectors
@@ -371,37 +373,37 @@ classes <span class="math notranslate nohighlight">\(i\)</span> and <span class=
 Then <code class="docutils literal notranslate"><span class="pre">dual_coef_</span></code> looks like this:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 36%" />
-<col style="width: 36%" />
-<col style="width: 27%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
+<col style="width: 14%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\alpha^{0}_{0,1}\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(\alpha^{0}_{0,2}\)</span></p></td>
-<td rowspan="3"><p>Coefficients
-for SVs of class 0</p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha^{1}_{0,1}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha^{2}_{0,1}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha^{0}_{1,0}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha^{1}_{1,0}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha^{0}_{2,0}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(\alpha^{1}_{2,0}\)</span></p></td>
 </tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\alpha^{1}_{0,1}\)</span></p></td>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\alpha^{0}_{0,2}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\alpha^{1}_{0,2}\)</span></p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\alpha^{2}_{0,1}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\alpha^{2}_{0,2}\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\alpha^{0}_{1,0}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\alpha^{0}_{1,2}\)</span></p></td>
-<td rowspan="2"><p>Coefficients
-for SVs of class 1</p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\alpha^{1}_{1,0}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\alpha^{1}_{1,2}\)</span></p></td>
-</tr>
-<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\alpha^{0}_{2,0}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\alpha^{0}_{2,1}\)</span></p></td>
-<td rowspan="2"><p>Coefficients
-for SVs of class 2</p></td>
-</tr>
-<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\alpha^{1}_{2,0}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\alpha^{1}_{2,1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td colspan="3"><p>Coefficients
+for SVs of class 0</p></td>
+<td colspan="2"><p>Coefficients
+for SVs of class 1</p></td>
+<td colspan="2"><p>Coefficients
+for SVs of class 2</p></td>
 </tr>
 </tbody>
 </table>
