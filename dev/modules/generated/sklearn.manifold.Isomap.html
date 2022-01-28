@@ -322,23 +322,26 @@ framework for nonlinear dimensionality reduction. Science 290 (5500)</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#sklearn.manifold.Isomap.fit_transform" title="sklearn.manifold.Isomap.fit_transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fit_transform</span></code></a>(X[, y])</p></td>
 <td><p>Fit the model from data in X and transform X.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.manifold.Isomap.get_params" title="sklearn.manifold.Isomap.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>([deep])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.manifold.Isomap.get_feature_names_out" title="sklearn.manifold.Isomap.get_feature_names_out"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_feature_names_out</span></code></a>([input_features])</p></td>
+<td><p>Get output feature names for transformation.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.manifold.Isomap.get_params" title="sklearn.manifold.Isomap.get_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_params</span></code></a>([deep])</p></td>
 <td><p>Get parameters for this estimator.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.manifold.Isomap.reconstruction_error" title="sklearn.manifold.Isomap.reconstruction_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reconstruction_error</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.manifold.Isomap.reconstruction_error" title="sklearn.manifold.Isomap.reconstruction_error"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reconstruction_error</span></code></a>()</p></td>
 <td><p>Compute the reconstruction error for the embedding.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.manifold.Isomap.set_params" title="sklearn.manifold.Isomap.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(**params)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.manifold.Isomap.set_params" title="sklearn.manifold.Isomap.set_params"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_params</span></code></a>(**params)</p></td>
 <td><p>Set the parameters of this estimator.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#sklearn.manifold.Isomap.transform" title="sklearn.manifold.Isomap.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(X)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#sklearn.manifold.Isomap.transform" title="sklearn.manifold.Isomap.transform"><code class="xref py py-obj docutils literal notranslate"><span class="pre">transform</span></code></a>(X)</p></td>
 <td><p>Transform X.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.manifold.Isomap.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3fd84f7a0/sklearn/manifold/_isomap.py#L286"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.Isomap.fit" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3fd84f7a0/sklearn/manifold/_isomap.py#L287"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.Isomap.fit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the embedding vectors for data X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -362,7 +365,7 @@ object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.manifold.Isomap.fit_transform">
-<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3fd84f7a0/sklearn/manifold/_isomap.py#L307"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.Isomap.fit_transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">fit_transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3fd84f7a0/sklearn/manifold/_isomap.py#L308"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.Isomap.fit_transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fit the model from data in X and transform X.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -377,6 +380,26 @@ and <code class="docutils literal notranslate"><span class="pre">n_features</spa
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
 <dt><strong>X_new</strong><span class="classifier">array-like, shape (n_samples, n_components)</span></dt><dd><p>X transformed in the new space.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="sklearn.manifold.Isomap.get_feature_names_out">
+<span class="sig-name descname"><span class="pre">get_feature_names_out</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_features</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3fd84f7a0/sklearn/base.py#L909"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.Isomap.get_feature_names_out" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get output feature names for transformation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>input_features</strong><span class="classifier">array-like of str or None, default=None</span></dt><dd><p>Only used to validate feature names with the names seen in <a class="reference internal" href="#sklearn.manifold.Isomap.fit" title="sklearn.manifold.Isomap.fit"><code class="xref py py-meth docutils literal notranslate"><span class="pre">fit</span></code></a>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>feature_names_out</strong><span class="classifier">ndarray of str objects</span></dt><dd><p>Transformed feature names.</p>
 </dd>
 </dl>
 </dd>
@@ -406,7 +429,7 @@ contained subobjects that are estimators.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.manifold.Isomap.reconstruction_error">
-<span class="sig-name descname"><span class="pre">reconstruction_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3fd84f7a0/sklearn/manifold/_isomap.py#L261"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.Isomap.reconstruction_error" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">reconstruction_error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3fd84f7a0/sklearn/manifold/_isomap.py#L262"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.Isomap.reconstruction_error" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the reconstruction error for the embedding.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -451,7 +474,7 @@ possible to update each component of a nested object.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="sklearn.manifold.Isomap.transform">
-<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3fd84f7a0/sklearn/manifold/_isomap.py#L327"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.Isomap.transform" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">transform</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/3fd84f7a0/sklearn/manifold/_isomap.py#L328"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.manifold.Isomap.transform" title="Permalink to this definition">¶</a></dt>
 <dd><p>Transform X.</p>
 <p>This is implemented by linking the points X into the graph of geodesic
 distances of the training data. First the <code class="docutils literal notranslate"><span class="pre">n_neighbors</span></code> nearest
