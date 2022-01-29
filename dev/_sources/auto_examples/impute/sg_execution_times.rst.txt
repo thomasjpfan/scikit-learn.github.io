@@ -5,10 +5,10 @@
 
 Computation times
 =================
-**00:30.486** total execution time for **auto_examples_impute** files:
+**00:31.716** total execution time for **auto_examples_impute** files:
 
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_impute_plot_iterative_imputer_variants_comparison.py` (``plot_iterative_imputer_variants_comparison.py``) | 00:16.410 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_impute_plot_iterative_imputer_variants_comparison.py` (``plot_iterative_imputer_variants_comparison.py``) | 00:17.454 | 0.0 MB |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_impute_plot_missing_values.py` (``plot_missing_values.py``)                                               | 00:14.076 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_impute_plot_missing_values.py` (``plot_missing_values.py``)                                               | 00:14.261 | 0.0 MB |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------+--------+
