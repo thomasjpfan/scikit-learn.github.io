@@ -260,6 +260,7 @@ not available.</p>
 <p>When <code class="docutils literal notranslate"><span class="pre">novelty</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> be aware that you must only use
 <code class="docutils literal notranslate"><span class="pre">predict</span></code>, <code class="docutils literal notranslate"><span class="pre">decision_function</span></code> and <code class="docutils literal notranslate"><span class="pre">score_samples</span></code> on new unseen data
 and not on the training samples as this would lead to wrong results.
+I.e., the result of <code class="docutils literal notranslate"><span class="pre">predict</span></code> will not be the same as <code class="docutils literal notranslate"><span class="pre">fit_predict</span></code>.
 The scores of abnormality of the training samples are always accessible
 through the <code class="docutils literal notranslate"><span class="pre">negative_outlier_factor_</span></code> attribute.</p>
 </div>
@@ -267,9 +268,9 @@ through the <code class="docutils literal notranslate"><span class="pre">negativ
 following table.</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 28%" />
-<col style="width: 43%" />
-<col style="width: 28%" />
+<col style="width: 35%" />
+<col style="width: 40%" />
+<col style="width: 26%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Method</p></th>
@@ -293,6 +294,10 @@ following table.</p>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">score_samples</span></code></p></td>
 <td><p>Use <code class="docutils literal notranslate"><span class="pre">negative_outlier_factor_</span></code></p></td>
 <td><p>Use only on new data</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">negative_outlier_factor_</span></code></p></td>
+<td><p>OK</p></td>
+<td><p>OK</p></td>
 </tr>
 </tbody>
 </table>
@@ -532,7 +537,8 @@ method. The scores of abnormality of the training samples are accessible
 through the <code class="docutils literal notranslate"><span class="pre">negative_outlier_factor_</span></code> attribute.
 Note that <code class="docutils literal notranslate"><span class="pre">predict</span></code>, <code class="docutils literal notranslate"><span class="pre">decision_function</span></code> and <code class="docutils literal notranslate"><span class="pre">score_samples</span></code> can be used
 on new unseen data when LOF is applied for novelty detection, i.e. when the
-<code class="docutils literal notranslate"><span class="pre">novelty</span></code> parameter is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>. See <a class="reference internal" href="#novelty-with-lof"><span class="std std-ref">Novelty detection with Local Outlier Factor</span></a>.</p>
+<code class="docutils literal notranslate"><span class="pre">novelty</span></code> parameter is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, but the result of <code class="docutils literal notranslate"><span class="pre">predict</span></code> may
+differ from that of <code class="docutils literal notranslate"><span class="pre">fit_predict</span></code>. See <a class="reference internal" href="#novelty-with-lof"><span class="std std-ref">Novelty detection with Local Outlier Factor</span></a>.</p>
 <p>This strategy is illustrated below.</p>
 <figure class="align-center">
 <a class="reference external image-reference" href="../auto_examples/neighbors/plot_lof_outlier_detection.html"><img alt="../_images/sphx_glr_plot_lof_outlier_detection_001.png" src="../_images/sphx_glr_plot_lof_outlier_detection_001.png" style="width: 480.0px; height: 360.0px;" /></a>
@@ -566,13 +572,14 @@ set to <code class="docutils literal notranslate"><span class="pre">True</span><
 <span class="n">lof</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Note that <code class="docutils literal notranslate"><span class="pre">fit_predict</span></code> is not available in this case.</p>
+<p>Note that <code class="docutils literal notranslate"><span class="pre">fit_predict</span></code> is not available in this case to avoid inconsistencies.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Novelty detection with Local Outlier Factor`</strong></p>
 <p>When <code class="docutils literal notranslate"><span class="pre">novelty</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code> be aware that you must only use
 <code class="docutils literal notranslate"><span class="pre">predict</span></code>, <code class="docutils literal notranslate"><span class="pre">decision_function</span></code> and <code class="docutils literal notranslate"><span class="pre">score_samples</span></code> on new unseen data
 and not on the training samples as this would lead to wrong results.
+I.e., the result of <code class="docutils literal notranslate"><span class="pre">predict</span></code> will not be the same as <code class="docutils literal notranslate"><span class="pre">fit_predict</span></code>.
 The scores of abnormality of the training samples are always accessible
 through the <code class="docutils literal notranslate"><span class="pre">negative_outlier_factor_</span></code> attribute.</p>
 </div>
