@@ -681,6 +681,10 @@ Setting a transformer to “passthrough” will pass the features unchanged.
 <li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  <a class="reference internal" href="../modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline" title="sklearn.pipeline.Pipeline"><code class="xref py py-class docutils literal notranslate"><span class="pre">pipeline.Pipeline</span></code></a> now does not validate hyper-parameters in
 <code class="docutils literal notranslate"><span class="pre">__init__</span></code> but in <code class="docutils literal notranslate"><span class="pre">.fit()</span></code>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21888">#21888</a> by <a class="reference external" href="https://github.com/iofall">iofall</a> and <a class="reference external" href="https://github.com/arisayosh">Arisa Y.</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  :class: <code class="docutils literal notranslate"><span class="pre">pipeline.FeatureUnion</span></code> does not validate hyper-parameters in
+<code class="docutils literal notranslate"><span class="pre">__init__</span></code>. Validation is now handled in <code class="docutils literal notranslate"><span class="pre">.fit()</span></code> and <code class="docutils literal notranslate"><span class="pre">.fit_transform()</span></code>.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21954">#21954</a> and <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21888">#21888</a> by <a class="reference external" href="https://github.com/iofall">iofall</a> and
+<a class="reference external" href="https://github.com/arisayosh">Arisa Y.</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-preprocessing">
