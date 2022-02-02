@@ -312,6 +312,13 @@ is faster on many datasets, and its results are identical, hence the change.
 error messages when passed invalid values for <code class="docutils literal notranslate"><span class="pre">n_clusters</span></code>, <code class="docutils literal notranslate"><span class="pre">n_init</span></code>,
 <code class="docutils literal notranslate"><span class="pre">gamma</span></code>, <code class="docutils literal notranslate"><span class="pre">n_neighbors</span></code>, <code class="docutils literal notranslate"><span class="pre">eigen_tol</span></code> or <code class="docutils literal notranslate"><span class="pre">degree</span></code>.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21881">#21881</a> by <a class="reference external" href="https://github.com/hvassard">Hugo Vassard</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.cluster.AffinityPropagation.html#sklearn.cluster.AffinityPropagation" title="sklearn.cluster.AffinityPropagation"><code class="xref py py-class docutils literal notranslate"><span class="pre">cluster.AffinityPropagation</span></code></a> now returns cluster
+centers and labels if they exist, even if the model has not fully converged.
+When returning these potentially-degenerate cluster centers and labels, a new
+warning message is shown. If no cluster centers were constructed,
+then the cluster centers remain an empty list with labels set to
+<code class="docutils literal notranslate"><span class="pre">-1</span></code> and the original warning message is shown.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22217">#22217</a> by <a class="reference external" href="https://github.com/micky774">Meekail Zain</a>.</p></li>
 </ul>
 </section>
 <section id="sklearn-cross-decomposition">
