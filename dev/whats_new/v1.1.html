@@ -436,6 +436,10 @@ for binary and in particular for multiclass problems thanks to the new private l
 function module.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20811">#20811</a>, <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20567">#20567</a> and <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21814">#21814</a> by
 <a class="reference external" href="https://github.com/lorentzenchr">Christian Lorentzen</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Change the parameter <code class="docutils literal notranslate"><span class="pre">validation_fraction</span></code> in
+<code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.BaseGradientBoosting</span></code> so that an error is raised if anything
+other than a float is passed in as an argument.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21632">#21632</a> by <a class="reference external" href="https://github.com/genvalen">Genesis Valencia</a></p></li>
 <li><p><span class="raw-html"><span class="badge badge-warning">API Change</span></span>  Changed the default of <code class="xref py py-func docutils literal notranslate"><span class="pre">max_features</span></code> to 1.0 for
 <a class="reference internal" href="../modules/generated/sklearn.ensemble.RandomForestRegressor.html#sklearn.ensemble.RandomForestRegressor" title="sklearn.ensemble.RandomForestRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.RandomForestRegressor</span></code></a> and to <code class="docutils literal notranslate"><span class="pre">&quot;sqrt&quot;</span></code> for
 <a class="reference internal" href="../modules/generated/sklearn.ensemble.RandomForestClassifier.html#sklearn.ensemble.RandomForestClassifier" title="sklearn.ensemble.RandomForestClassifier"><code class="xref py py-class docutils literal notranslate"><span class="pre">ensemble.RandomForestClassifier</span></code></a>. Note that these give the same fit
