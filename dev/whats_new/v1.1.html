@@ -260,6 +260,11 @@ stability of the solver, but may result in a different model.</p></li>
 default instead of <code class="docutils literal notranslate"><span class="pre">np.nan</span></code> and <code class="docutils literal notranslate"><span class="pre">np.inf</span></code> for some corner case. You can use
 <code class="docutils literal notranslate"><span class="pre">force_finite=False</span></code> if you really want to get non-finite values and keep
 the old behavior.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-danger">Fix</span></span>  Panda’s DataFrames with all non-string columns such as a MultiIndex no
+longer warns when passed into an Estimator. Estimators will continue to
+ignore the column names in DataFrames with non-string columns. For
+<code class="docutils literal notranslate"><span class="pre">feature_names_in_</span></code> to be defined, columns must be all strings. <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22410">#22410</a> by
+<a class="reference external" href="https://github.com/thomasjpfan">Thomas Fan</a>.</p></li>
 </ul>
 </section>
 <section id="changelog">

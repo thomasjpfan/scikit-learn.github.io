@@ -207,7 +207,7 @@ that directly determines the partition in the embedding space.</p></li>
 <span class="kn">import</span> <span class="nn">time</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.ndimage.filters</span> <span class="kn">import</span> <span class="n">gaussian_filter</span>
+<span class="kn">from</span> <span class="nn">scipy.ndimage.filters</span> <span class="kn">import</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.gaussian_filter.html#scipy.ndimage.gaussian_filter" title="scipy.ndimage.gaussian_filter" class="sphx-glr-backref-module-scipy-ndimage sphx-glr-backref-type-py-function"><span class="n">gaussian_filter</span></a>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">skimage</span>
 <span class="kn">from</span> <span class="nn">skimage.data</span> <span class="kn">import</span> <span class="n">coins</span>
@@ -229,7 +229,7 @@ that directly determines the partition in the embedding space.</p></li>
 <span class="c1"># Resize it to 20% of the original size to speed up the processing</span>
 <span class="c1"># Applying a Gaussian filter for smoothing prior to down-scaling</span>
 <span class="c1"># reduces aliasing artifacts.</span>
-<span class="n">smoothened_coins</span> <span class="o">=</span> <span class="n">gaussian_filter</span><span class="p">(</span><span class="n">orig_coins</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">smoothened_coins</span> <span class="o">=</span> <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.gaussian_filter.html#scipy.ndimage.gaussian_filter" title="scipy.ndimage.gaussian_filter" class="sphx-glr-backref-module-scipy-ndimage sphx-glr-backref-type-py-function"><span class="n">gaussian_filter</span></a><span class="p">(</span><span class="n">orig_coins</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">rescaled_coins</span> <span class="o">=</span> <span class="n">rescale</span><span class="p">(</span><span class="n">smoothened_coins</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;reflect&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">rescale_params</span><span class="p">)</span>
 
 <span class="c1"># Convert the image into a graph with the value of the gradient on the</span>
@@ -300,17 +300,17 @@ that directly determines the partition in the embedding space.</p></li>
 </pre></div>
 </div>
 <ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_coin_segmentation_001.png" srcset="../../_images/sphx_glr_plot_coin_segmentation_001.png" alt="Spectral clustering: kmeans, 1.94s" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_coin_segmentation_002.png" srcset="../../_images/sphx_glr_plot_coin_segmentation_002.png" alt="Spectral clustering: discretize, 1.78s" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_coin_segmentation_001.png" srcset="../../_images/sphx_glr_plot_coin_segmentation_001.png" alt="Spectral clustering: kmeans, 1.89s" class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_coin_segmentation_002.png" srcset="../../_images/sphx_glr_plot_coin_segmentation_002.png" alt="Spectral clustering: discretize, 1.76s" class = "sphx-glr-multi-img"/></li>
 <li><img src="../../_images/sphx_glr_plot_coin_segmentation_003.png" srcset="../../_images/sphx_glr_plot_coin_segmentation_003.png" alt="Spectral clustering: cluster_qr, 1.73s" class = "sphx-glr-multi-img"/></li>
 </ul>
 <p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Spectral clustering: kmeans, 1.94s
-Spectral clustering: discretize, 1.78s
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Spectral clustering: kmeans, 1.89s
+Spectral clustering: discretize, 1.76s
 Spectral clustering: cluster_qr, 1.73s
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  6.022 seconds)</p>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  5.949 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-cluster-plot-coin-segmentation-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/cluster/plot_coin_segmentation.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo4.svg" width="150px" /></a>
