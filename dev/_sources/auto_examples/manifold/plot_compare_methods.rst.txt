@@ -37,12 +37,12 @@ the distances in the original high-dimensional space, unlike other
 manifold-learning algorithms, it does not seeks an isotropic
 representation of the data in the low-dimensional space.
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-88
+.. GENERATED FROM PYTHON SOURCE LINES 22-92
 
 
 
 .. image-sg:: /auto_examples/manifold/images/sphx_glr_plot_compare_methods_001.png
-   :alt: Manifold Learning with 1000 points, 10 neighbors, LLE (0.073 sec), LTSA (0.13 sec), Hessian LLE (0.19 sec), Modified LLE (0.15 sec), Isomap (0.41 sec), MDS (1.3 sec), SE (0.061 sec), t-SNE (6.7 sec)
+   :alt: Manifold Learning with 1000 points, 10 neighbors, LLE (0.075 sec), LTSA (0.13 sec), Hessian LLE (0.2 sec), Modified LLE (0.15 sec), Isomap (0.41 sec), MDS (0.68 sec), SE (0.059 sec), t-SNE (1.7 sec)
    :srcset: /auto_examples/manifold/images/sphx_glr_plot_compare_methods_001.png
    :class: sphx-glr-single-img
 
@@ -53,18 +53,18 @@ representation of the data in the low-dimensional space.
 
  .. code-block:: none
 
-    LLE: 0.073 sec
+    LLE: 0.075 sec
     LTSA: 0.13 sec
-    Hessian LLE: 0.19 sec
+    Hessian LLE: 0.2 sec
     Modified LLE: 0.15 sec
     Isomap: 0.41 sec
-    MDS: 1.3 sec
-    SE: 0.061 sec
+    MDS: 0.68 sec
+    SE: 0.059 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:786: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
     /home/circleci/project/sklearn/manifold/_t_sne.py:970: FutureWarning: The PCA initialization in TSNE will change to have the standard deviation of PC1 equal to 1e-4 in 1.2. This will ensure better convergence.
       warnings.warn(
-    t-SNE: 6.7 sec
+    t-SNE: 1.7 sec
 
 
 
@@ -99,7 +99,8 @@ representation of the data in the low-dimensional space.
     # Create figure
     fig = plt.figure(figsize=(15, 8))
     fig.suptitle(
-        "Manifold Learning with %i points, %i neighbors" % (1000, n_neighbors), fontsize=14
+        "Manifold Learning with %i points, %i neighbors" % (n_points, n_neighbors),
+        fontsize=14,
     )
 
     # Add 3d scatter plot
@@ -113,6 +114,7 @@ representation of the data in the low-dimensional space.
         n_neighbors=n_neighbors,
         n_components=n_components,
         eigen_solver="auto",
+        random_state=0,
     )
 
     methods = OrderedDict()
@@ -121,11 +123,13 @@ representation of the data in the low-dimensional space.
     methods["Hessian LLE"] = LLE(method="hessian")
     methods["Modified LLE"] = LLE(method="modified")
     methods["Isomap"] = manifold.Isomap(n_neighbors=n_neighbors, n_components=n_components)
-    methods["MDS"] = manifold.MDS(n_components, max_iter=100, n_init=1)
+    methods["MDS"] = manifold.MDS(n_components, max_iter=50, n_init=1, random_state=0)
     methods["SE"] = manifold.SpectralEmbedding(
-        n_components=n_components, n_neighbors=n_neighbors
+        n_components=n_components, n_neighbors=n_neighbors, random_state=0
     )
-    methods["t-SNE"] = manifold.TSNE(n_components=n_components, init="pca", random_state=0)
+    methods["t-SNE"] = manifold.TSNE(
+        n_components=n_components, perplexity=30, n_iter=250, init="pca", random_state=0
+    )
 
     # Plot results
     for i, (label, method) in enumerate(methods.items()):
@@ -145,7 +149,7 @@ representation of the data in the low-dimensional space.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  9.494 seconds)
+   **Total running time of the script:** ( 0 minutes  3.875 seconds)
 
 
 .. _sphx_glr_download_auto_examples_manifold_plot_compare_methods.py:
