@@ -26,18 +26,7 @@ Demonstrate the resolution of a regression problem
 using a k-Nearest Neighbor and the interpolation of the
 target using both barycenter and constant weights.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-49
-
-
-
-.. image-sg:: /auto_examples/neighbors/images/sphx_glr_plot_regression_001.png
-   :alt: KNeighborsRegressor (k = 5, weights = 'uniform'), KNeighborsRegressor (k = 5, weights = 'distance')
-   :srcset: /auto_examples/neighbors/images/sphx_glr_plot_regression_001.png
-   :class: sphx-glr-single-img
-
-
-
-
+.. GENERATED FROM PYTHON SOURCE LINES 11-18
 
 .. code-block:: default
 
@@ -48,8 +37,22 @@ target using both barycenter and constant weights.
     # License: BSD 3 clause (C) INRIA
 
 
-    # #############################################################################
-    # Generate sample data
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 19-21
+
+Generate sample data
+--------------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 21-33
+
+.. code-block:: default
+
     import numpy as np
     import matplotlib.pyplot as plt
     from sklearn import neighbors
@@ -62,8 +65,22 @@ target using both barycenter and constant weights.
     # Add noise to targets
     y[::5] += 1 * (0.5 - np.random.rand(8))
 
-    # #############################################################################
-    # Fit regression model
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 34-36
+
+Fit regression model
+--------------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 36-51
+
+.. code-block:: default
+
     n_neighbors = 5
 
     for i, weights in enumerate(["uniform", "distance"]):
@@ -81,9 +98,20 @@ target using both barycenter and constant weights.
     plt.show()
 
 
+
+.. image-sg:: /auto_examples/neighbors/images/sphx_glr_plot_regression_001.png
+   :alt: KNeighborsRegressor (k = 5, weights = 'uniform'), KNeighborsRegressor (k = 5, weights = 'distance')
+   :srcset: /auto_examples/neighbors/images/sphx_glr_plot_regression_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.160 seconds)
+   **Total running time of the script:** ( 0 minutes  0.138 seconds)
 
 
 .. _sphx_glr_download_auto_examples_neighbors_plot_regression.py:
