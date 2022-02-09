@@ -185,15 +185,15 @@
 <h1><a class="reference internal" href="../classes.html#module-sklearn.metrics" title="sklearn.metrics"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.metrics</span></code></a>.make_scorer<a class="headerlink" href="#sklearn-metrics-make-scorer" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="sklearn.metrics.make_scorer">
-<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">make_scorer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">score_func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">greater_is_better</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_proba</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/b26010065/sklearn/metrics/_scorer.py#L579"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.make_scorer" title="Permalink to this definition">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">sklearn.metrics.</span></span><span class="sig-name descname"><span class="pre">make_scorer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">score_func</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">greater_is_better</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_proba</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">needs_threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/scikit-learn/scikit-learn/blob/5d167a547/sklearn/metrics/_scorer.py#L579"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#sklearn.metrics.make_scorer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make a scorer from a performance metric or loss function.</p>
 <p>This factory function wraps scoring functions for use in
 <a class="reference internal" href="sklearn.model_selection.GridSearchCV.html#sklearn.model_selection.GridSearchCV" title="sklearn.model_selection.GridSearchCV"><code class="xref py py-class docutils literal notranslate"><span class="pre">GridSearchCV</span></code></a> and
 <a class="reference internal" href="sklearn.model_selection.cross_val_score.html#sklearn.model_selection.cross_val_score" title="sklearn.model_selection.cross_val_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">cross_val_score</span></code></a>.
 It takes a score function, such as <a class="reference internal" href="sklearn.metrics.accuracy_score.html#sklearn.metrics.accuracy_score" title="sklearn.metrics.accuracy_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">accuracy_score</span></code></a>,
 <a class="reference internal" href="sklearn.metrics.mean_squared_error.html#sklearn.metrics.mean_squared_error" title="sklearn.metrics.mean_squared_error"><code class="xref py py-func docutils literal notranslate"><span class="pre">mean_squared_error</span></code></a>,
-<code class="xref py py-func docutils literal notranslate"><span class="pre">adjusted_rand_index</span></code> or
-<code class="xref py py-func docutils literal notranslate"><span class="pre">average_precision</span></code>
+<a class="reference internal" href="sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score" title="sklearn.metrics.adjusted_rand_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">adjusted_rand_score</span></code></a> or
+<a class="reference internal" href="sklearn.metrics.average_precision_score.html#sklearn.metrics.average_precision_score" title="sklearn.metrics.average_precision_score"><code class="xref py py-func docutils literal notranslate"><span class="pre">average_precision_score</span></code></a>
 and returns a callable that scores an estimator’s output.
 The signature of the call is <code class="docutils literal notranslate"><span class="pre">(estimator,</span> <span class="pre">X,</span> <span class="pre">y)</span></code> where <code class="docutils literal notranslate"><span class="pre">estimator</span></code>
 is the model to be evaluated, <code class="docutils literal notranslate"><span class="pre">X</span></code> is the data and <code class="docutils literal notranslate"><span class="pre">y</span></code> is the
@@ -205,26 +205,26 @@ ground truth labeling (or <code class="docutils literal notranslate"><span class
 <dt><strong>score_func</strong><span class="classifier">callable</span></dt><dd><p>Score function (or loss function) with signature
 <code class="docutils literal notranslate"><span class="pre">score_func(y,</span> <span class="pre">y_pred,</span> <span class="pre">**kwargs)</span></code>.</p>
 </dd>
-<dt><strong>greater_is_better</strong><span class="classifier">bool, default=True</span></dt><dd><p>Whether score_func is a score function (default), meaning high is good,
-or a loss function, meaning low is good. In the latter case, the
-scorer object will sign-flip the outcome of the score_func.</p>
+<dt><strong>greater_is_better</strong><span class="classifier">bool, default=True</span></dt><dd><p>Whether <code class="docutils literal notranslate"><span class="pre">score_func</span></code> is a score function (default), meaning high is
+good, or a loss function, meaning low is good. In the latter case, the
+scorer object will sign-flip the outcome of the <code class="docutils literal notranslate"><span class="pre">score_func</span></code>.</p>
 </dd>
-<dt><strong>needs_proba</strong><span class="classifier">bool, default=False</span></dt><dd><p>Whether score_func requires predict_proba to get probability estimates
-out of a classifier.</p>
+<dt><strong>needs_proba</strong><span class="classifier">bool, default=False</span></dt><dd><p>Whether <code class="docutils literal notranslate"><span class="pre">score_func</span></code> requires <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> to get probability
+estimates out of a classifier.</p>
 <p>If True, for binary <code class="docutils literal notranslate"><span class="pre">y_true</span></code>, the score function is supposed to accept
 a 1D <code class="docutils literal notranslate"><span class="pre">y_pred</span></code> (i.e., probability of the positive class, shape
 <code class="docutils literal notranslate"><span class="pre">(n_samples,)</span></code>).</p>
 </dd>
-<dt><strong>needs_threshold</strong><span class="classifier">bool, default=False</span></dt><dd><p>Whether score_func takes a continuous decision certainty.
+<dt><strong>needs_threshold</strong><span class="classifier">bool, default=False</span></dt><dd><p>Whether <code class="docutils literal notranslate"><span class="pre">score_func</span></code> takes a continuous decision certainty.
 This only works for binary classification using estimators that
-have either a decision_function or predict_proba method.</p>
+have either a <code class="docutils literal notranslate"><span class="pre">decision_function</span></code> or <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> method.</p>
 <p>If True, for binary <code class="docutils literal notranslate"><span class="pre">y_true</span></code>, the score function is supposed to accept
 a 1D <code class="docutils literal notranslate"><span class="pre">y_pred</span></code> (i.e., probability of the positive class or the decision
 function, shape <code class="docutils literal notranslate"><span class="pre">(n_samples,)</span></code>).</p>
 <p>For example <code class="docutils literal notranslate"><span class="pre">average_precision</span></code> or the area under the roc curve
 can not be computed using discrete predictions alone.</p>
 </dd>
-<dt><strong>**kwargs</strong><span class="classifier">additional arguments</span></dt><dd><p>Additional parameters to be passed to score_func.</p>
+<dt><strong>**kwargs</strong><span class="classifier">additional arguments</span></dt><dd><p>Additional parameters to be passed to <code class="docutils literal notranslate"><span class="pre">score_func</span></code>.</p>
 </dd>
 </dl>
 </dd>
