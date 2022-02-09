@@ -414,39 +414,26 @@ lead to segmentation faults if the data contains NaNs.</p>
 <section id="environment-variables">
 <span id="environment-variable"></span><h3><span class="section-number">8.3.2.2. </span>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h3>
 <p>These environment variables should be set before importing scikit-learn.</p>
-<dl class="field-list">
-<dt class="field-odd">SKLEARN_SITE_JOBLIB</dt>
-<dd class="field-odd"><p>When this environment variable is set to a non zero value,
-scikit-learn uses the site joblib rather than its vendored version.
-Consequently, joblib must be installed for scikit-learn to run.
-Note that using the site joblib is at your own risks: the versions of
-scikit-learn and joblib need to be compatible. Currently, joblib 0.11+
-is supported. In addition, dumps from joblib.Memory might be incompatible,
-and you might loose some caches and have to redownload some datasets.</p>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 0.21: </span>As of version 0.21 this parameter has no effect, vendored joblib was
-removed and site joblib is always used.</p>
-</div>
-</dd>
-<dt class="field-even">SKLEARN_ASSUME_FINITE</dt>
-<dd class="field-even"><p>Sets the default value for the <code class="docutils literal notranslate"><span class="pre">assume_finite</span></code> argument of
+<dl class="field-list simple">
+<dt class="field-odd">SKLEARN_ASSUME_FINITE</dt>
+<dd class="field-odd"><p>Sets the default value for the <code class="docutils literal notranslate"><span class="pre">assume_finite</span></code> argument of
 <a class="reference internal" href="../modules/generated/sklearn.set_config.html#sklearn.set_config" title="sklearn.set_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.set_config</span></code></a>.</p>
 </dd>
-<dt class="field-odd">SKLEARN_WORKING_MEMORY</dt>
-<dd class="field-odd"><p>Sets the default value for the <code class="docutils literal notranslate"><span class="pre">working_memory</span></code> argument of
+<dt class="field-even">SKLEARN_WORKING_MEMORY</dt>
+<dd class="field-even"><p>Sets the default value for the <code class="docutils literal notranslate"><span class="pre">working_memory</span></code> argument of
 <a class="reference internal" href="../modules/generated/sklearn.set_config.html#sklearn.set_config" title="sklearn.set_config"><code class="xref py py-func docutils literal notranslate"><span class="pre">sklearn.set_config</span></code></a>.</p>
 </dd>
-<dt class="field-even">SKLEARN_SEED</dt>
-<dd class="field-even"><p>Sets the seed of the global random generator when running the tests,
+<dt class="field-odd">SKLEARN_SEED</dt>
+<dd class="field-odd"><p>Sets the seed of the global random generator when running the tests,
 for reproducibility.</p>
 </dd>
-<dt class="field-odd">SKLEARN_SKIP_NETWORK_TESTS</dt>
-<dd class="field-odd"><p>When this environment variable is set to a non zero value, the tests
+<dt class="field-even">SKLEARN_SKIP_NETWORK_TESTS</dt>
+<dd class="field-even"><p>When this environment variable is set to a non zero value, the tests
 that need network access are skipped. When this environment variable is
 not set then network tests are skipped.</p>
 </dd>
-<dt class="field-even">SKLEARN_ENABLE_DEBUG_CYTHON_DIRECTIVES</dt>
-<dd class="field-even"><p>When this environment variable is set to a non zero value, the <code class="docutils literal notranslate"><span class="pre">Cython</span></code>
+<dt class="field-odd">SKLEARN_ENABLE_DEBUG_CYTHON_DIRECTIVES</dt>
+<dd class="field-odd"><p>When this environment variable is set to a non zero value, the <code class="docutils literal notranslate"><span class="pre">Cython</span></code>
 derivative, <code class="docutils literal notranslate"><span class="pre">boundscheck</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>. This is useful for finding
 segfaults.</p>
 </dd>
