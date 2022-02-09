@@ -1,6 +1,6 @@
 .. |NumpyMinVersion| replace:: 1.14.6
 .. |ScipyMinVersion| replace:: 1.1.0
-.. |JoblibMinVersion| replace:: 0.11
+.. |JoblibMinVersion| replace:: 1.0.0
 .. |ThreadpoolctlMinVersion| replace:: 2.0.0
 .. |CythonMinVersion| replace:: 0.29.24
 .. |MatplotlibMinVersion| replace:: 2.2.3

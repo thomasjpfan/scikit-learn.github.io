@@ -3,7 +3,7 @@ Dependency              Minimum Version     Purpose
 ======================= =================== ====================================
 numpy                   1.14.6              build, install
 scipy                   1.1.0               build, install
-joblib                  0.11                install
+joblib                  1.0.0               install
 threadpoolctl           2.0.0               install
 cython                  0.29.24             build
 matplotlib              2.2.3               benchmark, docs, examples, tests
