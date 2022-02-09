@@ -177,7 +177,6 @@
 <li><a class="reference internal" href="#fitting">Fitting</a></li>
 <li><a class="reference internal" href="#estimated-attributes">Estimated Attributes</a></li>
 <li><a class="reference internal" href="#optional-arguments">Optional Arguments</a></li>
-<li><a class="reference internal" href="#pairwise-attributes">Pairwise Attributes</a></li>
 <li><a class="reference internal" href="#universal-attributes">Universal attributes</a></li>
 </ul>
 </li>
@@ -410,18 +409,6 @@ a second time.</p>
 <h4>Optional Arguments<a class="headerlink" href="#optional-arguments" title="Permalink to this headline">¶</a></h4>
 <p>In iterative algorithms, the number of iterations should be specified by
 an integer called <code class="docutils literal notranslate"><span class="pre">n_iter</span></code>.</p>
-</section>
-<section id="pairwise-attributes">
-<h4>Pairwise Attributes<a class="headerlink" href="#pairwise-attributes" title="Permalink to this headline">¶</a></h4>
-<p>An estimator that accepts <code class="docutils literal notranslate"><span class="pre">X</span></code> of shape <code class="docutils literal notranslate"><span class="pre">(n_samples,</span> <span class="pre">n_samples)</span></code> and defines
-a <a class="reference internal" href="../glossary.html#term-_pairwise"><span class="xref std std-term">_pairwise</span></a> property equal to <code class="docutils literal notranslate"><span class="pre">True</span></code> allows for cross-validation of
-the dataset, e.g. when <code class="docutils literal notranslate"><span class="pre">X</span></code> is a precomputed kernel matrix. Specifically,
-the <a class="reference internal" href="../glossary.html#term-_pairwise"><span class="xref std std-term">_pairwise</span></a> property is used by <code class="docutils literal notranslate"><span class="pre">utils.metaestimators._safe_split</span></code>
-to slice rows and columns.</p>
-<div class="deprecated">
-<p><span class="versionmodified deprecated">Deprecated since version 0.24: </span>The _pairwise attribute is deprecated in 0.24. From 1.1 (renaming of 0.26)
-onward, the <code class="docutils literal notranslate"><span class="pre">pairwise</span></code> estimator tag should be used instead.</p>
-</div>
 </section>
 <section id="universal-attributes">
 <h4>Universal attributes<a class="headerlink" href="#universal-attributes" title="Permalink to this headline">¶</a></h4>
@@ -715,10 +702,12 @@ stateless and dummy transformers!</p>
 similar methods consists of pairwise measures over samples rather than a
 feature representation for each sample.  It is usually <code class="docutils literal notranslate"><span class="pre">True</span></code> where an
 estimator has a <code class="docutils literal notranslate"><span class="pre">metric</span></code> or <code class="docutils literal notranslate"><span class="pre">affinity</span></code> or <code class="docutils literal notranslate"><span class="pre">kernel</span></code> parameter with value
-‘precomputed’. Its primary purpose is that when a <a class="reference internal" href="../glossary.html#term-meta-estimator"><span class="xref std std-term">meta-estimator</span></a>
-extracts a sub-sample of data intended for a pairwise estimator, the data
-needs to be indexed on both axes, while other data is indexed only on the
-first axis.</p>
+‘precomputed’. Its primary purpose is to support a <a class="reference internal" href="../glossary.html#term-meta-estimator"><span class="xref std std-term">meta-estimator</span></a>
+or a cross validation procedure that extracts a sub-sample of data intended
+for a pairwise estimator, where the data needs to be indexed on both axes.
+Specifically, this tag is used by
+<code class="xref py py-func docutils literal notranslate"><span class="pre">_safe_split</span></code> to slice rows and
+columns.</p>
 </dd>
 <dt>preserves_dtype (default=``[np.float64]``)</dt><dd><p>applies only on transformers. It corresponds to the data types which will
 be preserved such that <code class="docutils literal notranslate"><span class="pre">X_trans.dtype</span></code> is the same as <code class="docutils literal notranslate"><span class="pre">X.dtype</span></code> after
