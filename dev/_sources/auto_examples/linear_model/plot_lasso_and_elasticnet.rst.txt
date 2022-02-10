@@ -26,33 +26,12 @@ Estimates Lasso and Elastic-Net regression models on a manually generated
 sparse signal corrupted with an additive noise. Estimated coefficients are
 compared with the ground-truth.
 
-.. GENERATED FROM PYTHON SOURCE LINES 11-90
+.. GENERATED FROM PYTHON SOURCE LINES 13-15
 
+Data Generation
+---------------------------------------------------
 
-
-.. image-sg:: /auto_examples/linear_model/images/sphx_glr_plot_lasso_and_elasticnet_001.png
-   :alt: Lasso $R^2$: 0.658, Elastic Net $R^2$: 0.643
-   :srcset: /auto_examples/linear_model/images/sphx_glr_plot_lasso_and_elasticnet_001.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Lasso(alpha=0.1)
-    r^2 on test data : 0.658064
-    ElasticNet(alpha=0.1, l1_ratio=0.7)
-    r^2 on test data : 0.642515
-
-
-
-
-
-
-|
+.. GENERATED FROM PYTHON SOURCE LINES 15-40
 
 .. code-block:: default
 
@@ -62,8 +41,6 @@ compared with the ground-truth.
 
     from sklearn.metrics import r2_score
 
-    # #############################################################################
-    # Generate some sparse data to play with
     np.random.seed(42)
 
     n_samples, n_features = 50, 100
@@ -83,8 +60,23 @@ compared with the ground-truth.
     X_train, y_train = X[: n_samples // 2], y[: n_samples // 2]
     X_test, y_test = X[n_samples // 2 :], y[n_samples // 2 :]
 
-    # #############################################################################
-    # Lasso
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 41-43
+
+Lasso
+---------------------------------------------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 43-54
+
+.. code-block:: default
+
+
     from sklearn.linear_model import Lasso
 
     alpha = 0.1
@@ -95,8 +87,32 @@ compared with the ground-truth.
     print(lasso)
     print("r^2 on test data : %f" % r2_score_lasso)
 
-    # #############################################################################
-    # ElasticNet
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Lasso(alpha=0.1)
+    r^2 on test data : 0.658064
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 55-57
+
+ElasticNet
+---------------------------------------------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 57-68
+
+.. code-block:: default
+
+
     from sklearn.linear_model import ElasticNet
 
     enet = ElasticNet(alpha=alpha, l1_ratio=0.7)
@@ -105,6 +121,33 @@ compared with the ground-truth.
     r2_score_enet = r2_score(y_test, y_pred_enet)
     print(enet)
     print("r^2 on test data : %f" % r2_score_enet)
+
+
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    ElasticNet(alpha=0.1, l1_ratio=0.7)
+    r^2 on test data : 0.642515
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 69-71
+
+Plot
+---------------------------------------------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 71-101
+
+.. code-block:: default
+
 
     m, s, _ = plt.stem(
         np.where(enet.coef_)[0],
@@ -137,9 +180,20 @@ compared with the ground-truth.
     plt.show()
 
 
+
+.. image-sg:: /auto_examples/linear_model/images/sphx_glr_plot_lasso_and_elasticnet_001.png
+   :alt: Lasso $R^2$: 0.658, Elastic Net $R^2$: 0.643
+   :srcset: /auto_examples/linear_model/images/sphx_glr_plot_lasso_and_elasticnet_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.086 seconds)
+   **Total running time of the script:** ( 0 minutes  0.084 seconds)
 
 
 .. _sphx_glr_download_auto_examples_linear_model_plot_lasso_and_elasticnet.py:
