@@ -244,7 +244,7 @@ Thus, let's use such a :class:`~sklearn.kernel_ridge.KernelRidge`.
 
  .. code-block:: none
 
-    Fitting KernelRidge with default kernel: 0.001 seconds
+    Fitting KernelRidge with default kernel: 0.000 seconds
 
 
 
@@ -357,7 +357,7 @@ parameter and the kernel parameters.
 
  .. code-block:: none
 
-    Time for KernelRidge fitting: 2.667 seconds
+    Time for KernelRidge fitting: 2.600 seconds
 
 
 
@@ -500,7 +500,7 @@ estimate the noise in the dataset.
 
  .. code-block:: none
 
-    Time for GaussianProcessRegressor fitting: 0.028 seconds
+    Time for GaussianProcessRegressor fitting: 0.027 seconds
 
 
 
@@ -729,7 +729,7 @@ also increases.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.224 seconds)
+   **Total running time of the script:** ( 0 minutes  3.133 seconds)
 
 
 .. _sphx_glr_download_auto_examples_gaussian_process_plot_compare_gpr_krr.py:
