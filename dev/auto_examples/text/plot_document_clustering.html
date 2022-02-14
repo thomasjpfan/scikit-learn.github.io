@@ -169,7 +169,13 @@
         </div>
             <div class="sk-sidebar-toc">
               <ul>
-<li><a class="reference internal" href="#">Clustering text documents using k-means</a></li>
+<li><a class="reference internal" href="#">Clustering text documents using k-means</a><ul>
+<li><a class="reference internal" href="#load-some-categories-from-the-training-set">Load some categories from the training set</a></li>
+<li><a class="reference internal" href="#feature-extraction">Feature Extraction</a></li>
+<li><a class="reference internal" href="#clustering">Clustering</a></li>
+<li><a class="reference internal" href="#performance-metrics">Performance metrics</a></li>
+</ul>
+</li>
 </ul>
 
             </div>
@@ -224,49 +230,6 @@ of dimensionality.</p>
 <p>Note: as k-means is optimizing a non-convex objective function, it will likely
 end up in a local optimum. Several runs with independent random init might be
 necessary to get a good convergence.</p>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: plot_document_clustering.py [options]
-
-Options:
-  -h, --help            show this help message and exit
-  --lsa=N_COMPONENTS    Preprocess documents with latent semantic analysis.
-  --no-minibatch        Use ordinary k-means algorithm (in batch mode).
-  --no-idf              Disable Inverse Document Frequency feature weighting.
-  --use-hashing         Use a hashing feature vectorizer
-  --n-features=N_FEATURES
-                        Maximum number of features (dimensions) to extract
-                        from text.
-  --verbose             Print progress reports inside k-means algorithm.
-
-Loading 20 newsgroups dataset for categories:
-[&#39;alt.atheism&#39;, &#39;talk.religion.misc&#39;, &#39;comp.graphics&#39;, &#39;sci.space&#39;]
-3387 documents
-4 categories
-
-Extracting features from the training dataset using a sparse vectorizer
-done in 0.667928s
-n_samples: 3387, n_features: 10000
-
-Clustering sparse data with MiniBatchKMeans(batch_size=1000, init_size=1000, n_clusters=4, n_init=1,
-                verbose=False)
-done in 0.053s
-
-Homogeneity: 0.228
-Completeness: 0.391
-V-measure: 0.288
-Adjusted Rand-Index: 0.116
-Silhouette Coefficient: 0.007
-
-Top terms per cluster:
-Cluster 0: sandvik kent apple newton com alink ksand cookamunga tourist bureau
-Cluster 1: space henry nasa access toronto digex alaska pat shuttle gov
-Cluster 2: com god university article graphics know posting don host nntp
-Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
-</pre></div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Author: Peter Prettenhofer &lt;peter.prettenhofer@gmail.com&gt;</span>
 <span class="c1">#         Lars Buitinck</span>
 <span class="c1"># License: BSD 3 clause</span>
@@ -336,13 +299,15 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="vm">__doc__</span><span class="p">)</span>
-<span class="n">op</span><span class="o">.</span><span class="n">print_help</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">()</span>
 
 
 <span class="k">def</span> <span class="nf">is_interactive</span><span class="p">():</span>
     <span class="k">return</span> <span class="ow">not</span> <span class="nb">hasattr</span><span class="p">(</span><a href="https://docs.python.org/3/library/sys.html#sys.modules" title="sys.modules" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-data"><span class="n">sys</span><span class="o">.</span><span class="n">modules</span></a><span class="p">[</span><span class="s2">&quot;__main__&quot;</span><span class="p">],</span> <span class="s2">&quot;__file__&quot;</span><span class="p">)</span>
 
+
+<span class="k">if</span> <span class="ow">not</span> <span class="n">is_interactive</span><span class="p">():</span>
+    <span class="n">op</span><span class="o">.</span><span class="n">print_help</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">()</span>
 
 <span class="c1"># work-around for Jupyter notebook and IPython console</span>
 <span class="n">argv</span> <span class="o">=</span> <span class="p">[]</span> <span class="k">if</span> <span class="n">is_interactive</span><span class="p">()</span> <span class="k">else</span> <a href="https://docs.python.org/3/library/sys.html#sys.argv" title="sys.argv" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-data"><span class="n">sys</span><span class="o">.</span><span class="n">argv</span></a><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
@@ -350,11 +315,11 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">args</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">op</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;this script takes no arguments.&quot;</span><span class="p">)</span>
     <a href="https://docs.python.org/3/library/sys.html#sys.exit" title="sys.exit" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-function"><span class="n">sys</span><span class="o">.</span><span class="n">exit</span></a><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-
-
-<span class="c1"># #############################################################################</span>
-<span class="c1"># Load some categories from the training set</span>
-<span class="n">categories</span> <span class="o">=</span> <span class="p">[</span>
+</pre></div>
+</div>
+<section id="load-some-categories-from-the-training-set">
+<h2>Load some categories from the training set<a class="headerlink" href="#load-some-categories-from-the-training-set" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">categories</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s2">&quot;alt.atheism&quot;</span><span class="p">,</span>
     <span class="s2">&quot;talk.religion.misc&quot;</span><span class="p">,</span>
     <span class="s2">&quot;comp.graphics&quot;</span><span class="p">,</span>
@@ -373,8 +338,19 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> documents&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%d</span><span class="s2"> categories&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">target_names</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">()</span>
-
-<span class="n">labels</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading 20 newsgroups dataset for categories:
+[&#39;alt.atheism&#39;, &#39;talk.religion.misc&#39;, &#39;comp.graphics&#39;, &#39;sci.space&#39;]
+3387 documents
+4 categories
+</pre></div>
+</div>
+</section>
+<section id="feature-extraction">
+<h2>Feature Extraction<a class="headerlink" href="#feature-extraction" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target</span>
 <span class="n">true_k</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.unique.html#numpy.unique" title="numpy.unique" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">unique</span></a><span class="p">(</span><span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Extracting features from the training dataset using a sparse vectorizer&quot;</span><span class="p">)</span>
@@ -430,12 +406,18 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
     <span class="p">)</span>
 
     <span class="nb">print</span><span class="p">()</span>
-
-
-<span class="c1"># #############################################################################</span>
-<span class="c1"># Do the actual clustering</span>
-
-<span class="k">if</span> <span class="n">opts</span><span class="o">.</span><span class="n">minibatch</span><span class="p">:</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Extracting features from the training dataset using a sparse vectorizer
+done in 0.730322s
+n_samples: 3387, n_features: 10000
+</pre></div>
+</div>
+</section>
+<section id="clustering">
+<h2>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">opts</span><span class="o">.</span><span class="n">minibatch</span><span class="p">:</span>
     <span class="n">km</span> <span class="o">=</span> <a href="../../modules/generated/sklearn.cluster.MiniBatchKMeans.html#sklearn.cluster.MiniBatchKMeans" title="sklearn.cluster.MiniBatchKMeans" class="sphx-glr-backref-module-sklearn-cluster sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">MiniBatchKMeans</span></a><span class="p">(</span>
         <span class="n">n_clusters</span><span class="o">=</span><span class="n">true_k</span><span class="p">,</span>
         <span class="n">init</span><span class="o">=</span><span class="s2">&quot;k-means++&quot;</span><span class="p">,</span>
@@ -458,8 +440,18 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <span class="n">km</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;done in </span><span class="si">%0.3f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span></a><span class="p">()</span> <span class="o">-</span> <span class="n">t0</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Homogeneity: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" title="sklearn.metrics.homogeneity_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">homogeneity_score</span></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Clustering sparse data with MiniBatchKMeans(batch_size=1000, init_size=1000, n_clusters=4, n_init=1,
+                verbose=False)
+done in 0.056s
+</pre></div>
+</div>
+</section>
+<section id="performance-metrics">
+<h2>Performance metrics<a class="headerlink" href="#performance-metrics" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Homogeneity: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.homogeneity_score.html#sklearn.metrics.homogeneity_score" title="sklearn.metrics.homogeneity_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">homogeneity_score</span></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Completeness: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.completeness_score.html#sklearn.metrics.completeness_score" title="sklearn.metrics.completeness_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">completeness_score</span></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;V-measure: </span><span class="si">%0.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.v_measure_score.html#sklearn.metrics.v_measure_score" title="sklearn.metrics.v_measure_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">v_measure_score</span></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Adjusted Rand-Index: </span><span class="si">%.3f</span><span class="s2">&quot;</span> <span class="o">%</span> <a href="../../modules/generated/sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score" title="sklearn.metrics.adjusted_rand_score" class="sphx-glr-backref-module-sklearn-metrics sphx-glr-backref-type-py-function"><span class="n">metrics</span><span class="o">.</span><span class="n">adjusted_rand_score</span></a><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">km</span><span class="o">.</span><span class="n">labels_</span><span class="p">))</span>
@@ -469,9 +461,17 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">()</span>
-
-
-<span class="k">if</span> <span class="ow">not</span> <span class="n">opts</span><span class="o">.</span><span class="n">use_hashing</span><span class="p">:</span>
+</pre></div>
+</div>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Homogeneity: 0.228
+Completeness: 0.391
+V-measure: 0.288
+Adjusted Rand-Index: 0.116
+Silhouette Coefficient: 0.007
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="ow">not</span> <span class="n">opts</span><span class="o">.</span><span class="n">use_hashing</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Top terms per cluster:&quot;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">opts</span><span class="o">.</span><span class="n">n_components</span><span class="p">:</span>
@@ -488,7 +488,15 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
         <span class="nb">print</span><span class="p">()</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.044 seconds)</p>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Top terms per cluster:
+Cluster 0: sandvik kent apple newton com alink ksand cookamunga tourist bureau
+Cluster 1: space henry nasa access toronto digex alaska pat shuttle gov
+Cluster 2: com god university article graphics know posting don host nntp
+Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
+</pre></div>
+</div>
+<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  1.122 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-text-plot-document-clustering-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/text/plot_document_clustering.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo29.svg" width="150px" /></a>
@@ -501,6 +509,7 @@ Cluster 3: sgi livesey keith morality jon wpd solntze caltech objective moral
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
 </section>
 
 

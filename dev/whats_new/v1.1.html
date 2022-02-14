@@ -584,6 +584,14 @@ for the highs based solvers.
 In addition, those solvers now use the CSC matrix right from the
 beginning which speeds up fitting.
 <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/22206">#22206</a> by <a class="reference external" href="https://github.com/lorentzenchr">Christian Lorentzen</a>.</p></li>
+<li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  <a class="reference internal" href="../modules/generated/sklearn.linear_model.LogisticRegression.html#sklearn.linear_model.LogisticRegression" title="sklearn.linear_model.LogisticRegression"><code class="xref py py-class docutils literal notranslate"><span class="pre">LogisticRegression</span></code></a> is faster for
+<code class="docutils literal notranslate"><span class="pre">solvers=&quot;lbfgs&quot;</span></code> and <code class="docutils literal notranslate"><span class="pre">solver=&quot;newton-cg&quot;</span></code>, for binary and in particular for
+multiclass problems thanks to the new private loss function module. In the multiclass
+case, the memory consumption has also been reduced for these solvers as the target is
+now label encoded (mapped to integers) instead of label binarized (one-hot encoded).
+The more classes, the larger the benefit.
+<a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21808">#21808</a>, <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/20567">#20567</a> and <a class="reference external" href="https://github.com/scikit-learn/scikit-learn/pull/21814">#21814</a> by
+<a class="reference external" href="https://github.com/lorentzenchr">Christian Lorentzen</a>.</p></li>
 <li><p><span class="raw-html"><span class="badge badge-info">Enhancement</span></span>  Rename parameter <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code> to <code class="docutils literal notranslate"><span class="pre">estimator</span></code> in
 <a class="reference internal" href="../modules/generated/sklearn.linear_model.RANSACRegressor.html#sklearn.linear_model.RANSACRegressor" title="sklearn.linear_model.RANSACRegressor"><code class="xref py py-class docutils literal notranslate"><span class="pre">linear_model.RANSACRegressor</span></code></a> to improve readability and consistency.
 <code class="docutils literal notranslate"><span class="pre">base_estimator</span></code> is deprecated and will be removed in 1.3.
