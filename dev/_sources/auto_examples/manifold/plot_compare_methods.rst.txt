@@ -42,7 +42,7 @@ representation of the data in the low-dimensional space.
 
 
 .. image-sg:: /auto_examples/manifold/images/sphx_glr_plot_compare_methods_001.png
-   :alt: Manifold Learning with 1000 points, 10 neighbors, LLE (0.076 sec), LTSA (0.13 sec), Hessian LLE (0.2 sec), Modified LLE (0.15 sec), Isomap (0.4 sec), MDS (0.64 sec), SE (0.058 sec), t-SNE (1.7 sec)
+   :alt: Manifold Learning with 1000 points, 10 neighbors, LLE (0.077 sec), LTSA (0.14 sec), Hessian LLE (0.21 sec), Modified LLE (0.15 sec), Isomap (0.41 sec), MDS (0.67 sec), SE (0.058 sec), t-SNE (1.7 sec)
    :srcset: /auto_examples/manifold/images/sphx_glr_plot_compare_methods_001.png
    :class: sphx-glr-single-img
 
@@ -53,12 +53,12 @@ representation of the data in the low-dimensional space.
 
  .. code-block:: none
 
-    LLE: 0.076 sec
-    LTSA: 0.13 sec
-    Hessian LLE: 0.2 sec
+    LLE: 0.077 sec
+    LTSA: 0.14 sec
+    Hessian LLE: 0.21 sec
     Modified LLE: 0.15 sec
-    Isomap: 0.4 sec
-    MDS: 0.64 sec
+    Isomap: 0.41 sec
+    MDS: 0.67 sec
     SE: 0.058 sec
     /home/circleci/project/sklearn/manifold/_t_sne.py:786: FutureWarning: The default learning rate in TSNE will change from 200.0 to 'auto' in 1.2.
       warnings.warn(
@@ -149,7 +149,7 @@ representation of the data in the low-dimensional space.
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  3.806 seconds)
+   **Total running time of the script:** ( 0 minutes  3.951 seconds)
 
 
 .. _sphx_glr_download_auto_examples_manifold_plot_compare_methods.py:
