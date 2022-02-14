@@ -5,18 +5,18 @@
 
 Computation times
 =================
-**00:11.912** total execution time for **auto_examples_compose** files:
+**00:13.173** total execution time for **auto_examples_compose** files:
 
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_compose_plot_compare_reduction.py` (``plot_compare_reduction.py``)                           | 00:03.872 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_compose_plot_compare_reduction.py` (``plot_compare_reduction.py``)                           | 00:04.077 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_compose_plot_digits_pipe.py` (``plot_digits_pipe.py``)                                       | 00:02.714 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_compose_plot_digits_pipe.py` (``plot_digits_pipe.py``)                                       | 00:03.499 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_compose_plot_column_transformer.py` (``plot_column_transformer.py``)                         | 00:02.461 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_compose_plot_column_transformer.py` (``plot_column_transformer.py``)                         | 00:02.559 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_compose_plot_column_transformer_mixed_types.py` (``plot_column_transformer_mixed_types.py``) | 00:01.428 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_compose_plot_column_transformer_mixed_types.py` (``plot_column_transformer_mixed_types.py``) | 00:01.471 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_compose_plot_transformed_target.py` (``plot_transformed_target.py``)                         | 00:01.148 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_compose_plot_transformed_target.py` (``plot_transformed_target.py``)                         | 00:01.192 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_auto_examples_compose_plot_feature_union.py` (``plot_feature_union.py``)                                   | 00:00.290 | 0.0 MB |
+| :ref:`sphx_glr_auto_examples_compose_plot_feature_union.py` (``plot_feature_union.py``)                                   | 00:00.374 | 0.0 MB |
 +---------------------------------------------------------------------------------------------------------------------------+-----------+--------+
