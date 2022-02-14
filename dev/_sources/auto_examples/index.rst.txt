@@ -4698,6 +4698,27 @@ Examples related to the :mod:`sklearn.model_selection` module.
 
 .. raw:: html
 
+    <div class="sphx-glr-thumbcontainer" tooltip="Illustration of how the performance of an estimator on unseen data (test data) is not the same ...">
+
+.. only:: html
+
+ .. figure:: /auto_examples/model_selection/images/thumb/sphx_glr_plot_train_error_vs_test_error_thumb.png
+     :alt: Train error vs Test error
+
+     :ref:`sphx_glr_auto_examples_model_selection_plot_train_error_vs_test_error.py`
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /auto_examples/model_selection/plot_train_error_vs_test_error
+
+.. raw:: html
+
     <div class="sphx-glr-thumbcontainer" tooltip="This examples shows how a classifier is optimized by cross-validation, which is done using the ...">
 
 .. only:: html
@@ -4737,27 +4758,6 @@ Examples related to the :mod:`sklearn.model_selection` module.
    :hidden:
 
    /auto_examples/model_selection/plot_randomized_search
-
-.. raw:: html
-
-    <div class="sphx-glr-thumbcontainer" tooltip="Illustration of how the performance of an estimator on unseen data (test data) is not the same ...">
-
-.. only:: html
-
- .. figure:: /auto_examples/model_selection/images/thumb/sphx_glr_plot_train_error_vs_test_error_thumb.png
-     :alt: Train error vs Test error
-
-     :ref:`sphx_glr_auto_examples_model_selection_plot_train_error_vs_test_error.py`
-
-.. raw:: html
-
-    </div>
-
-
-.. toctree::
-   :hidden:
-
-   /auto_examples/model_selection/plot_train_error_vs_test_error
 
 .. raw:: html
 
