@@ -22,63 +22,30 @@
 Univariate Feature Selection
 ============================
 
-An example showing univariate feature selection.
+This notebook is an example of using univariate feature selection
+to improve classification accuracy on a noisy dataset.
 
-Noisy (non informative) features are added to the iris data and
-univariate feature selection is applied. For each feature, we plot the
-p-values for the univariate feature selection and the corresponding
-weights of an SVM. We can see that univariate feature selection
-selects the informative features and that these have larger SVM weights.
+In this example, some noisy (non informative) features are added to
+the iris dataset. Support vector machine (SVM) is used to classify the
+dataset both before and after applying univariate feature selection.
+For each feature, we plot the p-values for the univariate feature selection
+and the corresponding weights of SVMs. With this, we will compare model
+accuracy and examine the impact of univariate feature selection on model
+weights.
 
-In the total set of features, only the 4 first ones are significant. We
-can see that they have the highest score with univariate feature
-selection. The SVM assigns a large weight to one of these features, but also
-Selects many of the non-informative features.
-Applying univariate feature selection before the SVM
-increases the SVM weight attributed to the significant features, and will
-thus improve classification.
+.. GENERATED FROM PYTHON SOURCE LINES 20-23
 
-.. GENERATED FROM PYTHON SOURCE LINES 23-106
+Generate sample data
+--------------------
 
 
-
-.. image-sg:: /auto_examples/feature_selection/images/sphx_glr_plot_feature_selection_001.png
-   :alt: Comparing feature selection
-   :srcset: /auto_examples/feature_selection/images/sphx_glr_plot_feature_selection_001.png
-   :class: sphx-glr-single-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Classification accuracy without selecting features: 0.789
-    Classification accuracy after univariate feature selection: 0.868
-
-
-
-
-
-
-|
+.. GENERATED FROM PYTHON SOURCE LINES 23-39
 
 .. code-block:: default
 
-
     import numpy as np
-    import matplotlib.pyplot as plt
-
     from sklearn.datasets import load_iris
     from sklearn.model_selection import train_test_split
-    from sklearn.preprocessing import MinMaxScaler
-    from sklearn.svm import LinearSVC
-    from sklearn.pipeline import make_pipeline
-    from sklearn.feature_selection import SelectKBest, f_classif
-
-    # #############################################################################
-    # Import some data to play with
 
     # The iris dataset
     X, y = load_iris(return_X_y=True)
@@ -92,25 +59,88 @@ thus improve classification.
     # Split dataset to select feature and evaluate the classifier
     X_train, X_test, y_train, y_test = train_test_split(X, y, stratify=y, random_state=0)
 
-    plt.figure(1)
-    plt.clf()
 
-    X_indices = np.arange(X.shape[-1])
 
-    # #############################################################################
-    # Univariate feature selection with F-test for feature scoring
-    # We use the default selection function to select the four
-    # most significant features
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 40-46
+
+Univariate feature selection
+----------------------------
+
+Univariate feature selection with F-test for feature scoring.
+We use the default selection function to select
+the four most significant features.
+
+.. GENERATED FROM PYTHON SOURCE LINES 46-53
+
+.. code-block:: default
+
+    from sklearn.feature_selection import SelectKBest, f_classif
+
     selector = SelectKBest(f_classif, k=4)
     selector.fit(X_train, y_train)
     scores = -np.log10(selector.pvalues_)
     scores /= scores.max()
-    plt.bar(
-        X_indices - 0.45, scores, width=0.2, label=r"Univariate score ($-Log(p_{value})$)"
-    )
 
-    # #############################################################################
-    # Compare to the weights of an SVM
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 54-65
+
+.. code-block:: default
+
+    import matplotlib.pyplot as plt
+
+    X_indices = np.arange(X.shape[-1])
+    plt.figure(1)
+    plt.clf()
+    plt.bar(X_indices - 0.05, scores, width=0.2)
+    plt.title("Feature univariate score")
+    plt.xlabel("Feature number")
+    plt.ylabel(r"Univariate score ($-Log(p_{value})$)")
+    plt.show()
+
+
+
+
+.. image-sg:: /auto_examples/feature_selection/images/sphx_glr_plot_feature_selection_001.png
+   :alt: Feature univariate score
+   :srcset: /auto_examples/feature_selection/images/sphx_glr_plot_feature_selection_001.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 66-69
+
+In the total set of features, only the 4 of the original features are significant.
+We can see that they have the highest score with univariate feature
+selection.
+
+.. GENERATED FROM PYTHON SOURCE LINES 71-75
+
+Compare with SVMs
+-----------------
+
+Without univariate feature selection
+
+.. GENERATED FROM PYTHON SOURCE LINES 75-90
+
+.. code-block:: default
+
+    from sklearn.pipeline import make_pipeline
+    from sklearn.preprocessing import MinMaxScaler
+    from sklearn.svm import LinearSVC
+
     clf = make_pipeline(MinMaxScaler(), LinearSVC())
     clf.fit(X_train, y_train)
     print(
@@ -122,7 +152,28 @@ thus improve classification.
     svm_weights = np.abs(clf[-1].coef_).sum(axis=0)
     svm_weights /= svm_weights.sum()
 
-    plt.bar(X_indices - 0.25, svm_weights, width=0.2, label="SVM weight")
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Classification accuracy without selecting features: 0.789
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 91-92
+
+After univariate feature selection
+
+.. GENERATED FROM PYTHON SOURCE LINES 92-103
+
+.. code-block:: default
 
     clf_selected = make_pipeline(SelectKBest(f_classif, k=4), MinMaxScaler(), LinearSVC())
     clf_selected.fit(X_train, y_train)
@@ -135,13 +186,37 @@ thus improve classification.
     svm_weights_selected = np.abs(clf_selected[-1].coef_).sum(axis=0)
     svm_weights_selected /= svm_weights_selected.sum()
 
+
+
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Classification accuracy after univariate feature selection: 0.868
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 104-124
+
+.. code-block:: default
+
+    plt.bar(
+        X_indices - 0.45, scores, width=0.2, label=r"Univariate score ($-Log(p_{value})$)"
+    )
+
+    plt.bar(X_indices - 0.25, svm_weights, width=0.2, label="SVM weight")
+
     plt.bar(
         X_indices[selector.get_support()] - 0.05,
         svm_weights_selected,
         width=0.2,
         label="SVM weights after selection",
     )
-
 
     plt.title("Comparing feature selection")
     plt.xlabel("Feature number")
@@ -151,9 +226,29 @@ thus improve classification.
     plt.show()
 
 
+
+
+.. image-sg:: /auto_examples/feature_selection/images/sphx_glr_plot_feature_selection_002.png
+   :alt: Comparing feature selection
+   :srcset: /auto_examples/feature_selection/images/sphx_glr_plot_feature_selection_002.png
+   :class: sphx-glr-single-img
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 125-130
+
+Without univariate feature selection, the SVM assigns a large weight
+to the first 4 original significant features, but also selects many of the
+non-informative features. Applying univariate feature selection before
+the SVM increases the SVM weight attributed to the significant features,
+and will thus improve classification.
+
+
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  0.098 seconds)
+   **Total running time of the script:** ( 0 minutes  0.175 seconds)
 
 
 .. _sphx_glr_download_auto_examples_feature_selection_plot_feature_selection.py:

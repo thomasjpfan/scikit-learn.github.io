@@ -2660,7 +2660,7 @@ Examples concerning the :mod:`sklearn.feature_selection` module.
 
 .. raw:: html
 
-    <div class="sphx-glr-thumbcontainer" tooltip="An example showing univariate feature selection.">
+    <div class="sphx-glr-thumbcontainer" tooltip="This notebook is an example of using univariate feature selection to improve classification acc...">
 
 .. only:: html
 
