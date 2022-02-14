@@ -30,62 +30,7 @@ either in bulk or atomic (i.e. one by one) mode.
 
 The plots represent the distribution of the prediction latency as a boxplot.
 
-.. GENERATED FROM PYTHON SOURCE LINES 15-345
-
-
-
-.. rst-class:: sphx-glr-horizontal
-
-
-    *
-
-      .. image-sg:: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_001.png
-         :alt: Prediction Time per Instance - Atomic, 100 feats.
-         :srcset: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_001.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_002.png
-         :alt: Prediction Time per Instance - Bulk (100), 100 feats.
-         :srcset: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_002.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_003.png
-         :alt: Evolution of Prediction Time with #Features
-         :srcset: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_003.png
-         :class: sphx-glr-multi-img
-
-    *
-
-      .. image-sg:: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_004.png
-         :alt: Prediction Throughput for different estimators (100 features)
-         :srcset: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_004.png
-         :class: sphx-glr-multi-img
-
-
-.. rst-class:: sphx-glr-script-out
-
- Out:
-
- .. code-block:: none
-
-    Benchmarking SGDRegressor(alpha=0.01, l1_ratio=0.25, penalty='elasticnet', tol=0.0001)
-    Benchmarking RandomForestRegressor()
-    Benchmarking SVR()
-    benchmarking with 100 features
-    benchmarking with 250 features
-    benchmarking with 500 features
-    example run in 10.29s
-
-
-
-
-
-
-|
+.. GENERATED FROM PYTHON SOURCE LINES 15-41
 
 .. code-block:: default
 
@@ -113,6 +58,24 @@ The plots represent the distribution of the prediction latency as a boxplot.
     def _not_in_sphinx():
         # Hack to detect whether we are running by the sphinx builder
         return "__file__" in globals()
+
+
+
+
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 42-44
+
+Benchmark and plot helper functions
+-----------------------------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 44-297
+
+.. code-block:: default
+
 
 
     def atomic_benchmark_estimator(estimator, X_test, verbose=False):
@@ -366,13 +329,23 @@ The plots represent the distribution of the prediction latency as a boxplot.
         plt.show()
 
 
-    # #############################################################################
-    # Main code
 
-    start_time = time.time()
 
-    # #############################################################################
-    # Benchmark bulk/atomic prediction speed for various regressors
+
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 298-300
+
+Benchmark bulk/atomic prediction speed for various regressors
+-------------------------------------------------------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 300-330
+
+.. code-block:: default
+
+
     configuration = {
         "n_train": int(1e3),
         "n_test": int(1e2),
@@ -402,7 +375,50 @@ The plots represent the distribution of the prediction latency as a boxplot.
     }
     benchmark(configuration)
 
-    # benchmark n_features influence on prediction speed
+
+
+
+.. rst-class:: sphx-glr-horizontal
+
+
+    *
+
+      .. image-sg:: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_001.png
+         :alt: Prediction Time per Instance - Atomic, 100 feats.
+         :srcset: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_001.png
+         :class: sphx-glr-multi-img
+
+    *
+
+      .. image-sg:: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_002.png
+         :alt: Prediction Time per Instance - Bulk (100), 100 feats.
+         :srcset: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_002.png
+         :class: sphx-glr-multi-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    Benchmarking SGDRegressor(alpha=0.01, l1_ratio=0.25, penalty='elasticnet', tol=0.0001)
+    Benchmarking RandomForestRegressor()
+    Benchmarking SVR()
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 331-333
+
+Benchmark n_features influence on prediction speed
+--------------------------------------------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 333-344
+
+.. code-block:: default
+
+
     percentile = 90
     percentiles = n_feature_influence(
         {"ridge": Ridge()},
@@ -413,17 +429,56 @@ The plots represent the distribution of the prediction latency as a boxplot.
     )
     plot_n_features_influence(percentiles, percentile)
 
-    # benchmark throughput
+
+
+
+.. image-sg:: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_003.png
+   :alt: Evolution of Prediction Time with #Features
+   :srcset: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_003.png
+   :class: sphx-glr-single-img
+
+
+.. rst-class:: sphx-glr-script-out
+
+ Out:
+
+ .. code-block:: none
+
+    benchmarking with 100 features
+    benchmarking with 250 features
+    benchmarking with 500 features
+
+
+
+
+.. GENERATED FROM PYTHON SOURCE LINES 345-347
+
+Benchmark throughput
+--------------------
+
+.. GENERATED FROM PYTHON SOURCE LINES 347-350
+
+.. code-block:: default
+
+
     throughputs = benchmark_throughputs(configuration)
     plot_benchmark_throughput(throughputs, configuration)
 
-    stop_time = time.time()
-    print("example run in %.2fs" % (stop_time - start_time))
+
+
+.. image-sg:: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_004.png
+   :alt: Prediction Throughput for different estimators (100 features)
+   :srcset: /auto_examples/applications/images/sphx_glr_plot_prediction_latency_004.png
+   :class: sphx-glr-single-img
+
+
+
+
 
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  10.574 seconds)
+   **Total running time of the script:** ( 0 minutes  10.711 seconds)
 
 
 .. _sphx_glr_download_auto_examples_applications_plot_prediction_latency.py:

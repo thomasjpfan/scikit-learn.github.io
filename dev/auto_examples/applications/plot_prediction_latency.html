@@ -169,7 +169,13 @@
         </div>
             <div class="sk-sidebar-toc">
               <ul>
-<li><a class="reference internal" href="#">Prediction Latency</a></li>
+<li><a class="reference internal" href="#">Prediction Latency</a><ul>
+<li><a class="reference internal" href="#benchmark-and-plot-helper-functions">Benchmark and plot helper functions</a></li>
+<li><a class="reference internal" href="#benchmark-bulk-atomic-prediction-speed-for-various-regressors">Benchmark bulk/atomic prediction speed for various regressors</a></li>
+<li><a class="reference internal" href="#benchmark-n-features-influence-on-prediction-speed">Benchmark n_features influence on prediction speed</a></li>
+<li><a class="reference internal" href="#benchmark-throughput">Benchmark throughput</a></li>
+</ul>
+</li>
 </ul>
 
             </div>
@@ -190,25 +196,6 @@ estimators.</p>
 <p>The goal is to measure the latency one can expect when doing predictions
 either in bulk or atomic (i.e. one by one) mode.</p>
 <p>The plots represent the distribution of the prediction latency as a boxplot.</p>
-<ul class="sphx-glr-horizontal">
-<li><img src="../../_images/sphx_glr_plot_prediction_latency_001.png" srcset="../../_images/sphx_glr_plot_prediction_latency_001.png" alt="Prediction Time per Instance - Atomic, 100 feats." class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_prediction_latency_002.png" srcset="../../_images/sphx_glr_plot_prediction_latency_002.png" alt="Prediction Time per Instance - Bulk (100), 100 feats." class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_prediction_latency_003.png" srcset="../../_images/sphx_glr_plot_prediction_latency_003.png" alt="Evolution of Prediction Time with #Features" class = "sphx-glr-multi-img"/></li>
-<li><img src="../../_images/sphx_glr_plot_prediction_latency_004.png" srcset="../../_images/sphx_glr_plot_prediction_latency_004.png" alt="Prediction Throughput for different estimators (100 features)" class = "sphx-glr-multi-img"/></li>
-</ul>
-<p class="sphx-glr-script-out">Out:</p>
-<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Benchmarking SGDRegressor(alpha=0.01, l1_ratio=0.25, penalty=&#39;elasticnet&#39;, tol=0.0001)
-Benchmarking RandomForestRegressor()
-Benchmarking SVR()
-benchmarking with 100 features
-benchmarking with 250 features
-benchmarking with 500 features
-example run in 10.29s
-</pre></div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Authors: Eustache Diemert &lt;eustache@diemert.fr&gt;</span>
 <span class="c1"># License: BSD 3 clause</span>
 
@@ -232,9 +219,11 @@ example run in 10.29s
 <span class="k">def</span> <span class="nf">_not_in_sphinx</span><span class="p">():</span>
     <span class="c1"># Hack to detect whether we are running by the sphinx builder</span>
     <span class="k">return</span> <span class="s2">&quot;__file__&quot;</span> <span class="ow">in</span> <span class="nb">globals</span><span class="p">()</span>
-
-
-<span class="k">def</span> <span class="nf">atomic_benchmark_estimator</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</pre></div>
+</div>
+<section id="benchmark-and-plot-helper-functions">
+<h2>Benchmark and plot helper functions<a class="headerlink" href="#benchmark-and-plot-helper-functions" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">atomic_benchmark_estimator</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Measure runtime prediction of each instance.&quot;&quot;&quot;</span>
     <span class="n">n_instances</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">runtimes</span> <span class="o">=</span> <a href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros" title="numpy.zeros" class="sphx-glr-backref-module-numpy sphx-glr-backref-type-py-function"><span class="n">np</span><span class="o">.</span><span class="n">zeros</span></a><span class="p">(</span><span class="n">n_instances</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>
@@ -483,16 +472,12 @@ example run in 10.29s
         <span class="o">%</span> <span class="n">configuration</span><span class="p">[</span><span class="s2">&quot;n_features&quot;</span><span class="p">]</span>
     <span class="p">)</span>
     <a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.show.html#matplotlib.pyplot.show" title="matplotlib.pyplot.show" class="sphx-glr-backref-module-matplotlib-pyplot sphx-glr-backref-type-py-function"><span class="n">plt</span><span class="o">.</span><span class="n">show</span></a><span class="p">()</span>
-
-
-<span class="c1"># #############################################################################</span>
-<span class="c1"># Main code</span>
-
-<span class="n">start_time</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span>
-
-<span class="c1"># #############################################################################</span>
-<span class="c1"># Benchmark bulk/atomic prediction speed for various regressors</span>
-<span class="n">configuration</span> <span class="o">=</span> <span class="p">{</span>
+</pre></div>
+</div>
+</section>
+<section id="benchmark-bulk-atomic-prediction-speed-for-various-regressors">
+<h2>Benchmark bulk/atomic prediction speed for various regressors<a class="headerlink" href="#benchmark-bulk-atomic-prediction-speed-for-various-regressors" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">configuration</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">&quot;n_train&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e3</span><span class="p">),</span>
     <span class="s2">&quot;n_test&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e2</span><span class="p">),</span>
     <span class="s2">&quot;n_features&quot;</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e2</span><span class="p">),</span>
@@ -520,9 +505,22 @@ example run in 10.29s
     <span class="p">],</span>
 <span class="p">}</span>
 <span class="n">benchmark</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span>
-
-<span class="c1"># benchmark n_features influence on prediction speed</span>
-<span class="n">percentile</span> <span class="o">=</span> <span class="mi">90</span>
+</pre></div>
+</div>
+<ul class="sphx-glr-horizontal">
+<li><img src="../../_images/sphx_glr_plot_prediction_latency_001.png" srcset="../../_images/sphx_glr_plot_prediction_latency_001.png" alt="Prediction Time per Instance - Atomic, 100 feats." class = "sphx-glr-multi-img"/></li>
+<li><img src="../../_images/sphx_glr_plot_prediction_latency_002.png" srcset="../../_images/sphx_glr_plot_prediction_latency_002.png" alt="Prediction Time per Instance - Bulk (100), 100 feats." class = "sphx-glr-multi-img"/></li>
+</ul>
+<p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Benchmarking SGDRegressor(alpha=0.01, l1_ratio=0.25, penalty=&#39;elasticnet&#39;, tol=0.0001)
+Benchmarking RandomForestRegressor()
+Benchmarking SVR()
+</pre></div>
+</div>
+</section>
+<section id="benchmark-n-features-influence-on-prediction-speed">
+<h2>Benchmark n_features influence on prediction speed<a class="headerlink" href="#benchmark-n-features-influence-on-prediction-speed" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">percentile</span> <span class="o">=</span> <span class="mi">90</span>
 <span class="n">percentiles</span> <span class="o">=</span> <span class="n">n_feature_influence</span><span class="p">(</span>
     <span class="p">{</span><span class="s2">&quot;ridge&quot;</span><span class="p">:</span> <a href="../../modules/generated/sklearn.linear_model.Ridge.html#sklearn.linear_model.Ridge" title="sklearn.linear_model.Ridge" class="sphx-glr-backref-module-sklearn-linear_model sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">Ridge</span></a><span class="p">()},</span>
     <span class="n">configuration</span><span class="p">[</span><span class="s2">&quot;n_train&quot;</span><span class="p">],</span>
@@ -531,16 +529,22 @@ example run in 10.29s
     <span class="n">percentile</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="n">plot_n_features_influence</span><span class="p">(</span><span class="n">percentiles</span><span class="p">,</span> <span class="n">percentile</span><span class="p">)</span>
-
-<span class="c1"># benchmark throughput</span>
-<span class="n">throughputs</span> <span class="o">=</span> <span class="n">benchmark_throughputs</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span>
-<span class="n">plot_benchmark_throughput</span><span class="p">(</span><span class="n">throughputs</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
-
-<span class="n">stop_time</span> <span class="o">=</span> <a href="https://docs.python.org/3/library/time.html#time.time" title="time.time" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">time</span></a><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;example run in </span><span class="si">%.2f</span><span class="s2">s&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">stop_time</span> <span class="o">-</span> <span class="n">start_time</span><span class="p">))</span>
 </pre></div>
 </div>
-<p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.574 seconds)</p>
+<img src="../../_images/sphx_glr_plot_prediction_latency_003.png" srcset="../../_images/sphx_glr_plot_prediction_latency_003.png" alt="Evolution of Prediction Time with #Features" class = "sphx-glr-single-img"/><p class="sphx-glr-script-out">Out:</p>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>benchmarking with 100 features
+benchmarking with 250 features
+benchmarking with 500 features
+</pre></div>
+</div>
+</section>
+<section id="benchmark-throughput">
+<h2>Benchmark throughput<a class="headerlink" href="#benchmark-throughput" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">throughputs</span> <span class="o">=</span> <span class="n">benchmark_throughputs</span><span class="p">(</span><span class="n">configuration</span><span class="p">)</span>
+<span class="n">plot_benchmark_throughput</span><span class="p">(</span><span class="n">throughputs</span><span class="p">,</span> <span class="n">configuration</span><span class="p">)</span>
+</pre></div>
+</div>
+<img src="../../_images/sphx_glr_plot_prediction_latency_004.png" srcset="../../_images/sphx_glr_plot_prediction_latency_004.png" alt="Prediction Throughput for different estimators (100 features)" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  10.711 seconds)</p>
 <div class="sphx-glr-footer class sphx-glr-footer-example docutils container" id="sphx-glr-download-auto-examples-applications-plot-prediction-latency-py">
 <div class="binder-badge docutils container">
 <a class="reference external image-reference" href="https://mybinder.org/v2/gh/scikit-learn/scikit-learn/main?urlpath=lab/tree/notebooks/auto_examples/applications/plot_prediction_latency.ipynb"><img alt="Launch binder" src="../../_images/binder_badge_logo.svg" width="150px" /></a>
@@ -553,6 +557,7 @@ example run in 10.29s
 </div>
 </div>
 <p class="sphx-glr-signature"><a class="reference external" href="https://sphinx-gallery.github.io">Gallery generated by Sphinx-Gallery</a></p>
+</section>
 </section>
 
 
